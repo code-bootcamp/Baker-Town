@@ -24,6 +24,7 @@ const ClassDetailContainer = () => {
     );
     const result = await getDoc(product);
     const aaa = result.data();
+<!-- <<<<<<< 21/12/27-3 -->
     console.log(aaa);
     setMyClass({
       address: aaa?.address,
@@ -34,6 +35,7 @@ const ClassDetailContainer = () => {
       price: aaa?.price,
     });
   }, []);
+<!-- >>>>>>> develop -->
 
   return <ClassDetailPresenter myClass={myClass} />;
 };
