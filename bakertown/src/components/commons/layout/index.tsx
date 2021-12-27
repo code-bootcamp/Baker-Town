@@ -29,18 +29,17 @@ const BodyWrapper = styled.div`
   background-color: green; */
 `;
 
-const HIDDEN_HEADER = [`/signin`, `/signup`];
-const HIDDEN_BANNER = [`/signin`, `/signup`];
-const HIDDEN_SIDEBAR = [`/signin`, `/signup`];
-const HIDDEN_NAVIGATION = [`/signin`, `/signup`];
-const HIDDEN_FOOTER = [`/signin`, `/signup`];
+const HIDDEN_HEADER = [`/signin`, `/signup`, `/dashboard`];
+const HIDDEN_BANNER = [`/signin`, `/signup`, `/dashboard`];
+const HIDDEN_SIDEBAR = [`/signin`, `/signup`, `/dashboard`];
+const HIDDEN_NAVIGATION = [`/signin`, `/signup`, `/dashboard`];
+const HIDDEN_FOOTER = [`/signin`, `/signup`, `/dashboard`];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath);
   const isHiddenSidebar = HIDDEN_SIDEBAR.includes(router.asPath);
-
   const isHiddenNavigation = HIDDEN_NAVIGATION.includes(router.asPath);
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
 
