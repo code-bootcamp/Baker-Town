@@ -21,6 +21,7 @@ export default function FirebaseTestPage() {
     address: "",
     patissier: "",
     price: "",
+    jjim: 0,
   });
 
   const onClickSubmit = async () => {
@@ -101,9 +102,24 @@ export default function FirebaseTestPage() {
       address: myInputs.address,
       patissier: myInputs.patissier,
       price: myInputs.price,
+      jjim: myInputs.jjim,
       [event.target.name]: event.target.value,
     });
     console.log(myInputs);
+  };
+
+  const onClickJjim = async () => {
+    if (myInputs.jjim === 0) myInputs.jjim = 1;
+    if (myInputs.jjim === 1) myInputs.jjim = 0;
+    const bakeryClass = doc(
+      getFirestore(firebaseApp),
+      "class",
+      "CjaaWKIqLVFvqRtdtdCT"
+    );
+
+    const query = await updateDoc(bakeryClass, {
+      jjim: myInputs.jjim,
+    });
   };
 
   return (
@@ -151,7 +167,7 @@ export default function FirebaseTestPage() {
       <button onClick={onClickDelete}>삭제하기</button>
       <button onClick={onClickFetch}>불러오기</button>
       <button onClick={onClickFetch2}>불러오기2</button>
-      {/* <button onClick={onClickJjim}>클래스 찜</button> */}
+      <button onClick={onClickJjim}>클래스 찜</button>
       <div>{patissier}</div>
       <button onClick={onClickDeleteOne}>해당 클래스 삭제하기</button>
       <button onClick={onClickAAAA}>ㅁㅁㅁㅁ</button>

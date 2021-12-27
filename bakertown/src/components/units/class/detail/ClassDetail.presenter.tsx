@@ -1,6 +1,7 @@
 import * as S from "./ClassDetail.styles";
+import { IClassDetailPresenterProps } from "./ClassDetail.types";
 
-const ClassDetailPresenter = (props) => {
+const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
   return (
     <>
       <S.Wrapper>
@@ -16,11 +17,12 @@ const ClassDetailPresenter = (props) => {
         <S.PatissierIntro>
           <S.ClassRemarks>
             <div>파티셰가 소개하는 클래스 한줄 소개</div>
+            <div>{props.myClass.className}</div>
           </S.ClassRemarks>
           <S.ProgramIntro>
             <div>
               <div>프로그램 소개글</div>
-              <div>{props.contents}</div>
+              <div>{props.myClass.contents}</div>
             </div>
           </S.ProgramIntro>
           <S.ProgramImage>
@@ -28,11 +30,13 @@ const ClassDetailPresenter = (props) => {
           </S.ProgramImage>
           <S.PatissierRemarks>
             <div>파티셰 소개글</div>
+            <div>{props.myClass.patissier}</div>
           </S.PatissierRemarks>
         </S.PatissierIntro>
 
         <S.ClassLocation>
           <div>위치정보</div>
+          <div>{props.myClass.address}</div>
         </S.ClassLocation>
         <S.ClassReview>
           <div>실제 수강생 후기</div>

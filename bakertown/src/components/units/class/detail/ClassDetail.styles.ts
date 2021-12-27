@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
 
 export const ClassIntro = styled.div`
   border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ClassTitle = styled.div`

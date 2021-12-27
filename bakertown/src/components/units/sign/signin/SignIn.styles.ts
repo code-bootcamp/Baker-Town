@@ -77,6 +77,12 @@ export const Password = styled.input`
   line-height: 35px;
 `;
 
+export const SignUp = styled.div`
+  margin: 0px 370px 0px;
+  left: 0px;
+  right: 0px;
+`;
+
 export const Img = styled.img`
   width: 1135px;
   height: 1250px;
@@ -86,7 +92,7 @@ export const SignInButton = styled.button`
   position: absolute;
   width: 350px;
   height: 50px;
-  margin: 70px 370px 10px;
+  margin: 10px 370px 10px;
   left: 0px;
   right: 0px;
   background: orange;
