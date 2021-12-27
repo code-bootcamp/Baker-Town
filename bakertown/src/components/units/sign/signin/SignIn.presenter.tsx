@@ -11,6 +11,8 @@ const SignInPresenter = () => {
         <S.Email type="text" placeholder="example@naver.com" />
         <S.PasswordLabel>password</S.PasswordLabel>
         <S.Password type="password" placeholder="******" />
+        <S.SignUp>회원가입하기</S.SignUp>
+        {/* <S.SignUp>회원가입하기</S.SignUp> */}
         <S.SignInButton>로그인</S.SignInButton>
         {/* <S.Wrapper2/> */}
       </S.Wrapper>

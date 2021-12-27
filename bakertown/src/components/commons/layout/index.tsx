@@ -29,11 +29,11 @@ const BodyWrapper = styled.div`
   background-color: green; */
 `;
 
-const HIDDEN_HEADER = [`/signin`, `/signup`];
+const HIDDEN_HEADER = [`/signin`];
 const HIDDEN_BANNER = [`/signin`, `/signup`];
 const HIDDEN_SIDEBAR = [`/signin`, `/signup`];
 const HIDDEN_NAVIGATION = [`/signin`, `/signup`];
-const HIDDEN_FOOTER = [`/signin`, `/signup`];
+const HIDDEN_FOOTER = [`/signin`];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
