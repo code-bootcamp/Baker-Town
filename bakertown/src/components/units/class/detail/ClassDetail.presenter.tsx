@@ -1,6 +1,6 @@
 import * as S from "./ClassDetail.styles";
 
-const ClassDetailPresenter = () => {
+const ClassDetailPresenter = (props) => {
   return (
     <>
       <S.Wrapper>
@@ -18,7 +18,10 @@ const ClassDetailPresenter = () => {
             <div>파티셰가 소개하는 클래스 한줄 소개</div>
           </S.ClassRemarks>
           <S.ProgramIntro>
-            <div>프로그램 소개글</div>
+            <div>
+              <div>프로그램 소개글</div>
+              <div>{props.contents}</div>
+            </div>
           </S.ProgramIntro>
           <S.ProgramImage>
             <div>파티셰가 넣는 예시 이미지</div>
