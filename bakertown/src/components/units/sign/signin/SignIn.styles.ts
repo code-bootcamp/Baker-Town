@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
-
+export const Aa = styled.div`
+  display: flex;
+`;
 export const Wrapper = styled.div`
   width: 1100px;
   height: 1250px;
