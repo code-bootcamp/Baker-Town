@@ -64,18 +64,14 @@ export default function FirebaseTestPage() {
     const product = collection(getFirestore(firebaseApp), "class");
     const result = await getDocs(product);
     const docs = result.docs.map((el) => el.data());
-    console.log(result);
+    console.log(result.docs?.[0].id);
     console.log(docs);
     setPatissier(docs[0].patissier);
-    // setId(docs);
+    setId(result.docs?.[0].id);
   };
 
   const onClickFetch2 = async () => {
-    const product = doc(
-      getFirestore(firebaseApp),
-      "class",
-      "mfG8H7zZQc47bGHeGkPr"
-    );
+    const product = doc(getFirestore(firebaseApp), "class", id);
     const result = await getDoc(product);
     console.log(result);
   };
@@ -84,9 +80,20 @@ export default function FirebaseTestPage() {
     await deleteDoc(doc(getFirestore(firebaseApp), "class"));
   };
 
+  const onClickAAAA = () => {
+    console.log(typeof id);
+  };
+
   return (
     <>
       <div>파이어베이스 연습</div>
+      <input type="text" onChange={onChangeInputs} placeholder="제목" />
+      <input type="text" onChange={onChangeInputs} placeholder="카테고리" />
+      <input type="text" onChange={onChangeInputs} placeholder="내용" />
+      <input type="text" onChange={onChangeInputs} placeholder="파티셰" />
+      <input type="number" onChange={onChangeInputs} placeholder="가격" />
+      <input type="text" onChange={onChangeInputs} placeholder="주소" />
+
       <button onClick={onClickSubmit}>등록하기</button>
       <button onClick={onClickUpdate}>수정하기</button>
       <button onClick={onClickDelete}>삭제하기</button>
@@ -94,6 +101,7 @@ export default function FirebaseTestPage() {
       <button onClick={onClickFetch2}>불러오기2</button>
       <div>{patissier}</div>
       <button onClick={onClickDeleteOne}>해당 클래스 삭제하기</button>
+      <button onClick={onClickAAAA}>ㅁㅁㅁㅁ</button>
     </>
   );
 }
