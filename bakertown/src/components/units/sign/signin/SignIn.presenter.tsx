@@ -2,7 +2,7 @@ import * as S from "./SignIn.styles";
 
 const SignInPresenter = () => {
   return (
-    <>
+    <S.Aa>
       <S.Wrapper>
         {/* <S.Wrapper2> */}
         <S.Label>BAKERTOWN</S.Label>
@@ -18,7 +18,7 @@ const SignInPresenter = () => {
       <S.ImageWrapper>
         <S.Img className="Image" alt="login" src="/imgs/login.jpg" />
       </S.ImageWrapper>
-    </>
+    </S.Aa>
   );
 };
 
