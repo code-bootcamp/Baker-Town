@@ -19,7 +19,8 @@ const ClassDetailContainer = () => {
     const result = await getDoc(product);
     const aaa = result.data();
     setContents(aaa?.contents);
-  }, []);
+    console.log(aaa);
+  });
 
   return <ClassDetailPresenter contents={contents} />;
 };
