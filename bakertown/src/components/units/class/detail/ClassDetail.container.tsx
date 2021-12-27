@@ -7,8 +7,14 @@ import { useRouter } from "next/router";
 const ClassDetailContainer = () => {
   const router = useRouter();
 
-  const [className, setClassName] = useState("");
-  const [contents, setContents] = useState("");
+  const [myClass, setMyClass] = useState({
+    address: "",
+    category: "",
+    className: "",
+    contents: "",
+    patissier: "",
+    price: "",
+  });
 
   useEffect(async () => {
     const product = doc(
@@ -18,10 +24,18 @@ const ClassDetailContainer = () => {
     );
     const result = await getDoc(product);
     const aaa = result.data();
-    setContents(aaa?.contents);
+    console.log(aaa);
+    setMyClass({
+      address: aaa?.address,
+      category: aaa?.category,
+      className: aaa?.className,
+      contents: aaa?.contents,
+      patissier: aaa?.patissier,
+      price: aaa?.price,
+    });
   }, []);
 
-  return <ClassDetailPresenter contents={contents} />;
+  return <ClassDetailPresenter myClass={myClass} />;
 };
 
 export default ClassDetailContainer;
