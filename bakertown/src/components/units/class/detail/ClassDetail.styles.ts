@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
 
-export const Wrapper = styled.div`
+export const WholeWrapper = styled.div``
+
+export const IntroWrapper = styled.div`
   /* height: 2700px; */
-  width: 100%
+  width: 870px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,15 +12,15 @@ export const Wrapper = styled.div`
 `;
 
 export const ClassIntro = styled.div`
-  border: 1px solid gray;
+  /* border: 1px solid gray;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
 `;
 
 export const ClassTitle = styled.div`
   /* height: 60px; */
-  justify-content: center;
+  /* justify-content: center; */
 `;
 
 export const ClassImage = styled.div`
@@ -50,4 +52,12 @@ export const ClassLocation = styled.div`
 export const ClassReview = styled.div`
   height: 250px;
   background-color: pink;
+`;
+
+export const ScheduleWrapper = styled.div`
+width: 370px;
+`
+
+export const ClassSchedule = styled.div`
+
 `;
