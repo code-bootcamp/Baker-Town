@@ -14,7 +14,7 @@
     "@hookform/resolvers": "^2.8.5",
     "@mui/icons-material": "^5.2.5",
     "@mui/lab": "^5.0.0-alpha.61",
-    "@mui/material": "^5.2.5",
+    "@mui/material": "^5.2.6",
     "@mui/styled-engine-sc": "^5.1.0",
     "antd": "^4.17.4",
     "axios": "^0.24.0",
