@@ -10,6 +10,8 @@ import {
 } from "firebase/firestore";
 import { useState } from "react";
 import { firebaseApp } from "../_app";
+import { TimePicker } from "antd";
+import { DatePicker, Space } from "antd";
 
 export default function FirebaseTestPage() {
   const [patissier, setPatissier] = useState("");
@@ -22,7 +24,24 @@ export default function FirebaseTestPage() {
     patissier: "",
     price: "",
     jjim: 0,
+    reservation: {},
   });
+
+  function onChangeDate(date, dateString) {
+    console.log(dateString);
+    myInputs.reservation.date1 = dateString;
+    console.log(myInputs);
+  }
+
+  function onChangeStartTime(time, timeString) {
+    console.log(timeString);
+    myInputs.reservation.date1.dateString.first.start = timeString;
+  }
+  function onChangeEndTime(time, timeString) {
+    console.log(timeString);
+    myInputs.reservation.date1.dateString.first.end = timeString;
+    console.log(myInputs);
+  }
 
   const onClickSubmit = async () => {
     const bakeryClass = collection(getFirestore(firebaseApp), "class");
@@ -74,8 +93,6 @@ export default function FirebaseTestPage() {
     const product = collection(getFirestore(firebaseApp), "class");
     const result = await getDocs(product);
     const docs = result.docs.map((el) => el.data());
-    console.log(result.docs?.[0].id);
-    console.log(docs);
     setPatissier(docs[0].patissier);
     setId(result.docs?.[0].id);
   };
@@ -83,15 +100,10 @@ export default function FirebaseTestPage() {
   const onClickFetch2 = async () => {
     const product = doc(getFirestore(firebaseApp), "class", id);
     const result = await getDoc(product);
-    console.log(result);
   };
 
   const onClickDeleteOne = async () => {
     await deleteDoc(doc(getFirestore(firebaseApp), "class"));
-  };
-
-  const onClickAAAA = () => {
-    console.log(typeof id);
   };
 
   const onChangeInputs = (event) => {
@@ -105,20 +117,20 @@ export default function FirebaseTestPage() {
       jjim: myInputs.jjim,
       [event.target.name]: event.target.value,
     });
-    console.log(myInputs);
   };
 
   const onClickJjim = async () => {
-    if (myInputs.jjim === 0) myInputs.jjim = 1;
-    if (myInputs.jjim === 1) myInputs.jjim = 0;
+    if (myInputs.jjim === 0) {
+      myInputs.jjim = 1;
+    } else if (myInputs.jjim === 1) myInputs.jjim = 0;
     const bakeryClass = doc(
       getFirestore(firebaseApp),
       "class",
-      "CjaaWKIqLVFvqRtdtdCT"
+      "UQFmzw1XxxEnmOia8fVZ"
     );
 
     const query = await updateDoc(bakeryClass, {
-      jjim: myInputs.jjim,
+      jjim: Number(myInputs.jjim),
     });
   };
 
@@ -161,16 +173,17 @@ export default function FirebaseTestPage() {
         placeholder="주소"
         name="address"
       />
-
+      <DatePicker onChange={onChangeDate} />
+      <TimePicker use12Hours format="h:mm a" onChange={onChangeStartTime} />
+      <TimePicker use12Hours format="h:mm a" onChange={onChangeEndTime} />
       <button onClick={onClickSubmit}>등록하기</button>
       <button onClick={onClickUpdate}>수정하기</button>
       <button onClick={onClickDelete}>삭제하기</button>
       <button onClick={onClickFetch}>불러오기</button>
       <button onClick={onClickFetch2}>불러오기2</button>
       <button onClick={onClickJjim}>클래스 찜</button>
-      <div>{patissier}</div>
+      <div>파티셰 이름: {patissier}</div>
       <button onClick={onClickDeleteOne}>해당 클래스 삭제하기</button>
-      <button onClick={onClickAAAA}>ㅁㅁㅁㅁ</button>
     </>
   );
 }
