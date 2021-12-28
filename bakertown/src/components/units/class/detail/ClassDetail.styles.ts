@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  height: 700px;
-  width: 1750px;
+  /* height: 2700px; */
+  width: 100%
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,14 +13,16 @@ export const ClassIntro = styled.div`
   border: 1px solid gray;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 `;
 
 export const ClassTitle = styled.div`
-  height: 60px;
+  /* height: 60px; */
+  justify-content: center;
 `;
 
 export const ClassImage = styled.div`
-  height: 200px;
+  /* height: 200px; */
 `;
 
 export const PatissierIntro = styled.div``;
@@ -42,7 +44,10 @@ export const PatissierRemarks = styled.div`
 `;
 
 export const ClassLocation = styled.div`
-  height: ;
+  height: 200px;
 `;
 
-export const ClassReview = styled.div``;
+export const ClassReview = styled.div`
+  height: 250px;
+  background-color: pink;
+`;

@@ -38,9 +38,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
           <div>위치정보</div>
           <div>{props.myClass.address}</div>
         </S.ClassLocation>
-        <S.ClassReview>
-          <div>실제 수강생 후기</div>
-        </S.ClassReview>
+        <S.ClassReview>실제 수강생 후기</S.ClassReview>
       </S.Wrapper>
     </>
   );
