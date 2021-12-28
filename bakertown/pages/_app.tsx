@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "antd/dist/antd.css";
 import type { AppProps } from "next/app";
 import Layout from "../src/components/commons/layout/index";
+import DashBoardLayout from "../src/components/commons/dashboardlayout/index";
 import { initializeApp } from "firebase/app";
 import { useRouter } from "next/router";
 
@@ -15,17 +16,26 @@ const firebaseConfig = {
 };
 
 export const firebaseApp = initializeApp(firebaseConfig);
+const HIDDEN_LAYOUT = [`/dashboard/main`, `/dashboard/products`];
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-
+  const isHiddenLayout = HIDDEN_LAYOUT.includes(router.asPath);
   return (
     <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {!isHiddenLayout ? (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      ) : (
+        <DashBoardLayout>
+          <Component {...pageProps} />
+        </DashBoardLayout>
+      )}
     </>
   );
 }
 
 export default MyApp;
+
+// 데쉬보드 페이지로 가면 layout 2가 보이고 다른 곳들은 layout 1로 가게
