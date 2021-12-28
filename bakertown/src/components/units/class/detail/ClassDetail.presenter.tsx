@@ -4,7 +4,8 @@ import { IClassDetailPresenterProps } from "./ClassDetail.types";
 const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
   return (
     <>
-      <S.Wrapper>
+    <S.WholeWrapper>
+      <S.IntroWrapper>
         <S.ClassIntro>
           <S.ClassTitle>
             <div>클래스 소개글</div>
@@ -39,7 +40,14 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
           <div>{props.myClass.address}</div>
         </S.ClassLocation>
         <S.ClassReview>실제 수강생 후기</S.ClassReview>
-      </S.Wrapper>
+      </S.IntroWrapper>
+      
+      <S.ScheduleWrapper>
+      <S.ClassSchedule>
+        <div>클래스 일정</div>
+      </S.ClassSchedule>
+      </S.ScheduleWrapper>
+      </S.WholeWrapper>
     </>
   );
 };
