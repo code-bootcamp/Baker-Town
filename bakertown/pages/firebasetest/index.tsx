@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import { firebaseApp } from "../_app";
 import { TimePicker } from "antd";
-import { DatePicker, Space } from "antd";
+import { DatePicker } from "antd";
 
 export default function FirebaseTestPage() {
   const [patissier, setPatissier] = useState("");
@@ -26,86 +26,109 @@ export default function FirebaseTestPage() {
     jjim: 0,
     reservation: {},
   });
+  const [date, setDate] = useState("");
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
+  const [members, setMembers] = useState(0);
 
-  function onChangeDate(date, dateString) {
-    console.log(dateString);
-    myInputs.reservation.date1 = dateString;
-    console.log(myInputs);
+  // 날짜 설정
+  function onChangeDate(dateString) {
+    setDate(dateString);
   }
-
-  function onChangeStartTime(time, timeString) {
-    console.log(timeString);
-    myInputs.reservation.date1.dateString.first.start = timeString;
+  // 시작 시간 설정
+  function onChangeStartTime(timeString) {
+    setStart(timeString);
   }
-  function onChangeEndTime(time, timeString) {
-    console.log(timeString);
-    myInputs.reservation.date1.dateString.first.end = timeString;
-    console.log(myInputs);
+  // 끝 시간 설정
+  function onChangeEndTime(timeString) {
+    setEnd(timeString);
   }
-
+  // 인원 수 설정
+  const onChangeMembers = (event) => {
+    setMembers(event.target.value);
+  };
+  // 클래스 등록
   const onClickSubmit = async () => {
-    const bakeryClass = collection(getFirestore(firebaseApp), "class");
+    // 예약 날짜 및 시간 설정
+    myInputs.reservation = {
+      [date]: {
+        first: {
+          start: start,
+          end: end,
+          [members]: ["나리", "선우"],
+        },
+      },
+    };
+    const bakeryClass = collection(
+      // db
+      getFirestore(firebaseApp),
+      // 컬렉션
+      "class"
+    );
+    // 추가 내용
     await addDoc(bakeryClass, {
-      // patissier: "강남제오베이커리",
-      // className: "크리스마스 선물로 마카롱을 만들어 보아요!!",
-      // price: 36000,
-      // contents:
-      //   "이제 크리스마스가 다가오고 있어요 여러분. 크리스마스를 맞아 저희 강남제오베이커리에서는 마카롱 클래스를 개설했습니다! 연인을 위해서, 또는 연인과 함께 마카롱을 만들어보아요~~",
-      // address: "서울 강남구 강남제오베이커리",
-      // category: "마카롱",
-      // reservation: {
-      //   "12/12": ["1000~1200", "1400~1600"],
-      //   "12/13": ["1400~1600"],
-      // },
       ...myInputs,
     });
   };
 
+  // 클래스 수정
   const onClickUpdate = async () => {
-    // await collection(getFirestore(firebaseApp), "class")
-    //   .doc("mfG8H7zZQc47bGHeGkPr")
-    //   .set({
-    //     price: 40000,
-    //   });
-    // const doc = await collection(getFirestore(firebaseApp), "class").doc(
-    //   "mfG8H7zZQc47bGHeGkPr"
-    // );
-
     const bakeryClass = doc(
+      // db
       getFirestore(firebaseApp),
+      // 컬렉션
       "class",
+      // 문서
       "CjaaWKIqLVFvqRtdtdCT"
     );
-
+    // 수정 내용
     const query = await updateDoc(bakeryClass, {
       price: 500000,
       category: "과자",
     });
   };
 
+  // 클래스 삭제
   const onClickDelete = async () => {
     await deleteDoc(
-      doc(getFirestore(firebaseApp), "class", "CjaaWKIqLVFvqRtdtdCT")
+      doc(
+        // db
+        getFirestore(firebaseApp),
+        // 컬렉션
+        "class",
+        // 문서
+        "CjaaWKIqLVFvqRtdtdCT"
+      )
     );
   };
-
+  // 모두 불러오기
   const onClickFetch = async () => {
-    const product = collection(getFirestore(firebaseApp), "class");
+    const product = collection(
+      // db
+      getFirestore(firebaseApp),
+      // 컬렉션
+      "class"
+    );
+    // 불러오기
     const result = await getDocs(product);
+    // data로 만들기
     const docs = result.docs.map((el) => el.data());
-    setPatissier(docs[0].patissier);
+    console.log(docs);
+    // 불러온 것 중에서 5번째 것의 파티셰이름을 스테이트에 넣기
+    setPatissier(docs[5].patissier);
     setId(result.docs?.[0].id);
   };
 
+  // 하나만 불러오기
   const onClickFetch2 = async () => {
     const product = doc(getFirestore(firebaseApp), "class", id);
     const result = await getDoc(product);
   };
-
+  // 미완성
   const onClickDeleteOne = async () => {
     await deleteDoc(doc(getFirestore(firebaseApp), "class"));
   };
-
+  // 인풋 값 변경 시 state에 저장
   const onChangeInputs = (event) => {
     setMyInputs({
       className: myInputs.className,
@@ -115,20 +138,26 @@ export default function FirebaseTestPage() {
       patissier: myInputs.patissier,
       price: myInputs.price,
       jjim: myInputs.jjim,
+      reservation: myInputs.reservation,
       [event.target.name]: event.target.value,
     });
   };
-
+  // 찜하기 기능
   const onClickJjim = async () => {
+    // 디폴트는 0, 찜이 0이면 1로, 1이면 0으로
     if (myInputs.jjim === 0) {
       myInputs.jjim = 1;
     } else if (myInputs.jjim === 1) myInputs.jjim = 0;
+    // 찜할 클래스
     const bakeryClass = doc(
+      // db
       getFirestore(firebaseApp),
+      // 컬렉션
       "class",
+      // 문서
       "UQFmzw1XxxEnmOia8fVZ"
     );
-
+    // 찜하기
     const query = await updateDoc(bakeryClass, {
       jjim: Number(myInputs.jjim),
     });
@@ -173,9 +202,12 @@ export default function FirebaseTestPage() {
         placeholder="주소"
         name="address"
       />
+      {/* 날짜 및 시간 받아내기 */}
       <DatePicker onChange={onChangeDate} />
       <TimePicker use12Hours format="h:mm a" onChange={onChangeStartTime} />
       <TimePicker use12Hours format="h:mm a" onChange={onChangeEndTime} />
+      {/* 인원 받기 */}
+      <input type="number" onChange={onChangeMembers} />
       <button onClick={onClickSubmit}>등록하기</button>
       <button onClick={onClickUpdate}>수정하기</button>
       <button onClick={onClickDelete}>삭제하기</button>
