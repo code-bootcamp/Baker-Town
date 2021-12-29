@@ -5,6 +5,8 @@ export const WholeWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 70px;
+  padding-left: 324px;
+  padding-right: 324px;
 `;
 
 export const IntroWrapper = styled.div`
@@ -73,6 +75,7 @@ export const ClassImage = styled.div`
   height: 324px;
   border: 1px solid gray;
   background-color: #c4c4c4;
+  margin-top: 20px;
 `;
 
 export const PatissierIntro = styled.div``;
@@ -94,16 +97,16 @@ export const ClassRemarksTitle = styled.div`
 `;
 
 export const ClassRemarksDetail = styled.div`
-width: 477;
-height: 33px;
-padding-top: 20px;
-font-size: 24px;
-font-weight: normal;
-font-stretch: normal;
-line-height: normal;
-letter-spacing: normal;
-text-align: left;
-color: #1e1e1e;
+  width: 477;
+  height: 33px;
+  padding-top: 20px;
+  font-size: 24px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1e1e1e;
 `;
 
 export const ProgramIntro = styled.div`
@@ -112,8 +115,8 @@ export const ProgramIntro = styled.div`
 `;
 
 export const ProgramGuide = styled.div`
-padding-top: 80px;
-`
+  padding-top: 80px;
+`;
 
 export const ProgramImage = styled.div``;
 
