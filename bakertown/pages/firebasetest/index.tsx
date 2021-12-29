@@ -206,34 +206,15 @@ export default function FirebaseTestPage() {
       // 컬렉션
       "class",
       // 문서
-      "EcR4cBHRD7xOZrsrmKjR"
+      "stKIrZmxUusfwY5lnmvc"
     );
     // 수정 내용
-    // await doc(
-    //   getFirestore(firebaseApp),
-    //   "class",
-    //   "PIiNh4vAP3OAR0BeViRz",
-    //   "reservation",
-    //   "12월 31일",
-    //   "first",
-    //   "4명",
-    //   "3",
-    //   reservationMemeber
-    // );
-    reservationObject."01월 01일".first."3명".3 = reservationMemeber;
-    //  reservationObject
+    reservationObject["01월 01일"].first["4명"]["4"] = reservationMemeber;
+    console.log(reservationObject);
     const query = await updateDoc(bakeryClass, {
-      // reservation: {
-      //   "01월 01일": {
-      //     first: {
-      //       "3명": {
-      //         "3": reservationMemeber,
-      //       },
-      //     },
-      //   },
-      // },
-      // reservation."01월 01일".first."3명"."3" = reservationMemeber;
-      ...reservationObject,
+      reservation: {
+        ...reservationObject,
+      },
     });
   };
 
