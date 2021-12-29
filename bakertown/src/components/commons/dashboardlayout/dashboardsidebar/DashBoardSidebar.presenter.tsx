@@ -1,6 +1,6 @@
 import * as S from "./DashBoardSidebar.styles";
 import { IDashBoardSidebarProps } from "./DashBoardSidebar.types";
-import ListItem from "@mui/material/ListItem";
+
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
@@ -13,36 +13,50 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
   return (
     <>
       <S.Wrapper>
-        <ListItem button>
-          <ListItemIcon>
-            <DashboardIcon />
-          </ListItemIcon>
-          <ListItemText primary="Dashboard" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <ShoppingCartIcon />
-          </ListItemIcon>
-          <ListItemText primary="Orders" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <PeopleIcon />
-          </ListItemIcon>
-          <ListItemText primary="Customers" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <BarChartIcon />
-          </ListItemIcon>
-          <ListItemText primary="Reports" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <LayersIcon />
-          </ListItemIcon>
-          <ListItemText primary="Integrations" />
-        </ListItem>
+        <S.ListWrapper>
+          <S.ListItems button>
+            <ListItemIcon>
+              <DashboardIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="대시보드"
+              onClick={props.onClickDashBoardMainPage}
+            />
+          </S.ListItems>
+          <S.ListItems button>
+            <ListItemIcon>
+              <DashboardIcon />
+            </ListItemIcon>
+            <ListItemText primary="클래스 등록" />
+          </S.ListItems>
+          <S.ListItems button>
+            <ListItemIcon>
+              <ShoppingCartIcon />
+            </ListItemIcon>
+            <ListItemText
+              primary="상품 등록"
+              onClick={props.onClickDashBoardProductsWritePage}
+            />
+          </S.ListItems>
+          <S.ListItems button>
+            <ListItemIcon>
+              <PeopleIcon />
+            </ListItemIcon>
+            <ListItemText primary="클래스 관리" />
+          </S.ListItems>
+          <S.ListItems button>
+            <ListItemIcon>
+              <BarChartIcon />
+            </ListItemIcon>
+            <ListItemText primary="상품 관리" />
+          </S.ListItems>
+          <S.ListItems button>
+            <ListItemIcon>
+              <LayersIcon />
+            </ListItemIcon>
+            <ListItemText primary="마이페이지" />
+          </S.ListItems>
+        </S.ListWrapper>
       </S.Wrapper>
     </>
   );

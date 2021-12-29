@@ -12,22 +12,8 @@ interface ILayoutProps {
 }
 
 const Wrapper = styled.div``;
-const Body = styled.div`
-  /* width: 1000px; */
-  /* height: 1000px;
-  background-color: lightgreen;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; */
-`;
-const BodyWrapper = styled.div`
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: green; */
-`;
+const Body = styled.div``;
+const BodyWrapper = styled.div``;
 
 const HIDDEN_HEADER = [`/signin`, `/dashboard/main`];
 const HIDDEN_BANNER = [`/signin`, `/signup`, `/dashboard/main`];

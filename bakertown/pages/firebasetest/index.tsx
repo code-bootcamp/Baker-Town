@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import { useState } from "react";
 import { firebaseApp } from "../_app";
+// 선우의 만들어진 api키들이 app.tsx에 있는데 app에서 한번 가져오고 그걸 또 가져온거다.
 import { TimePicker } from "antd";
 import { DatePicker } from "antd";
 import { getDate, getOnlyDate } from "../../src/commons/libraries/getDate";
