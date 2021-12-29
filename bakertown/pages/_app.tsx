@@ -5,6 +5,22 @@ import Layout from "../src/components/commons/layout/index";
 import DashBoardLayout from "../src/components/commons/dashboardlayout/index";
 import { initializeApp } from "firebase/app";
 import { useRouter } from "next/router";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  ApolloLink,
+} from "@apollo/client";
+import { createUploadLink } from "apollo-upload-client";
+
+const uploadLink = createUploadLink({
+  uri: "https://backend04-team.codebootcamp.co.kr/team04",
+});
+
+const client = new ApolloClient({
+  link: ApolloLink.from([uploadLink as any]),
+  cache: new InMemoryCache(),
+});
 
 const firebaseConfig = {
   apiKey: "AIzaSyAyxVLveHqFlLxF0fSjDmsrTiuYOma1VI0",
@@ -23,15 +39,16 @@ function MyApp({ Component, pageProps }: AppProps) {
   const isHiddenLayout = HIDDEN_LAYOUT.includes(router.asPath);
   return (
     <>
-      {!isHiddenLayout ? (
+      <ApolloProvider client={client}>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      ) : (
+        ) : (
         <DashBoardLayout>
           <Component {...pageProps} />
         </DashBoardLayout>
-      )}
+        )
+      </ApolloProvider>
     </>
   );
 }
