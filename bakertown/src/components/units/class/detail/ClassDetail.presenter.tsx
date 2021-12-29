@@ -7,7 +7,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
       <S.WholeWrapper>
         <S.IntroWrapper>
           <S.ClassIntro>
-            <S.ClassTitle>내 입맛을 돋워줄 나만의 마카롱 만들기</S.ClassTitle>
+            <S.ClassTitle>내 입맛을 돋구어줄 나만의 마카롱 만들기</S.ClassTitle>
 
             <S.SubComponentWrapper>
               <S.SubTheme1>

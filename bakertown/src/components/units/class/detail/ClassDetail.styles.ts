@@ -29,7 +29,7 @@ export const ClassTitle = styled.div`
   /* justify-content: center; */
   height: 44px;
   width: 540px;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   padding-bottom: 90px;
   font-size: 32px;
   font-weight: bold;
