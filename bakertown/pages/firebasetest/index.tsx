@@ -66,7 +66,11 @@ export default function FirebaseTestPage() {
         first: {
           start: start,
           end: end,
-          [members]: ["나리", "선우"],
+          [members]: {
+            "1": "나리",
+            "2": "선우",
+            "3": "",
+          },
         },
       },
     };
@@ -180,10 +184,12 @@ export default function FirebaseTestPage() {
     });
   };
 
+  // 예약한 사람의 이름
   const onChangeReservationName = (event) => {
     setReservationMemeber(event.target.value);
   };
 
+  // 예약하기
   const onClickReservation = async () => {
     const bakeryClass = doc(
       // db
@@ -191,18 +197,20 @@ export default function FirebaseTestPage() {
       // 컬렉션
       "class",
       // 문서
-      "t2yn7cM9jlkmCspckBmA"
+      "OIoAhnqLmFX9Saxa2twl"
     );
     // 수정 내용
     const query = await updateDoc(bakeryClass, {
-      // reservation.2021-12-23.first.'2'.push(reservationMemeber)
-      reservationMemeber: {
-        "12월 23일": {
-          first: {
-            "3명": [reservationMemeber],
-          },
-        },
-      },
+      // reservation: {
+      //   "01월 01일": {
+      //     first: {
+      //       "3명": {
+      //         "3": reservationMemeber,
+      //       },
+      //     },
+      //   },
+      // },
+      // reservation."01월 01일".first."3명"."3" = reservationMemeber;
     });
   };
 
