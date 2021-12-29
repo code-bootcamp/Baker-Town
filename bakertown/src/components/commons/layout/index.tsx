@@ -13,11 +13,13 @@ interface ILayoutProps {
 
 const Wrapper = styled.div``;
 const Body = styled.div``;
-const BodyWrapper = styled.div``;
+const BodyWrapper = styled.div`
+  display: flex;
+`;
 
 const HIDDEN_HEADER = [`/signin`, `/dashboard/main`];
 const HIDDEN_BANNER = [`/signin`, `/signup`, `/dashboard/main`];
-const HIDDEN_SIDEBAR = [`/signin`, `/signup`, `/dashboard/main`];
+const HIDDEN_SIDEBAR = [`/`, `/signin`, `/signup`, `/dashboard/main`];
 const HIDDEN_NAVIGATION = [`/signin`, `/signup`, `/dashboard/main`];
 const HIDDEN_FOOTER = [`/signin`, `/dashboard/main`];
 
