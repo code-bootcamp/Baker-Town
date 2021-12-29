@@ -1,4 +1,4 @@
-import DashBoardProductsPresenter from "./DashBoardProducts.presenter";
+import DashBoardProductsPresenter from "./DashBoardProductsWrite.presenter";
 
 export const DashBoardProductsContainer = () => {
   return <DashBoardProductsPresenter />;

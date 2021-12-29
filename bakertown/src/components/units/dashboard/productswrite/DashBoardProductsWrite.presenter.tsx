@@ -1,5 +1,5 @@
-import * as S from "./DashBoardProducts.styles";
-import { IDashBoardProductsProps } from "./DashBoardProducts.types";
+import * as S from "./DashBoardProductsWrite.styles";
+import { IDashBoardProductsProps } from "./DashBoardProductsWrite.types";
 
 const DashBoardProductsPresenter = (props: IDashBoardProductsProps) => {
   return (
