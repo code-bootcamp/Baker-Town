@@ -2,7 +2,7 @@ import * as S from "./SignIn.styles";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-
+import { FormValues } from "./SingIn.types";
 const schema = yup.object().shape({
   myEmail: yup
     .string()
@@ -16,25 +16,20 @@ const schema = yup.object().shape({
     .required("비밀번호는 반드시 입력해주세요."),
 });
 
-interface FormValues {
-  myEmail: string;
-  myPassword: string;
-}
-
 const SignInPresenter = () => {
   const { handleSubmit, register, formState } = useForm({
     mode: "onChange",
     resolver: yupResolver(schema),
   });
 
-  function onClickLogin(data: FormValues) {
+  function onClickSignIn(data: FormValues) {
     //loginUser API 요청하기!!!
     console.log(data);
   }
 
   return (
     <S.Aa>
-      <S.Wrapper onSubmit={handleSubmit(onClickLogin)}>
+      <S.Wrapper onSubmit={handleSubmit(onClickSignIn)}>
         {/* <S.Wrapper2> */}
         <S.Label>BAKERTOWN</S.Label>
         <S.SignInLabel>로그인</S.SignInLabel>
