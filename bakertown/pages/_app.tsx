@@ -39,7 +39,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   const isHiddenLayout = HIDDEN_LAYOUT.includes(router.asPath);
   return (
     <>
+
       <ApolloProvider client={client}>
+       {!isHiddenLayout ? (
         <Layout>
           <Component {...pageProps} />
         </Layout>
@@ -47,7 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <DashBoardLayout>
           <Component {...pageProps} />
         </DashBoardLayout>
-        )
+        )}
       </ApolloProvider>
     </>
   );
