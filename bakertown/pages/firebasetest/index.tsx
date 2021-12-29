@@ -35,6 +35,7 @@ export default function FirebaseTestPage() {
   const [end, setEnd] = useState("");
   const [members, setMembers] = useState("");
   const [reservationMemeber, setReservationMemeber] = useState("");
+  const [reservationObject, setReservationObject] = useState({});
 
   // 날짜 설정
   function onChangeDate(dateString) {
@@ -96,11 +97,11 @@ export default function FirebaseTestPage() {
       // 컬렉션
       "class",
       // 문서
-      "CjaaWKIqLVFvqRtdtdCT"
+      "PIiNh4vAP3OAR0BeViRz"
     );
     // 수정 내용
     const query = await updateDoc(bakeryClass, {
-      price: 500000,
+      price: 500000000,
       category: "과자",
     });
   };
@@ -132,14 +133,22 @@ export default function FirebaseTestPage() {
     const docs = result.docs.map((el) => el.data());
     console.log(docs);
     // 불러온 것 중에서 5번째 것의 파티셰이름을 스테이트에 넣기
-    setPatissier(docs[5].patissier);
-    setId(result.docs?.[0].id);
+    // setPatissier(docs[5].patissier);
+    // setId(result.docs?.[0].id);
   };
 
   // 하나만 불러오기
   const onClickFetch2 = async () => {
-    const product = doc(getFirestore(firebaseApp), "class", id);
+    const product = doc(
+      getFirestore(firebaseApp),
+      "class",
+      "EcR4cBHRD7xOZrsrmKjR"
+    );
     const result = await getDoc(product);
+    const aaa = result.data();
+    setReservationObject(aaa.reservation);
+    console.log(aaa);
+    console.log(reservationObject);
   };
   // 미완성
   const onClickDeleteOne = async () => {
@@ -176,7 +185,7 @@ export default function FirebaseTestPage() {
       // 컬렉션
       "class",
       // 문서
-      "UQFmzw1XxxEnmOia8fVZ"
+      "PIiNh4vAP3OAR0BeViRz"
     );
     // 찜하기
     const query = await updateDoc(bakeryClass, {
@@ -197,9 +206,22 @@ export default function FirebaseTestPage() {
       // 컬렉션
       "class",
       // 문서
-      "OIoAhnqLmFX9Saxa2twl"
+      "EcR4cBHRD7xOZrsrmKjR"
     );
     // 수정 내용
+    // await doc(
+    //   getFirestore(firebaseApp),
+    //   "class",
+    //   "PIiNh4vAP3OAR0BeViRz",
+    //   "reservation",
+    //   "12월 31일",
+    //   "first",
+    //   "4명",
+    //   "3",
+    //   reservationMemeber
+    // );
+    reservationObject."01월 01일".first."3명".3 = reservationMemeber;
+    //  reservationObject
     const query = await updateDoc(bakeryClass, {
       // reservation: {
       //   "01월 01일": {
@@ -211,6 +233,7 @@ export default function FirebaseTestPage() {
       //   },
       // },
       // reservation."01월 01일".first."3명"."3" = reservationMemeber;
+      ...reservationObject,
     });
   };
 
