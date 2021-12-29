@@ -27,6 +27,7 @@ export default function FirebaseTestPage() {
     patissier: "",
     price: "",
     jjim: 0,
+    heart: 0,
     createdAt: "",
     reservation: {},
   });
@@ -97,11 +98,11 @@ export default function FirebaseTestPage() {
       // 컬렉션
       "class",
       // 문서
-      "PIiNh4vAP3OAR0BeViRz"
+      "stKIrZmxUusfwY5lnmvc"
     );
     // 수정 내용
     const query = await updateDoc(bakeryClass, {
-      price: 500000000,
+      price: 100,
       category: "과자",
     });
   };
@@ -142,7 +143,7 @@ export default function FirebaseTestPage() {
     const product = doc(
       getFirestore(firebaseApp),
       "class",
-      "EcR4cBHRD7xOZrsrmKjR"
+      "stKIrZmxUusfwY5lnmvc"
     );
     const result = await getDoc(product);
     const aaa = result.data();
@@ -164,6 +165,7 @@ export default function FirebaseTestPage() {
       patissier: myInputs.patissier,
       price: myInputs.price,
       jjim: myInputs.jjim,
+      heart: myInputs.heart,
       createdAt: "",
       reservation: myInputs.reservation,
       [event.target.name]: event.target.value,
@@ -215,6 +217,22 @@ export default function FirebaseTestPage() {
       reservation: {
         ...reservationObject,
       },
+      price: 500000000,
+    });
+  };
+
+  // 좋아요 기능
+  const onClickHeart = async () => {
+    const product = doc(
+      getFirestore(firebaseApp),
+      "class",
+      "UuZy5eLcMCHf1R48bQbd"
+    );
+    const result = await getDoc(product);
+    const aaa = result.data();
+    const classHeart = aaa.heart + 1;
+    await updateDoc(product, {
+      heart: classHeart,
     });
   };
 
@@ -277,6 +295,7 @@ export default function FirebaseTestPage() {
         onChange={onChangeReservationName}
       />
       <button onClick={onClickReservation}>예약하기</button>
+      <button onClick={onClickHeart}>좋아요</button>
     </>
   );
 }

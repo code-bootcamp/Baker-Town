@@ -12,6 +12,8 @@ import {
   ApolloLink,
 } from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
+import { Global } from "@emotion/react";
+import { globalStyles } from "../src/commons/styles/globalStyles";
 
 const uploadLink = createUploadLink({
   uri: "https://backend04-team.codebootcamp.co.kr/team04",
@@ -40,6 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ApolloProvider client={client}>
+        <Global styles={globalStyles} />
         {!isHiddenLayout ? (
           <Layout>
             <Component {...pageProps} />

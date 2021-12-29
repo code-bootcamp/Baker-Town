@@ -1,4 +1,5 @@
 import * as S from "./Landing.styles";
+import { v4 as uuidv4 } from "uuid";
 
 const LandingPresenter = () => {
   return (
@@ -12,7 +13,7 @@ const LandingPresenter = () => {
           </S.SubjectWrapper>
           <S.ClassesWrapper>
             {new Array(4).fill(1).map((el) => (
-              <S.ClassWrapper>
+              <S.ClassWrapper key={uuidv4()}>
                 <S.ClassImage />
                 <S.ClassPatissier>빵순이의 하루</S.ClassPatissier>
                 <S.ClassName>
@@ -31,7 +32,7 @@ const LandingPresenter = () => {
           </S.SubjectWrapper>
           <S.ClassesWrapper>
             {new Array(4).fill(1).map((el) => (
-              <S.ClassWrapper>
+              <S.ClassWrapper key={uuidv4()}>
                 <S.ClassImage />
                 <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
                 <S.ClassName>르벵 쿠키 베이킹 클래스</S.ClassName>
@@ -48,7 +49,7 @@ const LandingPresenter = () => {
           </S.SubjectWrapper>
           <S.ClassesWrapper>
             {new Array(3).fill(1).map((el) => (
-              <S.EventImage />
+              <S.EventImage key={uuidv4()} />
             ))}
           </S.ClassesWrapper>
         </S.EventSubject>
@@ -60,7 +61,7 @@ const LandingPresenter = () => {
           </S.SubjectWrapper>
           <S.ClassesWrapper>
             {new Array(4).fill(1).map((el) => (
-              <S.ClassWrapper>
+              <S.ClassWrapper key={uuidv4()}>
                 <S.ClassImage />
                 <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
                 <S.ClassName>
