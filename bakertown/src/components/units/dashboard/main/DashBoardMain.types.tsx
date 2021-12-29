@@ -1,4 +1,6 @@
-export interface IDashBoardProductsProps {
+export interface IDashBoardProductsProps {}
+
+export interface IDashBoardProductsChartProps {
   id: string;
   arg1: string;
   getValue: any;

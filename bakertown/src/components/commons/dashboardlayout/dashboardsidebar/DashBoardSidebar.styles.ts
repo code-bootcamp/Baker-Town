@@ -3,7 +3,7 @@ import ListItem from "@mui/material/ListItem";
 
 export const Wrapper = styled.div`
   width: 400px;
-  height: 913px;
+  height: 100%;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
@@ -23,3 +23,5 @@ export const ListWrapper = styled.div`
 export const ListItems = styled(ListItem)`
   /* background-color: gray; */
 `;
+
+// 추후 사이드바 높이 반응형으로 조절하기.

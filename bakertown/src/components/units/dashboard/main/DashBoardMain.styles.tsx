@@ -1,34 +1,50 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 90%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* background-color: salmon; */
 `;
 
 export const UpWrapper = styled.div`
+  width: 100%;
+  height: 100%;
   /* background-color: skyblue; */
+  /* opacity: 30%; */
+  margin: 0px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   padding-top: 100px;
 `;
 
 export const DownWrapper = styled.div`
   /* background-color: lightgreen */
   width: 80%;
-  padding-top: 100px;
+  height: 900px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 `;
+
 export const ChartWrapper = styled.div`
   /* background-color: black; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const BalanceWrapper = styled.div`
   /* background-color: yellow; */
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  padding-top: 100px;
 `;
 
 export const DataWrapper = styled.div`
   /* background-color: lightgreen; */
+  height: 100%;
 `;
