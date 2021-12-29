@@ -1,6 +1,5 @@
 import * as S from "./DashBoardSidebar.styles";
 import { IDashBoardSidebarProps } from "./DashBoardSidebar.types";
-
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";

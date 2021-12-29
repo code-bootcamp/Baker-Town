@@ -1,5 +1,8 @@
 import * as S from "./DashBoardMain.styles";
-import { IDashBoardProductsProps } from "./DashBoardMain.types";
+import {
+  IDashBoardProductsProps,
+  IDashBoardProductsChartProps,
+} from "./DashBoardMain.types";
 import { DataGrid } from "@mui/x-data-grid";
 import { Statistic, Row, Col } from "antd";
 import {
@@ -29,7 +32,7 @@ const DashBoardMainPresenter = (props: IDashBoardProductsProps) => {
       description: "This column has a value getter and is not sortable.",
       sortable: false,
       width: 160,
-      valueGetter: (params: IDashBoardProductsProps) =>
+      valueGetter: (params: IDashBoardProductsChartProps) =>
         `${params.getValue(params.id, "firstName") || ""} ${
           params.getValue(params.id, "lastName") || ""
         }`,
@@ -98,10 +101,10 @@ const DashBoardMainPresenter = (props: IDashBoardProductsProps) => {
       <S.UpWrapper>
         <S.ChartWrapper>
           <LineChart
-            width={730}
-            height={250}
+            width={800}
+            height={300}
             data={data}
-            margin={{ top: 40, right: 80, left: 20, bottom: 5 }}
+            margin={{ top: 0, right: 50, left: 20, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
@@ -124,7 +127,7 @@ const DashBoardMainPresenter = (props: IDashBoardProductsProps) => {
         </S.BalanceWrapper>
       </S.UpWrapper>
       <S.DownWrapper>
-        <S.DataWrapper style={{ height: 400, width: "100%" }}>
+        <S.DataWrapper style={{ width: "100%" }}>
           <DataGrid
             rows={rows}
             columns={columns}

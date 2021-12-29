@@ -10,18 +10,12 @@ interface ILayoutProps {
 const Wrapper = styled.div``;
 const Body = styled.div`
   width: 100%;
-  /* height: 1000px; */
-  /* background-color: lightgreen; */
-  /* border: 1px solid gray; */
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; */
 `;
 const BodyWrapper = styled.div`
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: row;
-  /* align-items: baseline; */
   justify-content: space-around;
 `;
 
