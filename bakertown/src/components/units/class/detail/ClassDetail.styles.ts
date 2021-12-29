@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const WholeWrapper = styled.div`
   width: 100%;
+  height: 2000px;
   display: flex;
   justify-content: center;
   padding-top: 70px;
@@ -12,7 +13,7 @@ export const WholeWrapper = styled.div`
 export const IntroWrapper = styled.div`
   /* height: 2700px; */
   border: 1px solid gray;
-  width: 870px;
+  width: 864px;
   /* margin-left: 320px */
   /* background-color: green; */
   display: flex;
@@ -47,10 +48,39 @@ export const SubTheme1 = styled.div`
 `;
 
 export const ClassStarRate = styled.div`
+  display: flex;
+  padding-top: 28px;
   padding-right: 30px;
 `;
 
-export const CategoryTag = styled.div``;
+export const Star = styled.img`
+  width: 30px;
+  height: 30px;
+`;
+
+export const Rate = styled.div`
+  width: 35px;
+  height: 33px;
+  font-size: 24px;
+  font-weight: bold;
+`;
+
+export const Rater = styled.div`
+  width: 57px;
+  height: 25px;
+  padding-left: 10px;
+  font-size: 18px;
+  color: rgba(95, 95, 95, 8.5);
+`;
+
+export const CategoryTag = styled.div`
+  padding-top: 28px;
+`;
+
+export const AreaCategory = styled.div``;
+
+export const ContentsCategory = styled.div``;
+
 export const SubTheme2 = styled.div`
   display: flex;
 `;
@@ -81,30 +111,20 @@ export const ClassImage = styled.div`
 export const PatissierIntro = styled.div``;
 
 export const ClassRemarksTitle = styled.div`
-  width: 599px;
+  width: 612px;
   height: 44px;
   margin-top: 50px;
-  border: 1px solid gray;
-  font-family: ;
-  font-size: 20px;
+  font-size: 32px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: left;
   color: #1e1e1e;
 `;
 
 export const ClassRemarksDetail = styled.div`
-  width: 477;
+  width: 477px;
   height: 33px;
   padding-top: 20px;
   font-size: 24px;
-  font-weight: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: left;
   color: #1e1e1e;
 `;
@@ -112,16 +132,46 @@ export const ClassRemarksDetail = styled.div`
 export const ProgramIntro = styled.div`
   height: 300px;
   padding-top: 80px;
+  font-size: 32px;
+  font-weight: bold;
 `;
 
-export const ProgramGuide = styled.div`
-  padding-top: 80px;
+export const Program = styled.div`
+  /* padding-top: 80px; */
+
+  width: 118px;
+  height: 44px;
+  font-size: 32px;
+  font-weight: bold;
+`;
+
+export const ProgramGuideBox = styled.div`
+  margin-top: 50px;
+  width: 864px;
+  height: 980px;
+  flex-grow: 0;
+  border-radius: 10px;
+  background-color: #f7f7f7;
 `;
 
 export const ProgramImage = styled.div``;
 
 export const PatissierInfo = styled.div`
   height: 80px;
+  margin-top: 70px;
+`;
+
+export const Patissier = styled.div`
+  padding-top: 70px;
+  width: 156px;
+  height: 44px;
+  font-size: 32px;
+  font-weight: bold;
+`;
+
+export const PatissierWrapper = styled.div`
+  padding-top: 30px;
+  display: flex;
 `;
 
 export const PatissierPhoto = styled.div``;
@@ -129,8 +179,12 @@ export const PatissierName = styled.div``;
 
 export const ContactPatissier = styled.div``;
 
+export const PatissierContents = styled.div`
+  padding-top: 10px;
+`;
+
 export const ClassLocationInfo = styled.div`
-  /* height: 200px; */
+  padding-top: 10px;
 `;
 
 export const LocationInfo = styled.div``;
