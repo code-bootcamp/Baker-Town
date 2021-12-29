@@ -229,12 +229,13 @@ const DashBoardProductsPresenter = (props: IDashBoardProductsProps) => {
           placeholder="제목"
           name="className"
         />
-        <input
-          type="text"
-          onChange={onChangeInputs}
-          placeholder="카테고리"
-          name="category"
-        />
+        <div>
+          {" "}
+          input type="text" onChange={onChangeInputs}
+          placeholder="카테고리" name="category"
+        </div>
+
+        <br />
         <input
           type="text"
           onChange={onChangeInputs}
