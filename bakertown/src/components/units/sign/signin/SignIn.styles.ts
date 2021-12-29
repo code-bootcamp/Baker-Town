@@ -68,6 +68,11 @@ export const Email = styled.input`
   line-height: 35px;
 `;
 
+export const EmailError = styled.div`
+  margin: 0px 370px 0px;
+  color: red;
+`;
+
 export const Password = styled.input`
   width: 350px;
   height: 45px;
@@ -77,10 +82,14 @@ export const Password = styled.input`
   line-height: 35px;
 `;
 
+export const PasswordError = styled.div`
+  margin: 0px 370px 0px;
+  color: red;
+`;
+
 export const SignUp = styled.div`
   margin: 0px 370px 0px;
-  left: 0px;
-  right: 0px;
+  font-size: 17px;
 `;
 
 export const Img = styled.img`

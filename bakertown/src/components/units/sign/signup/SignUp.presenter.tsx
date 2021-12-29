@@ -4,7 +4,6 @@ const SignUpPresenter = () => {
   return (
     <S.Aa>
       <S.Wrapper>
-        {/* <S.Wrapper2> */}
         <S.Label>회원가입</S.Label>
         <S.NameLabel>이름</S.NameLabel>
         <S.Name type="text" placeholder="홍길동" />
@@ -17,7 +16,6 @@ const SignUpPresenter = () => {
 
         {/* <S.SignUp>회원가입하기</S.SignUp> */}
         <S.SignUpButton>회원가입하기</S.SignUpButton>
-        {/* <S.Wrapper2/> */}
       </S.Wrapper>
     </S.Aa>
   );
