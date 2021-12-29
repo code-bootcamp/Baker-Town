@@ -7,12 +7,20 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
       <S.WholeWrapper>
         <S.IntroWrapper>
           <S.ClassIntro>
-            <S.ClassTitle>내 입맛을 돋구어줄 나만의 마카롱 만들기</S.ClassTitle>
+            <S.ClassTitle>
+              {props.myClass.className}
+            </S.ClassTitle>
 
             <S.SubComponentWrapper>
               <S.SubTheme1>
-                <S.ClassStarRate>별점</S.ClassStarRate>
+                <S.ClassStarRate>
+                  <S.Star src="/imgs/star.png"/>
+                  <S.Rate>4.9</S.Rate>
+                  <S.Rater>(1,700)</S.Rater>
+                  </S.ClassStarRate>
                 <S.CategoryTag>송파구•마카롱</S.CategoryTag>
+                <S.AreaCategory></S.AreaCategory>
+                <S.ContentsCategory></S.ContentsCategory>
               </S.SubTheme1>
 
               <S.SubTheme2>
@@ -29,28 +37,37 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
           <S.PatissierIntro>
             <S.ClassRemarksTitle>
               ㅇㅇㅇ님과 함께하는 마카롱 클래스
-              <div>{props.myClass.className}</div>
             </S.ClassRemarksTitle>
-            <S.ClassRemarksDetail>가성비로 소문난 바로 그 클래스 맞습니다</S.ClassRemarksDetail>
+            <S.ClassRemarksDetail>
+              가성비로 소문난 바로 그 클래스 맞습니다
+            </S.ClassRemarksDetail>
 
-            <S.ProgramIntro>프로그램
-              <S.ProgramGuide>
-              <div>
-                <div>프로그램 소개글</div>
-                <div>{props.myClass.contents}</div>
-              </div>
-              </S.ProgramGuide>
+            <S.ProgramIntro>
+              <S.Program>프로그램</S.Program>
+
+              <S.ProgramGuideBox>
+                <div>
+                  <div>프로그램 소개글</div>
+                  <div>{props.myClass.contents}</div>
+                </div>
+              <S.ProgramImage>
+                <div>파티셰가 넣는 예시 이미지</div>
+              </S.ProgramImage>
+              </S.ProgramGuideBox>
             </S.ProgramIntro>
-            <S.ProgramImage>
-              <div>파티셰가 넣는 예시 이미지</div>
-            </S.ProgramImage>
 
             <S.PatissierInfo>
-              <S.PatissierPhoto>사진자리</S.PatissierPhoto>
-              <S.PatissierName>홍길동 파티셰</S.PatissierName>
-              <S.ContactPatissier>연락하기</S.ContactPatissier>
-              <div>파티셰 소개글</div>
-              <div>{props.myClass.patissier}</div>
+              <S.Patissier>개설자 정보</S.Patissier>
+              
+              <S.PatissierWrapper>
+                <S.PatissierPhoto>사진자리</S.PatissierPhoto>
+                <S.PatissierName>홍길동 파티셰</S.PatissierName>
+                <S.ContactPatissier>연락하기</S.ContactPatissier>
+              </S.PatissierWrapper>
+              <S.PatissierContents>
+                <div>파티셰 소개글</div>
+                <div>{props.myClass.patissier}</div>
+              </S.PatissierContents>
             </S.PatissierInfo>
           </S.PatissierIntro>
 
