@@ -2,23 +2,15 @@ import styled from "@emotion/styled";
 
 export const Aa = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  -webkit-box-pack: start;
-  place-content: stretch flex-start;
-  margin-right: -12px;
-  margin-left: -12px;
-  width: 2100px;
-  height: 1250px;
-  border: 1px solid red;
-  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
 `;
 export const Wrapper = styled.div`
-  /* width: 1700px;
-  height: 1250px; */
-  /* border: 1px solid red; */
-  /* padding-left: 0px 240px 0px; */
-  /* float: left; */
-  /* padding: 0px 0px 10px; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px; */
 `;
 
 export const Label = styled.div`

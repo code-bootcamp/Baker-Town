@@ -15,11 +15,11 @@ const Wrapper = styled.div``;
 const Body = styled.div``;
 const BodyWrapper = styled.div``;
 
-const HIDDEN_HEADER = [`/signin`, `/signup`];
-const HIDDEN_BANNER = [`/signin`, `/signup`];
-const HIDDEN_SIDEBAR = [`/signin`, `/signup`];
-const HIDDEN_NAVIGATION = [`/signin`, `/signup`];
-const HIDDEN_FOOTER = [`/signin`, `/signup`];
+const HIDDEN_HEADER = [`/signin`, `/dashboard/main`];
+const HIDDEN_BANNER = [`/signin`, `/signup`, `/dashboard/main`];
+const HIDDEN_SIDEBAR = [`/signin`, `/signup`, `/dashboard/main`];
+const HIDDEN_NAVIGATION = [`/signin`, `/signup`, `/dashboard/main`];
+const HIDDEN_FOOTER = [`/signin`, `/dashboard/main`];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
