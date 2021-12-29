@@ -12,6 +12,8 @@ import { useState } from "react";
 import { firebaseApp } from "../_app";
 import { TimePicker } from "antd";
 import { DatePicker } from "antd";
+import { getDate, getOnlyDate } from "../../src/commons/libraries/getDate";
+import { plusMyung } from "../../src/commons/libraries/stringConcatenate";
 
 export default function FirebaseTestPage() {
   const [patissier, setPatissier] = useState("");
@@ -24,29 +26,37 @@ export default function FirebaseTestPage() {
     patissier: "",
     price: "",
     jjim: 0,
+    createdAt: "",
     reservation: {},
   });
   const [date, setDate] = useState("");
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
-  const [members, setMembers] = useState(0);
+  const [members, setMembers] = useState("");
+  const [reservationMemeber, setReservationMemeber] = useState("");
 
   // 날짜 설정
   function onChangeDate(dateString) {
-    setDate(dateString);
+    setDate(getOnlyDate(dateString));
   }
+
   // 시작 시간 설정
-  function onChangeStartTime(timeString) {
+  function onChangeStartTime(time, timeString) {
     setStart(timeString);
+    console.log(timeString);
   }
+
   // 끝 시간 설정
-  function onChangeEndTime(timeString) {
+  function onChangeEndTime(time, timeString) {
     setEnd(timeString);
+    console.log(timeString);
   }
+
   // 인원 수 설정
   const onChangeMembers = (event) => {
-    setMembers(event.target.value);
+    setMembers(plusMyung(event.target.value));
   };
+
   // 클래스 등록
   const onClickSubmit = async () => {
     // 예약 날짜 및 시간 설정
@@ -59,6 +69,8 @@ export default function FirebaseTestPage() {
         },
       },
     };
+    myInputs.createdAt = getDate(new Date());
+    console.log(myInputs);
     const bakeryClass = collection(
       // db
       getFirestore(firebaseApp),
@@ -138,12 +150,16 @@ export default function FirebaseTestPage() {
       patissier: myInputs.patissier,
       price: myInputs.price,
       jjim: myInputs.jjim,
+      createdAt: "",
       reservation: myInputs.reservation,
       [event.target.name]: event.target.value,
     });
   };
   // 찜하기 기능
   const onClickJjim = async () => {
+    // 이렇게는 안됨 무조건 1로 만들고 시작임
+    // 따라서 먼저 불러온 다음에 거기서 jjim이 뭔지 보고
+    // 그에 따라서 조건을 걸어야함
     // 디폴트는 0, 찜이 0이면 1로, 1이면 0으로
     if (myInputs.jjim === 0) {
       myInputs.jjim = 1;
@@ -160,6 +176,32 @@ export default function FirebaseTestPage() {
     // 찜하기
     const query = await updateDoc(bakeryClass, {
       jjim: Number(myInputs.jjim),
+    });
+  };
+
+  const onChangeReservationName = (event) => {
+    setReservationMemeber(event.target.value);
+  };
+
+  const onClickReservation = async () => {
+    const bakeryClass = doc(
+      // db
+      getFirestore(firebaseApp),
+      // 컬렉션
+      "class",
+      // 문서
+      "t2yn7cM9jlkmCspckBmA"
+    );
+    // 수정 내용
+    const query = await updateDoc(bakeryClass, {
+      // reservation.2021-12-23.first.'2'.push(reservationMemeber)
+      reservationMemeber: {
+        "12월 23일": {
+          first: {
+            "3명": [reservationMemeber],
+          },
+        },
+      },
     });
   };
 
@@ -216,6 +258,12 @@ export default function FirebaseTestPage() {
       <button onClick={onClickJjim}>클래스 찜</button>
       <div>파티셰 이름: {patissier}</div>
       <button onClick={onClickDeleteOne}>해당 클래스 삭제하기</button>
+      <input
+        type="text"
+        placeholder="예약하시는 분의 이름을 적어주세요"
+        onChange={onChangeReservationName}
+      />
+      <button onClick={onClickReservation}>예약하기</button>
     </>
   );
 }
