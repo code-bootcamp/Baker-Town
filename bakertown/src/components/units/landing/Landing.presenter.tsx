@@ -1,9 +1,20 @@
 import * as S from "./Landing.styles";
 import { v4 as uuidv4 } from "uuid";
+import Slider from "react-slick";
+import { ClassSubject } from "./LandingSubject";
+import { ILandingPresenterProps } from "./Landing.types";
 
-const LandingPresenter = () => {
+const LandingPresenter = (props: ILandingPresenterProps) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
   return (
     <>
+      <div style={{ fontSize: "30px" }}>aaaa</div>
       <S.TopBanner>배너자리</S.TopBanner>
       <S.Wrapper>
         <S.SubjectName>
@@ -12,7 +23,7 @@ const LandingPresenter = () => {
             <S.SubjectView>전체 인기 클래스 보기</S.SubjectView>
           </S.SubjectWrapper>
           <S.ClassesWrapper>
-            {new Array(4).fill(1).map((el) => (
+            {/* {new Array(4).fill(1).map((el) => (
               <S.ClassWrapper key={uuidv4()}>
                 <S.ClassImage />
                 <S.ClassPatissier>빵순이의 하루</S.ClassPatissier>
@@ -22,7 +33,12 @@ const LandingPresenter = () => {
                 <S.SmallLine></S.SmallLine>
                 <S.ClassPrice>50,000 원</S.ClassPrice>
               </S.ClassWrapper>
-            ))}
+            ))} */}
+            <Slider {...settings}>
+              {props.popular.map((el: any) => (
+                <ClassSubject el={el} key={uuidv4()} />
+              ))}
+            </Slider>
           </S.ClassesWrapper>
         </S.SubjectName>
         <S.SubjectName>
@@ -31,7 +47,7 @@ const LandingPresenter = () => {
             <S.SubjectView>전체 신규 클래스 보기</S.SubjectView>
           </S.SubjectWrapper>
           <S.ClassesWrapper>
-            {new Array(4).fill(1).map((el) => (
+            {/* {new Array(4).fill(1).map((el) => (
               <S.ClassWrapper key={uuidv4()}>
                 <S.ClassImage />
                 <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
@@ -39,7 +55,12 @@ const LandingPresenter = () => {
                 <S.SmallLine></S.SmallLine>
                 <S.ClassPrice>23,000 원</S.ClassPrice>
               </S.ClassWrapper>
+            ))} */}
+            {/* <Slider {...settings}> */}
+            {props.recent.map((el: any) => (
+              <ClassSubject el={el} key={uuidv4()} />
             ))}
+            {/* </Slider> */}
           </S.ClassesWrapper>
         </S.SubjectName>
         <S.EventSubject>
