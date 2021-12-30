@@ -34,6 +34,7 @@
     "react-hook-form": "^7.22.5",
     "react-slick": "^0.28.1",
     "recharts": "^2.1.8",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3",
     "uuid": "^8.3.2",
     "yup": "^0.32.11"
