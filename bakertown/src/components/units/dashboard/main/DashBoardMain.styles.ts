@@ -19,14 +19,12 @@ export const UpWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 100px;
 `;
 
 export const DownWrapper = styled.div`
   /* background-color: lightgreen */
   width: 80%;
   height: 900px;
-  padding-top: 50px;
   padding-bottom: 50px;
 `;
 
