@@ -37,34 +37,26 @@ export const SignInLabel = styled.div`
 `;
 
 export const EmailLabel = styled.div`
-  /* position: absolute; */
-  padding: 270px 370px 10px;
-  /* padding-right: 20px; */
+  padding: 270px 645px 10px;
   left: 350px;
   right: 0px;
   font-size: 25px;
-  font-weight: normal;
-
-  /* border: 1px solid rgb(239, 239, 239);
-  background-color: white; */
 `;
 
 export const PasswordLabel = styled.div`
   /* position: absolute; */
-  padding: 0px 370px 10px;
+  padding: 0px 645px 10px;
   /* padding-right: 20px; */
   left: 0px;
   right: 0px;
   font-size: 25px;
-  font-weight: normal;
 `;
 
 export const Email = styled.input`
   width: 350px;
   height: 45px;
-  margin: 0px 370px 10px;
-  left: 0px;
-  right: 0px;
+  margin: 0px 645px 10px;
+
   line-height: 35px;
 `;
 
@@ -76,7 +68,7 @@ export const EmailError = styled.div`
 export const Password = styled.input`
   width: 350px;
   height: 45px;
-  margin: 0px 370px 10px;
+  margin: 0px 645px 10px;
   left: 0px;
   right: 0px;
   line-height: 35px;
@@ -88,8 +80,9 @@ export const PasswordError = styled.div`
 `;
 
 export const SignUp = styled.div`
-  margin: 0px 370px 0px;
+  margin: 0px 645px 0px;
   font-size: 17px;
+  backgrond-color: red;
 `;
 
 export const Img = styled.img`

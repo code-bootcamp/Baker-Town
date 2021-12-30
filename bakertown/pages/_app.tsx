@@ -34,6 +34,7 @@ const firebaseConfig = {
 };
 
 export const firebaseApp = initializeApp(firebaseConfig);
+
 const HIDDEN_LAYOUT = [
   `/dashboard/main`,
   `/dashboard/productswrite`,
