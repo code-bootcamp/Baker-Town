@@ -20,7 +20,7 @@ const BodyWrapper = styled.div`
 `;
 
 const HIDDEN_HEADER = [`/signin`, `/dashboard/main`];
-const HIDDEN_BANNER = [`/signin`, `/signup`, `/dashboard/main`, `/class/list`];
+const HIDDEN_BANNER = [`/signin`, `/signup`, `/dashboard/main`, `/store`];
 // const HIDDEN_SIDEBAR = [
 //   `/`,
 //   `/signin`,
@@ -28,12 +28,7 @@ const HIDDEN_BANNER = [`/signin`, `/signup`, `/dashboard/main`, `/class/list`];
 //   `/dashboard/main`,
 //   // `/class/:id`,
 // ];
-const HIDDEN_NAVIGATION = [
-  `/signin`,
-  `/signup`,
-  `/dashboard/main`,
-  `/class/list`,
-];
+const HIDDEN_NAVIGATION = [`/signin`, `/signup`, `/dashboard/main`, `/store`];
 const HIDDEN_FOOTER = [`/signin`, `/dashboard/main`];
 
 export default function Layout(props: ILayoutProps) {

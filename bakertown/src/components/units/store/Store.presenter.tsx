@@ -1,6 +1,6 @@
-import * as S from "./ClassList.styles";
+import * as S from "./Store.styles";
 
-const ClassListPresenter = () => {
+const StorePresenter = () => {
   return (
     <>
       <S.Wrapper>
@@ -9,28 +9,28 @@ const ClassListPresenter = () => {
             <S.SubjectTitle>크리에이터 이야기</S.SubjectTitle>
             <S.SubjectView>크리에이터 이야기 전체 보기</S.SubjectView>
           </S.SubjectWrapper>
-          <S.ClassesWrapper>
+          <S.StoresWrapper>
             {new Array(3).fill(1).map((el) => (
               <S.CreatorImage />
             ))}
-          </S.ClassesWrapper>
+          </S.StoresWrapper>
         </S.CreatorSubject>
         <S.PopularSubject>
           <S.SubjectWrapper>
             <S.SubjectTitle>이번주 인기 상품</S.SubjectTitle>
             <S.SubjectView>인기 상품 전체 보기</S.SubjectView>
           </S.SubjectWrapper>
-          <S.ClassesWrapper>
+          <S.StoresWrapper>
             {new Array(3).fill(1).map((el) => (
-              <S.ClassWrapper>
+              <S.StoreWrapper>
                 <S.PopularImage />
-                <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
-                <S.ClassName>크리스마스 특집 과자집 꾸미기 세트</S.ClassName>
+                <S.Store>베이킹 월드</S.Store>
+                <S.StoreName>크리스마스 특집 과자집 꾸미기 세트</S.StoreName>
                 <S.SmallLine></S.SmallLine>
-                <S.ClassPrice>23,000 원</S.ClassPrice>
-              </S.ClassWrapper>
+                <S.StorePrice>23,000 원</S.StorePrice>
+              </S.StoreWrapper>
             ))}
-          </S.ClassesWrapper>
+          </S.StoresWrapper>
         </S.PopularSubject>
 
         <S.SubjectName>
@@ -38,17 +38,17 @@ const ClassListPresenter = () => {
             <S.SubjectTitle>이번 주 새로운 상품</S.SubjectTitle>
             <S.SubjectView>새로운 상품 전체보기</S.SubjectView>
           </S.SubjectWrapper>
-          <S.ClassesWrapper>
+          <S.StoresWrapper>
             {new Array(4).fill(1).map((el) => (
-              <S.ClassWrapper>
-                <S.ClassImage />
-                <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
-                <S.ClassName>크리스마스 특집</S.ClassName>
+              <S.StoreWrapper>
+                <S.StoreImage />
+                <S.Store>베이킹 월드</S.Store>
+                <S.StoreName>크리스마스 특집</S.StoreName>
                 <S.SmallLine></S.SmallLine>
-                <S.ClassPrice>50,000 원</S.ClassPrice>
-              </S.ClassWrapper>
+                <S.StorePrice>50,000 원</S.StorePrice>
+              </S.StoreWrapper>
             ))}
-          </S.ClassesWrapper>
+          </S.StoresWrapper>
         </S.SubjectName>
         <S.SubjectName>
           <S.SubjectWrapper>
@@ -57,23 +57,23 @@ const ClassListPresenter = () => {
             </S.SubjectTitle>
             <S.SubjectView>홈파티 요리 전체보기</S.SubjectView>
           </S.SubjectWrapper>
-          <S.ClassesWrapper>
+          <S.StoresWrapper>
             {new Array(4).fill(1).map((el) => (
-              <S.ClassWrapper>
-                <S.ClassImage />
-                <S.ClassPatissier>잔슨빌</S.ClassPatissier>
-                <S.ClassName>
+              <S.StoreWrapper>
+                <S.StoreImage />
+                <S.Store>잔슨빌</S.Store>
+                <S.StoreName>
                   [연말 초특가] 육즉 가득 담은 독일 소세지 세트
-                </S.ClassName>
+                </S.StoreName>
                 <S.SmallLine></S.SmallLine>
-                <S.ClassPrice>50,000 원</S.ClassPrice>
-              </S.ClassWrapper>
+                <S.StorePrice>50,000 원</S.StorePrice>
+              </S.StoreWrapper>
             ))}
-          </S.ClassesWrapper>
+          </S.StoresWrapper>
         </S.SubjectName>
       </S.Wrapper>
     </>
   );
 };
 
-export default ClassListPresenter;
+export default StorePresenter;
