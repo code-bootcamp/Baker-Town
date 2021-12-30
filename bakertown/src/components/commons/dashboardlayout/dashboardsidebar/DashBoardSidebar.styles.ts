@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   padding-left: 80px;
   margin: 0px;
   padding-right: 0px;
+  height: 100vh;
 `;
 
 export const ListWrapper = styled.div`

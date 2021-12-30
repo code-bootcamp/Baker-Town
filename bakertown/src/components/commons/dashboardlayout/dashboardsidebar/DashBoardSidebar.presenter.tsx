@@ -18,7 +18,7 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
               <DashboardIcon />
             </ListItemIcon>
             <ListItemText
-              primary="대시보드"
+              primary="메인 보드"
               onClick={props.onClickDashBoardMainPage}
             />
           </S.ListItems>
