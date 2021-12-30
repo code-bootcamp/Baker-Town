@@ -12,13 +12,14 @@ export const Wrapper = styled.div`
 
 export const UpWrapper = styled.div`
   width: 100%;
-  height: 100%;
+
   /* background-color: skyblue; */
   /* opacity: 30%; */
   margin: 0px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 50px;
 `;
 
 export const DownWrapper = styled.div`
