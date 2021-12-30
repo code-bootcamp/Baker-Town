@@ -7,7 +7,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
       <S.WholeWrapper>
         <S.IntroWrapper>
           <S.ClassIntro>
-            <S.ClassTitle>{props.myClass.className}</S.ClassTitle>
+            <S.ClassTitle>{props.myClass?.className}</S.ClassTitle>
 
             <S.SubComponentWrapper>
               <S.SubTheme1>
@@ -25,8 +25,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
 
               <S.SubTheme2>
                 <S.DibsOnClass>
-                  <S.Heart src="/imgs/heart.png" />
-                  100
+                  {/* <S.Heart src="/imgs/heart.png" /> */}
+                  {/* <S.Heart >❤️ 100</S.Heart> */}
+                  ❤️ 100
                 </S.DibsOnClass>
                 <S.ClassShare>
                   <S.Share src="/imgs/share.png" />
@@ -52,7 +53,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <S.ProgramGuideBox>
                 <div>
                   <div>프로그램 소개글</div>
-                  <div>{props.myClass.contents}</div>
+                  <div>{props.myClass?.contents}</div>
                 </div>
                 #.완성작품
                 <S.ProgramImage>
@@ -67,21 +68,72 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 <S.PatissierName>홍길동 파티셰</S.PatissierName>
                 <S.ContactPatissier>연락하기</S.ContactPatissier>
               </S.PatissierWrapper>
-              <S.PatissierContents>
-                <div>파티셰 소개글</div>
-                <div>{props.myClass.patissier}</div>
-              </S.PatissierContents>
+              <S.PatissierContentsBox>
+                <S.PatissierContents>
+                  <div>파티셰 소개글</div>
+                  <div>{props.myClass?.patissier}</div>
+                </S.PatissierContents>
+              </S.PatissierContentsBox>
             </S.PatissierInfo>
           </S.PatissierIntro>
 
           <S.ClassLocationInfo>
-            <S.LocationInfo></S.LocationInfo>
-            <div>위치정보</div>
-            <div>{props.myClass.address}</div>
+            <S.LocationInfo>
+              위치정보
+              <div>{props.myClass?.address}</div>
+            </S.LocationInfo>
+            <S.LocationMap></S.LocationMap>
           </S.ClassLocationInfo>
 
-          <S.ClassReviewInfo></S.ClassReviewInfo>
-          <S.ClassReview>실제 수강생 후기</S.ClassReview>
+          <S.ClassReviewInfo>
+            <S.ClassReviewTitle>실제 수강생 후기</S.ClassReviewTitle>
+            <S.ClassStarRate2>
+              <S.Star2 src="/imgs/star.png" />
+              <S.Star2 src="/imgs/star.png" />
+              <S.Star2 src="/imgs/star.png" />
+              <S.Star2 src="/imgs/star.png" />
+              <S.Star3 src="/imgs/emptystar.png" />
+              <S.Rate2>4.9</S.Rate2>
+              <S.Rater2>(1,700)</S.Rater2>
+            </S.ClassStarRate2>
+
+            {new Array(2).fill(1).map((_, index) => (
+            <div>
+            <S.ClassReview>
+              <S.ClassReviewerPhoto src="/imgs/user.png" />
+              <S.Label3>
+                <S.ClassReviewerId>클레어</S.ClassReviewerId>
+
+                <S.Label>
+                  <S.PersonalRate>
+                    <S.Star4 src="/imgs/star.png" />
+                    <S.Star4 src="/imgs/star.png" />
+                    <S.Star4 src="/imgs/star.png" />
+                    <S.Star4 src="/imgs/star.png" />
+                    <S.Star5 src="/imgs/emptystar.png" />
+                  </S.PersonalRate>
+                  <S.CreatedDate>6월 28일</S.CreatedDate>
+                  <S.Label2>100% 수강 후 작성</S.Label2>
+                </S.Label>
+              </S.Label3>
+            </S.ClassReview>
+            <S.ReviewBox></S.ReviewBox>
+
+            <S.CommentResponse>
+              <S.Comment>
+                <S.CommentIcon src="/imgs/comment.png" />
+                <S.WriteComment>댓글 달기</S.WriteComment>
+              </S.Comment>
+
+              <S.Help>
+                <S.GoodIcon src="/imgs/good.png" />
+                <S.Helpful>7명에게 도움됨</S.Helpful>
+              </S.Help>
+            </S.CommentResponse>
+            </div>
+            ))}
+          </S.ClassReviewInfo>
+          <S.ViewMore>177개의 후기 더보기</S.ViewMore>
         </S.IntroWrapper>
 
         <S.ScheduleWrapper>
