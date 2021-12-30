@@ -11,8 +11,8 @@ const HeaderPresenter = (props: IHeaderProps) => {
           </S.InnerLogo>
           <S.ClassTitle>CLASS</S.ClassTitle>
           <S.StoreTitle>STORE</S.StoreTitle>
-          {/* <S.SeacrchBar>검색</S.SeacrchBar> */}
-          <S.HeartButton>♡</S.HeartButton>
+          <S.SeacrchBar>검색</S.SeacrchBar>
+          <S.HeartButton>❤</S.HeartButton>
           <S.SinInButton>로그인</S.SinInButton>
         </S.InnerWrapper>
       </S.Wrapper>
