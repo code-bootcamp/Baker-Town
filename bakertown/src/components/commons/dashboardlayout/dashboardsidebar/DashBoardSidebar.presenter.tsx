@@ -26,11 +26,20 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
-            <ListItemText primary="클래스 등록" />
+            <ListItemText
+              primary="클래스 등록"
+              onClick={props.onClickDashBoardClassWritePage}
+            />
           </S.ListItems>
           <S.ListItems button>
             <ListItemIcon>
               <ShoppingCartIcon />
+            </ListItemIcon>
+            <ListItemText primary="클래스 관리" />
+          </S.ListItems>
+          <S.ListItems button>
+            <ListItemIcon>
+              <BarChartIcon />
             </ListItemIcon>
             <ListItemText
               primary="상품 등록"
@@ -40,12 +49,6 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
           <S.ListItems button>
             <ListItemIcon>
               <PeopleIcon />
-            </ListItemIcon>
-            <ListItemText primary="클래스 관리" />
-          </S.ListItems>
-          <S.ListItems button>
-            <ListItemIcon>
-              <BarChartIcon />
             </ListItemIcon>
             <ListItemText primary="상품 관리" />
           </S.ListItems>

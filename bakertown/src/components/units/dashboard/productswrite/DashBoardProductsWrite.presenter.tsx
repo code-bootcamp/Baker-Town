@@ -1,21 +1,9 @@
 import * as S from "./DashBoardProductsWrite.styles";
 import { IDashBoardProductsProps } from "./DashBoardProductsWrite.types";
-import {
-  collection,
-  getFirestore,
-  addDoc,
-  getDoc,
-  getDocs,
-  updateDoc,
-  doc,
-  deleteDoc,
-} from "firebase/firestore";
+import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { ChangeEvent, useState } from "react";
 import { firebaseApp } from "../../../../../pages/_app";
-import {
-  getDate,
-  getOnlyDate,
-} from "../../../../../src/commons/libraries/getDate";
+import { getDate } from "../../../../../src/commons/libraries/getDate";
 
 const DashBoardProductsPresenter = (props: IDashBoardProductsProps) => {
   const [myInputs, setMyInputs] = useState({
