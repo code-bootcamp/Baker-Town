@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const WholeWrapper = styled.div`
   width: 100%;
-  height: 2000px;
+  /* height: 2000px; */
   display: flex;
   justify-content: center;
   padding-top: 70px;
@@ -12,7 +12,7 @@ export const WholeWrapper = styled.div`
 
 export const IntroWrapper = styled.div`
   /* height: 2700px; */
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   width: 864px;
   /* margin-left: 320px */
   /* background-color: green; */
@@ -45,6 +45,9 @@ export const SubComponentWrapper = styled.div`
 export const SubTheme1 = styled.div`
   display: flex;
   padding-right: 255px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const ClassStarRate = styled.div`
@@ -69,12 +72,17 @@ export const Rater = styled.div`
   width: 57px;
   height: 25px;
   padding-left: 10px;
+  padding-top: 5px;
   font-size: 18px;
   color: rgba(95, 95, 95, 8.5);
 `;
 
 export const CategoryTag = styled.div`
-  padding-top: 28px;
+  padding-top: 32.8px;
+  width: 137px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const AreaCategory = styled.div``;
@@ -91,12 +99,33 @@ export const DibsOnClass = styled.div`
   border-radius: 5px;
   background-color: #eee;
   margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
 `;
+
+export const Heart = styled.img`
+  width: 21px;
+  height: 17.6px;
+`;
+
 export const ClassShare = styled.div`
   width: 140px;
   height: 50px;
   border-radius: 5px;
   background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+`;
+
+export const Share = styled.img`
+  width: 28px;
+  height: 28px;
 `;
 
 export const ClassImage = styled.div`
@@ -130,7 +159,6 @@ export const ClassRemarksDetail = styled.div`
 `;
 
 export const ProgramIntro = styled.div`
-  height: 300px;
   padding-top: 80px;
   font-size: 32px;
   font-weight: bold;
@@ -149,7 +177,7 @@ export const ProgramGuideBox = styled.div`
   margin-top: 50px;
   width: 864px;
   height: 980px;
-  flex-grow: 0;
+  /* flex-grow: 0; */
   border-radius: 10px;
   background-color: #f7f7f7;
 `;
@@ -157,8 +185,6 @@ export const ProgramGuideBox = styled.div`
 export const ProgramImage = styled.div``;
 
 export const PatissierInfo = styled.div`
-  height: 80px;
-  margin-top: 70px;
 `;
 
 export const Patissier = styled.div`
@@ -170,11 +196,11 @@ export const Patissier = styled.div`
 `;
 
 export const PatissierWrapper = styled.div`
-  padding-top: 30px;
+  margin-top: 30px;
   display: flex;
 `;
 
-export const PatissierPhoto = styled.div``;
+export const PatissierPhoto = styled.img``;
 export const PatissierName = styled.div``;
 
 export const ContactPatissier = styled.div``;

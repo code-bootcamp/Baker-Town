@@ -7,25 +7,31 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
       <S.WholeWrapper>
         <S.IntroWrapper>
           <S.ClassIntro>
-            <S.ClassTitle>
-              {props.myClass.className}
-            </S.ClassTitle>
+            <S.ClassTitle>{props.myClass.className}</S.ClassTitle>
 
             <S.SubComponentWrapper>
               <S.SubTheme1>
                 <S.ClassStarRate>
-                  <S.Star src="/imgs/star.png"/>
+                  <S.Star src="/imgs/star.png" />
                   <S.Rate>4.9</S.Rate>
                   <S.Rater>(1,700)</S.Rater>
-                  </S.ClassStarRate>
-                <S.CategoryTag>송파구•마카롱</S.CategoryTag>
-                <S.AreaCategory></S.AreaCategory>
-                <S.ContentsCategory></S.ContentsCategory>
+                </S.ClassStarRate>
+
+                <S.CategoryTag>
+                  <S.AreaCategory>송파구•</S.AreaCategory>
+                  <S.ContentsCategory>마카롱</S.ContentsCategory>
+                </S.CategoryTag>
               </S.SubTheme1>
 
               <S.SubTheme2>
-                <S.DibsOnClass>찜하기</S.DibsOnClass>
-                <S.ClassShare>공유하기</S.ClassShare>
+                <S.DibsOnClass>
+                  <S.Heart src="/imgs/heart.png" />
+                  100
+                </S.DibsOnClass>
+                <S.ClassShare>
+                  <S.Share src="/imgs/share.png" />
+                  공유
+                </S.ClassShare>
               </S.SubTheme2>
             </S.SubComponentWrapper>
 
@@ -41,26 +47,23 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             <S.ClassRemarksDetail>
               가성비로 소문난 바로 그 클래스 맞습니다
             </S.ClassRemarksDetail>
-
             <S.ProgramIntro>
               <S.Program>프로그램</S.Program>
-
               <S.ProgramGuideBox>
                 <div>
                   <div>프로그램 소개글</div>
                   <div>{props.myClass.contents}</div>
                 </div>
-              <S.ProgramImage>
-                <div>파티셰가 넣는 예시 이미지</div>
-              </S.ProgramImage>
+                #.완성작품
+                <S.ProgramImage>
+                  <div>파티셰가 넣는 예시 이미지</div>
+                </S.ProgramImage>
               </S.ProgramGuideBox>
             </S.ProgramIntro>
-
             <S.PatissierInfo>
               <S.Patissier>개설자 정보</S.Patissier>
-              
               <S.PatissierWrapper>
-                <S.PatissierPhoto>사진자리</S.PatissierPhoto>
+                <S.PatissierPhoto src="/imgs/user.png" />
                 <S.PatissierName>홍길동 파티셰</S.PatissierName>
                 <S.ContactPatissier>연락하기</S.ContactPatissier>
               </S.PatissierWrapper>
