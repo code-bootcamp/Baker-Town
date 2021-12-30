@@ -7,6 +7,8 @@ import {
   updateDoc,
   doc,
   deleteDoc,
+  where,
+  query,
 } from "firebase/firestore";
 import { useState } from "react";
 import { firebaseApp } from "../_app";
@@ -122,14 +124,18 @@ export default function FirebaseTestPage() {
   };
   // 모두 불러오기
   const onClickFetch = async () => {
-    const product = collection(
-      // db
-      getFirestore(firebaseApp),
-      // 컬렉션
-      "class"
+    // const product = collection(
+    //   // db
+    //   getFirestore(firebaseApp),
+    //   // 컬렉션
+    //   "class"
+    // );
+    const q = query(
+      collection(getFirestore(firebaseApp), "class"),
+      where("heart", ">", 0)
     );
     // 불러오기
-    const result = await getDocs(product);
+    const result = await getDocs(q);
     // data로 만들기
     const docs = result.docs.map((el) => el.data());
     console.log(docs);
@@ -226,7 +232,7 @@ export default function FirebaseTestPage() {
     const product = doc(
       getFirestore(firebaseApp),
       "class",
-      "UuZy5eLcMCHf1R48bQbd"
+      "makZgRpB7Vb3YxvAFOf9"
     );
     const result = await getDoc(product);
     const aaa = result.data();
@@ -239,6 +245,7 @@ export default function FirebaseTestPage() {
   return (
     <>
       <div>파이어베이스 연습</div>
+      <div>보여주기</div>
       <input
         type="text"
         onChange={onChangeInputs}
