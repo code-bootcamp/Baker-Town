@@ -1,10 +1,10 @@
+import StoreDetailPresenter from "../detail/StoreDetail.presenter";
 import { useEffect, useState } from "react";
-import ClassDetailPresenter from "./ClassDetail.presenter";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
 import { firebaseApp } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
 
-const ClassDetailContainer = () => {
+const StoreDetailContainer = () => {
   const router = useRouter();
 
   const [myStore, setMyStore] = useState({
@@ -19,8 +19,8 @@ const ClassDetailContainer = () => {
   useEffect(async () => {
     const product = doc(
       getFirestore(firebaseApp),
-      "class",
-      String(router.query.classId)
+      "store",
+      String(router.query.storeId)
     );
     const result = await getDoc(product);
     const aaa = result.data();
@@ -35,7 +35,6 @@ const ClassDetailContainer = () => {
     });
   }, []);
 
-  return <ClassDetailPresenter myStore={myStore} />;
+  return <StoreDetailPresenter myStore={myStore} />;
 };
-
-export default ClassDetailContainer;
+export default StoreDetailContainer;

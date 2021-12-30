@@ -14,10 +14,13 @@ interface ILayoutProps {
 const Wrapper = styled.div``;
 const Body = styled.div`
   width: 100%;
-`;
-const BodyWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
+// const BodyWrapper = styled.div`
+//   display: flex;
+// `;
 
 const HIDDEN_HEADER = [`/signin`, `/dashboard/main`];
 const HIDDEN_BANNER = [`/signin`, `/signup`, `/dashboard/main`, `/class/list`];
@@ -49,10 +52,10 @@ export default function Layout(props: ILayoutProps) {
       <Wrapper>
         {!isHiddenHeader && <Header />}
         {!isHiddenBanner && <Banner />}
-        <BodyWrapper>
-          <Body>{props.children}</Body>
-          {/* {!isHiddenSidebar && <Sidebar />} */}
-        </BodyWrapper>
+        {/* <BodyWrapper> */}
+        <Body>{props.children}</Body>
+        {/* {!isHiddenSidebar && <Sidebar />} */}
+        {/* </BodyWrapper> */}
         {!isHiddenNavigation && <Navigation />}
         {!isHiddenFooter && <Footer />}
       </Wrapper>

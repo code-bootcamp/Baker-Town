@@ -34,7 +34,11 @@ const firebaseConfig = {
 };
 
 export const firebaseApp = initializeApp(firebaseConfig);
-const HIDDEN_LAYOUT = [`/dashboard/main`, `/dashboard/productswrite`];
+const HIDDEN_LAYOUT = [
+  `/dashboard/main`,
+  `/dashboard/productswrite`,
+  `/dashboard/classwrite`,
+];
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
