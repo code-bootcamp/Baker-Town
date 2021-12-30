@@ -49,7 +49,7 @@ export const SubjectView = styled.div`
   padding-top: 20px;
 `;
 
-export const ClassesWrapper = styled.div`
+export const StoresWrapper = styled.div`
   display: flex;
   width: 1274px;
   justify-content: space-between;
@@ -61,18 +61,18 @@ export const SmallLine = styled.div`
   margin-bottom: 9.5px;
 `;
 
-export const ClassPrice = styled.div`
+export const StorePrice = styled.div`
   font-size: 20px;
   font-weight: bold;
 `;
 
-export const ClassPatissier = styled.div`
+export const Store = styled.div`
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 10px;
 `;
 
-export const ClassName = styled.div`
+export const StoreName = styled.div`
   width: 268px;
   font-size: 18px;
   margin-bottom: 9.5px;
@@ -80,9 +80,9 @@ export const ClassName = styled.div`
 
 export const SubjectName = styled.div``;
 
-export const ClassWrapper = styled.div``;
+export const StoreWrapper = styled.div``;
 
-export const ClassImage = styled.img`
+export const StoreImage = styled.img`
   width: 290px;
   height: 290px;
   border-radius: 10px;
