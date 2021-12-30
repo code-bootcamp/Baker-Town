@@ -1,7 +1,19 @@
+import Slider from "react-slick";
 import * as S from "./ClassDetail.styles";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
 
 const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+  }
+  
   return (
     <>
       <S.WholeWrapper>
@@ -35,10 +47,24 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.ClassShare>
               </S.SubTheme2>
             </S.SubComponentWrapper>
-
-            <S.ClassImage>
-              <div>파티셰가 넣는 소개 이미지</div>
-            </S.ClassImage>
+            <Slider {...settings}>
+              <div>
+                <S.CarouselWrapper>
+              <S.ClassImage src="/imgs/share.png"/>
+              </S.CarouselWrapper>
+              </div>
+              <div>
+                <S.CarouselWrapper>
+              <S.ClassImage src="/imgs/good.png"/>
+              </S.CarouselWrapper>
+              </div>
+              <div>
+                <S.CarouselWrapper>
+              <S.ClassImage src="/imgs/logo.png"/>
+              </S.CarouselWrapper>
+              </div>
+              </Slider>
+            
           </S.ClassIntro>
 
           <S.PatissierIntro>
@@ -98,39 +124,39 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             </S.ClassStarRate2>
 
             {new Array(2).fill(1).map((_, index) => (
-            <div>
-            <S.ClassReview>
-              <S.ClassReviewerPhoto src="/imgs/user.png" />
-              <S.Label3>
-                <S.ClassReviewerId>클레어</S.ClassReviewerId>
+              <div>
+                <S.ClassReview>
+                  <S.ClassReviewerPhoto src="/imgs/user.png" />
+                  <S.Label3>
+                    <S.ClassReviewerId>클레어</S.ClassReviewerId>
 
-                <S.Label>
-                  <S.PersonalRate>
-                    <S.Star4 src="/imgs/star.png" />
-                    <S.Star4 src="/imgs/star.png" />
-                    <S.Star4 src="/imgs/star.png" />
-                    <S.Star4 src="/imgs/star.png" />
-                    <S.Star5 src="/imgs/emptystar.png" />
-                  </S.PersonalRate>
-                  <S.CreatedDate>6월 28일</S.CreatedDate>
-                  <S.Label2>100% 수강 후 작성</S.Label2>
-                </S.Label>
-              </S.Label3>
-            </S.ClassReview>
-            <S.ReviewBox></S.ReviewBox>
+                    <S.Label>
+                      <S.PersonalRate>
+                        <S.Star4 src="/imgs/star.png" />
+                        <S.Star4 src="/imgs/star.png" />
+                        <S.Star4 src="/imgs/star.png" />
+                        <S.Star4 src="/imgs/star.png" />
+                        <S.Star5 src="/imgs/emptystar.png" />
+                      </S.PersonalRate>
+                      <S.CreatedDate>6월 28일</S.CreatedDate>
+                      <S.Label2>100% 수강 후 작성</S.Label2>
+                    </S.Label>
+                  </S.Label3>
+                </S.ClassReview>
+                <S.ReviewBox></S.ReviewBox>
 
-            <S.CommentResponse>
-              <S.Comment>
-                <S.CommentIcon src="/imgs/comment.png" />
-                <S.WriteComment>댓글 달기</S.WriteComment>
-              </S.Comment>
+                <S.CommentResponse>
+                  <S.Comment>
+                    <S.CommentIcon src="/imgs/comment.png" />
+                    <S.WriteComment>댓글 달기</S.WriteComment>
+                  </S.Comment>
 
-              <S.Help>
-                <S.GoodIcon src="/imgs/good.png" />
-                <S.Helpful>7명에게 도움됨</S.Helpful>
-              </S.Help>
-            </S.CommentResponse>
-            </div>
+                  <S.Help>
+                    <S.GoodIcon src="/imgs/good.png" />
+                    <S.Helpful>7명에게 도움됨</S.Helpful>
+                  </S.Help>
+                </S.CommentResponse>
+              </div>
             ))}
           </S.ClassReviewInfo>
           <S.ViewMore>177개의 후기 더보기</S.ViewMore>

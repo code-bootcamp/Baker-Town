@@ -129,11 +129,13 @@ export const Share = styled.img`
   height: 28px;
 `;
 
-export const ClassImage = styled.div`
+export const CarouselWrapper = styled.div``
+
+export const ClassImage = styled.img`
   /* height: 200px; */
   width: 865px;
-  height: 324px;
-  border: 1px solid gray;
+  height: 640px;
+  border-radius: 10px;
   background-color: #c4c4c4;
   margin-top: 20px;
 `;
@@ -207,7 +209,7 @@ export const PatissierWrapper = styled.div`
 export const PatissierPhoto = styled.img`
 width: 58px;
 height: 58px;
-padding-right: 9px;
+margin-right: 9px;
 `;
 
 export const PatissierName = styled.div`
@@ -238,6 +240,7 @@ cursor: pointer;
 export const PatissierContentsBox = styled.div`
 width: 861px;
 height: 131px;
+border-radius: 10px;
 background-color: #f7f7f7;
 `;
 
@@ -409,6 +412,7 @@ color: #c4c4c4;
 
 export const ViewMore = styled.div`
 margin-top: 80px;
+margin-bottom: 150px;
 width: 863px;
 height: 62px;
 display: flex;
