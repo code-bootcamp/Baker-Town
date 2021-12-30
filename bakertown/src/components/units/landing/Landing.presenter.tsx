@@ -1,15 +1,15 @@
 import * as S from "./Landing.styles";
 import { v4 as uuidv4 } from "uuid";
-import Slider from "react-slick";
 import { ClassSubject } from "./LandingSubject";
 import { ILandingPresenterProps } from "./Landing.types";
+import Slider from "@ant-design/react-slick";
 
 const LandingPresenter = (props: ILandingPresenterProps) => {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
   };
   return (
@@ -34,11 +34,11 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                 <S.ClassPrice>50,000 원</S.ClassPrice>
               </S.ClassWrapper>
             ))} */}
-            <Slider {...settings}>
-              {props.popular.map((el: any) => (
-                <ClassSubject el={el} key={uuidv4()} />
-              ))}
-            </Slider>
+            {/* <Slider {...settings}> */}
+            {props.popular.map((el: any) => (
+              <ClassSubject el={el} key={uuidv4()} />
+            ))}
+            {/* </Slider> */}
           </S.ClassesWrapper>
         </S.SubjectName>
         <S.SubjectName>
@@ -56,11 +56,11 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                 <S.ClassPrice>23,000 원</S.ClassPrice>
               </S.ClassWrapper>
             ))} */}
-            {/* <Slider {...settings}> */}
-            {props.recent.map((el: any) => (
-              <ClassSubject el={el} key={uuidv4()} />
-            ))}
-            {/* </Slider> */}
+            <Slider {...settings}>
+              {props.recent.map((el: any) => (
+                <ClassSubject el={el} key={uuidv4()} />
+              ))}
+            </Slider>
           </S.ClassesWrapper>
         </S.SubjectName>
         <S.EventSubject>
