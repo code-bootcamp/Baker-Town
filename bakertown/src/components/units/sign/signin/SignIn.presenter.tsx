@@ -32,7 +32,7 @@ const SignInPresenter = () => {
       <S.Wrapper onSubmit={handleSubmit(onClickSignIn)}>
         {/* <S.Wrapper2> */}
         <S.Label>BAKERTOWN</S.Label>
-        <S.SignInLabel>로그인</S.SignInLabel>
+        <S.SignInLabel>SingIn</S.SignInLabel>
         <S.EmailLabel>email</S.EmailLabel>
         <S.Email
           type="text"
@@ -49,9 +49,9 @@ const SignInPresenter = () => {
         <S.PasswordError>
           {formState.errors.myPassword?.message}
         </S.PasswordError>
-        <S.SignUp>회원가입하기</S.SignUp>
+        <S.SignUp>SignUp</S.SignUp>
         {/* <S.SignUp>회원가입하기</S.SignUp> */}
-        <S.SignInButton>로그인</S.SignInButton>
+        <S.SignInButton>SingIn</S.SignInButton>
         {/* <S.Wrapper2/> */}
       </S.Wrapper>
 
