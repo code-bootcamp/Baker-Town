@@ -82,7 +82,6 @@ export const PasswordError = styled.div`
 export const SignUp = styled.div`
   margin: 0px 645px 0px;
   font-size: 17px;
-  backgrond-color: red;
 `;
 
 export const Img = styled.img`
