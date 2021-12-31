@@ -17,11 +17,15 @@ const DashBoardSidebarContainer = () => {
     console.log(result);
   };
 
+  const onClickDashBoardProductReadPage = async () => {
+    await router.push("/dashboard/productsread");
+  };
   return (
     <DashBoardSidebarPresenter
       onClickDashBoardMainPage={onClickDashBoardMainPage}
       onClickDashBoardProductsWritePage={onClickDashBoardProductsWritePage}
       onClickDashBoardClassWritePage={onClickDashBoardClassWritePage}
+      onClickDashBoardProductReadPage={onClickDashBoardProductReadPage}
     />
   );
 };

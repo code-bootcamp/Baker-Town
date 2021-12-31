@@ -39,6 +39,7 @@ const HIDDEN_LAYOUT = [
   `/dashboard/main`,
   `/dashboard/productswrite`,
   `/dashboard/classwrite`,
+  `/dashboard/productsread`,
 ];
 
 function MyApp({ Component, pageProps }: AppProps) {
