@@ -34,7 +34,7 @@ export const ClassTitle = styled.div`
 export const ClassTitle2 = styled.div`
   width: 217px;
   height: 54px;
-  margin: 90px 57px 4px 0px;
+  margin: 120px -57px 4px -280px;
   font-family: NotoSans;
   font-size: 10px;
   line-height: 1.8;
