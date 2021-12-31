@@ -3,7 +3,6 @@ import { IDashBoardClassWriteProps } from "./DashBoardClassWrite.types";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { useState } from "react";
 import { firebaseApp } from "../../../../../pages/_app";
-import { TimePicker } from "antd";
 import { DatePicker } from "antd";
 import {
   getDate,
