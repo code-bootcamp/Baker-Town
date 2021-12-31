@@ -14,6 +14,7 @@ import {
 import { createUploadLink } from "apollo-upload-client";
 import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
+import { createContext, useState } from "react";
 
 const uploadLink = createUploadLink({
   uri: "https://backend04-team.codebootcamp.co.kr/team04",
@@ -41,23 +42,38 @@ const HIDDEN_LAYOUT = [
   `/dashboard/classwrite`,
 ];
 
+interface IGlobalContext {
+  categoryName: string;
+}
+
+export const GlobalContext = createContext<IGlobalContext>("");
+
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const [categoryName, setCategoryName] = useState("");
+  const myValue = {
+    categoryName,
+    setCategoryName,
+  };
+
   const isHiddenLayout = HIDDEN_LAYOUT.includes(router.asPath);
+
   return (
     <>
-      <ApolloProvider client={client}>
-        <Global styles={globalStyles} />
-        {!isHiddenLayout ? (
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        ) : (
-          <DashBoardLayout>
-            <Component {...pageProps} />
-          </DashBoardLayout>
-        )}
-      </ApolloProvider>
+      <GlobalContext.Provider value={myValue}>
+        <ApolloProvider client={client}>
+          <Global styles={globalStyles} />
+          {!isHiddenLayout ? (
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          ) : (
+            <DashBoardLayout>
+              <Component {...pageProps} />
+            </DashBoardLayout>
+          )}
+        </ApolloProvider>
+      </GlobalContext.Provider>
     </>
   );
 }

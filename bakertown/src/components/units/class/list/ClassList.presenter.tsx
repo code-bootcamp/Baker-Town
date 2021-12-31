@@ -1,5 +1,6 @@
 import { ClassSubject } from "../../landing/LandingSubject";
 import * as S from "./ClassList.styles";
+import { v4 as uuidv4 } from "uuid";
 
 const ClassListPresenter = (props) => {
   return (
@@ -31,7 +32,7 @@ const ClassListPresenter = (props) => {
           </S.ListTitle>
           <S.ListContents>
             {props.recent.map((el) => (
-              <S.ClassWrapper>
+              <S.ClassWrapper key={uuidv4()}>
                 <S.ClassImage />
                 <S.ClassPatissier>{el.patissier}</S.ClassPatissier>
                 <S.ClassName>{el.className}</S.ClassName>

@@ -4,7 +4,10 @@ export const Wrapper = styled.div`
   display: flex;
 `;
 
-export const Sidebar = styled.div``;
+export const Sidebar = styled.div`
+  margin-top: 79px;
+  margin-right: 27px;
+`;
 
 export const SideTitle = styled.div`
   width: 246px;
@@ -15,15 +18,19 @@ export const SideTitle = styled.div`
   font-weight: bold;
   padding-top: 20px;
   padding-left: 29px;
+  margin-bottom: 16px;
 `;
 
 export const SideButton = styled.div`
   font-size: 20px;
   margin-top: 5.5px;
   margin-bottom: 9.5px;
+  padding-left: 29px;
 `;
 
 export const SmallLine = styled.div`
+  width: 187px;
+  margin-left: 29px;
   border-bottom: 1px solid #e2e2e2;
 `;
 
@@ -37,6 +44,7 @@ export const ListTitle = styled.div`
 export const ListTitleText = styled.div`
   font-size: 32px;
   font-weight: bold;
+  margin-bottom: 30px;
 `;
 
 export const ListSelect = styled.select``;
