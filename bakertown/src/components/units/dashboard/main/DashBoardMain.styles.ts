@@ -25,7 +25,7 @@ export const UpWrapper = styled.div`
 export const DownWrapper = styled.div`
   /* background-color: lightgreen */
   width: 80%;
-  height: 900px;
+  height: 450px;
   padding-bottom: 50px;
 `;
 

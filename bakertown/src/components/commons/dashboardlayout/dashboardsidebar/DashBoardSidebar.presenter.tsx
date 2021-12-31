@@ -35,7 +35,10 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
             <ListItemIcon>
               <ShoppingCartIcon />
             </ListItemIcon>
-            <ListItemText primary="클래스 관리" />
+            <ListItemText
+              primary="클래스 관리"
+              onClick={props.onClickDashBoardClassReadPage}
+            />
           </S.ListItems>
           <S.ListItems button>
             <ListItemIcon>

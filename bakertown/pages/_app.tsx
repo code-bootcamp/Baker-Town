@@ -40,6 +40,7 @@ const HIDDEN_LAYOUT = [
   `/dashboard/main`,
   `/dashboard/productswrite`,
   `/dashboard/classwrite`,
+  `/dashboard/classread`,
   `/dashboard/productsread`,
 ];
 
