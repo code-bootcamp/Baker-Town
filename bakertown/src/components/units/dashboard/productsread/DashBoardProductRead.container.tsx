@@ -1,10 +1,37 @@
-import styled from "@emotion/styled";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "@firebase/firestore";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { firebaseApp } from "../../../../../pages/_app";
+import DashBoardProductsReadPresenter from "./DashBoardProductRead.presenter";
 
-const Wrapper = styled.div`
-  width: 100%;
-`;
+const DashBoardProductReadContainer = () => {
+  const router = useRouter();
+  const [recent, setRecent] = useState([]);
+  const [categoryName, setCategoryName] = useState("");
 
-export const DashBoardProductsReadContainer = () => {
-  return <Wrapper>이곳은 상품 목록 페이지입니다!! 나리야 화이팅!!!</Wrapper>;
+  useEffect(async () => {
+    setCategoryName(String(router.query.categoryName));
+    console.log(categoryName);
+    const recent = query(
+      collection(getFirestore(firebaseApp), "applyitems"),
+      // where("category", "==", categoryName)
+    );
+    let result = await getDocs(recent);
+    let docs = result.docs.map((el) => el.data());
+    console.log(docs);
+    setRecent(docs);
+  }, []);
+
+  return (
+    <>
+      <DashBoardProductsReadPresenter recent={recent} />
+    </>
+  );
 };
-export default DashBoardProductsReadContainer;
+export default DashBoardProductReadContainer;
