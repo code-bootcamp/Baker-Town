@@ -13,10 +13,14 @@ export const SideTitle = styled.div`
   border-radius: 10px;
   font-size: 24px;
   font-weight: bold;
+  padding-top: 20px;
+  padding-left: 29px;
 `;
 
 export const SideButton = styled.div`
   font-size: 20px;
+  margin-top: 5.5px;
+  margin-bottom: 9.5px;
 `;
 
 export const SmallLine = styled.div`
@@ -25,19 +29,25 @@ export const SmallLine = styled.div`
 
 export const ClassList = styled.div``;
 
-export const ListTitle = styled.div``;
+export const ListTitle = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 export const ListTitleText = styled.div`
   font-size: 32px;
   font-weight: bold;
 `;
 
-export const ListSelect = styled.div``;
+export const ListSelect = styled.select``;
+
+export const ListOption = styled.option``;
 
 export const ListContents = styled.div`
   width: 1000px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const ClassWrapper = styled.div``;
@@ -58,7 +68,7 @@ export const ClassPatissier = styled.div`
 `;
 
 export const ClassName = styled.div`
-  width: 268px;
+  width: 218px;
   font-size: 18px;
   margin-bottom: 9.5px;
 `;

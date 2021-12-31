@@ -1,7 +1,7 @@
 import { ClassSubject } from "../../landing/LandingSubject";
 import * as S from "./ClassList.styles";
 
-const ClassListPresenter = () => {
+const ClassListPresenter = (props) => {
   return (
     <>
       <S.Wrapper>
@@ -23,10 +23,14 @@ const ClassListPresenter = () => {
         <S.ClassList>
           <S.ListTitle>
             <S.ListTitleText>전체 클래스</S.ListTitleText>
-            <S.ListSelect></S.ListSelect>
+            <S.ListSelect>
+              <S.ListOption>추천순</S.ListOption>
+              <S.ListOption>인기순</S.ListOption>
+              <S.ListOption>최신순</S.ListOption>
+            </S.ListSelect>
           </S.ListTitle>
           <S.ListContents>
-            {new Array(24).fill(1).map((el) => (
+            {props.recent.map((el) => (
               <S.ClassWrapper>
                 <S.ClassImage />
                 <S.ClassPatissier>{el.patissier}</S.ClassPatissier>
