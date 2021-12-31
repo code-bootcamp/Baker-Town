@@ -14,7 +14,7 @@ import {
 import { createUploadLink } from "apollo-upload-client";
 import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const uploadLink = createUploadLink({
   uri: "https://backend04-team.codebootcamp.co.kr/team04",
@@ -52,6 +52,9 @@ export const GlobalContext = createContext<IGlobalContext>("");
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [categoryName, setCategoryName] = useState("");
+  // useEffect(() => {
+  //   setCategoryName(router.query.categoryName);
+  // }, []);
   const myValue = {
     categoryName,
     setCategoryName,

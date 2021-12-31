@@ -42,7 +42,7 @@ export const StoreTitle = styled.div`
   color: #4f3325;
 `;
 
-export const SeacrchBar = styled.div`
+export const SeacrchBar = styled.input`
   width: 380px;
   height: 48px;
   margin: 10px 20px 0px 0px;

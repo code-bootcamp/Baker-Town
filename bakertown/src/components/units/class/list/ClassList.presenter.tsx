@@ -1,29 +1,25 @@
 import { ClassSubject } from "../../landing/LandingSubject";
 import * as S from "./ClassList.styles";
 import { v4 as uuidv4 } from "uuid";
+import { IClassListPresenterProps } from "./ClassList.types";
 
-const ClassListPresenter = (props) => {
+const ClassListPresenter = (props: IClassListPresenterProps) => {
+  const sideList = ["베이킹", "마카롱", "케이크", "쿠키", "커피", "쇼콜라"];
   return (
     <>
       <S.Wrapper>
         <S.Sidebar>
-          <S.SideTitle>전체 클래스</S.SideTitle>
-          <S.SideButton>베이킹</S.SideButton>
-          <S.SmallLine></S.SmallLine>
-          <S.SideButton>마카롱</S.SideButton>
-          <S.SmallLine></S.SmallLine>
-          <S.SideButton>케이크</S.SideButton>
-          <S.SmallLine></S.SmallLine>
-          <S.SideButton>쿠키</S.SideButton>
-          <S.SmallLine></S.SmallLine>
-          <S.SideButton>커피</S.SideButton>
-          <S.SmallLine></S.SmallLine>
-          <S.SideButton>쇼콜라</S.SideButton>
-          <S.SmallLine></S.SmallLine>
+          <S.SideTitle onClick={props.classList}>전체 클래스</S.SideTitle>
+          {sideList.map((el) => (
+            <div key={uuidv4()}>
+              <S.SideButton onClick={props.sideButton(el)}>{el}</S.SideButton>
+              <S.SmallLine></S.SmallLine>
+            </div>
+          ))}
         </S.Sidebar>
         <S.ClassList>
           <S.ListTitle>
-            <S.ListTitleText>전체 클래스</S.ListTitleText>
+            <S.ListTitleText>{props.categoryName} 클래스</S.ListTitleText>
             <S.ListSelect>
               <S.ListOption>추천순</S.ListOption>
               <S.ListOption>인기순</S.ListOption>

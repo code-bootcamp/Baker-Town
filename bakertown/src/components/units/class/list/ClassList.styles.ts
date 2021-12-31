@@ -19,6 +19,10 @@ export const SideTitle = styled.div`
   padding-top: 20px;
   padding-left: 29px;
   margin-bottom: 16px;
+  :hover {
+    cursor: pointer;
+    color: #ff4d12;
+  }
 `;
 
 export const SideButton = styled.div`
@@ -26,6 +30,10 @@ export const SideButton = styled.div`
   margin-top: 5.5px;
   margin-bottom: 9.5px;
   padding-left: 29px;
+  :hover {
+    cursor: pointer;
+    color: #ff4d12;
+  }
 `;
 
 export const SmallLine = styled.div`
