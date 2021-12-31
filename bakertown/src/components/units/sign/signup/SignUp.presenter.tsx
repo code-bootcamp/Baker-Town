@@ -36,25 +36,25 @@ const SignUpPresenter = () => {
   return (
     <S.Aa>
       <S.Wrapper onSubmit={handleSubmit(onClickSignUp)}>
-        <S.Label>회원가입</S.Label>
-        <S.NameLabel>이름</S.NameLabel>
+        <S.Label>SignUp</S.Label>
+        <S.NameLabel>name</S.NameLabel>
         <S.Name type="text" placeholder="홍길동" {...register("myName")} />
         <S.Error>{formState.errors.myName?.message}</S.Error>
-        <S.EmailLabel>이메일</S.EmailLabel>
+        <S.EmailLabel>email</S.EmailLabel>
         <S.Email
           type="text"
           placeholder="example@naver.com"
           {...register("myEmail")}
         />
         <S.Error>{formState.errors.myEmail?.message}</S.Error>
-        <S.PasswordLabel>비밀번호</S.PasswordLabel>
+        <S.PasswordLabel>password</S.PasswordLabel>
         <S.Password
           type="password"
           placeholder="******"
           {...register("myPassword")}
         />
         <S.Error>{formState.errors.myPassword?.message}</S.Error>
-        <S.PasswordLabel>비밀번호 확인</S.PasswordLabel>
+        <S.PasswordLabel>passwordcheck</S.PasswordLabel>
         <S.Password
           type="password"
           placeholder="******"
@@ -62,7 +62,7 @@ const SignUpPresenter = () => {
         />
         <S.Error>{formState.errors.myPassword2?.message}</S.Error>
         {/* <S.SignUp>회원가입하기</S.SignUp> */}
-        <S.SignUpButton>회원가입하기</S.SignUpButton>
+        <S.SignUpButton>SignUp</S.SignUpButton>
       </S.Wrapper>
     </S.Aa>
   );
