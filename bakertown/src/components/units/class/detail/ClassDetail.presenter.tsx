@@ -1,4 +1,6 @@
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import * as S from "./ClassDetail.styles";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
 
@@ -11,7 +13,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    
+    allows: true,
   }
   
   return (

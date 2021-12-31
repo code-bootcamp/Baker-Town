@@ -42,9 +42,12 @@ export const SubComponentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 export const SubTheme1 = styled.div`
   display: flex;
+  
   padding-right: 255px;
+
   flex-direction: row;
   align-items: center;
 `;
@@ -78,18 +81,25 @@ export const Rater = styled.div`
 
 export const CategoryTag = styled.div`
   padding-top: 32.8px;
-  width: 137px;
+  width: 150px;
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
 
-export const AreaCategory = styled.div``;
+export const AreaCategory = styled.div`
+font-size: 24px;
+`;
 
-export const ContentsCategory = styled.div``;
+export const ContentsCategory = styled.div`
+font-size: 24px;
+`;
 
 export const SubTheme2 = styled.div`
   display: flex;
+  padding-top: 10px;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const DibsOnClass = styled.div`
@@ -129,7 +139,9 @@ export const Share = styled.img`
   height: 28px;
 `;
 
-export const CarouselWrapper = styled.div``
+export const CarouselWrapper = styled.div`
+display: flex;
+`
 
 export const ClassImage = styled.img`
   /* height: 200px; */
@@ -231,11 +243,7 @@ font-size: 16px
 font-weight: bold; 
 color: white;
 cursor: pointer;
-
-:hover {
-    background-color: #f5f2fc;
-  }
-`;
+`
 
 export const PatissierContentsBox = styled.div`
 width: 861px;
