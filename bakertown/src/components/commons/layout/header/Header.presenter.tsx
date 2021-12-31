@@ -6,12 +6,13 @@ const HeaderPresenter = (props: IHeaderProps) => {
     <>
       <S.Wrapper>
         <S.InnerWrapper>
-          <S.InnerLogo>
+          <S.InnerLogo onClick={props.logo}>
             <S.Img className="Image" alt="logo" src="/imgs/logo.png" />
           </S.InnerLogo>
-          <S.ClassTitle>CLASS</S.ClassTitle>
+          <S.ClassTitle onClick={props.class}>CLASS</S.ClassTitle>
           <S.StoreTitle>STORE</S.StoreTitle>
-          <S.SeacrchBar>검색</S.SeacrchBar>
+          <S.SeacrchBar onChange={props.keyWord} placeholder={"검색"} />
+          <button onClick={props.search}></button>
           <S.HeartButton>❤</S.HeartButton>
           <S.SinInButton>로그인</S.SinInButton>
         </S.InnerWrapper>
