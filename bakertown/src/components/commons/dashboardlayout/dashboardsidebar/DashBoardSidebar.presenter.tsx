@@ -50,7 +50,10 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
             <ListItemIcon>
               <PeopleIcon />
             </ListItemIcon>
-            <ListItemText primary="상품 관리" />
+            <ListItemText
+              primary="상품 관리"
+              onClick={props.onClickDashBoardProductReadPage}
+            />
           </S.ListItems>
           <S.ListItems button>
             <ListItemIcon>
