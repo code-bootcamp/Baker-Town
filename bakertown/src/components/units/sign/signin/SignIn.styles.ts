@@ -89,6 +89,16 @@ export const Img = styled.img`
   height: 1250px;
 `;
 
+export const SignInWithGoogle = styled.button`
+  position: absolute;
+  width: 350px;
+  height: 50px;
+  margin: 60px 370px 10px;
+  left: 0px;
+  right: 0px;
+  background: yellow;
+`;
+
 export const SignInButton = styled.button`
   position: absolute;
   width: 350px;

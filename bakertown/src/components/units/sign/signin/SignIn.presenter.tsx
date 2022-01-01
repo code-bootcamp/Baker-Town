@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormValues } from "./SingIn.types";
+import { signInWithGoogle } from "../../../../../pages/_app";
 const schema = yup.object().shape({
   myEmail: yup
     .string()
@@ -52,6 +53,9 @@ const SignInPresenter = () => {
         <S.SignUp>SignUp</S.SignUp>
         {/* <S.SignUp>회원가입하기</S.SignUp> */}
         <S.SignInButton>SingIn</S.SignInButton>
+        <S.SignInWithGoogle onClick={signInWithGoogle}>
+          signInWithGoogle
+        </S.SignInWithGoogle>
         {/* <S.Wrapper2/> */}
       </S.Wrapper>
 
