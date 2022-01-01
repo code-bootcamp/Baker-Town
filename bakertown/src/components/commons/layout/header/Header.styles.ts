@@ -8,6 +8,8 @@ export const InnerWrapper = styled.div`
   width: 1920px;
   height: 80px;
   background-color:#FBF5EF;
+  padding-top: 10px;
+  /* padding-bottom: 17px; */
 };
 `;
 
@@ -16,6 +18,9 @@ export const InnerLogo = styled.div`
   height: 42px;
   margin: 5px 70px 1px 140px;
   /* background-color: red; */
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const ClassTitle = styled.div`
@@ -28,6 +33,9 @@ export const ClassTitle = styled.div`
   font-size: 24px;
   font-weight: bold;
   color: #4f3325;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const StoreTitle = styled.div`
@@ -40,12 +48,16 @@ export const StoreTitle = styled.div`
   font-weight: bold;
   text-align: left;
   color: #4f3325;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const SeacrchBar = styled.input`
   width: 380px;
   height: 48px;
-  margin: 10px 20px 0px 0px;
+  /* margin: 10px 20px 0px 0px; */
+  margin-top: 5px;
   padding: 8px 28px 8px 40px;
   border-radius: 80px;
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
@@ -68,6 +80,9 @@ export const SinInButton = styled.div`
   font-size: 18px;
   font-weight: bold;
   color: #4f3325;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const Img = styled.img`
