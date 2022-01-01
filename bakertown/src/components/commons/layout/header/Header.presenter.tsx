@@ -12,9 +12,9 @@ const HeaderPresenter = (props: IHeaderProps) => {
           <S.ClassTitle onClick={props.class}>CLASS</S.ClassTitle>
           <S.StoreTitle>STORE</S.StoreTitle>
           <S.SeacrchBar onChange={props.keyWord} placeholder={"검색"} />
-          <button onClick={props.search}></button>
+          <button onClick={props.search}>검색</button>
           <S.HeartButton>❤</S.HeartButton>
-          <S.SinInButton>로그인</S.SinInButton>
+          <S.SinInButton onClick={props.signIn}>로그인</S.SinInButton>
         </S.InnerWrapper>
       </S.Wrapper>
     </>

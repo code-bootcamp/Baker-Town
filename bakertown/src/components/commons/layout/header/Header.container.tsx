@@ -18,6 +18,9 @@ const HeaderContainer = () => {
   const onChangeKeyWord = (event) => {
     setKeyWord(event.target.value);
   };
+  const onClickSignIn = () => {
+    router.push(`/signin`);
+  };
 
   return (
     <HeaderPresenter
@@ -25,6 +28,7 @@ const HeaderContainer = () => {
       class={onClickClass}
       search={onClickSearch}
       keyWord={onChangeKeyWord}
+      signIn={onClickSignIn}
     />
   );
 };

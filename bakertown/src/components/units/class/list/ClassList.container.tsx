@@ -4,6 +4,7 @@ import {
   getFirestore,
   query,
   where,
+  limit,
 } from "@firebase/firestore";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
@@ -31,6 +32,7 @@ const ClassListContainer = () => {
       const recent = query(
         collection(getFirestore(firebaseApp), "class"),
         where("createdAt", "!=", "")
+        // limit(3)
       );
       let result = await getDocs(recent);
       let docs = result.docs.map((el) => el.data());

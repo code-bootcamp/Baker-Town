@@ -6,4 +6,5 @@ export interface IHeaderProps {
   class: () => void;
   search: () => void;
   keyWord: (event) => void;
+  signIn: () => void;
 }

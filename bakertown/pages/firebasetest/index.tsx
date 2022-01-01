@@ -31,6 +31,7 @@ export default function FirebaseTestPage() {
     jjim: 0,
     heart: 0,
     createdAt: "",
+    location: "",
     reservation: {},
   });
   const [date, setDate] = useState("");
