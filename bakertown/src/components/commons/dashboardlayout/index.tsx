@@ -27,8 +27,8 @@ const InnerBodyWrapper = styled.div`
 
 const Body = styled.div`
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  /* overflow-y: auto;
+  overflow-x: hidden; */
 `;
 
 const Header = styled.div`

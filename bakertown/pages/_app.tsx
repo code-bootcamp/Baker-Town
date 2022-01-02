@@ -61,6 +61,7 @@ const HIDDEN_LAYOUT = [
   `/dashboard/classwrite`,
   `/dashboard/classread`,
   `/dashboard/productsread`,
+  `/dashboard/mypage`,
 ];
 
 interface IGlobalContext {

@@ -12,15 +12,16 @@ export const PageHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-left: 50px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
   border: solid 0px #e2e2e2;
-  /* background-color: #f5f3f0; */
+  background-color: #4f3325;
+  color: white;
 `;
 
 export const Title = styled.div`
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 300;
   padding-right: 30px;
 `;
 
