@@ -7,22 +7,26 @@ export const Wrapper = styled.div`
   padding-top: 100px;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
   align-items: flex-start;
   background-color: white;
-  background-color: lightgray;
-  padding-left: 80px;
+  background-color: white;
   margin: 0px;
   padding-right: 0px;
-  overscroll-behavior-y: none;
-  position: fixed;
+  background-color: #f7f0e8;
+  /* box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2); */
+  /* overscroll-behavior-y: none;
+  position: fixed; */
 `;
 
 export const ListWrapper = styled.div`
+  width: 100%;
+  padding-top: 40px;
   /* background-color: salmon; */
 `;
 
 export const ListItems = styled(ListItem)`
+  width: 100%;
+  padding-left: 30px;
   /* background-color: gray; */
 `;
 

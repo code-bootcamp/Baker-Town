@@ -26,13 +26,6 @@ const ClassListContainer = () => {
     // setCategoryName(String(router.query.categoryName));
     // console.log(categoryName);
     if (categoryName) {
-      const recent = query(
-        collection(getFirestore(firebaseApp), "class"),
-        where("category", "==", categoryName)
-      );
-      let result = await getDocs(recent);
-      let docs = result.docs.map((el) => el.data());
-      setRecent(docs);
     } else {
       // const recent = query(
       //   collection(getFirestore(firebaseApp), "class"),
@@ -63,17 +56,17 @@ const ClassListContainer = () => {
 
       const recent = query(
         collection(getFirestore(firebaseApp), "class"),
-        where("createdAt", "!=", ""),
-        orderBy("createdAt", "desc"),
-        limit(12)
+        where("createdAt", "!=", ""), //필터
+        orderBy("createdAt", "desc"), //정렬
+        limit(12) //숫자 제한
       );
       let result = await getDocs(recent);
       setFirst(result.docs.map((el) => el.data()));
-      const lastVisible = result.docs[result.docs.length - 1];
+      const lastVisible = result.docs[result.docs.length - 1]; //70번째 줄에서 본 것을 설정. 마지막으로 본 것.
       const next = query(
         collection(getFirestore(firebaseApp), "class"),
         orderBy("createdAt", "desc"),
-        startAfter(lastVisible),
+        startAfter(lastVisible), //lastvisible한거의 그 다음부터 보게 함.
         limit(12)
       );
       result = await getDocs(next);
