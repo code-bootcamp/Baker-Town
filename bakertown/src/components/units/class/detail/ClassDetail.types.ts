@@ -6,5 +6,6 @@ export interface IClassDetailPresenterProps {
      contents: string;
      patissier: string;
      price: string;
+     remarks: string;
  }   
 }

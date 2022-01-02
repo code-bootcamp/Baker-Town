@@ -30,7 +30,7 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
             {props.recent.map((el) => (
               <S.ClassWrapper key={uuidv4()}>
                 <S.ClassImage
-                // src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                src={`https://storage.googleapis.com/${el.images?.[0]}`}
                 />
                 <S.ClassPatissier>{el.patissier}</S.ClassPatissier>
                 <S.ClassName>{el.className}</S.ClassName>
