@@ -5,6 +5,9 @@ import {
   query,
   where,
   limit,
+  startAt,
+  orderBy,
+  startAfter,
 } from "@firebase/firestore";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
@@ -14,6 +17,8 @@ import ClassListPresenter from "./ClassList.presenter";
 const ClassListContainer = () => {
   const router = useRouter();
   const [recent, setRecent] = useState([]);
+  const [first, setFirst] = useState([]);
+  const [second, setSecond] = useState([]);
   const categoryName = router.query.categoryName;
   const keyWord = router.query.classSearch;
 
@@ -29,14 +34,51 @@ const ClassListContainer = () => {
       let docs = result.docs.map((el) => el.data());
       setRecent(docs);
     } else {
+      // const recent = query(
+      //   collection(getFirestore(firebaseApp), "class"),
+      //   // where("heart", "!=", ""),
+      //   orderBy("heart", "desc"),
+      //   limit(2)
+      //   // startAt("2022")
+      // );
+      // let result = await getDocs(recent);
+      // console.log(
+      //   "처음",
+      //   result.docs.map((el) => el.data())
+      // );
+      // setFirst(result.docs.map((el) => el.data()));
+      // const lastVisible = result.docs[result.docs.length - 1];
+      // console.log("last", lastVisible.data());
+      // const next = query(
+      //   collection(getFirestore(firebaseApp), "class"),
+      //   orderBy("heart", "desc"),
+      //   startAfter(lastVisible),
+      //   limit(2)
+      // );
+      // result = await getDocs(next);
+      // console.log(
+      //   "다음",
+      //   result.docs.map((el) => el.data())
+      // );
+
       const recent = query(
         collection(getFirestore(firebaseApp), "class"),
-        where("createdAt", "!=", "")
-        // limit(3)
+        where("createdAt", "!=", ""),
+        orderBy("createdAt", "desc"),
+        limit(12)
       );
       let result = await getDocs(recent);
-      let docs = result.docs.map((el) => el.data());
-      setRecent(docs);
+      setFirst(result.docs.map((el) => el.data()));
+      const lastVisible = result.docs[result.docs.length - 1];
+      const next = query(
+        collection(getFirestore(firebaseApp), "class"),
+        orderBy("createdAt", "desc"),
+        startAfter(lastVisible),
+        limit(12)
+      );
+      result = await getDocs(next);
+      setSecond(result.docs.map((el) => el.data()));
+      setRecent(first);
     }
 
     if (keyWord) {
@@ -49,7 +91,6 @@ const ClassListContainer = () => {
       setRecent(docs);
       console.log(docs);
     }
-    // console.log(docs);
   }, []);
 
   const onClickSideButton = (el: string) => () => {
@@ -60,6 +101,13 @@ const ClassListContainer = () => {
     router.push(`/class`);
   };
 
+  const onClick1 = () => {
+    setRecent(first);
+  };
+  const onClick2 = () => {
+    setRecent(second);
+  };
+
   return (
     <>
       <ClassListPresenter
@@ -67,6 +115,8 @@ const ClassListContainer = () => {
         categoryName={categoryName}
         sideButton={onClickSideButton}
         classList={onClickClassList}
+        click1={onClick1}
+        click2={onClick2}
       />
     </>
   );
