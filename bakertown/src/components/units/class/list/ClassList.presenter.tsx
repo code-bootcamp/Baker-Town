@@ -30,7 +30,7 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
             {props.recent.map((el) => (
               <S.ClassWrapper key={uuidv4()}>
                 <S.ClassImage
-                  src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                // src={`https://storage.googleapis.com/${el.images?.[0]}`}
                 />
                 <S.ClassPatissier>{el.patissier}</S.ClassPatissier>
                 <S.ClassName>{el.className}</S.ClassName>
@@ -39,6 +39,10 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
               </S.ClassWrapper>
             ))}
           </S.ListContents>
+          <div>
+            <button onClick={props.click1}>1</button>
+            <button onClick={props.click2}>2</button>
+          </div>
         </S.ClassList>
       </S.Wrapper>
     </>
