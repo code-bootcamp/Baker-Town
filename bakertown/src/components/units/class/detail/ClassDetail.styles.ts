@@ -45,7 +45,7 @@ export const SubComponentWrapper = styled.div`
 
 export const SubTheme1 = styled.div`
   display: flex;
-  
+
   padding-right: 255px;
 
   flex-direction: row;
@@ -88,11 +88,11 @@ export const CategoryTag = styled.div`
 `;
 
 export const AreaCategory = styled.div`
-font-size: 24px;
+  font-size: 24px;
 `;
 
 export const ContentsCategory = styled.div`
-font-size: 24px;
+  font-size: 24px;
 `;
 
 export const SubTheme2 = styled.div`
@@ -140,8 +140,8 @@ export const Share = styled.img`
 `;
 
 export const CarouselWrapper = styled.div`
-display: flex;
-`
+  display: flex;
+`;
 
 export const ClassImage = styled.img`
   /* height: 200px; */
@@ -179,10 +179,10 @@ export const ProgramIntro = styled.div`
   font-weight: bold;
 `;
 
-export const Program = styled.div`
+export const SubjectTitle = styled.div`
   /* padding-top: 80px; */
   margin-top: 80px;
-  width: 118px;
+  /* width: 118px; */
   height: 44px;
   font-size: 32px;
   font-weight: bold;
@@ -201,15 +201,6 @@ export const ProgramImage = styled.div``;
 
 export const PatissierInfo = styled.div``;
 
-export const Patissier = styled.div`
-  padding-top: 100px;
-  width: 156px;
-  height: 44px;
-  font-size: 32px;
-  font-weight: bold;
-  
-`;
-
 export const PatissierWrapper = styled.div`
   width: 311px;
   height: 78px;
@@ -219,16 +210,16 @@ export const PatissierWrapper = styled.div`
 `;
 
 export const PatissierPhoto = styled.img`
-width: 58px;
-height: 58px;
-margin-right: 9px;
+  width: 58px;
+  height: 58px;
+  margin-right: 9px;
 `;
 
 export const PatissierName = styled.div`
-font-size: 18px;
-font-weight: bold;
-padding-right: 20px;
-padding-top: 12.5px;
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 20px;
+  padding-top: 12.5px;
 `;
 
 export const ContactPatissier = styled.button`
@@ -243,195 +234,196 @@ font-size: 16px
 font-weight: bold; 
 color: white;
 cursor: pointer;
-`
+`;
 
 export const PatissierContentsBox = styled.div`
-width: 861px;
-height: 131px;
-border-radius: 10px;
-background-color: #f7f7f7;
+  width: 861px;
+  height: 131px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
 `;
 
 export const PatissierContents = styled.div`
-font-size: 20px;
-`
+  font-size: 20px;
+`;
 
 export const ClassLocationInfo = styled.div`
   padding-top: 10px;
-
-`; 
+`;
 
 export const LocationInfo = styled.div`
-margin-top: 70px;
-font-size: 32px;
-font-weight: bold;
-
+  margin-top: 70px;
+  font-size: 32px;
+  font-weight: bold;
 `;
 
 export const LocationMap = styled.div`
-width: 864px;
-height: 400px;
-margin-top: 50px;
-border-radius: 10px;
-background-color: #f7f7f7;
-`
+  width: 864px;
+  height: 400px;
+  margin-top: 50px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+`;
 
 export const ClassReviewInfo = styled.div``;
 
 export const ClassReviewTitle = styled.div`
-margin-top: 70px;
-font-size: 32px;
-font-weight: bold;
+  margin-top: 70px;
+  font-size: 32px;
+  font-weight: bold;
 `;
 
 export const ClassStarRate2 = styled.div`
-margin-top: 31.7px;
-display: flex;
-`
+  margin-top: 31.7px;
+  display: flex;
+`;
 
 export const Star2 = styled.img`
-width: 26.7px;
-height: 27px;
-`
+  width: 26.7px;
+  height: 27px;
+`;
 
 export const Star3 = styled.img`
-padding-top: 4.4px;
-margin-left: 2px;
-width: 19.9px;
-height: 23.5px;
-`
+  padding-top: 4.4px;
+  margin-left: 2px;
+  width: 19.9px;
+  height: 23.5px;
+`;
 
 export const Rate2 = styled.div`
-margin-left: 20px;
-margin-bottom: 2px;
-width: 35px;
-height: 33px;
-font-size: 24px;
-font-weight: bold;
-`
+  margin-left: 20px;
+  margin-bottom: 2px;
+  width: 35px;
+  height: 33px;
+  font-size: 24px;
+  font-weight: bold;
+`;
 
 export const Rater2 = styled.div`
-padding-top: 3px;
-padding-left: 20px;
-color: rgba(95, 95, 95, 0.5);
-`
+  padding-top: 3px;
+  padding-left: 20px;
+  color: rgba(95, 95, 95, 0.5);
+`;
 
 export const ClassReview = styled.div`
-margin-top: 40px;
-display: flex;
-`
+  margin-top: 40px;
+  display: flex;
+`;
 
 export const ClassReviewerPhoto = styled.img`
-width: 58px;
-height: 58px;
-`
+  width: 58px;
+  height: 58px;
+`;
 
 export const Label3 = styled.div`
-margin-left: 9px;
-`
+  margin-left: 9px;
+`;
 
 export const ClassReviewerId = styled.div`
-font-size: 18px;
-font-weight: bold;
-`
+  font-size: 18px;
+  font-weight: bold;
+`;
 
 export const Label = styled.div`
-display: flex;
-align-items: center;
-`
+  display: flex;
+  align-items: center;
+`;
 
-export const PersonalRate = styled.div`
-`
+export const PersonalRate = styled.div``;
 
 export const Star4 = styled.img`
-width: 15.8px;
-height: 16px;
-`
+  width: 15.8px;
+  height: 16px;
+`;
 
 export const Star5 = styled.img`
-padding-top: 1px;
-margin-left: 2px;
-width: 12.2px;
-height: 12.8px;
-`
+  padding-top: 1px;
+  margin-left: 2px;
+  width: 12.2px;
+  height: 12.8px;
+`;
 
 export const CreatedDate = styled.div`
-margin-left: 6px;
-font-size: 16px;
-font-weight: bold;
-color: #c4c4c4;
-`
+  margin-left: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #c4c4c4;
+`;
 
 export const Label2 = styled.div`
-margin-left: 16px;
-font-size: 16px;
-font-weight: bold;
-color: #c4c4c4;
-`
+  margin-left: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #c4c4c4;
+`;
 
 export const ReviewBox = styled.div`
-margin-top: 10px;
-width: 863px;
-height: 153px;
-border-radius: 10px;
-background-color: #f7f7f7;
-`
+  margin-top: 10px;
+  width: 863px;
+  height: 153px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+`;
 
 export const CommentResponse = styled.div`
-display: flex;
-margin-top: 24px;
-`
+  display: flex;
+  margin-top: 24px;
+`;
 
 export const Comment = styled.div`
-display: flex;
-`
+  display: flex;
+`;
 
 export const CommentIcon = styled.img`
-width: 24.2px;
-height: 22px;
-`
+  width: 24.2px;
+  height: 22px;
+`;
 
 export const WriteComment = styled.div`
-margin-left: 8px;
-font-size: 16px;
-font-weight: bold;
-color: #c4c4c4;
-`
+  margin-left: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #c4c4c4;
+`;
 
 export const Help = styled.div`
-margin-left: 21px;
-display: flex;
-`
+  margin-left: 21px;
+  display: flex;
+`;
 
 export const GoodIcon = styled.img`
-width: 26px;
-height: 25px;
-padding-bottom: 2px;
-margin-bottom: 1px;
-`
+  width: 26px;
+  height: 25px;
+  padding-bottom: 2px;
+  margin-bottom: 1px;
+`;
 
 export const Helpful = styled.div`
-margin-left: 8px;
-margin-top: 1px;
-font-size: 16px;
-font-weight: bold;
-color: #c4c4c4;
-`
+  margin-left: 8px;
+  margin-top: 1px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #c4c4c4;
+`;
 
 export const ViewMore = styled.div`
-margin-top: 80px;
-margin-bottom: 150px;
-width: 863px;
-height: 62px;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 18px;
-background-color: #f7f7f7;
-font-size: 14px;
-font-weight: bold;
-color: #9d9d9d;
-`
+  margin-top: 80px;
+  margin-bottom: 150px;
+  width: 863px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px;
+  background-color: #f7f7f7;
+  font-size: 14px;
+  font-weight: bold;
+  color: #9d9d9d;
+`;
 
 export const ScheduleWrapper = styled.div`
   width: 380px;

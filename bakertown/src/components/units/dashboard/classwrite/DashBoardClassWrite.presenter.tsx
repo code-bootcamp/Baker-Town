@@ -18,6 +18,12 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
         <input
           type="text"
           onChange={props.onChangeInputs}
+          placeholder="파티셰"
+          name="patissier"
+        />
+        <input
+          type="text"
+          onChange={props.onChangeInputs}
           placeholder="카테고리"
           name="category"
         />

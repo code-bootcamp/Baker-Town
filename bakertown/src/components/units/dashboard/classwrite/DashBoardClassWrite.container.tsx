@@ -19,6 +19,7 @@ const DashBoardMainClassWriteContainer = () => {
     price: "",
     address: "",
     createdAt: "",
+    patissier: "",
     images: [],
     applyClass: {},
   });
@@ -80,6 +81,7 @@ const DashBoardMainClassWriteContainer = () => {
       price: myInputs.price,
       applyClass: myInputs.applyClass,
       images: myInputs.images,
+      patissier: myInputs.patissier,
       createdAt: "",
       [event.target.name]: event.target.value,
     });
