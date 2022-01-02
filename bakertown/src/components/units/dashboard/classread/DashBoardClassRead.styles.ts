@@ -87,8 +87,6 @@ export const Line = styled.div`
   background-color: #bdb7b3;
 `;
 
-export const Update = styled.button`
-  margin-left: 30px;
-`;
+export const Update = styled.button``;
 
 export const Delete = styled.button``;
