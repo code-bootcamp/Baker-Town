@@ -27,10 +27,16 @@ const InnerBodyWrapper = styled.div`
 
 const Body = styled.div`
   width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 const Header = styled.div`
   width: 100%;
+  background-color: white;
+  /* position: fixed;
+  overflow-y: hidden;
+  overflow-x: hidden; */
 `;
 
 const HIDDEN_SIDEBAR = [""];

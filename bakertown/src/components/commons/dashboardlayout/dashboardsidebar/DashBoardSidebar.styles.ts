@@ -3,7 +3,7 @@ import ListItem from "@mui/material/ListItem";
 
 export const Wrapper = styled.div`
   width: 400px;
-  height: 100%;
+  height: 100vh;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,8 @@ export const Wrapper = styled.div`
   padding-left: 80px;
   margin: 0px;
   padding-right: 0px;
-  height: 100vh;
+  overscroll-behavior-y: none;
+  position: fixed;
 `;
 
 export const ListWrapper = styled.div`
