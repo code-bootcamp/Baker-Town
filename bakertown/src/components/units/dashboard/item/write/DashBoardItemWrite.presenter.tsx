@@ -1,11 +1,11 @@
-import * as S from "./DashBoardProductsWrite.styles";
-import { IDashBoardProductsProps } from "./DashBoardProductsWrite.types";
+import * as S from "./DashBoardItemWrite.styles";
+import { IDashBoardItemProps } from "./DashBoardItemWrite.types";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { ChangeEvent, useState } from "react";
-import { firebaseApp } from "../../../../../pages/_app";
-import { getDate } from "../../../../../src/commons/libraries/getDate";
+import { firebaseApp } from "../../../../../../pages/_app";
+import { getDate } from "../../../../../commons/libraries/getDate";
 
-const DashBoardProductsPresenter = (props: IDashBoardProductsProps) => {
+const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
   const [myInputs, setMyInputs] = useState({
     itemName: "",
     contents: "",
@@ -76,4 +76,4 @@ const DashBoardProductsPresenter = (props: IDashBoardProductsProps) => {
   );
 };
 
-export default DashBoardProductsPresenter;
+export default DashBoardItemPresenter;

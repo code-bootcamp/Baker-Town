@@ -1,7 +1,7 @@
-import * as S from "./DashBoardProductRead.styles";
+import * as S from "./DashBoardItemRead.styles";
 import { v4 as uuidv4 } from "uuid";
 
-const DashBoardProductsReadPresenter = (props) => {
+const DashBoardItemReadPresenter = (props) => {
   return (
     <>
       <S.Wrapper>
@@ -33,4 +33,4 @@ const DashBoardProductsReadPresenter = (props) => {
   );
 };
 
-export default DashBoardProductsReadPresenter;
+export default DashBoardItemReadPresenter;

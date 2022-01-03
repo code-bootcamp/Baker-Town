@@ -7,10 +7,10 @@ import {
 } from "@firebase/firestore";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { firebaseApp } from "../../../../../pages/_app";
-import DashBoardProductsReadPresenter from "./DashBoardProductRead.presenter";
+import { firebaseApp } from "../../../../../../pages/_app";
+import DashBoardItemReadPresenter from "./DashBoardItemRead.presenter";
 
-const DashBoardProductReadContainer = () => {
+const DashBoardItemReadContainer = () => {
   const router = useRouter();
   const [recent, setRecent] = useState([]);
   const [categoryName, setCategoryName] = useState("");
@@ -19,7 +19,7 @@ const DashBoardProductReadContainer = () => {
     setCategoryName(String(router.query.categoryName));
     console.log(categoryName);
     const recent = query(
-      collection(getFirestore(firebaseApp), "applyitems"),
+      collection(getFirestore(firebaseApp), "applyitems")
       // where("category", "==", categoryName)
     );
     let result = await getDocs(recent);
@@ -30,8 +30,8 @@ const DashBoardProductReadContainer = () => {
 
   return (
     <>
-      <DashBoardProductsReadPresenter recent={recent} />
+      <DashBoardItemReadPresenter recent={recent} />
     </>
   );
 };
-export default DashBoardProductReadContainer;
+export default DashBoardItemReadContainer;

@@ -9,7 +9,7 @@ import {
   limit,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { firebaseApp } from "../../../../../pages/_app";
+import { firebaseApp } from "../../../../../../pages/_app";
 // 선우의 만들어진 api키들이 app.tsx에 있는데 app에서 한번 가져오고 그걸 또 가져온거다.
 
 const DashBoardClassReadContainer = () => {

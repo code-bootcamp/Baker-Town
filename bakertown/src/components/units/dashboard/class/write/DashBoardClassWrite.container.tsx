@@ -1,9 +1,9 @@
 import { ChangeEvent, useState } from "react";
-import { getDate, getOnlyDate } from "../../../../commons/libraries/getDate";
-import { plusMyung } from "../../../../commons/libraries/stringConcatenate";
+import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
+import { plusMyung } from "../../../../../commons/libraries/stringConcatenate";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import DashBoardMainClassWritePresenter from "./DashBoardClassWrite.presenter";
-import { firebaseApp } from "../../../../../pages/_app";
+import { firebaseApp } from "../../../../../../pages/_app";
 import { useMutation } from "@apollo/client";
 import { UPLOAD_FILE } from "./DashBoardClassWrite.queries";
 
