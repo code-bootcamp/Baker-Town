@@ -1,4 +1,4 @@
-import DashBoardMainClassWriteContainer from "../../../src/components/units/dashboard/classwrite/DashBoardClassWrite.container";
+import DashBoardMainClassWriteContainer from "../../../../src/components/units/dashboard/class/write/DashBoardClassWrite.container";
 
 const DashBoardMainClassWritePage = () => {
   return <DashBoardMainClassWriteContainer />;
