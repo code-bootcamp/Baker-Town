@@ -115,16 +115,6 @@ export const ClassPatissier = styled.div`
   color: rgba(79, 51, 37, 0.9);
 `;
 
-export const ClassDate = styled.div`
-  width: 150px;
-  height: 55px;
-  margin: -120px 1px 9px 760px;
-  font-family: NotoSans;
-  font-size: 18px;
-  text-align: center;
-  color: #000;
-`;
-
 export const ClassName = styled.div`
   width: 419px;
   height: 33px;
@@ -136,16 +126,7 @@ export const ClassName = styled.div`
 
 export const ClassLine = styled.div`
   width: 1px;
-  height: 140px;
-  margin: -130px 29.5px 0 720px;
+  height: 145px;
+  margin: -147px 29.5px 0 720px;
   background-color: #bdb7b3;
-`;
-
-export const ClassPeople = styled.div`
-  width: 536px;
-  height: 25px;
-  margin: -40px 22px 1px 200px;
-  font-family: NotoSans;
-  font-size: 18px;
-  text-align: left;
 `;

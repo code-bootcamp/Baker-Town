@@ -40,9 +40,8 @@ const WishListPresenter = () => {
                 <S.ClassImage />
                 <S.ClassPatissier>원데이</S.ClassPatissier>
                 <S.ClassName>마카롱클래스</S.ClassName>
-                <S.ClassPeople>수강신청 인원 2명</S.ClassPeople>
                 <S.ClassLine></S.ClassLine>
-                <S.ClassDate>12월 18일(토요일) 오후7시</S.ClassDate>
+                
               </S.ClassWrapper>
             ))}
           </S.ListContents>
