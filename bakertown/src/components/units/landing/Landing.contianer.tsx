@@ -6,7 +6,7 @@ import {
   where,
 } from "@firebase/firestore";
 import { sliderClasses } from "@mui/material";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, MutableRefObject } from "react";
 import { firebaseApp } from "../../../../pages/_app";
 import LandingPresenter from "./Landing.presenter";
 
@@ -34,35 +34,21 @@ const LandingContainer = () => {
     setRecent(docs);
   }, []);
 
-  const myRef = useRef();
+  const clickLeft = () => {
+    console.log("clickLeft");
+  };
 
-  function prevClick() {
-    const slide = myRef.current;
-    console.log("slide", slide);
-    slide.scrollLeft -= slide.offsetWidth;
-
-    if (slide.scrollLeft <= 0) {
-      slide.scrollLeft = slide.offsetWidth;
-    }
-  }
-
-  function nextClick() {
-    const slide = myRef.current;
-    console.log("slide", slide);
-    slide.scrollLeft += slide.offsetWidth;
-    if (slide.scrollLeft >= 0) {
-      slide.scrollLeft = slide.offsetWidth;
-    }
-  }
+  const clickRight = () => {
+    console.log("clickRight");
+  };
 
   return (
     <>
       <LandingPresenter
         popular={popular}
         recent={recent}
-        prevClick={prevClick}
-        nextClick={nextClick}
-        myRef={myRef}
+        clickLeft={clickLeft}
+        clickRight={clickRight}
       />
     </>
   );

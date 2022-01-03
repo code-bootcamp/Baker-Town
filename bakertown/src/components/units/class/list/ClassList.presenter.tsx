@@ -21,17 +21,28 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
           <S.ListTitle>
             <S.ListTitleText>{props.categoryName} 클래스</S.ListTitleText>
             <S.ListSelect>
-              <S.ListOption>추천순</S.ListOption>
-              <S.ListOption>인기순</S.ListOption>
-              <S.ListOption>최신순</S.ListOption>
+              <S.ListOption onClick={props.clickOption} id="1">
+                추천순
+              </S.ListOption>
+              <S.ListOption onClick={props.clickOption} id="2">
+                인기순
+              </S.ListOption>
+              <S.ListOption onClick={props.clickOption} id="3">
+                최신순
+              </S.ListOption>
             </S.ListSelect>
           </S.ListTitle>
           <S.ListContents>
             {props.recent.map((el) => (
               <S.ClassWrapper key={uuidv4()}>
-                <S.ClassImage
-                src={`https://storage.googleapis.com/${el.images?.[0]}`}
-                />
+                {el.images?.[0] ? (
+                  <S.ClassImage
+                    src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                    onClick={props.classDetail(el)}
+                  />
+                ) : (
+                  <S.ClassImage onClick={props.classDetail(el)} />
+                )}
                 <S.ClassPatissier>{el.patissier}</S.ClassPatissier>
                 <S.ClassName>{el.className}</S.ClassName>
                 <S.ClassLine></S.ClassLine>
@@ -40,6 +51,9 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
             ))}
           </S.ListContents>
           <div>
+            {new Array(10).fill(1).map((el, index) => (
+              <button onClick={props.clickPage(index)}>{index + 1}</button>
+            ))}
             <button onClick={props.click1}>1</button>
             <button onClick={props.click2}>2</button>
           </div>

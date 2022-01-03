@@ -1,7 +1,7 @@
-import * as S from "./MyPage.styles";
+import * as S from "./BeforePar.styles"
 import { v4 as uuidv4 } from "uuid";
 
-const MyPagePresenter = () => {
+const BeforeParPresenter = () => {
   const myClass = ["참여 예정", "참여 완료", "나의 후기", "찜 목록"];
   const myItem = ["주문 내역", "장바구니", "내역"];
   return (
@@ -52,4 +52,4 @@ const MyPagePresenter = () => {
   );
 };
 
-export default MyPagePresenter;
+export default BeforeParPresenter;
