@@ -57,7 +57,11 @@ export const ListTitleText = styled.div`
 
 export const ListSelect = styled.div``;
 
-export const ListOption = styled.div``;
+export const ListOption = styled.div`
+  :hover {
+    cursor: pointer;
+  }
+`;
 
 export const ListContents = styled.div`
   width: 1000px;
