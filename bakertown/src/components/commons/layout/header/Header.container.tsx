@@ -19,7 +19,7 @@ const HeaderContainer = () => {
     setKeyWord(event.target.value);
   };
   const onClickSignIn = () => {
-    router.push(`/signin`);
+    router.push(`/signIn`);
   };
 
   return (

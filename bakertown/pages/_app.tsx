@@ -15,7 +15,18 @@ import { createUploadLink } from "apollo-upload-client";
 import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
 import { createContext, useEffect, useState } from "react";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+
+
 
 const uploadLink = createUploadLink({
   uri: "https://backend04-team.codebootcamp.co.kr/team04",
@@ -56,6 +67,37 @@ export const signInWithGoogle = () => {
       console.log(error);
     });
 };
+
+//firebase 회원가입
+export function signup(email: any, password: any) {
+  try {
+    return createUserWithEmailAndPassword(auth, email, password);
+  } catch {
+    alert("이미 가입된 이메일입니다!");
+  }
+}
+//firebase로그인
+export function signin(email: any, password: any) {
+  try {
+    return signInWithEmailAndPassword(auth, email, password);
+  } catch {
+    alert("이미 중복된 이메일입니다!");
+  }
+}
+//custom hook
+export function useAuth() {
+  const [currentUser, setCurrentUser] = useState();
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (user) => setCurrentUser(user));
+    return unsub;
+  }, []);
+  return currentUser;
+}
+//logout
+export function logout() {
+  return signOut(auth);
+}
 
 const HIDDEN_LAYOUT = [
   `/dashboard/main`,

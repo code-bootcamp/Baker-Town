@@ -1,7 +1,12 @@
+import { useRouter } from "next/router";
 import SignInPresenter from "./SignIn.presenter";
 
 const SignInContainer = () => {
-  return <SignInPresenter />;
+  const router = useRouter();
+  const onClickSignUp = () => {
+    router.push(`/signUp`);
+  };
+  return <SignInPresenter SignUp={onClickSignUp} />;
 };
 
 export default SignInContainer;
