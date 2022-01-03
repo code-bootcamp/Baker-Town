@@ -86,9 +86,9 @@ export const ListContents = styled.div`
 
 export const ClassWrapper = styled.div`
   width: 987px;
-  height: 180px;
+  /* height: 160px; */
   margin: 43px 323px 24px 40px;
-  padding: 20px 239px 20px 30px;
+  padding: 35px 239px 170px 30px;
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
@@ -98,7 +98,7 @@ export const ClassWrapper = styled.div`
 
 export const ClassImage = styled.img`
   width: 162px;
-  height: 140px;
+  height: 120px;
   margin: 0 19px 0 0;
   border-radius: 10px;
   background-color: yellow;
@@ -108,22 +108,26 @@ export const ClassPatissier = styled.div`
   width: 166px;
   height: 25px;
   margin: -130px 1px 9px 200px;
-  font-family: NotoSans;
   font-size: 18px;
   font-weight: bold;
   text-align: left;
   color: rgba(79, 51, 37, 0.9);
 `;
 
-export const ClassDate = styled.div`
+export const Label = styled.div`
   width: 150px;
   height: 55px;
-  margin: -120px 1px 9px 760px;
+  margin: -100px 20px 30px 755px;
   font-family: NotoSans;
   font-size: 18px;
   text-align: center;
-  color: #000;
 `;
+
+export const ReviewEdit = styled.button`
+margin-right: 10px;
+`
+
+export const ReviewDelete = styled.button``
 
 export const ClassName = styled.div`
   width: 419px;
@@ -136,16 +140,54 @@ export const ClassName = styled.div`
 
 export const ClassLine = styled.div`
   width: 1px;
-  height: 140px;
-  margin: -130px 29.5px 0 720px;
+  height: 130px;
+  margin: -150px 29.5px 20px 720px;
   background-color: #bdb7b3;
-`;
+  `;
 
-export const ClassPeople = styled.div`
+export const ClassDate = styled.div`
   width: 536px;
   height: 25px;
   margin: -40px 22px 1px 200px;
   font-family: NotoSans;
   font-size: 18px;
   text-align: left;
-`;
+  `;
+
+export const Line = styled.div`
+width: 920px;
+height: 1px;
+background-color: #bdb7b3;
+margin-top: 35px;
+`
+
+export const ClassReview = styled.div``
+
+export const SubTheme = styled.div`
+display: flex;
+align-items: center;
+`
+
+export const ClassStarRate = styled.div`
+display: flex;
+`
+
+export const PersonalRate = styled.img`
+width: 27px;
+margin-top: 12px;
+`
+
+export const CreatedDate = styled.div`
+margin-left: 16px;
+margin-top: 18px;
+color: #bdb7b3
+`
+
+export const ReviewRemarks = styled.div`
+margin-top: 20px;
+font-weight: bold;
+`
+
+export const Review = styled.div`
+margin-top: 20px;
+`
