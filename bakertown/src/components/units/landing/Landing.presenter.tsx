@@ -14,7 +14,6 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
   };
   return (
     <>
-      <div style={{ fontSize: "30px" }}>aaaa</div>
       <S.TopBanner>배너자리</S.TopBanner>
       <S.Wrapper>
         <S.SubjectName>

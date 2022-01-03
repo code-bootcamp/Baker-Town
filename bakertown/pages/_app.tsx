@@ -16,6 +16,7 @@ import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
 import { createContext, useEffect, useState } from "react";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 const uploadLink = createUploadLink({
   uri: "https://backend04-team.codebootcamp.co.kr/team04",
 });
