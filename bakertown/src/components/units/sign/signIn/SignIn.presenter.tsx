@@ -3,58 +3,57 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormValues } from "./SingIn.types";
-import { signInWithGoogle } from "../../../../../pages/_app";
-const schema = yup.object().shape({
-  myEmail: yup
-    .string()
-    .email("이메일 형식이 적합하지 않습니다.")
-    .required("반드시 입력해야하는 필수 사항입니다."),
+import { logout, signInWithGoogle } from "../../../../../pages/_app";
+import { signin } from "../../../../../pages/_app";
+import { useRouter } from "next/router";
+import { useRef, useState } from "react";
 
-  myPassword: yup
-    .string()
-    .min(4, "비밀번호는 최소4자리 이상입니다.")
-    .max(15, "비밀번호는 최대 15자리까지입니다.")
-    .required("비밀번호는 반드시 입력해주세요."),
-});
+const SignInPresenter = (props) => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const emailRef: any = useRef();
+  const passwordRef: any = useRef();
 
-const SignInPresenter = () => {
-  const { handleSubmit, register, formState } = useForm({
-    mode: "onChange",
-    resolver: yupResolver(schema),
-  });
+  async function handlesSignIn() {
+    setLoading(true);
+    try {
+      await signin(emailRef.current.value, passwordRef.current.value);
+      alert("로그인 되셨습니다.");
+      router.push("/");
+    } catch {
+      alert("이미 로그인 이메일입니다.");
+    }
+    setLoading(false);
+  }
 
-  function onClickSignIn(data: FormValues) {
-    //loginUser API 요청하기!!!
-    console.log(data);
+  async function handlesSignOut() {
+    setLoading(true);
+    try {
+      await logout();
+      alert("로그아웃 되셨습니다.");
+    } catch {
+      alert("error!!");
+    }
+    setLoading(false);
   }
 
   return (
     <S.Aa>
-      <S.Wrapper onSubmit={handleSubmit(onClickSignIn)}>
+      <S.Wrapper>
         {/* <S.Wrapper2> */}
         <S.Label>BAKERTOWN</S.Label>
         <S.SignInLabel>SingIn</S.SignInLabel>
         <S.EmailLabel>email</S.EmailLabel>
-        <S.Email
-          type="text"
-          placeholder="example@naver.com"
-          {...register("myEmail")}
-        />
-        <S.EmailError>{formState.errors.myEmail?.message}</S.EmailError>
+        <S.Email type="text" placeholder="example@naver.com" ref={emailRef} />
+
         <S.PasswordLabel>password</S.PasswordLabel>
-        <S.Password
-          type="password"
-          placeholder="******"
-          {...register("myPassword")}
-        />
-        <S.PasswordError>
-          {formState.errors.myPassword?.message}
-        </S.PasswordError>
-        <S.SignUp>SignUp</S.SignUp>
+        <S.Password type="password" placeholder="******" ref={passwordRef} />
+
+        <S.SignUp onClick={props.SignUp}>SignUp</S.SignUp>
         {/* <S.SignUp>회원가입하기</S.SignUp> */}
-        <S.SignInButton>SingIn</S.SignInButton>
-        <S.SignInWithGoogle onClick={signInWithGoogle}>
-          signInWithGoogle
+        <S.SignInButton onClick={handlesSignIn}>SingIn</S.SignInButton>
+        <S.SignInWithGoogle onClick={handlesSignOut}>
+          SingOut
         </S.SignInWithGoogle>
         {/* <S.Wrapper2/> */}
       </S.Wrapper>
