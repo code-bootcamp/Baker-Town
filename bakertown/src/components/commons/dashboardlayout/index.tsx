@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { ReactChild } from "react";
 import styled from "@emotion/styled";
-import DashBoardSidebar from "./dashboardsidebar/DashBoardSidebar.container";
-import DashBoardHeader from "./dashboardheader/DashBoardHeader.container";
+import DashBoardSidebar from "./sidebar/DashBoardSidebar.container";
+import DashBoardHeader from "./header/DashBoardHeader.container";
 
 interface ILayoutProps {
   children: ReactChild;
