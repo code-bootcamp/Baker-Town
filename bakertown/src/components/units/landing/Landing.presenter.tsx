@@ -3,8 +3,19 @@ import { v4 as uuidv4 } from "uuid";
 import { ClassSubject } from "./LandingSubject";
 import { ILandingPresenterProps } from "./Landing.types";
 import { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const LandingPresenter = (props: ILandingPresenterProps) => {
+  const settings = {
+    dots: true,
+    autoplay: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
       <S.TopBanner>배너자리</S.TopBanner>
@@ -30,21 +41,32 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             {props.popular.map((el: any) => (
               <ClassSubject el={el} key={uuidv4()} />
             ))}
-            <div className="hide-scroll" />
           </S.ClassesWrapper>
         </S.SubjectName>
         <S.SubjectName>
           <S.SubjectWrapper>
             <S.SubjectTitle>신규 클래스</S.SubjectTitle>
             <S.SubjectView>전체 신규 클래스 보기</S.SubjectView>
-          </S.SubjectWrapper>
-          <S.ClassesWrapper ref={props.mSliderRef}>
-            {props.recent.map((el: any) => (
-              <ClassSubject el={el} key={uuidv4()} />
-            ))}{" "}
+          </S.SubjectWrapper>{" "}
+          <S.ClassesWrapper>
+            <div
+              style={{
+                width: "100%",
+                height: "300px",
+              }}
+            >
+              <Slider {...settings}>
+                {/* {props.recent.map((el: any, idx) => (
+                  <div key={idx}>
+                    <div style={{ backgroundColor: "black" }}>{el}</div>
+                  </div>
+                ))} */}
+                {new Array(3).fill(1).map((el, idx) => (
+                  <div>{el}</div>
+                ))}
+              </Slider>
+            </div>
           </S.ClassesWrapper>
-          <S.BeforeIcon onClick={props.clickLeft}>앞</S.BeforeIcon>
-          <S.NextIcon onClick={props.clickRight}>뒤</S.NextIcon>
         </S.SubjectName>
         <S.EventSubject>
           <S.SubjectWrapper>
