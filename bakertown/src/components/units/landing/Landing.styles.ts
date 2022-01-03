@@ -5,10 +5,13 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 1400px;
+  max-width: 1400px;
   padding-left: 63px;
   padding-right: 63px;
+  /* position: absolute; */
   /* background-color: yellow; */
+  scroll-behavior: smooth;
+  overflow: hidden;
 `;
 
 export const SubjectName = styled.div``;
@@ -36,7 +39,9 @@ export const ClassesWrapper = styled.div`
   margin-bottom: 120px;
 `;
 
-export const ClassWrapper = styled.div``;
+export const ClassWrapper = styled.div`
+  height: 300px;
+`;
 
 export const ClassImage = styled.img`
   width: 290px;
@@ -118,5 +123,15 @@ export const TopBanner = styled.div`
 export const MiddleBanner = styled.div`
   width: 100%;
   height: 190px;
+  background-color: #e1e1e1;
+`;
+
+export const NextIcon = styled.button`
+  width: 30px;
+  background-color: #e1e1e1;
+`;
+
+export const BeforeIcon = styled.button`
+  width: 30px;
   background-color: #e1e1e1;
 `;

@@ -3,9 +3,9 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
   width: 100%;
   padding-left: 72px;
-  margin-top: 70px;
+  margin-top: 90px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -104,7 +104,7 @@ export const ImageModifyButton = styled.button`
   border: none;
   cursor: pointer;
   margin-top: 32px;
-  background-color: gray;
+  background-color: #4f3325;
 `;
 export const UserName = styled.div`
   font-family: NotoSans-Bold;
@@ -119,7 +119,7 @@ export const Input = styled.input`
   height: 48px;
   padding-left: 10px;
   background: #e0e0e0;
-  border: 1px solid #5b5bc0;
+  border: 1px solid #4f3325;
   border-radius: 8px;
   background-color: #ffffff;
 `;
@@ -149,7 +149,7 @@ export const ModifyNameButton = styled.button`
   line-height: 22px;
   color: #ffffff;
   cursor: pointer;
-  background-color: gray;
+  background-color: #4f3325;
 `;
 
 export const ModifyButton = styled.button`
@@ -165,7 +165,7 @@ export const ModifyButton = styled.button`
   line-height: 22px;
   color: #ffffff;
   cursor: pointer;
-  background-color: gray;
+  background-color: #4f3325;
 `;
 
 export const RightWrapper = styled.div`

@@ -12,6 +12,9 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
   return (
     <>
       <S.Wrapper>
+        <S.LogoWrapper>
+          <S.LogoImage src="/imgs/logo.png"></S.LogoImage>
+        </S.LogoWrapper>
         <S.ListWrapper>
           <S.ListItems button>
             <ListItemIcon>
