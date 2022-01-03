@@ -34,13 +34,19 @@ export const SubjectView = styled.div`
 
 export const ClassesWrapper = styled.div`
   display: flex;
+  height: 300px;
   width: 1274px;
   justify-content: space-between;
   margin-bottom: 120px;
 `;
 
+export const SlickWrapper = styled.div`
+  background-color: pink;
+  display: flex;
+`;
+
 export const ClassWrapper = styled.div`
-  height: 300px;
+  height: 100px;
 `;
 
 export const ClassImage = styled.img`
