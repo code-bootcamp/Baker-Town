@@ -2,16 +2,9 @@ import * as S from "./Landing.styles";
 import { v4 as uuidv4 } from "uuid";
 import { ClassSubject } from "./LandingSubject";
 import { ILandingPresenterProps } from "./Landing.types";
-import Slider from "@ant-design/react-slick";
+import { useState } from "react";
 
 const LandingPresenter = (props: ILandingPresenterProps) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
   return (
     <>
       <S.TopBanner>배너자리</S.TopBanner>
@@ -33,11 +26,11 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                 <S.ClassPrice>50,000 원</S.ClassPrice>
               </S.ClassWrapper>
             ))} */}
-            {/* <Slider {...settings}> */}
+
             {props.popular.map((el: any) => (
               <ClassSubject el={el} key={uuidv4()} />
             ))}
-            {/* </Slider> */}
+            <div className="hide-scroll" />
           </S.ClassesWrapper>
         </S.SubjectName>
         <S.SubjectName>
@@ -45,24 +38,13 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             <S.SubjectTitle>신규 클래스</S.SubjectTitle>
             <S.SubjectView>전체 신규 클래스 보기</S.SubjectView>
           </S.SubjectWrapper>
-          <S.ClassesWrapper>
-            <S.BeforeIcon onClick={props.prevClick}>앞</S.BeforeIcon>
-            {new Array(4).fill(1).map((el) => (
-              <S.ClassWrapper ref={props.myRef} key={uuidv4()}>
-                <S.ClassImage />
-                <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
-                <S.ClassName>르벵 쿠키 베이킹 클래스</S.ClassName>
-                <S.SmallLine></S.SmallLine>
-                <S.ClassPrice>23,000 원</S.ClassPrice>
-              </S.ClassWrapper>
-            ))}
-            <S.NextIcon onClick={props.nextClick}>뒤</S.NextIcon>
-            {/* <Slider {...settings}> */}
+          <S.ClassesWrapper ref={props.mSliderRef}>
             {props.recent.map((el: any) => (
               <ClassSubject el={el} key={uuidv4()} />
-            ))}
-            {/* </Slider> */}
+            ))}{" "}
           </S.ClassesWrapper>
+          <S.BeforeIcon onClick={props.clickLeft}>앞</S.BeforeIcon>
+          <S.NextIcon onClick={props.clickRight}>뒤</S.NextIcon>
         </S.SubjectName>
         <S.EventSubject>
           <S.SubjectWrapper>
