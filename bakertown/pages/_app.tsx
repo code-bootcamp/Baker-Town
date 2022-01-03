@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import "antd/dist/antd.css";
 import type { AppProps } from "next/app";
 import Layout from "../src/components/commons/layout/index";
-import DashBoardLayout from "../src/components/commons/dashboardlayout/index";
+import DashBoardLayout from "../src/components/commons/dashboardLayout/index";
 import { initializeApp } from "firebase/app";
 import { useRouter } from "next/router";
 import {
