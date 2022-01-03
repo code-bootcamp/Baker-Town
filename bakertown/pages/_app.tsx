@@ -58,10 +58,10 @@ export const signInWithGoogle = () => {
 
 const HIDDEN_LAYOUT = [
   `/dashboard/main`,
-  `/dashboard/productswrite`,
-  `/dashboard/classwrite`,
-  `/dashboard/classread`,
-  `/dashboard/productsread`,
+  `/dashboard/class/write`,
+  `/dashboard/class/read`,
+  `/dashboard/item/write`,
+  `/dashboard/item/read`,
   `/dashboard/mypage`,
 ];
 

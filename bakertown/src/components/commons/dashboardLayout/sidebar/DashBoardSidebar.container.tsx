@@ -8,21 +8,21 @@ const DashBoardSidebarContainer = () => {
     await router.push("/dashboard/main");
   };
 
-  const onClickDashBoardProductsWritePage = async () => {
-    await router.push("/dashboard/productswrite");
-  };
-
   const onClickDashBoardClassWritePage = async () => {
-    const result = await router.push("/dashboard/classwrite");
+    const result = await router.push("/dashboard/class/write");
     console.log(result);
   };
 
-  const onClickDashBoardProductReadPage = async () => {
-    await router.push("/dashboard/productsread");
+  const onClickDashBoardClassReadPage = async () => {
+    await router.push("/dashboard/class/read");
   };
 
-  const onClickDashBoardClassReadPage = async () => {
-    await router.push("/dashboard/classread");
+  const onClickDashBoardProductsWritePage = async () => {
+    await router.push("/dashboard/item/write");
+  };
+
+  const onClickDashBoardProductReadPage = async () => {
+    await router.push("/dashboard/item/read");
   };
 
   const onClickDashBoardMyPagePage = async () => {
