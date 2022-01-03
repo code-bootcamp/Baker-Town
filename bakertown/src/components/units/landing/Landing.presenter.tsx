@@ -47,20 +47,22 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             <S.SubjectView>전체 신규 클래스 보기</S.SubjectView>
           </S.SubjectWrapper>
           <S.ClassesWrapper>
-            {/* {new Array(4).fill(1).map((el) => (
-              <S.ClassWrapper key={uuidv4()}>
+            <S.BeforeIcon onClick={props.prevClick}>앞</S.BeforeIcon>
+            {new Array(4).fill(1).map((el) => (
+              <S.ClassWrapper ref={props.myRef} key={uuidv4()}>
                 <S.ClassImage />
                 <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
                 <S.ClassName>르벵 쿠키 베이킹 클래스</S.ClassName>
                 <S.SmallLine></S.SmallLine>
                 <S.ClassPrice>23,000 원</S.ClassPrice>
               </S.ClassWrapper>
-            ))} */}
-            <Slider {...settings}>
-              {props.recent.map((el: any) => (
-                <ClassSubject el={el} key={uuidv4()} />
-              ))}
-            </Slider>
+            ))}
+            <S.NextIcon onClick={props.nextClick}>뒤</S.NextIcon>
+            {/* <Slider {...settings}> */}
+            {props.recent.map((el: any) => (
+              <ClassSubject el={el} key={uuidv4()} />
+            ))}
+            {/* </Slider> */}
           </S.ClassesWrapper>
         </S.SubjectName>
         <S.EventSubject>
