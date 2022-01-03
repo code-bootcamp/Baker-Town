@@ -1,4 +1,4 @@
-import MyPageContainer from "../../src/components/units/mypage/MyPage.container";
+import MyPageContainer from "../../src/components/units/myPage/MyPage.container";
 
 const MyPage = () => {
   return <MyPageContainer />;
