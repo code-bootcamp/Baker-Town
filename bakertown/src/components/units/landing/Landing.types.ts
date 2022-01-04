@@ -1,6 +1,7 @@
 import { MutableRefObject } from "react";
 
 export interface ILandingPresenterProps {
+  el: any;
   recent: any;
   prevClick: () => void;
   nextClick: () => void;

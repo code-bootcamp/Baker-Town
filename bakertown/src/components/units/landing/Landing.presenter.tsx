@@ -8,12 +8,59 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const LandingPresenter = (props: ILandingPresenterProps) => {
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "red" }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className="slick-arrow"
+        style={{ ...style, display: "block" }}
+        onClick={onClick}
+      >
+        {"이전"}
+        {/* <img src={ARROW_left} alt="arrow_left"/> */}
+      </div>
+    );
+  }
+
   const settings = {
-    dots: true,
-    autoplay: true,
+    dots: false,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    autoplay: false,
     infinite: true,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "20px",
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "20px",
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -52,18 +99,17 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             <div
               style={{
                 width: "100%",
-                height: "300px",
+                height: "1200px",
               }}
             >
               <Slider {...settings}>
-                {/* {props.recent.map((el: any, idx) => (
-                  <div key={idx}>
-                    <div style={{ backgroundColor: "black" }}>{el}</div>
-                  </div>
-                ))} */}
-                {new Array(3).fill(1).map((el, idx) => (
-                  <div>{el}</div>
+                {props.recent.map((el: any) => (
+                  <ClassSubject el={el} key={uuidv4()} />
                 ))}
+
+                {/* {new Array(3).fill(1).map((el, idx) => (
+                  <div>{el}</div>
+                ))} */}
               </Slider>
             </div>
           </S.ClassesWrapper>

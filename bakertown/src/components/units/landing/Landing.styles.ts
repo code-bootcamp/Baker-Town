@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   display: flex;
+  height: 2000px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: baseline;
   align-items: center;
   max-width: 1400px;
   padding-left: 63px;
@@ -19,12 +20,18 @@ export const SubjectName = styled.div``;
 export const SubjectWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 120px;
 `;
 
 export const SubjectTitle = styled.div`
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 30px;
+`;
+
+export const NewYearSubjectWrapper = styled.div`
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 300px;
 `;
 
 export const SubjectView = styled.div`
@@ -32,12 +39,48 @@ export const SubjectView = styled.div`
   padding-top: 20px;
 `;
 
+export const FamousSubjectWrapper = styled.div`
+  display: flex;
+  width: 1274px;
+  justify-content: space-between;
+  margin-top: 140px;
+`;
+
 export const ClassesWrapper = styled.div`
   display: flex;
   height: 300px;
   width: 1274px;
   justify-content: space-between;
+
+  margin-top: 30px;
+`;
+
+export const NewClassesWrapper = styled.div`
+  display: flex;
+
+  width: 1274px;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  /* background-color: red; */
+`;
+
+export const HotClassesWrapper = styled.div`
+  display: flex;
+  margin-top: 30px;
+  width: 1274px;
+  justify-content: space-between;
+
+  /* background-color: red; */
+`;
+
+export const SpecialClassesWrapper = styled.div`
+  display: flex;
+
+  width: 1274px;
+  justify-content: space-between;
   margin-bottom: 120px;
+  /* background-color: red; */
 `;
 
 export const SlickWrapper = styled.div`
@@ -46,7 +89,7 @@ export const SlickWrapper = styled.div`
 `;
 
 export const ClassWrapper = styled.div`
-  height: 100px;
+  height: 400px;
 `;
 
 export const ClassImage = styled.img`
