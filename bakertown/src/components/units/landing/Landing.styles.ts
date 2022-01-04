@@ -1,14 +1,51 @@
 import styled from "@emotion/styled";
 
+export const HeaderWrapper = styled.div`
+  display: flex;
+  padding-left: 323px;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  transition: 500ms;
+  background-color: transparent;
+`;
+
+export const Img = styled.img`
+  width: 115px;
+  height: 42px;
+`;
+
+export const TopBanner = styled.div`
+  width: 100vw;
+  height: 680px;
+  box-shadow: inset 56px -39px 60px 35px rgba(0, 0, 0, 0.1);
+  background-image: url("/imgs/landing/banner02.jpg");
+  background-position: center center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  /* background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 30%
+  ); */
+`;
+
 export const Wrapper = styled.div`
   display: flex;
-  height: 2000px;
+  width: 1920px;
+  /* height: 2000px; */
   flex-direction: column;
   justify-content: baseline;
   align-items: center;
-  max-width: 1400px;
-  padding-left: 63px;
-  padding-right: 63px;
+  padding-left: 323px;
+  padding-right: 323px;
   /* position: absolute; */
   /* background-color: yellow; */
   scroll-behavior: smooth;
@@ -51,7 +88,6 @@ export const ClassesWrapper = styled.div`
   height: 300px;
   width: 1274px;
   justify-content: space-between;
-
   margin-top: 30px;
 `;
 
@@ -161,12 +197,6 @@ export const CategoryButton = styled.button`
   background-color: #c4c4c4;
   font-size: 32px;
   font-weight: bold;
-`;
-
-export const TopBanner = styled.div`
-  width: 100%;
-  height: 600px;
-  background-color: #e1e1e1;
 `;
 
 export const MiddleBanner = styled.div`

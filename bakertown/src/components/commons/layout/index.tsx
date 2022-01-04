@@ -22,13 +22,15 @@ const Body = styled.div`
 //   display: flex;
 // `;
 
-const HIDDEN_HEADER = [`/signIn`, `/dashboard/main`];
+const HIDDEN_HEADER = [`/signIn`, `/dashboard/main`, `/`];
+
 const HIDDEN_BANNER = [
   `/signIn`,
   `/signup`,
   `/dashboard/main`,
   `/store`,
   `/mypage`,
+  `/`,
 ];
 // const HIDDEN_SIDEBAR = [
 //   `/`,
@@ -58,7 +60,7 @@ export default function Layout(props: ILayoutProps) {
     <>
       <Wrapper>
         {!isHiddenHeader && <Header />}
-        {!isHiddenBanner && <Banner />}
+        {/* {!isHiddenBanner && <Banner />} */}
         {/* <BodyWrapper> */}
         <Body>{props.children}</Body>
         {/* {!isHiddenSidebar && <Sidebar />} */}
