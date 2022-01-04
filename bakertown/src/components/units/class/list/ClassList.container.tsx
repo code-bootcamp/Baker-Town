@@ -35,7 +35,10 @@ const ClassListContainer = () => {
       limit(12) // 데이터 불러오는 개수 제한
     );
     const firstResult = await getDocs(first);
-    console.log(firstResult.docs.map((el) => el.id));
+    console.log(
+      "찬밍",
+      firstResult.docs.map((el) => el.ref.firestore.app)
+    );
     setFirst(firstResult.docs.map((el) => el.data()));
     const lastVisible = firstResult.docs[firstResult.docs.length - 1]; // 70번째 줄에서 본 것을 설정. 마지막으로 본 것.
     const second = query(
@@ -53,7 +56,6 @@ const ClassListContainer = () => {
         return data;
       })
     );
-
     //
     //
     //
@@ -203,6 +205,8 @@ const ClassListContainer = () => {
 
     console.log(option);
   };
+
+  const aaa = () => {};
 
   return (
     <>
