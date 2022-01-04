@@ -22,9 +22,9 @@ const Body = styled.div`
 //   display: flex;
 // `;
 
-const HIDDEN_HEADER = [`/signin`, `/dashboard/main`];
+const HIDDEN_HEADER = [`/signIn`, `/dashboard/main`];
 const HIDDEN_BANNER = [
-  `/signin`,
+  `/signIn`,
   `/signup`,
   `/dashboard/main`,
   `/store`,
@@ -38,8 +38,8 @@ const HIDDEN_BANNER = [
 //   // `/class/:id`,
 // ];
 const HIDDEN_NAVIGATION = [
-  `/signin`,
-  `/signup`,
+  `/signIn`,
+  `/signUp`,
   `/dashboard/main`,
   `/store`,
   `/mypage`,
