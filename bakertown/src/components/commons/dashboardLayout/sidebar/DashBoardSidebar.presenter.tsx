@@ -13,7 +13,10 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
     <>
       <S.Wrapper>
         <S.LogoWrapper>
-          <S.LogoImage src="/imgs/logo.png"></S.LogoImage>
+          <S.LogoImage
+            src="/imgs/logo.png"
+            onClick={props.onClickLandingPage}
+          ></S.LogoImage>
         </S.LogoWrapper>
         <S.ListWrapper>
           <S.ListItems button>

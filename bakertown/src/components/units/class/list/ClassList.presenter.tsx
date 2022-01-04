@@ -51,9 +51,9 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
             ))}
           </S.ListContents>
           <div>
-            {new Array(10).fill(1).map((el, index) => (
+            {/* {new Array(10).fill(1).map((el, index) => (
               <button onClick={props.clickPage(index)}>{index + 1}</button>
-            ))}
+            ))} */}
             <button onClick={props.click1}>1</button>
             <button onClick={props.click2}>2</button>
           </div>

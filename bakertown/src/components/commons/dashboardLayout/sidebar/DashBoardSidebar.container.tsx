@@ -28,6 +28,11 @@ const DashBoardSidebarContainer = () => {
   const onClickDashBoardMyPagePage = async () => {
     await router.push("/dashboard/mypage");
   };
+
+  const onClickLandingPage = () => {
+    router.push(`/`);
+  };
+
   return (
     <DashBoardSidebarPresenter
       onClickDashBoardMainPage={onClickDashBoardMainPage}
@@ -36,6 +41,7 @@ const DashBoardSidebarContainer = () => {
       onClickDashBoardProductReadPage={onClickDashBoardProductReadPage}
       onClickDashBoardClassReadPage={onClickDashBoardClassReadPage}
       onClickDashBoardMyPagePage={onClickDashBoardMyPagePage}
+      onClickLandingPage={onClickLandingPage}
     />
   );
 };
