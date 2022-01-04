@@ -19,7 +19,7 @@ const DashBoardItemReadContainer = () => {
     setCategoryName(String(router.query.categoryName));
     console.log(categoryName);
     const recent = query(
-      collection(getFirestore(firebaseApp), "applyitems")
+      collection(getFirestore(firebaseApp), "item")
       // where("category", "==", categoryName)
     );
     let result = await getDocs(recent);

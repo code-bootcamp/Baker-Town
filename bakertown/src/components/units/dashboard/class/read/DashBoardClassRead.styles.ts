@@ -87,6 +87,16 @@ export const Line = styled.div`
   background-color: #bdb7b3;
 `;
 
-export const Update = styled.button``;
+export const CRUD = styled.div`
+margin-top: 50px;
+margin-left: 30px;
+`
 
-export const Delete = styled.button``;
+export const Update = styled.button`
+  height: 30px;
+`;
+
+export const Delete = styled.button`
+  height: 30px;
+  margin-left: 10px;
+`;

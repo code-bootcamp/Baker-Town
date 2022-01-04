@@ -4,7 +4,7 @@ import * as S from "./DashBoardClassRead.styles";
 const DashBoardClassReadPresenter = (props: IDashBoardClassReadProps) => {
   return (
     <S.Wrapper>
-      {props.classes.map((el) => (
+      {props.classes.map((el: any) => (
         <S.ComponentWrapper>
           <S.ImageWrapper></S.ImageWrapper>
           <S.DetailWrapper>
@@ -13,8 +13,10 @@ const DashBoardClassReadPresenter = (props: IDashBoardClassReadProps) => {
             <S.ClassMember>수강신청 인원 2명</S.ClassMember>
           </S.DetailWrapper>
           <S.Line></S.Line>
-          <S.Update>수정하기</S.Update>
-          <S.Delete>삭제하기</S.Delete>
+          <S.CRUD>
+            <S.Update>수정하기</S.Update>
+            <S.Delete onClick={props.onClickDelete(el)}>삭제하기</S.Delete>
+          </S.CRUD>
         </S.ComponentWrapper>
       ))}
       {/* <button onClick={fetchMore}>More</button> */}

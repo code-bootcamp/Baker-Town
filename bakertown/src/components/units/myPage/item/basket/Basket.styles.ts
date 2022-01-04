@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   width: 1920px;
   display: flex;
   margin-left: 324px;
+  margin-bottom: 300px;
 `;
 
 export const MyPoint = styled.div`
@@ -56,9 +57,9 @@ export const SmallLine = styled.div`
   border-bottom: 1px solid #e2e2e2;
 `;
 
-export const ClassList = styled.div``;
+export const BasketList = styled.div``;
 
-export const ListTitle = styled.div`
+export const BasketTitle = styled.div`
   display: flex;
   margin: 69px 14px 11px 40px;
   font-family: Roboto;
@@ -66,16 +67,32 @@ export const ListTitle = styled.div`
   font-weight: bold;
 `;
 
-export const ListTitleText = styled.div`
+export const BasketTitleText = styled.div`
   font-size: 32px;
   font-weight: bold;
 `;
 
-export const ListSelect = styled.select``;
+export const Basket = styled.div`
+  display: flex;
+`;
+export const BasketCheckBoxContainer = styled.div`
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  border: 1px solid black;
+`;
 
-export const ListOption = styled.option``;
+export const BasketCheckBox = styled.div`
+display: inline-block;
+/* width: 2rem;
+height: 2rem;
+border-radius: 0.4rem; 
+transition: all 150ms;  */
+`;
 
-export const ListContents = styled.div`
+export const BasketContents = styled.div`
   width: 1000px;
   display: flex;
   flex-direction: column;
@@ -84,19 +101,18 @@ export const ListContents = styled.div`
   /* background-color: red; */
 `;
 
-export const ClassWrapper = styled.div`
+export const ItemWrapper = styled.div`
   width: 987px;
-  height: 180px;
+  height: 250px;
   margin: 43px 323px 24px 40px;
-  padding: 20px 239px 20px 30px;
-  object-fit: contain;
+  padding: 50px 230px 20px 30px;
   border-radius: 10px;
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
   border: solid 0.5px #e2e2e2;
   background-color: #fff;
 `;
 
-export const ClassImage = styled.img`
+export const ItemImage = styled.img`
   width: 162px;
   height: 140px;
   margin: 0 19px 0 0;
@@ -115,37 +131,48 @@ export const ClassPatissier = styled.div`
   color: rgba(79, 51, 37, 0.9);
 `;
 
-export const ClassDate = styled.div`
-  width: 150px;
-  height: 55px;
-  margin: -120px 1px 9px 760px;
-  font-family: NotoSans;
-  font-size: 18px;
-  text-align: center;
-  color: #000;
+// export const ClassDate = styled.div`
+//   width: 150px;
+//   height: 55px;
+//   margin: -120px 1px 9px 760px;
+//   font-family: NotoSans;
+//   font-size: 18px;
+//   text-align: center;
+//   color: #000;
+// `;
+
+export const ItemInfo = styled.div`
+  display: flex;
 `;
 
-export const ClassName = styled.div`
+export const ItemName = styled.div`
   width: 419px;
   height: 33px;
-  margin: 9px 0px 68px 200px;
+  margin: -88px 0px 68px 250px;
   font-family: NotoSans;
   font-size: 24px;
   text-align: left;
 `;
 
-export const ClassLine = styled.div`
-  width: 1px;
-  height: 140px;
-  margin: -130px 29.5px 0 720px;
-  background-color: #bdb7b3;
+export const ItemPrice = styled.div`
+  margin: -88px 0px 68px 200px;
 `;
 
-export const ClassPeople = styled.div`
-  width: 536px;
-  height: 25px;
-  margin: -40px 22px 1px 200px;
-  font-family: NotoSans;
-  font-size: 18px;
-  text-align: left;
-`;
+export const NumberSelect = styled.div``;
+
+export const NumberOption = styled.div``;
+// export const ClassLine = styled.div`
+//   width: 1px;
+//   height: 140px;
+//   margin: -130px 29.5px 0 720px;
+//   background-color: #bdb7b3;
+// `;
+
+// export const ClassPeople = styled.div`
+//   width: 536px;
+//   height: 25px;
+//   margin: -40px 22px 1px 200px;
+//   font-family: NotoSans;
+//   font-size: 18px;
+//   text-align: left;
+// `;

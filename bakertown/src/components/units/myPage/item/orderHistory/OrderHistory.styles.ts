@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   width: 1920px;
   display: flex;
   margin-left: 324px;
+  margin-top: 69px;
 `;
 
 export const MyPoint = styled.div`
@@ -23,9 +24,7 @@ export const Title = styled.div`
   font-size: 32px;
   font-weight: bold;
 `;
-export const Sidebar = styled.div`
-  padding-top: 80px;
-`;
+export const Sidebar = styled.div``;
 
 export const SiderbarMyClass = styled.div`
   padding-left: 30px;
@@ -56,11 +55,12 @@ export const SmallLine = styled.div`
   border-bottom: 1px solid #e2e2e2;
 `;
 
-export const ClassList = styled.div``;
+export const OrderList = styled.div`
+  margin-left: 40px;
+`;
 
 export const ListTitle = styled.div`
   display: flex;
-  margin: 69px 14px 11px 40px;
   font-family: Roboto;
   font-size: 32px;
   font-weight: bold;
@@ -80,72 +80,81 @@ export const ListContents = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-top: 51px;
   /* justify-content: space-between; */
   /* background-color: red; */
 `;
 
-export const ClassWrapper = styled.div`
+export const Order = styled.div`
+  margin-bottom: 40px;
+`;
+
+export const OrderDate = styled.div``;
+
+export const OrderWrapper = styled.div`
   width: 987px;
   height: 180px;
-  margin: 43px 323px 24px 40px;
-  padding: 20px 239px 20px 30px;
-  object-fit: contain;
   border-radius: 10px;
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
   border: solid 0.5px #e2e2e2;
-  background-color: #fff;
+  display: flex;
+  padding-left: 30px;
+  padding-top: 20px;
 `;
 
-export const ClassImage = styled.img`
+export const ItemImage = styled.div`
   width: 162px;
   height: 140px;
-  margin: 0 19px 0 0;
   border-radius: 10px;
   background-color: yellow;
 `;
 
-export const ClassPatissier = styled.div`
-  width: 166px;
-  height: 25px;
-  margin: -130px 1px 9px 200px;
-  font-family: NotoSans;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
-  color: rgba(79, 51, 37, 0.9);
+export const ItemInfoWrapper = styled.div`
+  width: 536px;
+  margin-left: 20px;
+  margin-right: 33px;
+  padding-top: 20px;
 `;
 
-export const ClassDate = styled.div`
-  width: 150px;
-  height: 55px;
-  margin: -120px 1px 9px 760px;
-  font-family: NotoSans;
-  font-size: 18px;
-  text-align: center;
-  color: #000;
+export const ItemInfo = styled.div`
+  display: flex;
+  margin-top: 48px;
 `;
 
-export const ClassName = styled.div`
+export const ItemPrice = styled.div`
+  margin-right: 20px;
+`;
+
+export const ItemAmount = styled.div``;
+
+export const AfterOrder = styled.div`
+margin-top: 24px;
+margin-left: 80px;
+`;
+
+export const TrackingShipment = styled.button`
+  width: 110px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+`;
+
+export const WriteReview = styled.button`
+  width: 110px;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+`;
+
+export const ItemName = styled.div`
   width: 419px;
   height: 33px;
-  margin: 9px 0px 68px 200px;
-  font-family: NotoSans;
   font-size: 24px;
-  text-align: left;
 `;
 
-export const ClassLine = styled.div`
+export const OrderLine = styled.div`
   width: 1px;
   height: 140px;
-  margin: -130px 29.5px 0 720px;
   background-color: #bdb7b3;
-`;
-
-export const ClassPeople = styled.div`
-  width: 536px;
-  height: 25px;
-  margin: -40px 22px 1px 200px;
-  font-family: NotoSans;
-  font-size: 18px;
-  text-align: left;
 `;
