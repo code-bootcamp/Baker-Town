@@ -1,7 +1,11 @@
+import { useAuth } from "../../../../../pages/_app";
+import AvatarPage from "../../avatar/AvatarPage";
 import * as S from "./Header.styles";
 import { IHeaderProps } from "./Header.types";
 
 const HeaderPresenter = (props: IHeaderProps) => {
+  const currentuser: any = useAuth();
+
   return (
     <>
       <S.Wrapper>
@@ -14,7 +18,11 @@ const HeaderPresenter = (props: IHeaderProps) => {
           <S.SeacrchBar onChange={props.keyWord} placeholder={"검색"} />
           <button onClick={props.search}>검색</button>
           <S.HeartButton>❤</S.HeartButton>
-          <S.SinInButton onClick={props.signIn}>로그인</S.SinInButton>
+          {currentuser?.uid ? (
+            <AvatarPage></AvatarPage>
+          ) : (
+            <S.SinInButton onClick={props.signIn}>로그인</S.SinInButton>
+          )}
         </S.InnerWrapper>
       </S.Wrapper>
     </>

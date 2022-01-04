@@ -47,5 +47,5 @@ export const getOnlyDate = (myDate: any) => {
     month = month.join("");
   }
 
-  return `${month}월 ${day}일`; // 2021-11-10
+  return `${month}/${day}`; // 01/21
 };

@@ -28,6 +28,9 @@ export const LogoWrapper = styled.div`
 
 export const LogoImage = styled.img`
   width: 65%;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const ListWrapper = styled.div`

@@ -173,6 +173,7 @@ export default function FirebaseTestPage() {
       price: myInputs.price,
       jjim: myInputs.jjim,
       heart: myInputs.heart,
+      location: myInputs.location,
       createdAt: "",
       reservation: myInputs.reservation,
       [event.target.name]: event.target.value,

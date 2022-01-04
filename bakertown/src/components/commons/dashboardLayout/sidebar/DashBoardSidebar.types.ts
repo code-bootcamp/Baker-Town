@@ -7,6 +7,7 @@ export interface IDashBoardSidebarProps {
   onClickDashBoardClassWritePage: () => void;
   onClickDashBoardClassReadPage: () => void;
   onClickDashBoardMyPagePage: () => void;
+  onClickLandingPage: () => void;
 
   //   children: ReactChild;
 }

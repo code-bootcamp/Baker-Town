@@ -5,6 +5,7 @@ import * as S from "./ClassDetail.styles";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
+import { map } from "@firebase/util";
 
 declare const window: typeof globalThis & {
   kakao: any;
@@ -152,7 +153,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <S.SubjectTitle>개설자 정보</S.SubjectTitle>
               <S.PatissierWrapper>
                 <S.PatissierPhoto src="/imgs/user.png" />
-                <S.PatissierName>{props.myClass?.patissier} 파티셰</S.PatissierName>
+                <S.PatissierName>
+                  {props.myClass?.patissier} 파티셰
+                </S.PatissierName>
                 <S.ContactPatissier>연락하기</S.ContactPatissier>
               </S.PatissierWrapper>
               <S.PatissierContentsBox>
@@ -221,7 +224,33 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
           <S.ViewMore>177개의 후기 더보기</S.ViewMore>
         </S.IntroWrapper>
         <S.ScheduleWrapper>
-          <S.ClassSchedule></S.ClassSchedule>
+          <S.ClassSchedule>
+            <div>
+              <div>
+                {/* <div>{Object.keys(props.myClass?.applyClass[0])[1]}</div>
+                <div>{Object.keys(props.myClass?.applyClass[0])[0]}</div> */}
+                <div
+                  onClick={props.selectDate}
+                  id={props.myClass?.applyClass?.[0]?.["01/08"]?.first?.date}
+                >
+                  {props.myClass?.applyClass?.[0]?.["01/08"]?.first?.date}
+                </div>
+                <div
+                  onClick={props.selectDate}
+                  id={props.myClass?.applyClass?.[0]?.["01/09"]?.first?.date}
+                >
+                  {props.myClass?.applyClass?.[0]?.["01/09"]?.first?.date}
+                </div>
+                <div
+                  onClick={props.selectDate}
+                  id={props.myClass?.applyClass?.[0]?.["01/10"]?.first?.date}
+                >
+                  {props.myClass?.applyClass?.[0]?.["01/10"]?.first?.date}
+                </div>
+              </div>
+              <button onClick={props.reservation}>예약하기</button>
+            </div>
+          </S.ClassSchedule>
         </S.ScheduleWrapper>
       </S.WholeWrapper>
     </>

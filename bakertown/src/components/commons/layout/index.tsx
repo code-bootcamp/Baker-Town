@@ -22,13 +22,15 @@ const Body = styled.div`
 //   display: flex;
 // `;
 
-const HIDDEN_HEADER = [`/signin`, `/dashboard/main`];
+const HIDDEN_HEADER = [`/signIn`, `/dashboard/main`, `/`];
+
 const HIDDEN_BANNER = [
-  `/signin`,
+  `/signIn`,
   `/signup`,
   `/dashboard/main`,
   `/store`,
   `/mypage`,
+  `/`,
 ];
 // const HIDDEN_SIDEBAR = [
 //   `/`,
@@ -38,8 +40,8 @@ const HIDDEN_BANNER = [
 //   // `/class/:id`,
 // ];
 const HIDDEN_NAVIGATION = [
-  `/signin`,
-  `/signup`,
+  `/signIn`,
+  `/signUp`,
   `/dashboard/main`,
   `/store`,
   `/mypage`,
@@ -58,7 +60,7 @@ export default function Layout(props: ILayoutProps) {
     <>
       <Wrapper>
         {!isHiddenHeader && <Header />}
-        {!isHiddenBanner && <Banner />}
+        {/* {!isHiddenBanner && <Banner />} */}
         {/* <BodyWrapper> */}
         <Body>{props.children}</Body>
         {/* {!isHiddenSidebar && <Sidebar />} */}

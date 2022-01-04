@@ -1,9 +1,9 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useContext, useState } from "react";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 import { plusMyung } from "../../../../../commons/libraries/stringConcatenate";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import DashBoardMainClassWritePresenter from "./DashBoardClassWrite.presenter";
-import { firebaseApp } from "../../../../../../pages/_app";
+import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { useMutation } from "@apollo/client";
 import { UPLOAD_FILE } from "./DashBoardClassWrite.queries";
 
@@ -20,9 +20,12 @@ const DashBoardMainClassWriteContainer = () => {
     address: "",
     createdAt: "",
     patissier: "",
+    patissierId: "",
     images: [],
-    applyClass: {},
+    applyClass: [],
   });
+
+  const currentUser: any = useAuth();
 
   const [uploadFile] = useMutation(UPLOAD_FILE);
 
@@ -47,15 +50,38 @@ const DashBoardMainClassWriteContainer = () => {
   // 클래스 등록
   const onClickSubmit = async () => {
     // 등록 날짜 및 시간 설정
-    myInputs.applyClass = {
-      [date]: {
+    const aaa = {
+      ["01/08"]: {
         first: {
-          first: {
-            members: members,
-          },
+          start: "1400",
+          end: "1600",
+          member: 3,
+          membersName: ["철수", "영희"],
+        },
+      },
+      ["01/09"]: {
+        first: {
+          start: "1400",
+          end: "1600",
+          member: 3,
+          membersName: ["나리"],
+        },
+      },
+      ["01/10"]: {
+        first: {
+          start: "1400",
+          end: "1600",
+          member: 3,
+          membersName: ["찬미"],
         },
       },
     };
+    myInputs.applyClass.push(
+      // "ㅇㅇㅇ"
+      aaa
+    );
+    // myInputs.applyClass.push("aaa");
+    myInputs.patissierId = currentUser?.uid;
     myInputs.createdAt = getDate(new Date());
     console.log(myInputs);
     const dashboardclasswrite = collection(
@@ -82,6 +108,7 @@ const DashBoardMainClassWriteContainer = () => {
       applyClass: myInputs.applyClass,
       images: myInputs.images,
       patissier: myInputs.patissier,
+      patissierId: myInputs.patissierId,
       createdAt: "",
       [event.target.name]: event.target.value,
     });
