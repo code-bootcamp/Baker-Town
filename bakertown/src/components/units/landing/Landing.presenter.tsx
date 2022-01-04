@@ -2,7 +2,7 @@ import * as S from "./Landing.styles";
 import { v4 as uuidv4 } from "uuid";
 import { ClassSubject } from "./LandingSubject";
 import { ILandingPresenterProps } from "./Landing.types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -65,7 +65,12 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
 
   return (
     <>
-      <S.TopBanner>배너자리</S.TopBanner>
+      <S.HeaderWrapper>
+        <S.Img className="Image" alt="logo" src="/imgs/landing/header01.png" />
+      </S.HeaderWrapper>
+
+      <S.TopBanner></S.TopBanner>
+
       <S.Wrapper>
         <S.SubjectName>
           <S.SubjectWrapper>
@@ -73,7 +78,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             <S.SubjectView>전체 인기 클래스 보기</S.SubjectView>
           </S.SubjectWrapper>
           <S.ClassesWrapper>
-            {/* {new Array(4).fill(1).map((el) => (
+            {/* {new Array(4).fill( 1).map((el) => (
               <S.ClassWrapper key={uuidv4()}>
                 <S.ClassImage />
                 <S.ClassPatissier>빵순이의 하루</S.ClassPatissier>
