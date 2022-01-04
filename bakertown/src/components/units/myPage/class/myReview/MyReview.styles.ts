@@ -180,7 +180,7 @@ margin-top: 12px;
 export const CreatedDate = styled.div`
 margin-left: 16px;
 margin-top: 18px;
-color: #bdb7b3
+color: #bdb7b3;
 `
 
 export const ReviewRemarks = styled.div`

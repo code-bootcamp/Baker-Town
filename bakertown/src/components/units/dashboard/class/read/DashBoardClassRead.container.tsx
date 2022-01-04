@@ -4,6 +4,8 @@ import {
   getFirestore,
   query,
   getDocs,
+  doc,
+  deleteDoc,
   orderBy,
   startAfter,
   limit,
@@ -16,18 +18,32 @@ const DashBoardClassReadContainer = () => {
   const [docs, setDocs] = useState([]);
 
   useEffect(async () => {
-    const product = query(
-      collection(getFirestore(firebaseApp), "dashboardclasswrite")
-    );
+    const product = query(collection(getFirestore(firebaseApp), "class"));
     const data = await getDocs(product);
     // data로 만들기
-    const docs = data.docs.map((el) => el.data());
+    const docs = data.docs.map((el) => {
+      const data = el.data();
+      data.id = el.id;
+      return data;
+    });
     console.log(docs);
     setDocs(docs);
     console.log("날짜나 불러볼라고", docs?.[0].createdAt);
   }, []);
 
-  return <DashBoardClassReadPresenter classes={docs} />;
+  const onClickDelete = (el) => async () => {
+    await deleteDoc(doc(getFirestore(firebaseApp), "class", el.id));
+  };
+
+  return (
+    <>
+      <DashBoardClassReadPresenter
+        classes={docs}
+        onClickDelete={onClickDelete}
+      />
+      ;
+    </>
+  );
 };
 
 export default DashBoardClassReadContainer;

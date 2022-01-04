@@ -1,52 +1,41 @@
 import * as S from "./OrderHistory.styles";
 import { v4 as uuidv4 } from "uuid";
+import SideNavigationContainer from "../../sideNav/SideNavigation.container";
 
 const OrderHistoryPresenter = () => {
   const myClass = ["참여 예정", "참여 완료", "나의 후기", "찜 목록"];
-  const myItem = ["주문 내역", "장바구니", "내역"];
+  const myItem = ["주문 내역", "장바구니", "리뷰"];
   return (
     <>
       <S.Wrapper>
-        <S.Sidebar>
-          <S.Title>
-            베이키키
-            <img className="Image" alt="mypage" src="/imgs/mypage.png" />
-          </S.Title>
-          <S.SmallLine></S.SmallLine>
-          <S.MyPointTitle>MY POINT</S.MyPointTitle>
-          <S.MyPoint>2018P</S.MyPoint>
-          <S.SideTitle>CLASS</S.SideTitle>
-          {myClass.map((el) => (
-            <S.SiderbarMyClass key={uuidv4()}>
-              <S.SideButton>{el}</S.SideButton>
-              <S.SmallLine></S.SmallLine>
-            </S.SiderbarMyClass>
-          ))}
-          <S.SideTitle>ITEM</S.SideTitle>
-          {myItem.map((el) => (
-            <S.SiderbarMyItem key={uuidv4()}>
-              <S.SideButton>{el}</S.SideButton>
-              <S.SmallLine></S.SmallLine>
-            </S.SiderbarMyItem>
-          ))}
-        </S.Sidebar>
-        <S.ClassList>
+        <SideNavigationContainer />
+        <S.OrderList>
           <S.ListTitle>
             <S.ListTitleText>ITEM | 주문 내역</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
             {new Array(4).fill(1).map((el) => (
-              <S.ClassWrapper>
-                <S.ClassImage />
-                <S.ClassPatissier>원데이</S.ClassPatissier>
-                <S.ClassName>마카롱클래스</S.ClassName>
-                <S.ClassPeople>수강신청 인원 2명</S.ClassPeople>
-                <S.ClassLine></S.ClassLine>
-                <S.ClassDate>12월 18일(토요일) 오후7시</S.ClassDate>
-              </S.ClassWrapper>
+              <S.Order>
+                <S.OrderDate>2021년 12월 8일 주문</S.OrderDate>
+                <S.OrderWrapper>
+                  <S.ItemImage />
+                  <S.ItemInfoWrapper>
+                    <S.ItemName>만능 오븐</S.ItemName>
+                    <S.ItemInfo>
+                      <S.ItemPrice>369,000원</S.ItemPrice>
+                      <S.ItemAmount>1개</S.ItemAmount>
+                    </S.ItemInfo>
+                  </S.ItemInfoWrapper>
+                  <S.OrderLine></S.OrderLine>
+                  <S.AfterOrder>
+                  <S.TrackingShipment>배송조회</S.TrackingShipment>
+                  <S.WriteReview>리뷰 작성하기</S.WriteReview>
+                  </S.AfterOrder>
+                </S.OrderWrapper>
+              </S.Order>
             ))}
           </S.ListContents>
-        </S.ClassList>
+        </S.OrderList>
       </S.Wrapper>
     </>
   );

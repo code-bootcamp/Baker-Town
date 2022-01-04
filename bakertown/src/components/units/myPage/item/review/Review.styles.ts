@@ -56,7 +56,7 @@ export const SmallLine = styled.div`
   border-bottom: 1px solid #e2e2e2;
 `;
 
-export const ClassList = styled.div``;
+export const OrderList = styled.div``;
 
 export const ListTitle = styled.div`
   display: flex;
@@ -84,11 +84,11 @@ export const ListContents = styled.div`
   /* background-color: red; */
 `;
 
-export const ClassWrapper = styled.div`
+export const OrderWrapper = styled.div`
   width: 987px;
-  height: 180px;
+  /* height: 160px; */
   margin: 43px 323px 24px 40px;
-  padding: 20px 239px 20px 30px;
+  padding: 35px 239px 190px 30px;
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
@@ -96,7 +96,7 @@ export const ClassWrapper = styled.div`
   background-color: #fff;
 `;
 
-export const ClassImage = styled.img`
+export const ItemImage = styled.img`
   width: 162px;
   height: 140px;
   margin: 0 19px 0 0;
@@ -115,33 +115,26 @@ export const ClassPatissier = styled.div`
   color: rgba(79, 51, 37, 0.9);
 `;
 
-export const ClassDate = styled.div`
-  width: 150px;
-  height: 55px;
-  margin: -120px 1px 9px 760px;
-  font-family: NotoSans;
-  font-size: 18px;
-  text-align: center;
-  color: #000;
+export const ItemInfo = styled.div`
+  display: flex;
 `;
 
-export const ClassName = styled.div`
-  width: 419px;
+export const ItemName = styled.div`
   height: 33px;
-  margin: 9px 0px 68px 200px;
+  margin-left: 200px;
+  margin-bottom: 60px;
   font-family: NotoSans;
   font-size: 24px;
   text-align: left;
 `;
 
-export const ClassLine = styled.div`
-  width: 1px;
-  height: 140px;
-  margin: -130px 29.5px 0 720px;
-  background-color: #bdb7b3;
+export const ItemAmount = styled.div`
+  margin-left: 10px;
+  font-size: 24px;
+  text-align: left;
 `;
 
-export const ClassPeople = styled.div`
+export const OrderDate = styled.div`
   width: 536px;
   height: 25px;
   margin: -40px 22px 1px 200px;
@@ -149,3 +142,64 @@ export const ClassPeople = styled.div`
   font-size: 18px;
   text-align: left;
 `;
+
+export const Line = styled.div`
+  width: 920px;
+  height: 1px;
+  background-color: #bdb7b3;
+  margin-top: 35px;
+`;
+
+export const ItemReview = styled.div``;
+
+export const SubTheme = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const ItemStarRate = styled.div`
+  display: flex;
+`;
+
+export const PersonalRate = styled.img`
+  width: 27px;
+  margin-top: 12px;
+`;
+
+export const CreatedDate = styled.div`
+  margin-left: 16px;
+  margin-top: 18px;
+  color: #bdb7b3;
+`;
+
+export const ReviewRemarks = styled.div`
+  margin-top: 20px;
+  font-weight: bold;
+`;
+
+export const Review = styled.div`
+  margin-top: 20px;
+  
+`;
+
+export const OrderLine = styled.div`
+  width: 1px;
+  height: 130px;
+  margin: -150px 29.5px 20px 720px;
+  background-color: #bdb7b3;
+`;
+
+export const Label = styled.div`
+  width: 150px;
+  height: 55px;
+  margin: -100px 20px 30px 755px;
+  font-family: NotoSans;
+  font-size: 18px;
+  text-align: center;
+`;
+
+export const ReviewEdit = styled.button`
+  margin-right: 10px;
+`;
+
+export const ReviewDelete = styled.button``;

@@ -21,7 +21,7 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
       // db
       getFirestore(firebaseApp),
       // 컬렉션
-      "applyitems"
+      "item"
     );
     // 추가 내용
     await addDoc(applyitems, {
