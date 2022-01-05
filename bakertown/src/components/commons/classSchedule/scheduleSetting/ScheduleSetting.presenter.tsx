@@ -1,7 +1,7 @@
 import * as S from "./ScheduleSetting.styles";
 import { DatePicker, TimePicker } from "antd";
 
-const ScheduleSettingPresenter = () => {
+const ScheduleSettingPresenter = (props) => {
   return (
     <>
       <S.Wrapper>
@@ -13,12 +13,16 @@ const ScheduleSettingPresenter = () => {
           <S.SchduleSettingWrapper>
             <S.SettingOne>
               <S.SmallTitle>클래스 날짜를 선택해 주세요.</S.SmallTitle>
-              <DatePicker />
+              <DatePicker onChange={props.datePick} />
             </S.SettingOne>
-            <div>
+            <S.SettingTwoThreeWrapper>
               <S.SettingTwo>
                 <S.SmallTitle>클래스 시간을 선택해 주세요.</S.SmallTitle>
-                <TimePicker use12Hours format="h:mm a" />
+                <TimePicker
+                  use12Hours
+                  format="h:mm a"
+                  onChange={props.timePick}
+                />
                 <S.TimeSelect>
                   <S.TimeOption>30분</S.TimeOption>
                   <S.TimeOption>1시간</S.TimeOption>
@@ -28,13 +32,22 @@ const ScheduleSettingPresenter = () => {
                   <S.TimeOption>3시간</S.TimeOption>
                 </S.TimeSelect>
               </S.SettingTwo>
-              {/* <S.SettingThree>
-
-              </S.SettingThree> */}
-            </div>
+              <S.SettingThree>
+                <S.ClassMemberCount>
+                  <S.SmallTitle>참여 가능 인원</S.SmallTitle>
+                  <S.CountInput type="number" onChange={props.memberChange} />
+                </S.ClassMemberCount>
+              </S.SettingThree>
+            </S.SettingTwoThreeWrapper>
           </S.SchduleSettingWrapper>
-          <S.ScheduleWrppaer></S.ScheduleWrppaer>
-          <S.ScheduleSettingButton>날짜/시간 설정하기</S.ScheduleSettingButton>
+          <S.ScheduleWrppaer>
+            <div>날짜: {props.date}</div>
+            <div>시간: {props.time}</div>
+            <div>최대인원: {props.memberCount}</div>
+          </S.ScheduleWrppaer>
+          <S.ScheduleSettingButton onClick={props.scheduleSetting}>
+            등록하기
+          </S.ScheduleSettingButton>
         </S.ContentWrapper>
       </S.Wrapper>
     </>

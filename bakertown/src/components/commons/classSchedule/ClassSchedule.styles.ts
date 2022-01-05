@@ -50,6 +50,10 @@ export const ScheduleWrppaer = styled.div`
   background-color: lightgrey;
 `;
 
+export const ClasScheduleWrapper = styled.div`
+  display: flex;
+`;
+
 export const ScheduleSettingButton = styled.button`
   background-color: skyblue;
   color: white;
