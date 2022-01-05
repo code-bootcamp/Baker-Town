@@ -1,17 +1,30 @@
 import styled from "@emotion/styled";
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.header`
   display: flex;
   padding-left: 323px;
   align-items: center;
+  position: sticky;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
   height: 80px;
   transition: 500ms;
   background-color: transparent;
+  background-size: cover;
+
+
+  &.change_header {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 1);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: 500ms;
+    box-shadow: -1px 5px 19px -3px rgba(0,0,0,0.21);
+     }
+  }
 `;
 
 export const Img = styled.img`
@@ -19,16 +32,137 @@ export const Img = styled.img`
   height: 42px;
 `;
 
+export const CategoryClass = styled.div`
+  width: 75px;
+  height: 28px;
+  font-size: 24px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  margin-left: 172px;
+
+  &.change_header {
+    color: black;
+    transition: 500ms;
+  }
+`;
+
+export const CategoryStore = styled.div`
+  width: 75px;
+  height: 28px;
+  font-size: 24px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fafafa;
+  opacity: 0.7;
+  margin-left: 50px;
+
+  &.change_header {
+    color: black;
+    transition: 500ms;
+  }
+`;
+
+export const RoundDiv = styled.div`
+  width: 380px;
+  height: 48px;
+  flex-grow: 0;
+  margin-left: 346px;
+  padding-bottom: 3px;
+  border-radius: 90px;
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fafafa;
+  padding-left: 40px;
+  padding-right: 9.8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 500ms;
+`;
+
+export const RoundDivInnerText = styled.div`
+  width: 163px;
+  height: 22px;
+  flex-grow: 0;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #706b68;
+  transition: 500ms;
+`;
+
+export const RoundDivCircle = styled.div`
+  width: 32px;
+  height: 32px;
+  flex-grow: 0;
+  background-color: #4f3325;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+`;
+
+export const RoundDivInnerIcon = styled.img`
+  width: 12.4px;
+  height: 12.4px;
+`;
+
+export const HeartRoundDivCircle = styled.div`
+  width: 32px;
+  height: 32px;
+  flex-grow: 0;
+  background-color: #4f3325;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: 20px;
+`;
+
+export const HeartFilled = styled.img`
+  width: 12.4px;
+  height: 12.4px;
+`;
+
+export const LoginText = styled.div`
+  width: 50px;
+  height: 25px;
+  margin: 12.8px 0 10.2px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4f3325;
+  text-shadow: #fff 0px 0 30px;
+`;
+
 export const TopBanner = styled.div`
   width: 100vw;
   height: 680px;
-  box-shadow: inset 56px -39px 60px 35px rgba(0, 0, 0, 0.1);
-  background-image: url("/imgs/landing/banner02.jpg");
-  background-position: center center;
-  background-size: 100%;
+  background-image: url("/imgs/landing/banner03.jpg"),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 80%);
+  position: relative;
+  background-position: bottom 0px center;
+  background-size: 110%;
   background-repeat: no-repeat;
   box-sizing: border-box;
   overflow: hidden;
+  box-shadow: inset 9px -300px 67px -3px rgba(0, 0, 0, 0.1);
+  background-size: cover;
 
   /* background: radial-gradient(
     circle,

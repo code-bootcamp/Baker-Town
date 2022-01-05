@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styled from "@emotion/styled";
 
 const LandingPresenter = (props: ILandingPresenterProps) => {
   function SampleNextArrow(props) {
@@ -63,12 +64,46 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
     ],
   };
 
+  // 반응형 헤더
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+    console.log(scrollPosition);
+  });
+
   return (
     <>
-      <S.HeaderWrapper>
-        <S.Img className="Image" alt="logo" src="/imgs/landing/header01.png" />
+      <S.HeaderWrapper
+        // onScroll={scrollPosition < 100 ? originalHeader : changeHeader}
+        className={scrollPosition < 90 ? "original_header" : "change_header"}
+      >
+        <S.Img src="/imgs/landing/header01.png" />
+        <S.CategoryClass
+          className={scrollPosition < 90 ? "original_header" : "change_header"}
+        >
+          CLASS
+        </S.CategoryClass>
+        <S.CategoryStore
+          className={scrollPosition < 90 ? "original_header" : "change_header"}
+        >
+          STORE
+        </S.CategoryStore>
+        <S.RoundDiv>
+          <S.RoundDivInnerText>어떤 클래스를 원하세요?</S.RoundDivInnerText>
+          <S.RoundDivCircle>
+            <S.RoundDivInnerIcon src="/imgs/landing/searchicon01.png" />
+          </S.RoundDivCircle>
+        </S.RoundDiv>
+        <S.HeartRoundDivCircle>
+          <S.HeartFilled src="/imgs/landing/heart01.png" />
+        </S.HeartRoundDivCircle>
+        <S.LoginText>로그인</S.LoginText>
       </S.HeaderWrapper>
-
       <S.TopBanner></S.TopBanner>
 
       <S.Wrapper>
