@@ -52,7 +52,7 @@ export const ClassCategoryWrapper = styled.div`
 export const ClassCategoryTitle = styled.div``;
 
 export const ClassCategorySelect = styled.select`
-  width: 450px;
+  width: 150px;
 `;
 
 export const ClassCategoryOption = styled.option``;
@@ -79,6 +79,7 @@ export const ClassContentsTitle = styled.div``;
 
 export const ClassContents = styled.input`
   width: 900px;
+  height: 500px;
 `;
 
 export const ClassPriceWrapper = styled.div`
@@ -91,4 +92,20 @@ export const ClassPriceTitle = styled.div``;
 
 export const ClassPrice = styled.input`
   width: 900px;
+`;
+
+export const ZipcodeSearchWrapper = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+`;
+
+export const ZipcodeSearchButton = styled.button``;
+
+
+
+export const SubmitButton = styled.button`
+  width: 100px;
+  margin-left: 400px;
 `;
