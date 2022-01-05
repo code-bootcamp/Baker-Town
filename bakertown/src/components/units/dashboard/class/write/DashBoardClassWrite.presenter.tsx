@@ -47,7 +47,7 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           <S.ClassRemarks
             type="text"
             onChange={props.onChangeInputs}
-            placeholder="한줄 요약"
+            placeholder="클래스에 대한 설명을 간략히 설명해 주세요."
             name="remarks"
           />
         </S.ClassRemarksWrapper>
@@ -56,12 +56,12 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           <S.ClassContents
             type="text"
             onChange={props.onChangeInputs}
-            placeholder="내용"
+            placeholder="클래스 내용을 입력해 주세요."
             name="contents"
           />
         </S.ClassContentsWrapper>
         <S.ClassPriceWrapper>
-          <S.ClassPriceTitle></S.ClassPriceTitle>
+          <S.ClassPriceTitle>클래스 가격</S.ClassPriceTitle>
           <S.ClassPrice
             type="text"
             onChange={props.onChangeInputs}
@@ -69,8 +69,8 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
             name="price"
           />
         </S.ClassPriceWrapper>
-        <div>
-          <button onClick={props.onToggleModal}>우편번호 검색</button>
+        <S.ZipcodeSearchWrapper>
+          <S.ZipcodeSearchButton onClick={props.onToggleModal}>우편번호 검색</S.ZipcodeSearchButton>
           {props.isOpen && (
             <Modal
               title="우편번호 검색"
@@ -82,19 +82,9 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
               <DaumPostcode onComplete={props.handleComplete} />
             </Modal>
           )}
-        </div>
+        </S.ZipcodeSearchWrapper>
         <input type="file" onChange={props.onChangeImage} />
         {/* 날짜 및 시간 받아내기 */}
-        <DatePicker
-          placeholder="클래스 오픈 날짜"
-          onChange={props.onChangeDate}
-        />
-        {/* 인원 받기 */}
-        <input
-          type="number"
-          onChange={props.onChangeMembers}
-          placeholder="최대인원"
-        />
         <button onClick={props.toggleScheduleModal}>
           날짜 시간 설정하기 모달!!!
         </button>
