@@ -9,4 +9,4 @@ const ClassListPage = () => {
   );
 };
 
-export default withAuth(ClassListPage);
+export default ClassListPage;
