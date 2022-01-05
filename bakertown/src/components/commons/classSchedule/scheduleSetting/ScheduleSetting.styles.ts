@@ -40,12 +40,22 @@ export const SmallTitle = styled.div``;
 
 export const SettingOne = styled.div``;
 
+export const SettingTwoThreeWrapper = styled.div`
+  display: flex;
+`;
+
 export const SettingTwo = styled.div``;
+
+export const SettingThree = styled.div``;
+
+export const ClassMemberCount = styled.div``;
+
+export const CountInput = styled.input``;
 
 export const ScheduleWrppaer = styled.div`
   width: 530px;
   height: 200px;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
 `;
 
 export const ScheduleSettingButton = styled.button`
