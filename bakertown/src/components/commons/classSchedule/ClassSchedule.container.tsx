@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import ClassSchedulePresenter from "./ClassSchedule.presenter";
 
-const ClassScheduleContainer = () => {
+const ClassScheduleContainer = (props) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [classSchedule, setClassSchedule] = useState([]);
+  // const [classSchedule, setClassSchedule] = useState([]);
 
   const toggleModal = () => {
     setIsVisible((prev) => !prev);
   };
   const reset = () => {
-    setClassSchedule([]);
+    // setClassSchedule([]);
   };
 
   return (
     <ClassSchedulePresenter
       isVisible={isVisible}
       toggleModal={toggleModal}
-      classSchedule={classSchedule}
+      classSchedule={props.classSchedule}
       reset={reset}
     />
   );

@@ -3,6 +3,7 @@ import { IDashBoardClassWriteProps } from "./DashBoardClassWrite.types";
 import { DatePicker } from "antd";
 import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
+import ClassScheduleContainer from "../../../../commons/classSchedule/ClassSchedule.container";
 
 const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
   return (
@@ -84,9 +85,17 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
         </S.ZipcodeSearchWrapper>
         <input type="file" onChange={props.onChangeImage} />
         {/* 날짜 및 시간 받아내기 */}
-        
-        
-        <S.SubmitButton onClick={props.onClickSubmit}>등록하기</S.SubmitButton>
+        <button onClick={props.toggleScheduleModal}>
+          날짜 시간 설정하기 모달!!!
+        </button>
+        <Modal
+          visible={props.isVisible}
+          onOk={props.toggleScheduleModal}
+          onCancel={props.toggleScheduleModal}
+        >
+          <ClassScheduleContainer classSchedule={props.classSchedule} />
+        </Modal>
+        <button onClick={props.onClickSubmit}>등록하기</button>
       </>
     </S.Wrapper>
   );
