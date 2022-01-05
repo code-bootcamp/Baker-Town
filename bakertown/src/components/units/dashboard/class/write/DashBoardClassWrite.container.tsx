@@ -22,8 +22,10 @@ const DashBoardMainClassWriteContainer = () => {
     patissier: "",
     patissierId: "",
     images: [],
-    applyClass: [],
+    applyClass: {},
   });
+  const [classSchedule, setClassSchedule] = useState([]);
+  const [isVisible, setIsVisible] = useState(false);
 
   const currentUser: any = useAuth();
 
@@ -31,6 +33,9 @@ const DashBoardMainClassWriteContainer = () => {
 
   const onToggleModal = () => {
     setIsOpen((prev) => !prev);
+  };
+  const toggleScheduleModal = () => {
+    setIsVisible((prev) => !prev);
   };
   const handleComplete = (data: any) => {
     myInputs.address = data.address;
@@ -50,39 +55,12 @@ const DashBoardMainClassWriteContainer = () => {
   // 클래스 등록
   const onClickSubmit = async () => {
     // 등록 날짜 및 시간 설정
-    const aaa = {
-      ["01/08"]: {
-        first: {
-          start: "1400",
-          end: "1600",
-          member: 3,
-          membersName: ["철수", "영희"],
-        },
-      },
-      ["01/09"]: {
-        first: {
-          start: "1400",
-          end: "1600",
-          member: 3,
-          membersName: ["나리"],
-        },
-      },
-      ["01/10"]: {
-        first: {
-          start: "1400",
-          end: "1600",
-          member: 3,
-          membersName: ["찬미"],
-        },
-      },
-    };
-    myInputs.applyClass.push(
-      // "ㅇㅇㅇ"
-      aaa
-    );
+    myInputs.applyClass.classArray = classSchedule;
+
     // myInputs.applyClass.push("aaa");
     myInputs.patissierId = currentUser?.uid;
     myInputs.createdAt = getDate(new Date());
+    myInputs.category = "마카롱";
     console.log(myInputs);
     const dashboardclasswrite = collection(
       // db
@@ -136,6 +114,9 @@ const DashBoardMainClassWriteContainer = () => {
       onClickSubmit={onClickSubmit}
       onChangeInputs={onChangeInputs}
       onChangeImage={onChangeImage}
+      classSchedule={classSchedule}
+      toggleScheduleModal={toggleScheduleModal}
+      isVisible={isVisible}
     />
   );
 };
