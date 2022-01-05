@@ -100,3 +100,5 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
   );
 };
 export default DashBoardMainClassWritePresenter;
+
+//나리야 줄이 길구나... 재연이가 꾸며주는 사진 받으려며어어언
