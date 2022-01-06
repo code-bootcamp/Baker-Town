@@ -53,7 +53,8 @@ const SignUpPresenter = () => {
         email: emailRef.current.value,
         name: nameRef.current.value,
         phone: phoneRef.current.value,
-        mypoint: "200원",
+        mypoint: 0,
+        heart: [],
         beforePar: [],
         review: [],
       });
