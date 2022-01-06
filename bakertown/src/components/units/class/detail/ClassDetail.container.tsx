@@ -14,24 +14,41 @@ import { getDate, getOnlyDate } from "../../../../commons/libraries/getDate";
 const ClassDetailContainer = () => {
   const router = useRouter();
 
-  const [myClass, setMyClass] = useState([]);
+  const [myClass, setMyClass] = useState({
+    address: "내 주소!",
+    category: "카테고리 예시",
+    className: "제목 로딩중!!",
+    contents: "내용 로딩중!!!",
+  });
   const [myDate, setMyDate] = useState("");
   const [myIndex, setMyIndex] = useState(0);
   const [myName, setMyName] = useState("");
 
   const currentUser = useAuth();
-
+  // if (process.browser) {
+  //   const product = doc(
+  //     getFirestore(firebaseApp),
+  //     "class",
+  //     String(router.query.classId)
+  //   );
+  //   const result = await getDoc(product);
+  //   const aaa = result.data();
+  //   setMyClass(aaa);
+  // }
   useEffect(async () => {
-    const product = doc(
-      getFirestore(firebaseApp),
-      "class",
-      String(router.query.classId)
-    );
-    const result = await getDoc(product);
-    const aaa = result.data();
-    console.log(aaa);
-    setMyClass(aaa);
-  }, []);
+    if (myClass?.address === "내 주소!") {
+      const product = doc(
+        getFirestore(firebaseApp),
+        "class",
+        String(router.query.classId)
+      );
+      const result = await getDoc(product);
+      const classData = result.data();
+      console.log(classData);
+      setMyClass(classData);
+    }
+    console.log("밍");
+  });
 
   const onClickReservation = async () => {
     // 현재 페이지 정보 불러오기
@@ -40,18 +57,6 @@ const ClassDetailContainer = () => {
       "class",
       String(router.query.classId)
     );
-
-    // 현재 페이지의 예약정보
-    const currentReservInfo = myClass?.applyClass;
-
-    // 현재 페이지 예약정보에 내 이름 넣기
-    currentReservInfo?.classArray?.[myIndex].class.membersName.push(myName);
-    await updateDoc(bakeryClass, {
-      applyClass: {
-        ...currentReservInfo,
-      },
-    });
-
     //
     // 내 정보 불러오기
     const userQuery = doc(
@@ -61,12 +66,28 @@ const ClassDetailContainer = () => {
     );
     const userResult = await getDoc(userQuery);
 
+    // 현재 페이지의 예약정보
+    const currentReservInfo = myClass?.applyClass;
+
+    // 현재 페이지 예약정보에 내 이름 넣기
+    currentReservInfo?.classArray?.[myIndex].class.membersName.push(
+      userResult.data().name
+    );
+    await updateDoc(bakeryClass, {
+      applyClass: {
+        ...currentReservInfo,
+      },
+    });
+
     // 내 참여예정 클래스
     const myBeforeParClass = userResult.data().beforePar;
+    currentReservInfo.classArray?.[0];
 
     // 내 참여예정 클래스에 현재 클래스 아이디 및 예약정보 넣기
     const dddd = {
       classRouter: router.query.classId,
+      className: myClass?.className,
+      category: myClass?.category,
       ...currentReservInfo.classArray?.[0],
     };
     myBeforeParClass.push(dddd);
@@ -134,6 +155,33 @@ const ClassDetailContainer = () => {
     });
   };
 
+  const onClickHeart = async () => {
+    // 현재 페이지 정보 불러오기
+    const bakeryClass = doc(
+      getFirestore(firebaseApp),
+      "class",
+      String(router.query.classId)
+    );
+
+    // 내 정보 불러오기
+    const userQuery = doc(
+      getFirestore(firebaseApp),
+      "users",
+      currentUser?.email
+    );
+    const userResult = await getDoc(userQuery);
+
+    // 내 찜 목록
+    const userHeart = userResult.data().heart
+
+    // 내 찜 목록에 현재 클래스 아이디 넣기
+    const heartInfo = {
+      classRouter: router.query.classId,
+      className: 
+    }
+
+  }
+
   return (
     <ClassDetailPresenter
       myClass={myClass}
@@ -141,6 +189,7 @@ const ClassDetailContainer = () => {
       selectDate={onClickSelectDate}
       nameInput={onChangeName}
       review={onClickReview}
+      heart={onClickHeart}
     />
   );
 };

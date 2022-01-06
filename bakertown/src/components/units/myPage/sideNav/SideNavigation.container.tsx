@@ -1,8 +1,30 @@
 import { useRouter } from "next/router";
-import SideNavigationPresenter from "./sideNavigation.presenter";
+import { useEffect, useState } from "react";
+import { useAuth, firebaseApp } from "../../../../../pages/_app";
+import { collection, doc, getDoc, getFirestore } from "@firebase/firestore";
+import SideNavigationPresenter from "./SideNavigation.presenter";
 
 const SideNavigationContainer = () => {
   const router = useRouter();
+
+  const currentUser = useAuth();
+  const [myUser, setMyUser] = useState({
+    name: "로딩중입니다",
+  });
+
+  useEffect(async () => {
+    if (myUser?.name === "로딩중입니다") {
+      if (!currentUser) return;
+      const userQuery = doc(
+        getFirestore(firebaseApp),
+        "users",
+        currentUser?.email
+      );
+      const userResult = await getDoc(userQuery);
+      setMyUser(userResult.data());
+      console.log(userResult.data());
+    }
+  });
 
   const onClickSideButton = (el) => () => {
     if (el === "참여 완료") router.push(`/myPage/class/afterPar`);
@@ -14,7 +36,12 @@ const SideNavigationContainer = () => {
     if (el === "리뷰") router.push(`/myPage/item/review`);
   };
 
-  return <SideNavigationPresenter onClickSideButton={onClickSideButton} />;
+  return (
+    <SideNavigationPresenter
+      onClickSideButton={onClickSideButton}
+      userResult={myUser}
+    />
+  );
 };
 
 export default SideNavigationContainer;

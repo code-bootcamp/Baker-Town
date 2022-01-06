@@ -435,8 +435,29 @@ export const ClassSchedule = styled.div`
   width: 370px;
   height: 550px;
   border: 1px solid gray;
+  padding-left: 30px;
+  padding-top: 20px;
 `;
 
-export const ClassArrayWrapper = styled.div`
+export const ClassScheduleWrapper = styled.div`
+  width: 350px;
   display: flex;
 `;
+
+export const ClassArrayWrapper = styled.div``;
+
+export const SmallText = styled.div``;
+
+export const ClassButton = styled.div`
+  width: 100px;
+  /* height: 100px; */
+  border: 1px solid black;
+`;
+
+export const ClassDate = styled.div``;
+
+export const SmallLine = styled.div`
+  border-bottom: 1px solid black;
+`;
+
+export const ClassStartTime = styled.div``;

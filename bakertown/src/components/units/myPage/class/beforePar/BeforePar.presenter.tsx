@@ -15,13 +15,17 @@ const BeforeParPresenter = (props) => {
           </S.ListTitle>
           <S.ListContents>
             {props.userResult.beforePar?.map((el) => (
-              <S.ClassWrapper>
-                <S.ClassImage />
-                <S.ClassPatissier>원데이</S.ClassPatissier>
-                <S.ClassName>{el.classRouter}</S.ClassName>
-                <S.ClassPeople>수강신청 인원 2명</S.ClassPeople>
+              <S.ClassWrapper key={uuidv4()}>
+                <S.ClassImage onClick={props.classDetail(el)} />
+                <S.ClassPatissier>{el.category}</S.ClassPatissier>
+                <S.ClassName onClick={props.classDetail(el)}>
+                  {el.className}
+                </S.ClassName>
+                <S.ClassPeople>수강신청 인원 {el.class.member}명</S.ClassPeople>
                 <S.ClassLine></S.ClassLine>
-                <S.ClassDate>12월 18일(토요일) 오후7시</S.ClassDate>
+                <S.ClassDate>
+                  {el.class.date} {el.class.start}
+                </S.ClassDate>
               </S.ClassWrapper>
             ))}
           </S.ListContents>
