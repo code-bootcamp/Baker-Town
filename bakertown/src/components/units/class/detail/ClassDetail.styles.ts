@@ -436,3 +436,7 @@ export const ClassSchedule = styled.div`
   height: 550px;
   border: 1px solid gray;
 `;
+
+export const ClassArrayWrapper = styled.div`
+  display: flex;
+`;
