@@ -101,7 +101,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.CategoryTag>
               </S.SubTheme1>
               <S.SubTheme2>
-                <S.DibsOnClass>
+                <S.DibsOnClass onClick={props.heart}>
                   {/* <S.Heart src="/imgs/heart.png" /> */}
                   {/* <S.Heart >❤️ 100</S.Heart> */}
                   ❤️ 100
@@ -227,28 +227,30 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
         </S.IntroWrapper>
         <S.ScheduleWrapper>
           <S.ClassSchedule>
-            <div>
-              <div>
-                {/* <div>{Object.keys(props.myClass?.applyClass[0])[1]}</div>
+            {/* <div>{Object.keys(props.myClass?.applyClass[0])[1]}</div>
                 <div>{Object.keys(props.myClass?.applyClass[0])[0]}</div> */}
-                {props.myClass?.applyClass?.classArray?.map((el, index) => (
-                  <S.ClassArrayWrapper
-                    key={uuidv4()}
-                    onClick={props.selectDate(index)}
-                  >
-                    <div>날짜: {el.class.date}</div>
+            <S.ClassScheduleWrapper>
+              {props.myClass?.applyClass?.classArray?.map((el, index) => (
+                <S.ClassArrayWrapper
+                  key={uuidv4()}
+                  onClick={props.selectDate(index)}
+                >
+                  {/* <div>날짜: {el.class.date}</div>
                     <div>시작시간: {el.class.start}</div>
-                    <div>최대인원: {el.class.member}</div>
-                  </S.ClassArrayWrapper>
-                ))}
-              </div>
-              <input
-                type="text"
-                placeholder="예약자 이름"
-                onChange={props.nameInput}
-              />
-              <button onClick={props.reservation}>예약하기</button>
-            </div>
+                    <div>최대인원: {el.class.member}</div> */}
+                  <S.ClassButton>
+                    <S.SmallText>모집중</S.SmallText>
+                    <S.ClassDate>{el.class.date}</S.ClassDate>
+                    <S.SmallLine></S.SmallLine>
+                    <S.ClassStartTime>{el.class.start}</S.ClassStartTime>
+                    <S.ClassStartTime>
+                      {el.class.membersName.length} / {el.class.member}
+                    </S.ClassStartTime>
+                  </S.ClassButton>
+                </S.ClassArrayWrapper>
+              ))}
+            </S.ClassScheduleWrapper>
+            <button onClick={props.reservation}>예약하기</button>
           </S.ClassSchedule>
         </S.ScheduleWrapper>
       </S.WholeWrapper>

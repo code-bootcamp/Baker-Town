@@ -8,7 +8,7 @@ const SideNavigationPresenter = (props) => {
     <>
       <S.Sidebar>
         <S.Title>
-          베이키키
+          {props.userResult.name}
           <img className="Image" alt="mypage" src="/imgs/mypage.png" />
         </S.Title>
         <S.SmallLine></S.SmallLine>
@@ -17,14 +17,18 @@ const SideNavigationPresenter = (props) => {
         <S.SideTitle>CLASS</S.SideTitle>
         {myClass.map((el) => (
           <S.SiderbarMyClass key={uuidv4()}>
-            <S.SideButton onClick={props.onClickSideButton(el)}>{el}</S.SideButton>
+            <S.SideButton onClick={props.onClickSideButton(el)}>
+              {el}
+            </S.SideButton>
             <S.SmallLine></S.SmallLine>
           </S.SiderbarMyClass>
         ))}
         <S.SideTitle>ITEM</S.SideTitle>
         {myItem.map((el) => (
           <S.SiderbarMyItem key={uuidv4()}>
-            <S.SideButton onClick={props.onClickSideButton(el)}>{el}</S.SideButton>
+            <S.SideButton onClick={props.onClickSideButton(el)}>
+              {el}
+            </S.SideButton>
             <S.SmallLine></S.SmallLine>
           </S.SiderbarMyItem>
         ))}
