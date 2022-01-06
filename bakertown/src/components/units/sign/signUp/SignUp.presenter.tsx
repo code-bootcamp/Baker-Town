@@ -5,9 +5,16 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { FormValues } from "./SingUp.types";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
-import { signup } from "../../../../../pages/_app";
+import { firebaseApp, signup } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
 import { Modal } from "antd";
+import {
+  addDoc,
+  collection,
+  getFirestore,
+  setDoc,
+  doc,
+} from "@firebase/firestore";
 // const schema = yup.object().shape({
 //   myName: yup.string().required("반드시 입력해야하는 필수 사항입니다."),
 
@@ -36,6 +43,16 @@ const SignUpPresenter = () => {
   async function handlesSignUp() {
     setLoading(true);
     try {
+      const userQuery = doc(
+        getFirestore(firebaseApp),
+        "users",
+        emailRef.current.value
+      );
+      await setDoc(userQuery, {
+        email: emailRef.current.value,
+        name: "선우",
+        phone: "010-6477-9302",
+      });
       await signup(emailRef.current.value, passwordRef.current.value);
       alert("회원가입되셨습니다.");
       router.push("/signIn");
@@ -44,7 +61,6 @@ const SignUpPresenter = () => {
     }
     setLoading(false);
   }
-
   // const SignUpPresenter = () => {
   //   const { handleSubmit, register, formState } = useForm({
   //     mode: "onChange",

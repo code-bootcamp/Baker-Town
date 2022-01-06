@@ -20,10 +20,9 @@ const DashBoardClassReadContainer = () => {
   const currentUser: any = useAuth();
 
   useEffect(async () => {
-
     const product = query(
-      collection(getFirestore(firebaseApp), "class"),
-      where("patissierId", "!=", "")
+      collection(getFirestore(firebaseApp), "class")
+      // where("patissierId", "!=", "")
       // where("patissierId", "==", currentUser?.uid)
     );
 

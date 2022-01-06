@@ -172,7 +172,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             </S.LocationMap>
           </S.ClassLocationInfo>
           <S.ClassReviewInfo>
-            <S.SubjectTitle>실제 수강생 후기</S.SubjectTitle>
+            <S.SubjectTitle onClick={props.review}>
+              실제 수강생 후기
+            </S.SubjectTitle>
             <S.ClassStarRate2>
               <S.Star2 src="/imgs/star.png" />
               <S.Star2 src="/imgs/star.png" />
@@ -229,25 +231,22 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <div>
                 {/* <div>{Object.keys(props.myClass?.applyClass[0])[1]}</div>
                 <div>{Object.keys(props.myClass?.applyClass[0])[0]}</div> */}
-                <div
-                  onClick={props.selectDate}
-                  id={props.myClass?.applyClass?.[0]?.["01/08"]?.first?.date}
-                >
-                  {props.myClass?.applyClass?.[0]?.["01/08"]?.first?.date}
-                </div>
-                <div
-                  onClick={props.selectDate}
-                  id={props.myClass?.applyClass?.[0]?.["01/09"]?.first?.date}
-                >
-                  {props.myClass?.applyClass?.[0]?.["01/09"]?.first?.date}
-                </div>
-                <div
-                  onClick={props.selectDate}
-                  id={props.myClass?.applyClass?.[0]?.["01/10"]?.first?.date}
-                >
-                  {props.myClass?.applyClass?.[0]?.["01/10"]?.first?.date}
-                </div>
+                {props.myClass?.applyClass?.classArray?.map((el, index) => (
+                  <S.ClassArrayWrapper
+                    key={uuidv4()}
+                    onClick={props.selectDate(index)}
+                  >
+                    <div>날짜: {el.class.date}</div>
+                    <div>시작시간: {el.class.start}</div>
+                    <div>최대인원: {el.class.member}</div>
+                  </S.ClassArrayWrapper>
+                ))}
               </div>
+              <input
+                type="text"
+                placeholder="예약자 이름"
+                onChange={props.nameInput}
+              />
               <button onClick={props.reservation}>예약하기</button>
             </div>
           </S.ClassSchedule>
