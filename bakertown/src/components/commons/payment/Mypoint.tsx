@@ -1,10 +1,10 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import { Button } from "antd";
 import { firebaseApp, useAuth } from "../../../../pages/_app";
 import { useEffect, useState } from "react";
 import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
+import { MyPoint, ChargeButton } from "./MyPoint.styles";
 
 declare const window: Window &
   typeof globalThis & {
@@ -84,9 +84,8 @@ export default function Mypoint() {
         ></script>
       </Head>
 
-      <div>
-        나의 포인트:{ppoint}원<button onClick={onClickPayment}>충전하기</button>
-      </div>
+      <MyPoint>{ppoint}P</MyPoint>
+      <ChargeButton onClick={onClickPayment}>포인트충전</ChargeButton>
     </>
   );
 }
