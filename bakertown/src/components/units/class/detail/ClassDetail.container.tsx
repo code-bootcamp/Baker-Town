@@ -84,52 +84,7 @@ const ClassDetailContainer = () => {
     setMyName(event.target.value);
   };
 
-  const onClickReview = async () => {
-    // 현재 페이지 정보 불러오기
-    const bakeryClass = doc(
-      getFirestore(firebaseApp),
-      "class",
-      String(router.query.classId)
-    );
-
-    // 내 정보 불러오기
-    const userQuery = doc(
-      getFirestore(firebaseApp),
-      "users",
-      currentUser?.email
-    );
-    const userResult = await getDoc(userQuery);
-    console.log("내정보", userResult);
-    // 현재 페이지의 리뷰정보
-    const currentReview = myClass?.review?.reviewArray;
-
-    // 내가 달고 싶은 리뷰
-    const myReview = {
-      review: {
-        createdAt: getOnlyDate(new Date()),
-        user: userResult.data().name,
-        rating: 5,
-        contents: "정말 재밌었어요!!!",
-      },
-    };
-
-    // 현재 페이지의 리뷰정보에 내 리뷰 넣기
-    currentReview?.push(myReview);
-
-    // 내 리뷰
-    const userReview = userResult.data().review;
-
-    // 내 리뷰에 현재 클래스 아이디 및 리뷰정보 넣기
-    const reviewInfo = {
-      classRouter: router.query.classId,
-      ...myReview,
-    };
-    console.log(userReview);
-    userReview?.push(reviewInfo);
-    await updateDoc(userQuery, {
-      review: userReview,
-    });
-  };
+  
 
   return (
     <ClassDetailPresenter
