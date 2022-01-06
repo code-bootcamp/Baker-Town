@@ -51,10 +51,10 @@ const SignInPresenter = (props) => {
 
         <S.SignUp onClick={props.SignUp}>SignUp</S.SignUp>
         {/* <S.SignUp>회원가입하기</S.SignUp> */}
-        <S.SignInButton onClick={handlesSignIn}>SingIn</S.SignInButton>
-        <S.SignInWithGoogle onClick={handlesSignOut}>
+        <S.SignInButton onClick={handlesSignIn}>SignIn</S.SignInButton>
+        {/* <S.SignInWithGoogle onClick={handlesSignOut}>
           SingOut
-        </S.SignInWithGoogle>
+        </S.SignInWithGoogle> */}
         {/* <S.Wrapper2/> */}
       </S.Wrapper>
 
