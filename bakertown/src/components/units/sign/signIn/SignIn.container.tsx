@@ -6,7 +6,7 @@ const SignInContainer = () => {
   const onClickSignUp = () => {
     router.push(`/signUp`);
   };
-  return <SignInPresenter SignUp={onClickSignUp} />;
+  return <SignInPresenter />;
 };
 
 export default SignInContainer;

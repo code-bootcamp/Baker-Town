@@ -46,7 +46,7 @@ const HIDDEN_NAVIGATION = [
   `/store`,
   `/mypage`,
 ];
-const HIDDEN_FOOTER = [`/signin`, `/dashboard/main`];
+const HIDDEN_FOOTER = [`/signIn`, `/dashboard/main`];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
