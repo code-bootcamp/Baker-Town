@@ -52,11 +52,11 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           />
         </S.ClassRemarksWrapper>
         <S.ClassContentsWrapper>
-          <S.ClassContentsTitle>클래스 내용</S.ClassContentsTitle>
+          <S.ClassContentsTitle>클래스 소개 입력</S.ClassContentsTitle>
           <S.ClassContents
             type="text"
             onChange={props.onChangeInputs}
-            placeholder="클래스 내용을 입력해 주세요."
+            placeholder="클래스 소개를 자세히 입력해 주세요."
             name="contents"
           />
         </S.ClassContentsWrapper>
@@ -65,37 +65,55 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           <S.ClassPrice
             type="text"
             onChange={props.onChangeInputs}
-            placeholder="가격"
+            placeholder="수업료를 입력해 주세요."
             name="price"
           />
         </S.ClassPriceWrapper>
-        <S.ZipcodeSearchWrapper>
-          <S.ZipcodeSearchButton onClick={props.onToggleModal}>우편번호 검색</S.ZipcodeSearchButton>
-          {props.isOpen && (
-            <Modal
-              title="우편번호 검색"
-              visible={true}
-              onOk={props.onToggleModal}
-              onCancel={props.onToggleModal}
-              // style={{ backgroundColor: "yellow" }}
-            >
-              <DaumPostcode onComplete={props.handleComplete} />
-            </Modal>
-          )}
-        </S.ZipcodeSearchWrapper>
-        <input type="file" onChange={props.onChangeImage} />
-        {/* 날짜 및 시간 받아내기 */}
-        <button onClick={props.toggleScheduleModal}>
-          날짜 시간 설정하기 모달!!!
-        </button>
-        <Modal
-          visible={props.isVisible}
-          onOk={props.toggleScheduleModal}
-          onCancel={props.toggleScheduleModal}
-        >
-          <ClassScheduleContainer classSchedule={props.classSchedule} />
-        </Modal>
-        <button onClick={props.onClickSubmit}>등록하기</button>
+
+        <S.AddressWrapper>
+          <S.AddressTitle>주소</S.AddressTitle>
+          <S.RoadNameWrapper>
+            <S.RoadName type="text" placeholder="도로명주소" readOnly 
+            defaultValue={props.address}/>
+            <S.RoadNameSearchButton onClick={props.onToggleModal}>
+              도로명주소 검색
+            </S.RoadNameSearchButton>
+            {props.isOpen && (
+              <Modal
+                title="도로명 주소"
+                visible={true}
+                onOk={props.onToggleModal}
+                onCancel={props.onToggleModal}
+                // style={{ backgroundColor: "yellow" }}
+              >
+                <DaumPostcode onComplete={props.handleComplete} />
+              </Modal>
+            )}
+          </S.RoadNameWrapper>
+          <S.DetailAddress />
+        </S.AddressWrapper>
+
+        <S.RelatedFileWrapper>
+          <S.RelatedFileTitle>파일을 첨부해 주세요</S.RelatedFileTitle>
+          <input type="file" onChange={props.onChangeImage} />
+          {/* 날짜 및 시간 받아내기 */}
+        </S.RelatedFileWrapper>
+        <S.ChooseScheduleWrapper>
+          <S.ChooseScheduleTitle>
+            클래스 수업일을 선택해 주세요
+          </S.ChooseScheduleTitle>
+          <S.SearchScheduleButton onClick={props.toggleScheduleModal}>
+            날짜 시간 설정하기 모달!!!
+          </S.SearchScheduleButton>
+          <Modal
+            visible={props.isVisible}
+            onOk={props.toggleScheduleModal}
+            onCancel={props.toggleScheduleModal}
+          >
+            <ClassScheduleContainer classSchedule={props.classSchedule} />
+          </Modal>
+        </S.ChooseScheduleWrapper>
+        <S.SubmitButton onClick={props.onClickSubmit}>등록하기</S.SubmitButton>
       </>
     </S.Wrapper>
   );

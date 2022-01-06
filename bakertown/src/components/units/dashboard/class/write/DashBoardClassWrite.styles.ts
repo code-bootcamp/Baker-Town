@@ -94,18 +94,58 @@ export const ClassPrice = styled.input`
   width: 900px;
 `;
 
-export const ZipcodeSearchWrapper = styled.div`
+export const AddressWrapper = styled.div`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  width: 120px;
 `;
 
-export const ZipcodeSearchButton = styled.button``;
+export const AddressTitle = styled.div``;
 
+export const RoadNameWrapper = styled.div``;
 
+export const RoadName = styled.input`
+  width: 400px;
+`;
+
+export const RoadNameSearchButton = styled.button`
+  margin-left: 16px;
+`;
+
+export const DetailAddress = styled.input`
+  margin-top: 13px;
+  width: 900px;
+`;
+
+export const RelatedFileWrapper = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const RelatedFileTitle = styled.div``;
+
+export const RelatedFile = styled.input``;
+
+export const ChooseScheduleWrapper = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ChooseScheduleTitle = styled.div``;
+
+export const SearchScheduleButton = styled.button`
+width: 500px;
+`;
 
 export const SubmitButton = styled.button`
-  width: 100px;
+  width: 110px;
+  height: 40px;
+  margin-top: 30px;
   margin-left: 400px;
+  border: none;
+  border-radius: 19px;
+  background-color: #662500;
+  color: white;
 `;
