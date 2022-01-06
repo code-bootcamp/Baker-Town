@@ -115,6 +115,9 @@ const ClassDetailContainer = () => {
 
     // 현재 페이지의 리뷰정보에 내 리뷰 넣기
     currentReview?.push(myReview);
+    await updateDoc(bakeryClass, {
+      review: currentReview,
+    });
 
     // 내 리뷰
     const userReview = userResult.data().review;
