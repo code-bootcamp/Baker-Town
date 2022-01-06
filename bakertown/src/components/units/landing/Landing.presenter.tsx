@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styled from "@emotion/styled";
+import { Skeleton } from "antd";
 
 const LandingPresenter = (props: ILandingPresenterProps) => {
   function SampleNextArrow(props) {
@@ -105,11 +105,14 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             <S.RoundDivInnerIcon src="/imgs/landing/searchicon01.png" />
           </S.RoundDivCircle>
         </S.RoundDiv>
-        <S.HeartRoundDivCircle>
-          <S.HeartFilled src="/imgs/landing/heart01.png" />
-        </S.HeartRoundDivCircle>
-        <S.LoginText>로그인</S.LoginText>
+        <S.HeartToLogin>
+          <S.HeartRoundDivCircle>
+            <S.HeartFilled src="/imgs/landing/heart01.png" />
+          </S.HeartRoundDivCircle>
+          <S.LoginText>로그인</S.LoginText>
+        </S.HeartToLogin>
       </S.HeaderWrapper>
+
       <S.TopBanner></S.TopBanner>
 
       <S.Wrapper>
