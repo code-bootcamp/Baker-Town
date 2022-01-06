@@ -21,6 +21,7 @@ const DashBoardMainClassWriteContainer = () => {
     createdAt: "",
     patissier: "",
     patissierId: "",
+    heart: 0,
     images: [],
     applyClass: {},
   });

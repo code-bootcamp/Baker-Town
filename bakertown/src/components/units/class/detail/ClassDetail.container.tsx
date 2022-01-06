@@ -172,15 +172,26 @@ const ClassDetailContainer = () => {
     const userResult = await getDoc(userQuery);
 
     // 내 찜 목록
-    const userHeart = userResult.data().heart
+    const userHeart = userResult.data().heart;
 
     // 내 찜 목록에 현재 클래스 아이디 넣기
     const heartInfo = {
       classRouter: router.query.classId,
-      className: 
-    }
+      className: myClass?.className,
+      category: myClass?.category,
+    };
+    userHeart?.push(heartInfo);
+    await updateDoc(userQuery, {
+      heart: userHeart,
+    });
 
-  }
+    // 현재 페이지 찜 정보
+    const classHeart = myClass?.heart + 1;
+    // 현재 페이지의 찜 정보에 내 정보 넣기
+    await updateDoc(bakeryClass, {
+      heart: classHeart,
+    });
+  };
 
   return (
     <ClassDetailPresenter
