@@ -26,6 +26,7 @@ const DashBoardMainClassWriteContainer = () => {
   });
   const [classSchedule, setClassSchedule] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
+  const [address, setAddress] = useState("");
 
   const currentUser: any = useAuth();
 
@@ -38,6 +39,8 @@ const DashBoardMainClassWriteContainer = () => {
     setIsVisible((prev) => !prev);
   };
   const handleComplete = (data: any) => {
+    console.log(data);
+    setAddress(data.address);
     myInputs.address = data.address;
     setIsOpen((prev) => !prev);
   };
@@ -117,6 +120,7 @@ const DashBoardMainClassWriteContainer = () => {
       classSchedule={classSchedule}
       toggleScheduleModal={toggleScheduleModal}
       isVisible={isVisible}
+      address={address}
     />
   );
 };
