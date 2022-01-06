@@ -144,7 +144,7 @@ export const ClassLine = styled.div`
 export const ClassPeople = styled.div`
   width: 536px;
   height: 25px;
-  margin: -40px 22px 1px 180px;
+  margin: -40px 22px 1px 200px;
   font-family: NotoSans;
   font-size: 18px;
   text-align: left;

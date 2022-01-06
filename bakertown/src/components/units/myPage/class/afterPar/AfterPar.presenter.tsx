@@ -16,26 +16,29 @@ const AfterParPresenter = (props) => {
             <S.ListTitleText>CLASS | 참여완료</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
-            {new Array(4).fill(1).map((el) => (
+            {props.userResult.afterPar?.map((el, index) => (
               <S.ClassWrapper>
                 <S.Class>
                   <S.ClassImage />
-                  <S.ClassPatissier>원데이</S.ClassPatissier>
-                  <S.ClassName>마카롱클래스</S.ClassName>
-                  <S.ClassPeople>수강신청 인원 2명</S.ClassPeople>
+                  <S.ClassPatissier>{el.category}</S.ClassPatissier>
+                  <S.ClassName>{el.className}</S.ClassName>
+                  <S.ClassPeople>수강신청 인원 {el.class.member}명</S.ClassPeople>
                   <S.ClassLine></S.ClassLine>
                 </S.Class>
                 <S.ClassSubWrapper>
-                  <S.ClassDate>12월 18일(토요일) 오후7시</S.ClassDate>
+                  <S.ClassDate>{el.class.date} {el.class.start}</S.ClassDate>
                   <S.WriteReview onClick={props.onToggleModal}>리뷰 작성하기</S.WriteReview>
                   {props.isOpen && (
                     <Modal
                       title="리뷰 등록"
                       visible={props.isOpen}
-                      onOk={props.onToggleModal}
+                      onOk={props.onClickReview(index)}
                       onCancel={props.onToggleModal}
                     >
-                      <WriteReviewContainer />
+                      <WriteReviewContainer setReviewContents={props.setReviewContents}
+                      rating={props.rating}
+                      setRating={props.setRating}
+                      />
                     </Modal>
                   )}
                 </S.ClassSubWrapper>

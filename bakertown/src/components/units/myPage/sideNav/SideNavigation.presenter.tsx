@@ -9,7 +9,7 @@ const SideNavigationPresenter = (props) => {
     <>
       <S.Sidebar>
         <S.Title>
-          {props.userResult.name}
+          {props.userResult?.name}
           <img className="Image" alt="mypage" src="/imgs/mypage.png" />
         </S.Title>
         <S.SmallLine></S.SmallLine>
