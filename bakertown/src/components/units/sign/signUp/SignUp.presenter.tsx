@@ -36,7 +36,8 @@ import {
 const SignUpPresenter = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-
+  const nameRef: any = useRef();
+  const phoneRef: any = useRef();
   const emailRef: any = useRef();
   const passwordRef: any = useRef();
 
@@ -50,8 +51,11 @@ const SignUpPresenter = () => {
       );
       await setDoc(userQuery, {
         email: emailRef.current.value,
-        name: "선우",
-        phone: "010-6477-9302",
+        name: nameRef.current.value,
+        phone: phoneRef.current.value,
+        mypoint: "200원"
+        beforePar: [],
+        review: [],
       });
       await signup(emailRef.current.value, passwordRef.current.value);
       alert("회원가입되셨습니다.");
@@ -107,10 +111,14 @@ const SignUpPresenter = () => {
       <S.Wrapper>
         {/* <div>{currentUser?.email}</div> */}
         <S.Label>회원가입</S.Label>
+        <S.EmailLabel>name</S.EmailLabel>
+        <S.Email ref={nameRef} placeholder="name" />
         <S.EmailLabel>email</S.EmailLabel>
         <S.Email ref={emailRef} placeholder="email" />
         <S.PasswordLabel>password</S.PasswordLabel>
         <S.Password ref={passwordRef} type="Password" placeholder="password" />
+        <S.PasswordLabel>phone</S.PasswordLabel>
+        <S.Password ref={phoneRef} placeholder="phone" />
         <S.SignUpButton
           // disabled={loading || currentUser}
           onClick={handlesSignUp}
