@@ -114,7 +114,11 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
       </S.HeaderWrapper>
 
       <S.TopBanner></S.TopBanner>
-
+      <S.TextWrapper>
+        <S.TextTop>event</S.TextTop>
+        <S.TextMiddle>지금 가장 핫한 클래스 1+1 이벤트</S.TextMiddle>
+        <S.TextLow>아이와 함께하는 베이킹 클래스 지금 신청하세요!</S.TextLow>
+      </S.TextWrapper>
       <S.Wrapper>
         <S.SubjectName>
           <S.SubjectWrapper>

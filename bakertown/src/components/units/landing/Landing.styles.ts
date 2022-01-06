@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.header`
   align-items: center;
   position: sticky;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
@@ -157,10 +157,9 @@ export const HeartToLogin = styled.div`
 `;
 
 export const TopBanner = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 680px;
   background-image: url("/imgs/landing/banner03.jpg");
-
   position: relative;
   background-position: bottom 0px center;
   background-size: 110%;
@@ -169,6 +168,57 @@ export const TopBanner = styled.div`
   overflow: hidden;
   box-shadow: inset 9px -300px 67px -3px rgba(0, 0, 0, 0.1);
   background-size: cover;
+`;
+
+export const TextWrapper = styled.div`
+  width: 1308px;
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+`;
+
+export const TextTop = styled.div`
+  width: 78px;
+  height: 38px;
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+`;
+
+export const TextMiddle = styled.div`
+  width: 453px;
+  padding-top: 20px;
+  font-size: 50px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+`;
+
+export const TextLow = styled.div`
+  width: 639px;
+  padding-top: 60px;
+  font-size: 32px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
 `;
 
 export const Wrapper = styled.div`
