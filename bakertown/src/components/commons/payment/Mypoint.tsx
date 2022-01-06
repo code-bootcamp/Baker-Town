@@ -25,7 +25,7 @@ export default function Mypoint() {
       currentUser?.email
     );
     const userResult = await getDoc(userQuery);
-    setPpoint(userResult.data().mypoint);
+    setPpoint(userResult.data()?.mypoint);
   });
 
   function onClickPayment() {
