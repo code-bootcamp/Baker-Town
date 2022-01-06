@@ -73,8 +73,12 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
         <S.AddressWrapper>
           <S.AddressTitle>주소</S.AddressTitle>
           <S.RoadNameWrapper>
-            <S.RoadName type="text" placeholder="도로명주소" readOnly 
-            defaultValue={props.address}/>
+            <S.RoadName
+              type="text"
+              placeholder="도로명주소"
+              readOnly
+              defaultValue={props.address}
+            />
             <S.RoadNameSearchButton onClick={props.onToggleModal}>
               도로명주소 검색
             </S.RoadNameSearchButton>
@@ -110,8 +114,7 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
             onOk={props.toggleScheduleModal}
             onCancel={props.toggleScheduleModal}
           >
-            <ClassScheduleContainer 
-            classSchedule={props.classSchedule} />
+            <ClassScheduleContainer classSchedule={props.classSchedule} />
           </Modal>
         </S.ChooseScheduleWrapper>
         <S.SubmitButton onClick={props.onClickSubmit}>등록하기</S.SubmitButton>
