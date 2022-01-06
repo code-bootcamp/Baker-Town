@@ -12,6 +12,7 @@ export const MyPoint = styled.div`
   text-align: left;
   color: #ff4d12;
 `;
+
 export const MyPointTitle = styled.div`
   margin: 10px 0 9px 30px;
   font-size: 24px;
@@ -76,7 +77,7 @@ export const ListSelect = styled.select``;
 export const ListOption = styled.option``;
 
 export const ListContents = styled.div`
-  width: 1000px;
+  width: 1070px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -87,13 +88,22 @@ export const ListContents = styled.div`
 export const ClassWrapper = styled.div`
   width: 987px;
   height: 180px;
-  margin: 43px 323px 24px 40px;
-  padding: 20px 239px 20px 30px;
-  object-fit: contain;
+  /* margin: 43px 323px 24px 40px;
+  padding: 20px 239px 20px 30px; */
+  margin-left: 40px;
+  margin-bottom: 24px;
+  padding-left: 30px;
+  padding-top: 20px;
+  display: flex;
   border-radius: 10px;
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
   border: solid 0.5px #e2e2e2;
-  background-color: #fff;
+  /* background-color: #fff; */
+  /* background-color: green; */
+`;
+
+export const Class = styled.div`
+  /* background-color: pink; */
 `;
 
 export const ClassImage = styled.img`
@@ -115,16 +125,6 @@ export const ClassPatissier = styled.div`
   color: rgba(79, 51, 37, 0.9);
 `;
 
-export const ClassDate = styled.div`
-  width: 150px;
-  height: 55px;
-  margin: -120px 1px 9px 760px;
-  font-family: NotoSans;
-  font-size: 18px;
-  text-align: center;
-  color: #000;
-`;
-
 export const ClassName = styled.div`
   width: 419px;
   height: 33px;
@@ -144,8 +144,25 @@ export const ClassLine = styled.div`
 export const ClassPeople = styled.div`
   width: 536px;
   height: 25px;
-  margin: -40px 22px 1px 200px;
+  margin: -40px 22px 1px 180px;
   font-family: NotoSans;
   font-size: 18px;
   text-align: left;
+`;
+
+export const ClassSubWrapper = styled.div`
+  // 여기 제발 마진 좀 먹히게 해주세여,,,,,,,
+  width: 400px;
+  /* background-color: yellow; */
+  margin-top: 40px;
+`;
+export const ClassDate = styled.div`
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 20px;
+`;
+
+export const WriteReview = styled.div`
+  /* width: 50px; */
+  /* height: 50px; */
 `;

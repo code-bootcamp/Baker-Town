@@ -105,7 +105,7 @@ export const AddressTitle = styled.div``;
 export const RoadNameWrapper = styled.div``;
 
 export const RoadName = styled.input`
-  width: 400px;
+  width: 250px;
 `;
 
 export const RoadNameSearchButton = styled.button`
@@ -136,7 +136,7 @@ export const ChooseScheduleWrapper = styled.div`
 export const ChooseScheduleTitle = styled.div``;
 
 export const SearchScheduleButton = styled.button`
-width: 500px;
+  width: 250px;
 `;
 
 export const SubmitButton = styled.button`
