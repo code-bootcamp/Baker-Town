@@ -2,8 +2,9 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { Button } from "antd";
-import { useAuth } from "../../../../pages/_app";
-import { useState } from "react";
+import { firebaseApp, useAuth } from "../../../../pages/_app";
+import { useEffect, useState } from "react";
+import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
 
 declare const window: Window &
   typeof globalThis & {
@@ -14,6 +15,18 @@ export default function Mypoint() {
   const router = useRouter();
   const currentUser: any = useAuth();
   //   const { data } = useQuery(FETCH_USER_LOGGEDIN);
+  const [ppoint, setPpoint] = useState(0);
+
+  useEffect(async () => {
+    if (!currentUser) return;
+    const userQuery = doc(
+      getFirestore(firebaseApp),
+      "users",
+      currentUser?.email
+    );
+    const userResult = await getDoc(userQuery);
+    setPpoint(userResult.data().mypoint);
+  });
 
   function onClickPayment() {
     const IMP = window.IMP; // 생략 가능
@@ -35,19 +48,19 @@ export default function Mypoint() {
       async (rsp: any) => {
         // callback
         if (rsp.success) {
-          // 결제 성공 시 로직,
           console.log(rsp);
-
-          // createPointTransactionOfLoading 뮤테이션 실행하기!! impUid 인자로 넘기기!! imp92591067
-          // 결제날짜, 결제된 시간, 취소된 시간, newDate() 아니면 백엔드에서 newDate 날짜를 만들것인징.. 백엔드가 맞댕.. 프론트에서getmonth 이런건됨
           try {
-            const result = await {
-              variables: {
-                impUid: rsp.imp_uid,
-                mypoint: "",
-              },
-            };
-            console.log(result);
+            //user정보 가져오기
+            const userQuery = doc(
+              getFirestore(firebaseApp),
+              "users",
+              currentUser?.email
+            );
+            const userResult: any = await getDoc(userQuery);
+            //나의 포인트 + rsp.paid_amount
+
+            const charge = userResult.data().mypoint + rsp.paid_amount;
+            await updateDoc(userQuery, { mypoint: charge });
           } catch (error) {
             if (error instanceof Error) alert(error.message);
           }
@@ -72,8 +85,7 @@ export default function Mypoint() {
       </Head>
 
       <div>
-        나의 포인트 : {currentUser?.mypoint}원
-        <button onClick={onClickPayment}>충전하기</button>
+        나의 포인트:{ppoint}원<button onClick={onClickPayment}>충전하기</button>
       </div>
     </>
   );
