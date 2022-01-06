@@ -82,7 +82,13 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
         // onScroll={scrollPosition < 100 ? originalHeader : changeHeader}
         className={scrollPosition < 90 ? "original_header" : "change_header"}
       >
-        <S.Img src="/imgs/landing/header01.png" />
+        <S.Img
+          src={
+            scrollPosition < 90
+              ? "/imgs/landing/header01.png"
+              : "/imgs/logo.png"
+          }
+        />
         <S.CategoryClass
           className={scrollPosition < 90 ? "original_header" : "change_header"}
         >
