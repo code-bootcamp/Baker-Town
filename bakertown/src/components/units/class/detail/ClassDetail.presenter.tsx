@@ -78,7 +78,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
         );
       });
     };
-  }, []);
+  }, [props.myClass?.address]);
 
   // 반응형 헤더
 
@@ -119,7 +119,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                   <S.Rater>(1,700)</S.Rater>
                 </S.ClassStarRate>
                 <S.CategoryTag>
-                  <S.Category>{props.myClass?.district} • {props.myClass?.category}</S.Category>
+                  <S.Category>
+                    {props.myClass?.district} • {props.myClass?.category}
+                  </S.Category>
                   {/* <S.ContentsCategory>
                     {props.myClass?.category}
                   </S.ContentsCategory> */}

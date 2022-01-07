@@ -24,7 +24,7 @@ const ClassDetailContainer = () => {
     price: "",
   });
   const [myDate, setMyDate] = useState("");
-  const [myIndex, setMyIndex] = useState(0);
+  const [myIndex, setMyIndex] = useState(-1);
   const [myName, setMyName] = useState("");
 
   const currentUser = useAuth();
@@ -48,12 +48,16 @@ const ClassDetailContainer = () => {
       );
       const result = await getDoc(product);
       const classData = result.data();
-      console.log(classData);
+      console.log("클래스 정보", classData);
       setMyClass(classData);
     }
   });
 
   const onClickReservation = async () => {
+    if (myIndex === -1) {
+      alert("예약하실 날짜를 선택해주세요!!");
+      return;
+    }
     // 현재 페이지 정보 불러오기
     const bakeryClass = doc(
       getFirestore(firebaseApp),
@@ -79,8 +83,18 @@ const ClassDetailContainer = () => {
 
     // 현재 페이지의 예약정보
     const currentReservInfo = myClass?.applyClass;
+
+    // 예약 마감 시 내보내기
+    if (
+      currentReservInfo?.classArray?.[myIndex].class.membersName.length ===
+      Number(currentReservInfo?.classArray?.[myIndex].class.member)
+    ) {
+      alert("에약이 마감되었습니다.");
+      return;
+    }
     //현재 나의 포인트 - class가격
     const charge = userResult.data().mypoint - buyInfo.price;
+
     // 현재 페이지 예약정보에 내 이름 넣기
     currentReservInfo?.classArray?.[myIndex].class.membersName.push(
       userResult.data().name
@@ -88,7 +102,6 @@ const ClassDetailContainer = () => {
     //나의 포인트 잔액
     await updateDoc(userQuery, { mypoint: charge });
     console.log(charge);
-    alert("예약완료");
     await updateDoc(bakeryClass, {
       applyClass: {
         ...currentReservInfo,
@@ -111,6 +124,8 @@ const ClassDetailContainer = () => {
     await updateDoc(userQuery, {
       beforePar: myBeforeParClass,
     });
+    alert("예약이 완료되었습니다.");
+    location.reload();
   };
 
   const onClickSelectDate = (el, index) => () => {
@@ -212,6 +227,8 @@ const ClassDetailContainer = () => {
     await updateDoc(bakeryClass, {
       heart: classHeart,
     });
+    alert("클래스를 찜 목록에 담았습니다!");
+    location.reload();
   };
 
   // scroll tap
