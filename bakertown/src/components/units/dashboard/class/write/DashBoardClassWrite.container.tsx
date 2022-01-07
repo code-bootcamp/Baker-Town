@@ -18,6 +18,7 @@ const DashBoardMainClassWriteContainer = () => {
     contents: "",
     price: "",
     address: "",
+    district: "",
     createdAt: "",
     patissier: "",
     patissierId: "",
@@ -25,6 +26,7 @@ const DashBoardMainClassWriteContainer = () => {
     review: [],
     images: [],
     applyClass: {},
+
   });
   const [classSchedule, setClassSchedule] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
@@ -41,10 +43,11 @@ const DashBoardMainClassWriteContainer = () => {
     setIsVisible((prev) => !prev);
   };
   const handleComplete = (data: any) => {
-    console.log(data);
+    setIsOpen((prev) => !prev);
     setAddress(data.address);
     myInputs.address = data.address;
-    setIsOpen((prev) => !prev);
+    myInputs.district = data.query;
+    console.log(data);
   };
 
   // 날짜 설정
@@ -84,8 +87,9 @@ const DashBoardMainClassWriteContainer = () => {
       className: myInputs.className,
       contents: myInputs.contents,
       remarks: myInputs.remarks,
-      category: myInputs.category,
       address: myInputs.address,
+      district: myInputs.district,
+      category: myInputs.category,
       price: myInputs.price,
       applyClass: myInputs.applyClass,
       images: myInputs.images,
