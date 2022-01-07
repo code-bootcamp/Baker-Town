@@ -97,8 +97,12 @@ const ClassDetailContainer = () => {
     });
   };
 
-  const onClickSelectDate = (index) => () => {
+  const onClickSelectDate = (el, index) => () => {
     // setMyDate(myClass?.applyClass?.classArray?.[index].class.date);
+    console.log(el);
+    alert(
+      `${el?.class?.date} 날짜의 ${el?.class?.start} 시간을 선택하셨습니다!`
+    );
     setMyIndex(index);
   };
 
