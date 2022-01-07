@@ -503,11 +503,12 @@ export const ScheduleWrapper = styled.div`
 export const ClassSchedule = styled.div`
   width: 370px;
   height: 550px;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   padding-left: 30px;
   padding-top: 20px;
   /* background-color: navy; */
   position: fixed;
+  box-shadow: 8px 8px 30px 0 rgba(0, 0, 0, 0.1);
 `;
 
 export const ClassScheduleWrapper = styled.div`
@@ -524,15 +525,47 @@ export const ClassArrayWrapper = styled.div`
 export const SmallText = styled.div``;
 
 export const ClassButton = styled.div`
-  width: 100px;
+  width: 300px;
   /* height: 100px; */
-  border: 1px solid black;
+  padding-top: 10px;
+  padding-left: 14.5px;
+  padding-bottom: 10px;
+  border: 2px solid #f7f7f7;
 `;
 
 export const ClassDate = styled.div``;
 
 export const SmallLine = styled.div`
-  border-bottom: 1px solid black;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f7f7f7;
+  width: 267px;
 `;
 
 export const ClassStartTime = styled.div``;
+
+export const ClassRunningTime = styled.div``
+
+export const ClassPrice = styled.div`
+margin-top: 20px;
+margin-right: 45px;
+display: flex;
+justify-content: right;
+font-size: 20px;
+font-weight: bold;
+`
+
+export const ReservationButton = styled.button`
+width: 100px;
+height: 39px;
+margin-top: 90px;
+margin-left: 110px;
+padding-top: 7px;
+border: none;
+border-radius: 20px;
+display: flex;
+justify-content: center;
+color: white;
+background-color: #662500;
+cursor: pointer;
+`
