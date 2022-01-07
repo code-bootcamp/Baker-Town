@@ -17,7 +17,7 @@ const HeaderPresenter = (props: IHeaderProps) => {
           <S.StoreTitle>STORE</S.StoreTitle>
           <S.SeacrchBar onChange={props.keyWord} placeholder={"검색"} />
           <button onClick={props.search}>검색</button>
-          <S.HeartButton>❤</S.HeartButton>
+          <S.HeartButton onClick={props.heartClass}>❤</S.HeartButton>
           {currentuser?.uid ? (
             <AvatarPage></AvatarPage>
           ) : (

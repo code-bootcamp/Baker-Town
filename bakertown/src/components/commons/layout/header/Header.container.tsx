@@ -21,6 +21,9 @@ const HeaderContainer = () => {
   const onClickSignIn = () => {
     router.push(`/signIn`);
   };
+  const onClickHeartClass = () => {
+    router.push(`/myPage/class/wishList`);
+  };
 
   return (
     <HeaderPresenter
@@ -29,6 +32,7 @@ const HeaderContainer = () => {
       search={onClickSearch}
       keyWord={onChangeKeyWord}
       signIn={onClickSignIn}
+      heartClass={onClickHeartClass}
     />
   );
 };

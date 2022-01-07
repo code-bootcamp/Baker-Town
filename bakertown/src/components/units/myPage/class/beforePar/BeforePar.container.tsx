@@ -37,6 +37,8 @@ const BeforeParContainer = () => {
     );
     const userResult: any = await getDoc(userQuery);
 
+    // 클래스 정보 불러오기
+
     // 내 참여예정 클래스
     const myBeforeParClass = userResult.data().beforePar;
     // 선택한 클래스 없애기

@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Skeleton } from "antd";
+import AvatarPage from "../../commons/avatar/AvatarPage";
 
 const LandingPresenter = (props: ILandingPresenterProps) => {
   function SampleNextArrow(props) {
@@ -83,6 +84,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
         className={scrollPosition < 90 ? "original_header" : "change_header"}
       >
         <S.Img
+          onClick={props.landing}
           src={
             scrollPosition < 90
               ? "/imgs/landing/header01.png"
@@ -91,11 +93,13 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
         />
         <S.CategoryClass
           className={scrollPosition < 90 ? "original_header" : "change_header"}
+          onClick={props.classList}
         >
           CLASS
         </S.CategoryClass>
         <S.CategoryStore
           className={scrollPosition < 90 ? "original_header" : "change_header"}
+          onClick={props.storeList}
         >
           STORE
         </S.CategoryStore>
@@ -107,9 +111,16 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
         </S.RoundDiv>
         <S.HeartToLogin>
           <S.HeartRoundDivCircle>
-            <S.HeartFilled src="/imgs/landing/heart01.png" />
+            <S.HeartFilled
+              src="/imgs/landing/heart01.png"
+              onClick={props.heartClass}
+            />
           </S.HeartRoundDivCircle>
-          <S.LoginText>로그인</S.LoginText>
+          {props.currentUser?.uid ? (
+            <AvatarPage></AvatarPage>
+          ) : (
+            <S.LoginText onClick={props.signIn}>로그인</S.LoginText>
+          )}
         </S.HeartToLogin>
       </S.HeaderWrapper>
 

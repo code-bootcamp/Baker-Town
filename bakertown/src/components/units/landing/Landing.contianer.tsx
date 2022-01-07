@@ -6,13 +6,16 @@ import {
   where,
 } from "@firebase/firestore";
 import { sliderClasses } from "@mui/material";
+import { useRouter } from "next/router";
 import { useEffect, useState, useRef, MutableRefObject } from "react";
-import { firebaseApp } from "../../../../pages/_app";
+import { firebaseApp, useAuth } from "../../../../pages/_app";
 import LandingPresenter from "./Landing.presenter";
 
 const LandingContainer = () => {
+  const router = useRouter();
   const [popular, setPoplular] = useState([]);
   const [recent, setRecent] = useState([]);
+  const currentUser = useAuth();
 
   useEffect(async () => {
     const popular = query(
@@ -21,7 +24,6 @@ const LandingContainer = () => {
     );
     let result = await getDocs(popular);
     let docs = result.docs.map((el) => el.data());
-    console.log(docs);
     setPoplular(docs);
 
     const recent = query(
@@ -30,7 +32,6 @@ const LandingContainer = () => {
     );
     result = await getDocs(recent);
     docs = result.docs.map((el) => el.data());
-    console.log(docs);
     setRecent(docs);
   }, []);
 
@@ -42,6 +43,26 @@ const LandingContainer = () => {
     console.log("clickRight");
   };
 
+  const onClickLanding = () => {
+    router.push(`/`);
+  };
+
+  const onClickList = () => {
+    router.push(`/class`);
+  };
+
+  const onClickStore = () => {
+    router.push(`/store`);
+  };
+
+  const onClickHeartClass = () => {
+    router.push(`/myPage/class/wishList`);
+  };
+
+  const onClickSignIn = () => {
+    router.push(`/signIn`);
+  };
+
   return (
     <>
       <LandingPresenter
@@ -49,6 +70,12 @@ const LandingContainer = () => {
         recent={recent}
         clickLeft={clickLeft}
         clickRight={clickRight}
+        currentUser={currentUser}
+        landing={onClickLanding}
+        classList={onClickList}
+        storeList={onClickStore}
+        heartClass={onClickHeartClass}
+        signIn={onClickSignIn}
       />
     </>
   );
