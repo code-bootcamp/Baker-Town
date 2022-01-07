@@ -73,7 +73,13 @@ const ClassDetailContainer = () => {
     );
     const userResult = await getDoc(userQuery);
 
-    //예약하기(구매)
+    // 돈 없으면 내보내기
+    if (userResult.data().mypoint < myClass?.price) {
+      alert("포인트가 부족합니다.");
+      return;
+    }
+
+    // 예약하기(구매)
     const buyInfo = {
       classRouter: router.query.classId,
       className: myClass?.className,
@@ -118,6 +124,7 @@ const ClassDetailContainer = () => {
       className: myClass?.className,
       category: myClass?.category,
       classPrice: Number(myClass?.price),
+      reservationIndex: myIndex,
       ...currentReservInfo.classArray?.[0],
     };
     myBeforeParClass.push(dddd);
@@ -236,7 +243,6 @@ const ClassDetailContainer = () => {
   const ReviewRef = useRef();
   const ProgramRef = useRef();
   const MapRef = useRef();
-  console.log("째재", ReviewRef.current);
 
   const GoReview = () =>
     ReviewRef.current.scrollIntoView({

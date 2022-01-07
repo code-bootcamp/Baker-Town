@@ -140,21 +140,11 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               </S.SubTheme2>
             </S.SubComponentWrapper>
             <Slider {...settings}>
-              <div>
-                <S.CarouselWrapper>
-                  <S.ClassImage src="/imgs/share.png" />
-                </S.CarouselWrapper>
-              </div>
-              <div>
-                <S.CarouselWrapper>
-                  <S.ClassImage src="/imgs/good.png" />
-                </S.CarouselWrapper>
-              </div>
-              <div>
-                <S.CarouselWrapper>
-                  <S.ClassImage src="/imgs/logo.png" />
-                </S.CarouselWrapper>
-              </div>
+              {props.myClass?.images?.map((el) => (
+                <div key={uuidv4()}>
+                  <S.ClassImage src={`https://storage.googleapis.com/${el}`} />
+                </div>
+              ))}
             </Slider>
           </S.ClassIntro>
           <S.PatissierIntro>
@@ -167,9 +157,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             <S.ProgramIntro ref={props.ProgramRef}>
               <S.SubjectTitle>프로그램</S.SubjectTitle>
               <S.ProgramGuideBox>
-                <div>
-                  <div>{props.myClass?.contents}</div>
-                </div>
+                <div>{props.myClass?.contents}</div>
                 #.완성작품
                 <S.ProgramImage>
                   <div>파티셰가 넣는 예시 이미지</div>
@@ -186,9 +174,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 <S.ContactPatissier>연락하기</S.ContactPatissier>
               </S.PatissierWrapper>
               <S.PatissierContentsBox>
-                <S.PatissierContents>
-                  <div>파티셰의 한 줄 소개입니다.</div>
-                </S.PatissierContents>
+                파티셰의 한 줄 소개입니다.
               </S.PatissierContentsBox>
             </S.PatissierInfo>
           </S.PatissierIntro>
@@ -247,18 +233,25 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                   <S.ClassButton>
                     <S.SmallText>모집 타임</S.SmallText>
                     <S.ClassDate>수업일 : {el.class.date}</S.ClassDate>
-                    <S.ClassStartTime>시작시간 : {el.class.start}</S.ClassStartTime>
-                    <S.ClassRunningTime>수업시간 : {el.class.runningTime}</S.ClassRunningTime>
+                    <S.ClassStartTime>
+                      시작시간 : {el.class.start}
+                    </S.ClassStartTime>
+                    <S.ClassRunningTime>
+                      수업시간 : {el.class.runningTime}
+                    </S.ClassRunningTime>
                     <S.SmallLine></S.SmallLine>
                     <S.ClassStartTime>
-                      신청완료 {el.class.membersName.length}명 / 수강인원 {el.class.member}명
+                      신청완료 {el.class.membersName.length}명 / 수강인원{" "}
+                      {el.class.member}명
                     </S.ClassStartTime>
                   </S.ClassButton>
                 </S.ClassArrayWrapper>
               ))}
             </S.ClassScheduleWrapper>
-            <S.ClassPrice>총  {props.myClass?.price}원</S.ClassPrice>
-            <S.ReservationButton onClick={props.reservation}>예약하기</S.ReservationButton>
+            <S.ClassPrice>{props.myClass?.price}원</S.ClassPrice>
+            <S.ReservationButton onClick={props.reservation}>
+              예약하기
+            </S.ReservationButton>
           </S.ClassSchedule>
         </S.ScheduleWrapper>
       </S.WholeWrapper>

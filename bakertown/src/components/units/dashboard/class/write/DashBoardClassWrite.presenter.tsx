@@ -4,6 +4,8 @@ import { DatePicker } from "antd";
 import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
 import ClassScheduleContainer from "../../../../commons/classSchedule/ClassSchedule.container";
+import { Upload, Button, Space } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
 
 const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
   return (
@@ -99,7 +101,18 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
 
         <S.RelatedFileWrapper>
           <S.RelatedFileTitle>파일을 첨부해 주세요</S.RelatedFileTitle>
-          <input type="file" onChange={props.onChangeImage} />
+          <input type="file" onChange={props.onChangeImage2} />
+          <Space>
+            <Upload
+              listType="picture"
+              maxCount={1}
+              // action={props.onChangeImage}
+              onChange={props.onChangeImage}
+              fileList={props.fileList}
+            >
+              <Button icon={<UploadOutlined />}>Upload (Max: 1)</Button>
+            </Upload>
+          </Space>
           {/* 날짜 및 시간 받아내기 */}
         </S.RelatedFileWrapper>
         <S.ChooseScheduleWrapper>
