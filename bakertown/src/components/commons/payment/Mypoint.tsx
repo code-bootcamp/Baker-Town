@@ -37,7 +37,7 @@ export default function Mypoint() {
         pg: "html5_inicis",
         pay_method: "card",
         name: "포인트충전",
-        amount: 100,
+        amount: 1000,
         buyer_email: "cksal4897@gmail.com",
         buyer_name: "밍마켓",
         buyer_tel: "010-0000-0000",
