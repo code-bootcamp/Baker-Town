@@ -12,7 +12,7 @@ const WishListPresenter = (props) => {
             <S.ListTitleText>CLASS | 찜목록</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
-            {props.userResult.heart.map((el) => (
+            {props.userResult?.heart?.map((el) => (
               <S.ClassWrapper>
                 <S.ClassImage />
                 <S.ClassPatissier>{el.category}</S.ClassPatissier>

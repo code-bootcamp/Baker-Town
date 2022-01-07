@@ -99,6 +99,10 @@ const DashBoardMainClassWriteContainer = () => {
     });
   };
 
+  const onChangeCategory = (event) => {
+    myInputs.category = event.target.value;
+  };
+
   const onChangeImage = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
 
@@ -125,6 +129,7 @@ const DashBoardMainClassWriteContainer = () => {
       toggleScheduleModal={toggleScheduleModal}
       isVisible={isVisible}
       address={address}
+      onChangeCategory={onChangeCategory}
     />
   );
 };
