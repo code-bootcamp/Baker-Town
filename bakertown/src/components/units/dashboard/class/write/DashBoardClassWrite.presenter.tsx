@@ -110,11 +110,12 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
             날짜 시간 설정하기 모달!!!
           </S.SearchScheduleButton>
           <Modal
+            
             visible={props.isVisible}
             onOk={props.toggleScheduleModal}
             onCancel={props.toggleScheduleModal}
           >
-            <ClassScheduleContainer classSchedule={props.classSchedule} />
+            <ClassScheduleContainer classSchedule={props.classSchedule}/>
           </Modal>
         </S.ChooseScheduleWrapper>
         <S.SubmitButton onClick={props.onClickSubmit}>등록하기</S.SubmitButton>

@@ -80,6 +80,8 @@ export const ClassContentsTitle = styled.div``;
 export const ClassContents = styled.input`
   width: 900px;
   height: 500px;
+  padding-left: 10px;
+  padding-bottom: 450px;
 `;
 
 export const ClassPriceWrapper = styled.div`

@@ -20,6 +20,7 @@ const ClassDetailContainer = () => {
     category: "카테고리 예시",
     className: "제목 로딩중!!",
     contents: "내용 로딩중!!!",
+    price: "",
   });
   const [myDate, setMyDate] = useState("");
   const [myIndex, setMyIndex] = useState(0);
@@ -68,13 +69,26 @@ const ClassDetailContainer = () => {
     );
     const userResult = await getDoc(userQuery);
 
+    //예약하기(구매)
+    const buyInfo = {
+      classRouter: router.query.classId,
+      className: myClass?.className,
+      price: myClass?.price,
+    };
+    console.log(buyInfo);
+
     // 현재 페이지의 예약정보
     const currentReservInfo = myClass?.applyClass;
-
+    //현재 나의 포인트 - class가격
+    const charge = userResult.data().mypoint - buyInfo.price;
     // 현재 페이지 예약정보에 내 이름 넣기
     currentReservInfo?.classArray?.[myIndex].class.membersName.push(
       userResult.data().name
     );
+    //나의 포인트 잔액
+    await updateDoc(userQuery, { mypoint: charge });
+    console.log(charge);
+    alert("예약완료");
     await updateDoc(bakeryClass, {
       applyClass: {
         ...currentReservInfo,
@@ -90,6 +104,7 @@ const ClassDetailContainer = () => {
       classRouter: router.query.classId,
       className: myClass?.className,
       category: myClass?.category,
+      classPrice: Number(myClass?.price),
       ...currentReservInfo.classArray?.[0],
     };
     myBeforeParClass.push(dddd);
@@ -98,8 +113,12 @@ const ClassDetailContainer = () => {
     });
   };
 
-  const onClickSelectDate = (index) => () => {
+  const onClickSelectDate = (el, index) => () => {
     // setMyDate(myClass?.applyClass?.classArray?.[index].class.date);
+    console.log(el);
+    alert(
+      `${el?.class?.date} 날짜의 ${el?.class?.start} 시간을 선택하셨습니다!`
+    );
     setMyIndex(index);
   };
 

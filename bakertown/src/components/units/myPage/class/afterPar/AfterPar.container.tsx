@@ -47,16 +47,17 @@ const AfterParContainer = () => {
     const userResult = await getDoc(userQuery);
     console.log("내정보", userResult);
     // 현재 페이지의 리뷰정보
-    const currentReview = classResult?.review?.reviewArray;
+    const currentReview = classResult?.data().review;
 
     // 내가 달고 싶은 리뷰
     const myReview = {
-      review: {
-        createdAt: getOnlyDate(new Date()),
-        user: userResult.data().name,
-        rating: rating,
-        contents: reviewContents,
-      },
+      createdAt: getOnlyDate(new Date()),
+      user: userResult.data().name,
+      rating: rating,
+      contents: reviewContents,
+      class: myUser?.afterPar?.[index].class,
+      className: myUser?.afterPar?.[index].className,
+      category: myUser?.afterPar?.[index].category,
     };
 
     // 내 리뷰
@@ -64,6 +65,10 @@ const AfterParContainer = () => {
 
     // 현재 페이지의 리뷰정보에 내 리뷰 넣기
     currentReview?.push(myReview);
+    console.log("aaaaaaaa", currentReview);
+    await updateDoc(bakeryClass, {
+      review: currentReview,
+    });
 
     // 내 리뷰에 현재 클래스 아이디 및 리뷰정보 넣기
     const reviewInfo = {
