@@ -17,6 +17,7 @@ const ClassDetailContainer = () => {
 
   const [myClass, setMyClass] = useState({
     address: "내 주소!",
+    query: "",
     category: "카테고리 예시",
     className: "제목 로딩중!!",
     contents: "내용 로딩중!!!",

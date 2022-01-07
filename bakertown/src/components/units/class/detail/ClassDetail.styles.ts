@@ -148,19 +148,19 @@ export const Rater = styled.div`
 
 export const CategoryTag = styled.div`
   padding-top: 32.8px;
-  width: 150px;
+  /* width: 150px; */
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
 
-export const AreaCategory = styled.div`
+export const Category = styled.div`
   font-size: 24px;
 `;
 
-export const ContentsCategory = styled.div`
-  font-size: 24px;
-`;
+// export const ContentsCategory = styled.div`
+//   font-size: 24px;
+// `;
 
 export const SubTheme2 = styled.div`
   display: flex;

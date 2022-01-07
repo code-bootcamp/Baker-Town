@@ -5,7 +5,6 @@ import * as S from "./ClassDetail.styles";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
 import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
-import { map } from "@firebase/util";
 import { Rate } from "antd";
 
 declare const window: typeof globalThis & {
@@ -120,10 +119,10 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                   <S.Rater>(1,700)</S.Rater>
                 </S.ClassStarRate>
                 <S.CategoryTag>
-                  <S.AreaCategory>송파구•</S.AreaCategory>
-                  <S.ContentsCategory>
+                  <S.Category>{props.myClass?.district} • {props.myClass?.category}</S.Category>
+                  {/* <S.ContentsCategory>
                     {props.myClass?.category}
-                  </S.ContentsCategory>
+                  </S.ContentsCategory> */}
                 </S.CategoryTag>
               </S.SubTheme1>
               <S.SubTheme2>
@@ -138,7 +137,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.ClassShare>
               </S.SubTheme2>
             </S.SubComponentWrapper>
-            <Slider {...settings} >
+            <Slider {...settings}>
               <div>
                 <S.CarouselWrapper>
                   <S.ClassImage src="/imgs/share.png" />
@@ -218,17 +217,13 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                     <S.ClassReviewerId>{el.user}</S.ClassReviewerId>
                     <S.Label>
                       <S.PersonalRate>
-                       <Rate value={el.rating}/>
+                        <Rate value={el.rating} />
                       </S.PersonalRate>
                       <S.CreatedDate>{el.createdAt}</S.CreatedDate>
-                     
                     </S.Label>
                   </S.Label3>
                 </S.ClassReview>
-                <S.ReviewBox>
-                  {el.contents}
-                </S.ReviewBox>
-                
+                <S.ReviewBox>{el.contents}</S.ReviewBox>
               </div>
             ))}
           </S.ClassReviewInfo>
