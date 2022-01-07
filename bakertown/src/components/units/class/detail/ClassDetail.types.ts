@@ -1,4 +1,10 @@
+import { LegacyRef, MouseEventHandler } from "react";
+
 export interface IClassDetailPresenterProps {
+  isSelectedMap: any;
+  isSelectedReview: any;
+  ProgramRef: LegacyRef<HTMLDivElement> | undefined;
+  isSelectedProgram: any;
   GoReview: MouseEventHandler<HTMLDivElement> | undefined;
   GoMap: MouseEventHandler<HTMLDivElement> | undefined;
   GoProgram: MouseEventHandler<HTMLDivElement> | undefined;
