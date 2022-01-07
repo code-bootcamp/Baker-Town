@@ -250,6 +250,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.ClassArrayWrapper>
               ))}
             </S.ClassScheduleWrapper>
+            <div>{props.myClass?.price}원</div>
             <button onClick={props.reservation}>예약하기</button>
           </S.ClassSchedule>
         </S.ScheduleWrapper>
