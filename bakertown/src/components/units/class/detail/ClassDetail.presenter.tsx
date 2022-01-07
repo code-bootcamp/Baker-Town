@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import * as S from "./ClassDetail.styles";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
 import { v4 as uuidv4 } from "uuid";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { map } from "@firebase/util";
 
 declare const window: typeof globalThis & {
@@ -80,8 +80,33 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
     };
   }, []);
 
+  // 반응형 헤더
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+    // console.log(scrollPosition);
+  });
+
   return (
     <>
+      <S.NavBarWrapper
+        className={scrollPosition < 2 ? "original_header" : "change_header"}
+      >
+        <S.NavBarCategory>
+          {/* <S.NavTextWrapper> */}
+          <S.NavProgram onClick={props.GoProgram} isActive={props.isActive}>
+            프로그램
+          </S.NavProgram>
+          <S.NavPlace onClick={props.GoMap}>위치정보</S.NavPlace>
+          <S.NavReview onClick={props.GoReview}>후기</S.NavReview>
+          {/* </S.NavTextWrapper> */}
+        </S.NavBarCategory>
+      </S.NavBarWrapper>
       <S.WholeWrapper>
         <S.IntroWrapper>
           <S.ClassIntro>
@@ -137,7 +162,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             <S.ClassRemarksDetail>
               {props.myClass?.remarks}
             </S.ClassRemarksDetail>
-            <S.ProgramIntro>
+            <S.ProgramIntro ref={props.ProgramRef}>
               <S.SubjectTitle>프로그램</S.SubjectTitle>
               <S.ProgramGuideBox>
                 <div>
@@ -165,13 +190,13 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               </S.PatissierContentsBox>
             </S.PatissierInfo>
           </S.PatissierIntro>
-          <S.ClassLocationInfo>
+          <S.ClassLocationInfo ref={props.MapRef}>
             <S.SubjectTitle>위치정보</S.SubjectTitle>
             <S.LocationMap>
               <div id="map" style={{ width: "864px", height: "400px" }}></div>
             </S.LocationMap>
           </S.ClassLocationInfo>
-          <S.ClassReviewInfo>
+          <S.ClassReviewInfo ref={props.ReviewRef}>
             <S.SubjectTitle onClick={props.review}>
               실제 수강생 후기
             </S.SubjectTitle>

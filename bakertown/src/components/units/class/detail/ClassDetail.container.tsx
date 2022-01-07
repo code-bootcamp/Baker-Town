@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import ClassDetailPresenter from "./ClassDetail.presenter";
 import {
   getFirestore,
@@ -13,6 +13,7 @@ import { getDate, getOnlyDate } from "../../../../commons/libraries/getDate";
 
 const ClassDetailContainer = () => {
   const router = useRouter();
+  const [isActive, setIsActive] = useState(false);
 
   const [myClass, setMyClass] = useState({
     address: "내 주소!",
@@ -194,6 +195,31 @@ const ClassDetailContainer = () => {
     });
   };
 
+  // scroll tap
+
+  const ReviewRef = useRef();
+  const ProgramRef = useRef();
+  const MapRef = useRef();
+  console.log("째재", ReviewRef.current);
+
+  const GoReview = () =>
+    ReviewRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+  const GoProgram = () =>
+    ProgramRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+  const GoMap = () =>
+    MapRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
   return (
     <ClassDetailPresenter
       myClass={myClass}
@@ -202,6 +228,13 @@ const ClassDetailContainer = () => {
       nameInput={onChangeName}
       review={onClickReview}
       heart={onClickHeart}
+      GoProgram={GoProgram}
+      GoMap={GoMap}
+      GoReview={GoReview}
+      ReviewRef={ReviewRef}
+      ProgramRef={ProgramRef}
+      MapRef={MapRef}
+      isActive={isActive}
     />
   );
 };

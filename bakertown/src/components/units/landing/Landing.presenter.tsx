@@ -86,7 +86,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
         <S.Img
           onClick={props.landing}
           src={
-            scrollPosition < 90
+            scrollPosition < 50
               ? "/imgs/landing/header01.png"
               : "/imgs/logo.png"
           }
