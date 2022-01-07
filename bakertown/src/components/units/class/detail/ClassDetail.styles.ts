@@ -28,7 +28,7 @@ export const NavProgram = styled.div`
   width: 89px;
   height: 33px;
   font-size: 24px;
-  font-weight: ${(props) => (props.isActive ? "bold" : "none")};
+  font-weight: ${(props) => (props.isSelectedProgram ? "bold" : "none")};
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -41,7 +41,8 @@ export const NavPlace = styled.div`
   width: 89px;
   height: 33px;
   font-size: 24px;
-  font-weight: ${(props) => (props.isActive ? "bold" : "none")};
+  font-weight: ${(props) =>
+    props.isSelectedMap && !props.isSelectedReview ? "bold" : "none"};
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -55,7 +56,7 @@ export const NavReview = styled.div`
   width: 45px;
   height: 33px;
   font-size: 24px;
-  font-weight: ${(props) => (props.isActive ? "bold" : "none")};
+  font-weight: ${(props) => (!props.isSelectedReview ? "none" : "bold")};
   font-stretch: normal;
   font-style: normal;
   line-height: normal;

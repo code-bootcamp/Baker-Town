@@ -80,30 +80,30 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
     };
   }, [props.myClass?.address]);
 
-  // 반응형 헤더
-
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const updateScroll = () => {
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", updateScroll);
-    // console.log(scrollPosition);
-  });
-
   return (
     <>
       <S.NavBarWrapper
-        className={scrollPosition < 2 ? "original_header" : "change_header"}
+        className={
+          props.scrollPosition < 2 ? "original_header" : "change_header"
+        }
       >
         <S.NavBarCategory>
           {/* <S.NavTextWrapper> */}
-          <S.NavProgram onClick={props.GoProgram} isActive={props.isActive}>
+          <S.NavProgram
+            onClick={props.GoProgram}
+            isSelectedProgram={props.isSelectedProgram}
+          >
             프로그램
           </S.NavProgram>
-          <S.NavPlace onClick={props.GoMap}>위치정보</S.NavPlace>
-          <S.NavReview onClick={props.GoReview}>후기</S.NavReview>
+          <S.NavPlace onClick={props.GoMap} isSelectedMap={props.isSelectedMap}>
+            위치정보
+          </S.NavPlace>
+          <S.NavReview
+            onClick={props.GoReview}
+            isSelectedReview={props.isSelectedReview}
+          >
+            후기
+          </S.NavReview>
           {/* </S.NavTextWrapper> */}
         </S.NavBarCategory>
       </S.NavBarWrapper>
@@ -164,19 +164,6 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.ProgramImage>
               </S.ProgramGuideBox>
             </S.ProgramIntro>
-            <S.PatissierInfo>
-              <S.SubjectTitle>개설자 정보</S.SubjectTitle>
-              <S.PatissierWrapper>
-                <S.PatissierPhoto src="/imgs/user.png" />
-                <S.PatissierName>
-                  {props.myClass?.patissier} 파티셰
-                </S.PatissierName>
-                <S.ContactPatissier>연락하기</S.ContactPatissier>
-              </S.PatissierWrapper>
-              <S.PatissierContentsBox>
-                파티셰의 한 줄 소개입니다.
-              </S.PatissierContentsBox>
-            </S.PatissierInfo>
           </S.PatissierIntro>
           <S.ClassLocationInfo ref={props.MapRef}>
             <S.SubjectTitle>위치정보</S.SubjectTitle>
@@ -184,6 +171,21 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <div id="map" style={{ width: "864px", height: "400px" }}></div>
             </S.LocationMap>
           </S.ClassLocationInfo>
+          <S.PatissierInfo>
+            <S.SubjectTitle>개설자 정보</S.SubjectTitle>
+            <S.PatissierWrapper>
+              <S.PatissierPhoto src="/imgs/user.png" />
+              <S.PatissierName>
+                {props.myClass?.patissier} 파티셰
+              </S.PatissierName>
+              <S.ContactPatissier>연락하기</S.ContactPatissier>
+            </S.PatissierWrapper>
+            <S.PatissierContentsBox>
+              <S.PatissierContents>
+                <div>파티셰의 한 줄 소개입니다.</div>
+              </S.PatissierContents>
+            </S.PatissierContentsBox>
+          </S.PatissierInfo>
           <S.ClassReviewInfo ref={props.ReviewRef}>
             <S.SubjectTitle onClick={props.review}>
               실제 수강생 후기
@@ -215,7 +217,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               </div>
             ))}
           </S.ClassReviewInfo>
-          <S.ViewMore>177개의 후기 더보기</S.ViewMore>
+          <S.ViewMore ref={props.testRef}>177개의 후기 더보기</S.ViewMore>
         </S.IntroWrapper>
         <S.ScheduleWrapper>
           <S.ClassSchedule>

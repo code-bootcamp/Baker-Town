@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import ClassDetailPresenter from "./ClassDetail.presenter";
 import {
   getFirestore,
@@ -13,7 +13,6 @@ import { getDate, getOnlyDate } from "../../../../commons/libraries/getDate";
 
 const ClassDetailContainer = () => {
   const router = useRouter();
-  const [isActive, setIsActive] = useState(false);
 
   const [myClass, setMyClass] = useState({
     address: "내 주소!",
@@ -238,11 +237,24 @@ const ClassDetailContainer = () => {
     location.reload();
   };
 
+  // 반응형 헤더
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+    // console.log(scrollPosition);
+  });
+
   // scroll tap
 
-  const ReviewRef = useRef();
-  const ProgramRef = useRef();
-  const MapRef = useRef();
+  // const ReviewRef = useRef();
+  // const ProgramRef = useRef();
+  // const MapRef = useRef();
+
 
   const GoReview = () =>
     ReviewRef.current.scrollIntoView({
@@ -262,6 +274,89 @@ const ClassDetailContainer = () => {
       block: "start",
     });
 
+  // 스크롤 지나면 글자 굵기 변경
+  //program ref
+
+  const ReviewRef = useRef();
+  const ProgramRef = useRef();
+  const MapRef = useRef();
+  const testRef = useRef();
+
+  const [isSelectedProgram, setIsSelectedProgram] = useState(false);
+
+  const callbackFunction = (entries) => {
+    const [entry] = entries;
+    setIsSelectedProgram(entry.isIntersecting);
+  };
+
+  // const options = useMemo(() => {
+  //   return {
+  //     root: null,
+  //     rootMargin: "0px",
+  //     threshold: 0,
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction);
+    const currentTargetProgram = ProgramRef.current;
+    if (currentTargetProgram) observer.observe(currentTargetProgram);
+    console.log("observer", observer);
+
+    return () => {
+      if (currentTargetProgram) observer.unobserve(currentTargetProgram);
+    };
+  }, [ProgramRef]);
+
+  // map ref
+
+  const [isSelectedMap, setIsSelectedMap] = useState(false);
+
+  const callbackFunctionMap = (entries) => {
+    const [entry] = entries;
+    setIsSelectedMap(entry.isIntersecting);
+  };
+
+  useEffect(() => {
+    const observerMap = new IntersectionObserver(callbackFunctionMap);
+    const currentTargetMap = MapRef.current;
+    if (currentTargetMap) observerMap.observe(currentTargetMap);
+
+    return () => {
+      if (currentTargetMap) observerMap.unobserve(currentTargetMap);
+    };
+  }, [MapRef]);
+
+  // review ref
+
+  const [isSelectedReview, SetisSelectedReview] = useState(false);
+
+  const callbackFunctionReview = (entries) => {
+    const [entry] = entries;
+    SetisSelectedReview(entry.isIntersecting);
+  };
+
+  const options = useMemo(() => {
+    return {
+      root: null,
+      rootMargin: "-100px",
+      threshold: 0.5,
+    };
+  }, []);
+
+  useEffect(() => {
+    const observerReview = new IntersectionObserver(
+      callbackFunctionReview,
+      options
+    );
+    const currentTargetReview = testRef.current;
+    if (currentTargetReview) observerReview.observe(currentTargetReview);
+
+    return () => {
+      if (currentTargetReview) observerReview.unobserve(currentTargetReview);
+    };
+  }, [testRef]);
+
   return (
     <ClassDetailPresenter
       myClass={myClass}
@@ -271,12 +366,17 @@ const ClassDetailContainer = () => {
       review={onClickReview}
       heart={onClickHeart}
       GoProgram={GoProgram}
+      scrollPosition={scrollPosition}
       GoMap={GoMap}
       GoReview={GoReview}
       ReviewRef={ReviewRef}
       ProgramRef={ProgramRef}
       MapRef={MapRef}
-      isActive={isActive}
+      ReviewRef={ReviewRef}
+      testRef={testRef}
+      isSelectedProgram={isSelectedProgram}
+      isSelectedMap={isSelectedMap}
+      isSelectedReview={isSelectedReview}
     />
   );
 };
