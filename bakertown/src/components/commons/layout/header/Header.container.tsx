@@ -1,6 +1,9 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import HeaderPresenter from "./Header.presenter";
+
+const BOLD_CLASS = [`/class`, `/class/그 뒤에 모두 되는 걸로 해야함`];
+const BOLD_STORE = [`/store`, `/store/그 뒤에 모두 되는 걸로 해야함`];
 
 const HeaderContainer = () => {
   const router = useRouter();
@@ -12,10 +15,13 @@ const HeaderContainer = () => {
   const onClickClass = () => {
     router.push(`/class`);
   };
+  const onClickStore = () => {
+    router.push(`/store`);
+  };
   const onClickSearch = () => {
     router.push(`/class/search/${keyWord}`);
   };
-  const onChangeKeyWord = (event) => {
+  const onChangeKeyWord = (event: ChangeEvent<HTMLInputElement>) => {
     setKeyWord(event.target.value);
   };
   const onClickSignIn = () => {
@@ -25,6 +31,9 @@ const HeaderContainer = () => {
     router.push(`/myPage/class/wishList`);
   };
 
+  const isBoldClass = BOLD_CLASS.includes(router.asPath);
+  const isBoldStore = BOLD_STORE.includes(router.asPath);
+
   return (
     <HeaderPresenter
       logo={onClickLogo}
@@ -33,6 +42,9 @@ const HeaderContainer = () => {
       keyWord={onChangeKeyWord}
       signIn={onClickSignIn}
       heartClass={onClickHeartClass}
+      store={onClickStore}
+      isBoldClass={isBoldClass}
+      isBoldStore={isBoldStore}
     />
   );
 };
