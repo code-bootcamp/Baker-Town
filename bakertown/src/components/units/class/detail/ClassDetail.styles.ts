@@ -35,6 +35,9 @@ export const NavProgram = styled.div`
   letter-spacing: normal;
   text-align: left;
   color: #1e1e1e;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const NavPlace = styled.div`
@@ -50,6 +53,9 @@ export const NavPlace = styled.div`
   text-align: left;
   color: #1e1e1e;
   margin-left: 30px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const NavReview = styled.div`
@@ -64,6 +70,9 @@ export const NavReview = styled.div`
   text-align: left;
   color: #1e1e1e;
   margin-left: 30px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const WholeWrapper = styled.div`

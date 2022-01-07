@@ -181,9 +181,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <S.ContactPatissier>연락하기</S.ContactPatissier>
             </S.PatissierWrapper>
             <S.PatissierContentsBox>
-              <S.PatissierContents>
-                <div>파티셰의 한 줄 소개입니다.</div>
-              </S.PatissierContents>
+              <div>파티셰의 한 줄 소개입니다.</div>
             </S.PatissierContentsBox>
           </S.PatissierInfo>
           <S.ClassReviewInfo ref={props.ReviewRef}>
