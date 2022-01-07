@@ -437,6 +437,8 @@ export const ClassSchedule = styled.div`
   border: 1px solid gray;
   padding-left: 30px;
   padding-top: 20px;
+  background-color: navy;
+  position: fixed;
 `;
 
 export const ClassScheduleWrapper = styled.div`

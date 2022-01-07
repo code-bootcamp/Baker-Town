@@ -154,14 +154,13 @@ export const LoginText = styled.div`
 export const HeartToLogin = styled.div`
   display: flex;
   align-items: center;
-  width: 90px;
 `;
 
 export const TopBanner = styled.div`
   width: 100vw;
   height: 680px;
-  background-image: url("/imgs/landing/banner03.jpg"),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 80%);
+  background-image: url("/imgs/landing/banner03.jpg");
+
   position: relative;
   background-position: bottom 0px center;
   background-size: 110%;
@@ -170,12 +169,6 @@ export const TopBanner = styled.div`
   overflow: hidden;
   box-shadow: inset 9px -300px 67px -3px rgba(0, 0, 0, 0.1);
   background-size: cover;
-
-  /* background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 30%
-  ); */
 `;
 
 export const Wrapper = styled.div`
