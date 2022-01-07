@@ -65,7 +65,6 @@ const DashBoardMainClassWriteContainer = () => {
     // myInputs.applyClass.push("aaa");
     myInputs.patissierId = currentUser?.uid;
     myInputs.createdAt = getDate(new Date());
-    myInputs.category = "마카롱";
     console.log(myInputs);
     const dashboardclasswrite = collection(
       // db
