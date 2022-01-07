@@ -446,7 +446,11 @@ export const ClassScheduleWrapper = styled.div`
   display: flex;
 `;
 
-export const ClassArrayWrapper = styled.div``;
+export const ClassArrayWrapper = styled.div`
+  :hover {
+    cursor: pointer;
+  }
+`;
 
 export const SmallText = styled.div``;
 

@@ -233,7 +233,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               {props.myClass?.applyClass?.classArray?.map((el, index) => (
                 <S.ClassArrayWrapper
                   key={uuidv4()}
-                  onClick={props.selectDate(index)}
+                  onClick={props.selectDate(el, index)}
                 >
                   {/* <div>날짜: {el.class.date}</div>
                     <div>시작시간: {el.class.start}</div>

@@ -55,6 +55,9 @@ const AfterParContainer = () => {
       user: userResult.data().name,
       rating: rating,
       contents: reviewContents,
+      class: myUser?.afterPar?.[index].class,
+      className: myUser?.afterPar?.[index].className,
+      category: myUser?.afterPar?.[index].category,
     };
 
     // 내 리뷰
