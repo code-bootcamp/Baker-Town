@@ -33,13 +33,13 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
 
         <S.ClassCategoryWrapper>
           <S.ClassCategoryTitle>카테고리 등록</S.ClassCategoryTitle>
-          <S.ClassCategorySelect onChange={props.onChangeInputs}>
-            <S.ClassCategoryOption>베이킹</S.ClassCategoryOption>
-            <S.ClassCategoryOption>마카롱</S.ClassCategoryOption>
-            <S.ClassCategoryOption>커피</S.ClassCategoryOption>
-            <S.ClassCategoryOption>케이크</S.ClassCategoryOption>
-            <S.ClassCategoryOption>쿠키</S.ClassCategoryOption>
-            <S.ClassCategoryOption>쇼콜라</S.ClassCategoryOption>
+          <S.ClassCategorySelect onChange={props.onChangeCategory}>
+            <S.ClassCategoryOption value="베이킹">베이킹</S.ClassCategoryOption>
+            <S.ClassCategoryOption value="마카롱">마카롱</S.ClassCategoryOption>
+            <S.ClassCategoryOption value="커피">커피</S.ClassCategoryOption>
+            <S.ClassCategoryOption value="케이크">케이크</S.ClassCategoryOption>
+            <S.ClassCategoryOption value="쿠키">쿠키</S.ClassCategoryOption>
+            <S.ClassCategoryOption value="쇼콜라">쇼콜라</S.ClassCategoryOption>
           </S.ClassCategorySelect>
         </S.ClassCategoryWrapper>
         <S.ClassRemarksWrapper>
@@ -110,12 +110,11 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
             날짜 시간 설정하기 모달!!!
           </S.SearchScheduleButton>
           <Modal
-            
             visible={props.isVisible}
             onOk={props.toggleScheduleModal}
             onCancel={props.toggleScheduleModal}
           >
-            <ClassScheduleContainer classSchedule={props.classSchedule}/>
+            <ClassScheduleContainer classSchedule={props.classSchedule} />
           </Modal>
         </S.ChooseScheduleWrapper>
         <S.SubmitButton onClick={props.onClickSubmit}>등록하기</S.SubmitButton>
