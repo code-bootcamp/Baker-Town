@@ -23,13 +23,13 @@ const ScheduleSettingPresenter = (props) => {
                   format="h:mm a"
                   onChange={props.timePick}
                 />
-                <S.TimeSelect>
-                  <S.TimeOption>30분</S.TimeOption>
-                  <S.TimeOption>1시간</S.TimeOption>
-                  <S.TimeOption>1시간 30분</S.TimeOption>
-                  <S.TimeOption>2시간</S.TimeOption>
-                  <S.TimeOption>2시간 30분</S.TimeOption>
-                  <S.TimeOption>3시간</S.TimeOption>
+                <S.TimeSelect onChange={props.onChangeTime}>
+                  <S.TimeOption value="30분">30분</S.TimeOption>
+                  <S.TimeOption value="1시간">1시간</S.TimeOption>
+                  <S.TimeOption value="1시간 30분">1시간 30분</S.TimeOption>
+                  <S.TimeOption value="2시간">2시간</S.TimeOption>
+                  <S.TimeOption value="2시간 30분">2시간 30분</S.TimeOption>
+                  <S.TimeOption value="3시간">3시간</S.TimeOption>
                 </S.TimeSelect>
               </S.SettingTwo>
               <S.SettingThree>
@@ -43,6 +43,7 @@ const ScheduleSettingPresenter = (props) => {
           <S.ScheduleWrppaer>
             <div>날짜: {props.date}</div>
             <div>시간: {props.time}</div>
+            <div>수업시간: {props.runningTime}</div>
             <div>최대인원: {props.memberCount}</div>
           </S.ScheduleWrppaer>
           <S.ScheduleSettingButton onClick={props.scheduleSetting}>

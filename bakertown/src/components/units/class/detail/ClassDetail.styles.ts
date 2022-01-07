@@ -149,19 +149,19 @@ export const Rater = styled.div`
 
 export const CategoryTag = styled.div`
   padding-top: 32.8px;
-  width: 150px;
+  /* width: 150px; */
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
 
-export const AreaCategory = styled.div`
+export const Category = styled.div`
   font-size: 24px;
 `;
 
-export const ContentsCategory = styled.div`
-  font-size: 24px;
-`;
+// export const ContentsCategory = styled.div`
+//   font-size: 24px;
+// `;
 
 export const SubTheme2 = styled.div`
   display: flex;
@@ -218,6 +218,7 @@ export const ClassImage = styled.img`
   border-radius: 10px;
   background-color: #c4c4c4;
   margin-top: 20px;
+  object-fit: cover;
 `;
 
 export const PatissierIntro = styled.div``;
@@ -261,6 +262,8 @@ export const ProgramGuideBox = styled.div`
   width: 864px;
   height: 980px;
   /* flex-grow: 0; */
+  padding-left: 20px;
+  padding-top: 20px;
   border-radius: 10px;
   background-color: #f7f7f7;
 `;
@@ -309,10 +312,9 @@ export const PatissierContentsBox = styled.div`
   height: 131px;
   border-radius: 10px;
   background-color: #f7f7f7;
-`;
-
-export const PatissierContents = styled.div`
   font-size: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
 `;
 
 export const ClassLocationInfo = styled.div`
@@ -503,37 +505,73 @@ export const ScheduleWrapper = styled.div`
 
 export const ClassSchedule = styled.div`
   width: 370px;
-  height: 550px;
-  border: 1px solid gray;
+  /* height: 550px; */
+  /* border: 1px solid gray; */
   padding-left: 30px;
   padding-top: 20px;
   /* background-color: navy; */
   position: fixed;
+  box-shadow: 8px 8px 30px 0 rgba(0, 0, 0, 0.1);
 `;
 
 export const ClassScheduleWrapper = styled.div`
   width: 350px;
   display: flex;
+  flex-wrap: wrap;
 `;
 
 export const ClassArrayWrapper = styled.div`
   :hover {
     cursor: pointer;
   }
+  box-shadow: 8px 8px 30px 0 rgba(0, 0, 0, 0.1);
 `;
 
 export const SmallText = styled.div``;
 
 export const ClassButton = styled.div`
-  width: 100px;
+  width: 300px;
   /* height: 100px; */
-  border: 1px solid black;
+  padding-top: 10px;
+  padding-left: 14.5px;
+  padding-bottom: 10px;
+  border: 2px solid #f7f7f7;
 `;
 
 export const ClassDate = styled.div``;
 
 export const SmallLine = styled.div`
-  border-bottom: 1px solid black;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f7f7f7;
+  width: 267px;
 `;
 
 export const ClassStartTime = styled.div``;
+
+export const ClassRunningTime = styled.div``;
+
+export const ClassPrice = styled.div`
+  margin-top: 20px;
+  margin-right: 45px;
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+  font-weight: bold;
+`;
+
+export const ReservationButton = styled.button`
+  width: 100px;
+  height: 39px;
+  margin-top: 90px;
+  margin-left: 110px;
+  margin-bottom: 20px;
+  padding-top: 7px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: #662500;
+  cursor: pointer;
+`;

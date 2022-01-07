@@ -102,7 +102,7 @@ const HIDDEN_LAYOUT = [
   `/dashboard/class/read`,
   `/dashboard/item/write`,
   `/dashboard/item/read`,
-  `/dashboard/mypage`,
+  `/dashboard/myPage`,
 ];
 
 interface IGlobalContext {

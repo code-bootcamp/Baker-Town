@@ -4,6 +4,8 @@ import { DatePicker } from "antd";
 import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
 import ClassScheduleContainer from "../../../../commons/classSchedule/ClassSchedule.container";
+import { Upload, Button, Space } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
 
 const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
   return (
@@ -33,13 +35,13 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
 
         <S.ClassCategoryWrapper>
           <S.ClassCategoryTitle>카테고리 등록</S.ClassCategoryTitle>
-          <S.ClassCategorySelect onChange={props.onChangeInputs}>
-            <S.ClassCategoryOption>베이킹</S.ClassCategoryOption>
-            <S.ClassCategoryOption>마카롱</S.ClassCategoryOption>
-            <S.ClassCategoryOption>커피</S.ClassCategoryOption>
-            <S.ClassCategoryOption>케이크</S.ClassCategoryOption>
-            <S.ClassCategoryOption>쿠키</S.ClassCategoryOption>
-            <S.ClassCategoryOption>쇼콜라</S.ClassCategoryOption>
+          <S.ClassCategorySelect onChange={props.onChangeCategory}>
+            <S.ClassCategoryOption value="베이킹">베이킹</S.ClassCategoryOption>
+            <S.ClassCategoryOption value="마카롱">마카롱</S.ClassCategoryOption>
+            <S.ClassCategoryOption value="커피">커피</S.ClassCategoryOption>
+            <S.ClassCategoryOption value="케이크">케이크</S.ClassCategoryOption>
+            <S.ClassCategoryOption value="쿠키">쿠키</S.ClassCategoryOption>
+            <S.ClassCategoryOption value="쇼콜라">쇼콜라</S.ClassCategoryOption>
           </S.ClassCategorySelect>
         </S.ClassCategoryWrapper>
         <S.ClassRemarksWrapper>
@@ -99,7 +101,18 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
 
         <S.RelatedFileWrapper>
           <S.RelatedFileTitle>파일을 첨부해 주세요</S.RelatedFileTitle>
-          <input type="file" onChange={props.onChangeImage} />
+          <input type="file" onChange={props.onChangeImage2} />
+          <Space>
+            <Upload
+              listType="picture"
+              maxCount={1}
+              // action={props.onChangeImage}
+              onChange={props.onChangeImage}
+              fileList={props.fileList}
+            >
+              <Button icon={<UploadOutlined />}>Upload (Max: 1)</Button>
+            </Upload>
+          </Space>
           {/* 날짜 및 시간 받아내기 */}
         </S.RelatedFileWrapper>
         <S.ChooseScheduleWrapper>
@@ -110,12 +123,11 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
             날짜 시간 설정하기 모달!!!
           </S.SearchScheduleButton>
           <Modal
-            
             visible={props.isVisible}
             onOk={props.toggleScheduleModal}
             onCancel={props.toggleScheduleModal}
           >
-            <ClassScheduleContainer classSchedule={props.classSchedule}/>
+            <ClassScheduleContainer classSchedule={props.classSchedule} />
           </Modal>
         </S.ChooseScheduleWrapper>
         <S.SubmitButton onClick={props.onClickSubmit}>등록하기</S.SubmitButton>

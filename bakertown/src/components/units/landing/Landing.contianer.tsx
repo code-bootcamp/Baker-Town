@@ -7,7 +7,13 @@ import {
 } from "@firebase/firestore";
 import { sliderClasses } from "@mui/material";
 import { useRouter } from "next/router";
-import { useEffect, useState, useRef, MutableRefObject } from "react";
+import {
+  useEffect,
+  useState,
+  useRef,
+  MutableRefObject,
+  ChangeEvent,
+} from "react";
 import { firebaseApp, useAuth } from "../../../../pages/_app";
 import LandingPresenter from "./Landing.presenter";
 
@@ -15,6 +21,7 @@ const LandingContainer = () => {
   const router = useRouter();
   const [popular, setPoplular] = useState([]);
   const [recent, setRecent] = useState([]);
+  const [keyWord, setKeyWord] = useState("");
   const currentUser = useAuth();
 
   useEffect(async () => {
@@ -63,6 +70,26 @@ const LandingContainer = () => {
     router.push(`/signIn`);
   };
 
+  const onChangeKeyWord = (event: ChangeEvent<HTMLInputElement>) => {
+    setKeyWord(event.target.value);
+  };
+
+  const onClickSearch = () => {
+    router.push(`/class/search/${keyWord}`);
+  };
+
+  const onClickPopular = () => {
+    router.push(`/class`);
+  };
+
+  const onClickRecent = () => {
+    router.push(`/class`);
+  };
+
+  const onClickCategory = (event) => {
+    router.push(`/class/category/${event.target.value}`);
+  };
+
   return (
     <>
       <LandingPresenter
@@ -76,6 +103,11 @@ const LandingContainer = () => {
         storeList={onClickStore}
         heartClass={onClickHeartClass}
         signIn={onClickSignIn}
+        keyWord={onChangeKeyWord}
+        search={onClickSearch}
+        goPopular={onClickPopular}
+        geRecent={onClickRecent}
+        category={onClickCategory}
       />
     </>
   );

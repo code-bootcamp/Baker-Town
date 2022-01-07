@@ -18,6 +18,7 @@ const DashBoardMainClassWriteContainer = () => {
     contents: "",
     price: "",
     address: "",
+    district: "",
     createdAt: "",
     patissier: "",
     patissierId: "",
@@ -41,10 +42,11 @@ const DashBoardMainClassWriteContainer = () => {
     setIsVisible((prev) => !prev);
   };
   const handleComplete = (data: any) => {
-    console.log(data);
+    setIsOpen((prev) => !prev);
     setAddress(data.address);
     myInputs.address = data.address;
-    setIsOpen((prev) => !prev);
+    myInputs.district = data.query;
+    console.log(data);
   };
 
   // 날짜 설정
@@ -65,7 +67,6 @@ const DashBoardMainClassWriteContainer = () => {
     // myInputs.applyClass.push("aaa");
     myInputs.patissierId = currentUser?.uid;
     myInputs.createdAt = getDate(new Date());
-    myInputs.category = "마카롱";
     console.log(myInputs);
     const dashboardclasswrite = collection(
       // db
@@ -85,8 +86,9 @@ const DashBoardMainClassWriteContainer = () => {
       className: myInputs.className,
       contents: myInputs.contents,
       remarks: myInputs.remarks,
-      category: myInputs.category,
       address: myInputs.address,
+      district: myInputs.district,
+      category: myInputs.category,
       price: myInputs.price,
       applyClass: myInputs.applyClass,
       images: myInputs.images,
@@ -99,9 +101,26 @@ const DashBoardMainClassWriteContainer = () => {
     });
   };
 
-  const onChangeImage = async (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+  const onChangeCategory = (event) => {
+    myInputs.category = event.target.value;
+  };
+  const [fileList, setFileList] = useState([]);
+  const onChangeImage = async (fileList) => {
+    const file = fileList.file;
+    console.log(fileList.file);
 
+    try {
+      const result = await uploadFile({ variables: { file } });
+      console.log("이미지", result);
+      myInputs.images.push(result.data.uploadFile.url);
+    } catch (error) {
+      if (error instanceof Error) alert(error.message);
+    }
+  };
+
+  const onChangeImage2 = async (event) => {
+    const file = event.target.files?.[0];
+    console.log(event.target.value);
     try {
       const result = await uploadFile({ variables: { file } });
       console.log("이미지", result);
@@ -125,6 +144,9 @@ const DashBoardMainClassWriteContainer = () => {
       toggleScheduleModal={toggleScheduleModal}
       isVisible={isVisible}
       address={address}
+      onChangeCategory={onChangeCategory}
+      fileList={fileList}
+      onChangeImage2={onChangeImage2}
     />
   );
 };

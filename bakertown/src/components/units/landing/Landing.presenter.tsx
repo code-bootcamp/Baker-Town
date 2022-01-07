@@ -90,6 +90,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               ? "/imgs/landing/header01.png"
               : "/imgs/logo.png"
           }
+          onClick={props.landing}
         />
         <S.CategoryClass
           className={scrollPosition < 90 ? "original_header" : "change_header"}
@@ -104,9 +105,15 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
           STORE
         </S.CategoryStore>
         <S.RoundDiv>
-          <S.RoundDivInnerText>어떤 클래스를 원하세요?</S.RoundDivInnerText>
+          <S.RoundDivInnerText
+            placeholder="어떤 클래스를 원하세요?"
+            onChange={props.keyWord}
+          />
           <S.RoundDivCircle>
-            <S.RoundDivInnerIcon src="/imgs/landing/searchicon01.png" />
+            <S.RoundDivInnerIcon
+              src="/imgs/landing/searchicon01.png"
+              onClick={props.search}
+            />
           </S.RoundDivCircle>
         </S.RoundDiv>
         <S.HeartToLogin>
@@ -134,7 +141,9 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
         <S.SubjectName>
           <S.SubjectWrapper>
             <S.SubjectTitle>인기 클래스</S.SubjectTitle>
-            <S.SubjectView>전체 인기 클래스 보기</S.SubjectView>
+            <S.SubjectView onClick={props.goPopular}>
+              전체 인기 클래스 보기
+            </S.SubjectView>
           </S.SubjectWrapper>
           <S.ClassesWrapper>
             {/* {new Array(4).fill( 1).map((el) => (
@@ -157,8 +166,10 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
         <S.SubjectName>
           <S.SubjectWrapper>
             <S.SubjectTitle>신규 클래스</S.SubjectTitle>
-            <S.SubjectView>전체 신규 클래스 보기</S.SubjectView>
-          </S.SubjectWrapper>{" "}
+            <S.SubjectView onClick={props.geRecent}>
+              전체 신규 클래스 보기
+            </S.SubjectView>
+          </S.SubjectWrapper>
           <S.ClassesWrapper>
             <div
               style={{
@@ -181,7 +192,9 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
         <S.EventSubject>
           <S.SubjectWrapper>
             <S.SubjectTitle>새해 핫 아이템</S.SubjectTitle>
-            <S.SubjectView>스토어 전체 보기</S.SubjectView>
+            <S.SubjectView onClick={props.storeList}>
+              스토어 전체 보기
+            </S.SubjectView>
           </S.SubjectWrapper>
           <S.ClassesWrapper>
             {new Array(3).fill(1).map((el) => (
@@ -213,14 +226,26 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
           <S.SubjectTitle>클래스 카테고리</S.SubjectTitle>
           <S.CategoryButtonWrapper>
             <S.CategoryFirstWrapper>
-              <S.CategoryButton>베이킹</S.CategoryButton>
-              <S.CategoryButton>마카롱</S.CategoryButton>
-              <S.CategoryButton>케이크</S.CategoryButton>
+              <S.CategoryButton value="베이킹" onClick={props.category}>
+                베이킹
+              </S.CategoryButton>
+              <S.CategoryButton value="마카롱" onClick={props.category}>
+                마카롱
+              </S.CategoryButton>
+              <S.CategoryButton value="케이크" onClick={props.category}>
+                케이크
+              </S.CategoryButton>
             </S.CategoryFirstWrapper>
             <S.CategorySecondWrapper>
-              <S.CategoryButton>쿠 키</S.CategoryButton>
-              <S.CategoryButton>커 피</S.CategoryButton>
-              <S.CategoryButton>쇼콜라</S.CategoryButton>
+              <S.CategoryButton value="쿠키" onClick={props.category}>
+                쿠 키
+              </S.CategoryButton>
+              <S.CategoryButton value="커피" onClick={props.category}>
+                커 피
+              </S.CategoryButton>
+              <S.CategoryButton value="쇼콜라" onClick={props.category}>
+                쇼콜라
+              </S.CategoryButton>
             </S.CategorySecondWrapper>
           </S.CategoryButtonWrapper>
         </S.CategoryWrapper>

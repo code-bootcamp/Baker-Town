@@ -66,48 +66,8 @@ const SignUpPresenter = () => {
     }
     setLoading(false);
   }
-  // const SignUpPresenter = () => {
-  //   const { handleSubmit, register, formState } = useForm({
-  //     mode: "onChange",
-  //     resolver: yupResolver(schema),
-  //   });
 
-  //   function onClickSignUp(data: FormValues) {
-  //     //loginUser API 요청하기!!!
-  //     console.log(data);
-  //   }
   return (
-    // <S.Aa>
-    //   <S.Wrapper onSubmit={handleSubmit(onClickSignUp)}>
-    //     <S.Label>SignUp</S.Label>
-    //     <S.NameLabel>name</S.NameLabel>
-    //     <S.Name type="text" placeholder="홍길동" {...register("myName")} />
-    //     <S.Error>{formState.errors.myName?.message}</S.Error>
-    //     <S.EmailLabel>email</S.EmailLabel>
-    //     <S.Email
-    //       type="text"
-    //       placeholder="example@naver.com"
-    //       {...register("myEmail")}
-    //     />
-    //     <S.Error>{formState.errors.myEmail?.message}</S.Error>
-    //     <S.PasswordLabel>password</S.PasswordLabel>
-    //     <S.Password
-    //       type="password"
-    //       placeholder="******"
-    //       {...register("myPassword")}
-    //     />
-    //     <S.Error>{formState.errors.myPassword?.message}</S.Error>
-    //     <S.PasswordLabel>passwordcheck</S.PasswordLabel>
-    //     <S.Password
-    //       type="password"
-    //       placeholder="******"
-    //       {...register("myPassword2")}
-    //     />
-    //     <S.Error>{formState.errors.myPassword2?.message}</S.Error>
-    //     {/* <S.SignUp>회원가입하기</S.SignUp> */}
-    //     <S.SignUpButton>SignUp</S.SignUpButton>
-    //   </S.Wrapper>
-    // </S.Aa>
     <S.Aa>
       <S.Wrapper>
         {/* <div>{currentUser?.email}</div> */}

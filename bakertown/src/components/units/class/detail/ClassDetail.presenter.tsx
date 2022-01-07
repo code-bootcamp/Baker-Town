@@ -5,7 +5,6 @@ import * as S from "./ClassDetail.styles";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
 import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
-import { map } from "@firebase/util";
 import { Rate } from "antd";
 
 declare const window: typeof globalThis & {
@@ -79,7 +78,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
         );
       });
     };
-  }, []);
+  }, [props.myClass?.address]);
 
   return (
     <>
@@ -120,10 +119,12 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                   <S.Rater>(1,700)</S.Rater>
                 </S.ClassStarRate>
                 <S.CategoryTag>
-                  <S.AreaCategory>송파구•</S.AreaCategory>
-                  <S.ContentsCategory>
+                  <S.Category>
+                    {props.myClass?.district} • {props.myClass?.category}
+                  </S.Category>
+                  {/* <S.ContentsCategory>
                     {props.myClass?.category}
-                  </S.ContentsCategory>
+                  </S.ContentsCategory> */}
                 </S.CategoryTag>
               </S.SubTheme1>
               <S.SubTheme2>
@@ -139,21 +140,11 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               </S.SubTheme2>
             </S.SubComponentWrapper>
             <Slider {...settings}>
-              <div>
-                <S.CarouselWrapper>
-                  <S.ClassImage src="/imgs/share.png" />
-                </S.CarouselWrapper>
-              </div>
-              <div>
-                <S.CarouselWrapper>
-                  <S.ClassImage src="/imgs/good.png" />
-                </S.CarouselWrapper>
-              </div>
-              <div>
-                <S.CarouselWrapper>
-                  <S.ClassImage src="/imgs/logo.png" />
-                </S.CarouselWrapper>
-              </div>
+              {props.myClass?.images?.map((el) => (
+                <div key={uuidv4()}>
+                  <S.ClassImage src={`https://storage.googleapis.com/${el}`} />
+                </div>
+              ))}
             </Slider>
           </S.ClassIntro>
           <S.PatissierIntro>
@@ -166,9 +157,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             <S.ProgramIntro ref={props.ProgramRef}>
               <S.SubjectTitle>프로그램</S.SubjectTitle>
               <S.ProgramGuideBox>
-                <div>
-                  <div>{props.myClass?.contents}</div>
-                </div>
+                <div>{props.myClass?.contents}</div>
                 #.완성작품
                 <S.ProgramImage>
                   <div>파티셰가 넣는 예시 이미지</div>
@@ -244,19 +233,27 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                     <div>시작시간: {el.class.start}</div>
                     <div>최대인원: {el.class.member}</div> */}
                   <S.ClassButton>
-                    <S.SmallText>모집중</S.SmallText>
-                    <S.ClassDate>{el.class.date}</S.ClassDate>
-                    <S.SmallLine></S.SmallLine>
-                    <S.ClassStartTime>{el.class.start}</S.ClassStartTime>
+                    <S.SmallText>모집 타임</S.SmallText>
+                    <S.ClassDate>수업일 : {el.class.date}</S.ClassDate>
                     <S.ClassStartTime>
-                      {el.class.membersName.length} / {el.class.member}
+                      시작시간 : {el.class.start}
+                    </S.ClassStartTime>
+                    <S.ClassRunningTime>
+                      수업시간 : {el.class.runningTime}
+                    </S.ClassRunningTime>
+                    <S.SmallLine></S.SmallLine>
+                    <S.ClassStartTime>
+                      신청완료 {el.class.membersName.length}명 / 수강인원{" "}
+                      {el.class.member}명
                     </S.ClassStartTime>
                   </S.ClassButton>
                 </S.ClassArrayWrapper>
               ))}
             </S.ClassScheduleWrapper>
-            <div>{props.myClass?.price}원</div>
-            <button onClick={props.reservation}>예약하기</button>
+            <S.ClassPrice>{props.myClass?.price}원</S.ClassPrice>
+            <S.ReservationButton onClick={props.reservation}>
+              예약하기
+            </S.ReservationButton>
           </S.ClassSchedule>
         </S.ScheduleWrapper>
       </S.WholeWrapper>

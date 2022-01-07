@@ -7,6 +7,8 @@ import { logout, signInWithGoogle } from "../../../../../pages/_app";
 import { signin } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
+import { ButtonBase, Paper } from "@material-ui/core";
+import { Button } from "@mui/material";
 
 const SignInPresenter = (props) => {
   const router = useRouter();
@@ -14,7 +16,7 @@ const SignInPresenter = (props) => {
   const emailRef: any = useRef();
   const passwordRef: any = useRef();
 
-  async function handlesSignIn() {
+  async function handlesSignIn(props) {
     setLoading(true);
     try {
       await signin(emailRef.current.value, passwordRef.current.value);
@@ -38,30 +40,46 @@ const SignInPresenter = (props) => {
   }
 
   return (
-    <S.Aa>
-      <S.Wrapper>
-        {/* <S.Wrapper2> */}
-        <S.Label>BAKERTOWN</S.Label>
-        <S.SignInLabel>SingIn</S.SignInLabel>
-        <S.EmailLabel>email</S.EmailLabel>
-        <S.Email type="text" placeholder="example@naver.com" ref={emailRef} />
+    // <Paper>
+    <S.Ba>
+      <S.Aa>
+        <S.Wrapper>
+          <S.Label>BAKER TOWN</S.Label>
+          {/* <div>{currentUser?.email}</div> */}
+          <S.Label>로그인</S.Label>
 
-        <S.PasswordLabel>password</S.PasswordLabel>
-        <S.Password type="password" placeholder="******" ref={passwordRef} />
+          <S.EmailLabel>email</S.EmailLabel>
+          <S.Email ref={emailRef} placeholder="email" />
+          <S.PasswordLabel>password</S.PasswordLabel>
+          <S.Password
+            ref={passwordRef}
+            type="Password"
+            placeholder="password"
+          />
 
-        <S.SignUp onClick={props.SignUp}>SignUp</S.SignUp>
-        {/* <S.SignUp>회원가입하기</S.SignUp> */}
-        <S.SignInButton onClick={handlesSignIn}>SignIn</S.SignInButton>
-        {/* <S.SignInWithGoogle onClick={handlesSignOut}>
-          SingOut
-        </S.SignInWithGoogle> */}
-        {/* <S.Wrapper2/> */}
-      </S.Wrapper>
+          <S.SignUpButton
+            // disabled={loading || currentUser}
+            onClick={handlesSignIn}
+          >
+            SignIn
+          </S.SignUpButton>
+          {/* <S.SignUpButton
+            // disabled={loading || currentUser}
+            onClick={handlesSignIn}
+          >
+            SignIn
+          </S.SignUpButton> */}
+          <S.SignUpButton
+            // disabled={loading || currentUser}
+            onClick={props.onClickSignUp}
+          >
+            SignUp
+          </S.SignUpButton>
+        </S.Wrapper>
+      </S.Aa>
+    </S.Ba>
 
-      <S.ImageWrapper>
-        <S.Img className="Image" alt="login" src="/imgs/login.jpg" />
-      </S.ImageWrapper>
-    </S.Aa>
+    // </Paper>
   );
 };
 
