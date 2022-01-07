@@ -1,10 +1,24 @@
 import styled from "@emotion/styled";
 
+export const Ba = styled.div`
+  background-image: url("/imgs/login.jpg");
+  /* background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; */
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: left;
+`;
+
 export const Aa = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 200px;
+
+  /* background-image: url("/imgs/login.jpg"); */
 `;
 export const Wrapper = styled.div`
   position: relative;
@@ -30,33 +44,23 @@ export const Label = styled.div`
   right: 0px;
   font-size: 50px;
   font-weight: bold; */
-  font-size: 39px;
+  font-size: 55px;
+  font-weight: bold;
 `;
 
 export const NameLabel = styled.div`
   font-size: 30px;
-  /* padding-left: 950px;
-  background-color: green;
-  font-size: 25px;
-  font-weight: normal; */
+  font-weight: bold;
 `;
 
 export const EmailLabel = styled.div`
-  font-size: 30px;
-  /* padding-left: 950px;
-  background-color: green;
-
-  font-size: 25px;
-  font-weight: normal; */
+  font-size: 35px;
+  font-weight: bold;
 `;
 
 export const PasswordLabel = styled.div`
-  font-size: 30px;
-  /* padding-left: 950px;
-  left: 0px;
-  right: 0px;
-  font-size: 25px;
-  font-weight: normal; */
+  font-size: 35px;
+  font-weight: bold;
 `;
 
 export const Name = styled.input`
@@ -66,14 +70,14 @@ export const Name = styled.input`
   margin: 0px 950px 10px;
   left: 0px;
   right: 0px; */
-    font-size: 14px;
+    font-size: 30px;
     font-weight: normal;
-    line-height: 20px;
+    line-height: 30px;
     letter-spacing: -0.15px;
     margin: 0px;
     border: 3px solid rgb(239, 239, 239);
     background-color: white;
-    height: 48px;
+    height: 55px;
     flex: 1 1 auto;
     width: 100%;
     color: rgb(26, 26, 26);
