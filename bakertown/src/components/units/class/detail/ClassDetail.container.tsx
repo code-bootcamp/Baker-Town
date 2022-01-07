@@ -37,6 +37,7 @@ const ClassDetailContainer = () => {
   // }
   useEffect(async () => {
     if (myClass?.address === "내 주소!") {
+      // if (!classData) return;
       const product = doc(
         getFirestore(firebaseApp),
         "class",
@@ -81,7 +82,7 @@ const ClassDetailContainer = () => {
 
     // 내 참여예정 클래스
     const myBeforeParClass = userResult.data().beforePar;
-    currentReservInfo.classArray?.[0];
+    // currentReservInfo.classArray?.[0];
 
     // 내 참여예정 클래스에 현재 클래스 아이디 및 예약정보 넣기
     const dddd = {
