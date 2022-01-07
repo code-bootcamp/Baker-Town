@@ -50,7 +50,6 @@ const ClassDetailContainer = () => {
       console.log(classData);
       setMyClass(classData);
     }
-    console.log("밍");
   });
 
   const onClickReservation = async () => {

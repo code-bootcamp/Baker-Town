@@ -10,6 +10,7 @@ const BeforeParContainer = () => {
   const [myUser, setMyUser] = useState({
     name: "로딩중입니다",
   });
+
   useEffect(async () => {
     if (myUser?.name === "로딩중입니다") {
       if (!currentUser) return;
@@ -28,7 +29,7 @@ const BeforeParContainer = () => {
     router.push(`/class/detail/${el.classRouter}`);
   };
 
-  const onClickCancel = (index) => async () => {
+  const onClickCancel = (el, index) => async () => {
     // 내 정보 불러오기
     const userQuery = doc(
       getFirestore(firebaseApp),
@@ -36,9 +37,10 @@ const BeforeParContainer = () => {
       currentUser?.email
     );
     const userResult: any = await getDoc(userQuery);
-
-    // 클래스 정보 불러오기
-
+    //나의 포인트 +calss가격
+    const charge = userResult.data().mypoint + el.classPrice;
+    await updateDoc(userQuery, { mypoint: charge });
+    console.log(charge);
     // 내 참여예정 클래스
     const myBeforeParClass = userResult.data().beforePar;
     // 선택한 클래스 없애기
