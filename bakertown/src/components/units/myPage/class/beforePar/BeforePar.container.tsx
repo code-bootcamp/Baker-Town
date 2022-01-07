@@ -1,4 +1,4 @@
-import { doc, getDoc, getFirestore } from "@firebase/firestore";
+import { doc, getDoc, getFirestore, updateDoc } from "@firebase/firestore";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
@@ -24,11 +24,36 @@ const BeforeParContainer = () => {
   });
 
   const onClickClassDetail = (el) => () => {
-    router.push(`/class/detail/${el.classRouter}}`);
+    console.log(el.classRouter);
+    router.push(`/class/detail/${el.classRouter}`);
+  };
+
+  const onClickCancel = (index) => async () => {
+    // 내 정보 불러오기
+    const userQuery = doc(
+      getFirestore(firebaseApp),
+      "users",
+      currentUser?.email
+    );
+    const userResult: any = await getDoc(userQuery);
+
+    // 내 참여예정 클래스
+    const myBeforeParClass = userResult.data().beforePar;
+    // 선택한 클래스 없애기
+    myBeforeParClass.splice(index, 1);
+
+    // 없앤 beforePar 배열을 올리기
+    await updateDoc(userQuery, {
+      beforePar: myBeforeParClass,
+    });
   };
 
   return (
-    <BeforeParPresenter userResult={myUser} classDetail={onClickClassDetail} />
+    <BeforeParPresenter
+      userResult={myUser}
+      classDetail={onClickClassDetail}
+      cancel={onClickCancel}
+    />
   );
 };
 
