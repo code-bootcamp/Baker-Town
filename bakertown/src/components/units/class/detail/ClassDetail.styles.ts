@@ -1,13 +1,79 @@
 import styled from "@emotion/styled";
 
+export const NavBarWrapper = styled.div`
+  width: 100%;
+  margin-left: 16px;
+  height: 93px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 8px 8px 30px 0 rgba(0, 0, 0, 0.1);
+  z-index: 2;
+
+  &.change_header {
+    position: fixed;
+    top: 0;
+  }
+`;
+
+export const NavBarCategory = styled.div`
+  width: 1260px;
+  height: 93px;
+  display: flex;
+  align-items: center;
+`;
+
+export const NavProgram = styled.div`
+  width: 89px;
+  height: 33px;
+  font-size: 24px;
+  font-weight: ${(props) => (props.isActive ? "bold" : "none")};
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1e1e1e;
+`;
+
+export const NavPlace = styled.div`
+  width: 89px;
+  height: 33px;
+  font-size: 24px;
+  font-weight: ${(props) => (props.isActive ? "bold" : "none")};
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1e1e1e;
+  margin-left: 30px;
+`;
+
+export const NavReview = styled.div`
+  width: 45px;
+  height: 33px;
+  font-size: 24px;
+  font-weight: ${(props) => (props.isActive ? "bold" : "none")};
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #1e1e1e;
+  margin-left: 30px;
+`;
+
 export const WholeWrapper = styled.div`
   width: 100%;
   /* height: 2000px; */
   display: flex;
   justify-content: center;
-  padding-top: 70px;
+  padding-top: 162px;
   padding-left: 324px;
   padding-right: 324px;
+  position: relative;
 `;
 
 export const IntroWrapper = styled.div`
@@ -18,6 +84,7 @@ export const IntroWrapper = styled.div`
   /* background-color: green; */
   display: flex;
   flex-direction: column;
+  /* background-color: coral; */
 `;
 
 export const ClassIntro = styled.div`
@@ -174,7 +241,7 @@ export const ClassRemarksDetail = styled.div`
 `;
 
 export const ProgramIntro = styled.div`
-  padding-top: 80px;
+  padding-top: 60px;
   font-size: 32px;
   font-weight: bold;
 `;
@@ -248,7 +315,7 @@ export const PatissierContents = styled.div`
 `;
 
 export const ClassLocationInfo = styled.div`
-  padding-top: 10px;
+  padding-top: 20px;
 `;
 
 export const LocationInfo = styled.div`
@@ -265,7 +332,9 @@ export const LocationMap = styled.div`
   background-color: #f7f7f7;
 `;
 
-export const ClassReviewInfo = styled.div``;
+export const ClassReviewInfo = styled.div`
+  padding-top: 20px;
+`;
 
 export const ClassReviewTitle = styled.div`
   margin-top: 70px;

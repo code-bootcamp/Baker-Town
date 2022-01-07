@@ -27,6 +27,8 @@ export const HeaderWrapper = styled.header`
   }
 `;
 
+export const LogoWrapper = styled.div``;
+
 export const Img = styled.img`
   width: 115px;
   height: 42px;
