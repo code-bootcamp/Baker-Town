@@ -31,7 +31,7 @@ const BeforeParPresenter = (props) => {
                   <S.ClassDate>
                     {el.class.date} {el.class.start}
                   </S.ClassDate>
-                  <S.ClassCancelButton onClick={props.cancel(index)}>
+                  <S.ClassCancelButton onClick={props.cancel(el, index)}>
                     취소하기
                   </S.ClassCancelButton>
                 </S.ClassInfoWrapper>
