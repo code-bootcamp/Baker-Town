@@ -39,6 +39,14 @@ const AvatarPage = () => {
     setLoading(false);
   }
 
+  const onClickMyClass = () => {
+    router.push(`/myPage/class/beforePar`);
+  };
+
+  const onClickMyItem = () => {
+    router.push(`/myPage/item/orderHistory`);
+  };
+
   return (
     <>
       <React.Fragment>
@@ -97,13 +105,13 @@ const AvatarPage = () => {
             <Avatar /> My Profile
           </MenuItem>
           <Divider />
-          <MenuItem>
+          <MenuItem onClick={onClickMyClass}>
             <ListItemIcon>
               <PersonAdd fontSize="small" />
             </ListItemIcon>
             내 클래스
           </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={onClickMyItem}>
             <ListItemIcon>
               <PersonAdd fontSize="small" />
             </ListItemIcon>
