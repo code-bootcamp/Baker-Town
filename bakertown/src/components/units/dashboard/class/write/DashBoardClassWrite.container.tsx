@@ -26,7 +26,6 @@ const DashBoardMainClassWriteContainer = () => {
     review: [],
     images: [],
     applyClass: {},
-
   });
   const [classSchedule, setClassSchedule] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
@@ -105,10 +104,23 @@ const DashBoardMainClassWriteContainer = () => {
   const onChangeCategory = (event) => {
     myInputs.category = event.target.value;
   };
+  const [fileList, setFileList] = useState([]);
+  const onChangeImage = async (fileList) => {
+    const file = fileList.file;
+    console.log(fileList.file);
 
-  const onChangeImage = async (event: ChangeEvent<HTMLInputElement>) => {
+    try {
+      const result = await uploadFile({ variables: { file } });
+      console.log("이미지", result);
+      myInputs.images.push(result.data.uploadFile.url);
+    } catch (error) {
+      if (error instanceof Error) alert(error.message);
+    }
+  };
+
+  const onChangeImage2 = async (event) => {
     const file = event.target.files?.[0];
-
+    console.log(event.target.value);
     try {
       const result = await uploadFile({ variables: { file } });
       console.log("이미지", result);
@@ -133,6 +145,8 @@ const DashBoardMainClassWriteContainer = () => {
       isVisible={isVisible}
       address={address}
       onChangeCategory={onChangeCategory}
+      fileList={fileList}
+      onChangeImage2={onChangeImage2}
     />
   );
 };

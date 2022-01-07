@@ -86,6 +86,10 @@ const LandingContainer = () => {
     router.push(`/class`);
   };
 
+  const onClickCategory = (event) => {
+    router.push(`/class/category/${event.target.value}`);
+  };
+
   return (
     <>
       <LandingPresenter
@@ -103,6 +107,7 @@ const LandingContainer = () => {
         search={onClickSearch}
         goPopular={onClickPopular}
         geRecent={onClickRecent}
+        category={onClickCategory}
       />
     </>
   );
