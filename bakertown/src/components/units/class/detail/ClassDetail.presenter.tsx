@@ -5,7 +5,8 @@ import * as S from "./ClassDetail.styles";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
-import { map } from "@firebase/util";
+import { Rate } from "antd";
+
 
 declare const window: typeof globalThis & {
   kakao: any;
@@ -104,7 +105,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 <S.DibsOnClass onClick={props.heart}>
                   {/* <S.Heart src="/imgs/heart.png" /> */}
                   {/* <S.Heart >❤️ 100</S.Heart> */}
-                  ❤️ 100
+                  ❤️ {props.myClass?.heart}
                 </S.DibsOnClass>
                 <S.ClassShare>
                   <S.Share src="/imgs/share.png" />
@@ -112,7 +113,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.ClassShare>
               </S.SubTheme2>
             </S.SubComponentWrapper>
-            <Slider {...settings}>
+            <Slider {...settings} >
               <div>
                 <S.CarouselWrapper>
                   <S.ClassImage src="/imgs/share.png" />
@@ -132,7 +133,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
           </S.ClassIntro>
           <S.PatissierIntro>
             <S.ClassRemarksTitle>
-              ㅇㅇㅇ님과 함께하는 마카롱 클래스
+              {props.myClass?.patissier}님과 함께하는 마카롱 클래스
             </S.ClassRemarksTitle>
             <S.ClassRemarksDetail>
               {props.myClass?.remarks}
@@ -160,7 +161,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               </S.PatissierWrapper>
               <S.PatissierContentsBox>
                 <S.PatissierContents>
-                  <div>{props.myClass?.patissier}</div>
+                  <div>파티셰의 한 줄 소개입니다.</div>
                 </S.PatissierContents>
               </S.PatissierContentsBox>
             </S.PatissierInfo>
@@ -184,42 +185,25 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <S.Rate>4.9</S.Rate>
               <S.Rater>(1,700)</S.Rater>
             </S.ClassStarRate2>
-            {new Array(2).fill(1).map(() => (
+            {props.myClass?.review?.map((el) => (
               <div key={uuidv4()}>
                 <S.ClassReview>
                   <S.ClassReviewerPhoto src="/imgs/user.png" />
                   <S.Label3>
-                    <S.ClassReviewerId>클레어</S.ClassReviewerId>
+                    <S.ClassReviewerId>{el.user}</S.ClassReviewerId>
                     <S.Label>
                       <S.PersonalRate>
-                        <S.Star4 src="/imgs/star.png" />
-                        <S.Star4 src="/imgs/star.png" />
-                        <S.Star4 src="/imgs/star.png" />
-                        <S.Star4 src="/imgs/star.png" />
-                        <S.Star5 src="/imgs/emptystar.png" />
+                       <Rate value={el.rating}/>
                       </S.PersonalRate>
-                      <S.CreatedDate>6월 28일</S.CreatedDate>
-                      <S.Label2>100% 수강 후 작성</S.Label2>
+                      <S.CreatedDate>{el.createdAt}</S.CreatedDate>
+                     
                     </S.Label>
                   </S.Label3>
                 </S.ClassReview>
                 <S.ReviewBox>
-                  선생님 덕분에 제 2의 취미이자 일이 생겼어요 베이킹을 전공하고
-                  결혼전까지 관련된 일만 하다가 아기 낳고 집에서 육아하며
-                  결혼전까지 관련 일만 하다가 지내왔는데 가닥이 잡힌 것 같아요.
-                  정말 감사합니다. 앞으로 쌤께 배운 것 응용하면서 발전시켜
-                  볼게요. 감사합니다.
+                  {el.contents}
                 </S.ReviewBox>
-                <S.CommentResponse>
-                  <S.Comment>
-                    <S.CommentIcon src="/imgs/comment.png" />
-                    <S.WriteComment>댓글 달기</S.WriteComment>
-                  </S.Comment>
-                  <S.Help>
-                    <S.GoodIcon src="/imgs/good.png" />
-                    <S.Helpful>7명에게 도움됨</S.Helpful>
-                  </S.Help>
-                </S.CommentResponse>
+                
               </div>
             ))}
           </S.ClassReviewInfo>
