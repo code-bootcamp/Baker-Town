@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const HeaderWrapper = styled.header`
   display: flex;
-  padding-left: 323px;
+ justify-content: center;
   align-items: center;
   position: sticky;
   position: absolute;
@@ -30,6 +30,7 @@ export const HeaderWrapper = styled.header`
 export const Img = styled.img`
   width: 115px;
   height: 42px;
+  transition: 300ms;
 `;
 
 export const CategoryClass = styled.div`
@@ -75,8 +76,8 @@ export const RoundDiv = styled.div`
   width: 380px;
   height: 48px;
   flex-grow: 0;
-  margin-left: 346px;
-  padding-bottom: 3px;
+  margin-left: 320px;
+  /* padding-bottom: 3px; */
   border-radius: 90px;
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
   background-color: #fafafa;
@@ -117,12 +118,12 @@ export const RoundDivCircle = styled.div`
 export const RoundDivInnerIcon = styled.img`
   width: 12.4px;
   height: 12.4px;
+  overflow: hidden;
 `;
 
 export const HeartRoundDivCircle = styled.div`
   width: 32px;
   height: 32px;
-  flex-grow: 0;
   background-color: #4f3325;
   display: flex;
   align-items: center;
@@ -137,9 +138,9 @@ export const HeartFilled = styled.img`
 `;
 
 export const LoginText = styled.div`
-  width: 50px;
-  height: 25px;
-  margin: 12.8px 0 10.2px 15px;
+  padding-left: 15px;
+  /* width: 55px;
+  height: 25px; */
   font-size: 18px;
   font-weight: bold;
   font-style: normal;
@@ -148,6 +149,12 @@ export const LoginText = styled.div`
   text-align: left;
   color: #4f3325;
   text-shadow: #fff 0px 0 30px;
+`;
+
+export const HeartToLogin = styled.div`
+  display: flex;
+  align-items: center;
+  width: 90px;
 `;
 
 export const TopBanner = styled.div`
