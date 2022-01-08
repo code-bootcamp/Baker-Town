@@ -15,7 +15,11 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "red" }}
+        style={{
+          ...style,
+          display: "block",
+          background: "red",
+        }}
         onClick={onClick}
       />
     );
@@ -124,7 +128,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             />
           </S.HeartRoundDivCircle>
           {props.currentUser?.uid ? (
-            <AvatarPage></AvatarPage>
+            <AvatarPage />
           ) : (
             <S.LoginText
               className={
@@ -137,126 +141,133 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
           )}
         </S.HeartToLogin>
       </S.HeaderWrapper>
-
+      {/* 여기까지가 헤더임. 나중에 컴포넌트로 분리 */}
       <S.TopBanner></S.TopBanner>
       <S.TextWrapper>
         <S.TextTop>event</S.TextTop>
         <S.TextMiddle>지금 가장 핫한 클래스 1+1 이벤트</S.TextMiddle>
         <S.TextLow>아이와 함께하는 베이킹 클래스 지금 신청하세요!</S.TextLow>
       </S.TextWrapper>
-      <S.Wrapper>
-        <S.SubjectName>
-          <S.SubjectWrapper>
-            <S.SubjectTitle>인기 클래스</S.SubjectTitle>
-            <S.SubjectView onClick={props.goPopular}>
-              전체 인기 클래스 보기
-            </S.SubjectView>
-          </S.SubjectWrapper>
-          <S.ClassesWrapper>
-            {/* {new Array(4).fill( 1).map((el) => (
-              <S.ClassWrapper key={uuidv4()}>
-                <S.ClassImage />
-                <S.ClassPatissier>빵순이의 하루</S.ClassPatissier>
-                <S.ClassName>
-                  세상에서 단 하나뿐인 나만의 케이크 만들기
-                </S.ClassName>
-                <S.SmallLine></S.SmallLine>
-                <S.ClassPrice>50,000 원</S.ClassPrice>
-              </S.ClassWrapper>
-            ))} */}
-
-            {props.popular.map((el: any) => (
-              <ClassSubject el={el} key={uuidv4()} />
-            ))}
-          </S.ClassesWrapper>
-        </S.SubjectName>
-        <S.SubjectName>
-          <S.SubjectWrapper>
-            <S.SubjectTitle>신규 클래스</S.SubjectTitle>
-            <S.SubjectView onClick={props.geRecent}>
-              전체 신규 클래스 보기
-            </S.SubjectView>
-          </S.SubjectWrapper>
-          <S.ClassesWrapper>
-            <div
-              style={{
-                width: "100%",
-                height: "1200px",
-              }}
-            >
-              <Slider {...settings}>
-                {props.recent.map((el: any) => (
-                  <ClassSubject el={el} key={uuidv4()} />
+      {/* 여기까지가 배너에요! */}
+      <S.WholeWrapper>
+        <S.InnerWrapper>
+          <S.PopularClassWrapper>
+            <S.SubjectWrapper>
+              <S.SubjectTitle>인기 클래스</S.SubjectTitle>
+              <S.SubjectView onClick={props.goPopular}>
+                전체 인기 클래스 보기
+              </S.SubjectView>
+            </S.SubjectWrapper>
+            <S.ClassesWrapper>
+              <div
+                style={{
+                  width: "102.8%",
+                  height: "1200px",
+                }}
+              >
+                <Slider {...settings}>
+                  {props.popular.map((el: any) => (
+                    <ClassSubject el={el} key={uuidv4()} />
+                  ))}
+                </Slider>
+              </div>
+            </S.ClassesWrapper>
+          </S.PopularClassWrapper>
+          <S.NewClassWrapper>
+            <S.SubjectName>
+              <S.SubjectWrapper>
+                <S.SubjectTitle>신규 클래스</S.SubjectTitle>
+                <S.SubjectView onClick={props.geRecent}>
+                  전체 신규 클래스 보기
+                </S.SubjectView>
+              </S.SubjectWrapper>
+              <S.ClassesWrapper>
+                <div
+                  style={{
+                    width: "102.8%",
+                    height: "1200px",
+                  }}
+                >
+                  <Slider {...settings}>
+                    {props.recent.map((el: any) => (
+                      <ClassSubject el={el} key={uuidv4()} />
+                    ))}
+                  </Slider>
+                </div>
+              </S.ClassesWrapper>
+            </S.SubjectName>
+          </S.NewClassWrapper>
+          <S.EventWrapper>
+            <S.SubjectWrapper>
+              <S.SubjectTitle>새해 핫 아이템</S.SubjectTitle>
+              <S.SubjectView onClick={props.storeList}>
+                스토어 전체 보기
+              </S.SubjectView>
+            </S.SubjectWrapper>
+            <S.ClassesWrapper>
+              {new Array(3).fill(1).map((el) => (
+                <S.EventImage key={uuidv4()} />
+              ))}
+            </S.ClassesWrapper>
+          </S.EventWrapper>
+          <S.MiddleBanner>
+            <S.MiddleBannerWrapper>
+              <S.MiddleBannerText>
+                베이킹 전혀 어렵지 않아요 ! 지금 배우러 가기{" "}
+              </S.MiddleBannerText>
+              <S.MiddleBannerImage src="imgs/landing/middlebannerimage.png" />
+            </S.MiddleBannerWrapper>
+          </S.MiddleBanner>
+          <S.PromotionClass>
+            <S.SubjectName>
+              <S.SubjectWrapper>
+                <S.SubjectTitle>기획 클래스</S.SubjectTitle>
+                <S.SubjectView>전체 기획 클래스 보기</S.SubjectView>
+              </S.SubjectWrapper>
+              <S.ClassesWrapper>
+                {new Array(4).fill(1).map((el) => (
+                  <S.ClassWrapper key={uuidv4()}>
+                    <S.ClassImage />
+                    <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
+                    <S.ClassName>
+                      알록달록 바삭한 마카롱 함께 만들어 보아요
+                    </S.ClassName>
+                    <S.SmallLine></S.SmallLine>
+                    <S.ClassPrice>30,000 원</S.ClassPrice>
+                  </S.ClassWrapper>
                 ))}
-
-                {/* {new Array(3).fill(1).map((el, idx) => (
-                  <div>{el}</div>
-                ))} */}
-              </Slider>
-            </div>
-          </S.ClassesWrapper>
-        </S.SubjectName>
-        <S.EventSubject>
-          <S.SubjectWrapper>
-            <S.SubjectTitle>새해 핫 아이템</S.SubjectTitle>
-            <S.SubjectView onClick={props.storeList}>
-              스토어 전체 보기
-            </S.SubjectView>
-          </S.SubjectWrapper>
-          <S.ClassesWrapper>
-            {new Array(3).fill(1).map((el) => (
-              <S.EventImage key={uuidv4()} />
-            ))}
-          </S.ClassesWrapper>
-        </S.EventSubject>
-        <S.MiddleBanner>중간배너 자리</S.MiddleBanner>
-        <S.SubjectName>
-          <S.SubjectWrapper>
-            <S.SubjectTitle>기획 클래스</S.SubjectTitle>
-            <S.SubjectView>전체 기획 클래스 보기</S.SubjectView>
-          </S.SubjectWrapper>
-          <S.ClassesWrapper>
-            {new Array(4).fill(1).map((el) => (
-              <S.ClassWrapper key={uuidv4()}>
-                <S.ClassImage />
-                <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
-                <S.ClassName>
-                  알록달록 바삭한 마카롱 함께 만들어 보아요
-                </S.ClassName>
-                <S.SmallLine></S.SmallLine>
-                <S.ClassPrice>30,000 원</S.ClassPrice>
-              </S.ClassWrapper>
-            ))}
-          </S.ClassesWrapper>
-        </S.SubjectName>
-        <S.CategoryWrapper>
-          <S.SubjectTitle>클래스 카테고리</S.SubjectTitle>
-          <S.CategoryButtonWrapper>
-            <S.CategoryFirstWrapper>
-              <S.CategoryButton value="베이킹" onClick={props.category}>
-                베이킹
-              </S.CategoryButton>
-              <S.CategoryButton value="마카롱" onClick={props.category}>
-                마카롱
-              </S.CategoryButton>
-              <S.CategoryButton value="케이크" onClick={props.category}>
-                케이크
-              </S.CategoryButton>
-            </S.CategoryFirstWrapper>
-            <S.CategorySecondWrapper>
-              <S.CategoryButton value="쿠키" onClick={props.category}>
-                쿠 키
-              </S.CategoryButton>
-              <S.CategoryButton value="커피" onClick={props.category}>
-                커 피
-              </S.CategoryButton>
-              <S.CategoryButton value="쇼콜라" onClick={props.category}>
-                쇼콜라
-              </S.CategoryButton>
-            </S.CategorySecondWrapper>
-          </S.CategoryButtonWrapper>
-        </S.CategoryWrapper>
-      </S.Wrapper>
+              </S.ClassesWrapper>
+            </S.SubjectName>
+          </S.PromotionClass>
+          <S.CategoryWrapper>
+            <S.SubjectTitle>클래스 카테고리</S.SubjectTitle>
+            <S.CategoryButtonWrapper>
+              <S.CategoryFirstWrapper>
+                <S.CategoryButton value="베이킹" onClick={props.category}>
+                  베이킹
+                </S.CategoryButton>
+                <S.CategoryButton value="마카롱" onClick={props.category}>
+                  마카롱
+                </S.CategoryButton>
+                <S.CategoryButton value="케이크" onClick={props.category}>
+                  케이크
+                </S.CategoryButton>
+              </S.CategoryFirstWrapper>
+              <S.CategorySecondWrapper>
+                <S.CategoryButton value="쿠키" onClick={props.category}>
+                  쿠 키
+                </S.CategoryButton>
+                <S.CategoryButton value="커피" onClick={props.category}>
+                  커 피
+                </S.CategoryButton>
+                <S.CategoryButton value="쇼콜라" onClick={props.category}>
+                  쇼콜라
+                </S.CategoryButton>
+              </S.CategorySecondWrapper>
+            </S.CategoryButtonWrapper>
+          </S.CategoryWrapper>
+        </S.InnerWrapper>
+      </S.WholeWrapper>
     </>
   );
 };

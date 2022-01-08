@@ -87,7 +87,7 @@ const AvatarPage = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <AccountCircle sx={{ width: 32, height: 32 }}></AccountCircle>
+            <AccountCircle sx={{ width: 37, height: 37 }}></AccountCircle>
           </IconButton>
           {/* </Tooltip> */}
         </Box>
@@ -101,7 +101,7 @@ const AvatarPage = () => {
             elevation: 0,
             sx: {
               overflow: "visible",
-              filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+              filter: "drop-shadow(0px 2px 8px rgba(255,255,255,0.9))",
               mt: 1.5,
               "& .MuiAvatar-root": {
                 width: 32,

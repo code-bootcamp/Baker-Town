@@ -143,12 +143,7 @@ export const SearchScheduleButton = styled.button`
 `;
 
 export const ScheduleModal = styled(Modal)`
-  /* resize: none;
-  max-width: 100%;
-  max-height: 100%;
-  width: 1000px;
-  height: 2000px; */
-  border: 10px dotted green;
+  /* border: 10px dotted green; */
 `;
 
 export const SubmitButton = styled.button`

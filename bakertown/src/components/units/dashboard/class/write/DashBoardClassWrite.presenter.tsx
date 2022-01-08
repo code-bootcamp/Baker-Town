@@ -120,6 +120,7 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           날짜 시간 설정하기 모달!!!
         </S.SearchScheduleButton>
         <S.ScheduleModal
+          width={1000}
           visible={props.isVisible}
           onOk={props.toggleScheduleModal}
           onCancel={props.toggleScheduleModal}
@@ -135,5 +136,3 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
   );
 };
 export default DashBoardMainClassWritePresenter;
-
-//나리야 줄이 길구나... 재연이가 꾸며주는 사진 받으려며어어언

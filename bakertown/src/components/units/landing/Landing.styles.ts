@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const HeaderWrapper = styled.header`
   display: flex;
- justify-content: center;
+  justify-content: center;
   align-items: center;
   position: sticky;
   position: absolute;
@@ -262,28 +262,45 @@ export const TextLow = styled.div`
   transition: 800ms;
 `;
 
-export const Wrapper = styled.div`
-  display: flex;
-  width: 1920px;
-  /* height: 2000px; */
-  flex-direction: column;
-  justify-content: baseline;
-  align-items: center;
-  padding-left: 323px;
-  padding-right: 323px;
-  /* position: absolute; */
-  /* background-color: yellow; */
+export const WholeWrapper = styled.div`
+  width: 100%;
   scroll-behavior: smooth;
-  overflow: hidden;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
 `;
 
-export const SubjectName = styled.div``;
+export const InnerWrapper = styled.div`
+  width: 1274px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-behavior: smooth;
+  margin-top: 0px;
+  padding-bottom: 150px;
+`;
+
+export const PopularClassWrapper = styled.div`
+  width: 100%;
+  padding-top: 140px;
+`;
+
+export const NewClassWrapper = styled.div`
+  width: 100%;
+  padding-top: 120px;
+`;
+
+export const EventWrapper = styled.div`
+  width: 100%;
+  padding-top: 120px;
+`;
 
 export const SubjectWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 120px;
 `;
+
+export const SubjectName = styled.div``;
 
 export const SubjectTitle = styled.div`
   font-size: 32px;
@@ -304,38 +321,12 @@ export const SubjectView = styled.div`
   }
 `;
 
-export const FamousSubjectWrapper = styled.div`
-  display: flex;
-  width: 1274px;
-  justify-content: space-between;
-  margin-top: 140px;
-`;
-
 export const ClassesWrapper = styled.div`
   display: flex;
   height: 300px;
-  width: 1274px;
+
   justify-content: space-between;
   margin-top: 30px;
-`;
-
-export const NewClassesWrapper = styled.div`
-  display: flex;
-
-  width: 1274px;
-  justify-content: space-between;
-  margin-top: 30px;
-
-  /* background-color: red; */
-`;
-
-export const HotClassesWrapper = styled.div`
-  display: flex;
-  margin-top: 30px;
-  width: 1274px;
-  justify-content: space-between;
-
-  /* background-color: red; */
 `;
 
 export const SpecialClassesWrapper = styled.div`
@@ -345,6 +336,47 @@ export const SpecialClassesWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 120px;
   /* background-color: red; */
+`;
+
+export const MiddleBanner = styled.div`
+  position: absolute;
+  top: 2425px;
+  width: 100%;
+  height: 190px;
+  background-color: #f7f0e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const MiddleBannerWrapper = styled.div`
+  width: 1274px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+`;
+
+export const MiddleBannerText = styled.div`
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4f3325;
+  font-size: 32px;
+`;
+
+export const MiddleBannerImage = styled.img`
+  width: 500px;
+  position: absolute;
+  top: -210px;
+  left: 700px;
+`;
+
+export const PromotionClass = styled.div`
+  width: 100%;
+  padding-top: 490px;
 `;
 
 export const SlickWrapper = styled.div`
@@ -380,14 +412,13 @@ export const ClassName = styled.div`
 export const SmallLine = styled.div`
   border-bottom: 1px solid #b9b9b9;
   margin-bottom: 9.5px;
+  width: 290px;
 `;
 
 export const ClassPrice = styled.div`
   font-size: 20px;
   font-weight: bold;
 `;
-
-export const EventSubject = styled.div``;
 
 export const EventImage = styled.img`
   width: 400px;
@@ -397,7 +428,10 @@ export const EventImage = styled.img`
   opacity: 0.5;
 `;
 
-export const CategoryWrapper = styled.div``;
+export const CategoryWrapper = styled.div`
+  width: 100%;
+  padding-top: 120px;
+`;
 
 export const CategoryButtonWrapper = styled.div`
   width: 1274px;
@@ -405,6 +439,7 @@ export const CategoryButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 30px;
 `;
 
 export const CategoryFirstWrapper = styled.div`
@@ -445,12 +480,6 @@ export const CategoryButton = styled.button`
     transition: ease 0.4s;
     color: #ff4d12;
   }
-`;
-
-export const MiddleBanner = styled.div`
-  width: 100%;
-  height: 190px;
-  background-color: #e1e1e1;
 `;
 
 export const NextIcon = styled.button`
