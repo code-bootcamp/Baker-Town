@@ -14,10 +14,14 @@ const WishListPresenter = (props) => {
           <S.ListContents>
             {props.userResult?.heart?.map((el) => (
               <S.ClassWrapper>
-                <S.ClassImage />
-                <S.ClassPatissier>{el.category}</S.ClassPatissier>
-                <S.ClassName>{el.className}</S.ClassName>
-                <S.ClassLine></S.ClassLine>
+                <S.Class>
+                  <S.ClassImage />
+                  <S.ClassInfoWrapper>
+                    <S.ClassPatissier>{el.category}</S.ClassPatissier>
+                    <S.ClassName>{el.className}</S.ClassName>
+                  </S.ClassInfoWrapper>
+                  <S.ClassLine></S.ClassLine>
+                </S.Class>
               </S.ClassWrapper>
             ))}
           </S.ListContents>

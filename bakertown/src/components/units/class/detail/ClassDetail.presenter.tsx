@@ -219,6 +219,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
         </S.IntroWrapper>
         <S.ScheduleWrapper>
           <S.ClassSchedule>
+            <S.SmallTitle>예약 정보</S.SmallTitle>
             {/* <div>{Object.keys(props.myClass?.applyClass[0])[1]}</div>
                 <div>{Object.keys(props.myClass?.applyClass[0])[0]}</div> */}
             <S.ClassScheduleWrapper>

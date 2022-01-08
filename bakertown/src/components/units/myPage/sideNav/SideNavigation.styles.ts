@@ -1,25 +1,36 @@
 import styled from "@emotion/styled";
 
+export const TitleWrapper = styled.div`
+  background-color: #f7f7f7;
+  width: 247px;
+  /* height: 188px; */
+  margin-bottom: 24px;
+  padding-left: 31px;
+  padding-top: 20px;
+  border-radius: 10px;
+`;
+
 export const MyPoint = styled.div`
-  margin: 9px 37px 10px 30px;
   font-size: 24px;
-  text-align: left;
   color: #ff4d12;
 `;
 export const MyPointTitle = styled.div`
-  margin: 10px 0 9px 30px;
   font-size: 24px;
   font-weight: bold;
-  text-align: left;
+  /* margin-bottom: 9px; */
 `;
 export const Title = styled.div`
-  margin: 0 14px 10px 30px;
   font-size: 32px;
   font-weight: bold;
+  margin-bottom: 15.5px;
 `;
-export const Sidebar = styled.div`
-  padding-top: 80px;
+
+export const SettingImage = styled.img`
+  margin-left: 14px;
+  padding-bottom: 4px;
 `;
+
+export const Sidebar = styled.div``;
 
 export const SiderbarMyClass = styled.div`
   padding-left: 30px;
@@ -52,5 +63,7 @@ export const SideButton = styled.div`
 `;
 
 export const SmallLine = styled.div`
+  width: 187px;
   border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 17.5px;
 `;
