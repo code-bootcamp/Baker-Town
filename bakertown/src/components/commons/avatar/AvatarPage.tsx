@@ -13,7 +13,9 @@ import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import { AccountCircle } from "@mui/icons-material";
 import { useRouter } from "next/router";
-import { logout } from "../../../../pages/_app";
+import { useEffect, useState } from "react";
+import { firebaseApp, logout, useAuth } from "../../../../pages/_app";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const AvatarPage = () => {
   const router = useRouter();
@@ -39,6 +41,10 @@ const AvatarPage = () => {
     setLoading(false);
   }
 
+  const onClickdashboard = () => {
+    router.push(`/dashboard/main`);
+  };
+
   const onClickMyClass = () => {
     router.push(`/myPage/class/beforePar`);
   };
@@ -46,6 +52,25 @@ const AvatarPage = () => {
   const onClickMyItem = () => {
     router.push(`/myPage/item/orderHistory`);
   };
+  const [check, setCheck] = useState(0);
+  const currentUser = useAuth();
+  const [myUser, setMyUser] = useState({
+    check: check,
+    name: "로딩중입니다",
+  });
+
+  useEffect(async () => {
+    if (myUser?.name === "로딩중입니다") {
+      if (!currentUser) return;
+      const userQuery = doc(
+        getFirestore(firebaseApp),
+        "users",
+        currentUser?.email
+      );
+      const userResult = await getDoc(userQuery);
+      setMyUser(userResult.data());
+    }
+  });
 
   return (
     <>
@@ -101,10 +126,21 @@ const AvatarPage = () => {
           transformOrigin={{ horizontal: "right", vertical: "top" }}
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
-          <MenuItem>
-            <Avatar /> My Profile
-          </MenuItem>
-          <Divider />
+          {myUser?.check ? (
+            <>
+              <MenuItem onClick={onClickdashboard}>
+                <Avatar /> dashboard
+              </MenuItem>
+              <Divider />
+            </>
+          ) : (
+            <>
+              <MenuItem>
+                <Avatar />
+              </MenuItem>
+              <Divider />
+            </>
+          )}
           <MenuItem onClick={onClickMyClass}>
             <ListItemIcon>
               <PersonAdd fontSize="small" />

@@ -89,7 +89,7 @@ const SignUpPresenter = () => {
         <S.PasswordLabel>phone</S.PasswordLabel>
         <S.Password ref={phoneRef} placeholder="phone" />
         <input type="checkbox" value="테스트" onChange={checkPatissier} />
-        클래스판매자
+        파티셰로 가입
         <S.SignUpButton
           // disabled={loading || currentUser}
           onClick={handlesSignUp}
