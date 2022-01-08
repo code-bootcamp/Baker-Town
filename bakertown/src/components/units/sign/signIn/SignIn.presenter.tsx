@@ -28,17 +28,6 @@ const SignInPresenter = (props) => {
     setLoading(false);
   }
 
-  async function handlesSignOut() {
-    setLoading(true);
-    try {
-      await logout();
-      alert("로그아웃 되셨습니다.");
-    } catch {
-      alert("error!!");
-    }
-    setLoading(false);
-  }
-
   return (
     // <Paper>
     <S.Ba>
