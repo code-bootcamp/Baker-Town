@@ -119,7 +119,14 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
           {props.currentUser?.uid ? (
             <AvatarPage></AvatarPage>
           ) : (
-            <S.LoginText onClick={props.signIn}>로그인</S.LoginText>
+            <S.LoginText
+              className={
+                scrollPosition < 90 ? "original_header" : "change_header"
+              }
+              onClick={props.signIn}
+            >
+              로그인
+            </S.LoginText>
           )}
         </S.HeartToLogin>
       </S.HeaderWrapper>

@@ -11,7 +11,7 @@ export const HeaderWrapper = styled.header`
   left: 0;
   width: 100%;
   height: 80px;
-  transition: 500ms;
+  transition: 800ms;
   background-color: transparent;
   background-size: cover;
 
@@ -21,7 +21,7 @@ export const HeaderWrapper = styled.header`
     background-color: rgba(255, 255, 255, 1);
     padding-bottom: 10px;
     padding-top: 10px;
-    transition: 500ms;
+    transition: 800ms;
     box-shadow: -1px 5px 19px -3px rgba(0,0,0,0.21);
      }
   }
@@ -47,10 +47,19 @@ export const CategoryClass = styled.div`
   text-align: left;
   color: #fff;
   margin-left: 172px;
+  cursor: pointer;
+  :hover {
+    color: #fafafa;
+    opacity: 0.7;
+  }
 
   &.change_header {
     color: black;
-    transition: 500ms;
+    transition: 300ms;
+    :hover {
+      color: #4f3325;
+      opacity: 0.5;
+    }
   }
 `;
 
@@ -64,13 +73,21 @@ export const CategoryStore = styled.div`
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
-  color: #fafafa;
-  opacity: 0.7;
+  color: #fff;
   margin-left: 50px;
+  cursor: pointer;
+  :hover {
+    color: #fafafa;
+    opacity: 0.5;
+  }
 
   &.change_header {
     color: black;
-    transition: 500ms;
+    transition: 300ms;
+    :hover {
+      color: #4f3325;
+      opacity: 0.5;
+    }
   }
 `;
 
@@ -115,12 +132,15 @@ export const RoundDivCircle = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  transition: 300ms;
+  cursor: pointer;
 `;
 
 export const RoundDivInnerIcon = styled.img`
   width: 12.4px;
   height: 12.4px;
   overflow: hidden;
+  transition: 300ms;
 `;
 
 export const HeartRoundDivCircle = styled.div`
@@ -132,11 +152,14 @@ export const HeartRoundDivCircle = styled.div`
   justify-content: center;
   border-radius: 50%;
   margin-left: 20px;
+  transition: 300ms;
+  cursor: pointer;
 `;
 
 export const HeartFilled = styled.img`
   width: 12.4px;
   height: 12.4px;
+  transition: 300ms;
 `;
 
 export const LoginText = styled.div`
@@ -151,11 +174,27 @@ export const LoginText = styled.div`
   text-align: left;
   color: #4f3325;
   text-shadow: #fff 0px 0 30px;
+  transition: 300ms;
+  cursor: pointer;
+  :hover {
+    color: #fafafa;
+    opacity: 0.5;
+  }
+
+  &.change_header {
+    color: black;
+    transition: 300ms;
+    :hover {
+      color: #4f3325;
+      opacity: 0.5;
+    }
+  }
 `;
 
 export const HeartToLogin = styled.div`
   display: flex;
   align-items: center;
+  transition: 300ms;
 `;
 
 export const TopBanner = styled.div`
@@ -195,6 +234,7 @@ export const TextTop = styled.div`
   letter-spacing: normal;
   text-align: left;
   color: #fff;
+  transition: 800ms;
 `;
 
 export const TextMiddle = styled.div`
@@ -208,6 +248,7 @@ export const TextMiddle = styled.div`
   letter-spacing: normal;
   text-align: left;
   color: #fff;
+  transition: 800ms;
 `;
 
 export const TextLow = styled.div`
@@ -221,6 +262,7 @@ export const TextLow = styled.div`
   letter-spacing: normal;
   text-align: left;
   color: #fff;
+  transition: 800ms;
 `;
 
 export const Wrapper = styled.div`
