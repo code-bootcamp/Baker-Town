@@ -94,16 +94,22 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             isSelectedProgram={props.isSelectedProgram}
           >
             프로그램
-            {/* <S.ProgramLine></S.ProgramLine> */}
+            <S.ProgramLine
+              isSelectedProgram={props.isSelectedProgram}
+            ></S.ProgramLine>
           </S.NavProgram>
           <S.NavPlace onClick={props.GoMap} isSelectedMap={props.isSelectedMap}>
             위치정보
+            <S.MapLine isSelectedMap={props.isSelectedMap}></S.MapLine>
           </S.NavPlace>
           <S.NavReview
             onClick={props.GoReview}
             isSelectedReview={props.isSelectedReview}
           >
             후기
+            <S.ReviewLine
+              isSelectedReview={props.isSelectedReview}
+            ></S.ReviewLine>
           </S.NavReview>
           {/* </S.NavTextWrapper> */}
         </S.NavBarCategory>
@@ -121,10 +127,10 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                     <S.Rater>(1,700)</S.Rater>
                   </S.ClassStarRate>
                   <S.CategoryTag>
-                  <S.Category>
-                    {props.myClass?.district} • {props.myClass?.category}
-                  </S.Category>
-                    </S.CategoryTag>
+                    <S.Category>
+                      {props.myClass?.district} • {props.myClass?.category}
+                    </S.Category>
+                  </S.CategoryTag>
                 </S.SubTheme1>
                 <S.SubTheme2>
                   <S.DibsOnClass onClick={props.heart}>
@@ -139,12 +145,14 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.SubTheme2>
               </S.SubComponentWrapper>
               <Slider {...settings}>
-              {props.myClass?.images?.map((el) => (
-                <div key={uuidv4()}>
-                  <S.ClassImage src={`https://storage.googleapis.com/${el}`} />
-                </div>
-              ))}
-            </Slider>
+                {props.myClass?.images?.map((el) => (
+                  <div key={uuidv4()}>
+                    <S.ClassImage
+                      src={`https://storage.googleapis.com/${el}`}
+                    />
+                  </div>
+                ))}
+              </Slider>
             </S.ClassIntro>
           </S.ProgramWrapper>
           <S.PatissierIntro>

@@ -41,20 +41,16 @@ export const NavProgram = styled.div`
   cursor: pointer;
 `;
 
-// export const ProgramLine = styled.div`
-//   width: 91px;
-//   height: 5px;
-//   position: absolute;
-//   border-radius: 2px;
-//   /* color: #1e1e1e; */
-//   background-color: ${(props) =>
-//     props.isSelectedProgram ? "#1e1e1e" : "transparent"};
-//   top: 92px;
-// `;
-
-// 이거 왜 안되는데ㅡㅡ
-
-
+export const ProgramLine = styled.div`
+  width: 91px;
+  height: 5px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: ${(props) =>
+    props.isSelectedProgram ? "#1e1e1e" : "transparent"};
+  top: 94px;
+  transition: ${(props) => (props.isSelectedProgram ? "400ms" : "0s")};
+`;
 
 export const NavPlace = styled.div`
   width: 89px;
@@ -70,7 +66,19 @@ export const NavPlace = styled.div`
   color: #1e1e1e;
   margin-left: 30px;
   cursor: pointer;
+  position: relative;
+`;
 
+export const MapLine = styled.div`
+  width: 91px;
+  height: 5px;
+  position: absolute;
+  border-radius: 10px;
+  /* background-color: black; */
+  background-color: ${(props) =>
+    props.isSelectedMap ? "#1e1e1e" : "transparent"};
+  top: 62px;
+  transition: ${(props) => (props.isSelectedMap ? "400ms" : "0s")};
 `;
 
 export const NavReview = styled.div`
@@ -86,6 +94,18 @@ export const NavReview = styled.div`
   color: #1e1e1e;
   margin-left: 30px;
   cursor: pointer;
+`;
+
+export const ReviewLine = styled.div`
+  width: 48px;
+  height: 5px;
+  position: absolute;
+  border-radius: 10px;
+  /* background-color: black; */
+  background-color: ${(props) =>
+    props.isSelectedReview ? "#1e1e1e" : "transparent"};
+  top: 91px;
+  transition: ${(props) => (props.isSelectedReview ? "400ms" : "0s")};
 `;
 
 export const WholeWrapper = styled.div`
