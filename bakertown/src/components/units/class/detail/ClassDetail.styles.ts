@@ -531,6 +531,12 @@ export const ClassScheduleWrapper = styled.div`
   overflow: scroll;
 `;
 
+export const SmallTitle = styled.div`
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px;
+`;
+
 export const ClassArrayWrapper = styled.div`
   :hover {
     cursor: pointer;
@@ -574,7 +580,7 @@ export const ClassPrice = styled.div`
 export const ReservationButton = styled.button`
   width: 100px;
   height: 39px;
-  margin-top: 90px;
+  margin-top: 50px;
   margin-left: 110px;
   margin-bottom: 20px;
   padding-top: 7px;

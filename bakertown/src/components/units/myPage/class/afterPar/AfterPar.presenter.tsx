@@ -5,8 +5,6 @@ import { Modal, Button } from "antd";
 import WriteReviewContainer from "../../../../commons/writeReview/WriteReview.container";
 
 const AfterParPresenter = (props) => {
-  const myClass = ["참여 예정", "참여 완료", "나의 후기", "찜 목록"];
-  const myItem = ["주문 내역", "장바구니", "리뷰"];
   return (
     <>
       <S.Wrapper>
@@ -20,14 +18,22 @@ const AfterParPresenter = (props) => {
               <S.ClassWrapper>
                 <S.Class>
                   <S.ClassImage />
-                  <S.ClassPatissier>{el.category}</S.ClassPatissier>
-                  <S.ClassName>{el.className}</S.ClassName>
-                  <S.ClassPeople>수강신청 인원 {el.class.member}명</S.ClassPeople>
+                  <S.ClassInfoWrapper>
+                    <S.ClassPatissier>{el.category}</S.ClassPatissier>
+                    <S.ClassName>{el.className}</S.ClassName>
+                    <S.ClassPeople>
+                      수강신청 인원 {el.class.member}명
+                    </S.ClassPeople>
+                  </S.ClassInfoWrapper>
                   <S.ClassLine></S.ClassLine>
                 </S.Class>
                 <S.ClassSubWrapper>
-                  <S.ClassDate>{el.class.date} {el.class.start}</S.ClassDate>
-                  <S.WriteReview onClick={props.onToggleModal}>리뷰 작성하기</S.WriteReview>
+                  <S.ClassDate>
+                    {el.class.date} {el.class.start}
+                  </S.ClassDate>
+                  <S.WriteReview onClick={props.onToggleModal}>
+                    리뷰 작성하기
+                  </S.WriteReview>
                   {props.isOpen && (
                     <Modal
                       title="리뷰 등록"
@@ -35,9 +41,10 @@ const AfterParPresenter = (props) => {
                       onOk={props.onClickReview(index)}
                       onCancel={props.onToggleModal}
                     >
-                      <WriteReviewContainer setReviewContents={props.setReviewContents}
-                      rating={props.rating}
-                      setRating={props.setRating}
+                      <WriteReviewContainer
+                        setReviewContents={props.setReviewContents}
+                        rating={props.rating}
+                        setRating={props.setRating}
                       />
                     </Modal>
                   )}
