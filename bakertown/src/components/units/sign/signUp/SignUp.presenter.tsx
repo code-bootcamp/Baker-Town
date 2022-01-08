@@ -15,6 +15,7 @@ import {
   setDoc,
   doc,
 } from "@firebase/firestore";
+import { Checkbox } from "@mui/material";
 // const schema = yup.object().shape({
 //   myName: yup.string().required("반드시 입력해야하는 필수 사항입니다."),
 
@@ -36,6 +37,7 @@ import {
 const SignUpPresenter = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [check, setCheck] = useState(0);
   const nameRef: any = useRef();
   const phoneRef: any = useRef();
   const emailRef: any = useRef();
@@ -53,6 +55,7 @@ const SignUpPresenter = () => {
         email: emailRef.current.value,
         name: nameRef.current.value,
         phone: phoneRef.current.value,
+        check: check,
         mypoint: 0,
         heart: [],
         beforePar: [],
@@ -67,6 +70,11 @@ const SignUpPresenter = () => {
     setLoading(false);
   }
 
+  const checkPatissier = (event) => {
+    if (event.target.checked) setCheck(1);
+    if (!event.target.checked) setCheck(0);
+  };
+
   return (
     <S.Aa>
       <S.Wrapper>
@@ -80,6 +88,8 @@ const SignUpPresenter = () => {
         <S.Password ref={passwordRef} type="Password" placeholder="password" />
         <S.PasswordLabel>phone</S.PasswordLabel>
         <S.Password ref={phoneRef} placeholder="phone" />
+        <input type="checkbox" value="테스트" onChange={checkPatissier} />
+        클래스판매자
         <S.SignUpButton
           // disabled={loading || currentUser}
           onClick={handlesSignUp}
