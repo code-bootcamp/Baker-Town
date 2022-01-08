@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Skeleton } from "antd";
 import AvatarPage from "../../commons/avatar/AvatarPage";
 
 const LandingPresenter = (props: ILandingPresenterProps) => {
@@ -14,29 +13,26 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
     const { className, style, onClick } = props;
     return (
       <div
-        className={className}
-        style={{
-          ...style,
-          display: "block",
-          background: "red",
-        }}
+        className="slick-next-arrow"
+        style={{ ...style, display: "block" }}
         onClick={onClick}
       />
     );
   }
 
   function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className="slick-arrow"
-        style={{ ...style, display: "block" }}
-        onClick={onClick}
-      >
-        {"이전"}
-        {/* <img src={ARROW_left} alt="arrow_left"/> */}
-      </div>
-    );
+    const { currentSlide, style, onClick } = props;
+    if (currentSlide === 0) {
+      return null;
+    } else {
+      return (
+        <div
+          className="slick-before-arrow"
+          style={{ ...style, display: "block" }}
+          onClick={onClick}
+        />
+      );
+    }
   }
 
   const settings = {
@@ -44,29 +40,9 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     autoplay: false,
-    infinite: true,
+    infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: "20px",
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: "20px",
-          slidesToShow: 1,
-        },
-      },
-    ],
   };
 
   // 반응형 헤더
@@ -159,10 +135,10 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               </S.SubjectView>
             </S.SubjectWrapper>
             <S.ClassesWrapper>
-              <div
+              <S.SliderWrapper
                 style={{
                   width: "102.8%",
-                  height: "1200px",
+                  height: "100%",
                 }}
               >
                 <Slider {...settings}>
@@ -170,7 +146,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                     <ClassSubject el={el} key={uuidv4()} />
                   ))}
                 </Slider>
-              </div>
+              </S.SliderWrapper>
             </S.ClassesWrapper>
           </S.PopularClassWrapper>
           <S.NewClassWrapper>
@@ -182,10 +158,10 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                 </S.SubjectView>
               </S.SubjectWrapper>
               <S.ClassesWrapper>
-                <div
+                <S.SliderWrapper
                   style={{
                     width: "102.8%",
-                    height: "1200px",
+                    height: "100%",
                   }}
                 >
                   <Slider {...settings}>
@@ -193,7 +169,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                       <ClassSubject el={el} key={uuidv4()} />
                     ))}
                   </Slider>
-                </div>
+                </S.SliderWrapper>
               </S.ClassesWrapper>
             </S.SubjectName>
           </S.NewClassWrapper>
@@ -225,17 +201,26 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                 <S.SubjectView>전체 기획 클래스 보기</S.SubjectView>
               </S.SubjectWrapper>
               <S.ClassesWrapper>
-                {new Array(4).fill(1).map((el) => (
-                  <S.ClassWrapper key={uuidv4()}>
-                    <S.ClassImage />
-                    <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
-                    <S.ClassName>
-                      알록달록 바삭한 마카롱 함께 만들어 보아요
-                    </S.ClassName>
-                    <S.SmallLine></S.SmallLine>
-                    <S.ClassPrice>30,000 원</S.ClassPrice>
-                  </S.ClassWrapper>
-                ))}
+                <S.SliderWrapper
+                  style={{
+                    width: "102.8%",
+                    height: "100%",
+                  }}
+                >
+                  <Slider {...settings}>
+                    {new Array(7).fill(1).map((el) => (
+                      <S.ClassWrapper key={uuidv4()}>
+                        <S.ClassImage />
+                        <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
+                        <S.ClassName>
+                          알록달록 바삭한 마카롱 함께 만들어 보아요
+                        </S.ClassName>
+                        <S.SmallLine></S.SmallLine>
+                        <S.ClassPrice>30,000 원</S.ClassPrice>
+                      </S.ClassWrapper>
+                    ))}{" "}
+                  </Slider>
+                </S.SliderWrapper>
               </S.ClassesWrapper>
             </S.SubjectName>
           </S.PromotionClass>
