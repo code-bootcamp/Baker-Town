@@ -284,6 +284,8 @@ const ClassDetailContainer = () => {
   const MapRef = useRef();
   const testRef = useRef();
 
+  console.log("ProgramRef", ProgramRef);
+
   const [isSelectedProgram, setIsSelectedProgram] = useState(false);
 
   const callbackFunction = (entries) => {
@@ -291,24 +293,23 @@ const ClassDetailContainer = () => {
     setIsSelectedProgram(entry.isIntersecting);
   };
 
-  // const options = useMemo(() => {
-  //   return {
-  //     root: null,
-  //     rootMargin: "0px",
-  //     threshold: 0,
-  //   };
-  // }, []);
+  const options = useMemo(() => {
+    return {
+      root: null,
+      threshold: 0,
+      rootMargin: "1000px 0px 0px 0px",
+    };
+  }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction);
+    const observer = new IntersectionObserver(callbackFunction, options);
     const currentTargetProgram = ProgramRef.current;
     if (currentTargetProgram) observer.observe(currentTargetProgram);
-    console.log("observer", observer);
 
     return () => {
       if (currentTargetProgram) observer.unobserve(currentTargetProgram);
     };
-  }, [ProgramRef]);
+  }, [ProgramRef, options]);
 
   // map ref
 
@@ -319,15 +320,26 @@ const ClassDetailContainer = () => {
     setIsSelectedMap(entry.isIntersecting);
   };
 
+  const mapoptions = useMemo(() => {
+    return {
+      root: null,
+      threshold: 0,
+      rootMargin: "0px 0px -1000px 0px",
+    };
+  }, []);
+
   useEffect(() => {
-    const observerMap = new IntersectionObserver(callbackFunctionMap);
+    const observerMap = new IntersectionObserver(
+      callbackFunctionMap,
+      mapoptions
+    );
     const currentTargetMap = MapRef.current;
     if (currentTargetMap) observerMap.observe(currentTargetMap);
 
     return () => {
       if (currentTargetMap) observerMap.unobserve(currentTargetMap);
     };
-  }, [MapRef]);
+  }, [MapRef, mapoptions]);
 
   // review ref
 
@@ -338,18 +350,18 @@ const ClassDetailContainer = () => {
     SetisSelectedReview(entry.isIntersecting);
   };
 
-  const options = useMemo(() => {
+  const reviewoptions = useMemo(() => {
     return {
       root: null,
-      rootMargin: "-100px",
-      threshold: 0.5,
+      threshold: 0,
+      rootMargin: "0px 0px -300px 0px",
     };
   }, []);
 
   useEffect(() => {
     const observerReview = new IntersectionObserver(
       callbackFunctionReview,
-      options
+      reviewoptions
     );
     const currentTargetReview = testRef.current;
     if (currentTargetReview) observerReview.observe(currentTargetReview);
@@ -357,7 +369,7 @@ const ClassDetailContainer = () => {
     return () => {
       if (currentTargetReview) observerReview.unobserve(currentTargetReview);
     };
-  }, [testRef]);
+  }, [testRef, reviewoptions]);
 
   return (
     <ClassDetailPresenter

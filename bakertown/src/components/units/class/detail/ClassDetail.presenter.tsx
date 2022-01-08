@@ -84,7 +84,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
     <>
       <S.NavBarWrapper
         className={
-          props.scrollPosition < 2 ? "original_header" : "change_header"
+          props.scrollPosition < 0.1 ? "original_header" : "change_header"
         }
       >
         <S.NavBarCategory>
@@ -94,6 +94,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             isSelectedProgram={props.isSelectedProgram}
           >
             프로그램
+            {/* <S.ProgramLine></S.ProgramLine> */}
           </S.NavProgram>
           <S.NavPlace onClick={props.GoMap} isSelectedMap={props.isSelectedMap}>
             위치정보
@@ -109,44 +110,43 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
       </S.NavBarWrapper>
       <S.WholeWrapper>
         <S.IntroWrapper>
-          <S.ClassIntro>
-            <S.ClassTitle>{props.myClass?.className}</S.ClassTitle>
-            <S.SubComponentWrapper>
-              <S.SubTheme1>
-                <S.ClassStarRate>
-                  <S.Star src="/imgs/star.png" />
-                  <S.Rate></S.Rate>
-                  <S.Rater>(1,700)</S.Rater>
-                </S.ClassStarRate>
-                <S.CategoryTag>
+          <S.ProgramWrapper ref={props.ProgramRef}>
+            <S.ClassIntro>
+              <S.ClassTitle>{props.myClass?.className}</S.ClassTitle>
+              <S.SubComponentWrapper>
+                <S.SubTheme1>
+                  <S.ClassStarRate>
+                    <S.Star src="/imgs/star.png" />
+                    <S.Rate>4.9</S.Rate>
+                    <S.Rater>(1,700)</S.Rater>
+                  </S.ClassStarRate>
+                  <S.CategoryTag>
                   <S.Category>
                     {props.myClass?.district} • {props.myClass?.category}
                   </S.Category>
-                  {/* <S.ContentsCategory>
-                    {props.myClass?.category}
-                  </S.ContentsCategory> */}
-                </S.CategoryTag>
-              </S.SubTheme1>
-              <S.SubTheme2>
-                <S.DibsOnClass onClick={props.heart}>
-                  {/* <S.Heart src="/imgs/heart.png" /> */}
-                  {/* <S.Heart >❤️ 100</S.Heart> */}
-                  ❤️ {props.myClass?.heart}
-                </S.DibsOnClass>
-                <S.ClassShare>
-                  <S.Share src="/imgs/share.png" />
-                  공유
-                </S.ClassShare>
-              </S.SubTheme2>
-            </S.SubComponentWrapper>
-            <Slider {...settings}>
+                    </S.CategoryTag>
+                </S.SubTheme1>
+                <S.SubTheme2>
+                  <S.DibsOnClass onClick={props.heart}>
+                    {/* <S.Heart src="/imgs/heart.png" /> */}
+                    {/* <S.Heart >❤️ 100</S.Heart> */}
+                    ❤️ {props.myClass?.heart}
+                  </S.DibsOnClass>
+                  <S.ClassShare>
+                    <S.Share src="/imgs/share.png" />
+                    공유
+                  </S.ClassShare>
+                </S.SubTheme2>
+              </S.SubComponentWrapper>
+              <Slider {...settings}>
               {props.myClass?.images?.map((el) => (
                 <div key={uuidv4()}>
                   <S.ClassImage src={`https://storage.googleapis.com/${el}`} />
                 </div>
               ))}
             </Slider>
-          </S.ClassIntro>
+            </S.ClassIntro>
+          </S.ProgramWrapper>
           <S.PatissierIntro>
             <S.ClassRemarksTitle>
               {props.myClass?.patissier}님과 함께하는 마카롱 클래스
@@ -154,8 +154,10 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             <S.ClassRemarksDetail>
               {props.myClass?.remarks}
             </S.ClassRemarksDetail>
-            <S.ProgramIntro ref={props.ProgramRef}>
+
+            <S.ProgramIntro>
               <S.SubjectTitle>프로그램</S.SubjectTitle>
+
               <S.ProgramGuideBox>
                 <div>{props.myClass?.contents}</div>
                 #.완성작품
@@ -165,6 +167,21 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               </S.ProgramGuideBox>
             </S.ProgramIntro>
           </S.PatissierIntro>
+          {/* <S.PatissierInfo>
+            <S.SubjectTitle>개설자 정보</S.SubjectTitle>
+            <S.PatissierWrapper>
+              <S.PatissierPhoto src="/imgs/user.png" />
+              <S.PatissierName>
+                {props.myClass?.patissier} 파티셰
+              </S.PatissierName>
+              <S.ContactPatissier>연락하기</S.ContactPatissier>
+            </S.PatissierWrapper>
+            <S.PatissierContentsBox>
+              <S.PatissierContents>
+                <div>파티셰의 한 줄 소개입니다.</div>
+              </S.PatissierContents>
+            </S.PatissierContentsBox>
+          </S.PatissierInfo> */}
           <S.ClassLocationInfo ref={props.MapRef}>
             <S.SubjectTitle>위치정보</S.SubjectTitle>
             <S.LocationMap>

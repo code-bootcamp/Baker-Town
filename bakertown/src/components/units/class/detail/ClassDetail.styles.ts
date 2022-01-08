@@ -26,7 +26,7 @@ export const NavBarCategory = styled.div`
 
 export const NavProgram = styled.div`
   width: 89px;
-  height: 33px;
+  height: 100px;
   font-size: 24px;
   font-weight: ${(props) => (props.isSelectedProgram ? "bold" : "none")};
   font-stretch: normal;
@@ -34,15 +34,31 @@ export const NavProgram = styled.div`
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
+  display: flex;
+  align-items: center;
   color: #1e1e1e;
-  :hover {
-    cursor: pointer;
-  }
+  position: relative;
+  cursor: pointer;
 `;
+
+// export const ProgramLine = styled.div`
+//   width: 91px;
+//   height: 5px;
+//   position: absolute;
+//   border-radius: 2px;
+//   /* color: #1e1e1e; */
+//   background-color: ${(props) =>
+//     props.isSelectedProgram ? "#1e1e1e" : "transparent"};
+//   top: 92px;
+// `;
+
+// 이거 왜 안되는데ㅡㅡ
+
+
 
 export const NavPlace = styled.div`
   width: 89px;
-  height: 33px;
+  /* height: 33px; */
   font-size: 24px;
   font-weight: ${(props) =>
     props.isSelectedMap && !props.isSelectedReview ? "bold" : "none"};
@@ -53,14 +69,13 @@ export const NavPlace = styled.div`
   text-align: left;
   color: #1e1e1e;
   margin-left: 30px;
-  :hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
+
 `;
 
 export const NavReview = styled.div`
   width: 45px;
-  height: 33px;
+  /* height: 33px; */
   font-size: 24px;
   font-weight: ${(props) => (!props.isSelectedReview ? "none" : "bold")};
   font-stretch: normal;
@@ -70,9 +85,7 @@ export const NavReview = styled.div`
   text-align: left;
   color: #1e1e1e;
   margin-left: 30px;
-  :hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 
 export const WholeWrapper = styled.div`
@@ -230,6 +243,8 @@ export const ClassImage = styled.img`
   object-fit: cover;
 `;
 
+export const ProgramWrapper = styled.div``;
+
 export const PatissierIntro = styled.div``;
 
 export const ClassRemarksTitle = styled.div`
@@ -259,7 +274,7 @@ export const ProgramIntro = styled.div`
 
 export const SubjectTitle = styled.div`
   /* padding-top: 80px; */
-  margin-top: 80px;
+  margin-top: 43px;
   /* width: 118px; */
   height: 44px;
   font-size: 32px;
@@ -318,7 +333,7 @@ cursor: pointer;
 
 export const PatissierContentsBox = styled.div`
   width: 861px;
-  height: 131px;
+  height: 300px;
   border-radius: 10px;
   background-color: #f7f7f7;
   font-size: 20px;
@@ -327,7 +342,7 @@ export const PatissierContentsBox = styled.div`
 `;
 
 export const ClassLocationInfo = styled.div`
-  padding-top: 20px;
+  padding-top: 100px;
 `;
 
 export const LocationInfo = styled.div`
@@ -345,7 +360,7 @@ export const LocationMap = styled.div`
 `;
 
 export const ClassReviewInfo = styled.div`
-  padding-top: 20px;
+  padding-top: 80px;
 `;
 
 export const ClassReviewTitle = styled.div`
