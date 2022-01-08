@@ -16,13 +16,14 @@ const ClassDetailContainer = () => {
 
   const [myClass, setMyClass] = useState({
     address: "내 주소!",
+    query: "",
     category: "카테고리 예시",
     className: "제목 로딩중!!",
     contents: "내용 로딩중!!!",
     price: "",
   });
   const [myDate, setMyDate] = useState("");
-  const [myIndex, setMyIndex] = useState(0);
+  const [myIndex, setMyIndex] = useState(-1);
   const [myName, setMyName] = useState("");
 
   const currentUser = useAuth();
@@ -46,13 +47,19 @@ const ClassDetailContainer = () => {
       );
       const result = await getDoc(product);
       const classData = result.data();
-      console.log(classData);
+      console.log("클래스 정보", classData);
+      // const rateAverage = {result.data().review.map((el) => (
+      //   {el.}
+      // ))}
       setMyClass(classData);
     }
-    // console.log("밍");
   });
 
   const onClickReservation = async () => {
+    if (myIndex === -1) {
+      alert("예약하실 날짜를 선택해주세요!!");
+      return;
+    }
     // 현재 페이지 정보 불러오기
     const bakeryClass = doc(
       getFirestore(firebaseApp),
@@ -68,7 +75,13 @@ const ClassDetailContainer = () => {
     );
     const userResult = await getDoc(userQuery);
 
-    //예약하기(구매)
+    // 돈 없으면 내보내기
+    if (userResult.data().mypoint < myClass?.price) {
+      alert("포인트가 부족합니다.");
+      return;
+    }
+
+    // 예약하기(구매)
     const buyInfo = {
       classRouter: router.query.classId,
       className: myClass?.className,
@@ -78,8 +91,18 @@ const ClassDetailContainer = () => {
 
     // 현재 페이지의 예약정보
     const currentReservInfo = myClass?.applyClass;
+
+    // 예약 마감 시 내보내기
+    if (
+      currentReservInfo?.classArray?.[myIndex].class.membersName.length ===
+      Number(currentReservInfo?.classArray?.[myIndex].class.member)
+    ) {
+      alert("에약이 마감되었습니다.");
+      return;
+    }
     //현재 나의 포인트 - class가격
     const charge = userResult.data().mypoint - buyInfo.price;
+
     // 현재 페이지 예약정보에 내 이름 넣기
     currentReservInfo?.classArray?.[myIndex].class.membersName.push(
       userResult.data().name
@@ -87,7 +110,6 @@ const ClassDetailContainer = () => {
     //나의 포인트 잔액
     await updateDoc(userQuery, { mypoint: charge });
     console.log(charge);
-    alert("예약완료");
     await updateDoc(bakeryClass, {
       applyClass: {
         ...currentReservInfo,
@@ -104,12 +126,15 @@ const ClassDetailContainer = () => {
       className: myClass?.className,
       category: myClass?.category,
       classPrice: Number(myClass?.price),
+      reservationIndex: myIndex,
       ...currentReservInfo.classArray?.[0],
     };
     myBeforeParClass.push(dddd);
     await updateDoc(userQuery, {
       beforePar: myBeforeParClass,
     });
+    alert("예약이 완료되었습니다.");
+    location.reload();
   };
 
   const onClickSelectDate = (el, index) => () => {
@@ -211,6 +236,8 @@ const ClassDetailContainer = () => {
     await updateDoc(bakeryClass, {
       heart: classHeart,
     });
+    alert("클래스를 찜 목록에 담았습니다!");
+    location.reload();
   };
 
   // 반응형 헤더

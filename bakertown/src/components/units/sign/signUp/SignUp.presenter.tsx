@@ -15,6 +15,7 @@ import {
   setDoc,
   doc,
 } from "@firebase/firestore";
+import { Checkbox } from "@mui/material";
 // const schema = yup.object().shape({
 //   myName: yup.string().required("반드시 입력해야하는 필수 사항입니다."),
 
@@ -36,6 +37,7 @@ import {
 const SignUpPresenter = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [check, setCheck] = useState(0);
   const nameRef: any = useRef();
   const phoneRef: any = useRef();
   const emailRef: any = useRef();
@@ -53,6 +55,7 @@ const SignUpPresenter = () => {
         email: emailRef.current.value,
         name: nameRef.current.value,
         phone: phoneRef.current.value,
+        check: check,
         mypoint: 0,
         heart: [],
         beforePar: [],
@@ -66,48 +69,13 @@ const SignUpPresenter = () => {
     }
     setLoading(false);
   }
-  // const SignUpPresenter = () => {
-  //   const { handleSubmit, register, formState } = useForm({
-  //     mode: "onChange",
-  //     resolver: yupResolver(schema),
-  //   });
 
-  //   function onClickSignUp(data: FormValues) {
-  //     //loginUser API 요청하기!!!
-  //     console.log(data);
-  //   }
+  const checkPatissier = (event) => {
+    if (event.target.checked) setCheck(1);
+    if (!event.target.checked) setCheck(0);
+  };
+
   return (
-    // <S.Aa>
-    //   <S.Wrapper onSubmit={handleSubmit(onClickSignUp)}>
-    //     <S.Label>SignUp</S.Label>
-    //     <S.NameLabel>name</S.NameLabel>
-    //     <S.Name type="text" placeholder="홍길동" {...register("myName")} />
-    //     <S.Error>{formState.errors.myName?.message}</S.Error>
-    //     <S.EmailLabel>email</S.EmailLabel>
-    //     <S.Email
-    //       type="text"
-    //       placeholder="example@naver.com"
-    //       {...register("myEmail")}
-    //     />
-    //     <S.Error>{formState.errors.myEmail?.message}</S.Error>
-    //     <S.PasswordLabel>password</S.PasswordLabel>
-    //     <S.Password
-    //       type="password"
-    //       placeholder="******"
-    //       {...register("myPassword")}
-    //     />
-    //     <S.Error>{formState.errors.myPassword?.message}</S.Error>
-    //     <S.PasswordLabel>passwordcheck</S.PasswordLabel>
-    //     <S.Password
-    //       type="password"
-    //       placeholder="******"
-    //       {...register("myPassword2")}
-    //     />
-    //     <S.Error>{formState.errors.myPassword2?.message}</S.Error>
-    //     {/* <S.SignUp>회원가입하기</S.SignUp> */}
-    //     <S.SignUpButton>SignUp</S.SignUpButton>
-    //   </S.Wrapper>
-    // </S.Aa>
     <S.Aa>
       <S.Wrapper>
         {/* <div>{currentUser?.email}</div> */}
@@ -120,6 +88,8 @@ const SignUpPresenter = () => {
         <S.Password ref={passwordRef} type="Password" placeholder="password" />
         <S.PasswordLabel>phone</S.PasswordLabel>
         <S.Password ref={phoneRef} placeholder="phone" />
+        <input type="checkbox" value="테스트" onChange={checkPatissier} />
+        클래스판매자
         <S.SignUpButton
           // disabled={loading || currentUser}
           onClick={handlesSignUp}

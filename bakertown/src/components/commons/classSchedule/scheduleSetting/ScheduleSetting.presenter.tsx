@@ -6,8 +6,8 @@ const ScheduleSettingPresenter = (props) => {
     <>
       <S.Wrapper>
         <S.TitleWrppaer>
-          <S.Title>스케쥴 등록</S.Title>
-          <S.SmallTitle>시작일 기준으로 사용자에게 안내됩니다.</S.SmallTitle>
+          <S.Title>스케쥴 추가</S.Title>
+          <S.SmallTitle>모두 선택해 주세요.</S.SmallTitle>
         </S.TitleWrppaer>
         <S.ContentWrapper>
           <S.SchduleSettingWrapper>
@@ -23,13 +23,16 @@ const ScheduleSettingPresenter = (props) => {
                   format="h:mm a"
                   onChange={props.timePick}
                 />
-                <S.TimeSelect>
-                  <S.TimeOption>30분</S.TimeOption>
-                  <S.TimeOption>1시간</S.TimeOption>
-                  <S.TimeOption>1시간 30분</S.TimeOption>
-                  <S.TimeOption>2시간</S.TimeOption>
-                  <S.TimeOption>2시간 30분</S.TimeOption>
-                  <S.TimeOption>3시간</S.TimeOption>
+                <S.TimeSelect onChange={props.onChangeTime}>
+                  <S.TimeOption disabled selected>
+                    클래스 소요시간
+                  </S.TimeOption>
+                  <S.TimeOption value="30분">30분</S.TimeOption>
+                  <S.TimeOption value="1시간">1시간</S.TimeOption>
+                  <S.TimeOption value="1시간 30분">1시간 30분</S.TimeOption>
+                  <S.TimeOption value="2시간">2시간</S.TimeOption>
+                  <S.TimeOption value="2시간 30분">2시간 30분</S.TimeOption>
+                  <S.TimeOption value="3시간">3시간</S.TimeOption>
                 </S.TimeSelect>
               </S.SettingTwo>
               <S.SettingThree>
@@ -43,6 +46,7 @@ const ScheduleSettingPresenter = (props) => {
           <S.ScheduleWrppaer>
             <div>날짜: {props.date}</div>
             <div>시간: {props.time}</div>
+            <div>수업시간: {props.runningTime}</div>
             <div>최대인원: {props.memberCount}</div>
           </S.ScheduleWrppaer>
           <S.ScheduleSettingButton onClick={props.scheduleSetting}>

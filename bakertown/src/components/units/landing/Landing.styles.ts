@@ -33,6 +33,9 @@ export const Img = styled.img`
   width: 115px;
   height: 42px;
   transition: 300ms;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const CategoryClass = styled.div`
@@ -40,10 +43,6 @@ export const CategoryClass = styled.div`
   height: 28px;
   font-size: 24px;
   font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: left;
   color: #fff;
   margin-left: 172px;
@@ -61,6 +60,9 @@ export const CategoryClass = styled.div`
       opacity: 0.5;
     }
   }
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const CategoryStore = styled.div`
@@ -68,10 +70,6 @@ export const CategoryStore = styled.div`
   height: 28px;
   font-size: 24px;
   font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: left;
   color: #fff;
   margin-left: 50px;
@@ -88,6 +86,9 @@ export const CategoryStore = styled.div`
       color: #4f3325;
       opacity: 0.5;
     }
+  }
+  :hover {
+    cursor: pointer;
   }
 `;
 
@@ -108,16 +109,12 @@ export const RoundDiv = styled.div`
   transition: 500ms;
 `;
 
-export const RoundDivInnerText = styled.div`
-  width: 163px;
-  height: 22px;
+export const RoundDivInnerText = styled.input`
+  width: 280px;
+  height: 30px;
   flex-grow: 0;
   font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  border: none;
   text-align: left;
   color: #706b68;
   transition: 500ms;
@@ -302,6 +299,9 @@ export const NewYearSubjectWrapper = styled.div`
 export const SubjectView = styled.div`
   font-size: 16px;
   padding-top: 20px;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const FamousSubjectWrapper = styled.div`
@@ -422,9 +422,29 @@ export const CategoryButton = styled.button`
   height: 120px;
   border-radius: 10px;
   border: none;
-  background-color: #c4c4c4;
+  color: rgba(255, 255, 255, 0.8);
+
+  background-image: ${(props) =>
+    props.value === "베이킹" && "url(/imgs/baking.jpg)"};
+  background-image: ${(props) =>
+    props.value === "마카롱" && "url(/imgs/macaron.jpg)"};
+  background-image: ${(props) =>
+    props.value === "케이크" && "url(/imgs/cake.jpg)"};
+  background-image: ${(props) =>
+    props.value === "쿠키" && "url(/imgs/cookie.jpg)"};
+  background-image: ${(props) =>
+    props.value === "커피" && "url(/imgs/coffee.jpg)"};
+  background-image: ${(props) =>
+    props.value === "쇼콜라" && "url(/imgs/chocolat.jpg)"};
+  background-position: center center;
   font-size: 32px;
   font-weight: bold;
+  :hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: ease 0.4s;
+    color: #ff4d12;
+  }
 `;
 
 export const MiddleBanner = styled.div`

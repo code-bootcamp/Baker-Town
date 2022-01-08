@@ -1,67 +1,17 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1920px;
+  width: 100%;
   display: flex;
-  margin-left: 324px;
+  justify-content: center;
+  margin-top: 77px;
 `;
 
-export const MyPoint = styled.div`
-  margin: 9px 37px 10px 30px;
-  font-size: 24px;
-  text-align: left;
-  color: #ff4d12;
+export const ClassList = styled.div`
+  margin-left: 40px;
 `;
-
-export const MyPointTitle = styled.div`
-  margin: 10px 0 9px 30px;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: left;
-`;
-export const Title = styled.div`
-  margin: 0 14px 10px 30px;
-  font-size: 32px;
-  font-weight: bold;
-`;
-export const Sidebar = styled.div`
-  padding-top: 80px;
-`;
-
-export const SiderbarMyClass = styled.div`
-  padding-left: 30px;
-`;
-
-export const SiderbarMyItem = styled.div`
-  padding-left: 30px;
-`;
-
-export const SideTitle = styled.div`
-  width: 246px;
-  height: 66px;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  font-size: 24px;
-  font-weight: bold;
-  padding-top: 15px;
-  padding-left: 30px;
-`;
-
-export const SideButton = styled.div`
-  font-size: 20px;
-  margin-top: 5.5px;
-  margin-bottom: 9.5px;
-`;
-
-export const SmallLine = styled.div`
-  border-bottom: 1px solid #e2e2e2;
-`;
-
-export const ClassList = styled.div``;
 
 export const ListTitle = styled.div`
-  display: flex;
-  margin: 69px 14px 11px 40px;
   font-family: Roboto;
   font-size: 32px;
   font-weight: bold;
@@ -88,9 +38,6 @@ export const ListContents = styled.div`
 export const ClassWrapper = styled.div`
   width: 987px;
   height: 180px;
-  /* margin: 43px 323px 24px 40px;
-  padding: 20px 239px 20px 30px; */
-  margin-left: 40px;
   margin-bottom: 24px;
   padding-left: 30px;
   padding-top: 20px;
@@ -98,18 +45,20 @@ export const ClassWrapper = styled.div`
   border-radius: 10px;
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
   border: solid 0.5px #e2e2e2;
-  /* background-color: #fff; */
-  /* background-color: green; */
 `;
 
 export const Class = styled.div`
   /* background-color: pink; */
+  display: flex;
+`;
+
+export const ClassInfoWrapper = styled.div`
+  padding-left: 29.5px;
 `;
 
 export const ClassImage = styled.img`
   width: 162px;
   height: 140px;
-  margin: 0 19px 0 0;
   border-radius: 10px;
   background-color: yellow;
 `;
@@ -117,44 +66,38 @@ export const ClassImage = styled.img`
 export const ClassPatissier = styled.div`
   width: 166px;
   height: 25px;
-  margin: -130px 1px 9px 200px;
+  margin-bottom: 9px;
   font-family: NotoSans;
   font-size: 18px;
   font-weight: bold;
-  text-align: left;
   color: rgba(79, 51, 37, 0.9);
 `;
 
 export const ClassName = styled.div`
   width: 419px;
   height: 33px;
-  margin: 9px 0px 68px 200px;
+  margin-bottom: 48px;
   font-family: NotoSans;
   font-size: 24px;
-  text-align: left;
 `;
 
 export const ClassLine = styled.div`
   width: 1px;
   height: 140px;
-  margin: -130px 29.5px 0 720px;
   background-color: #bdb7b3;
 `;
 
 export const ClassPeople = styled.div`
   width: 536px;
   height: 25px;
-  margin: -40px 22px 1px 200px;
   font-family: NotoSans;
   font-size: 18px;
-  text-align: left;
 `;
 
 export const ClassSubWrapper = styled.div`
   // 여기 제발 마진 좀 먹히게 해주세여,,,,,,,
   width: 400px;
-  /* background-color: yellow; */
-  margin-top: 40px;
+  margin-left: 50px;
 `;
 export const ClassDate = styled.div`
   font-size: 18px;

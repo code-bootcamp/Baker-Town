@@ -10,6 +10,8 @@ const ClassScheduleContainer = (props) => {
   };
   const reset = () => {
     // setClassSchedule([]);
+    console.log(props.classSchedule);
+    props.setClassSchedule([]);
   };
 
   return (

@@ -6,8 +6,10 @@ import DashBoardMainClassWritePresenter from "./DashBoardClassWrite.presenter";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { useMutation } from "@apollo/client";
 import { UPLOAD_FILE } from "./DashBoardClassWrite.queries";
+import { useRouter } from "next/router";
 
 const DashBoardMainClassWriteContainer = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [date, setDate] = useState("");
   const [members, setMembers] = useState("");
@@ -18,9 +20,11 @@ const DashBoardMainClassWriteContainer = () => {
     contents: "",
     price: "",
     address: "",
+    district: "",
     createdAt: "",
     patissier: "",
     patissierId: "",
+    detailAddress: "",
     heart: 0,
     review: [],
     images: [],
@@ -41,10 +45,11 @@ const DashBoardMainClassWriteContainer = () => {
     setIsVisible((prev) => !prev);
   };
   const handleComplete = (data: any) => {
-    console.log(data);
+    setIsOpen((prev) => !prev);
     setAddress(data.address);
     myInputs.address = data.address;
-    setIsOpen((prev) => !prev);
+    myInputs.district = data.query;
+    console.log(data);
   };
 
   // 날짜 설정
@@ -65,8 +70,23 @@ const DashBoardMainClassWriteContainer = () => {
     // myInputs.applyClass.push("aaa");
     myInputs.patissierId = currentUser?.uid;
     myInputs.createdAt = getDate(new Date());
-    myInputs.category = "마카롱";
     console.log(myInputs);
+
+    if (
+      !myInputs.className ||
+      !myInputs.contents ||
+      !myInputs.category ||
+      !myInputs.remarks ||
+      !myInputs.contents ||
+      !myInputs.price ||
+      !myInputs.address ||
+      !myInputs.detailAddress ||
+      !myInputs.applyClass
+    ) {
+      alert("값이 비어있습니다!! 모두 채워주세요.");
+      return;
+    }
+
     const dashboardclasswrite = collection(
       // db
       getFirestore(firebaseApp),
@@ -77,6 +97,9 @@ const DashBoardMainClassWriteContainer = () => {
     await addDoc(dashboardclasswrite, {
       ...myInputs,
     });
+
+    alert("클래스가 등록되었습니다.");
+    router.push(`/dashboard/class/read`);
   };
 
   // 인풋 값 변경 시 state에 저장
@@ -85,8 +108,9 @@ const DashBoardMainClassWriteContainer = () => {
       className: myInputs.className,
       contents: myInputs.contents,
       remarks: myInputs.remarks,
-      category: myInputs.category,
       address: myInputs.address,
+      district: myInputs.district,
+      category: myInputs.category,
       price: myInputs.price,
       applyClass: myInputs.applyClass,
       images: myInputs.images,
@@ -94,14 +118,32 @@ const DashBoardMainClassWriteContainer = () => {
       patissierId: myInputs.patissierId,
       heart: myInputs.heart,
       review: myInputs.review,
+      detailAddress: myInputs.detailAddress,
       createdAt: "",
       [event.target.name]: event.target.value,
     });
   };
 
-  const onChangeImage = async (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+  const onChangeCategory = (event) => {
+    myInputs.category = event.target.value;
+  };
+  const [fileList, setFileList] = useState([]);
+  const onChangeImage = async (fileList) => {
+    const file = fileList.file;
+    console.log(fileList.file);
 
+    try {
+      const result = await uploadFile({ variables: { file } });
+      console.log("이미지", result);
+      myInputs.images.push(result.data.uploadFile.url);
+    } catch (error) {
+      if (error instanceof Error) alert(error.message);
+    }
+  };
+
+  const onChangeImage2 = async (event) => {
+    const file = event.target.files?.[0];
+    console.log(event.target.value);
     try {
       const result = await uploadFile({ variables: { file } });
       console.log("이미지", result);
@@ -125,6 +167,10 @@ const DashBoardMainClassWriteContainer = () => {
       toggleScheduleModal={toggleScheduleModal}
       isVisible={isVisible}
       address={address}
+      onChangeCategory={onChangeCategory}
+      fileList={fileList}
+      onChangeImage2={onChangeImage2}
+      setClassSchedule={setClassSchedule}
     />
   );
 };

@@ -15,11 +15,16 @@ const MyReviewPresenter = (props) => {
           <S.ListContents>
             {props.userResult?.review?.map((el) => (
               <S.ClassWrapper key={uuidv4()}>
-                <S.ClassImage />
-                <S.ClassPatissier>{el.category}</S.ClassPatissier>
-                <S.ClassName>{el.className}</S.ClassName>
-                <S.ClassDate>{el.class?.date}</S.ClassDate>
-                <S.Line>
+                <S.Class>
+                  <S.ClassImage />
+                  <S.ClassInfoWrapper>
+                    <S.ClassPatissier>{el.category}</S.ClassPatissier>
+                    <S.ClassName>{el.className}</S.ClassName>
+                    <S.ClassDate>{el.class?.date}</S.ClassDate>
+                  </S.ClassInfoWrapper>
+                </S.Class>
+                <S.Line></S.Line>
+                <S.ReviewWrapper>
                   <S.ClassReview>
                     <S.SubTheme>
                       <S.ClassStarRate>
@@ -30,12 +35,11 @@ const MyReviewPresenter = (props) => {
                     {/* <S.ReviewRemarks>재밌어요</S.ReviewRemarks> */}
                     <S.Review>{el.contents}</S.Review>
                   </S.ClassReview>
-                </S.Line>
-                <S.ClassLine></S.ClassLine>
-                <S.Label>
-                  <S.ReviewEdit>수정</S.ReviewEdit>
-                  <S.ReviewDelete>삭제</S.ReviewDelete>
-                </S.Label>
+                  <S.Label>
+                    <S.ReviewEdit>수정</S.ReviewEdit>
+                    <S.ReviewDelete>삭제</S.ReviewDelete>
+                  </S.Label>
+                </S.ReviewWrapper>
               </S.ClassWrapper>
             ))}
           </S.ListContents>

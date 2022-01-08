@@ -83,7 +83,6 @@ export default function Mypoint() {
           src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
         ></script>
       </Head>
-
       <MyPoint>{ppoint}P</MyPoint>
       <ChargeButton onClick={onClickPayment}>포인트충전</ChargeButton>
     </>

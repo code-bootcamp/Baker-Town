@@ -8,14 +8,20 @@ const SideNavigationPresenter = (props) => {
   return (
     <>
       <S.Sidebar>
-        <S.Title>
-          {props.userResult?.name}
-          <img className="Image" alt="mypage" src="/imgs/mypage.png" />
-        </S.Title>
-        <S.SmallLine></S.SmallLine>
-        <S.MyPointTitle>MY POINT</S.MyPointTitle>
-        {/* <S.MyPoint>2018P</S.MyPoint> */}
-        <MyPoint />
+        <S.TitleWrapper>
+          <S.Title>
+            {props.userResult?.name}
+            <S.SettingImage
+              className="Image"
+              alt="mypage"
+              src="/imgs/mypage.png"
+            />
+          </S.Title>
+          <S.SmallLine></S.SmallLine>
+          <S.MyPointTitle>MY POINT</S.MyPointTitle>
+          {/* <S.MyPoint>2018P</S.MyPoint> */}
+          <MyPoint />
+        </S.TitleWrapper>
         <S.SideTitle>CLASS</S.SideTitle>
         {myClass.map((el) => (
           <S.SiderbarMyClass key={uuidv4()}>

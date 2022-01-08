@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.header``;
 
 export const InnerWrapper = styled.div`
   display: flex;
@@ -36,6 +36,7 @@ export const ClassTitle = styled.div`
   :hover {
     cursor: pointer;
   }
+  opacity: ${(props) => (props.isBold ? 1 : 0.6)};
 `;
 
 export const StoreTitle = styled.div`
@@ -51,6 +52,7 @@ export const StoreTitle = styled.div`
   :hover {
     cursor: pointer;
   }
+  opacity: ${(props) => (props.isBold ? 1 : 0.6)};
 `;
 
 export const SeacrchBar = styled.input`
