@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Modal } from "antd";
 import { ECDH } from "crypto";
 
 export const Wrapper = styled.div`
@@ -139,6 +140,15 @@ export const ChooseScheduleTitle = styled.div``;
 
 export const SearchScheduleButton = styled.button`
   width: 250px;
+`;
+
+export const ScheduleModal = styled(Modal)`
+  /* resize: none;
+  max-width: 100%;
+  max-height: 100%;
+  width: 1000px;
+  height: 2000px; */
+  border: 10px dotted green;
 `;
 
 export const SubmitButton = styled.button`

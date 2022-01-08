@@ -66,7 +66,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
 
               // 인포윈도우로 장소에 대한 설명을 표시합니다
               const infowindow = new window.kakao.maps.InfoWindow({
-                content: `<div style="width:150px;text-align:center;padding:6px 0;border:1px solid ;">${props.myClass?.patissier}</div>`,
+                content: `<div style="width:150px;text-align:center;padding:6px 0;border:1px solid ;">${props.myClass?.address}</div>`,
                 // content: `<div style="background-color:transparent;">${props.myClass?.patissier}</div>`,
               });
               infowindow.open(map, marker);
@@ -115,7 +115,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <S.SubTheme1>
                 <S.ClassStarRate>
                   <S.Star src="/imgs/star.png" />
-                  <S.Rate>4.9</S.Rate>
+                  <S.Rate></S.Rate>
                   <S.Rater>(1,700)</S.Rater>
                 </S.ClassStarRate>
                 <S.CategoryTag>

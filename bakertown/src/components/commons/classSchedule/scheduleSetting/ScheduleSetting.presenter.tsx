@@ -6,8 +6,8 @@ const ScheduleSettingPresenter = (props) => {
     <>
       <S.Wrapper>
         <S.TitleWrppaer>
-          <S.Title>스케쥴 등록</S.Title>
-          <S.SmallTitle>시작일 기준으로 사용자에게 안내됩니다.</S.SmallTitle>
+          <S.Title>스케쥴 추가</S.Title>
+          <S.SmallTitle>모두 선택해 주세요.</S.SmallTitle>
         </S.TitleWrppaer>
         <S.ContentWrapper>
           <S.SchduleSettingWrapper>
@@ -24,6 +24,9 @@ const ScheduleSettingPresenter = (props) => {
                   onChange={props.timePick}
                 />
                 <S.TimeSelect onChange={props.onChangeTime}>
+                  <S.TimeOption disabled selected>
+                    클래스 소요시간
+                  </S.TimeOption>
                   <S.TimeOption value="30분">30분</S.TimeOption>
                   <S.TimeOption value="1시간">1시간</S.TimeOption>
                   <S.TimeOption value="1시간 30분">1시간 30분</S.TimeOption>

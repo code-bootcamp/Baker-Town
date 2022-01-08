@@ -6,8 +6,10 @@ import DashBoardMainClassWritePresenter from "./DashBoardClassWrite.presenter";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { useMutation } from "@apollo/client";
 import { UPLOAD_FILE } from "./DashBoardClassWrite.queries";
+import { useRouter } from "next/router";
 
 const DashBoardMainClassWriteContainer = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [date, setDate] = useState("");
   const [members, setMembers] = useState("");
@@ -22,6 +24,7 @@ const DashBoardMainClassWriteContainer = () => {
     createdAt: "",
     patissier: "",
     patissierId: "",
+    detailAddress: "",
     heart: 0,
     review: [],
     images: [],
@@ -68,6 +71,22 @@ const DashBoardMainClassWriteContainer = () => {
     myInputs.patissierId = currentUser?.uid;
     myInputs.createdAt = getDate(new Date());
     console.log(myInputs);
+
+    if (
+      !myInputs.className ||
+      !myInputs.contents ||
+      !myInputs.category ||
+      !myInputs.remarks ||
+      !myInputs.contents ||
+      !myInputs.price ||
+      !myInputs.address ||
+      !myInputs.detailAddress ||
+      !myInputs.applyClass
+    ) {
+      alert("값이 비어있습니다!! 모두 채워주세요.");
+      return;
+    }
+
     const dashboardclasswrite = collection(
       // db
       getFirestore(firebaseApp),
@@ -78,6 +97,9 @@ const DashBoardMainClassWriteContainer = () => {
     await addDoc(dashboardclasswrite, {
       ...myInputs,
     });
+
+    alert("클래스가 등록되었습니다.");
+    router.push(`/dashboard/class/read`);
   };
 
   // 인풋 값 변경 시 state에 저장
@@ -96,6 +118,7 @@ const DashBoardMainClassWriteContainer = () => {
       patissierId: myInputs.patissierId,
       heart: myInputs.heart,
       review: myInputs.review,
+      detailAddress: myInputs.detailAddress,
       createdAt: "",
       [event.target.name]: event.target.value,
     });
@@ -147,6 +170,7 @@ const DashBoardMainClassWriteContainer = () => {
       onChangeCategory={onChangeCategory}
       fileList={fileList}
       onChangeImage2={onChangeImage2}
+      setClassSchedule={setClassSchedule}
     />
   );
 };

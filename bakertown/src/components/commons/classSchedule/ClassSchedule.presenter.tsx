@@ -23,21 +23,25 @@ const ClassSchedulePresenter = (props) => {
           <S.ScheduleWrppaer>
             {props.classSchedule.map((el) => (
               <S.ClasScheduleWrapper key={uuidv4()}>
-                <div>날짜: {el.class?.date}</div>
-                <div>시작시간: {el.class?.start}</div>
-                <div>최대인원: {el.class?.member}</div>
+                <div>날짜: {el.class?.date}&nbsp;&nbsp;</div>
+                <div>시작시간: {el.class?.start}&nbsp;&nbsp;</div>
+                <div>수업시간: {el.class?.runningTime}&nbsp;&nbsp;</div>
+                <div>최대인원: {el.class?.member}&nbsp;&nbsp;</div>
               </S.ClasScheduleWrapper>
             ))}
           </S.ScheduleWrppaer>
           <S.ScheduleSettingButton onClick={props.toggleModal}>
-            날짜/시간 설정하기
+            스케쥴 추가하기
           </S.ScheduleSettingButton>
           <Modal
             visible={props.isVisible}
             onOk={props.toggleModal}
             onCancel={props.toggleModal}
           >
-            <ScheduleSettingContainer classSchedule={props.classSchedule} />
+            <ScheduleSettingContainer
+              classSchedule={props.classSchedule}
+              toggleModal={props.toggleModal}
+            />
           </Modal>
         </S.ContentWrapper>
       </S.Wrapper>

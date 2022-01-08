@@ -69,14 +69,14 @@ const BeforeParContainer = () => {
       },
     });
     // // 내 참여예정 클래스
-    // const myBeforeParClass = userResult.data().beforePar;
+    const myBeforeParClass = userResult.data().beforePar;
     // // 선택한 클래스 없애기
-    // myBeforeParClass.splice(index, 1);
+    myBeforeParClass.splice(index, 1);
 
     // // 없앤 beforePar 배열을 올리기
-    // await updateDoc(userQuery, {
-    //   beforePar: myBeforeParClass,
-    // });
+    await updateDoc(userQuery, {
+      beforePar: myBeforeParClass,
+    });
   };
 
   return (
