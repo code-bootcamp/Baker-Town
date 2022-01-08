@@ -46,7 +46,7 @@ const SignInPresenter = (props) => {
         <S.Wrapper>
           <S.Label>BAKER TOWN</S.Label>
           {/* <div>{currentUser?.email}</div> */}
-          <S.Label>로그인</S.Label>
+          <S.Label>SignIn</S.Label>
 
           <S.EmailLabel>email</S.EmailLabel>
           <S.Email ref={emailRef} placeholder="email" />

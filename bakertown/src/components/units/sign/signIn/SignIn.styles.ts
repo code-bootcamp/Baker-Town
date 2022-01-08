@@ -16,7 +16,7 @@ export const Aa = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 200px;
+  padding-top: 300px;
 
   /* background-image: url("/imgs/login.jpg"); */
 `;
@@ -46,6 +46,7 @@ export const Label = styled.div`
   font-weight: bold; */
   font-size: 55px;
   font-weight: bold;
+  padding-top: 20px;
 `;
 
 export const NameLabel = styled.div`
@@ -133,6 +134,8 @@ export const SignUpButton = styled.button`
   /* background: orange; */
   /* width: 100%;
   cursor: pointer; */
+  
+
 
   width: 100%;
   
@@ -140,7 +143,7 @@ export const SignUpButton = styled.button`
 
   color: rgb(255, 255, 255);
   background-color: rgb(255, 86, 0);
-  /* border: 1px solid rgb(239, 239, 239); */
+  border: 1px solid rgb(239, 239, 239);
   font-size: 30px;
   border: 3px solid
   /* padding: 0px 0px; */
