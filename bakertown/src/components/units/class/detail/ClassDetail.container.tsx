@@ -48,6 +48,9 @@ const ClassDetailContainer = () => {
       const result = await getDoc(product);
       const classData = result.data();
       console.log("클래스 정보", classData);
+      // const rateAverage = {result.data().review.map((el) => (
+      //   {el.}
+      // ))}
       setMyClass(classData);
     }
   });
@@ -254,7 +257,6 @@ const ClassDetailContainer = () => {
   // const ReviewRef = useRef();
   // const ProgramRef = useRef();
   // const MapRef = useRef();
-
 
   const GoReview = () =>
     ReviewRef.current.scrollIntoView({

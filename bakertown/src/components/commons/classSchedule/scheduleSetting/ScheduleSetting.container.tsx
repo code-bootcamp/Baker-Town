@@ -5,7 +5,7 @@ import ScheduleSettingPresenter from "./ScheduleSetting.presenter";
 const ScheduleSettingContainer = (props) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [runningTime, setRunningTime] = useState("")
+  const [runningTime, setRunningTime] = useState("");
   const [memberCount, setMemberCount] = useState(0);
 
   const onChangeDatePick = (date, dateString) => {
@@ -21,8 +21,8 @@ const ScheduleSettingContainer = (props) => {
   };
 
   const onChangeTime = (event) => {
-    setRunningTime(event.target.value)
-  }
+    setRunningTime(event.target.value);
+  };
 
   const onClickScheduleSetting = () => {
     const classObject = {
@@ -35,6 +35,9 @@ const ScheduleSettingContainer = (props) => {
       },
     };
     props.classSchedule?.push(classObject);
+    alert("스케쥴이 추가되었습니다.");
+    props.toggleModal();
+    setDate(""), setTime(""), setRunningTime(""), setMemberCount(0);
   };
 
   return (

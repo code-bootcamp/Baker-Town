@@ -525,8 +525,10 @@ export const ClassSchedule = styled.div`
 
 export const ClassScheduleWrapper = styled.div`
   width: 350px;
+  height: 300px;
   display: flex;
   flex-wrap: wrap;
+  overflow: scroll;
 `;
 
 export const ClassArrayWrapper = styled.div`
