@@ -382,7 +382,8 @@ export const MiddleBanner = styled.div`
 export const MiddleBannerWrapper = styled.div`
   width: 1274px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
   position: relative;
 `;
 
@@ -395,6 +396,12 @@ export const MiddleBannerText = styled.div`
   text-align: left;
   color: #4f3325;
   font-size: 32px;
+`;
+
+export const MiddleBannerArrow = styled.img`
+  width: 25px;
+  height: 25px;
+  margin-left: 25px;
 `;
 
 export const MiddleBannerImage = styled.img`
