@@ -29,46 +29,46 @@ const SignInPresenter = (props) => {
   }
 
   return (
-    // <Paper>
-    <S.Ba>
-      <S.Aa>
-        <S.Wrapper>
-          <S.Label>BAKER TOWN</S.Label>
-          {/* <div>{currentUser?.email}</div> */}
-          <S.Label>SignIn</S.Label>
-
-          <S.EmailLabel>email</S.EmailLabel>
-          <S.Email ref={emailRef} placeholder="email" />
-          <S.PasswordLabel>password</S.PasswordLabel>
-          <S.Password
-            ref={passwordRef}
-            type="Password"
-            placeholder="password"
-          />
-
-          <S.SignUpButton
+    <S.Wrapper>
+      <S.LoginWrapper>
+        {/* <div>{currentUser?.email}</div> */}
+        <S.LoginInnerWrapper>
+          <S.BrandWrapper>
+            <S.LogoLabel src="/imgs/logo.png" />
+            <S.SignUpWrapper onClick={props.onClickSignUp}>
+              <S.SignUpLabel>회원 가입하기</S.SignUpLabel>
+              <S.Rightarrow src="/imgs/rightarrow.png" />
+            </S.SignUpWrapper>
+          </S.BrandWrapper>
+          <S.LoginLabel>로그인</S.LoginLabel>
+          <S.EmailLabel>이메일</S.EmailLabel>
+          <S.Email ref={emailRef} placeholder="example@naver.com" />
+          <S.PasswordLabel>비밀번호</S.PasswordLabel>
+          <S.Password ref={passwordRef} type="Password" placeholder="••••••" />
+          <S.SignInWrapper>
+            <S.SignInButton
+              // disabled={loading || currentUser}
+              onClick={handlesSignIn}
+            >
+              로그인
+            </S.SignInButton>
+            {/* <S.SignUpButton
             // disabled={loading || currentUser}
             onClick={handlesSignIn}
           >
             SignIn
-          </S.SignUpButton>
-          {/* <S.SignUpButton
-            // disabled={loading || currentUser}
-            onClick={handlesSignIn}
-          >
-            SignIn
-          </S.SignUpButton> */}
-          <S.SignUpButton
-            // disabled={loading || currentUser}
-            onClick={props.onClickSignUp}
-          >
-            SignUp
-          </S.SignUpButton>
-        </S.Wrapper>
-      </S.Aa>
-    </S.Ba>
-
-    // </Paper>
+          </S.SignUpButton>  */}
+            {/* <S.SignUpButton
+              // disabled={loading || currentUser}
+              onClick={props.onClickSignUp}
+            >
+              회원가입
+            </S.SignUpButton> */}
+          </S.SignInWrapper>
+        </S.LoginInnerWrapper>
+      </S.LoginWrapper>
+      <S.PhotoWrapper />
+    </S.Wrapper>
   );
 };
 
