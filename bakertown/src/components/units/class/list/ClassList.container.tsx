@@ -99,7 +99,9 @@ const ClassListContainer = () => {
     //     lastVisible = snapshot.docs[snapshot.docs.length - 1];
     //   }
     // });
-
+    //
+    //
+    //
     // 카테고리가 있을 때
     if (categoryName) {
       console.log(categoryName);
@@ -293,13 +295,16 @@ const ClassListContainer = () => {
     alert("aa");
   };
 
-  const onClickOption = (event) => {
-    setOption(event.target.id);
+  // const onClickOption = (event) => {
+  //   setOption(event.target.id);
 
-    console.log(option);
+  //   console.log(option);
+  // };
+
+  const onChangeSelect = (event) => {
+    setOption(event.target.value);
+    console.log(event.target.value);
   };
-
-  const aaa = () => {};
 
   return (
     <>
@@ -312,7 +317,8 @@ const ClassListContainer = () => {
         click2={onClick2}
         clickPage={onClickPage}
         classDetail={onClickClassDetail}
-        clickOption={onClickOption}
+        // clickOption={onClickOption}
+        changeSelect={onChangeSelect}
       />
     </>
   );
