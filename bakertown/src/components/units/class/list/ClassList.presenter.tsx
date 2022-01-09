@@ -20,16 +20,10 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
         <S.ClassList>
           <S.ListTitle>
             <S.ListTitleText>{props.categoryName} 클래스</S.ListTitleText>
-            <S.ListSelect>
-              <S.ListOption onClick={props.clickOption} id="1">
-                추천순
-              </S.ListOption>
-              <S.ListOption onClick={props.clickOption} id="2">
-                인기순
-              </S.ListOption>
-              <S.ListOption onClick={props.clickOption} id="3">
-                최신순
-              </S.ListOption>
+            <S.ListSelect onChange={props.changeSelect}>
+              <S.ListOption value="1">추천순</S.ListOption>
+              <S.ListOption value="2">인기순</S.ListOption>
+              <S.ListOption value="3">최신순</S.ListOption>
             </S.ListSelect>
           </S.ListTitle>
           <S.ListContents>

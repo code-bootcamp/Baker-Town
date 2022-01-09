@@ -18,18 +18,21 @@ import { useBottomScrollListener } from "react-bottom-scroll-listener";
 const BeforeParContainer = () => {
   const router = useRouter();
   const currentUser = useAuth();
-  const [myUser, setMyUser] = useState([]);
+  const [myUser, setMyUser] = useState({
+    name: "로딩중입니다",
+  });
 
   useEffect(async () => {
     if (myUser?.name === "로딩중입니다") {
       if (!currentUser) return;
-      // const userQuery = doc(
-      //   getFirestore(firebaseApp),
-      //   "users",
-      //   currentUser?.email
-      // );
-      // const userResult = await getDoc(userQuery);
-      // setMyUser(userResult.data());
+      const userQuery = doc(
+        getFirestore(firebaseApp),
+        "users",
+        currentUser?.email
+      );
+      const userResult = await getDoc(userQuery);
+      setMyUser(userResult.data());
+      console.log("aaa", userResult.data());
 
       //
       //
@@ -39,26 +42,25 @@ const BeforeParContainer = () => {
   });
 
   const getNextMyUser = () => {
-    if (!currentUser) return;
-    let lastVisible = undefined;
-    let q;
-    if (lastVisible === -1) {
-      return;
-    } else if (lastVisible) {
-      q = query(
-        collection(getFirestore(firebaseApp), "users", currentUser?.email),
-        limit(2),
-        startAfter(lastVisible)
-      );
-    } else {
-      q = query(
-        collection(getFirestore(firebaseApp), "users", currentUser?.email),
-        limit(4)
-      );
-    }
-    const aaa = getDocs(q);
-    console.log(aaa.data());
-
+    // if (!currentUser) return;
+    // let lastVisible = undefined;
+    // let q;
+    // if (lastVisible === -1) {
+    //   return;
+    // } else if (lastVisible) {
+    //   q = query(
+    //     collection(getFirestore(firebaseApp), "users", currentUser?.email),
+    //     limit(2),
+    //     startAfter(lastVisible)
+    //   );
+    // } else {
+    //   q = query(
+    //     collection(getFirestore(firebaseApp), "users", currentUser?.email),
+    //     limit(4)
+    //   );
+    // }
+    // const aaa = getDocs(q);
+    // console.log(aaa.data());
     // getDocs(q).then((snapshot) => {
     //   setMyUser((myUser) => {
     //     const arr = [...myUser];
@@ -75,12 +77,12 @@ const BeforeParContainer = () => {
     // });
   };
 
-  useBottomScrollListener(getNextMyUser);
+  // useBottomScrollListener(getNextMyUser);
 
-  useEffect(() => {
-    getNextMyUser();
-    console.log("aaaaa", myUser);
-  }, []);
+  // useEffect(() => {
+  //   getNextMyUser();
+  //   console.log("aaaaa", myUser);
+  // }, []);
 
   const onClickClassDetail = (el) => () => {
     console.log(el.classRouter);

@@ -55,12 +55,12 @@ export const ListTitleText = styled.div`
   margin-bottom: 30px;
 `;
 
-export const ListSelect = styled.div``;
+export const ListSelect = styled.select``;
 
-export const ListOption = styled.div`
-  :hover {
+export const ListOption = styled.option`
+  /* :hover {
     cursor: pointer;
-  }
+  } */
 `;
 
 export const ListContents = styled.div`
