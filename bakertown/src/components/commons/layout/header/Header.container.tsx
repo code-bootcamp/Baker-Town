@@ -5,6 +5,10 @@ import HeaderPresenter from "./Header.presenter";
 const BOLD_CLASS = [`/class`, `/class/그 뒤에 모두 되는 걸로 해야함`];
 const BOLD_STORE = [`/store`, `/store/그 뒤에 모두 되는 걸로 해야함`];
 
+declare const window: typeof globalThis & {
+  event: any;
+};
+
 const HeaderContainer = () => {
   const router = useRouter();
   const [keyWord, setKeyWord] = useState("");
@@ -19,6 +23,7 @@ const HeaderContainer = () => {
     router.push(`/store`);
   };
   const onClickSearch = () => {
+    location.reload();
     router.push(`/class/search/${keyWord}`);
   };
   const onChangeKeyWord = (event: ChangeEvent<HTMLInputElement>) => {
@@ -29,6 +34,11 @@ const HeaderContainer = () => {
   };
   const onClickHeartClass = () => {
     router.push(`/myPage/class/wishList`);
+  };
+  const onKeyUpEnterKey = () => {
+    if (window.event.keyCode === 13) {
+      onClickSearch();
+    }
   };
 
   const isBoldClass = BOLD_CLASS.includes(router.asPath);
@@ -43,6 +53,7 @@ const HeaderContainer = () => {
       signIn={onClickSignIn}
       heartClass={onClickHeartClass}
       store={onClickStore}
+      enterKey={onKeyUpEnterKey}
       isBoldClass={isBoldClass}
       isBoldStore={isBoldStore}
     />

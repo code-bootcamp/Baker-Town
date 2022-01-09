@@ -17,6 +17,10 @@ import {
 import { firebaseApp, useAuth } from "../../../../pages/_app";
 import LandingPresenter from "./Landing.presenter";
 
+declare const window: typeof globalThis & {
+  event: any;
+};
+
 const LandingContainer = () => {
   const router = useRouter();
   const [popular, setPoplular] = useState([]);
@@ -90,6 +94,12 @@ const LandingContainer = () => {
     router.push(`/class/category/${event.target.value}`);
   };
 
+  const onKeyUpEnterKey = () => {
+    if (window.event.keyCode === 13) {
+      onClickSearch();
+    }
+  };
+
   return (
     <>
       <LandingPresenter
@@ -108,6 +118,7 @@ const LandingContainer = () => {
         goPopular={onClickPopular}
         geRecent={onClickRecent}
         category={onClickCategory}
+        enterKey={onKeyUpEnterKey}
       />
     </>
   );
