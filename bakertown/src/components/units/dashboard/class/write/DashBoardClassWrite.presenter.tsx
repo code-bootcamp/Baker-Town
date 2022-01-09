@@ -120,7 +120,7 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           날짜 시간 설정하기 모달!!!
         </S.SearchScheduleButton>
         <S.ScheduleModal
-          width={1000}
+          width={680}
           visible={props.isVisible}
           onOk={props.toggleScheduleModal}
           onCancel={props.toggleScheduleModal}

@@ -48,7 +48,7 @@ const DashBoardMainClassWriteContainer = () => {
     setIsOpen((prev) => !prev);
     setAddress(data.address);
     myInputs.address = data.address;
-    myInputs.district = data.query;
+    myInputs.district = data.sigungu;
     console.log(data);
   };
 
@@ -160,8 +160,8 @@ const DashBoardMainClassWriteContainer = () => {
       handleComplete={handleComplete}
       onChangeDate={onChangeDate}
       onChangeMembers={onChangeMembers}
-      onClickSubmit={onClickSubmit}
       onChangeInputs={onChangeInputs}
+      onClickSubmit={onClickSubmit}
       onChangeImage={onChangeImage}
       classSchedule={classSchedule}
       toggleScheduleModal={toggleScheduleModal}
