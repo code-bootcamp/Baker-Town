@@ -25,7 +25,7 @@ const ScheduleSettingPresenter = (props) => {
                 />
                 <S.TimeSelect onChange={props.onChangeTime}>
                   <S.TimeOption disabled selected>
-                    클래스 소요시간
+                    클래스 수업시간
                   </S.TimeOption>
                   <S.TimeOption value="30분">30분</S.TimeOption>
                   <S.TimeOption value="1시간">1시간</S.TimeOption>
@@ -37,7 +37,7 @@ const ScheduleSettingPresenter = (props) => {
               </S.SettingTwo>
               <S.SettingThree>
                 <S.ClassMemberCount>
-                  <S.SmallTitle>참여 가능 인원</S.SmallTitle>
+                  <S.SmallTitle>최대 수강 인원</S.SmallTitle>
                   <S.CountInput type="number" onChange={props.memberChange} />
                 </S.ClassMemberCount>
               </S.SettingThree>
@@ -47,7 +47,7 @@ const ScheduleSettingPresenter = (props) => {
             <div>날짜: {props.date}</div>
             <div>시간: {props.time}</div>
             <div>수업시간: {props.runningTime}</div>
-            <div>최대인원: {props.memberCount}</div>
+            <div>최대 수강 인원: {props.memberCount}</div>
           </S.ScheduleWrppaer>
           <S.ScheduleSettingButton onClick={props.scheduleSetting}>
             등록하기

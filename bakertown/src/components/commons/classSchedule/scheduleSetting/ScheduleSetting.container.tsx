@@ -17,6 +17,10 @@ const ScheduleSettingContainer = (props) => {
   };
 
   const onChangeMemberInput = (event) => {
+    if (event.target.value < 1) {
+      alert("수강 인원을 1명 이상 선택해 주세요.");
+      event.target.value = 1;
+    }
     setMemberCount(event.target.value);
   };
 
