@@ -108,6 +108,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
           <S.RoundDivInnerText
             placeholder="어떤 클래스를 원하세요?"
             onChange={props.keyWord}
+            onKeyUp={props.enterKey}
           />
           <S.RoundDivCircle>
             <S.RoundDivInnerIcon
