@@ -1,6 +1,7 @@
 import { LegacyRef, MouseEventHandler } from "react";
 
 export interface IClassDetailPresenterProps {
+  ratingAverage: number | undefined;
   isSelectedMap: any;
   isSelectedReview: any;
   ProgramRef: LegacyRef<HTMLDivElement> | undefined;
