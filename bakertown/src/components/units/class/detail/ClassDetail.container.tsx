@@ -25,7 +25,7 @@ const ClassDetailContainer = () => {
   const [myDate, setMyDate] = useState("");
   const [myIndex, setMyIndex] = useState(-1);
   const [myName, setMyName] = useState("");
-
+  const [ratingAverage, setRatingAverage] = useState(0);
   const currentUser = useAuth();
   // if (process.browser) {
   //   const product = doc(
@@ -49,6 +49,12 @@ const ClassDetailContainer = () => {
       const classData = result.data();
       console.log("클래스 정보", classData);
       setMyClass(classData);
+
+      const arry = classData?.review?.map((el) => el.rating);
+      // classData?.review?.[0]?.rating
+      console.log("arry", arry);
+
+      setRatingAverage(arry?.reduce((acc, cur) => acc + cur) / arry?.length);
     }
   });
 
@@ -351,7 +357,7 @@ const ClassDetailContainer = () => {
     return {
       root: null,
       threshold: 0,
-      rootMargin: "0px 0px -300px 0px",
+      rootMargin: "0px 0px -1000px 0px",
     };
   }, []);
 
@@ -360,13 +366,13 @@ const ClassDetailContainer = () => {
       callbackFunctionReview,
       reviewoptions
     );
-    const currentTargetReview = testRef.current;
+    const currentTargetReview = ReviewRef.current;
     if (currentTargetReview) observerReview.observe(currentTargetReview);
 
     return () => {
       if (currentTargetReview) observerReview.unobserve(currentTargetReview);
     };
-  }, [testRef, reviewoptions]);
+  }, [ReviewRef, reviewoptions]);
 
   return (
     <ClassDetailPresenter
@@ -384,10 +390,10 @@ const ClassDetailContainer = () => {
       ProgramRef={ProgramRef}
       MapRef={MapRef}
       ReviewRef={ReviewRef}
-      testRef={testRef}
       isSelectedProgram={isSelectedProgram}
       isSelectedMap={isSelectedMap}
       isSelectedReview={isSelectedReview}
+      ratingAverage={ratingAverage}
     />
   );
 };

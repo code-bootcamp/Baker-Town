@@ -192,6 +192,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               <S.MiddleBannerText>
                 베이킹 전혀 어렵지 않아요 ! 지금 배우러 가기{" "}
               </S.MiddleBannerText>
+              <S.MiddleBannerArrow src="imgs/rightarrow.png" />
               <S.MiddleBannerImage src="imgs/landing/middlebannerimage.png" />
             </S.MiddleBannerWrapper>
           </S.MiddleBanner>

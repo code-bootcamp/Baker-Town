@@ -4,12 +4,14 @@ export const NavBarWrapper = styled.div`
   width: 100%;
   margin-left: 16px;
   height: 93px;
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: center;
   background-color: white;
   box-shadow: 8px 8px 30px 0 rgba(0, 0, 0, 0.1);
   z-index: 2;
+  /* top: 60px; */
+  top: 80px;
 
   &.change_header {
     position: fixed;

@@ -9,28 +9,43 @@ const HeaderPresenter = (props: IHeaderProps) => {
   return (
     <>
       <S.Wrapper>
-        <S.InnerWrapper>
-          <S.InnerLogo onClick={props.logo}>
-            <S.Img className="Image" alt="logo" src="/imgs/logo.png" />
-          </S.InnerLogo>
-          <S.ClassTitle onClick={props.class} isBold={props.isBoldClass}>
-            CLASS
-          </S.ClassTitle>
-          <S.StoreTitle onClick={props.store} isBold={props.isBoldStore}>
-            STORE
-          </S.StoreTitle>
-          <S.SeacrchBar
+        {/* <S.InnerWrapper> */}
+        <S.InnerLogo onClick={props.logo}>
+          <S.Img className="Image" alt="logo" src="/imgs/logo.png" />
+        </S.InnerLogo>
+        <S.ClassTitle onClick={props.class} isBold={props.isBoldClass}>
+          CLASS
+        </S.ClassTitle>
+        <S.StoreTitle onClick={props.store} isBold={props.isBoldStore}>
+          STORE
+        </S.StoreTitle>
+        <S.RoundDiv>
+          <S.RoundDivInnerText
+            placeholder="어떤 클래스를 원하세요?"
             onChange={props.keyWord}
-            placeholder="검색"
             onKeyUp={props.enterKey}
           />
-          <S.HeartButton onClick={props.heartClass}>❤</S.HeartButton>
-          {currentuser?.uid ? (
-            <AvatarPage></AvatarPage>
+          <S.RoundDivCircle>
+            <S.RoundDivInnerIcon
+              src="/imgs/landing/searchicon01.png"
+              onClick={props.search}
+            />
+          </S.RoundDivCircle>
+        </S.RoundDiv>
+        <S.HeartToLogin>
+          <S.HeartRoundDivCircle>
+            <S.HeartFilled
+              src="/imgs/landing/heart01.png"
+              onClick={props.heartClass}
+            />
+          </S.HeartRoundDivCircle>
+          {props.currentUser?.uid ? (
+            <AvatarPage />
           ) : (
-            <S.SinInButton onClick={props.signIn}>로그인</S.SinInButton>
+            <S.LoginText onClick={props.signIn}>로그인 </S.LoginText>
           )}
-        </S.InnerWrapper>
+        </S.HeartToLogin>
+        {/* </S.InnerWrapper> */}
       </S.Wrapper>
     </>
   );
