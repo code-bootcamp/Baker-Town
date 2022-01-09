@@ -26,7 +26,7 @@ const DashBoardSidebarContainer = () => {
   };
 
   const onClickDashBoardMyPagePage = async () => {
-    await router.push("/dashboard/myPage");
+    await router.push("/dashboard/mypage");
   };
 
   const onClickLandingPage = () => {

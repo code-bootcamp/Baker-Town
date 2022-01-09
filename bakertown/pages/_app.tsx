@@ -23,6 +23,7 @@ import {
   onAuthStateChanged,
   signOut,
   signInWithEmailAndPassword,
+  deleteUser,
 } from "firebase/auth";
 
 const uploadLink = createUploadLink({
