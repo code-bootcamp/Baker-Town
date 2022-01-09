@@ -27,6 +27,8 @@ export const ContentWrapper = styled.div`
   height: 300px;
   border: 1px solid black;
   margin-left: 20px;
+  padding-top: 10px;
+  padding-left: 12px;
 `;
 
 export const SchduleSettingWrapper = styled.div`
