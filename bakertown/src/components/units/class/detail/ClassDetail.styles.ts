@@ -195,10 +195,11 @@ export const CategoryTag = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  /* background-color: yellow; */
 `;
 
 export const Category = styled.div`
-  font-size: 24px;
+  font-size: 17px;
 `;
 
 // export const ContentsCategory = styled.div`

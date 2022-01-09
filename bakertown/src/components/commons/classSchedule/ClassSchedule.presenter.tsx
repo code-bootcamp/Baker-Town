@@ -34,6 +34,7 @@ const ClassSchedulePresenter = (props) => {
             스케쥴 추가하기
           </S.ScheduleSettingButton>
           <Modal
+            width={680}
             visible={props.isVisible}
             onOk={props.toggleModal}
             onCancel={props.toggleModal}

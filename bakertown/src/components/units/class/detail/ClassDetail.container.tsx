@@ -48,7 +48,6 @@ const ClassDetailContainer = () => {
       const result = await getDoc(product);
       const classData = result.data();
       console.log("클래스 정보", classData);
-      console.log(classData?.review.map((el) => <div>{el.rating}</div>));
       setMyClass(classData);
     }
   });
