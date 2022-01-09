@@ -324,9 +324,39 @@ export const SubjectView = styled.div`
 export const ClassesWrapper = styled.div`
   display: flex;
   height: 300px;
-
   justify-content: space-between;
   margin-top: 30px;
+`;
+
+export const SliderWrapper = styled.div`
+  width: 102.8%;
+  height: 1200px;
+
+  .slick-next-arrow {
+    font-size: 20px;
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 71px;
+    right: -18px;
+    background-image: url("/imgs/rightarrow.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .slick-before-arrow {
+    font-size: 20px;
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 71px;
+    left: -53px;
+    background-image: url("/imgs/leftarrow.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
 `;
 
 export const SpecialClassesWrapper = styled.div`
