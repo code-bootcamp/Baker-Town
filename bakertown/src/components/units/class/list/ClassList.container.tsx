@@ -27,35 +27,35 @@ const ClassListContainer = () => {
   useEffect(async () => {
     //
     // 전체 클래스
-    const first = query(
-      collection(getFirestore(firebaseApp), "class"),
-      where("createdAt", "!=", ""), // 필터
-      orderBy("createdAt", "desc"), // 정렬
-      limit(12) // 데이터 불러오는 개수 제한
-    );
-    const firstResult = await getDocs(first);
-    console.log(
-      "찬밍",
-      firstResult.docs.map((el) => el.ref.firestore.app)
-    );
-    setFirst(firstResult.docs.map((el) => el.data()));
-    const lastVisible = firstResult.docs[firstResult.docs.length - 1]; // 70번째 줄에서 본 것을 설정. 마지막으로 본 것.
-    console.log("진짜 라스트", lastVisible);
-    const second = query(
-      collection(getFirestore(firebaseApp), "class"),
-      orderBy("createdAt", "desc"),
-      startAfter(lastVisible), // lastvisible한거의 그 다음부터 보게 함.
-      limit(12)
-    );
-    const secondResult = await getDocs(second);
-    setSecond(secondResult.docs.map((el) => el.data()));
-    setRecent(
-      firstResult.docs.map((el) => {
-        const data = el.data();
-        data.id = el.id;
-        return data;
-      })
-    );
+    // const first = query(
+    //   collection(getFirestore(firebaseApp), "class"),
+    //   where("createdAt", "!=", ""), // 필터
+    //   orderBy("createdAt", "desc"), // 정렬
+    //   limit(12) // 데이터 불러오는 개수 제한
+    // );
+    // const firstResult = await getDocs(first);
+    // console.log(
+    //   "찬밍",
+    //   firstResult.docs.map((el) => el.ref.firestore.app)
+    // );
+    // setRecent(firstResult.docs.map((el) => el.data()));
+    // const lastVisible = firstResult.docs[firstResult.docs.length - 1]; // 70번째 줄에서 본 것을 설정. 마지막으로 본 것.
+    // console.log(lastVisible)
+    // const second = query(
+    //   collection(getFirestore(firebaseApp), "class"),
+    //   orderBy("createdAt", "desc"),
+    //   startAfter(lastVisible), // lastvisible한거의 그 다음부터 보게 함.
+    //   limit(12)
+    // );
+    // const secondResult = await getDocs(second);
+    // setSecond(secondResult.docs.map((el) => el.data()));
+    // setRecent(
+    //   firstResult.docs.map((el) => {
+    //     const data = el.data();
+    //     data.id = el.id;
+    //     return data;
+    //   })
+    // );
     //
     //
     //
@@ -103,173 +103,171 @@ const ClassListContainer = () => {
     //
     //
     // 카테고리가 있을 때
-    if (categoryName) {
-      console.log(categoryName);
-      const category = query(
-        collection(getFirestore(firebaseApp), "class"),
-        where("category", "==", categoryName), // 필터
-        // orderBy(categoryName, "desc"), // 정렬
-        limit(12) // 데이터 불러오는 개수 제한
-      );
-      const result = await getDocs(category);
-      setRecent(
-        result.docs.map((el) => {
-          const data = el.data();
-          data.id = el.id;
-          return data;
-        })
-      );
-      console.log(result.docs.map((el) => el.data()));
-      //
-      // 카테고리가 설정된 인기순
-      if (option === "2") {
-        console.log("11");
-        const popular = query(
-          collection(getFirestore(firebaseApp), "class"),
-          where("category", "==", categoryName), // 필터
-          where("heart", "!=", ""),
-          // orderBy("heart", "desc"), // 정렬
-          limit(12) // 데이터 불러오는 개수 제한
-        );
-        console.log("22");
-        const result = await getDocs(popular);
-        console.log("33");
-        console.log("인기순 결과", result);
-        setRecent(
-          result.docs.map((el) => {
-            const data = el.data();
-            data.id = el.id;
-            return data;
-          })
-        );
-        return;
-      }
-      //
-      // 카테고리가 설정된 최신순
-      else if (option === "3") {
-        const recent = query(
-          collection(getFirestore(firebaseApp), "class"),
-          where("category", "==", categoryName), // 필터
-          orderBy("createdAt", "desc"), // 정렬
-          limit(12) // 데이터 불러오는 개수 제한
-        );
-        const result = await getDocs(recent);
-        setRecent(
-          result.docs.map((el) => {
-            const data = el.data();
-            data.id = el.id;
-            return data;
-          })
-        );
-      }
-    }
-    // 카테고리가 없을 때
-    else {
-      //
-      // 인기순
-      if (option === "2") {
-        const popular = query(
-          collection(getFirestore(firebaseApp), "class"),
-          orderBy("heart", "desc"), // 정렬
-          limit(12) // 데이터 불러오는 개수 제한
-        );
-        const result = await getDocs(popular);
-        console.log("인기순 결과", result);
-        setRecent(
-          result.docs.map((el) => {
-            const data = el.data();
-            data.id = el.id;
-            return data;
-          })
-        );
-      }
-      //
-      // 최신순
-      else if (option === "3") {
-        const recent = query(
-          collection(getFirestore(firebaseApp), "class"),
-          orderBy("createdAt", "desc"), // 정렬
-          limit(12) // 데이터 불러오는 개수 제한
-        );
-        const result = await getDocs(recent);
-        setRecent(
-          result.docs.map((el) => {
-            const data = el.data();
-            data.id = el.id;
-            return data;
-          })
-        );
-      }
-    }
-    // 검색어
-    if (keyWord) {
-      const recent = query(
-        collection(getFirestore(firebaseApp), "class"),
-        where("className", "==", keyWord)
-      );
-      let result = await getDocs(recent);
-      let docs = result.docs.map((el) => {
-        const data = el.data();
-        data.id = el.id;
-        return data;
-      });
-      setRecent(docs);
-      console.log(docs);
-    }
+    // if (categoryName) {
+    //   console.log(categoryName);
+    //   const category = query(
+    //     collection(getFirestore(firebaseApp), "class"),
+    //     where("category", "==", categoryName), // 필터
+    //     // orderBy(categoryName, "desc"), // 정렬
+    //     limit(12) // 데이터 불러오는 개수 제한
+    //   );
+    //   const result = await getDocs(category);
+    //   setRecent(
+    //     result.docs.map((el) => {
+    //       const data = el.data();
+    //       data.id = el.id;
+    //       return data;
+    //     })
+    //   );
+    //   console.log(result.docs.map((el) => el.data()));
+    //   //
+    //   // 카테고리가 설정된 인기순
+    //   if (option === "2") {
+    //     console.log("11");
+    //     const popular = query(
+    //       collection(getFirestore(firebaseApp), "class"),
+    //       where("category", "==", categoryName), // 필터
+    //       where("heart", "!=", ""),
+    //       // orderBy("heart", "desc"), // 정렬
+    //       limit(12) // 데이터 불러오는 개수 제한
+    //     );
+    //     console.log("22");
+    //     const result = await getDocs(popular);
+    //     console.log("33");
+    //     console.log("인기순 결과", result);
+    //     setRecent(
+    //       result.docs.map((el) => {
+    //         const data = el.data();
+    //         data.id = el.id;
+    //         return data;
+    //       })
+    //     );
+    //     return;
+    //   }
+    //   //
+    //   // 카테고리가 설정된 최신순
+    //   else if (option === "3") {
+    //     const recent = query(
+    //       collection(getFirestore(firebaseApp), "class"),
+    //       where("category", "==", categoryName), // 필터
+    //       orderBy("createdAt", "desc"), // 정렬
+    //       limit(12) // 데이터 불러오는 개수 제한
+    //     );
+    //     const result = await getDocs(recent);
+    //     setRecent(
+    //       result.docs.map((el) => {
+    //         const data = el.data();
+    //         data.id = el.id;
+    //         return data;
+    //       })
+    //     );
+    //   }
+    // }
+    // // 카테고리가 없을 때
+    // else {
+    //   //
+    //   // 인기순
+    //   if (option === "2") {
+    //     const popular = query(
+    //       collection(getFirestore(firebaseApp), "class"),
+    //       orderBy("heart", "desc"), // 정렬
+    //       limit(12) // 데이터 불러오는 개수 제한
+    //     );
+    //     const result = await getDocs(popular);
+    //     console.log("인기순 결과", result);
+    //     setRecent(
+    //       result.docs.map((el) => {
+    //         const data = el.data();
+    //         data.id = el.id;
+    //         return data;
+    //       })
+    //     );
+    //   }
+    //   //
+    //   // 최신순
+    //   else if (option === "3") {
+    //     const recent = query(
+    //       collection(getFirestore(firebaseApp), "class"),
+    //       orderBy("createdAt", "desc"), // 정렬
+    //       limit(12) // 데이터 불러오는 개수 제한
+    //     );
+    //     const result = await getDocs(recent);
+    //     setRecent(
+    //       result.docs.map((el) => {
+    //         const data = el.data();
+    //         data.id = el.id;
+    //         return data;
+    //       })
+    //     );
+    //   }
+    // }
+    // // 검색어
+    // if (keyWord) {
+    //   const recent = query(
+    //     collection(getFirestore(firebaseApp), "class"),
+    //     where("className", "==", keyWord)
+    //   );
+    //   let result = await getDocs(recent);
+    //   let docs = result.docs.map((el) => {
+    //     const data = el.data();
+    //     data.id = el.id;
+    //     return data;
+    //   });
+    //   setRecent(docs);
+    //   console.log(docs);
+    // }
   }, [categoryName, option]);
-
-  const getNextClass = async () => {
-    let lastVisible = undefined;
+  const [hih, setHih] = useState(0);
+  const [lastVisible, setLastVisible] = useState();
+  const getNextClass = () => {
     let myQuery = undefined;
-
     if (lastVisible === -1) {
-      console.log("나가기");
       return;
     } else if (lastVisible) {
-      console.log("라스트비져블 있을 때", lastVisible);
       myQuery = query(
         collection(getFirestore(firebaseApp), "class"),
         where("createdAt", "!=", ""),
+        orderBy("createdAt", "desc"),
         limit(4),
         startAfter(lastVisible)
       );
     } else {
-      console.log("그외", lastVisible);
       myQuery = query(
         collection(getFirestore(firebaseApp), "class"),
         where("createdAt", "!=", ""),
-        limit(8)
+        orderBy("createdAt", "desc"),
+        limit(12)
       );
     }
 
-    const myResult = await getDocs(myQuery);
-    setRecent(myResult.docs.map((el) => el.data()));
-    lastVisible = myResult.docs[myResult.docs.length - 1];
-    console.log("lastViisblef", lastVisible);
+    getDocs(myQuery).then((snapshot) => {
+      setRecent((classList) => {
+        const arr = [...classList];
+        snapshot.forEach((doc) => {
+          arr.push(doc.data());
+        });
 
-    // getDocs(myQuery).then((snapshot) => {
-    //   console.log("시작");
-    //   setRecent((posts) => {
-    //     const arr = [...posts];
-    //     snapshot.forEach((doc) => {
-    //       arr.push(doc.data());
-    //     });
-    //     return arr;
-    //   });
-    //   console.log("snapshot", snapshot.docs);
-    //   if (snapshot.docs.length === 0) {
-    //     lastVisible = -1;
-    //   } else {
-    //     lastVisible = snapshot.docs[snapshot.docs.length - 1];
-    //   }
-    // });
+        if (snapshot.docs.length === 0) {
+          lastVisible = -1;
+          console.log("lastVisible -1!!!!", lastVisible);
+        } else {
+          setHih(1);
+          setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
+          console.log("lastVisible에 뭔ㄱ ㅏ들어갔다", lastVisible);
+          console.log("히히", lastVisible);
+        }
+
+        console.log("snapshot.docs!!!!", snapshot.docs.length);
+        return arr;
+      });
+    });
   };
 
   useBottomScrollListener(getNextClass);
 
-  // useEffect(() => {
-  //   getNextClass();
-  // }, []);
+  useEffect(() => {
+    getNextClass();
+  }, []);
 
   const onClickSideButton = (el: string) => () => {
     router.push(`/class/category/${el}`);
@@ -295,16 +293,13 @@ const ClassListContainer = () => {
     alert("aa");
   };
 
-  // const onClickOption = (event) => {
-  //   setOption(event.target.id);
+  const onClickOption = (event) => {
+    setOption(event.target.id);
 
-  //   console.log(option);
-  // };
-
-  const onChangeSelect = (event) => {
-    setOption(event.target.value);
-    console.log(event.target.value);
+    console.log(option);
   };
+
+  const aaa = () => {};
 
   return (
     <>
@@ -317,8 +312,7 @@ const ClassListContainer = () => {
         click2={onClick2}
         clickPage={onClickPage}
         classDetail={onClickClassDetail}
-        // clickOption={onClickOption}
-        changeSelect={onChangeSelect}
+        clickOption={onClickOption}
       />
     </>
   );
