@@ -1,13 +1,12 @@
 import styled from "@emotion/styled";
 
 export const TitleWrapper = styled.div`
-  background-color: #f7f7f7;
-  width: 247px;
-  /* height: 188px; */
-  margin-bottom: 24px;
-  padding-left: 31px;
-  padding-top: 20px;
-  border-radius: 10px;
+  width: 370px;
+  padding-left: 30px;
+  padding-top: 40px;
+  margin-top: 70px;
+  position: fixed;
+  box-shadow: 8px 8px 30px 0 rgb(0 0 0 / 10%);
 `;
 
 export const MyPoint = styled.div`
@@ -15,8 +14,10 @@ export const MyPoint = styled.div`
   color: #ff4d12;
 `;
 export const MyPointTitle = styled.div`
-  font-size: 24px;
   font-weight: bold;
+  font-size: 25px;
+  flex-direction: row;
+  justify-content: center;
   /* margin-bottom: 9px; */
 `;
 export const Title = styled.div`

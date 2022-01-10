@@ -179,13 +179,13 @@ export const Star = styled.img`
 export const Rate = styled.div`
   font-size: 26px;
   font-weight: bold;
-  margin-left: 9px;
+  margin-left: 20px;
 `;
 
 export const Rater = styled.div`
   width: 57px;
   height: 25px;
-  margin-left: 10px;
+  margin-left: 20px;
   margin-bottom: 5px;
   font-size: 20px;
   color: rgba(95, 95, 95, 0.5);
@@ -216,7 +216,7 @@ export const SubTheme2 = styled.div`
 
 export const SubTheme2Heart = styled.img`
   width: 21px;
-  height: 19px;
+  height: 21px;
   margin-right: 9px;
 `;
 
@@ -361,19 +361,15 @@ cursor: pointer;
 `;
 
 export const PatissierContentsBox = styled.div`
-  width: 861px;
-  height: 300px;
+  width: 100%;
+  /* height: 100%; */
+  padding: 35px 30px 35px 30px;
   border-radius: 10px;
   background-color: #f7f7f7;
-  font-size: 20px;
-  padding-left: 20px;
-  padding-top: 20px;
-  text-align: left;
+  margin-top: 10px;
 `;
 
-export const ClassLocationInfo = styled.div`
-  padding-top: 100px;
-`;
+export const ClassLocationInfo = styled.div``;
 
 export const LocationInfo = styled.div`
   margin-top: 70px;
@@ -382,16 +378,14 @@ export const LocationInfo = styled.div`
 `;
 
 export const LocationMap = styled.div`
-  width: 864px;
+  width: 100%;
   height: 400px;
   margin-top: 50px;
   border-radius: 10px;
   background-color: #f7f7f7;
 `;
 
-export const ClassReviewInfo = styled.div`
-  padding-top: 80px;
-`;
+export const ClassReviewInfo = styled.div``;
 
 export const ClassReviewTitle = styled.div`
   margin-top: 70px;
@@ -402,18 +396,8 @@ export const ClassReviewTitle = styled.div`
 export const ClassStarRate2 = styled.div`
   margin-top: 31.7px;
   display: flex;
-`;
 
-export const Star2 = styled.img`
-  width: 26.7px;
-  height: 27px;
-`;
-
-export const Star3 = styled.img`
-  padding-top: 4.4px;
-  margin-left: 2px;
-  width: 19.9px;
-  height: 23.5px;
+  align-items: center;
 `;
 
 export const Rate2 = styled.div`
@@ -423,12 +407,6 @@ export const Rate2 = styled.div`
   height: 33px;
   font-size: 24px;
   font-weight: bold;
-`;
-
-export const Rater2 = styled.div`
-  padding-top: 3px;
-  padding-left: 20px;
-  color: rgba(95, 95, 95, 0.5);
 `;
 
 export const ClassReview = styled.div`
@@ -456,18 +434,6 @@ export const Label = styled.div`
 `;
 
 export const PersonalRate = styled.div``;
-
-export const Star4 = styled.img`
-  width: 15.8px;
-  height: 16px;
-`;
-
-export const Star5 = styled.img`
-  padding-top: 1px;
-  margin-left: 2px;
-  width: 12.2px;
-  height: 12.8px;
-`;
 
 export const CreatedDate = styled.div`
   margin-left: 6px;
