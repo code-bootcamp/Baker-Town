@@ -52,6 +52,9 @@ const AvatarPage = () => {
   const onClickMyItem = () => {
     router.push(`/myPage/item/orderHistory`);
   };
+  const onClickMyPage = () => {
+    router.push(`/myPage`);
+  };
   const [check, setCheck] = useState(0);
   const currentUser = useAuth();
   const [myUser, setMyUser] = useState({
@@ -135,8 +138,9 @@ const AvatarPage = () => {
             </>
           ) : (
             <>
-              <MenuItem>
+              <MenuItem onClick={onClickMyPage}>
                 <Avatar />
+                MyPage
               </MenuItem>
               <Divider />
             </>

@@ -1,1 +1,3 @@
-export interface IDashBoardMyPageProps {}
+export interface IDashBoardMyPageProps {
+  deleteAccount: () => Promise<void>;
+}

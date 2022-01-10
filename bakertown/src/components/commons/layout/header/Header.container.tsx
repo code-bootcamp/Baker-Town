@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { ChangeEvent, useState } from "react";
+import { useAuth } from "../../../../../pages/_app";
 import HeaderPresenter from "./Header.presenter";
 
 const BOLD_CLASS = [`/class`, `/class/그 뒤에 모두 되는 걸로 해야함`];

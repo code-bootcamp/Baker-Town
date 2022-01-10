@@ -39,7 +39,7 @@ const HeaderPresenter = (props: IHeaderProps) => {
               onClick={props.heartClass}
             />
           </S.HeartRoundDivCircle>
-          {props.currentUser?.uid ? (
+          {currentuser?.uid ? (
             <AvatarPage />
           ) : (
             <S.LoginText onClick={props.signIn}>로그인 </S.LoginText>
