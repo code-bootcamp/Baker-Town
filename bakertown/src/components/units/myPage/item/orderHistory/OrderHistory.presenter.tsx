@@ -14,7 +14,7 @@ const OrderHistoryPresenter = (props) => {
             <S.ListTitleText>ITEM | 주문 내역</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
-            {props.userResult?.boughtItem?.map((el) => (
+            {props.userResult?.boughtItem?.map((el, index) => (
               <S.Order key={uuidv4()}>
                 <S.OrderDate>{el.createdAt} 주문</S.OrderDate>
                 <S.OrderWrapper>
@@ -29,7 +29,7 @@ const OrderHistoryPresenter = (props) => {
                   <S.OrderLine></S.OrderLine>
                   <S.AfterOrder>
                     <S.TrackingShipment>배송조회</S.TrackingShipment>
-                    <S.WriteReview onClick={onToggleModal}>
+                    <S.WriteReview onClick={props.onToggleModal}>
                       리뷰 작성하기
                     </S.WriteReview>
                     {props.isOpen && (

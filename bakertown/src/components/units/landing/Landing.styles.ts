@@ -489,6 +489,12 @@ export const CategorySecondWrapper = styled.div`
   justify-content: space-between;
 `;
 
+export const CategoryDiv = styled.div`
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+`;
+
 export const CategoryButton = styled.button`
   width: 400px;
   height: 120px;
@@ -513,9 +519,12 @@ export const CategoryButton = styled.button`
   font-weight: bold;
   :hover {
     cursor: pointer;
+    overflow: hidden;
+    /* font-size: 29px; */
     transform: scale(1.1);
     transition: ease 0.4s;
-    color: #ff4d12;
+    /* color: #ff4d12; */
+    opacity: 0.8;
   }
 `;
 

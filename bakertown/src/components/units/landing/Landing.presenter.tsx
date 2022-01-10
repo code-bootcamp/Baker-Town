@@ -230,26 +230,38 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             <S.SubjectTitle>클래스 카테고리</S.SubjectTitle>
             <S.CategoryButtonWrapper>
               <S.CategoryFirstWrapper>
-                <S.CategoryButton value="베이킹" onClick={props.category}>
-                  베이킹
-                </S.CategoryButton>
-                <S.CategoryButton value="마카롱" onClick={props.category}>
-                  마카롱
-                </S.CategoryButton>
-                <S.CategoryButton value="케이크" onClick={props.category}>
-                  케이크
-                </S.CategoryButton>
+                <S.CategoryDiv>
+                  <S.CategoryButton value="베이킹" onClick={props.category}>
+                    베이킹
+                  </S.CategoryButton>
+                </S.CategoryDiv>
+                <S.CategoryDiv>
+                  <S.CategoryButton value="마카롱" onClick={props.category}>
+                    마카롱
+                  </S.CategoryButton>
+                </S.CategoryDiv>
+                <S.CategoryDiv>
+                  <S.CategoryButton value="케이크" onClick={props.category}>
+                    케이크
+                  </S.CategoryButton>
+                </S.CategoryDiv>
               </S.CategoryFirstWrapper>
               <S.CategorySecondWrapper>
-                <S.CategoryButton value="쿠키" onClick={props.category}>
-                  쿠 키
-                </S.CategoryButton>
-                <S.CategoryButton value="커피" onClick={props.category}>
-                  커 피
-                </S.CategoryButton>
-                <S.CategoryButton value="쇼콜라" onClick={props.category}>
-                  쇼콜라
-                </S.CategoryButton>
+                <S.CategoryDiv>
+                  <S.CategoryButton value="쿠키" onClick={props.category}>
+                    쿠 키
+                  </S.CategoryButton>
+                </S.CategoryDiv>
+                <S.CategoryDiv>
+                  <S.CategoryButton value="커피" onClick={props.category}>
+                    커 피
+                  </S.CategoryButton>
+                </S.CategoryDiv>
+                <S.CategoryDiv>
+                  <S.CategoryButton value="쇼콜라" onClick={props.category}>
+                    쇼콜라
+                  </S.CategoryButton>
+                </S.CategoryDiv>
               </S.CategorySecondWrapper>
             </S.CategoryButtonWrapper>
           </S.CategoryWrapper>
