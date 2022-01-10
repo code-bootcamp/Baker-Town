@@ -1,6 +1,7 @@
 import * as S from "./SideNavigation.styles";
 import { v4 as uuidv4 } from "uuid";
 import MyPoint from "../../../commons/payment/MyPoint";
+import UserPoint from "../../../commons/payment/MyPoint";
 
 const SideNavigationPresenter = (props) => {
   const myClass = ["참여 예정", "참여 완료", "나의 후기", "찜 목록"];
@@ -20,7 +21,7 @@ const SideNavigationPresenter = (props) => {
           <S.SmallLine></S.SmallLine>
           <S.MyPointTitle>MY POINT</S.MyPointTitle>
           {/* <S.MyPoint>2018P</S.MyPoint> */}
-          <MyPoint />
+          <UserPoint />
         </S.TitleWrapper>
         <S.SideTitle>CLASS</S.SideTitle>
         {myClass.map((el) => (

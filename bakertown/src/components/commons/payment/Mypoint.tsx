@@ -11,7 +11,7 @@ declare const window: Window &
     IMP: any;
   };
 
-export default function Mypoint() {
+export default function UserPoint() {
   const router = useRouter();
   const currentUser: any = useAuth();
   //   const { data } = useQuery(FETCH_USER_LOGGEDIN);
