@@ -1,4 +1,3 @@
-import { withAuth } from "../../src/components/commons/hocs/withAuth";
 import ClassListContainer from "../../src/components/units/class/list/ClassList.container";
 
 const ClassListPage = () => {
@@ -9,4 +8,4 @@ const ClassListPage = () => {
   );
 };
 
-export default withAuth(ClassListPage);
+export default ClassListPage;
