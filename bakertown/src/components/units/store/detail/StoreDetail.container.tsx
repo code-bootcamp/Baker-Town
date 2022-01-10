@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getFirestore, getDoc, doc, updateDoc } from "firebase/firestore";
 import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
+import { getOnlyDate } from "../../../../commons/libraries/getDate";
 
 const StoreDetailContainer = () => {
   const router = useRouter();
@@ -54,6 +55,7 @@ const StoreDetailContainer = () => {
       itemName: myStore?.itemName,
       price: Number(myStore?.price),
       category: myStore?.category,
+      createdAt: getOnlyDate(new Date()),
     };
     // 구매한 정보 내 정보에 넣기
     myBoughtItem.push(buyInfo);

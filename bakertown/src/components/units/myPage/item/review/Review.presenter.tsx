@@ -2,9 +2,7 @@ import * as S from "./Review.styles";
 import { v4 as uuidv4 } from "uuid";
 import SideNavigationContainer from "../../sideNav/SideNavigation.container";
 
-const ReviewPresenter = () => {
-  const myClass = ["참여 예정", "참여 완료", "나의 후기", "찜 목록"];
-  const myItem = ["주문 내역", "장바구니", "리뷰"];
+const ReviewPresenter = (props) => {
   return (
     <>
       <S.Wrapper>
@@ -14,8 +12,8 @@ const ReviewPresenter = () => {
             <S.ListTitleText>ITEM | 나의 후기</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
-            {new Array(4).fill(1).map((el) => (
-              <S.OrderWrapper>
+            {props.userResult?.itemReveiw?.map((el) => (
+              <S.OrderWrapper key={uuidv4()}>
                 <S.ItemImage />
                 <S.ClassPatissier>원데이</S.ClassPatissier>
                 <S.ItemInfo>
