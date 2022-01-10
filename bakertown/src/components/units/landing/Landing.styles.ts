@@ -483,6 +483,7 @@ export const CategoryButtonWrapper = styled.div`
 export const CategoryFirstWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 `;
 
 export const CategorySecondWrapper = styled.div`
@@ -520,6 +521,7 @@ export const CategoryButton = styled.button`
   background-position: center center;
   font-size: 32px;
   font-weight: bold;
+
   :hover {
     cursor: pointer;
     overflow: hidden;
@@ -529,6 +531,18 @@ export const CategoryButton = styled.button`
     /* color: #ff4d12; */
     opacity: 0.8;
   }
+`;
+
+export const CategoryButtonTitle = styled.div`
+  position: absolute;
+  display: flex;
+  top: 40px;
+  left: 160px;
+  font-size: 32px;
+  font-weight: bold;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
 `;
 
 export const NextIcon = styled.button`

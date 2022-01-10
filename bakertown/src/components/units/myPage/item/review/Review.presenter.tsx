@@ -1,6 +1,7 @@
 import * as S from "./Review.styles";
 import { v4 as uuidv4 } from "uuid";
 import SideNavigationContainer from "../../sideNav/SideNavigation.container";
+import { Rate } from "antd";
 
 const ReviewPresenter = (props) => {
   return (
@@ -12,29 +13,25 @@ const ReviewPresenter = (props) => {
             <S.ListTitleText>ITEM | 나의 후기</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
-            {props.userResult?.itemReveiw?.map((el) => (
+            {props.userResult?.itemReview?.map((el) => (
               <S.OrderWrapper key={uuidv4()}>
                 <S.ItemImage />
                 <S.ClassPatissier>원데이</S.ClassPatissier>
                 <S.ItemInfo>
-                  <S.ItemName>장미칼,</S.ItemName>
+                  <S.ItemName>{el.itemName},</S.ItemName>
                   <S.ItemAmount>1개</S.ItemAmount>
                 </S.ItemInfo>
-                <S.OrderDate>2022년 1월 1일</S.OrderDate>
+                {/* <S.OrderDate>{el.createdAt}</S.OrderDate> */}
                 <S.Line>
                   <S.ItemReview>
                     <S.SubTheme>
                       <S.ItemStarRate>
-                        <S.PersonalRate src="/imgs/star.png" />
-                        <S.PersonalRate src="/imgs/star.png" />
-                        <S.PersonalRate src="/imgs/star.png" />
-                        <S.PersonalRate src="/imgs/star.png" />
-                        <S.PersonalRate src="/imgs/star.png" />
+                        <Rate value={el.rating} />
                       </S.ItemStarRate>
-                      <S.CreatedDate>2022.01.03</S.CreatedDate>
+                      <S.CreatedDate>{el.createdAt}</S.CreatedDate>
                     </S.SubTheme>
-                    <S.ReviewRemarks>재밌어요</S.ReviewRemarks>
-                    <S.Review>칼이 잘 들어요</S.Review>
+                    {/* <S.ReviewRemarks>재밌어요</S.ReviewRemarks> */}
+                    <S.Review>{el.contents}</S.Review>
                   </S.ItemReview>
                 </S.Line>
                 <S.OrderLine></S.OrderLine>
