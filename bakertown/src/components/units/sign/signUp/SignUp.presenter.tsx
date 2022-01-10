@@ -60,6 +60,7 @@ const SignUpPresenter = () => {
         heart: [],
         beforePar: [],
         review: [],
+        introduce: "",
       });
       await signup(emailRef.current.value, passwordRef.current.value);
       alert("회원가입되셨습니다.");

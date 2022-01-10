@@ -3,15 +3,18 @@ import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import * as S from "./DashBoardMyPage.styles";
 import { IDashBoardMyPageProps } from "./DashBoardMyPage.types";
 import { deleteUser, updatePassword } from "firebase/auth";
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
 
 const DashBoardMyPagePresenter = (props: IDashBoardMyPageProps) => {
   const [password, setPassword] = useState("");
+  const [myIntroduce, setIntroduce] = useState("");
   const currentUser: any = useAuth();
 
   const [myUser, setMyUser] = useState({
     name: "",
+    introduce: "",
   });
+
   useEffect(async () => {
     if (myUser?.name === "") {
       if (!currentUser) return;
@@ -24,6 +27,19 @@ const DashBoardMyPagePresenter = (props: IDashBoardMyPageProps) => {
       setMyUser(userResult.data());
     }
   });
+
+  const onClickIntroduce = async () => {
+    // 내 정보 불러오기
+    const userQuery = doc(
+      getFirestore(firebaseApp),
+      "users",
+      currentUser?.email
+    );
+    await updateDoc(userQuery, {
+      introduce: myIntroduce,
+    });
+  };
+
   // 패스워드 변경
   const passwordChange = async () => {
     function getASecureRandomPassword() {
@@ -54,13 +70,18 @@ const DashBoardMyPagePresenter = (props: IDashBoardMyPageProps) => {
         <S.RightWrapper>
           <S.Header>
             <S.NameWrapper>
-              <S.Title>닉네임 변경</S.Title>
+              <S.Title>{myUser?.name}님의 한 줄 소개</S.Title>
               <S.InputWrapper>
-                <S.Label>변경할 닉네임</S.Label>
-                <S.Input type="text" />
+                <S.Label>파티시에 한 줄 소개</S.Label>
+                <S.Input
+                  type="text"
+                  onChange={(e) => setIntroduce(e.target.value)}
+                />
               </S.InputWrapper>
               <S.ButtonWrapper>
-                <S.ModifyNameButton>닉네임 변경하기</S.ModifyNameButton>
+                <S.ModifyNameButton onClick={onClickIntroduce}>
+                  한 줄 소개 등록하기
+                </S.ModifyNameButton>
               </S.ButtonWrapper>
             </S.NameWrapper>
           </S.Header>
