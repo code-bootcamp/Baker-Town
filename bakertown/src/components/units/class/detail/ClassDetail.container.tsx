@@ -59,7 +59,8 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
 
       const reviewFunction =
         arry?.reduce((acc, cur) => acc + cur) / arry?.length;
-      setRatingAverage(reviewFunction ? Number("") : Number("0"));
+      console.log(reviewFunction);
+      setRatingAverage(reviewFunction ? Number(reviewFunction) : Number("0"));
     }
   });
 

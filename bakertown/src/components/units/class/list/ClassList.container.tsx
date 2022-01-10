@@ -22,6 +22,7 @@ const ClassListContainer = () => {
   const [second, setSecond] = useState([]);
   const [option, setOption] = useState(0);
   const categoryName = router.query.categoryName;
+  // const [currentCategory, setCurrentCategory] = useState("");
   const keyWord = router.query.classSearch;
 
   useEffect(async () => {
@@ -268,14 +269,13 @@ const ClassListContainer = () => {
     });
   };
 
-  useBottomScrollListener(getNextClass);
-
-  useEffect(() => {
-    getNextClass();
-  }, []);
+  // useBottomScrollListener(getNextClass);
 
   // 카테고리
   const getNextClassCategory = () => {
+    console.log("시작");
+
+    if (!categoryName) return;
     if (lastVisible === -1) {
       return;
     } else if (lastVisible) {
@@ -289,14 +289,43 @@ const ClassListContainer = () => {
     } else {
       myQuery = query(
         collection(getFirestore(firebaseApp), "class"),
-        where("cateogry", "==", categoryName),
+        where("category", "==", categoryName),
         orderBy("createdAt", "desc"),
         limit(12)
       );
     }
+
+    getDocs(myQuery).then((snapshot) => {
+      setRecent((itemList) => {
+        const arr = [...itemList];
+        snapshot.forEach((doc) => {
+          // arr.push(doc.data())
+          // arr.push(doc.id);
+          const data = doc.data();
+          data.id = doc.id;
+          arr.push(data);
+        });
+        console.log(recent);
+        if (snapshot.docs.length === 0) {
+          lastVisible = -1;
+          console.log("lastVisible -1!!!!", lastVisible);
+        } else {
+          setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
+          console.log("lastVisible에 뭔ㄱ ㅏ들어갔다", lastVisible);
+          console.log("히히", lastVisible);
+        }
+
+        console.log("snapshot.docs!!!!", snapshot.docs.length);
+        return arr;
+      });
+    });
   };
 
-  // useBottomScrollListener(getNextClassCategory);
+  useEffect(() => {
+    getNextClassCategory();
+  }, [categoryName]);
+
+  useBottomScrollListener(getNextClassCategory);
 
   const onClickSideButton = (el: string) => () => {
     router.push(`/class/category/${el}`);
