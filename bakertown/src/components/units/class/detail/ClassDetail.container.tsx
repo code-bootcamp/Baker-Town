@@ -27,7 +27,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
   const [myIndex, setMyIndex] = useState(-1);
   const [myName, setMyName] = useState("");
   const [ratingAverage, setRatingAverage] = useState(0);
-  const currentUser = useAuth();
+  const currentUser: any = useAuth();
   // if (process.browser) {
   //   const product = doc(
   //     getFirestore(firebaseApp),
