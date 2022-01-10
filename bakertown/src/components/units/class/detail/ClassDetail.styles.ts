@@ -112,25 +112,27 @@ export const ReviewLine = styled.div`
 
 export const WholeWrapper = styled.div`
   width: 100%;
-  /* height: 2000px; */
   display: flex;
   justify-content: center;
   padding-top: 162px;
-  padding-left: 324px;
-  padding-right: 324px;
-  position: relative;
-  /* background: blue; */
+  /* position: relative; */
+  /* background: lightblue; */
+  justify-content: center;
+`;
+
+export const UnderWrapper = styled.div`
+  width: 1260px;
+  height: 100%;
+  /* background: yellow; */
+  display: flex;
+  /* justify-content: center; */
 `;
 
 export const IntroWrapper = styled.div`
-  /* height: 2700px; */
-  /* border: 1px solid gray; */
   width: 864px;
-  /* margin-left: 320px */
-  /* background-color: green; */
   display: flex;
   flex-direction: column;
-  /* background-color: coral; */
+  /* background: green; */
 `;
 
 export const ClassIntro = styled.div`
@@ -312,6 +314,7 @@ export const ProgramGuideBox = styled.div`
   margin-top: 50px;
   width: 100%;
   height: 100%;
+  min-height: 500px;
   padding: 35px 30px 35px 30px;
   border-radius: 10px;
   background-color: #f7f7f7;
@@ -518,27 +521,32 @@ export const ViewMore = styled.div`
 `;
 
 export const ScheduleWrapper = styled.div`
-  width: 380px;
-  padding-left: 40px;
-  /* padding-right: 320px; */
+  width: 400x;
 `;
 
 export const ClassSchedule = styled.div`
   width: 370px;
-  /* height: 550px; */
+  height: 473px;
   /* border: 1px solid gray; */
   padding-left: 30px;
   padding-top: 20px;
   /* background-color: navy; */
   position: fixed;
+  margin-top: 70px;
   box-shadow: 8px 8px 30px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 26px;
 `;
 
 export const ClassScheduleWrapper = styled.div`
-  width: 350px;
+  width: 100%;
   height: 300px;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
   overflow: scroll;
 `;
 
@@ -552,7 +560,8 @@ export const ClassArrayWrapper = styled.div`
   :hover {
     cursor: pointer;
   }
-  box-shadow: 8px 8px 30px 0 rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1);
 `;
 
 export const SmallText = styled.div``;

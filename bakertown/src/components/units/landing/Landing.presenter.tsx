@@ -254,7 +254,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               </S.CategoryFirstWrapper>
               <S.CategorySecondWrapper>
                 <S.CategoryDiv>
-                  <S.CategoryButtonTitle>
+                  <S.CategoryButtonTitle style={{ left: "151px" }}>
                     &nbsp;쿠&nbsp;&nbsp;&nbsp;키
                   </S.CategoryButtonTitle>
                   <S.CategoryButton
@@ -263,7 +263,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                   ></S.CategoryButton>
                 </S.CategoryDiv>
                 <S.CategoryDiv>
-                  <S.CategoryButtonTitle>
+                  <S.CategoryButtonTitle style={{ left: "151px" }}>
                     &nbsp;커&nbsp;&nbsp;&nbsp;피
                   </S.CategoryButtonTitle>
                   <S.CategoryButton

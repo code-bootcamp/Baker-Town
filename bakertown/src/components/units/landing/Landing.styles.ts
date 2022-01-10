@@ -14,6 +14,7 @@ export const HeaderWrapper = styled.header`
   transition: 800ms;
   background-color: transparent;
   background-size: cover;
+  scroll-behavior: smooth;
 
 
   &.change_header {
@@ -493,8 +494,8 @@ export const CategorySecondWrapper = styled.div`
 export const CategoryDiv = styled.div`
   overflow: hidden;
   border-radius: 10px;
-  position: relative;
   height: 120px;
+  position: relative;
 `;
 
 export const CategoryButton = styled.button`
@@ -502,8 +503,8 @@ export const CategoryButton = styled.button`
   height: 120px;
   border-radius: 10px;
   border: none;
-  overflow: hidden;
-  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 1;
 
   background-image: ${(props) =>
     props.value === "베이킹" && "url(/imgs/baking.jpg)"};
@@ -526,7 +527,7 @@ export const CategoryButton = styled.button`
     overflow: hidden;
     /* font-size: 29px; */
     transform: scale(1.1);
-    transition: ease 0.4s;
+    transition: ease 1000ms;
     /* color: #ff4d12; */
     opacity: 0.8;
   }
@@ -552,4 +553,16 @@ export const NextIcon = styled.button`
 export const BeforeIcon = styled.button`
   width: 30px;
   background-color: #e1e1e1;
+`;
+
+export const CategoryButtonTitle = styled.div`
+  font-size: 32px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  opacity: 0.9;
+  top: 35px;
+  left: 154px;
+  z-index: 2;
+  cursor: pointer;
 `;
