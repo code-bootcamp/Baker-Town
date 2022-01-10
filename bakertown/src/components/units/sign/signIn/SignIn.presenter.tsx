@@ -2,21 +2,21 @@ import * as S from "./SignIn.styles";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FormValues } from "./SingIn.types";
 import { logout, signInWithGoogle } from "../../../../../pages/_app";
 import { signin } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import { ButtonBase, Paper } from "@material-ui/core";
 import { Button } from "@mui/material";
+import { ISignInPresenterProps } from "./SingIn.types";
 
-const SignInPresenter = (props) => {
+const SignInPresenter = (props: ISignInPresenterProps) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const emailRef: any = useRef();
   const passwordRef: any = useRef();
 
-  async function handlesSignIn(props) {
+  const handlesSignIn = async () => {
     setLoading(true);
     try {
       await signin(emailRef.current.value, passwordRef.current.value);
@@ -26,7 +26,7 @@ const SignInPresenter = (props) => {
       alert("이미 로그인 이메일입니다.");
     }
     setLoading(false);
-  }
+  };
 
   return (
     // <Paper>

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { firebaseApp, useAuth } from "../../../../../pages/_app";
-import * as S from "./DashBoardMyPage.styles";
-import { IDashBoardMyPageProps } from "./DashBoardMyPage.types";
+import * as S from "./MyPage.styles";
+import { IMyPageProps } from "./MyPage.types";
 import { deleteUser, updatePassword } from "firebase/auth";
+import { firebaseApp, useAuth } from "../../../../pages/_app";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 
-const DashBoardMyPagePresenter = (props: IDashBoardMyPageProps) => {
+const MyPagePresenter = (props: IMyPageProps) => {
   const [password, setPassword] = useState("");
   const currentUser: any = useAuth();
 
@@ -93,4 +93,4 @@ const DashBoardMyPagePresenter = (props: IDashBoardMyPageProps) => {
   );
 };
 
-export default DashBoardMyPagePresenter;
+export default MyPagePresenter;

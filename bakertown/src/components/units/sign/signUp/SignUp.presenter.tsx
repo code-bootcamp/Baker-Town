@@ -43,7 +43,7 @@ const SignUpPresenter = () => {
   const emailRef: any = useRef();
   const passwordRef: any = useRef();
 
-  async function handlesSignUp() {
+  const handlesSignUp = async () => {
     setLoading(true);
     try {
       const userQuery = doc(
@@ -68,9 +68,9 @@ const SignUpPresenter = () => {
       alert("회원가입을 완료해주세요");
     }
     setLoading(false);
-  }
+  };
 
-  const checkPatissier = (event) => {
+  const checkPatissier = (event: any) => {
     if (event.target.checked) setCheck(1);
     if (!event.target.checked) setCheck(0);
   };

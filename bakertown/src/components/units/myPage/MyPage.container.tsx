@@ -1,10 +1,10 @@
-import DashBoardMyPagePresenter from "./DashBoardMyPage.presenter";
+import MyPagePresenter from "./MyPage.presenter";
 import { deleteUser, updatePassword } from "firebase/auth";
 import { useRouter } from "next/router";
-import { useAuth } from "../../../../../pages/_app";
 import { useState } from "react";
+import { useAuth } from "../../../../pages/_app";
 
-const DashBoardMyPageContainer = () => {
+const MyPageContainer = () => {
   const router = useRouter();
   const currnetUser: any = useAuth();
 
@@ -19,7 +19,7 @@ const DashBoardMyPageContainer = () => {
     }
   }
 
-  return <DashBoardMyPagePresenter deleteAccount={deleteAccount} />;
+  return <MyPagePresenter deleteAccount={deleteAccount} />;
 };
 
-export default DashBoardMyPageContainer;
+export default MyPageContainer;
