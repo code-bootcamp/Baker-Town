@@ -533,17 +533,17 @@ export const CategoryButton = styled.button`
   }
 `;
 
-export const CategoryButtonTitle = styled.div`
-  position: absolute;
-  display: flex;
-  top: 40px;
-  left: 160px;
-  font-size: 32px;
-  font-weight: bold;
-  opacity: 0.9;
-  color: rgba(255, 255, 255, 0.9);
-  z-index: 1;
-`;
+// export const CategoryButtonTitle = styled.div`
+//   position: absolute;
+//   display: flex;
+//   top: 40px;
+//   left: 160px;
+//   font-size: 32px;
+//   font-weight: bold;
+//   opacity: 0.9;
+//   color: rgba(255, 255, 255, 0.9);
+//   z-index: 1;
+// `;
 
 export const NextIcon = styled.button`
   width: 30px;
