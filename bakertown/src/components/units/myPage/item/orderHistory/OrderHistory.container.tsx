@@ -1,4 +1,4 @@
-import { doc, getDoc, getFirestore } from "@firebase/firestore";
+import { doc, getDoc, getFirestore, updateDoc } from "@firebase/firestore";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
@@ -35,7 +35,9 @@ const OrderHistoryContainer = () => {
 
   const onClickReview = (index) => async () => {
     setIsOpen((prev) => !prev);
-
+    if (!currentUser) {
+      return;
+    }
     // 해당하는 아이템 정보 불러오기
     const bakeryItem = doc(
       getFirestore(firebaseApp),
@@ -47,7 +49,7 @@ const OrderHistoryContainer = () => {
     // 내 정보 불러오기
     const userQuery = doc(
       getFirestore(firebaseApp),
-      "item",
+      "users",
       currentUser?.email
     );
     const userResult = await getDoc(userQuery);
@@ -58,18 +60,32 @@ const OrderHistoryContainer = () => {
     // 내가 달고 싶은 리뷰
     const myReview = {
       createdAt: getOnlyDate(new Date()),
-      user: userResult.data().name,
+      user: userResult.data()?.name,
       rating: rating,
       contents: reviewContents,
-      item: myUser?.boughtItem?.[index].item,
+      itemRouter: myUser?.boughtItem?.[index].itemRouter,
       itemName: myUser?.boughtItem?.[index].itemName,
       category: myUser?.boughtItem?.[index].category,
     };
 
     // 내 리뷰
-    const userReview = userResult.data().itemReview;
-
+    const userReview = userResult.data()?.itemReview;
+    console.log(myReview);
     // 해당 아이템의 리뷰정보에 내 리뷰 넣기
+    itemReview?.push(myReview);
+    await updateDoc(bakeryItem, {
+      itemReview: userReview,
+    });
+
+    // 내 리뷰에 리뷰정보 넣기
+    const reviewInfo = {
+      itemRouter: myUser?.boughtItem?.[index]?.itemRouter,
+      ...myReview,
+    };
+    userReview?.push(reviewInfo);
+    await updateDoc(userQuery, {
+      itemReview: userReview,
+    });
   };
 
   return (
@@ -80,6 +96,7 @@ const OrderHistoryContainer = () => {
       rating={rating}
       setRating={setRating}
       onClickReview={onClickReview}
+      setReviewContents={setReviewContents}
     />
   );
 };
