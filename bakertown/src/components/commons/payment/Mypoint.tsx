@@ -39,9 +39,9 @@ export default function Mypoint() {
         name: "포인트충전",
         amount: 1000,
         buyer_email: "cksal4897@gmail.com",
-        buyer_name: "밍마켓",
+        buyer_name: "BAKER TOWN",
         buyer_tel: "010-0000-0000",
-        buyer_addr: "서울특별시 강남구 신사동",
+        buyer_addr: "서울특별시 구로구 베이키키",
         buyer_postcode: "01181",
         m_redirect_url: "", //모바일 결제후 리다이렉트될 주소!
       },
