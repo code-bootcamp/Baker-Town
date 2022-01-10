@@ -119,6 +119,12 @@ export const RoundDivInnerText = styled.input`
   text-align: left;
   color: #706b68;
   transition: 500ms;
+  background-color: #fafafa;
+  :focus {
+    /* outline: 1px solid rgba(0, 0, 0, 0.3); */
+    outline: none;
+    background-color: #fafafa;
+  }
 `;
 
 export const RoundDivCircle = styled.div`
@@ -221,7 +227,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const TextTop = styled.div`
-  width: 78px;
+  width: 100px;
   height: 38px;
   font-family: Roboto;
   font-size: 32px;
@@ -365,7 +371,7 @@ export const SpecialClassesWrapper = styled.div`
 
   width: 1274px;
   justify-content: space-between;
-  margin-bottom: 120px;
+  margin-bottom: 100px;
   /* background-color: red; */
 `;
 

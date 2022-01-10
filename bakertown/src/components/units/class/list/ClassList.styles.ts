@@ -2,6 +2,9 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   display: flex;
+  height: 100%;
+  min-height: 700px;
+  scroll-behavior: smooth;
 `;
 
 export const Sidebar = styled.div`
@@ -16,23 +19,32 @@ export const SideTitle = styled.div`
   border-radius: 10px;
   font-size: 24px;
   font-weight: bold;
-  padding-top: 20px;
+  /* padding-top: 20px;*/
   padding-left: 29px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   margin-bottom: 16px;
+  cursor: pointer;
+
   :hover {
-    cursor: pointer;
-    color: #ff4d12;
+    color: rgba(0, 0, 0, 0.7);
+    /* background: rgba(220, 220, 220, 0.1); */
+    /* color: #ff4d12; */
   }
 `;
 
 export const SideButton = styled.div`
   font-size: 20px;
-  margin-top: 5.5px;
-  margin-bottom: 9.5px;
+  padding-top: 5.5px;
+  padding-bottom: 9.5px;
   padding-left: 29px;
+  cursor: pointer;
+
   :hover {
-    cursor: pointer;
-    color: #ff4d12;
+    /* color: rgba(0, 0, 0, 0.4); */
+    background: rgba(220, 220, 220, 0.1);
+    /* color: #ff4d12; */
   }
 `;
 
@@ -44,6 +56,16 @@ export const SmallLine = styled.div`
 
 export const ClassList = styled.div``;
 
+export const ListToSelect = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* background: yellow; */
+  margin-top: 72px;
+  margin-bottom: 51px;
+`;
+
 export const ListTitle = styled.div`
   display: flex;
   justify-content: space-between;
@@ -52,10 +74,23 @@ export const ListTitle = styled.div`
 export const ListTitleText = styled.div`
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 30px;
 `;
 
-export const ListSelect = styled.select``;
+export const ListSelect = styled.select`
+  height: 50px;
+  width: 150px;
+  padding-left: 55px;
+  margin-right: 10px;
+  border: 0px solid gray;
+  cursor: pointer;
+  :hover {
+    color: gray;
+  }
+  :focus {
+    /* outline: 1px solid rgba(0, 0, 0, 0.3); */
+    outline: none;
+  }
+`;
 
 export const ListOption = styled.option`
   /* :hover {
@@ -70,7 +105,13 @@ export const ListContents = styled.div`
   justify-content: space-between;
 `;
 
-export const ClassWrapper = styled.div``;
+export const ClassWrapper = styled.div`
+  margin-bottom: 80px;
+  cursor: pointer;
+  :hover {
+    color: rgba(0, 0, 0, 0.5);
+  }
+`;
 
 export const ClassImage = styled.img`
   width: 220px;
@@ -81,24 +122,36 @@ export const ClassImage = styled.img`
   opacity: 0.5;
 `;
 
+export const ClassPatissierToPrice = styled.div`
+  padding-left: 10px;
+`;
+
 export const ClassPatissier = styled.div`
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 `;
 
 export const ClassName = styled.div`
   width: 218px;
-  font-size: 18px;
-  margin-bottom: 9.5px;
+  height: 30px;
+  font-size: 17px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background: yellow; */
 `;
 
 export const ClassLine = styled.div`
   width: 220px;
-  border-bottom: 1px solid #b9b9b9;
+  border-bottom: 1px solid rgba(220, 220, 220, 0.8);
 `;
 
 export const ClassPrice = styled.div`
-  font-size: 20px;
+  margin-top: 10px;
+  font-size: 18px;
   font-weight: bold;
+  display: flex;
 `;

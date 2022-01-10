@@ -18,14 +18,16 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
           ))}
         </S.Sidebar>
         <S.ClassList>
-          <S.ListTitle>
-            <S.ListTitleText>{props.categoryName} 클래스</S.ListTitleText>
+          <S.ListToSelect>
+            <S.ListTitle>
+              <S.ListTitleText>{props.categoryName} 클래스</S.ListTitleText>
+            </S.ListTitle>
             <S.ListSelect onChange={props.changeSelect}>
               <S.ListOption value="1">추천순</S.ListOption>
               <S.ListOption value="2">인기순</S.ListOption>
               <S.ListOption value="3">최신순</S.ListOption>
             </S.ListSelect>
-          </S.ListTitle>
+          </S.ListToSelect>
           <S.ListContents>
             {props.recent.map((el) => (
               <S.ClassWrapper key={uuidv4()}>
@@ -37,20 +39,22 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
                 ) : (
                   <S.ClassImage onClick={props.classDetail(el)} />
                 )}
-                <S.ClassPatissier>{el.patissier}</S.ClassPatissier>
-                <S.ClassName>{el.className}</S.ClassName>
-                <S.ClassLine></S.ClassLine>
-                <S.ClassPrice>{el.price} 원</S.ClassPrice>
+                <S.ClassPatissierToPrice>
+                  <S.ClassPatissier>{el.patissier}</S.ClassPatissier>
+                  <S.ClassName>{el.className}</S.ClassName>
+                  <S.ClassLine></S.ClassLine>
+                  <S.ClassPrice>{el.price} 원</S.ClassPrice>
+                </S.ClassPatissierToPrice>
               </S.ClassWrapper>
             ))}
           </S.ListContents>
-          <div>
-            {/* {new Array(10).fill(1).map((el, index) => (
+          {/* <div>
+             {new Array(10).fill(1).map((el, index) => (
               <button onClick={props.clickPage(index)}>{index + 1}</button>
-            ))} */}
+            ))} 
             <button onClick={props.click1}>1</button>
             <button onClick={props.click2}>2</button>
-          </div>
+          </div> */}
         </S.ClassList>
       </S.Wrapper>
     </>

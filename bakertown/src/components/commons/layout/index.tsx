@@ -11,9 +11,12 @@ interface ILayoutProps {
   children: ReactChild;
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  height: 100%;
+`;
 const Body = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

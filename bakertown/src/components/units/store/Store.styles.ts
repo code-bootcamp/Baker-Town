@@ -11,7 +11,9 @@ export const Wrapper = styled.div`
   /* background-color: yellow; */
 `;
 
-export const CreatorSubject = styled.div``;
+export const CreatorSubject = styled.div`
+  margin-top: 72px;
+`;
 
 export const PopularSubject = styled.div``;
 
