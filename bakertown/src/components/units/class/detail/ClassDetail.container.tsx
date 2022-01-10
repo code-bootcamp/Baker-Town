@@ -10,8 +10,9 @@ import {
 import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
 import { getDate, getOnlyDate } from "../../../../commons/libraries/getDate";
+import { IClassDetailPresenterProps } from "./ClassDetail.types";
 
-const ClassDetailContainer = () => {
+const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
   const router = useRouter();
 
   const [myClass, setMyClass] = useState({
@@ -50,11 +51,15 @@ const ClassDetailContainer = () => {
       console.log("클래스 정보", classData);
       setMyClass(classData);
 
+      if (classData?.review.length === 0) return;
+
       const arry = classData?.review?.map((el) => el.rating);
       // classData?.review?.[0]?.rating
       console.log("arry", arry);
 
-      setRatingAverage(arry?.reduce((acc, cur) => acc + cur) / arry?.length);
+      const reviewFunction =
+        arry?.reduce((acc, cur) => acc + cur) / arry?.length;
+      setRatingAverage(reviewFunction ? Number("") : Number("0"));
     }
   });
 

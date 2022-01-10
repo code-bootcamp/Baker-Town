@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import * as S from "./ClassDetail.styles";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
 import { v4 as uuidv4 } from "uuid";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Rate } from "antd";
 
 declare const window: typeof globalThis & {
@@ -122,7 +122,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <S.SubComponentWrapper>
                 <S.SubTheme1>
                   <S.ClassStarRate>
-                    <S.Star src="/imgs/star.png" />
+                    <S.Star src="/imgs/class/star.png" />
                     <S.Rate>{props.ratingAverage}</S.Rate>
                     <S.Rater>(1,700)</S.Rater>
                   </S.ClassStarRate>
@@ -134,9 +134,8 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.SubTheme1>
                 <S.SubTheme2>
                   <S.DibsOnClass onClick={props.heart}>
-                    {/* <S.Heart src="/imgs/heart.png" /> */}
-                    {/* <S.Heart >❤️ 100</S.Heart> */}
-                    ❤️ {props.myClass?.heart}
+                    <S.SubTheme2Heart src="/imgs/class/heart.png" />
+                    {props.myClass?.heart}
                   </S.DibsOnClass>
                   <S.ClassShare>
                     <S.Share src="/imgs/share.png" />
@@ -167,11 +166,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <S.SubjectTitle>프로그램</S.SubjectTitle>
 
               <S.ProgramGuideBox>
-                <div>{props.myClass?.contents}</div>
-                #.완성작품
-                <S.ProgramImage>
-                  <div>파티셰가 넣는 예시 이미지</div>
-                </S.ProgramImage>
+                <S.ProgramContents>{props.myClass?.contents}</S.ProgramContents>
+
+                <S.ProgramImage></S.ProgramImage>
               </S.ProgramGuideBox>
             </S.ProgramIntro>
           </S.PatissierIntro>

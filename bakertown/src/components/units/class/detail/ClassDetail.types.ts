@@ -1,6 +1,7 @@
 import { LegacyRef, MouseEventHandler } from "react";
 
 export interface IClassDetailPresenterProps {
+  arry: number | undefined;
   ratingAverage: number | undefined;
   isSelectedMap: any;
   isSelectedReview: any;
