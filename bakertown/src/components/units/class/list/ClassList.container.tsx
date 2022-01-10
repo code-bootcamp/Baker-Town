@@ -217,10 +217,12 @@ const ClassListContainer = () => {
     //   console.log(docs);
     // }
   }, [categoryName, option]);
-  const [hih, setHih] = useState(0);
+
   const [lastVisible, setLastVisible] = useState();
+  let myQuery = undefined;
+
+  // 전체 클래스
   const getNextClass = () => {
-    let myQuery = undefined;
     if (lastVisible === -1) {
       return;
     } else if (lastVisible) {
@@ -251,7 +253,6 @@ const ClassListContainer = () => {
           lastVisible = -1;
           console.log("lastVisible -1!!!!", lastVisible);
         } else {
-          setHih(1);
           setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
           console.log("lastVisible에 뭔ㄱ ㅏ들어갔다", lastVisible);
           console.log("히히", lastVisible);
@@ -268,6 +269,30 @@ const ClassListContainer = () => {
   useEffect(() => {
     getNextClass();
   }, []);
+
+  // 카테고리
+  const getNextClassCategory = () => {
+    if (lastVisible === -1) {
+      return;
+    } else if (lastVisible) {
+      myQuery = query(
+        collection(getFirestore(firebaseApp), "class"),
+        where("category", "==", categoryName),
+        orderBy("createdAt", "desc"),
+        limit(4),
+        startAfter(lastVisible)
+      );
+    } else {
+      myQuery = query(
+        collection(getFirestore(firebaseApp), "class"),
+        where("cateogry", "==", categoryName),
+        orderBy("createdAt", "desc"),
+        limit(12)
+      );
+    }
+  };
+
+  // useBottomScrollListener(getNextClassCategory);
 
   const onClickSideButton = (el: string) => () => {
     router.push(`/class/category/${el}`);
