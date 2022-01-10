@@ -2,6 +2,7 @@ import {
   collection,
   getDocs,
   getFirestore,
+  orderBy,
   query,
   where,
 } from "@firebase/firestore";
@@ -31,7 +32,7 @@ const LandingContainer = () => {
   useEffect(async () => {
     const popular = query(
       collection(getFirestore(firebaseApp), "class"),
-      where("heart", ">", 0)
+      orderBy("heart", "desc")
     );
     let result = await getDocs(popular);
     let docs = result.docs.map((el) => el.data());

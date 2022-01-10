@@ -27,6 +27,7 @@ const StoreListContainer = () => {
       limit(12) // 데이터 불러오는 개수 제한
     );
     const firstResult = await getDocs(first);
+    
     setRecent(firstResult.docs.map((el) => el.data()));
     console.log(recent);
   }, []);

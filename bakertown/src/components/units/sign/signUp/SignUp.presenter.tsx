@@ -61,6 +61,9 @@ const SignUpPresenter = () => {
         beforePar: [],
         review: [],
         introduce: "",
+        boughtItem: [],
+        itemHeart: [],
+        itemReview: [],
       });
       await signup(emailRef.current.value, passwordRef.current.value);
       alert("회원가입되셨습니다.");

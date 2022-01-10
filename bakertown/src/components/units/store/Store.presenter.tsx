@@ -1,6 +1,46 @@
 import * as S from "./Store.styles";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { v4 as uuidv4 } from "uuid";
 
-const StorePresenter = () => {
+const StorePresenter = (props) => {
+  const SampleNextArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className="slick-next-arrow"
+        style={{ ...style, display: "block" }}
+        onClick={onClick}
+      />
+    );
+  };
+
+  const SamplePrevArrow = (props) => {
+    const { currentSlide, style, onClick } = props;
+    if (currentSlide === 0) {
+      return null;
+    } else {
+      return (
+        <div
+          className="slick-before-arrow"
+          style={{ ...style, display: "block" }}
+          onClick={onClick}
+        />
+      );
+    }
+  };
+
+  const settings = {
+    dots: false,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    autoplay: false,
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
       <S.Wrapper>
@@ -15,39 +55,48 @@ const StorePresenter = () => {
             ))}
           </S.StoresWrapper>
         </S.CreatorSubject>
-        <S.PopularSubject>
+        <S.SubjectName>
           <S.SubjectWrapper>
             <S.SubjectTitle>이번주 인기 상품</S.SubjectTitle>
             <S.SubjectView>인기 상품 전체 보기</S.SubjectView>
           </S.SubjectWrapper>
           <S.StoresWrapper>
-            {new Array(3).fill(1).map((el) => (
-              <S.StoreWrapper>
-                <S.PopularImage />
-                <S.Store>베이킹 월드</S.Store>
-                <S.StoreName>크리스마스 특집 과자집 꾸미기 세트</S.StoreName>
-                <S.SmallLine></S.SmallLine>
-                <S.StorePrice>23,000 원</S.StorePrice>
-              </S.StoreWrapper>
-            ))}
+            <S.SliderWrapper>
+              <Slider {...settings}>
+                {props.popular.map((el) => (
+                  <S.StoreWrapper key={uuidv4()}>
+                    <S.StoreImage />
+                    <S.Store>{el.patissier}</S.Store>
+                    <S.StoreName>{el.itemName}</S.StoreName>
+                    <S.SmallLine></S.SmallLine>
+                    <S.StorePrice>{el.price} 원</S.StorePrice>
+                  </S.StoreWrapper>
+                ))}
+              </Slider>
+            </S.SliderWrapper>
           </S.StoresWrapper>
-        </S.PopularSubject>
-
+        </S.SubjectName>
         <S.SubjectName>
           <S.SubjectWrapper>
             <S.SubjectTitle>이번 주 새로운 상품</S.SubjectTitle>
-            <S.SubjectView>새로운 상품 전체보기</S.SubjectView>
+            <S.SubjectView onClick={props.recentList}>
+              새로운 상품 전체보기
+            </S.SubjectView>
           </S.SubjectWrapper>
           <S.StoresWrapper>
-            {new Array(4).fill(1).map((el) => (
-              <S.StoreWrapper>
-                <S.StoreImage />
-                <S.Store>베이킹 월드</S.Store>
-                <S.StoreName>크리스마스 특집</S.StoreName>
-                <S.SmallLine></S.SmallLine>
-                <S.StorePrice>50,000 원</S.StorePrice>
-              </S.StoreWrapper>
-            ))}
+            <S.SliderWrapper>
+              <Slider {...settings}>
+                {props.recent.map((el) => (
+                  <S.StoreWrapper>
+                    <S.StoreImage />
+                    <S.Store>{el.patissier}</S.Store>
+                    <S.StoreName>{el.itemName}</S.StoreName>
+                    <S.SmallLine></S.SmallLine>
+                    <S.StorePrice>{el.price} 원</S.StorePrice>
+                  </S.StoreWrapper>
+                ))}
+              </Slider>
+            </S.SliderWrapper>
           </S.StoresWrapper>
         </S.SubjectName>
         <S.SubjectName>

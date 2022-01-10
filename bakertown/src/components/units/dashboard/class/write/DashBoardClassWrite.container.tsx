@@ -1,7 +1,13 @@
 import { ChangeEvent, useContext, useState } from "react";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 import { plusMyung } from "../../../../../commons/libraries/stringConcatenate";
-import { collection, getFirestore, addDoc } from "firebase/firestore";
+import {
+  collection,
+  getFirestore,
+  addDoc,
+  doc,
+  getDoc,
+} from "firebase/firestore";
 import DashBoardMainClassWritePresenter from "./DashBoardClassWrite.presenter";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { useMutation } from "@apollo/client";
@@ -64,11 +70,18 @@ const DashBoardMainClassWriteContainer = () => {
 
   // 클래스 등록
   const onClickSubmit = async () => {
+    const userQuery = doc(
+      getFirestore(firebaseApp),
+      "users",
+      currentUser?.email
+    );
+    const userResult = await getDoc(userQuery);
     // 등록 날짜 및 시간 설정
     myInputs.applyClass.classArray = classSchedule;
 
     // myInputs.applyClass.push("aaa");
     myInputs.patissierId = currentUser?.uid;
+    myInputs.patissier = userResult?.data().name;
     myInputs.createdAt = getDate(new Date());
     console.log(myInputs);
 
