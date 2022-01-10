@@ -115,83 +115,86 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
         </S.NavBarCategory>
       </S.NavBarWrapper>
       <S.WholeWrapper>
-        <S.IntroWrapper>
-          <S.ProgramWrapper ref={props.ProgramRef}>
-            <S.ClassIntro>
-              <S.ClassTitle>{props.myClass?.className}</S.ClassTitle>
-              <S.SubComponentWrapper>
-                <S.SubTheme1>
-                  <S.ClassStarRate>
-                    <S.Star src="/imgs/class/star.png" />
-                    <S.Rate>{props.ratingAverage}</S.Rate>
-                    <S.Rater>(1,700)</S.Rater>
-                  </S.ClassStarRate>
-                  <S.CategoryTag>
-                    <S.Category>
-                      {props.myClass?.district} • {props.myClass?.category}
-                    </S.Category>
-                  </S.CategoryTag>
-                </S.SubTheme1>
-                <S.SubTheme2>
-                  <S.DibsOnClass onClick={props.heart}>
-                    <S.SubTheme2Heart src="/imgs/class/heart.png" />
-                    {props.myClass?.heart}
-                  </S.DibsOnClass>
-                  <S.ClassShare>
-                    <S.Share src="/imgs/share.png" />
-                    공유
-                  </S.ClassShare>
-                </S.SubTheme2>
-              </S.SubComponentWrapper>
-              <Slider {...settings}>
-                {props.myClass?.images?.map((el) => (
-                  <div key={uuidv4()}>
-                    <S.ClassImage
-                      src={`https://storage.googleapis.com/${el}`}
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </S.ClassIntro>
-          </S.ProgramWrapper>
-          <S.PatissierIntro>
-            <S.ClassRemarksTitle>
-              {props.myClass?.patissier}님과 함께하는 마카롱 클래스
-            </S.ClassRemarksTitle>
-            <S.ClassRemarksDetail>
-              {props.myClass?.remarks}
-            </S.ClassRemarksDetail>
+        <S.UnderWrapper>
+          <S.IntroWrapper>
+            <S.ProgramWrapper ref={props.ProgramRef}>
+              <S.ClassIntro>
+                <S.ClassTitle>{props.myClass?.className}</S.ClassTitle>
+                <S.SubComponentWrapper>
+                  <S.SubTheme1>
+                    <S.ClassStarRate>
+                      <S.Star src="/imgs/class/star.png" />
+                      <S.Rate>{props.ratingAverage}</S.Rate>
+                      <S.Rater>(1,700)</S.Rater>
+                    </S.ClassStarRate>
+                    <S.CategoryTag>
+                      <S.Category>
+                        {props.myClass?.district} • {props.myClass?.category}
+                      </S.Category>
+                    </S.CategoryTag>
+                  </S.SubTheme1>
+                  <S.SubTheme2>
+                    <S.DibsOnClass onClick={props.heart}>
+                      <S.SubTheme2Heart src="/imgs/class/heart.png" />
+                      {props.myClass?.heart}
+                    </S.DibsOnClass>
+                    <S.ClassShare>
+                      <S.Share src="/imgs/share.png" />
+                      공유
+                    </S.ClassShare>
+                  </S.SubTheme2>
+                </S.SubComponentWrapper>
+                <Slider {...settings}>
+                  {props.myClass?.images?.map((el) => (
+                    <div key={uuidv4()}>
+                      <S.ClassImage
+                        src={`https://storage.googleapis.com/${el}`}
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </S.ClassIntro>
+            </S.ProgramWrapper>
+            <S.PatissierIntro>
+              <S.ClassRemarksTitle>
+                {props.myClass?.patissier}님과 함께하는 마카롱 클래스
+              </S.ClassRemarksTitle>
+              <S.ClassRemarksDetail>
+                {props.myClass?.remarks}
+              </S.ClassRemarksDetail>
 
-            <S.ProgramIntro>
-              <S.SubjectTitle>프로그램</S.SubjectTitle>
+              <S.ProgramIntro>
+                <S.SubjectTitle>프로그램</S.SubjectTitle>
 
-              <S.ProgramGuideBox>
-                <S.ProgramContents>{props.myClass?.contents}</S.ProgramContents>
+                <S.ProgramGuideBox>
+                  <S.ProgramContents>
+                    {props.myClass?.contents}
+                  </S.ProgramContents>
 
-                <S.ProgramImage></S.ProgramImage>
-              </S.ProgramGuideBox>
-            </S.ProgramIntro>
-          </S.PatissierIntro>
-          <S.PatissierInfo>
-            <S.SubjectTitle>개설자 정보</S.SubjectTitle>
-            <S.PatissierWrapper>
-              <S.PatissierPhoto src="/imgs/user.png" />
-              <S.PatissierName>
-                {props.myClass?.patissier} 파티셰
-              </S.PatissierName>
-              <S.ContactPatissier>연락하기</S.ContactPatissier>
-            </S.PatissierWrapper>
-            <S.PatissierContentsBox>
-              <div>파티셰의 한 줄 소개입니다.</div>
-            </S.PatissierContentsBox>
-          </S.PatissierInfo>
-          <S.ClassLocationInfo ref={props.MapRef}>
-            <S.SubjectTitle>위치정보</S.SubjectTitle>
-            <S.LocationMap>
-              <div id="map" style={{ width: "100%", height: "400px" }}></div>
-            </S.LocationMap>
-          </S.ClassLocationInfo>
-          {/* <S.PatissierInfo>
+                  <S.ProgramImage></S.ProgramImage>
+                </S.ProgramGuideBox>
+              </S.ProgramIntro>
+            </S.PatissierIntro>
+            <S.PatissierInfo>
+              <S.SubjectTitle>개설자 정보</S.SubjectTitle>
+              <S.PatissierWrapper>
+                <S.PatissierPhoto src="/imgs/user.png" />
+                <S.PatissierName>
+                  {props.myClass?.patissier} 파티셰
+                </S.PatissierName>
+                <S.ContactPatissier>연락하기</S.ContactPatissier>
+              </S.PatissierWrapper>
+              <S.PatissierContentsBox>
+                <div>파티셰의 한 줄 소개입니다.</div>
+              </S.PatissierContentsBox>
+            </S.PatissierInfo>
+            <S.ClassLocationInfo ref={props.MapRef}>
+              <S.SubjectTitle>위치정보</S.SubjectTitle>
+              <S.LocationMap>
+                <div id="map" style={{ width: "100%", height: "400px" }}></div>
+              </S.LocationMap>
+            </S.ClassLocationInfo>
+            {/* <S.PatissierInfo>
             <S.SubjectTitle>개설자 정보</S.SubjectTitle>
             <S.PatissierWrapper>
               <S.PatissierPhoto src="/imgs/user.png" />
@@ -204,73 +207,74 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <div>파티셰의 한 줄 소개입니다.</div>
             </S.PatissierContentsBox>
           </S.PatissierInfo> */}
-          <S.ClassReviewInfo ref={props.ReviewRef}>
-            <S.SubjectTitle onClick={props.review}>
-              실제 수강생 후기
-            </S.SubjectTitle>
-            <S.ClassStarRate2>
-              <Rate value={props.ratingAverage} />
-              <S.Rate>{props.ratingAverage}</S.Rate>
-              <S.Rater>(1,700)</S.Rater>
-            </S.ClassStarRate2>
-            {props.myClass?.review?.map((el) => (
-              <div key={uuidv4()}>
-                <S.ClassReview>
-                  <S.ClassReviewerPhoto src="/imgs/user.png" />
-                  <S.Label3>
-                    <S.ClassReviewerId>{el.user}</S.ClassReviewerId>
-                    <S.Label>
-                      <S.PersonalRate>
-                        <Rate value={el.rating} />
-                      </S.PersonalRate>
-                      <S.CreatedDate>{el.createdAt}</S.CreatedDate>
-                    </S.Label>
-                  </S.Label3>
-                </S.ClassReview>
-                <S.ReviewBox>{el.contents}</S.ReviewBox>
-              </div>
-            ))}
-          </S.ClassReviewInfo>
-          <S.ViewMore>177개의 후기 더보기</S.ViewMore>
-        </S.IntroWrapper>
-        <S.ScheduleWrapper>
-          <S.ClassSchedule>
-            <S.SmallTitle>예약 정보</S.SmallTitle>
-            {/* <div>{Object.keys(props.myClass?.applyClass[0])[1]}</div>
+            <S.ClassReviewInfo ref={props.ReviewRef}>
+              <S.SubjectTitle onClick={props.review}>
+                실제 수강생 후기
+              </S.SubjectTitle>
+              <S.ClassStarRate2>
+                <Rate value={props.ratingAverage} />
+                <S.Rate>{props.ratingAverage}</S.Rate>
+                <S.Rater>(1,700)</S.Rater>
+              </S.ClassStarRate2>
+              {props.myClass?.review?.map((el) => (
+                <div key={uuidv4()}>
+                  <S.ClassReview>
+                    <S.ClassReviewerPhoto src="/imgs/user.png" />
+                    <S.Label3>
+                      <S.ClassReviewerId>{el.user}</S.ClassReviewerId>
+                      <S.Label>
+                        <S.PersonalRate>
+                          <Rate value={el.rating} />
+                        </S.PersonalRate>
+                        <S.CreatedDate>{el.createdAt}</S.CreatedDate>
+                      </S.Label>
+                    </S.Label3>
+                  </S.ClassReview>
+                  <S.ReviewBox>{el.contents}</S.ReviewBox>
+                </div>
+              ))}
+            </S.ClassReviewInfo>
+            <S.ViewMore>177개의 후기 더보기</S.ViewMore>
+          </S.IntroWrapper>
+          <S.ScheduleWrapper>
+            <S.ClassSchedule>
+              <S.SmallTitle>예약 정보</S.SmallTitle>
+              {/* <div>{Object.keys(props.myClass?.applyClass[0])[1]}</div>
                 <div>{Object.keys(props.myClass?.applyClass[0])[0]}</div> */}
-            <S.ClassScheduleWrapper>
-              {props.myClass?.applyClass?.classArray?.map((el, index) => (
-                <S.ClassArrayWrapper
-                  key={uuidv4()}
-                  onClick={props.selectDate(el, index)}
-                >
-                  {/* <div>날짜: {el.class.date}</div>
+              <S.ClassScheduleWrapper>
+                {props.myClass?.applyClass?.classArray?.map((el, index) => (
+                  <S.ClassArrayWrapper
+                    key={uuidv4()}
+                    onClick={props.selectDate(el, index)}
+                  >
+                    {/* <div>날짜: {el.class.date}</div>
                     <div>시작시간: {el.class.start}</div>
                     <div>최대인원: {el.class.member}</div> */}
-                  <S.ClassButton>
-                    <S.SmallText>모집 타임</S.SmallText>
-                    <S.ClassDate>수업일 : {el.class.date}</S.ClassDate>
-                    <S.ClassStartTime>
-                      시작시간 : {el.class.start}
-                    </S.ClassStartTime>
-                    <S.ClassRunningTime>
-                      수업시간 : {el.class.runningTime}
-                    </S.ClassRunningTime>
-                    <S.SmallLine></S.SmallLine>
-                    <S.ClassStartTime>
-                      신청완료 {el.class.membersName.length}명 / 수강인원{" "}
-                      {el.class.member}명
-                    </S.ClassStartTime>
-                  </S.ClassButton>
-                </S.ClassArrayWrapper>
-              ))}
-            </S.ClassScheduleWrapper>
-            <S.ClassPrice>{props.myClass?.price}원</S.ClassPrice>
-            <S.ReservationButton onClick={props.reservation}>
-              예약하기
-            </S.ReservationButton>
-          </S.ClassSchedule>
-        </S.ScheduleWrapper>
+                    <S.ClassButton>
+                      <S.SmallText>모집 타임</S.SmallText>
+                      <S.ClassDate>수업일 : {el.class.date}</S.ClassDate>
+                      <S.ClassStartTime>
+                        시작시간 : {el.class.start}
+                      </S.ClassStartTime>
+                      <S.ClassRunningTime>
+                        수업시간 : {el.class.runningTime}
+                      </S.ClassRunningTime>
+                      <S.SmallLine></S.SmallLine>
+                      <S.ClassStartTime>
+                        신청완료 {el.class.membersName.length}명 / 수강인원{" "}
+                        {el.class.member}명
+                      </S.ClassStartTime>
+                    </S.ClassButton>
+                  </S.ClassArrayWrapper>
+                ))}
+              </S.ClassScheduleWrapper>
+              <S.ClassPrice>{props.myClass?.price}원</S.ClassPrice>
+              <S.ReservationButton onClick={props.reservation}>
+                예약하기
+              </S.ReservationButton>
+            </S.ClassSchedule>
+          </S.ScheduleWrapper>
+        </S.UnderWrapper>
       </S.WholeWrapper>
     </>
   );
