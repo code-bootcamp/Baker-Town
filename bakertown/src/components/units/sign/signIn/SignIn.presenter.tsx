@@ -23,7 +23,7 @@ const SignInPresenter = (props: ISignInPresenterProps) => {
       alert("로그인 되셨습니다.");
       router.push("/");
     } catch {
-      alert("이미 로그인 이메일입니다.");
+      alert("로그인 실패");
     }
     setLoading(false);
   };
