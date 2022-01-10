@@ -11,6 +11,7 @@ import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
 import { getDate, getOnlyDate } from "../../../../commons/libraries/getDate";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
+import { getAuth } from "firebase/auth";
 
 const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
   const router = useRouter();
@@ -63,87 +64,91 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
       setRatingAverage(reviewFunction ? Number(reviewFunction) : Number("0"));
     }
   });
-
+  const currentID = getAuth().currentUser?.uid;
   const onClickReservation = async () => {
-    if (myIndex === -1) {
-      alert("예약하실 날짜를 선택해주세요!!");
-      return;
+    if (currentID) {
+      if (myIndex === -1) {
+        alert("예약하실 날짜를 선택해주세요!!");
+        return;
+      }
+      // 현재 페이지 정보 불러오기
+      const bakeryClass = doc(
+        getFirestore(firebaseApp),
+        "class",
+        String(router.query.classId)
+      );
+      //
+      // 내 정보 불러오기
+      const userQuery = doc(
+        getFirestore(firebaseApp),
+        "users",
+        currentUser?.email
+      );
+      const userResult = await getDoc(userQuery);
+
+      // 돈 없으면 내보내기
+      if (userResult.data().mypoint < myClass?.price) {
+        alert("포인트가 부족합니다.");
+        return;
+      }
+
+      // 예약하기(구매)
+      const buyInfo = {
+        classRouter: router.query.classId,
+        className: myClass?.className,
+        price: myClass?.price,
+      };
+      console.log(buyInfo);
+
+      // 현재 페이지의 예약정보
+      const currentReservInfo = myClass?.applyClass;
+
+      // 예약 마감 시 내보내기
+      if (
+        currentReservInfo?.classArray?.[myIndex].class.membersName.length ===
+        Number(currentReservInfo?.classArray?.[myIndex].class.member)
+      ) {
+        alert("에약이 마감되었습니다.");
+        return;
+      }
+      //현재 나의 포인트 - class가격
+      const charge = userResult.data().mypoint - buyInfo.price;
+
+      // 현재 페이지 예약정보에 내 이름 넣기
+      currentReservInfo?.classArray?.[myIndex].class.membersName.push(
+        userResult.data().name
+      );
+      //나의 포인트 잔액
+      await updateDoc(userQuery, { mypoint: charge });
+      console.log(charge);
+      await updateDoc(bakeryClass, {
+        applyClass: {
+          ...currentReservInfo,
+        },
+      });
+
+      // 내 참여예정 클래스
+      const myBeforeParClass = userResult.data().beforePar;
+      // currentReservInfo.classArray?.[0];
+
+      // 내 참여예정 클래스에 현재 클래스 아이디 및 예약정보 넣기
+      const dddd = {
+        classRouter: router.query.classId,
+        className: myClass?.className,
+        category: myClass?.category,
+        classPrice: Number(myClass?.price),
+        reservationIndex: myIndex,
+        ...currentReservInfo.classArray?.[0],
+      };
+      myBeforeParClass.push(dddd);
+      await updateDoc(userQuery, {
+        beforePar: myBeforeParClass,
+      });
+      alert("예약이 완료되었습니다.");
+      location.reload();
+    } else {
+      alert("회원만 가능합니다.");
     }
-    // 현재 페이지 정보 불러오기
-    const bakeryClass = doc(
-      getFirestore(firebaseApp),
-      "class",
-      String(router.query.classId)
-    );
-    //
-    // 내 정보 불러오기
-    const userQuery = doc(
-      getFirestore(firebaseApp),
-      "users",
-      currentUser?.email
-    );
-    const userResult = await getDoc(userQuery);
-
-    // 돈 없으면 내보내기
-    if (userResult.data().mypoint < myClass?.price) {
-      alert("포인트가 부족합니다.");
-      return;
-    }
-
-    // 예약하기(구매)
-    const buyInfo = {
-      classRouter: router.query.classId,
-      className: myClass?.className,
-      price: myClass?.price,
-    };
-    console.log(buyInfo);
-
-    // 현재 페이지의 예약정보
-    const currentReservInfo = myClass?.applyClass;
-
-    // 예약 마감 시 내보내기
-    if (
-      currentReservInfo?.classArray?.[myIndex].class.membersName.length ===
-      Number(currentReservInfo?.classArray?.[myIndex].class.member)
-    ) {
-      alert("에약이 마감되었습니다.");
-      return;
-    }
-    //현재 나의 포인트 - class가격
-    const charge = userResult.data().mypoint - buyInfo.price;
-
-    // 현재 페이지 예약정보에 내 이름 넣기
-    currentReservInfo?.classArray?.[myIndex].class.membersName.push(
-      userResult.data().name
-    );
-    //나의 포인트 잔액
-    await updateDoc(userQuery, { mypoint: charge });
-    console.log(charge);
-    await updateDoc(bakeryClass, {
-      applyClass: {
-        ...currentReservInfo,
-      },
-    });
-
-    // 내 참여예정 클래스
-    const myBeforeParClass = userResult.data().beforePar;
-    // currentReservInfo.classArray?.[0];
-
-    // 내 참여예정 클래스에 현재 클래스 아이디 및 예약정보 넣기
-    const dddd = {
-      classRouter: router.query.classId,
-      className: myClass?.className,
-      category: myClass?.category,
-      classPrice: Number(myClass?.price),
-      reservationIndex: myIndex,
-      ...currentReservInfo.classArray?.[0],
-    };
-    myBeforeParClass.push(dddd);
-    await updateDoc(userQuery, {
-      beforePar: myBeforeParClass,
-    });
-    alert("예약이 완료되었습니다.");
-    location.reload();
   };
 
   const onClickSelectDate = (el, index) => () => {

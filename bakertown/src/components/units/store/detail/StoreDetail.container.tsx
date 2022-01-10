@@ -4,6 +4,7 @@ import { getFirestore, getDoc, doc, updateDoc } from "firebase/firestore";
 import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
 import { getOnlyDate } from "../../../../commons/libraries/getDate";
+import { getAuth } from "firebase/auth";
 
 const StoreDetailContainer = () => {
   const router = useRouter();
@@ -27,42 +28,44 @@ const StoreDetailContainer = () => {
       setMyStore(itemData);
     }
   });
-
+  const currentID = getAuth().currentUser?.uid;
   const onClickPurchase = async () => {
-    // 현재 페이지 정보 불러오기
-    const bakeryClass = doc(
-      getFirestore(firebaseApp),
-      "class",
-      String(router.query.classId)
-    );
-    //
     // 내 정보 불러오기
+    if (currentID) {
+      const userQuery = doc(
+        getFirestore(firebaseApp),
+        "users",
+        currentUser?.email
+      );
+      const userResult = await getDoc(userQuery);
 
-    console.log(currentUser);
-    const userQuery = doc(
-      getFirestore(firebaseApp),
-      "users",
-      currentUser?.email
-    );
-    const userResult = await getDoc(userQuery);
+      // 내가 구매한 아이템
+      const myBoughtItem = userResult.data().boughtItem;
 
-    // 내가 구매한 아이템
-    const myBoughtItem = userResult.data().boughtItem;
+      // 구매하기 정보
+      const buyInfo = {
+        itemRouter: router.query.storeId,
+        itemName: myStore?.itemName,
+        price: Number(myStore?.price),
+        category: myStore?.category,
+        createdAt: getOnlyDate(new Date()),
+      };
+      //현재 나의 포인트 - 상품가격
+      const charge = userResult.data().mypoint - buyInfo.price;
 
-    // 구매하기 정보
-    const buyInfo = {
-      itemRouter: router.query.storeId,
-      itemName: myStore?.itemName,
-      price: Number(myStore?.price),
-      category: myStore?.category,
-      createdAt: getOnlyDate(new Date()),
-    };
-    // 구매한 정보 내 정보에 넣기
-    myBoughtItem.push(buyInfo);
-    console.log("aa", myBoughtItem);
-    await updateDoc(userQuery, {
-      boughtItem: myBoughtItem,
-    });
+      //나의포인트 잔액
+      await updateDoc(userQuery, { mypoint: charge });
+      console.log(charge);
+      // 구매한 정보 내 정보에 넣기
+      myBoughtItem.push(buyInfo);
+      console.log("aa", myBoughtItem);
+      await updateDoc(userQuery, {
+        boughtItem: myBoughtItem,
+      });
+      alert("구매가 완료되었습니다.");
+    } else {
+      alert("회원만 가능합니다.");
+    }
   };
 
   const onClickHeart = async () => {
