@@ -5,7 +5,7 @@ export const Wrapper = styled.header`
   justify-content: center;
   align-items: center;
   /* position: sticky; */
-  position: absolute;
+  /* position: absolute; */
   z-index: 3;
   top: 0;
   left: 0;
