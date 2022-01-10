@@ -188,7 +188,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
           <S.ClassLocationInfo ref={props.MapRef}>
             <S.SubjectTitle>위치정보</S.SubjectTitle>
             <S.LocationMap>
-              <div id="map" style={{ width: "864px", height: "400px" }}></div>
+              <div id="map" style={{ width: "100%", height: "400px" }}></div>
             </S.LocationMap>
           </S.ClassLocationInfo>
           {/* <S.PatissierInfo>
