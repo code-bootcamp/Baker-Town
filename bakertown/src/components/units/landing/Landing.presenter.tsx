@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import AvatarPage from "../../commons/avatar/AvatarPage";
 
 const LandingPresenter = (props: ILandingPresenterProps) => {
-  function SampleNextArrow(props) {
+  const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
     return (
       <div
@@ -18,9 +18,9 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
         onClick={onClick}
       />
     );
-  }
+  };
 
-  function SamplePrevArrow(props) {
+  const SamplePrevArrow = (props) => {
     const { currentSlide, style, onClick } = props;
     if (currentSlide === 0) {
       return null;
@@ -33,7 +33,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
         />
       );
     }
-  }
+  };
 
   const settings = {
     dots: false,

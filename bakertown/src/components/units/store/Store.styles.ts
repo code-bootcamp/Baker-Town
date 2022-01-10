@@ -90,3 +90,34 @@ export const StoreImage = styled.img`
   margin-bottom: 20px;
   opacity: 0.5;
 `;
+
+export const SliderWrapper = styled.div`
+  width: 102.8%;
+  height: 400px;
+
+  .slick-next-arrow {
+    font-size: 20px;
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 130px;
+    right: -18px;
+    background-image: url("/imgs/rightarrow.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .slick-before-arrow {
+    font-size: 20px;
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 130px;
+    left: -53px;
+    background-image: url("/imgs/leftarrow.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+`;
