@@ -5,7 +5,7 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
   return (
     <>
       <S.Wrapper>
-        <div>이곳은 상품등록페이지입니다!!!</div>
+        <S.Title>아이템 등록 페이지</S.Title>
 
         <input
           type="text"

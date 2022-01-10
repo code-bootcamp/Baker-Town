@@ -8,10 +8,16 @@ import {
   getDocs,
 } from "firebase/firestore";
 import { firebaseApp } from "../../../../../pages/_app";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import StoreListPresenter from "./StoreList.presenter";
+import { useRouter } from "next/router";
 
 const StoreListContainer = () => {
+  const router = useRouter();
+  const [recent, setRecent] = useState([]);
+  const [option, setOption] = useState(0);
+  const categoryName = router.query.categoryName;
+
   useEffect(async () => {
     // 전체 클래스
     const first = query(
@@ -21,14 +27,26 @@ const StoreListContainer = () => {
       limit(12) // 데이터 불러오는 개수 제한
     );
     const firstResult = await getDocs(first);
-    console.log(
-      "찬밍",
-      firstResult.docs.map((el) => el.ref.firestore.app)
-    );
+    
     setRecent(firstResult.docs.map((el) => el.data()));
-  });
+    console.log(recent);
+  }, []);
 
-  return <StoreListPresenter />;
+  const onClickSideButton = (el: string) => () => {
+    router.push(`/store/category/${el}`);
+  };
+
+  // const onClickOption = (event) => {
+  //   setOption(event.target.id);
+  // };
+
+  return (
+    <StoreListPresenter
+      recent={recent}
+      onClickSideButton={onClickSideButton}
+      // onClickOption={onClickOption}
+    />
+  );
 };
 
 export default StoreListContainer;
