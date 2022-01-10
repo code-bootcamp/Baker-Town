@@ -9,12 +9,12 @@ export const Wrapper = styled.div`
   margin: 0px;
   padding-top: 70px;
   padding-bottom: 150px;
+  display: flex;
 `;
 
-export const UpperWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
+export const LeftWrapper = styled.div``;
+
+export const RightWrapper = styled.div``;
 
 export const BodyWrapper = styled.div`
   display: flex;

@@ -1,4 +1,4 @@
-import StoreDetailContainer from "../../../src/components/units/store/detail/StoreDetail.container";
+import StoreDetailContainer from "../../../../src/components/units/store/detail/StoreDetail.container";
 
 const StoreDetailPage = () => {
   return <StoreDetailContainer />;
