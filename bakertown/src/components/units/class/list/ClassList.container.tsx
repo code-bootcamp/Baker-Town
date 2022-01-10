@@ -269,13 +269,16 @@ const ClassListContainer = () => {
     });
   };
 
-  // useBottomScrollListener(getNextClass);
+  if (!categoryName) useBottomScrollListener(getNextClass);
 
   // 카테고리
   const getNextClassCategory = () => {
     console.log("시작");
 
     if (!categoryName) return;
+
+    // 아이템 카테고리 변경 시 lastVisible값을 변경해줘야함
+
     if (lastVisible === -1) {
       return;
     } else if (lastVisible) {
@@ -322,10 +325,13 @@ const ClassListContainer = () => {
   };
 
   useEffect(() => {
-    getNextClassCategory();
+    if (!categoryName) {
+      getNextClass();
+    } else {
+      getNextClassCategory();
+    }
   }, [categoryName]);
-
-  useBottomScrollListener(getNextClassCategory);
+  if (categoryName) useBottomScrollListener(getNextClassCategory);
 
   const onClickSideButton = (el: string) => () => {
     router.push(`/class/category/${el}`);

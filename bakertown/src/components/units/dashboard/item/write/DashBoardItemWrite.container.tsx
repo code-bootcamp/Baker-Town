@@ -1,10 +1,18 @@
 import DashBoardItemPresenter from "./DashBoardItemWrite.presenter";
-import { collection, getFirestore, addDoc } from "firebase/firestore";
+import {
+  collection,
+  getFirestore,
+  addDoc,
+  doc,
+  getDoc,
+} from "firebase/firestore";
 import { ChangeEvent, useState } from "react";
-import { firebaseApp } from "../../../../../../pages/_app";
+import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 
 export const DashBoardItemContainer = () => {
+  const currentUser = useAuth();
+
   const [myInputs, setMyInputs] = useState({
     itemName: "",
     contents: "",
@@ -12,6 +20,8 @@ export const DashBoardItemContainer = () => {
     createdAt: "",
     category: "",
     shippingTime: "",
+    patissier: "",
+    patissierId: "",
     heart: 0,
     review: [],
     images: [],
@@ -19,8 +29,20 @@ export const DashBoardItemContainer = () => {
 
   // 아이템 등록
   const onClickSubmit = async () => {
+    const userQuery = doc(
+      getFirestore(firebaseApp),
+      "users",
+      currentUser?.email
+    );
+    const userResult = await getDoc(userQuery);
+
     myInputs.createdAt = getOnlyDate(new Date());
+    console.log(currentUser);
+    myInputs.patissierId = currentUser?.uid;
+    myInputs.patissier = userResult?.data().name;
+
     console.log(myInputs);
+
     const applyitems = collection(
       // db
       getFirestore(firebaseApp),
@@ -45,6 +67,8 @@ export const DashBoardItemContainer = () => {
       heart: myInputs.heart,
       review: myInputs.review,
       shippingTime: myInputs.shippingTime,
+      patissier: myInputs.patissier,
+      patissierId: myInputs.patissierId,
       [event.target.name]: event.target.value,
     });
   };
