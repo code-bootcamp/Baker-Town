@@ -246,9 +246,13 @@ const ClassListContainer = () => {
       setRecent((classList) => {
         const arr = [...classList];
         snapshot.forEach((doc) => {
-          arr.push(doc.data());
+          // arr.push(doc.data())
+          // arr.push(doc.id);
+          const data = doc.data();
+          data.id = doc.id;
+          arr.push(data);
         });
-
+        console.log(recent);
         if (snapshot.docs.length === 0) {
           lastVisible = -1;
           console.log("lastVisible -1!!!!", lastVisible);
