@@ -289,6 +289,7 @@ const ClassListContainer = () => {
         limit(4),
         startAfter(lastVisible)
       );
+      console.log("else if야!!!!!!!");
     } else {
       myQuery = query(
         collection(getFirestore(firebaseApp), "class"),
@@ -296,6 +297,7 @@ const ClassListContainer = () => {
         orderBy("createdAt", "desc"),
         limit(12)
       );
+      console.log("else야!!!!!!!");
     }
 
     getDocs(myQuery).then((snapshot) => {
@@ -331,9 +333,13 @@ const ClassListContainer = () => {
       getNextClassCategory();
     }
   }, [categoryName]);
+
   if (categoryName) useBottomScrollListener(getNextClassCategory);
 
   const onClickSideButton = (el: string) => () => {
+    setLastVisible(undefined);
+    setRecent([]);
+    console.log("lllllaaaaaa", lastVisible);
     router.push(`/class/category/${el}`);
   };
 
@@ -363,8 +369,6 @@ const ClassListContainer = () => {
     console.log(option);
   };
 
-  const aaa = () => {};
-
   return (
     <>
       <ClassListPresenter
@@ -377,6 +381,7 @@ const ClassListContainer = () => {
         clickPage={onClickPage}
         classDetail={onClickClassDetail}
         clickOption={onClickOption}
+        setLastVisible={setLastVisible}
       />
     </>
   );

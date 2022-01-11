@@ -24,7 +24,12 @@ const ReviewContainer = () => {
       console.log("aaa", userResult.data());
     }
   });
-  return <ReviewPresenter userResult={myUser} />;
+
+  const onClickItemDetail = (el) => () => {
+    router.push(`/store/detail/${el.itemRouter}`);
+  };
+
+  return <ReviewPresenter userResult={myUser} itemDetail={onClickItemDetail} />;
 };
 
 export default ReviewContainer;

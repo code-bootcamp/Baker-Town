@@ -16,10 +16,12 @@ const MyReviewPresenter = (props) => {
             {props.userResult?.review?.map((el) => (
               <S.ClassWrapper key={uuidv4()}>
                 <S.Class>
-                  <S.ClassImage />
+                  <S.ClassImage onClick={props.classDetail(el)} />
                   <S.ClassInfoWrapper>
                     <S.ClassPatissier>{el.category}</S.ClassPatissier>
-                    <S.ClassName>{el.className}</S.ClassName>
+                    <S.ClassName onClick={props.classDetail(el)}>
+                      {el.className}
+                    </S.ClassName>
                     <S.ClassDate>{el.class?.date}</S.ClassDate>
                   </S.ClassInfoWrapper>
                 </S.Class>
