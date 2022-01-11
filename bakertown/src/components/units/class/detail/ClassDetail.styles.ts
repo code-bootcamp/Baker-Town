@@ -312,7 +312,7 @@ export const ProgramIntro = styled.div`
 `;
 
 export const SubjectTitle = styled.div`
-  margin-top: 70px;
+  margin-top: 150px;
   height: 44px;
   font-size: 32px;
   font-weight: bold;
@@ -384,7 +384,7 @@ export const PatissierContentsBox = styled.div`
 export const ClassLocationInfo = styled.div``;
 
 export const LocationInfo = styled.div`
-  margin-top: 70px;
+  margin-top: 100px;
   font-size: 32px;
   font-weight: bold;
 `;
@@ -400,7 +400,7 @@ export const LocationMap = styled.div`
 export const ClassReviewInfo = styled.div``;
 
 export const ClassReviewTitle = styled.div`
-  margin-top: 70px;
+  margin-top: 100px;
   font-size: 32px;
   font-weight: bold;
 `;

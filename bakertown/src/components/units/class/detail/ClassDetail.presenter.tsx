@@ -175,6 +175,27 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.ProgramGuideBox>
               </S.ProgramIntro>
             </S.PatissierIntro>
+            {/* <S.PatissierInfo>
+              <S.SubjectTitle>개설자 정보</S.SubjectTitle>
+              <S.PatissierWrapper>
+                <S.PatissierPhoto src="/imgs/user.png" />
+                <S.PatissierName>
+                  {props.myClass?.patissier} 파티셰
+                </S.PatissierName>
+                <S.ContactPatissier onClick={props.ThankyouSunWoo}>
+                  연락하기
+                </S.ContactPatissier>
+              </S.PatissierWrapper>
+              <S.PatissierContentsBox>
+                <div>{props?.myClass?.introduce}</div>
+              </S.PatissierContentsBox>
+            </S.PatissierInfo> */}
+            <S.ClassLocationInfo ref={props.MapRef}>
+              <S.SubjectTitle>위치정보</S.SubjectTitle>
+              <S.LocationMap>
+                <div id="map" style={{ width: "100%", height: "400px" }}></div>
+              </S.LocationMap>
+            </S.ClassLocationInfo>
             <S.PatissierInfo>
               <S.SubjectTitle>개설자 정보</S.SubjectTitle>
               <S.PatissierWrapper>
@@ -185,28 +206,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 <S.ContactPatissier>연락하기</S.ContactPatissier>
               </S.PatissierWrapper>
               <S.PatissierContentsBox>
-                <div>{props?.myClass?.introduce}</div>
+                <div>파티셰의 한 줄 소개입니다.</div>
               </S.PatissierContentsBox>
             </S.PatissierInfo>
-            <S.ClassLocationInfo ref={props.MapRef}>
-              <S.SubjectTitle>위치정보</S.SubjectTitle>
-              <S.LocationMap>
-                <div id="map" style={{ width: "100%", height: "400px" }}></div>
-              </S.LocationMap>
-            </S.ClassLocationInfo>
-            {/* <S.PatissierInfo>
-            <S.SubjectTitle>개설자 정보</S.SubjectTitle>
-            <S.PatissierWrapper>
-              <S.PatissierPhoto src="/imgs/user.png" />
-              <S.PatissierName>
-                {props.myClass?.patissier} 파티셰
-              </S.PatissierName>
-              <S.ContactPatissier>연락하기</S.ContactPatissier>
-            </S.PatissierWrapper>
-            <S.PatissierContentsBox>
-              <div>파티셰의 한 줄 소개입니다.</div>
-            </S.PatissierContentsBox>
-          </S.PatissierInfo> */}
             <S.ClassReviewInfo ref={props.ReviewRef}>
               <S.SubjectTitle onClick={props.review}>
                 실제 수강생 후기

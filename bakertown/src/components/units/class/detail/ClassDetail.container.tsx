@@ -317,7 +317,7 @@ const ClassDetailContainer = () => {
     return {
       root: null,
       threshold: 0,
-      rootMargin: "1000px 0px 0px 0px",
+      rootMargin: "-10% 0px 0% 0px",
     };
   }, []);
 
@@ -343,8 +343,8 @@ const ClassDetailContainer = () => {
   const mapoptions = useMemo(() => {
     return {
       root: null,
-      threshold: 0,
-      rootMargin: "0px 0px -1000px 0px",
+      threshold: 0.9,
+      // rootMargin: "-10% 0px 0% 0px",
     };
   }, []);
 
@@ -373,8 +373,8 @@ const ClassDetailContainer = () => {
   const reviewoptions = useMemo(() => {
     return {
       root: null,
-      threshold: 0,
-      rootMargin: "0px 0px -1000px 0px",
+      threshold: 0.9,
+      // rootMargin: "-100% 0px -100% 0px",
     };
   }, []);
 
@@ -390,6 +390,10 @@ const ClassDetailContainer = () => {
       if (currentTargetReview) observerReview.unobserve(currentTargetReview);
     };
   }, [ReviewRef, reviewoptions]);
+
+  const ThankyouSunWoo = () => {
+    router.push(`/myPage/chatRoom/${myClass?.patissierId}/${currentUser?.uid}`);
+  };
 
   return (
     <ClassDetailPresenter
@@ -410,6 +414,7 @@ const ClassDetailContainer = () => {
       isSelectedMap={isSelectedMap}
       isSelectedReview={isSelectedReview}
       ratingAverage={ratingAverage}
+      ThankyouSunWoo={ThankyouSunWoo}
     />
   );
 };
