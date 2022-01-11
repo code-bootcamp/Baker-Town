@@ -29,8 +29,6 @@ export const SideTitle = styled.div`
 
   :hover {
     color: rgba(0, 0, 0, 0.7);
-    /* background: rgba(220, 220, 220, 0.1); */
-    /* color: #ff4d12; */
   }
 `;
 
@@ -42,9 +40,8 @@ export const SideButton = styled.div`
   cursor: pointer;
 
   :hover {
-    /* color: rgba(0, 0, 0, 0.4); */
     background: rgba(220, 220, 220, 0.1);
-    /* color: #ff4d12; */
+    font-weight: bold;
   }
 `;
 

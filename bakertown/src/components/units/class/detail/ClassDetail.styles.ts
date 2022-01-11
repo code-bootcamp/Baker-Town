@@ -522,7 +522,7 @@ export const ViewMore = styled.div`
 `;
 
 export const ScheduleWrapper = styled.div`
-  width: 400x;
+  width: 400px;
 `;
 
 export const ClassSchedule = styled.div`
@@ -541,7 +541,6 @@ export const ClassSchedule = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 26px;
-  background-color: white;
 `;
 
 export const ClassScheduleWrapper = styled.div`

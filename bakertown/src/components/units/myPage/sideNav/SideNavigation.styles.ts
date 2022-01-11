@@ -55,10 +55,11 @@ export const SideButton = styled.div`
   font-size: 20px;
   margin-top: 5.5px;
   margin-bottom: 9.5px;
+  cursor: pointer;
 
   :hover {
-    color: #ff4d12;
-    cursor: pointer;
+    background: rgba(220, 220, 220, 0.1);
+    font-weight: bold;
   }
 `;
 
