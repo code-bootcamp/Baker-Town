@@ -77,6 +77,7 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
             type="text"
             placeholder="도로명주소"
             readOnly
+            value={props.address}
             defaultValue={props.myClass?.address}
           />
           <S.RoadNameSearchButton onClick={props.onToggleModal}>
