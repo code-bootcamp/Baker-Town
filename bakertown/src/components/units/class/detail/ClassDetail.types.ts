@@ -1,27 +1,55 @@
-import { LegacyRef, MouseEventHandler } from "react";
+import { ChangeEvent, LegacyRef, MouseEventHandler } from "react";
 
 export interface IClassDetailPresenterProps {
-  arry: number | undefined;
   ratingAverage: number | undefined;
-  isSelectedMap: any;
-  isSelectedReview: any;
+  isSelectedMap: boolean;
+  isSelectedReview: boolean;
   ProgramRef: LegacyRef<HTMLDivElement> | undefined;
-  isSelectedProgram: any;
+  isSelectedProgram: boolean;
   GoReview: MouseEventHandler<HTMLDivElement> | undefined;
   GoMap: MouseEventHandler<HTMLDivElement> | undefined;
   GoProgram: MouseEventHandler<HTMLDivElement> | undefined;
   review: MouseEventHandler<HTMLDivElement> | undefined;
   MapRef: LegacyRef<HTMLDivElement> | undefined;
-  handleIndexClick: MouseEventHandler<HTMLDivElement> | undefined;
   ReviewRef: LegacyRef<HTMLDivElement> | undefined;
-  tabRef: any;
   myClass: {
     address: string;
     category: string;
     className: string;
     contents: string;
-    patissier: string;
     price: string;
+    district: string;
+    heart: number;
+    images: never[];
+    patissier: string;
     remarks: string;
+    introduce: string;
+    review: any;
+    applyClass: {
+      classArray: never[];
+    };
   };
+  reservation: () => void;
+  selectDate: (el: any, index: number) => () => void;
+  nameInput: (event: ChangeEvent<HTMLInputElement>) => void;
+  heart: () => void;
+  scrollPosition: number;
+}
+
+export interface IClassDetailStylesProgramProps {
+  isSelectedProgram: boolean;
+  // isSelectedMap: boolean;
+  // isSelectedReview: boolean;
+}
+
+export interface IClassDetailStylesMapProps {
+  // isSelectedProgram: boolean;
+  isSelectedMap: boolean;
+  // isSelectedReview: boolean;
+}
+
+export interface IClassDetailStylesReviewProps {
+  // isSelectedProgram: boolean;
+  // isSelectedMap: boolean;
+  isSelectedReview: boolean;
 }
