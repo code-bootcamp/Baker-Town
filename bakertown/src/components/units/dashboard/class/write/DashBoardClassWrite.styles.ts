@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { Modal } from "antd";
-import { ECDH } from "crypto";
 
 export const Wrapper = styled.div`
   width: 100%;

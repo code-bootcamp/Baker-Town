@@ -47,6 +47,16 @@ export const SmallLine = styled.div`
 
 export const ItemList = styled.div``;
 
+export const ListToSelect = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* background: yellow; */
+  margin-top: 72px;
+  margin-bottom: 51px;
+`;
+
 export const ListTitle = styled.div`
   display: flex;
   justify-content: space-between;
@@ -58,9 +68,23 @@ export const ListTitleText = styled.div`
   margin-bottom: 30px;
 `;
 
-export const ListSelect = styled.div``;
+export const ListSelect = styled.select`
+  height: 50px;
+  width: 150px;
+  padding-left: 55px;
+  margin-right: 10px;
+  border: 0px solid gray;
+  cursor: pointer;
+  :hover {
+    color: gray;
+  }
+  :focus {
+    /* outline: 1px solid rgba(0, 0, 0, 0.3); */
+    outline: none;
+  }
+`;
 
-export const ListOption = styled.div``;
+export const ListOption = styled.option``;
 
 export const ListContents = styled.div`
   width: 1000px;
@@ -69,7 +93,13 @@ export const ListContents = styled.div`
   justify-content: space-between;
 `;
 
-export const ItemListWrapper = styled.div``;
+export const ItemWrapper = styled.div`
+  margin-bottom: 80px;
+  cursor: pointer;
+  :hover {
+    color: rgba(0, 0, 0, 0.5);
+  }
+`;
 
 export const ItemImage = styled.img`
   width: 220px;
@@ -80,6 +110,10 @@ export const ItemImage = styled.img`
   opacity: 0.5;
 `;
 
+export const ItemPatissierToPrice = styled.div`
+  padding-left: 10px;
+`;
+
 export const Patissier = styled.div`
   font-size: 14px;
   font-weight: bold;
@@ -88,16 +122,23 @@ export const Patissier = styled.div`
 
 export const ItemName = styled.div`
   width: 218px;
-  font-size: 18px;
-  margin-bottom: 9.5px;
+  height: 30px;
+  font-size: 17px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 export const Line = styled.div`
   width: 220px;
-  border-bottom: 1px solid #b9b9b9;
+  border-bottom: 1px solid rgba(220, 220, 220, 0.8);
 `;
 
 export const ItemPrice = styled.div`
-  font-size: 20px;
+  margin-top: 10px;
+  font-size: 18px;
   font-weight: bold;
+  display: flex;
 `;

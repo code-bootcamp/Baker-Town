@@ -11,18 +11,17 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
           <S.ItemName
             type="text"
             onChange={props.onChangeInputs}
-            placeholder="상품명을 입력해 주세요.(20글자 제한)"
+            placeholder="상품명을 입력해 주세요.(20자 제한)"
             name="itemName"
             maxLength={20}
           />
         </S.ItemNameWrapper>
-
         <S.ItemContentsWrapper>
           <S.ItemContentsTitle>아이템 소개 입력</S.ItemContentsTitle>
           <S.ItemContents 
           type="text"
           onChange={props.onChangeInputs}
-          placeholder="상품 설명을 자세히 입력해 주세요.(400글자 제한)"
+          placeholder="상품 설명을 자세히 입력해 주세요.(400자 제한)"
           name="contents"
           maxLength={400}
           />
@@ -54,7 +53,7 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
           <S.ItemPrice
             type="text"
             onChange={props.onChangeInputs}
-            placeholder="가격"
+            placeholder="판매가를 입력해 주세요."
             name="price"
           />
         </S.ItemPriceWrapper>
