@@ -2,7 +2,7 @@ import * as S from "./SignUp.styles";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FormValues } from "./SingUp.types";
+import { FormValues, ISignUpPresenterProps } from "./SingUp.types";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 import { firebaseApp, signup } from "../../../../../pages/_app";
@@ -15,7 +15,7 @@ import {
   setDoc,
   doc,
 } from "@firebase/firestore";
-import { Checkbox } from "@mui/material";
+
 // const schema = yup.object().shape({
 //   myName: yup.string().required("반드시 입력해야하는 필수 사항입니다."),
 
@@ -34,7 +34,7 @@ import { Checkbox } from "@mui/material";
 //     .string()
 //     .oneOf([yup.ref("myPassword"), null], "비밀번호가 일치하지 않습니다."),
 // });
-const SignUpPresenter = () => {
+const SignUpPresenter = (props: ISignUpPresenterProps) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [check, setCheck] = useState(0);
@@ -80,28 +80,41 @@ const SignUpPresenter = () => {
   };
 
   return (
-    <S.Aa>
-      <S.Wrapper>
-        {/* <div>{currentUser?.email}</div> */}
-        <S.Label>회원가입</S.Label>
-        <S.EmailLabel>name</S.EmailLabel>
-        <S.Email ref={nameRef} placeholder="name" />
-        <S.EmailLabel>email</S.EmailLabel>
-        <S.Email ref={emailRef} placeholder="email" />
-        <S.PasswordLabel>password</S.PasswordLabel>
-        <S.Password ref={passwordRef} type="Password" placeholder="password" />
-        <S.PasswordLabel>phone</S.PasswordLabel>
-        <S.Password ref={phoneRef} placeholder="phone" />
-        <input type="checkbox" value="테스트" onChange={checkPatissier} />
-        파티셰로 가입
-        <S.SignUpButton
-          // disabled={loading || currentUser}
-          onClick={handlesSignUp}
-        >
-          SignUp
-        </S.SignUpButton>
-      </S.Wrapper>
-    </S.Aa>
+    <S.Wrapper>
+      <S.SignUpWrapper>
+        <S.SignUpInnerWrapper>
+          <S.BrandWrapper>
+            <S.LogoLabel src="/imgs/logo.png" />
+            <S.SignInWrapper onClick={props.onClickSignIn}>
+              <S.SignInLabel>로그인 하기 </S.SignInLabel>
+              <S.Rightarrow src="/imgs/rightarrow.png" />
+            </S.SignInWrapper>
+          </S.BrandWrapper>
+          <S.SignUpLabel>회원가입</S.SignUpLabel>
+          <S.NameLabel>name</S.NameLabel>
+          <S.Name ref={nameRef} placeholder="이름을 입력해주세요" />
+          <S.EmailLabel>email</S.EmailLabel>
+          <S.Email ref={emailRef} placeholder="email@email.com" />
+          <S.PasswordLabel>password</S.PasswordLabel>
+          <S.Password
+            ref={passwordRef}
+            type="Password"
+            placeholder="6자리이상 입력해주세요"
+          />
+          <S.PhoneLabel>phone</S.PhoneLabel>
+          <S.Phone ref={phoneRef} placeholder="번호를 입력해주세요" />
+          <S.Check type="checkbox" value="테스트" onChange={checkPatissier} />
+          파티셰로 가입하기
+          <S.SignUpButton
+            // disabled={loading || currentUser}
+            onClick={handlesSignUp}
+          >
+            SignUp
+          </S.SignUpButton>
+        </S.SignUpInnerWrapper>
+      </S.SignUpWrapper>
+      <S.PhotoWrapper />
+    </S.Wrapper>
   );
 };
 

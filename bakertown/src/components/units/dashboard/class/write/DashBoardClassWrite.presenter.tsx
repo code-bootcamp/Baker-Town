@@ -106,8 +106,10 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
       <S.RelatedFileWrapper>
         <S.RelatedFileTitle>파일을 첨부해 주세요</S.RelatedFileTitle>
         <input multiple={true} type="file" onChange={props.onChangeImage2} />
-        {/* <input multiple={true} type="file" onChange={props.onChangeImage2} />
-        <input multiple={true} type="file" onChange={props.onChangeImage2} /> */}
+        <input multiple={true} type="file" onChange={props.onChangeImage2} />
+        <input multiple={true} type="file" onChange={props.onChangeImage2} />
+        <input multiple={true} type="file" onChange={props.onChangeImage2} />
+        <input multiple={true} type="file" onChange={props.onChangeImage2} />
         {/* <Space>
           <Upload
             listType="picture"

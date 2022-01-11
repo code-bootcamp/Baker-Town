@@ -7,14 +7,18 @@ import {
   addDoc,
   doc,
   getDoc,
+  DocumentSnapshot,
 } from "firebase/firestore";
 import DashBoardMainClassWritePresenter from "./DashBoardClassWrite.presenter";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { useMutation } from "@apollo/client";
 import { UPLOAD_FILE } from "./DashBoardClassWrite.queries";
 import { useRouter } from "next/router";
+import { IDashBoardMainClassWriteContainerProps } from "./DashBoardClassWrite.types";
 
-const DashBoardMainClassWriteContainer = (props) => {
+const DashBoardMainClassWriteContainer = (
+  props: IDashBoardMainClassWriteContainerProps
+) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [date, setDate] = useState("");
@@ -34,7 +38,9 @@ const DashBoardMainClassWriteContainer = (props) => {
     heart: 0,
     review: [],
     images: [],
-    applyClass: {},
+    applyClass: {
+      classArray: {},
+    },
   });
   const [classSchedule, setClassSchedule] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
@@ -78,7 +84,7 @@ const DashBoardMainClassWriteContainer = (props) => {
       "users",
       currentUser?.email
     );
-    const userResult = await getDoc(userQuery);
+    const userResult: any = await getDoc(userQuery);
     // 등록 날짜 및 시간 설정
     myInputs.applyClass.classArray = classSchedule;
 
@@ -143,37 +149,23 @@ const DashBoardMainClassWriteContainer = (props) => {
     });
   };
 
-  const onChangeCategory = (event) => {
+  const onChangeCategory = (event: any) => {
     myInputs.category = event.target.value;
   };
-  const [fileList, setFileList] = useState([]);
-  const onChangeImage = async (fileList) => {
-    const file = fileList.file;
-    console.log(fileList.file);
 
-    try {
-      const result = await uploadFile({ variables: { file } });
-      console.log("이미지", result);
-      myInputs.images.push(result.data.uploadFile.url);
-    } catch (error) {
-      if (error instanceof Error) alert(error.message);
-    }
-  };
-
-  const onChangeImage2 = async (event) => {
+  const onChangeImage2 = async (event: any) => {
     const file = event.target.files?.[0];
-    console.log(event.target.value);
+    // console.log(event.target.value);
     try {
       const result = await uploadFile({ variables: { file } });
-      console.log("이미지", result);
+      // console.log("이미지", result);
       myInputs.images.push(result.data.uploadFile.url);
     } catch (error) {
       if (error instanceof Error) alert(error.message);
     }
   };
 
-  // 수정하기 불러오기
-  useEffect(async () => {
+  const updateClass = async () => {
     if (props.isEdit) {
       if (myClass?.address === "내 주소!") {
         // if (!classData) return;
@@ -183,12 +175,17 @@ const DashBoardMainClassWriteContainer = (props) => {
           String(router.query.classId)
         );
         const result = await getDoc(product);
-        const classData = result.data();
+        const classData: any = result.data();
         console.log("클래스 정보", classData);
         setMyClass(classData);
         setClassSchedule(classData?.applyClass.classArray);
       }
     }
+  };
+
+  // 수정하기 불러오기
+  useEffect(() => {
+    updateClass();
   });
 
   return (
@@ -200,13 +197,11 @@ const DashBoardMainClassWriteContainer = (props) => {
       onChangeMembers={onChangeMembers}
       onChangeInputs={onChangeInputs}
       onClickSubmit={onClickSubmit}
-      onChangeImage={onChangeImage}
       classSchedule={classSchedule}
       toggleScheduleModal={toggleScheduleModal}
       isVisible={isVisible}
       address={address}
       onChangeCategory={onChangeCategory}
-      fileList={fileList}
       onChangeImage2={onChangeImage2}
       setClassSchedule={setClassSchedule}
       isEdit={props.isEdit}
