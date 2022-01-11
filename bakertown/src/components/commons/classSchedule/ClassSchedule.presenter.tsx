@@ -21,7 +21,7 @@ const ClassSchedulePresenter = (props) => {
             </S.SettingRight>
           </S.SchduleSettingWrapper>
           <S.ScheduleWrppaer>
-            {props.classSchedule.map((el) => (
+            {props.classSchedule?.map((el) => (
               <S.ClasScheduleWrapper key={uuidv4()}>
                 <div>날짜: {el.class?.date}&nbsp;&nbsp;</div>
                 <div>시작시간: {el.class?.start}&nbsp;&nbsp;</div>
