@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext, useState } from "react";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 import { plusMyung } from "../../../../../commons/libraries/stringConcatenate";
 import {
@@ -14,7 +14,7 @@ import { useMutation } from "@apollo/client";
 import { UPLOAD_FILE } from "./DashBoardClassWrite.queries";
 import { useRouter } from "next/router";
 
-const DashBoardMainClassWriteContainer = () => {
+const DashBoardMainClassWriteContainer = (props) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [date, setDate] = useState("");
@@ -39,6 +39,9 @@ const DashBoardMainClassWriteContainer = () => {
   const [classSchedule, setClassSchedule] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
   const [address, setAddress] = useState("");
+  const [myClass, setMyClass] = useState({
+    address: "내 주소!",
+  });
 
   const currentUser: any = useAuth();
 
@@ -115,6 +118,9 @@ const DashBoardMainClassWriteContainer = () => {
     router.push(`/dashboard/class/read`);
   };
 
+  // 클래스 수정
+  const onClickUpdate = async () => {};
+
   // 인풋 값 변경 시 state에 저장
   const onChangeInputs = (event: ChangeEvent<HTMLInputElement>) => {
     setMyInputs({
@@ -166,6 +172,23 @@ const DashBoardMainClassWriteContainer = () => {
     }
   };
 
+  // 수정하기 불러오기
+  useEffect(async () => {
+    if (myClass?.address === "내 주소!") {
+      // if (!classData) return;
+      const product = doc(
+        getFirestore(firebaseApp),
+        "class",
+        String(router.query.classId)
+      );
+      const result = await getDoc(product);
+      const classData = result.data();
+      console.log("클래스 정보", classData);
+      setMyClass(classData);
+      setClassSchedule(classData?.applyClass.classArray);
+    }
+  });
+
   return (
     <DashBoardMainClassWritePresenter
       isOpen={isOpen}
@@ -184,6 +207,9 @@ const DashBoardMainClassWriteContainer = () => {
       fileList={fileList}
       onChangeImage2={onChangeImage2}
       setClassSchedule={setClassSchedule}
+      isEdit={props.isEdit}
+      myClass={myClass}
+      onClickUpdate={onClickUpdate}
     />
   );
 };

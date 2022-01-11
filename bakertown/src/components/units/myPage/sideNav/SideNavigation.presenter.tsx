@@ -25,21 +25,21 @@ const SideNavigationPresenter = (props) => {
         </S.TitleWrapper>
         <S.SideTitle>CLASS</S.SideTitle>
         {myClass.map((el) => (
-          <S.SiderbarMyClass key={uuidv4()}>
+          <S.SidebarMyClass key={uuidv4()}>
             <S.SideButton onClick={props.onClickSideButton(el)}>
               {el}
             </S.SideButton>
             <S.SmallLine></S.SmallLine>
-          </S.SiderbarMyClass>
+          </S.SidebarMyClass>
         ))}
         <S.SideTitle>ITEM</S.SideTitle>
         {myItem.map((el) => (
-          <S.SiderbarMyItem key={uuidv4()}>
+          <S.SidebarMyItem key={uuidv4()}>
             <S.SideButton onClick={props.onClickSideButton(el)}>
               {el}
             </S.SideButton>
             <S.SmallLine></S.SmallLine>
-          </S.SiderbarMyItem>
+          </S.SidebarMyItem>
         ))}
       </S.Sidebar>
     </>

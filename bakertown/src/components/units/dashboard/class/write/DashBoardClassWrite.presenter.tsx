@@ -9,7 +9,7 @@ import { UploadOutlined } from "@ant-design/icons";
 const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
   return (
     <S.Wrapper>
-      <S.Title>클래스 등록 페이지</S.Title>
+      <S.Title>클래스 {props.isEdit ? "수정" : "등록"} 페이지</S.Title>
       <S.ClassNameWrapper>
         <S.ClassNameTitle>클래스 제목</S.ClassNameTitle>
         <S.ClassName
@@ -17,6 +17,7 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           onChange={props.onChangeInputs}
           placeholder="클래스 제목을 입력해 주세요.(40글자 제한)"
           name="className"
+          defaultValue={props.myClass?.className}
         />
       </S.ClassNameWrapper>
       <S.ClassPatissierWrapper>
@@ -46,6 +47,7 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           onChange={props.onChangeInputs}
           placeholder="클래스에 대한 설명을 간략히 설명해 주세요."
           name="remarks"
+          defaultValue={props.myClass?.remarks}
         />
       </S.ClassRemarksWrapper>
       <S.ClassContentsWrapper>
@@ -55,15 +57,17 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           onChange={props.onChangeInputs}
           placeholder="클래스 소개를 자세히 입력해 주세요."
           name="contents"
+          defaultValue={props.myClass?.contents}
         />
       </S.ClassContentsWrapper>
       <S.ClassPriceWrapper>
         <S.ClassPriceTitle>클래스 가격</S.ClassPriceTitle>
         <S.ClassPrice
-          type="text"
+          type="number"
           onChange={props.onChangeInputs}
           placeholder="수업료를 입력해 주세요."
           name="price"
+          defaultValue={props.myClass?.price}
         />
       </S.ClassPriceWrapper>
       <S.AddressWrapper>
@@ -73,7 +77,7 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
             type="text"
             placeholder="도로명주소"
             readOnly
-            defaultValue={props.address}
+            defaultValue={props.myClass?.address}
           />
           <S.RoadNameSearchButton onClick={props.onToggleModal}>
             도로명주소 검색
@@ -94,6 +98,7 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           onChange={props.onChangeInputs}
           name="detailAddress"
           placeholder="상세주소를 입력해 주세요."
+          defaultValue={props.myClass?.detailAddress}
         />
       </S.AddressWrapper>
       <S.RelatedFileWrapper>
@@ -131,7 +136,12 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           />
         </S.ScheduleModal>
       </S.ChooseScheduleWrapper>
-      <S.SubmitButton onClick={props.onClickSubmit}>등록하기</S.SubmitButton>
+      {!props.isEdit && (
+        <S.SubmitButton onClick={props.onClickSubmit}>등록하기</S.SubmitButton>
+      )}
+      {props.isEdit && (
+        <S.SubmitButton onClick={props.onClickUpdate}>수정하기</S.SubmitButton>
+      )}
     </S.Wrapper>
   );
 };

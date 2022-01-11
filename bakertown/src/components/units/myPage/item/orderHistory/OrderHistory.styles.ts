@@ -1,58 +1,10 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 1920px;
+  width: 100%;
   display: flex;
-  margin-left: 324px;
-  margin-top: 69px;
-`;
-
-export const MyPoint = styled.div`
-  margin: 9px 37px 10px 30px;
-  font-size: 24px;
-  text-align: left;
-  color: #ff4d12;
-`;
-export const MyPointTitle = styled.div`
-  margin: 10px 0 9px 30px;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: left;
-`;
-export const Title = styled.div`
-  margin: 0 14px 10px 30px;
-  font-size: 32px;
-  font-weight: bold;
-`;
-export const Sidebar = styled.div``;
-
-export const SiderbarMyClass = styled.div`
-  padding-left: 30px;
-`;
-
-export const SiderbarMyItem = styled.div`
-  padding-left: 30px;
-`;
-
-export const SideTitle = styled.div`
-  width: 246px;
-  height: 66px;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  font-size: 24px;
-  font-weight: bold;
-  padding-top: 15px;
-  padding-left: 30px;
-`;
-
-export const SideButton = styled.div`
-  font-size: 20px;
-  margin-top: 5.5px;
-  margin-bottom: 9.5px;
-`;
-
-export const SmallLine = styled.div`
-  border-bottom: 1px solid #e2e2e2;
+  justify-content: center;
+  margin-top: 77px;
 `;
 
 export const OrderList = styled.div`
@@ -71,10 +23,6 @@ export const ListTitleText = styled.div`
   font-weight: bold;
 `;
 
-export const ListSelect = styled.select``;
-
-export const ListOption = styled.option``;
-
 export const ListContents = styled.div`
   width: 1000px;
   display: flex;
@@ -89,7 +37,9 @@ export const Order = styled.div`
   margin-bottom: 40px;
 `;
 
-export const OrderDate = styled.div``;
+export const OrderDate = styled.div`
+  font-size: 20px;
+`;
 
 export const OrderWrapper = styled.div`
   width: 987px;
@@ -128,8 +78,8 @@ export const ItemPrice = styled.div`
 export const ItemAmount = styled.div``;
 
 export const AfterOrder = styled.div`
-margin-top: 24px;
-margin-left: 80px;
+  margin-top: 24px;
+  margin-left: 80px;
 `;
 
 export const TrackingShipment = styled.button`

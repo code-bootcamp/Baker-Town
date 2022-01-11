@@ -11,22 +11,20 @@ const BasketPresenter = (props) => {
           <S.BasketTitle>
             <S.BasketTitleText>ITEM | 장바구니</S.BasketTitleText>
           </S.BasketTitle>
-          <S.Basket>
-            <S.BasketContents>
-              {props.userResult?.itemHeart?.map((el) => (
-                <S.ItemWrapper key={uuidv4()}>
-                  <S.BasketCheckBoxContainer>
-                    <S.BasketCheckBox></S.BasketCheckBox>
-                  </S.BasketCheckBoxContainer>
-                  <S.ItemImage />
-                  <S.ItemInfo>
-                    <S.ItemName>{el.itemName}</S.ItemName>
-                    <S.ItemPrice>{el.price}원</S.ItemPrice>
-                  </S.ItemInfo>
-                </S.ItemWrapper>
-              ))}
-            </S.BasketContents>
-          </S.Basket>
+          <S.BasketContents>
+            {props.userResult?.itemHeart?.map((el) => (
+              <S.ItemWrapper key={uuidv4()}>
+                <S.ItemImage onClick={props.itemDetail(el)} />
+                <S.ItemInfo>
+                  <S.ItemName onClick={props.itemDetail(el)}>
+                    {el.itemName}
+                  </S.ItemName>
+                  <S.ItemPrice>{el.price}원</S.ItemPrice>
+                </S.ItemInfo>
+                <S.BasketCheckBox type="checkbox" />
+              </S.ItemWrapper>
+            ))}
+          </S.BasketContents>
         </S.BasketList>
       </S.Wrapper>
     </>

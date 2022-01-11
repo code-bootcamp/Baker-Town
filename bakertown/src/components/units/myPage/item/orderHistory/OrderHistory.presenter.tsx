@@ -18,9 +18,11 @@ const OrderHistoryPresenter = (props) => {
               <S.Order key={uuidv4()}>
                 <S.OrderDate>{el.createdAt} 주문</S.OrderDate>
                 <S.OrderWrapper>
-                  <S.ItemImage />
+                  <S.ItemImage onClick={props.itemDetail(el)} />
                   <S.ItemInfoWrapper>
-                    <S.ItemName>{el.itemName}</S.ItemName>
+                    <S.ItemName onClick={props.itemDetail(el)}>
+                      {el.itemName}
+                    </S.ItemName>
                     <S.ItemInfo>
                       <S.ItemPrice>{el.price}원</S.ItemPrice>
                       <S.ItemAmount>1개</S.ItemAmount>

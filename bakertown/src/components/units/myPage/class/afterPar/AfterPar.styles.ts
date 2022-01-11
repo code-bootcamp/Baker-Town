@@ -53,7 +53,10 @@ export const Class = styled.div`
 `;
 
 export const ClassInfoWrapper = styled.div`
-  padding-left: 29.5px;
+  padding-left: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; ;
 `;
 
 export const ClassImage = styled.img`
@@ -89,9 +92,9 @@ export const ClassLine = styled.div`
 
 export const ClassPeople = styled.div`
   width: 536px;
-  height: 25px;
   font-family: NotoSans;
   font-size: 18px;
+  margin-bottom: 20px;
 `;
 
 export const ClassSubWrapper = styled.div`

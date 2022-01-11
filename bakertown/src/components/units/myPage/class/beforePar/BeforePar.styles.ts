@@ -31,16 +31,14 @@ export const ListContents = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
-  /* background-color: red; */
 `;
 
 export const ClassWrapper = styled.div`
   width: 987px;
   height: 180px;
+  margin-bottom: 24px;
   padding-left: 30px;
   padding-top: 20px;
-  padding-bottom: 20px;
   display: flex;
   border-radius: 10px;
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
@@ -73,14 +71,18 @@ export const ClassPatissier = styled.div`
 `;
 
 export const ClassInfoWrapper = styled.div`
-  padding-left: 29.5px;
+  padding-left: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const ClassDate = styled.div`
-  width: 150px;
-  height: 55px;
+  /* width: 150px; */
+  /* height: 55px; */
   font-family: NotoSans;
-  font-size: 18px;
+  font-size: 20px;
+  margin-bottom: 20px;
 `;
 
 export const ClassName = styled.div`
@@ -99,9 +101,12 @@ export const ClassLine = styled.div`
 
 export const ClassPeople = styled.div`
   width: 536px;
-  height: 25px;
   font-family: NotoSans;
   font-size: 18px;
+  margin-bottom: 20px;
 `;
 
-export const ClassCancelButton = styled.div``;
+export const ClassCancelButton = styled.button`
+  background-color: transparent;
+  border: none;
+`;

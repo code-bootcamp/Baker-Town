@@ -17,10 +17,12 @@ const AfterParPresenter = (props) => {
             {props.userResult.afterPar?.map((el, index) => (
               <S.ClassWrapper>
                 <S.Class>
-                  <S.ClassImage />
+                  <S.ClassImage onClick={props.classDetail(el)} />
                   <S.ClassInfoWrapper>
                     <S.ClassPatissier>{el.category}</S.ClassPatissier>
-                    <S.ClassName>{el.className}</S.ClassName>
+                    <S.ClassName onClick={props.classDetail(el)}>
+                      {el.className}
+                    </S.ClassName>
                     <S.ClassPeople>
                       수강신청 인원 {el.class.member}명
                     </S.ClassPeople>

@@ -144,7 +144,11 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               >
                 <Slider {...settings}>
                   {props.popular.map((el: any) => (
-                    <ClassSubject el={el} key={uuidv4()} />
+                    <ClassSubject
+                      el={el}
+                      key={uuidv4()}
+                      classDetail={props.classDetail(el)}
+                    />
                   ))}
                 </Slider>
               </S.SliderWrapper>
@@ -167,7 +171,11 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                 >
                   <Slider {...settings}>
                     {props.recent.map((el: any) => (
-                      <ClassSubject el={el} key={uuidv4()} />
+                      <ClassSubject
+                        el={el}
+                        key={uuidv4()}
+                        classDetail={props.classDetail(el)}
+                      />
                     ))}
                   </Slider>
                 </S.SliderWrapper>
@@ -189,7 +197,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
           </S.EventWrapper>
           <S.MiddleBanner>
             <S.MiddleBannerWrapper>
-              <S.MiddleBannerText>
+              <S.MiddleBannerText onClick={props.bakingList}>
                 베이킹 전혀 어렵지 않아요 ! 지금 배우러 가기{" "}
               </S.MiddleBannerText>
               <S.MiddleBannerArrow src="imgs/rightarrow.png" />

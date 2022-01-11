@@ -25,7 +25,11 @@ const BasketContainer = () => {
     }
   });
 
-  return <BasketPresenter userResult={myUser} />;
+  const onClickItemDetail = (el) => () => {
+    router.push(`/store/detail/${el.itemRouter}`);
+  };
+
+  return <BasketPresenter userResult={myUser} itemDetail={onClickItemDetail} />;
 };
 
 export default BasketContainer;

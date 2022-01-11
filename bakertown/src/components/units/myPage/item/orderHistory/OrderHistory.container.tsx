@@ -88,6 +88,10 @@ const OrderHistoryContainer = () => {
     });
   };
 
+  const onClickItemDetail = (el) => () => {
+    router.push(`/store/detail/${el.itemRouter}`);
+  };
+
   return (
     <OrderHistoryPresenter
       userResult={myUser}
@@ -97,6 +101,7 @@ const OrderHistoryContainer = () => {
       setRating={setRating}
       onClickReview={onClickReview}
       setReviewContents={setReviewContents}
+      itemDetail={onClickItemDetail}
     />
   );
 };

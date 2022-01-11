@@ -85,7 +85,6 @@ const BeforeParContainer = () => {
   // }, []);
 
   const onClickClassDetail = (el) => () => {
-    console.log(el.classRouter);
     router.push(`/class/detail/${el.classRouter}`);
   };
 
