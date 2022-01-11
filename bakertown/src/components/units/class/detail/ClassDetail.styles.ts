@@ -1,4 +1,9 @@
 import styled from "@emotion/styled";
+import {
+  IClassDetailStylesMapProps,
+  IClassDetailStylesProgramProps,
+  IClassDetailStylesReviewProps,
+} from "./ClassDetail.types";
 
 export const NavBarWrapper = styled.div`
   width: 100vw;
@@ -30,7 +35,8 @@ export const NavProgram = styled.div`
   width: 89px;
   height: 100px;
   font-size: 24px;
-  font-weight: ${(props) => (props.isSelectedProgram ? "bold" : "none")};
+  font-weight: ${(props: IClassDetailStylesProgramProps) =>
+    props.isSelectedProgram ? "bold" : "none"};
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -48,18 +54,19 @@ export const ProgramLine = styled.div`
   height: 5px;
   position: absolute;
   border-radius: 10px;
-  background-color: ${(props) =>
+  background-color: ${(props: IClassDetailStylesProgramProps) =>
     props.isSelectedProgram ? "#1e1e1e" : "transparent"};
   top: 94px;
-  transition: ${(props) => (props.isSelectedProgram ? "400ms" : "0s")};
+  transition: ${(props: IClassDetailStylesProgramProps) =>
+    props.isSelectedProgram ? "400ms" : "0s"};
 `;
 
 export const NavPlace = styled.div`
   width: 89px;
   /* height: 33px; */
   font-size: 24px;
-  font-weight: ${(props) =>
-    props.isSelectedMap && !props.isSelectedReview ? "bold" : "none"};
+  font-weight: ${(props: IClassDetailStylesMapProps) =>
+    props.isSelectedMap ? "bold" : "none"};
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -77,7 +84,7 @@ export const MapLine = styled.div`
   position: absolute;
   border-radius: 10px;
   /* background-color: black; */
-  background-color: ${(props) =>
+  background-color: ${(props: IClassDetailStylesMapProps) =>
     props.isSelectedMap ? "#1e1e1e" : "transparent"};
   top: 62px;
   transition: ${(props) => (props.isSelectedMap ? "400ms" : "0s")};
@@ -87,7 +94,8 @@ export const NavReview = styled.div`
   width: 45px;
   /* height: 33px; */
   font-size: 24px;
-  font-weight: ${(props) => (!props.isSelectedReview ? "none" : "bold")};
+  font-weight: ${(props: IClassDetailStylesReviewProps) =>
+    !props.isSelectedReview ? "none" : "bold"};
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -104,7 +112,7 @@ export const ReviewLine = styled.div`
   position: absolute;
   border-radius: 10px;
   /* background-color: black; */
-  background-color: ${(props) =>
+  background-color: ${(props: IClassDetailStylesReviewProps) =>
     props.isSelectedReview ? "#1e1e1e" : "transparent"};
   top: 91px;
   transition: ${(props) => (props.isSelectedReview ? "400ms" : "0s")};

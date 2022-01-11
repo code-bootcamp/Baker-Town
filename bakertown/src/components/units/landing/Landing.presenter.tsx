@@ -148,6 +148,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                       el={el}
                       key={uuidv4()}
                       classDetail={props.classDetail(el)}
+                      // onClick={props.classDetail(el)}
                     />
                   ))}
                 </Slider>

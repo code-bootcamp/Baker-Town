@@ -514,9 +514,9 @@ export const CategoryButton = styled.button`
   z-index: 1;
 
   background-image: ${(props) =>
-    props.value === "베이킹" && "url(/imgs/baking.jpg)"};
+    props.value === "베이킹" && "url(/imgs/baking2.jpg)"};
   background-image: ${(props) =>
-    props.value === "마카롱" && "url(/imgs/macaron.jpg)"};
+    props.value === "마카롱" && "url(/imgs/macaron2.jpg)"};
   background-image: ${(props) =>
     props.value === "케이크" && "url(/imgs/cake.jpg)"};
   background-image: ${(props) =>

@@ -8,12 +8,10 @@ export const ClassSubject = (props: IClassSubject) => {
         {props.el.images?.[0] ? (
           <S.ClassImage
             src={`https://storage.googleapis.com/${props.el.images?.[0]}`}
-            // onClick={props.classDetail(props.el)}
+            onClick={props.classDetail}
           />
         ) : (
-          <S.ClassImage
-          // onClick={props.classDetail(props.el)}
-          />
+          <S.ClassImage onClick={props.classDetail} />
         )}
         <S.ClassPatissier>{props.el.patissier}</S.ClassPatissier>
         <S.ClassName>{props.el.className}</S.ClassName>

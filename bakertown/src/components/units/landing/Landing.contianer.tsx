@@ -110,7 +110,6 @@ const LandingContainer = () => {
   };
 
   const onClickClassDetail = (el) => () => {
-    alert("zmfflr");
     router.push(`/class/detail/${el.id}`);
   };
 

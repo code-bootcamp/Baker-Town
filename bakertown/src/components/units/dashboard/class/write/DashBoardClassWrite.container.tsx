@@ -35,11 +35,12 @@ const DashBoardMainClassWriteContainer = (
     patissier: "",
     patissierId: "",
     detailAddress: "",
+    introduce: "",
     heart: 0,
     review: [],
     images: [],
     applyClass: {
-      classArray: {},
+      classArray: [],
     },
   });
   const [classSchedule, setClassSchedule] = useState([]);
@@ -92,6 +93,7 @@ const DashBoardMainClassWriteContainer = (
     myInputs.patissierId = currentUser?.uid;
     myInputs.patissier = userResult?.data().name;
     myInputs.createdAt = getDate(new Date());
+    myInputs.introduce = userResult?.data().introduce;
     console.log(myInputs);
 
     if (
@@ -144,6 +146,7 @@ const DashBoardMainClassWriteContainer = (
       heart: myInputs.heart,
       review: myInputs.review,
       detailAddress: myInputs.detailAddress,
+      introduce: myInputs.introduce,
       createdAt: "",
       [event.target.name]: event.target.value,
     });
