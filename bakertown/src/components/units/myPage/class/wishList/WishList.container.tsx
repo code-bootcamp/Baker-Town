@@ -22,7 +22,14 @@ const WishListContainer = () => {
       setMyUser(userResult.data());
     }
   });
-  return <WishListPresenter userResult={myUser} />;
+
+  const onClickClassDetail = (el) => () => {
+    router.push(`/class/detail/${el.classRouter}`);
+  };
+
+  return (
+    <WishListPresenter userResult={myUser} classDetail={onClickClassDetail} />
+  );
 };
 
 export default WishListContainer;

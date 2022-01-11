@@ -392,6 +392,7 @@ export const MiddleBannerWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  cursor: pointer;
 `;
 
 export const MiddleBannerText = styled.div`

@@ -13,16 +13,20 @@ import {
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
+import { useRouter } from "next/router";
 // 선우의 만들어진 api키들이 app.tsx에 있는데 app에서 한번 가져오고 그걸 또 가져온거다.
 
 const DashBoardClassReadContainer = () => {
   const [docs, setDocs] = useState([]);
   const currentUser: any = useAuth();
+  const router = useRouter();
 
   useEffect(async () => {
     const product = query(
       collection(getFirestore(firebaseApp), "class"),
       where("patissierId", "!=", "")
+      // where("createdAt", "!=", "")
+      // orderBy("createdAt", "desc")
       // where("patissierId", "==", currentUser?.uid)
     );
 
@@ -42,11 +46,16 @@ const DashBoardClassReadContainer = () => {
     await deleteDoc(doc(getFirestore(firebaseApp), "class", el.id));
   };
 
+  const onClickClassDetail = (el) => () => {
+    router.push(`/class/detail/${el.id}`);
+  };
+
   return (
     <>
       <DashBoardClassReadPresenter
-        classes={docs}
+        class={docs}
         onClickDelete={onClickDelete}
+        classDetail={onClickClassDetail}
       />
       ;
     </>

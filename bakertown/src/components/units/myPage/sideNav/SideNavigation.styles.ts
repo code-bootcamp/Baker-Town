@@ -32,13 +32,9 @@ export const SettingImage = styled.img`
 
 export const Sidebar = styled.div``;
 
-export const SiderbarMyClass = styled.div`
-  padding-left: 30px;
-`;
+export const SidebarMyClass = styled.div``;
 
-export const SiderbarMyItem = styled.div`
-  padding-left: 30px;
-`;
+export const SidebarMyItem = styled.div``;
 
 export const SideTitle = styled.div`
   width: 246px;
@@ -53,10 +49,12 @@ export const SideTitle = styled.div`
 
 export const SideButton = styled.div`
   font-size: 20px;
-  margin-top: 5.5px;
-  margin-bottom: 9.5px;
+  /* margin-top: 5.5px;
+  margin-bottom: 9.5px; */
+  padding-top: 15.5px;
+  padding-bottom: 9.5px;
+  padding-left: 30px;
   cursor: pointer;
-
   :hover {
     background: rgba(220, 220, 220, 0.1);
     font-weight: bold;
@@ -66,5 +64,5 @@ export const SideButton = styled.div`
 export const SmallLine = styled.div`
   width: 187px;
   border-bottom: 1px solid #e2e2e2;
-  margin-bottom: 17.5px;
+  margin-left: 30px;
 `;

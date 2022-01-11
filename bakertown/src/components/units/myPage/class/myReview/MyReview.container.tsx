@@ -22,7 +22,14 @@ const MyReviewContainer = () => {
       setMyUser(userResult.data());
     }
   });
-  return <MyReviewPresenter userResult={myUser} />;
+
+  const onClickClassDetail = (el) => () => {
+    router.push(`/class/detail/${el.classRouter}`);
+  };
+
+  return (
+    <MyReviewPresenter userResult={myUser} classDetail={onClickClassDetail} />
+  );
 };
 
 export default MyReviewContainer;

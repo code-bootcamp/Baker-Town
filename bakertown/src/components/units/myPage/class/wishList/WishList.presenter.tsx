@@ -15,10 +15,12 @@ const WishListPresenter = (props) => {
             {props.userResult?.heart?.map((el) => (
               <S.ClassWrapper>
                 <S.Class>
-                  <S.ClassImage />
+                  <S.ClassImage onClick={props.classDetail(el)} />
                   <S.ClassInfoWrapper>
                     <S.ClassPatissier>{el.category}</S.ClassPatissier>
-                    <S.ClassName>{el.className}</S.ClassName>
+                    <S.ClassName onClick={props.classDetail(el)}>
+                      {el.className}
+                    </S.ClassName>
                   </S.ClassInfoWrapper>
                   <S.ClassLine></S.ClassLine>
                 </S.Class>

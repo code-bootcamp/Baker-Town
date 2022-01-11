@@ -82,6 +82,10 @@ const AfterParContainer = () => {
     });
   };
 
+  const onClickClassDetail = (el) => () => {
+    router.push(`/class/detail/${el.classRouter}`);
+  };
+
   return (
     <AfterParPresenter
       isOpen={isOpen}
@@ -91,6 +95,7 @@ const AfterParContainer = () => {
       rating={rating}
       setRating={setRating}
       userResult={myUser}
+      classDetail={onClickClassDetail}
     />
   );
 };

@@ -52,7 +52,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
       console.log("클래스 정보", classData);
       setMyClass(classData);
 
-      if (classData?.review.length === 0) return;
+      if (classData?.review?.length === 0) return;
 
       const arry = classData?.review?.map((el) => el.rating);
       // classData?.review?.[0]?.rating

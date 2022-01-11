@@ -35,7 +35,11 @@ const LandingContainer = () => {
       orderBy("heart", "desc")
     );
     let result = await getDocs(popular);
-    let docs = result.docs.map((el) => el.data());
+    let docs = result.docs.map((el) => {
+      const data = el.data();
+      data.id = el.id;
+      return data;
+    });
     setPoplular(docs);
 
     const recent = query(
@@ -43,7 +47,11 @@ const LandingContainer = () => {
       where("createdAt", "!=", "")
     );
     result = await getDocs(recent);
-    docs = result.docs.map((el) => el.data());
+    docs = result.docs.map((el) => {
+      const data = el.data();
+      data.id = el.id;
+      return data;
+    });
     setRecent(docs);
   }, []);
 
@@ -101,6 +109,15 @@ const LandingContainer = () => {
     }
   };
 
+  const onClickClassDetail = (el) => () => {
+    alert("zmfflr");
+    router.push(`/class/detail/${el.id}`);
+  };
+
+  const onClickBakingList = () => {
+    router.push(`/class/category/베이킹`);
+  };
+
   return (
     <>
       <LandingPresenter
@@ -120,6 +137,8 @@ const LandingContainer = () => {
         geRecent={onClickRecent}
         category={onClickCategory}
         enterKey={onKeyUpEnterKey}
+        classDetail={onClickClassDetail}
+        bakingList={onClickBakingList}
       />
     </>
   );

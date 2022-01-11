@@ -1,15 +1,18 @@
 import { IDashBoardClassReadProps } from "./DashBoardClassRead.types";
 import * as S from "./DashBoardClassRead.styles";
+import { v4 as uuidv4 } from "uuid";
 
 const DashBoardClassReadPresenter = (props: IDashBoardClassReadProps) => {
   return (
     <S.Wrapper>
-      {props.classes.map((el: any) => (
-        <S.ComponentWrapper>
-          <S.ImageWrapper></S.ImageWrapper>
+      {props.class.map((el: any) => (
+        <S.ComponentWrapper key={uuidv4()}>
+          <S.ImageWrapper onClick={props.classDetail(el)} />
           <S.DetailWrapper>
             <S.CategoryWrapper>{el.category}</S.CategoryWrapper>
-            <S.TitleWrapper>{el.className}</S.TitleWrapper>
+            <S.TitleWrapper onClick={props.classDetail(el)}>
+              {el.className}
+            </S.TitleWrapper>
             <S.ClassMember>수강신청 인원 2명</S.ClassMember>
           </S.DetailWrapper>
           <S.Line></S.Line>

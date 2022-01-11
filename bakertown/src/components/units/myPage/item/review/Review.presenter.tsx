@@ -15,14 +15,19 @@ const ReviewPresenter = (props) => {
           <S.ListContents>
             {props.userResult?.itemReview?.map((el) => (
               <S.OrderWrapper key={uuidv4()}>
-                <S.ItemImage />
-                <S.ClassPatissier>원데이</S.ClassPatissier>
-                <S.ItemInfo>
-                  <S.ItemName>{el.itemName},</S.ItemName>
-                  <S.ItemAmount>1개</S.ItemAmount>
-                </S.ItemInfo>
+                <S.TopWrapper>
+                  <S.ItemImage onClick={props.itemDetail(el)} />
+                  <S.ItemInfo>
+                    <S.ItemCategory>{el.category}</S.ItemCategory>
+                    <S.ItemName onClick={props.itemDetail(el)}>
+                      {el.itemName},
+                    </S.ItemName>
+                    {/* <S.ItemAmount>1개</S.ItemAmount> */}
+                  </S.ItemInfo>
+                </S.TopWrapper>
                 {/* <S.OrderDate>{el.createdAt}</S.OrderDate> */}
-                <S.Line>
+                <S.Line></S.Line>
+                <S.BottomWrapper>
                   <S.ItemReview>
                     <S.SubTheme>
                       <S.ItemStarRate>
@@ -33,12 +38,11 @@ const ReviewPresenter = (props) => {
                     {/* <S.ReviewRemarks>재밌어요</S.ReviewRemarks> */}
                     <S.Review>{el.contents}</S.Review>
                   </S.ItemReview>
-                </S.Line>
-                <S.OrderLine></S.OrderLine>
-                <S.Label>
-                  <S.ReviewEdit>수정</S.ReviewEdit>
-                  <S.ReviewDelete>삭제</S.ReviewDelete>
-                </S.Label>
+                  <S.Label>
+                    <S.ReviewEdit>수정</S.ReviewEdit>
+                    <S.ReviewDelete>삭제</S.ReviewDelete>
+                  </S.Label>
+                </S.BottomWrapper>
               </S.OrderWrapper>
             ))}
           </S.ListContents>
