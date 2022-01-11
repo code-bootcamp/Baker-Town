@@ -78,7 +78,7 @@ export const ItemPriceWrapper = styled.div`
 export const ItemPriceTitle = styled.div``;
 
 export const ItemPrice = styled.input`
-  width: 900px;
+  width: 300px;
 `;
 
 export const DeliveryScheduleWrapper = styled.div`
