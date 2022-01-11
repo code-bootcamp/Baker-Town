@@ -12,8 +12,9 @@ export const Wrapper = styled.header`
   width: 100%;
   height: 80px;
   transition: 800ms;
-  background-color: #fbf5ef;
+  /* background-color: blue; */
   background-size: cover;
+  border-bottom: 1px solid rgba(157, 157, 157, 0.2);
 `;
 
 export const InnerLogo = styled.div`
@@ -23,6 +24,7 @@ export const InnerLogo = styled.div`
   :hover {
     cursor: pointer;
   }
+  margin-top: 2px;
 `;
 
 export const ClassTitle = styled.div`
@@ -32,7 +34,7 @@ export const ClassTitle = styled.div`
   font-weight: 600;
   text-align: left;
   color: #4f3325;
-  margin-left: 172px;
+  margin-left: 148px;
   cursor: pointer;
 
   :hover {
@@ -85,6 +87,11 @@ export const RoundDivInnerText = styled.input`
   text-align: left;
   color: #706b68;
   transition: 500ms;
+  background-color: #fafafa;
+  :focus {
+    /* outline: 1px solid rgba(0, 0, 0, 0.3); */
+    outline: none;
+  }
 `;
 
 export const RoundDivCircle = styled.div`
@@ -188,6 +195,6 @@ export const SinInButton = styled.div`
 export const Img = styled.img`
    width: 115px;
   height: 42px;
-  margin: 5px 172px 1px 61px;
+  /* margin: 2px 172px 0px 61px; */
 }
 `;

@@ -354,6 +354,7 @@ width: 105px;
 height: 44px;
 margin-top: 3.5px;
 padding-top: 3.1px;
+border: 0px solid black;
 border-radius: 31px;
 background-color: rgba(79, 51, 37, 0.9);
 justify-content: space-evenly;
@@ -526,89 +527,142 @@ export const ScheduleWrapper = styled.div`
 
 export const ClassSchedule = styled.div`
   width: 370px;
-  height: 473px;
+  height: 400px;
   /* border: 1px solid gray; */
-  padding-left: 30px;
-  padding-top: 20px;
+
+  /* padding-top: 20px; */
   /* background-color: navy; */
   position: fixed;
   margin-top: 70px;
-  box-shadow: 8px 8px 30px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 1px 19px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-left: 26px;
+  background-color: white;
 `;
 
 export const ClassScheduleWrapper = styled.div`
   width: 100%;
-  height: 300px;
+  height: 100%;
   display: flex;
   /* flex-wrap: wrap; */
   flex-direction: column;
-  overflow: scroll;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+  padding-top: 20px;
 `;
 
 export const SmallTitle = styled.div`
   font-weight: bold;
   font-size: 25px;
-  margin-bottom: 10px;
+  padding-top: 20px;
+  /* margin-bottom: 10px; */
+`;
+
+export const SmallSmallTitle = styled.div`
+  font-size: 15px;
+  font-weight: normal;
+  padding-top: 3px;
+  margin-bottom: 4px;
 `;
 
 export const ClassArrayWrapper = styled.div`
   :hover {
+    background-color: rgba(0, 0, 0, 0.05);
     cursor: pointer;
   }
-  margin-top: 10px;
-  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1);
+  background: rgba(247, 240, 232, 0.1);
+  padding-bottom: 10px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+  /* margin-top: 10px; */
+  /* box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1); */
+  cursor: pointer;
 `;
-
-export const SmallText = styled.div``;
 
 export const ClassButton = styled.div`
-  width: 300px;
+  width: 330px;
   /* height: 100px; */
-  padding-top: 10px;
-  padding-left: 14.5px;
+  padding-top: 15px;
+  /* padding-left: 14.5px; */
   padding-bottom: 10px;
-  border: 2px solid #f7f7f7;
+
+  /* border: 2px solid #f7f7f7; */
 `;
 
-export const ClassDate = styled.div``;
+// export const SmallText = styled.div`
+//   font-size: 20px;
+// `;
+
+export const ClassDateToClassLine = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const ClassDateToClassTime = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 28px;
+`;
+
+export const ClassDate = styled.div`
+  font-weight: bold;
+  padding-bottom: 10px;
+`;
 
 export const SmallLine = styled.div`
-  margin-top: 10px;
+  margin-top: 13px;
   margin-bottom: 15px;
-  border-bottom: 2px solid #f7f7f7;
+  border-bottom: 1px solid rgba(79, 51, 37, 0.4);
   width: 267px;
 `;
+export const ClassStartTime = styled.div`
+  /* font-weight: bold; */
+`;
 
-export const ClassStartTime = styled.div``;
+export const ClassStartTimeTwo = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
 
 export const ClassRunningTime = styled.div``;
 
-export const ClassPrice = styled.div`
-  margin-top: 20px;
-  margin-right: 45px;
+export const ClassScheduleUnderWrapper = styled.div`
   display: flex;
-  justify-content: right;
-  font-size: 20px;
-  font-weight: bold;
+  justify-content: flex-end;
+  /* background: skyblue; */
+  width: 100%;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-bottom: 25px;
+  padding-top: 20px;
+`;
+
+export const ClassPrice = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+  font-weight: 600;
+  margin-right: 10px;
 `;
 
 export const ReservationButton = styled.button`
-  width: 100px;
-  height: 39px;
-  margin-top: 50px;
-  margin-left: 110px;
-  margin-bottom: 20px;
-  padding-top: 7px;
-  border: none;
-  border-radius: 20px;
+  width: 105px;
+  height: 44px;
+  border: 0px solid black;
+  border-radius: 31px;
+  background-color: rgba(79, 51, 37, 0.9);
   display: flex;
   justify-content: center;
+  align-items: center;
   color: white;
-  background-color: #662500;
   cursor: pointer;
 `;
