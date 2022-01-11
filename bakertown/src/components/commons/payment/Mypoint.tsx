@@ -91,10 +91,8 @@ export default function UserPoint() {
         ></script>
       </Head>
       <MyPoint>{ppoint}P</MyPoint>
-      <label>충전 포인트:</label>
-
       <select onChange={onClickSelectPoint} value={selectedPoint}>
-        <option>--충전할 금액을 선택해주세요--</option>
+        <option>--충전 포인트--</option>
 
         {selectList.map((el) => (
           <option key={el} value={el}>
