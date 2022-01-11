@@ -1,5 +1,5 @@
 import { withAuth } from "../../../src/components/commons/hocs/withAuth";
-import DashBoardMyPageContainer from "../../../src/components/units/dashboard/mypage/DashBoardMyPage.container";
+import DashBoardMyPageContainer from "../../../src/components/units/dashboard/myPage/DashBoardMyPage.container";
 
 const DashBoardMyPagePage = () => {
   return <DashBoardMyPageContainer />;

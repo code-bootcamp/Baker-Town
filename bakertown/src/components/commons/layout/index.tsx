@@ -25,7 +25,7 @@ const Body = styled.div`
 //   display: flex;
 // `;
 
-const HIDDEN_HEADER = [`/signIn`, `/dashboard/main`, `/`];
+const HIDDEN_HEADER = [`/signIn`, `/dashboard/main`, `/`, `/signUp`];
 
 const HIDDEN_BANNER = [
   `/signIn`,
@@ -49,7 +49,7 @@ const HIDDEN_NAVIGATION = [
   `/store`,
   `/mypage`,
 ];
-const HIDDEN_FOOTER = [`/signIn`, `/dashboard/main`];
+const HIDDEN_FOOTER = [`/signIn`, `/dashboard/main`, `/signUp`];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();

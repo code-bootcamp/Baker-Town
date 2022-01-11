@@ -1,7 +1,10 @@
 import * as S from "./DashBoardItemRead.styles";
 import { v4 as uuidv4 } from "uuid";
+import { IDashBoardItemReadPresenterProps } from "./DashBoardItemRead.types";
 
-const DashBoardItemReadPresenter = (props) => {
+const DashBoardItemReadPresenter = (
+  props: IDashBoardItemReadPresenterProps
+) => {
   return (
     <>
       <S.Wrapper>
@@ -16,7 +19,7 @@ const DashBoardItemReadPresenter = (props) => {
           </S.ItemListTitle>
 
           <S.ItemListContents>
-            {props.recent.map((el) => (
+            {props.recent.map((el: any) => (
               <S.ItemWrapper key={uuidv4()}>
                 <S.ItemImage />
                 <S.Seller></S.Seller>

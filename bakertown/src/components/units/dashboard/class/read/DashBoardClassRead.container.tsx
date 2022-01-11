@@ -32,7 +32,7 @@ const DashBoardClassReadContainer = () => {
 
     const data = await getDocs(product);
     // data로 만들기
-    const docs = data.docs.map((el) => {
+    const docs: any = data.docs.map((el) => {
       const data = el.data();
       data.id = el.id;
       return data;
@@ -42,11 +42,11 @@ const DashBoardClassReadContainer = () => {
     // console.log("날짜나 불러볼라고", docs?.[0].createdAt);
   }, []);
 
-  const onClickDelete = (el) => async () => {
+  const onClickDelete = (el: any) => async () => {
     await deleteDoc(doc(getFirestore(firebaseApp), "class", el.id));
   };
 
-  const onClickClassDetail = (el) => () => {
+  const onClickClassDetail = (el: any) => () => {
     router.push(`/class/detail/${el.id}`);
   };
 

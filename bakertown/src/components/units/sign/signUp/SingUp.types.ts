@@ -4,3 +4,6 @@ export interface FormValues {
   myPassword: string;
   myPassword2: string;
 }
+export interface ISignUpPresenterProps {
+  onClickSignIn: () => void;
+}

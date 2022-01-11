@@ -10,10 +10,11 @@ import { ChangeEvent, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 import { useRouter } from "next/router";
+import { AnyARecord } from "dns";
 
 export const DashBoardItemContainer = () => {
-  const router = useRouter()
-  const currentUser = useAuth();
+  const router = useRouter();
+  const currentUser: any = useAuth();
 
   const [myInputs, setMyInputs] = useState({
     itemName: "",
@@ -36,7 +37,7 @@ export const DashBoardItemContainer = () => {
       "users",
       currentUser?.email
     );
-    const userResult = await getDoc(userQuery);
+    const userResult: any = await getDoc(userQuery);
 
     myInputs.createdAt = getOnlyDate(new Date());
     console.log(currentUser);
@@ -76,8 +77,8 @@ export const DashBoardItemContainer = () => {
   };
 
   const onChangeCategory = (event: ChangeEvent<HTMLInputElement>) => {
-    myInputs.category = event.target.value
-  }
+    myInputs.category = event.target.value;
+  };
 
   return (
     <DashBoardItemPresenter

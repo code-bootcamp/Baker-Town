@@ -23,7 +23,7 @@ const DashBoardItemReadContainer = () => {
       // where("category", "==", categoryName)
     );
     let result = await getDocs(recent);
-    let docs = result.docs.map((el) => el.data());
+    let docs: any = result.docs.map((el) => el.data());
     console.log(docs);
     setRecent(docs);
   }, []);
