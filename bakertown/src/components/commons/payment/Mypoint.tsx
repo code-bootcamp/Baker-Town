@@ -16,6 +16,13 @@ export default function UserPoint() {
   const currentUser: any = useAuth();
   //   const { data } = useQuery(FETCH_USER_LOGGEDIN);
   const [ppoint, setPpoint] = useState(0);
+  const selectList = ["10000", "30000", "50000", "100000"];
+
+  const [selectedPoint, setSelectedPoint] = useState("");
+
+  function onClickSelectPoint(event) {
+    setSelectedPoint(event.target.value);
+  }
 
   useEffect(async () => {
     if (!currentUser) return;
@@ -37,7 +44,7 @@ export default function UserPoint() {
         pg: "html5_inicis",
         pay_method: "card",
         name: "포인트충전",
-        amount: 1000,
+        amount: selectedPoint,
         buyer_email: "cksal4897@gmail.com",
         buyer_name: "BAKER TOWN",
         buyer_tel: "010-0000-0000",
@@ -84,6 +91,17 @@ export default function UserPoint() {
         ></script>
       </Head>
       <MyPoint>{ppoint}P</MyPoint>
+      <label>충전 포인트:</label>
+
+      <select onChange={onClickSelectPoint} value={selectedPoint}>
+        <option>--충전할 금액을 선택해주세요--</option>
+
+        {selectList.map((el) => (
+          <option key={el} value={el}>
+            {el}포인트
+          </option>
+        ))}
+      </select>
       <ChargeButton onClick={onClickPayment}>포인트충전</ChargeButton>
     </>
   );

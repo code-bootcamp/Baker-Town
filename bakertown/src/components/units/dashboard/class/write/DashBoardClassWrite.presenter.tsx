@@ -98,8 +98,8 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
       </S.AddressWrapper>
       <S.RelatedFileWrapper>
         <S.RelatedFileTitle>파일을 첨부해 주세요</S.RelatedFileTitle>
-        <input type="file" onChange={props.onChangeImage2} />
-        <Space>
+        <input multiple={true} type="file" onChange={props.onChangeImage2} />
+        {/* <Space>
           <Upload
             listType="picture"
             maxCount={1}
@@ -109,8 +109,9 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           >
             <Button icon={<UploadOutlined />}>Upload (Max: 1)</Button>
           </Upload>
-        </Space>
+        </Space> */}
         {/* 날짜 및 시간 받아내기 */}
+        {/* <Upload onChange={props.onChangeImage2}>d</Upload> */}
       </S.RelatedFileWrapper>
       <S.ChooseScheduleWrapper>
         <S.ChooseScheduleTitle>
