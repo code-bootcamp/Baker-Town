@@ -174,18 +174,20 @@ const DashBoardMainClassWriteContainer = (props) => {
 
   // 수정하기 불러오기
   useEffect(async () => {
-    if (myClass?.address === "내 주소!") {
-      // if (!classData) return;
-      const product = doc(
-        getFirestore(firebaseApp),
-        "class",
-        String(router.query.classId)
-      );
-      const result = await getDoc(product);
-      const classData = result.data();
-      console.log("클래스 정보", classData);
-      setMyClass(classData);
-      setClassSchedule(classData?.applyClass.classArray);
+    if (props.isEdit) {
+      if (myClass?.address === "내 주소!") {
+        // if (!classData) return;
+        const product = doc(
+          getFirestore(firebaseApp),
+          "class",
+          String(router.query.classId)
+        );
+        const result = await getDoc(product);
+        const classData = result.data();
+        console.log("클래스 정보", classData);
+        setMyClass(classData);
+        setClassSchedule(classData?.applyClass.classArray);
+      }
     }
   });
 
