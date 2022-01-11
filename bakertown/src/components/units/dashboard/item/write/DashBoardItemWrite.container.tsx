@@ -9,8 +9,10 @@ import {
 import { ChangeEvent, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
+import { useRouter } from "next/router";
 
 export const DashBoardItemContainer = () => {
+  const router = useRouter()
   const currentUser = useAuth();
 
   const [myInputs, setMyInputs] = useState({
@@ -72,9 +74,15 @@ export const DashBoardItemContainer = () => {
       [event.target.name]: event.target.value,
     });
   };
+
+  const onChangeCategory = (event: ChangeEvent<HTMLInputElement>) => {
+    myInputs.category = event.target.value
+  }
+
   return (
     <DashBoardItemPresenter
       onChangeInputs={onChangeInputs}
+      onChangeCategory={onChangeCategory}
       onClickSubmit={onClickSubmit}
     />
   );

@@ -19,20 +19,23 @@ export const SideTitle = styled.div`
   padding-top: 20px;
   padding-left: 29px;
   margin-bottom: 16px;
+  cursor: pointer;
+
   :hover {
-    cursor: pointer;
-    color: #ff4d12;
+    background: rgba(220, 220, 220, 0.1);
   }
 `;
 
 export const SideButton = styled.div`
   font-size: 20px;
-  margin-top: 5.5px;
-  margin-bottom: 9.5px;
+  padding-top: 5.5px;
+  padding-bottom: 9.5px;
   padding-left: 29px;
+  cursor: pointer;
+
   :hover {
-    cursor: pointer;
-    color: #ff4d12;
+    background: rgba(220, 220, 220, 0.1);
+    font-weight: bold;
   }
 `;
 

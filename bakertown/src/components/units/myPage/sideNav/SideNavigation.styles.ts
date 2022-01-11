@@ -49,12 +49,15 @@ export const SideTitle = styled.div`
 
 export const SideButton = styled.div`
   font-size: 20px;
+  /* margin-top: 5.5px;
+  margin-bottom: 9.5px; */
   padding-top: 15.5px;
   padding-bottom: 9.5px;
   padding-left: 30px;
   cursor: pointer;
   :hover {
     background: rgba(220, 220, 220, 0.1);
+    font-weight: bold;
   }
 `;
 

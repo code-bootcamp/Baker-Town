@@ -27,14 +27,28 @@ const StoreListContainer = () => {
       limit(12) // 데이터 불러오는 개수 제한
     );
     const firstResult = await getDocs(first);
-    
-    setRecent(firstResult.docs.map((el) => el.data()));
+
+    setRecent(
+      firstResult.docs.map((el) => {
+        const data = el.data();
+        data.id = el.id;
+        return data;
+      })
+    );
     console.log(recent);
   }, []);
 
   const onClickSideButton = (el: string) => () => {
     router.push(`/store/category/${el}`);
   };
+
+  const onClickDetail = (el: any) => () => {
+    router.push(`/store/detail/${el.id}`);
+  };
+
+  const onClickItemList = () => {
+    router.push(`/store/list`)
+  }
 
   // const onClickOption = (event) => {
   //   setOption(event.target.id);
@@ -45,6 +59,9 @@ const StoreListContainer = () => {
       recent={recent}
       onClickSideButton={onClickSideButton}
       // onClickOption={onClickOption}
+      onClickDetail={onClickDetail}
+      categoryName={categoryName}
+      itemList={onClickItemList}
     />
   );
 };
