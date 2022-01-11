@@ -145,7 +145,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                   </S.SubTheme2>
                 </S.SubComponentWrapper>
                 <Slider {...settings}>
-                  {props.myClass?.images?.map((el) => (
+                  {props.myClass?.images?.map((el: any) => (
                     <div key={uuidv4()}>
                       <S.ClassImage
                         src={`https://storage.googleapis.com/${el}`}
@@ -185,7 +185,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 <S.ContactPatissier>연락하기</S.ContactPatissier>
               </S.PatissierWrapper>
               <S.PatissierContentsBox>
-                <div>파티셰의 한 줄 소개입니다.</div>
+                <div>{props?.myClass?.introduce}</div>
               </S.PatissierContentsBox>
             </S.PatissierInfo>
             <S.ClassLocationInfo ref={props.MapRef}>
@@ -216,7 +216,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 <S.Rate>{props.ratingAverage}</S.Rate>
                 <S.Rater>(1,700)</S.Rater>
               </S.ClassStarRate2>
-              {props.myClass?.review?.map((el) => (
+              {props.myClass?.review?.map((el: any) => (
                 <div key={uuidv4()}>
                   <S.ClassReview>
                     <S.ClassReviewerPhoto src="/imgs/user.png" />
@@ -245,37 +245,39 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               {/* <div>{Object.keys(props.myClass?.applyClass[0])[1]}</div>
                 <div>{Object.keys(props.myClass?.applyClass[0])[0]}</div> */}
               <S.ClassScheduleWrapper>
-                {props.myClass?.applyClass?.classArray?.map((el, index) => (
-                  <S.ClassArrayWrapper
-                    key={uuidv4()}
-                    onClick={props.selectDate(el, index)}
-                  >
-                    {/* <div>날짜: {el.class.date}</div>
+                {props.myClass?.applyClass?.classArray?.map(
+                  (el: any, index: number) => (
+                    <S.ClassArrayWrapper
+                      key={uuidv4()}
+                      onClick={props.selectDate(el, index)}
+                    >
+                      {/* <div>날짜: {el.class.date}</div>
                     <div>시작시간: {el.class.start}</div>
                     <div>최대인원: {el.class.member}</div> */}
-                    <S.ClassButton>
-                      {/* <S.SmallText>모집 타임</S.SmallText> */}
-                      <S.ClassDateToClassLine>
-                        <S.ClassDateToClassTime>
-                          <S.ClassDate>{el.class.date}</S.ClassDate>
-                          <S.ClassStartTime>
-                            시작시간 |&nbsp;&nbsp; {el.class.start}
-                          </S.ClassStartTime>
-                          <S.ClassRunningTime>
-                            수업시간 |&nbsp;&nbsp; {el.class.runningTime}
-                          </S.ClassRunningTime>
-                        </S.ClassDateToClassTime>
-                        <S.SmallLine></S.SmallLine>
-                      </S.ClassDateToClassLine>
-                      <S.ClassStartTimeTwo>
-                        <div>
-                          신청완료 &nbsp;&nbsp;{el.class.membersName.length}명
-                        </div>
-                        <div>수강인원 &nbsp;&nbsp;{el.class.member}명</div>
-                      </S.ClassStartTimeTwo>
-                    </S.ClassButton>
-                  </S.ClassArrayWrapper>
-                ))}
+                      <S.ClassButton>
+                        {/* <S.SmallText>모집 타임</S.SmallText> */}
+                        <S.ClassDateToClassLine>
+                          <S.ClassDateToClassTime>
+                            <S.ClassDate>{el.class.date}</S.ClassDate>
+                            <S.ClassStartTime>
+                              시작시간 |&nbsp;&nbsp; {el.class.start}
+                            </S.ClassStartTime>
+                            <S.ClassRunningTime>
+                              수업시간 |&nbsp;&nbsp; {el.class.runningTime}
+                            </S.ClassRunningTime>
+                          </S.ClassDateToClassTime>
+                          <S.SmallLine></S.SmallLine>
+                        </S.ClassDateToClassLine>
+                        <S.ClassStartTimeTwo>
+                          <div>
+                            신청완료 &nbsp;&nbsp;{el.class.membersName.length}명
+                          </div>
+                          <div>수강인원 &nbsp;&nbsp;{el.class.member}명</div>
+                        </S.ClassStartTimeTwo>
+                      </S.ClassButton>
+                    </S.ClassArrayWrapper>
+                  )
+                )}
               </S.ClassScheduleWrapper>
               <S.ClassScheduleUnderWrapper>
                 <S.ClassPrice>{props.myClass?.price}원</S.ClassPrice>

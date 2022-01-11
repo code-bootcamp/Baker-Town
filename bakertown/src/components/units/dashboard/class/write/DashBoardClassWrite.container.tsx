@@ -31,10 +31,13 @@ const DashBoardMainClassWriteContainer = (props) => {
     patissier: "",
     patissierId: "",
     detailAddress: "",
+    introduce: "",
     heart: 0,
     review: [],
     images: [],
-    applyClass: {},
+    applyClass: {
+      classArray: [],
+    },
   });
   const [classSchedule, setClassSchedule] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
@@ -78,7 +81,7 @@ const DashBoardMainClassWriteContainer = (props) => {
       "users",
       currentUser?.email
     );
-    const userResult = await getDoc(userQuery);
+    const userResult: any = await getDoc(userQuery);
     // 등록 날짜 및 시간 설정
     myInputs.applyClass.classArray = classSchedule;
 
@@ -86,6 +89,7 @@ const DashBoardMainClassWriteContainer = (props) => {
     myInputs.patissierId = currentUser?.uid;
     myInputs.patissier = userResult?.data().name;
     myInputs.createdAt = getDate(new Date());
+    myInputs.introduce = userResult?.data().introduce;
     console.log(myInputs);
 
     if (
@@ -138,6 +142,7 @@ const DashBoardMainClassWriteContainer = (props) => {
       heart: myInputs.heart,
       review: myInputs.review,
       detailAddress: myInputs.detailAddress,
+      introduce: myInputs.introduce,
       createdAt: "",
       [event.target.name]: event.target.value,
     });

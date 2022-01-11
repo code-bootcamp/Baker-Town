@@ -5,4 +5,4 @@ const DashBoardMyPagePage = () => {
   return <DashBoardMyPageContainer />;
 };
 
-export default withAuth(DashBoardMyPagePage);
+export default DashBoardMyPagePage;
