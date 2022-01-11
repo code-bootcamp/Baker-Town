@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useMemo } from "react";
+import { useEffect, useState, useRef, useMemo, ChangeEvent } from "react";
 import ClassDetailPresenter from "./ClassDetail.presenter";
 import {
   getFirestore,
@@ -13,7 +13,7 @@ import { getDate, getOnlyDate } from "../../../../commons/libraries/getDate";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
 import { getAuth } from "firebase/auth";
 
-const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
+const ClassDetailContainer = () => {
   const router = useRouter();
 
   const [myClass, setMyClass] = useState({
@@ -23,23 +23,24 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
     className: "제목 로딩중!!",
     contents: "내용 로딩중!!!",
     price: "",
+    review: [],
+    heart: 0,
+    images: [],
+    patissier: "",
+    remarks: "",
+    introduce: "",
+    district: "",
+    applyClass: {
+      classArray: [],
+    },
   });
   const [myDate, setMyDate] = useState("");
   const [myIndex, setMyIndex] = useState(-1);
   const [myName, setMyName] = useState("");
   const [ratingAverage, setRatingAverage] = useState(0);
   const currentUser: any = useAuth();
-  // if (process.browser) {
-  //   const product = doc(
-  //     getFirestore(firebaseApp),
-  //     "class",
-  //     String(router.query.classId)
-  //   );
-  //   const result = await getDoc(product);
-  //   const aaa = result.data();
-  //   setMyClass(aaa);
-  // }
-  useEffect(async () => {
+
+  const classDetail = async () => {
     if (myClass?.address === "내 주소!") {
       // if (!classData) return;
       const product = doc(
@@ -48,22 +49,27 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
         String(router.query.classId)
       );
       const result = await getDoc(product);
-      const classData = result.data();
-      console.log("클래스 정보", classData);
+      const classData: any = result.data();
+      // console.log("클래스 정보", classData);
       setMyClass(classData);
 
-      if (classData?.review.length === 0) return;
+      if (classData?.review?.length === 0) return;
 
-      const arry = classData?.review?.map((el) => el.rating);
+      const arry = classData?.review?.map((el: any) => el.rating);
       // classData?.review?.[0]?.rating
       console.log("arry", arry);
 
       const reviewFunction =
-        arry?.reduce((acc, cur) => acc + cur) / arry?.length;
+        arry?.reduce((acc: any, cur: any) => acc + cur) / arry?.length;
       console.log(reviewFunction);
       setRatingAverage(reviewFunction ? Number(reviewFunction) : Number("0"));
     }
+  };
+
+  useEffect(() => {
+    classDetail();
   });
+
   const currentID = getAuth().currentUser?.uid;
   const onClickReservation = async () => {
     if (currentID) {
@@ -84,7 +90,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
         "users",
         currentUser?.email
       );
-      const userResult = await getDoc(userQuery);
+      const userResult: any = await getDoc(userQuery);
 
       // 돈 없으면 내보내기
       if (userResult.data().mypoint < myClass?.price) {
@@ -101,7 +107,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
       console.log(buyInfo);
 
       // 현재 페이지의 예약정보
-      const currentReservInfo = myClass?.applyClass;
+      const currentReservInfo: any = myClass?.applyClass;
 
       // 예약 마감 시 내보내기
       if (
@@ -112,7 +118,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
         return;
       }
       //현재 나의 포인트 - class가격
-      const charge = userResult.data().mypoint - buyInfo.price;
+      const charge = userResult.data().mypoint - Number(buyInfo.price);
 
       // 현재 페이지 예약정보에 내 이름 넣기
       currentReservInfo?.classArray?.[myIndex].class.membersName.push(
@@ -151,7 +157,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
     }
   };
 
-  const onClickSelectDate = (el, index) => () => {
+  const onClickSelectDate = (el: any, index: number) => () => {
     // setMyDate(myClass?.applyClass?.classArray?.[index].class.date);
     console.log(el);
     alert(
@@ -160,7 +166,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
     setMyIndex(index);
   };
 
-  const onChangeName = (event) => {
+  const onChangeName = (event: ChangeEvent<HTMLInputElement>) => {
     setMyName(event.target.value);
   };
 
@@ -178,10 +184,10 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
       "users",
       currentUser?.email
     );
-    const userResult = await getDoc(userQuery);
+    const userResult: any = await getDoc(userQuery);
     console.log("내정보", userResult);
     // 현재 페이지의 리뷰정보
-    const currentReview = myClass?.review?.reviewArray;
+    const currentReview: any = myClass?.review;
 
     // 내가 달고 싶은 리뷰
     const myReview = {
@@ -228,7 +234,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
       "users",
       currentUser?.email
     );
-    const userResult = await getDoc(userQuery);
+    const userResult: any = await getDoc(userQuery);
 
     // 내 찜 목록
     const userHeart = userResult.data().heart;
@@ -293,16 +299,16 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
   // 스크롤 지나면 글자 굵기 변경
   //program ref
 
-  const ReviewRef = useRef();
-  const ProgramRef = useRef();
-  const MapRef = useRef();
+  const ReviewRef: any = useRef();
+  const ProgramRef: any = useRef();
+  const MapRef: any = useRef();
   const testRef = useRef();
 
   // console.log("ProgramRef", ProgramRef);
 
   const [isSelectedProgram, setIsSelectedProgram] = useState(false);
 
-  const callbackFunction = (entries) => {
+  const callbackFunction = (entries: any) => {
     const [entry] = entries;
     setIsSelectedProgram(entry.isIntersecting);
   };
@@ -311,7 +317,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
     return {
       root: null,
       threshold: 0,
-      rootMargin: "-10% 0px 0% 0px",
+      rootMargin: "1000px 0px 0px 0px",
     };
   }, []);
 
@@ -329,7 +335,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
 
   const [isSelectedMap, setIsSelectedMap] = useState(false);
 
-  const callbackFunctionMap = (entries) => {
+  const callbackFunctionMap = (entries: any) => {
     const [entry] = entries;
     setIsSelectedMap(entry.isIntersecting);
   };
@@ -337,8 +343,8 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
   const mapoptions = useMemo(() => {
     return {
       root: null,
-      threshold: 0.9,
-      // rootMargin: "-10% 0px 0% 0px",
+      threshold: 0,
+      rootMargin: "0px 0px -1000px 0px",
     };
   }, []);
 
@@ -359,7 +365,7 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
 
   const [isSelectedReview, SetisSelectedReview] = useState(false);
 
-  const callbackFunctionReview = (entries) => {
+  const callbackFunctionReview = (entries: any) => {
     const [entry] = entries;
     SetisSelectedReview(entry.isIntersecting);
   };
@@ -367,8 +373,8 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
   const reviewoptions = useMemo(() => {
     return {
       root: null,
-      threshold: 0.9,
-      // rootMargin: "-100% 0px -100% 0px",
+      threshold: 0,
+      rootMargin: "0px 0px -1000px 0px",
     };
   }, []);
 
@@ -385,31 +391,25 @@ const ClassDetailContainer = (props: IClassDetailPresenterProps) => {
     };
   }, [ReviewRef, reviewoptions]);
 
-  const ThankyouSunWoo = () => {
-    router.push(`/myPage/chatRoom/${myClass?.patissierId}/${currentUser?.uid}`);
-  };
-
   return (
     <ClassDetailPresenter
-      myClass={myClass}
       reservation={onClickReservation}
       selectDate={onClickSelectDate}
       nameInput={onChangeName}
       review={onClickReview}
       heart={onClickHeart}
       GoProgram={GoProgram}
-      scrollPosition={scrollPosition}
       GoMap={GoMap}
       GoReview={GoReview}
+      myClass={myClass}
+      scrollPosition={scrollPosition}
       ReviewRef={ReviewRef}
       ProgramRef={ProgramRef}
       MapRef={MapRef}
-      ReviewRef={ReviewRef}
       isSelectedProgram={isSelectedProgram}
       isSelectedMap={isSelectedMap}
       isSelectedReview={isSelectedReview}
       ratingAverage={ratingAverage}
-      ThankyouSunWoo={ThankyouSunWoo}
     />
   );
 };

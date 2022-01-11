@@ -1,4 +1,9 @@
 import styled from "@emotion/styled";
+import {
+  IClassDetailStylesMapProps,
+  IClassDetailStylesProgramProps,
+  IClassDetailStylesReviewProps,
+} from "./ClassDetail.types";
 
 export const NavBarWrapper = styled.div`
   width: 100vw;
@@ -30,7 +35,8 @@ export const NavProgram = styled.div`
   width: 89px;
   height: 100px;
   font-size: 24px;
-  font-weight: ${(props) => (props.isSelectedProgram ? "bold" : "none")};
+  font-weight: ${(props: IClassDetailStylesProgramProps) =>
+    props.isSelectedProgram ? "bold" : "none"};
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -48,18 +54,19 @@ export const ProgramLine = styled.div`
   height: 5px;
   position: absolute;
   border-radius: 10px;
-  background-color: ${(props) =>
+  background-color: ${(props: IClassDetailStylesProgramProps) =>
     props.isSelectedProgram ? "#1e1e1e" : "transparent"};
   top: 94px;
-  transition: ${(props) => (props.isSelectedProgram ? "400ms" : "0s")};
+  transition: ${(props: IClassDetailStylesProgramProps) =>
+    props.isSelectedProgram ? "400ms" : "0s"};
 `;
 
 export const NavPlace = styled.div`
   width: 89px;
   /* height: 33px; */
   font-size: 24px;
-  font-weight: ${(props) =>
-    props.isSelectedMap && !props.isSelectedReview ? "bold" : "none"};
+  font-weight: ${(props: IClassDetailStylesMapProps) =>
+    props.isSelectedMap ? "bold" : "none"};
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -77,7 +84,7 @@ export const MapLine = styled.div`
   position: absolute;
   border-radius: 10px;
   /* background-color: black; */
-  background-color: ${(props) =>
+  background-color: ${(props: IClassDetailStylesMapProps) =>
     props.isSelectedMap ? "#1e1e1e" : "transparent"};
   top: 62px;
   transition: ${(props) => (props.isSelectedMap ? "400ms" : "0s")};
@@ -87,7 +94,8 @@ export const NavReview = styled.div`
   width: 45px;
   /* height: 33px; */
   font-size: 24px;
-  font-weight: ${(props) => (!props.isSelectedReview ? "none" : "bold")};
+  font-weight: ${(props: IClassDetailStylesReviewProps) =>
+    !props.isSelectedReview ? "none" : "bold"};
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -104,7 +112,7 @@ export const ReviewLine = styled.div`
   position: absolute;
   border-radius: 10px;
   /* background-color: black; */
-  background-color: ${(props) =>
+  background-color: ${(props: IClassDetailStylesReviewProps) =>
     props.isSelectedReview ? "#1e1e1e" : "transparent"};
   top: 91px;
   transition: ${(props) => (props.isSelectedReview ? "400ms" : "0s")};
@@ -304,7 +312,7 @@ export const ProgramIntro = styled.div`
 `;
 
 export const SubjectTitle = styled.div`
-  margin-top: 150px;
+  margin-top: 70px;
   height: 44px;
   font-size: 32px;
   font-weight: bold;
@@ -376,7 +384,7 @@ export const PatissierContentsBox = styled.div`
 export const ClassLocationInfo = styled.div``;
 
 export const LocationInfo = styled.div`
-  margin-top: 100px;
+  margin-top: 70px;
   font-size: 32px;
   font-weight: bold;
 `;
@@ -392,7 +400,7 @@ export const LocationMap = styled.div`
 export const ClassReviewInfo = styled.div``;
 
 export const ClassReviewTitle = styled.div`
-  margin-top: 100px;
+  margin-top: 70px;
   font-size: 32px;
   font-weight: bold;
 `;
@@ -522,7 +530,7 @@ export const ViewMore = styled.div`
 `;
 
 export const ScheduleWrapper = styled.div`
-  width: 400x;
+  width: 400px;
 `;
 
 export const ClassSchedule = styled.div`
@@ -541,7 +549,6 @@ export const ClassSchedule = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 26px;
-  background-color: white;
 `;
 
 export const ClassScheduleWrapper = styled.div`
