@@ -527,7 +527,7 @@ export const ScheduleWrapper = styled.div`
 
 export const ClassSchedule = styled.div`
   width: 370px;
-  height: 400px;
+  height: 450px;
   /* border: 1px solid gray; */
 
   /* padding-top: 20px; */
@@ -572,16 +572,17 @@ export const SmallSmallTitle = styled.div`
 
 export const ClassArrayWrapper = styled.div`
   :hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.06);
     cursor: pointer;
   }
-  background: rgba(247, 240, 232, 0.1);
+  background: rgba(247, 240, 232, 0.5);
   padding-bottom: 10px;
   margin-bottom: 3px;
   margin-top: 3px;
   /* margin-top: 10px; */
-  /* box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.1); */
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
   cursor: pointer;
+  /* background: #f4f4f4; */
 `;
 
 export const ClassButton = styled.div`
