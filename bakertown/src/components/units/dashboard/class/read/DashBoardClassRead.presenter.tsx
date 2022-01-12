@@ -17,7 +17,7 @@ const DashBoardClassReadPresenter = (props: IDashBoardClassReadProps) => {
           </S.DetailWrapper>
           <S.Line></S.Line>
           <S.CRUD>
-            <S.Update>수정하기</S.Update>
+            <S.Update onClick={props.update(el)}>수정하기</S.Update>
             <S.Delete onClick={props.onClickDelete(el)}>삭제하기</S.Delete>
           </S.CRUD>
         </S.ComponentWrapper>

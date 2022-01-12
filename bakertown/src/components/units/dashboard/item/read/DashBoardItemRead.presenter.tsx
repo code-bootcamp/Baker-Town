@@ -26,9 +26,9 @@ const DashBoardItemReadPresenter = (
                 <S.ItemName>{el.itemName}</S.ItemName>
                 <S.Line></S.Line>
                 <S.ItemPrice>{el.price} 원</S.ItemPrice>
-                <S.ItemUpdate onClick={props.update(el)}>수정</S.ItemUpdate>
+                <S.ItemUpdate onClick={props.update(el)}>수정하기</S.ItemUpdate>
                 <S.ItemDelete onClick={props.onClickDelete(el)}>
-                  삭제
+                  삭제하기
                 </S.ItemDelete>
               </S.ItemWrapper>
             ))}

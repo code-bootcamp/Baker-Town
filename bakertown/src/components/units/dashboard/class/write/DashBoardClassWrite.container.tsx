@@ -148,11 +148,37 @@ const DashBoardMainClassWriteContainer = (
     myInputs.introduce = userResult?.data().introduce;
 
     if (!myInputs.className) myInputs.className = myClass?.className;
+    if (!myInputs.contents) myInputs.contents = myClass?.contents;
+    if (!myInputs.category) myInputs.category = myClass?.category;
+    if (!myInputs.remarks) myInputs.remarks = myClass?.remarks;
+    if (!myInputs.price) myInputs.price = myClass?.price;
+    if (!myInputs.address) myInputs.address = myClass?.address;
+    if (!myInputs.detailAddress)
+      myInputs.detailAddress = myClass?.detailAddress;
+    if (!myInputs.images) myInputs.images = myClass?.images;
+    if (myInputs.applyClass.classArray.length < 1)
+      myInputs.applyClass.classArray = myClass?.applyClass.classArray;
 
+    if (
+      !myInputs.className ||
+      !myInputs.contents ||
+      !myInputs.category ||
+      !myInputs.remarks ||
+      !myInputs.contents ||
+      !myInputs.price ||
+      !myInputs.address ||
+      !myInputs.detailAddress ||
+      !myInputs.applyClass
+    ) {
+      alert("값이 비어있습니다!! 모두 채워주세요.");
+      return;
+    }
     console.log(myInputs);
     await setDoc(product, {
       ...myInputs,
     });
+    alert("수정되었습니다!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    router.push(`/dashboard/class/read`);
   };
 
   // 인풋 값 변경 시 state에 저장
@@ -215,7 +241,7 @@ const DashBoardMainClassWriteContainer = (
   // 수정하기 불러오기
   useEffect(() => {
     updateClass();
-  });
+  }, []);
 
   return (
     <DashBoardMainClassWritePresenter
