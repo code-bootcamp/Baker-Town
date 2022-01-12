@@ -30,9 +30,11 @@ const StorePresenter = (props: IStorePresenterProps) => {
               <Slider {...props.settings}>
                 {props.popular.map((el: any) => (
                   <S.StoreWrapper key={uuidv4()}>
-                    <S.StoreImage />
+                    <S.StoreImage onClick={props.storeDetail(el)} />
                     <S.Store>{el.patissier}</S.Store>
-                    <S.StoreName>{el.itemName}</S.StoreName>
+                    <S.StoreName onClick={props.storeDetail(el)}>
+                      {el.itemName}
+                    </S.StoreName>
                     <S.SmallLine></S.SmallLine>
                     <S.StorePrice>{el.price} 원</S.StorePrice>
                   </S.StoreWrapper>
@@ -53,9 +55,11 @@ const StorePresenter = (props: IStorePresenterProps) => {
               <Slider {...props.settings}>
                 {props.recent.map((el: any) => (
                   <S.StoreWrapper>
-                    <S.StoreImage />
+                    <S.StoreImage onClick={props.storeDetail(el)} />
                     <S.Store>{el.patissier}</S.Store>
-                    <S.StoreName>{el.itemName}</S.StoreName>
+                    <S.StoreName onClick={props.storeDetail(el)}>
+                      {el.itemName}
+                    </S.StoreName>
                     <S.SmallLine></S.SmallLine>
                     <S.StorePrice>{el.price} 원</S.StorePrice>
                   </S.StoreWrapper>

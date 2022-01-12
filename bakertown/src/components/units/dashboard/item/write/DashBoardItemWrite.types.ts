@@ -4,11 +4,12 @@ export interface IDashBoardItemProps {
   myItem: any;
   onClickSubmit: () => void;
   onChangeInputs: (event: ChangeEvent<HTMLInputElement>) => void;
-  isEdit?: boolean;
+  isEdit: boolean;
   onChangeCategory: ChangeEventHandler<HTMLSelectElement> | undefined;
   onClickUpdate: () => void;
 }
 
 export interface IDashBoardMainItemWriteContainerProps {
-  isEdit?: boolean;
+  isEdit: boolean;
+  onChangeCategory: any;
 }

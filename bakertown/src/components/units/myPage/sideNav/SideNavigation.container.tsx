@@ -40,10 +40,15 @@ const SideNavigationContainer = () => {
     if (el === "아이템 후기") router.push(`/myPage/item/review`);
   };
 
+  const onClickMyPage = () => {
+    router.push(`/myPage`);
+  };
+
   return (
     <SideNavigationPresenter
       onClickSideButton={onClickSideButton}
       userResult={myUser}
+      goMyPage={onClickMyPage}
     />
   );
 };

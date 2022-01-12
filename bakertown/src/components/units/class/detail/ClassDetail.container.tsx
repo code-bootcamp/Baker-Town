@@ -33,6 +33,7 @@ const ClassDetailContainer = () => {
     applyClass: {
       classArray: [],
     },
+    patissierId: "",
   });
   const [myDate, setMyDate] = useState("");
   const [myIndex, setMyIndex] = useState(-1);
@@ -391,6 +392,10 @@ const ClassDetailContainer = () => {
     };
   }, [ReviewRef, reviewoptions]);
 
+  const goChat = () => {
+    router.push(`/myPage/chatRoom/${myClass?.patissierId}/${currentUser?.uid}`);
+  };
+
   return (
     <ClassDetailPresenter
       reservation={onClickReservation}
@@ -410,6 +415,7 @@ const ClassDetailContainer = () => {
       isSelectedMap={isSelectedMap}
       isSelectedReview={isSelectedReview}
       ratingAverage={ratingAverage}
+      goChat={goChat}
     />
   );
 };

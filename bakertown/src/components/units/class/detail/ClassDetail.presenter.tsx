@@ -182,7 +182,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 <S.PatissierName>
                   {props.myClass?.patissier} 파티셰
                 </S.PatissierName>
-                <S.ContactPatissier>연락하기</S.ContactPatissier>
+                <S.ContactPatissier onClick={props.goChat}>
+                  연락하기
+                </S.ContactPatissier>
               </S.PatissierWrapper>
               <S.PatissierContentsBox>
                 <div>{props?.myClass?.introduce}</div>

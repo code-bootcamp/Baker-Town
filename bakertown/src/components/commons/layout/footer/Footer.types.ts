@@ -1,5 +1,1 @@
-// import { ReactChild } from "react";
-
-export interface IFooterProps {
-  //   children: ReactChild;
-}
+export interface IFooterProps {}

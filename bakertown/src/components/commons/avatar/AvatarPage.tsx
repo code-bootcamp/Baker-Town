@@ -6,10 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Tooltip from "@mui/material/Tooltip";
 import PersonAdd from "@mui/icons-material/PersonAdd";
-import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import { AccountCircle } from "@mui/icons-material";
 import { useRouter } from "next/router";
@@ -56,13 +53,13 @@ const AvatarPage = () => {
     router.push(`/myPage`);
   };
   const [check, setCheck] = useState(0);
-  const currentUser = useAuth();
+  const currentUser: any = useAuth();
   const [myUser, setMyUser] = useState({
     check: check,
     name: "로딩중입니다",
   });
 
-  useEffect(async () => {
+  const avatarContents = async () => {
     if (myUser?.name === "로딩중입니다") {
       if (!currentUser) return;
       const userQuery = doc(
@@ -70,9 +67,12 @@ const AvatarPage = () => {
         "users",
         currentUser?.email
       );
-      const userResult = await getDoc(userQuery);
+      const userResult: any = await getDoc(userQuery);
       setMyUser(userResult.data());
     }
+  };
+  useEffect(() => {
+    avatarContents();
   });
 
   return (

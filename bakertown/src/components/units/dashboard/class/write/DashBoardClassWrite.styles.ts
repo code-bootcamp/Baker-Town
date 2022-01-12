@@ -79,7 +79,7 @@ export const ClassContentsWrapper = styled.div`
 
 export const ClassContentsTitle = styled.div``;
 
-export const ClassContents = styled.input`
+export const ClassContents = styled.textarea`
   width: 900px;
   height: 500px;
   padding-left: 10px;

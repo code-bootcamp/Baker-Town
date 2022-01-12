@@ -1,5 +1,5 @@
-import { MouseEventHandler } from "react";
-
 export interface IDashBoardClassReadProps {
-  onClickDelete : () => void
+  onClickDelete: (el: any) => () => void;
+  class: never[];
+  classDetail: (el: any) => () => void;
 }

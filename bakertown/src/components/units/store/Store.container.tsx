@@ -22,7 +22,11 @@ const StoreContainer = () => {
       orderBy("heart", "desc")
     );
     let result = await getDocs(popular);
-    let docs = result.docs.map((el) => el.data());
+    let docs = result.docs.map((el) => {
+      const data = el.data();
+      data.id = el.id;
+      return data;
+    });
     setPoplular(docs);
 
     const recent = query(
@@ -30,7 +34,11 @@ const StoreContainer = () => {
       orderBy("createdAt", "desc")
     );
     result = await getDocs(recent);
-    docs = result.docs.map((el) => el.data());
+    docs = result.docs.map((el) => {
+      const data = el.data();
+      data.id = el.id;
+      return data;
+    });
     setRecent(docs);
   };
 
@@ -78,12 +86,17 @@ const StoreContainer = () => {
     slidesToScroll: 1,
   };
 
+  const onClickStoreDetail = (el: any) => () => {
+    router.push(`/store/detail/${el.id}`);
+  };
+
   return (
     <StorePresenter
       settings={settings}
       recent={recent}
       popular={popular}
       recentList={recentList}
+      storeDetail={onClickStoreDetail}
     />
   );
 };

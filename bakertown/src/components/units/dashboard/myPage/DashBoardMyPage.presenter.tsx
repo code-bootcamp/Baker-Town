@@ -15,7 +15,7 @@ const DashBoardMyPagePresenter = (props: IDashBoardMyPageProps) => {
     introduce: "",
   });
 
-  useEffect(async () => {
+  const dashBoardMyPageContents = async () => {
     if (myUser?.name === "") {
       if (!currentUser) return;
       const userQuery = doc(
@@ -23,9 +23,13 @@ const DashBoardMyPagePresenter = (props: IDashBoardMyPageProps) => {
         "users",
         currentUser?.email
       );
-      const userResult = await getDoc(userQuery);
+      const userResult: any = await getDoc(userQuery);
       setMyUser(userResult.data());
     }
+  };
+
+  useEffect(() => {
+    dashBoardMyPageContents();
   });
 
   const onClickIntroduce = async () => {

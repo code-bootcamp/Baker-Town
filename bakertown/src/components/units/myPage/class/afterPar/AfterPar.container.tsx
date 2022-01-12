@@ -1,6 +1,6 @@
 import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { getOnlyDate } from "../../../../../commons/libraries/getDate";
 import AfterParPresenter from "./AfterPar.presenter";
@@ -10,24 +10,30 @@ const AfterParContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [reviewContents, setReviewContents] = useState("");
   const [rating, setRating] = useState(3);
-  const [myUser, setMyUser] = useState("");
-  const currentUser = useAuth();
+  const [myUser, setMyUser] = useState<SetStateAction<any>>({
+    afterPar: [],
+  });
+  const currentUser: any = useAuth();
   const onToggleModal = () => {
     setIsOpen((prev) => !prev);
   };
 
-  useEffect(async () => {
+  const afterParContents = async () => {
     if (!currentUser) return;
     const userQuery = doc(
       getFirestore(firebaseApp),
       "users",
       currentUser?.email
     );
-    const userResult = await getDoc(userQuery);
+    const userResult: any = await getDoc(userQuery);
     setMyUser(userResult.data());
+  };
+
+  useEffect(() => {
+    afterParContents();
   });
 
-  const onClickReview = (index) => async () => {
+  const onClickReview = (index: number) => async () => {
     setIsOpen((prev) => !prev);
     // 현재 페이지 정보 불러오기
     const bakeryClass = doc(
@@ -36,7 +42,7 @@ const AfterParContainer = () => {
       myUser?.afterPar?.[index].classRouter
       // String(router.query.classId) 클래스 아이디 값
     );
-    const classResult = await getDoc(bakeryClass);
+    const classResult: any = await getDoc(bakeryClass);
 
     // 내 정보 불러오기
     const userQuery = doc(
@@ -44,7 +50,7 @@ const AfterParContainer = () => {
       "users",
       currentUser?.email
     );
-    const userResult = await getDoc(userQuery);
+    const userResult: any = await getDoc(userQuery);
     console.log("내정보", userResult);
     // 현재 페이지의 리뷰정보
     const currentReview = classResult?.data().review;
@@ -82,7 +88,7 @@ const AfterParContainer = () => {
     });
   };
 
-  const onClickClassDetail = (el) => () => {
+  const onClickClassDetail = (el: any) => () => {
     router.push(`/class/detail/${el.classRouter}`);
   };
 
