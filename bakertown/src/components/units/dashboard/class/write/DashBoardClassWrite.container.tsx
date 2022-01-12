@@ -13,6 +13,7 @@ import {
   addDoc,
   doc,
   getDoc,
+  setDoc,
   DocumentSnapshot,
 } from "firebase/firestore";
 import DashBoardMainClassWritePresenter from "./DashBoardClassWrite.presenter";
@@ -133,7 +134,32 @@ const DashBoardMainClassWriteContainer = (
   };
 
   // 클래스 수정
-  const onClickUpdate = async () => {};
+  const onClickUpdate = async () => {
+    const product = doc(
+      getFirestore(firebaseApp),
+      "class",
+      String(router.query.classId)
+    );
+
+    const userQuery = doc(
+      getFirestore(firebaseApp),
+      "users",
+      currentUser?.email
+    );
+    const userResult: any = await getDoc(userQuery);
+
+    myInputs.patissierId = currentUser?.uid;
+    myInputs.patissier = userResult?.data().name;
+    myInputs.createdAt = getDate(new Date());
+    myInputs.introduce = userResult?.data().introduce;
+
+    if (!myInputs.className) myInputs.className = myClass?.className;
+
+    console.log(myInputs);
+    await setDoc(product, {
+      ...myInputs,
+    });
+  };
 
   // 인풋 값 변경 시 state에 저장
   const onChangeInputs = (event: ChangeEvent<HTMLInputElement>) => {

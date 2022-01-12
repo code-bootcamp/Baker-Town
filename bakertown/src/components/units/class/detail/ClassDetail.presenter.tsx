@@ -94,22 +94,22 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             isSelectedProgram={props.isSelectedProgram}
           >
             프로그램
-            <S.ProgramLine
+            {/* <S.ProgramLine
               isSelectedProgram={props.isSelectedProgram}
-            ></S.ProgramLine>
+            ></S.ProgramLine> */}
           </S.NavProgram>
           <S.NavPlace onClick={props.GoMap} isSelectedMap={props.isSelectedMap}>
             위치정보
-            <S.MapLine isSelectedMap={props.isSelectedMap}></S.MapLine>
+            {/* <S.MapLine isSelectedMap={props.isSelectedMap}></S.MapLine> */}
           </S.NavPlace>
           <S.NavReview
             onClick={props.GoReview}
             isSelectedReview={props.isSelectedReview}
           >
             후기
-            <S.ReviewLine
+            {/* <S.ReviewLine
               isSelectedReview={props.isSelectedReview}
-            ></S.ReviewLine>
+            ></S.ReviewLine> */}
           </S.NavReview>
           {/* </S.NavTextWrapper> */}
         </S.NavBarCategory>

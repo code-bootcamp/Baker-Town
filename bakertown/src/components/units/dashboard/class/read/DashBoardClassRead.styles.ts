@@ -2,12 +2,14 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 88vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /* background-color: salmon; */
+  /* height: 770px; */
+  overflow: auto;
 `;
 
 export const ComponentWrapper = styled.div`
@@ -20,7 +22,6 @@ export const ComponentWrapper = styled.div`
   border: solid 0.5px #e2e2e2;
   background-color: #fff;
   display: flex;
-
 }
 `;
 
@@ -88,9 +89,9 @@ export const Line = styled.div`
 `;
 
 export const CRUD = styled.div`
-margin-top: 50px;
-margin-left: 30px;
-`
+  margin-top: 50px;
+  margin-left: 30px;
+`;
 
 export const Update = styled.button`
   height: 30px;

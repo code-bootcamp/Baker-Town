@@ -90,7 +90,8 @@ export const DeliveryScheduleWrapper = styled.div`
 export const DeliveryTitle = styled.div``;
 
 export const DeliverySchedule = styled.input`
-  width: 900px;
+  width: 100%;
+  overflow: auto;
 `;
 
 export const SubmitButton = styled.button`

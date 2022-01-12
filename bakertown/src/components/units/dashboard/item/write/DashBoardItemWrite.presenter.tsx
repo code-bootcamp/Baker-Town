@@ -5,7 +5,7 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
   return (
     <>
       <S.Wrapper>
-        <S.Title>아이템 등록 페이지</S.Title>
+        <S.Title>아이템 {props.isEdit ? "수정" : "등록"} 페이지</S.Title>
         <S.ItemNameWrapper>
           <S.ItemNameTitle>상품명 입력</S.ItemNameTitle>
           <S.ItemName
@@ -13,22 +13,27 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
             onChange={props.onChangeInputs}
             placeholder="상품명을 입력해 주세요.(20자 제한)"
             name="itemName"
+            defaultValue={props.myItem?.itemName}
             maxLength={20}
           />
         </S.ItemNameWrapper>
         <S.ItemContentsWrapper>
           <S.ItemContentsTitle>아이템 소개 입력</S.ItemContentsTitle>
-          <S.ItemContents 
-          type="text"
-          onChange={props.onChangeInputs}
-          placeholder="상품 설명을 자세히 입력해 주세요.(400자 제한)"
-          name="contents"
-          maxLength={400}
+          <S.ItemContents
+            type="text"
+            onChange={props.onChangeInputs}
+            placeholder="상품 설명을 자세히 입력해 주세요.(400자 제한)"
+            name="contents"
+            defaultValue={props.myItem?.contents}
+            maxLength={400}
           />
         </S.ItemContentsWrapper>
         <S.ItemCategoryWrapper>
           <S.ItemCategoryTitle>카테고리 등록</S.ItemCategoryTitle>
-          <S.ItemCategorySelect onChange={props.onChangeCategory}>
+          <S.ItemCategorySelect
+            onChange={props.onChangeCategory}
+            defaultValue={props.myItem?.category}
+          >
             <S.ItemCategoryOption value="냄비•프라이팬•솥">
               냄비•프라이팬•솥
             </S.ItemCategoryOption>
@@ -55,6 +60,7 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
             onChange={props.onChangeInputs}
             placeholder="판매가를 입력해 주세요."
             name="price"
+            defaultValue={props.myItem?.price}
           />
         </S.ItemPriceWrapper>
         <S.DeliveryScheduleWrapper>
@@ -64,9 +70,19 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
             onChange={props.onChangeInputs}
             placeholder="배송일정"
             name="shippingTime"
+            defaultValue={props.myItem?.shippingTime}
           />
         </S.DeliveryScheduleWrapper>
-        <S.SubmitButton onClick={props.onClickSubmit}>등록하기</S.SubmitButton>
+        {!props.isEdit && (
+          <S.SubmitButton onClick={props.onClickSubmit}>
+            등록하기
+          </S.SubmitButton>
+        )}
+        {props.isEdit && (
+          <S.SubmitButton onClick={props.onClickUpdate}>
+            수정하기
+          </S.SubmitButton>
+        )}
       </S.Wrapper>
     </>
   );

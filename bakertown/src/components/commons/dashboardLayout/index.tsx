@@ -9,7 +9,8 @@ interface ILayoutProps {
 }
 
 const Wrapper = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
+  max-height: 100vh;
 `;
 
 const UpBodyWrapper = styled.div`
@@ -27,6 +28,10 @@ const InnerBodyWrapper = styled.div`
 
 const Body = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #f4f4f4;
   /* overflow-y: auto;
   overflow-x: hidden; */
 `;

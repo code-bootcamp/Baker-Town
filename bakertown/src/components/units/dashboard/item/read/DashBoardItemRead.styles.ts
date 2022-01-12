@@ -2,8 +2,11 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   display: flex;
+  height: 710px;
+  width: 100%;
   margin-top: 100px;
   margin-left: 150px;
+  overflow: auto;
 `;
 
 export const ItemList = styled.div``;
@@ -20,7 +23,7 @@ export const ItemListTitleText = styled.div`
 `;
 
 export const ItemListSelect = styled.select`
-height: 40px;
+  height: 40px;
 `;
 
 export const ItemListOption = styled.option``;
@@ -66,6 +69,11 @@ export const ItemPrice = styled.div`
 `;
 
 export const ItemDelete = styled.button`
-height: 40px;
-cursor: pointer;
-`
+  height: 40px;
+  cursor: pointer;
+`;
+
+export const ItemUpdate = styled.button`
+  height: 40px;
+  cursor: pointer;
+`;
