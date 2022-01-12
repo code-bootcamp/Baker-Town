@@ -2,7 +2,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { firebaseApp, useAuth } from "../../../../pages/_app";
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
 import { MyPoint, ChargeButton } from "./MyPoint.styles";
 
@@ -20,11 +20,11 @@ export default function UserPoint() {
 
   const [selectedPoint, setSelectedPoint] = useState("");
 
-  function onClickSelectPoint(event) {
+  function onClickSelectPoint(event: any) {
     setSelectedPoint(event.target.value);
   }
 
-  useEffect(async () => {
+  const myPointContents = async () => {
     if (!currentUser) return;
     const userQuery = doc(
       getFirestore(firebaseApp),
@@ -33,6 +33,10 @@ export default function UserPoint() {
     );
     const userResult = await getDoc(userQuery);
     setPpoint(userResult.data()?.mypoint);
+  };
+
+  useEffect(() => {
+    myPointContents();
   });
 
   function onClickPayment() {

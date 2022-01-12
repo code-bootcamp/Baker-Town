@@ -13,12 +13,8 @@ const HeaderPresenter = (props: IHeaderProps) => {
         <S.InnerLogo onClick={props.logo}>
           <S.Img className="Image" alt="logo" src="/imgs/logo.png" />
         </S.InnerLogo>
-        <S.ClassTitle onClick={props.class} isBold={props.isBoldClass}>
-          CLASS
-        </S.ClassTitle>
-        <S.StoreTitle onClick={props.store} isBold={props.isBoldStore}>
-          STORE
-        </S.StoreTitle>
+        <S.ClassTitle onClick={props.class}>CLASS</S.ClassTitle>
+        <S.StoreTitle onClick={props.store}>STORE</S.StoreTitle>
         <S.RoundDiv>
           <S.RoundDivInnerText
             placeholder="어떤 클래스를 원하세요?"

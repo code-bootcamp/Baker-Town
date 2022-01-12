@@ -28,12 +28,14 @@ export interface IClassDetailPresenterProps {
     applyClass: {
       classArray: never[];
     };
+    patissierId: string;
   };
   reservation: () => void;
   selectDate: (el: any, index: number) => () => void;
   nameInput: (event: ChangeEvent<HTMLInputElement>) => void;
   heart: () => void;
   scrollPosition: number;
+  goChat: () => void;
 }
 
 export interface IClassDetailStylesProgramProps {

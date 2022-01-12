@@ -19,7 +19,7 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
           ></S.LogoImage>
         </S.LogoWrapper>
         <S.ListWrapper>
-          <S.ListItems button>
+          <S.ListItems>
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
@@ -28,7 +28,7 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
               onClick={props.onClickDashBoardMainPage}
             />
           </S.ListItems>
-          <S.ListItems button>
+          <S.ListItems>
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
@@ -37,7 +37,7 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
               onClick={props.onClickDashBoardClassWritePage}
             />
           </S.ListItems>
-          <S.ListItems button>
+          <S.ListItems>
             <ListItemIcon>
               <ShoppingCartIcon />
             </ListItemIcon>
@@ -46,7 +46,7 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
               onClick={props.onClickDashBoardClassReadPage}
             />
           </S.ListItems>
-          <S.ListItems button>
+          <S.ListItems>
             <ListItemIcon>
               <BarChartIcon />
             </ListItemIcon>
@@ -55,7 +55,7 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
               onClick={props.onClickDashBoardProductsWritePage}
             />
           </S.ListItems>
-          <S.ListItems button>
+          <S.ListItems>
             <ListItemIcon>
               <PeopleIcon />
             </ListItemIcon>
@@ -64,7 +64,7 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
               onClick={props.onClickDashBoardProductReadPage}
             />
           </S.ListItems>
-          <S.ListItems button>
+          <S.ListItems>
             <ListItemIcon>
               <LayersIcon />
             </ListItemIcon>

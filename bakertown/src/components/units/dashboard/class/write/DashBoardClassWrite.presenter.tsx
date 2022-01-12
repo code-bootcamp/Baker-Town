@@ -3,8 +3,6 @@ import { IDashBoardClassWriteProps } from "./DashBoardClassWrite.types";
 import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
 import ClassScheduleContainer from "../../../../commons/classSchedule/ClassSchedule.container";
-import { Upload, Button, Space } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
 
 const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
   return (

@@ -26,7 +26,7 @@ const DashBoardItemReadPresenter = (
                 <S.ItemName>{el.itemName}</S.ItemName>
                 <S.Line></S.Line>
                 <S.ItemPrice>{el.price} 원</S.ItemPrice>
-                <S.ItemDelete onClick={props.delete}>삭제</S.ItemDelete>
+                <S.ItemDelete>삭제</S.ItemDelete>
               </S.ItemWrapper>
             ))}
           </S.ItemListContents>

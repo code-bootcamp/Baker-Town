@@ -15,7 +15,7 @@ const DashBoardItemReadContainer = () => {
   const [recent, setRecent] = useState([]);
   const [categoryName, setCategoryName] = useState("");
 
-  useEffect(async () => {
+  const dashBoardItemReadContents = async () => {
     setCategoryName(String(router.query.categoryName));
     console.log(categoryName);
     const recent = query(
@@ -26,6 +26,10 @@ const DashBoardItemReadContainer = () => {
     let docs: any = result.docs.map((el) => el.data());
     console.log(docs);
     setRecent(docs);
+  };
+
+  useEffect(() => {
+    dashBoardItemReadContents();
   }, []);
 
   return (

@@ -1,6 +1,4 @@
-import { FetchResult } from "@apollo/client";
-import { DocumentData, DocumentSnapshot } from "firebase/firestore";
-import { ChangeEvent, ChangeEventHandler, MouseEventHandler } from "react";
+import { ChangeEvent, ChangeEventHandler } from "react";
 
 export interface IDashBoardClassWriteProps {
   setClassSchedule: any;

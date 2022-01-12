@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../pages/_app";
 
-export const withAuth = (Component) => (props) => {
+export const withAuth = (Component: any) => (props: any) => {
   const router = useRouter();
   const currentID = getAuth().currentUser?.uid;
   // console.log("currentID : ", currentID);
