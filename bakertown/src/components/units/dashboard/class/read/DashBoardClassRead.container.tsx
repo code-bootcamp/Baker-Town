@@ -42,8 +42,23 @@ const DashBoardClassReadContainer = () => {
     // console.log("날짜나 불러볼라고", docs?.[0].createdAt);
   }, []);
 
+  const update = (el: any) => () => {
+    router.push(`/dashboard/class/edit/${el.id}`);
+  };
+
+  // 클래스 삭제
   const onClickDelete = (el: any) => async () => {
-    await deleteDoc(doc(getFirestore(firebaseApp), "class", el.id));
+    await deleteDoc(
+      doc(
+        // db
+        getFirestore(firebaseApp),
+        // 컬렉션
+        "class",
+        // 문서
+        `${el.id}`
+      )
+    );
+    location.reload();
   };
 
   const onClickClassDetail = (el: any) => () => {
@@ -54,6 +69,7 @@ const DashBoardClassReadContainer = () => {
     <>
       <DashBoardClassReadPresenter
         class={docs}
+        update={update}
         onClickDelete={onClickDelete}
         classDetail={onClickClassDetail}
       />

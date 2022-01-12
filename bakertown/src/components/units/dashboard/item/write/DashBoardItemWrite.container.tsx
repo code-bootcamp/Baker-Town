@@ -88,6 +88,7 @@ export const DashBoardItemContainer = (
     if (!myInputs.contents) myInputs.contents = myItem?.contents;
     if (!myInputs.price) myInputs.price = myItem?.price;
     if (!myInputs.shippingTime) myInputs.shippingTime = myItem?.shippingTime;
+    if (!myInputs.category) myInputs.shippingTime = myItem?.shippingTime;
 
     console.log(myInputs);
     await setDoc(item, {
