@@ -3,8 +3,9 @@ import { v4 as uuidv4 } from "uuid";
 import SideNavigationContainer from "../../sideNav/SideNavigation.container";
 import { Modal, Button } from "antd";
 import WriteReviewContainer from "../../../../commons/writeReview/WriteReview.container";
+import { IAfterParPresenter } from "./AfterPar.types";
 
-const AfterParPresenter = (props) => {
+const AfterParPresenter = (props: IAfterParPresenter) => {
   return (
     <>
       <S.Wrapper>
@@ -14,7 +15,7 @@ const AfterParPresenter = (props) => {
             <S.ListTitleText>CLASS | 참여완료</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
-            {props.userResult.afterPar?.map((el, index) => (
+            {props.userResult.afterPar?.map((el: any, index) => (
               <S.ClassWrapper>
                 <S.Class>
                   <S.ClassImage onClick={props.classDetail(el)} />

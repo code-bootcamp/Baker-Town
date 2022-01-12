@@ -14,7 +14,7 @@ import {
 import { createUploadLink } from "apollo-upload-client";
 import { Global } from "@emotion/react";
 import { globalStyles } from "../src/commons/styles/globalStyles";
-import { createContext, useEffect, useState } from "react";
+import { createContext, SetStateAction, useEffect, useState } from "react";
 import {
   getAuth,
   GoogleAuthProvider,
@@ -23,7 +23,6 @@ import {
   onAuthStateChanged,
   signOut,
   signInWithEmailAndPassword,
-  deleteUser,
 } from "firebase/auth";
 
 const uploadLink = createUploadLink({
@@ -53,9 +52,9 @@ export const provider = new GoogleAuthProvider();
 export const signInWithGoogle = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
-      const name = result.user.displayName;
-      const email = result.user.email;
-      const profilePic = result.user.photoURL;
+      const name: any = result.user.displayName;
+      const email: any = result.user.email;
+      const profilePic: any = result.user.photoURL;
 
       localStorage.setItem("name", name);
       localStorage.setItem("email", email);
@@ -84,7 +83,7 @@ export function signin(email: any, password: any) {
 }
 //custom hook
 export function useAuth() {
-  const [currentUser, setCurrentUser] = useState();
+  const [currentUser, setCurrentUser] = useState<SetStateAction<any>>();
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => setCurrentUser(user));
@@ -110,7 +109,9 @@ interface IGlobalContext {
   categoryName: string;
 }
 
-export const GlobalContext = createContext<IGlobalContext>("");
+export const GlobalContext = createContext<IGlobalContext>({
+  categoryName: "",
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();

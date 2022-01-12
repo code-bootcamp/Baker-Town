@@ -1,10 +1,4 @@
-import {
-  ChangeEvent,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEvent, SetStateAction, useEffect, useState } from "react";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 import { plusMyung } from "../../../../../commons/libraries/stringConcatenate";
 import {
@@ -13,7 +7,6 @@ import {
   addDoc,
   doc,
   getDoc,
-  DocumentSnapshot,
 } from "firebase/firestore";
 import DashBoardMainClassWritePresenter from "./DashBoardClassWrite.presenter";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
@@ -29,7 +22,7 @@ const DashBoardMainClassWriteContainer = (
   const [isOpen, setIsOpen] = useState(false);
   const [date, setDate] = useState("");
   const [members, setMembers] = useState("");
-  const [myInputs, setMyInputs] = useState({
+  const [myInputs, setMyInputs] = useState<SetStateAction<any>>({
     className: "",
     category: "",
     remarks: "",
