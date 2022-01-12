@@ -6,11 +6,13 @@ import WishListPresenter from "./WishList.presenter";
 
 const WishListContainer = () => {
   const router = useRouter();
-  const currentUser = useAuth();
+  const currentUser: any = useAuth();
   const [myUser, setMyUser] = useState({
     name: "로딩중입니다",
+    heart: [],
   });
-  useEffect(async () => {
+
+  const wishListContens = async () => {
     if (myUser?.name === "로딩중입니다") {
       if (!currentUser) return;
       const userQuery = doc(
@@ -18,12 +20,16 @@ const WishListContainer = () => {
         "users",
         currentUser?.email
       );
-      const userResult = await getDoc(userQuery);
+      const userResult: any = await getDoc(userQuery);
       setMyUser(userResult.data());
     }
+  };
+
+  useEffect(() => {
+    wishListContens();
   });
 
-  const onClickClassDetail = (el) => () => {
+  const onClickClassDetail = (el: any) => () => {
     router.push(`/class/detail/${el.classRouter}`);
   };
 

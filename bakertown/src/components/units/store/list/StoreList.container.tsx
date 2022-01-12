@@ -9,7 +9,7 @@ import {
   startAfter,
 } from "firebase/firestore";
 import { firebaseApp } from "../../../../../pages/_app";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import StoreListPresenter from "./StoreList.presenter";
 import { useBottomScrollListener } from "react-bottom-scroll-listener";
 import { useRouter } from "next/router";
@@ -17,7 +17,7 @@ import { useRouter } from "next/router";
 const StoreListContainer = () => {
   const router = useRouter();
   const [recent, setRecent] = useState([]);
-  const [option, setOption] = useState(0);
+  // const [option, setOption] = useState<SetStateAction<number>>(0);
   const categoryName = router.query.categoryName;
 
   // useEffect(async () => {
@@ -40,7 +40,7 @@ const StoreListContainer = () => {
   //   console.log(recent);
   // }, []);
 
-  const [lastVisible, setLastVisible] = useState();
+  const [lastVisible, setLastVisible] = useState<SetStateAction<any>>();
   let myQuery = undefined;
 
   // 전체 아이템
@@ -64,7 +64,7 @@ const StoreListContainer = () => {
 
     getDocs(myQuery).then((snapshot) => {
       setRecent((itemList) => {
-        const arr = [...itemList];
+        const arr: any = [...itemList];
         snapshot.forEach((doc) => {
           // arr.push(doc.data())
           // arr.push(doc.id);
@@ -74,7 +74,7 @@ const StoreListContainer = () => {
         });
         console.log(recent);
         if (snapshot.docs.length === 0) {
-          lastVisible = -1;
+          setLastVisible(-1);
           console.log("lastVisible -1!!!!", lastVisible);
         } else {
           setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
@@ -119,7 +119,7 @@ const StoreListContainer = () => {
 
     getDocs(myQuery).then((snapshot) => {
       setRecent((itemList) => {
-        const arr = [...itemList];
+        const arr: any = [...itemList];
         snapshot.forEach((doc) => {
           // arr.push(doc.data())
           // arr.push(doc.id);
@@ -128,7 +128,7 @@ const StoreListContainer = () => {
           arr.push(data);
         });
         if (snapshot.docs.length === 0) {
-          lastVisible = -1;
+          setLastVisible(-1);
         } else {
           setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
         }
@@ -161,16 +161,16 @@ const StoreListContainer = () => {
     router.push(`/store/list`);
   };
 
-  const onClickOption = (event) => {
-    setOption(event.target.id);
-  };
+  // const onClickOption = (event) => {
+  //   setOption(event.target.id);
+  // };
 
   return (
     <StoreListPresenter
       recent={recent}
       categoryName={categoryName}
       onClickSideButton={onClickSideButton}
-      onClickOption={onClickOption}
+      // onClickOption={onClickOption}
       onClickDetail={onClickDetail}
       itemList={onClickItemList}
     />

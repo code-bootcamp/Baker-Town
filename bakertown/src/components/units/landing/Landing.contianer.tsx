@@ -6,14 +6,13 @@ import {
   query,
   where,
 } from "@firebase/firestore";
-import { sliderClasses } from "@mui/material";
 import { useRouter } from "next/router";
 import {
   useEffect,
   useState,
-  useRef,
-  MutableRefObject,
   ChangeEvent,
+  SetStateAction,
+  MouseEvent,
 } from "react";
 import { firebaseApp, useAuth } from "../../../../pages/_app";
 import LandingPresenter from "./Landing.presenter";
@@ -24,35 +23,42 @@ declare const window: typeof globalThis & {
 
 const LandingContainer = () => {
   const router = useRouter();
-  const [popular, setPoplular] = useState([]);
-  const [recent, setRecent] = useState([]);
+  const [popular, setPoplular] = useState<SetStateAction<any>>([]);
+  const [recent, setRecent] = useState<SetStateAction<any>>([]);
   const [keyWord, setKeyWord] = useState("");
-  const currentUser = useAuth();
+  const currentUser: any = useAuth();
 
-  useEffect(async () => {
+  const popularClass = async () => {
     const popular = query(
       collection(getFirestore(firebaseApp), "class"),
       orderBy("heart", "desc")
     );
-    let result = await getDocs(popular);
-    let docs = result.docs.map((el) => {
+    const result = await getDocs(popular);
+    const docs = result.docs.map((el) => {
       const data = el.data();
       data.id = el.id;
       return data;
     });
     setPoplular(docs);
+  };
 
+  const recentClass = async () => {
     const recent = query(
       collection(getFirestore(firebaseApp), "class"),
       where("createdAt", "!=", "")
     );
-    result = await getDocs(recent);
-    docs = result.docs.map((el) => {
+    const result = await getDocs(recent);
+    const docs = result.docs.map((el) => {
       const data = el.data();
       data.id = el.id;
       return data;
     });
     setRecent(docs);
+  };
+
+  useEffect(() => {
+    popularClass();
+    recentClass();
   }, []);
 
   const clickLeft = () => {
@@ -99,7 +105,7 @@ const LandingContainer = () => {
     router.push(`/class`);
   };
 
-  const onClickCategory = (event) => {
+  const onClickCategory = (event: any) => {
     router.push(`/class/category/${event.target.value}`);
   };
 
@@ -109,7 +115,7 @@ const LandingContainer = () => {
     }
   };
 
-  const onClickClassDetail = (el) => () => {
+  const onClickClassDetail = (el: any) => () => {
     router.push(`/class/detail/${el.id}`);
   };
 
@@ -117,14 +123,51 @@ const LandingContainer = () => {
     router.push(`/class/category/베이킹`);
   };
 
+  const SampleNextArrow = (props: any) => {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className="slick-next-arrow"
+        style={{ ...style, display: "block" }}
+        onClick={onClick}
+      />
+    );
+  };
+
+  const SamplePrevArrow = (props: any) => {
+    const { currentSlide, style, onClick } = props;
+    if (currentSlide === 0) {
+      return null;
+    } else {
+      return (
+        <div
+          className="slick-before-arrow"
+          style={{ ...style, display: "block" }}
+          onClick={onClick}
+        />
+      );
+    }
+  };
+
+  const settings = {
+    dots: false,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    autoplay: false,
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
       <LandingPresenter
         popular={popular}
         recent={recent}
+        currentUser={currentUser}
+        settings={settings}
         clickLeft={clickLeft}
         clickRight={clickRight}
-        currentUser={currentUser}
         landing={onClickLanding}
         classList={onClickList}
         storeList={onClickStore}
@@ -133,7 +176,7 @@ const LandingContainer = () => {
         keyWord={onChangeKeyWord}
         search={onClickSearch}
         goPopular={onClickPopular}
-        geRecent={onClickRecent}
+        goRecent={onClickRecent}
         category={onClickCategory}
         enterKey={onKeyUpEnterKey}
         classDetail={onClickClassDetail}

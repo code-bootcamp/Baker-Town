@@ -1,8 +1,8 @@
 import * as S from "./StoreList.styles";
 import { v4 as uuidv4 } from "uuid";
-import { IStoreDetailPresenterProps } from "../detail/StoreDetail.types";
+import { IStoreListPresenter } from "./StoreList.types";
 
-const StoreListPresenter = (props: IStoreDetailPresenterProps) => {
+const StoreListPresenter = (props: IStoreListPresenter) => {
   const sideList = [
     "냄비•프라이팬•솥",
     "주방잡화",
@@ -37,17 +37,17 @@ const StoreListPresenter = (props: IStoreDetailPresenterProps) => {
             </S.ListSelect>
           </S.ListToSelect>
           <S.ListContents>
-            {props.recent.map((el) => (
+            {props.recent.map((el: any) => (
               <S.ItemWrapper key={uuidv4()}>
                 <S.ItemImage onClick={props.onClickDetail(el)} />
 
                 <S.ItemPatissierToPrice>
-                <S.Patissier>{el.patissier}</S.Patissier>
-                <S.ItemName onClick={props.onClickDetail(el)}>
-                  {el.itemName}
-                </S.ItemName>
-                <S.Line></S.Line>
-                <S.ItemPrice>{el.price}원</S.ItemPrice>
+                  <S.Patissier>{el.patissier}</S.Patissier>
+                  <S.ItemName onClick={props.onClickDetail(el)}>
+                    {el.itemName}
+                  </S.ItemName>
+                  <S.Line></S.Line>
+                  <S.ItemPrice>{el.price}원</S.ItemPrice>
                 </S.ItemPatissierToPrice>
               </S.ItemWrapper>
             ))}

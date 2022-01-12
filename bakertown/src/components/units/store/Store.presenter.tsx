@@ -3,44 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { v4 as uuidv4 } from "uuid";
+import { IStorePresenterProps } from "./Store.types";
 
-const StorePresenter = (props) => {
-  const SampleNextArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className="slick-next-arrow"
-        style={{ ...style, display: "block" }}
-        onClick={onClick}
-      />
-    );
-  };
-
-  const SamplePrevArrow = (props) => {
-    const { currentSlide, style, onClick } = props;
-    if (currentSlide === 0) {
-      return null;
-    } else {
-      return (
-        <div
-          className="slick-before-arrow"
-          style={{ ...style, display: "block" }}
-          onClick={onClick}
-        />
-      );
-    }
-  };
-
-  const settings = {
-    dots: false,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    autoplay: false,
-    infinite: false,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-  };
-
+const StorePresenter = (props: IStorePresenterProps) => {
   return (
     <>
       <S.Wrapper>
@@ -62,8 +27,8 @@ const StorePresenter = (props) => {
           </S.SubjectWrapper>
           <S.StoresWrapper>
             <S.SliderWrapper>
-              <Slider {...settings}>
-                {props.popular.map((el) => (
+              <Slider {...props.settings}>
+                {props.popular.map((el: any) => (
                   <S.StoreWrapper key={uuidv4()}>
                     <S.StoreImage />
                     <S.Store>{el.patissier}</S.Store>
@@ -85,8 +50,8 @@ const StorePresenter = (props) => {
           </S.SubjectWrapper>
           <S.StoresWrapper>
             <S.SliderWrapper>
-              <Slider {...settings}>
-                {props.recent.map((el) => (
+              <Slider {...props.settings}>
+                {props.recent.map((el: any) => (
                   <S.StoreWrapper>
                     <S.StoreImage />
                     <S.Store>{el.patissier}</S.Store>

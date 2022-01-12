@@ -1,13 +1,27 @@
-import { MutableRefObject } from "react";
+import { ChangeEvent, MouseEvent, MutableRefObject } from "react";
 
 export interface ILandingPresenterProps {
   popular: any;
-  el: any;
   recent: any;
-  prevClick: () => void;
-  nextClick: () => void;
-  myRef: MutableRefObject<undefined>;
+  currentUser: any;
+  settings: {};
+  clickLeft: () => void;
+  clickRight: () => void;
+  landing: () => void;
+  classList: () => void;
+  storeList: () => void;
+  heartClass: () => void;
+  signIn: () => void;
+  keyWord: (event: ChangeEvent<HTMLInputElement>) => void;
+  search: () => void;
+  goPopular: () => void;
+  goRecent: () => void;
+  category: (event: MouseEvent<HTMLSpanElement>) => void;
+  enterKey: () => void;
+  classDetail: (el: any) => () => void;
+  bakingList: () => void;
 }
 export interface IClassSubject {
   el: any;
+  classDetail: () => void;
 }

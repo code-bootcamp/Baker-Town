@@ -1,7 +1,8 @@
 import * as S from "./WriteReview.styles";
 import { Rate } from "antd";
+import { IWriteReviewPresetnerProps } from "./WriteReview.types";
 
-const WriteReviewPresenter = (props) => {
+const WriteReviewPresenter = (props: IWriteReviewPresetnerProps) => {
   return (
     <>
       <S.Wrapper>

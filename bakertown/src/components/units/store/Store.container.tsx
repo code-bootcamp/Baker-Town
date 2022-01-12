@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction } from "react";
 import StorePresenter from "./Store.presenter";
 import {
   collection,
@@ -7,24 +7,22 @@ import {
   getFirestore,
   orderBy,
   query,
-  where,
 } from "@firebase/firestore";
 import { firebaseApp, useAuth } from "../../../../pages/_app";
 
 const StoreContainer = () => {
   const router = useRouter();
-  const [popular, setPoplular] = useState([]);
-  const [recent, setRecent] = useState([]);
+  const [popular, setPoplular] = useState<SetStateAction<any>>([]);
+  const [recent, setRecent] = useState<SetStateAction<any>>([]);
   const currentUser = useAuth();
 
-  useEffect(async () => {
+  const storeLanding = async () => {
     const popular = query(
       collection(getFirestore(firebaseApp), "item"),
       orderBy("heart", "desc")
     );
     let result = await getDocs(popular);
     let docs = result.docs.map((el) => el.data());
-    console.log(docs);
     setPoplular(docs);
 
     const recent = query(
@@ -34,14 +32,59 @@ const StoreContainer = () => {
     result = await getDocs(recent);
     docs = result.docs.map((el) => el.data());
     setRecent(docs);
+  };
+
+  useEffect(() => {
+    storeLanding();
   }, []);
 
   const recentList = () => {
     router.push(`/store/list`);
   };
 
+  const SampleNextArrow = (el: any) => {
+    const { className, style, onClick } = el;
+    return (
+      <div
+        className="slick-next-arrow"
+        style={{ ...style, display: "block" }}
+        onClick={onClick}
+      />
+    );
+  };
+
+  const SamplePrevArrow = (el: any) => {
+    const { currentSlide, style, onClick } = el;
+    if (currentSlide === 0) {
+      return null;
+    } else {
+      return (
+        <div
+          className="slick-before-arrow"
+          style={{ ...style, display: "block" }}
+          onClick={onClick}
+        />
+      );
+    }
+  };
+
+  const settings = {
+    dots: false,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    autoplay: false,
+    infinite: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
+
   return (
-    <StorePresenter recent={recent} popular={popular} recentList={recentList} />
+    <StorePresenter
+      settings={settings}
+      recent={recent}
+      popular={popular}
+      recentList={recentList}
+    />
   );
 };
 

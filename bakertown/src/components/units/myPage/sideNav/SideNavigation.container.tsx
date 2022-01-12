@@ -1,18 +1,18 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useAuth, firebaseApp } from "../../../../../pages/_app";
-import { collection, doc, getDoc, getFirestore } from "@firebase/firestore";
+import { doc, getDoc, getFirestore } from "@firebase/firestore";
 import SideNavigationPresenter from "./SideNavigation.presenter";
 
 const SideNavigationContainer = () => {
   const router = useRouter();
 
-  const currentUser = useAuth();
+  const currentUser: any = useAuth();
   const [myUser, setMyUser] = useState({
     name: "로딩중입니다",
   });
 
-  useEffect(async () => {
+  const sideNavigationContents = async () => {
     if (myUser?.name === "로딩중입니다") {
       if (!currentUser) return;
       const userQuery = doc(
@@ -20,13 +20,17 @@ const SideNavigationContainer = () => {
         "users",
         currentUser?.email
       );
-      const userResult = await getDoc(userQuery);
+      const userResult: any = await getDoc(userQuery);
       setMyUser(userResult.data());
       console.log(userResult.data());
     }
+  };
+
+  useEffect(() => {
+    sideNavigationContents();
   });
 
-  const onClickSideButton = (el) => () => {
+  const onClickSideButton = (el: string) => () => {
     if (el === "참여 완료") router.push(`/myPage/class/afterPar`);
     if (el === "참여 예정") router.push(`/myPage/class/beforePar`);
     if (el === "나의 후기") router.push(`/myPage/class/myReview`);

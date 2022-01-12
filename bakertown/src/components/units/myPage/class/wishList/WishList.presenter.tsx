@@ -1,8 +1,9 @@
 import * as S from "./WishList.styles";
 import { v4 as uuidv4 } from "uuid";
 import SideNavigationContainer from "../../sideNav/SideNavigation.container";
+import { IWishListPresenter } from "./WishList.types";
 
-const WishListPresenter = (props) => {
+const WishListPresenter = (props: IWishListPresenter) => {
   return (
     <>
       <S.Wrapper>
@@ -12,7 +13,7 @@ const WishListPresenter = (props) => {
             <S.ListTitleText>CLASS | 찜목록</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
-            {props.userResult?.heart?.map((el) => (
+            {props.userResult?.heart?.map((el: any) => (
               <S.ClassWrapper>
                 <S.Class>
                   <S.ClassImage onClick={props.classDetail(el)} />

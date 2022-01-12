@@ -9,42 +9,6 @@ import "slick-carousel/slick/slick-theme.css";
 import AvatarPage from "../../commons/avatar/AvatarPage";
 
 const LandingPresenter = (props: ILandingPresenterProps) => {
-  const SampleNextArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className="slick-next-arrow"
-        style={{ ...style, display: "block" }}
-        onClick={onClick}
-      />
-    );
-  };
-
-  const SamplePrevArrow = (props) => {
-    const { currentSlide, style, onClick } = props;
-    if (currentSlide === 0) {
-      return null;
-    } else {
-      return (
-        <div
-          className="slick-before-arrow"
-          style={{ ...style, display: "block" }}
-          onClick={onClick}
-        />
-      );
-    }
-  };
-
-  const settings = {
-    dots: false,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    autoplay: false,
-    infinite: false,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-  };
-
   // 반응형 헤더
 
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -70,7 +34,6 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               ? "/imgs/landing/header01.png"
               : "/imgs/logo.png"
           }
-          onClick={props.landing}
         />
         <S.CategoryClass
           className={scrollPosition < 90 ? "original_header" : "change_header"}
@@ -142,7 +105,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                   height: "100%",
                 }}
               >
-                <Slider {...settings}>
+                <Slider {...props.settings}>
                   {props.popular.map((el: any) => (
                     <ClassSubject
                       el={el}
@@ -159,7 +122,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             <S.SubjectName>
               <S.SubjectWrapper>
                 <S.SubjectTitle>신규 클래스</S.SubjectTitle>
-                <S.SubjectView onClick={props.geRecent}>
+                <S.SubjectView onClick={props.goRecent}>
                   전체 신규 클래스 보기
                 </S.SubjectView>
               </S.SubjectWrapper>
@@ -170,7 +133,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                     height: "100%",
                   }}
                 >
-                  <Slider {...settings}>
+                  <Slider {...props.settings}>
                     {props.recent.map((el: any) => (
                       <ClassSubject
                         el={el}
@@ -218,7 +181,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                     height: "100%",
                   }}
                 >
-                  <Slider {...settings}>
+                  <Slider {...props.settings}>
                     {new Array(7).fill(1).map((el) => (
                       <S.ClassWrapper key={uuidv4()}>
                         <S.ClassImage />

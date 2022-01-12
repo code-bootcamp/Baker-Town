@@ -1,21 +1,22 @@
 import { doc, getDoc, getFirestore, updateDoc } from "@firebase/firestore";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { getOnlyDate } from "../../../../../commons/libraries/getDate";
 import OrderHistoryPresenter from "./OrderHistory.presenter";
 
 const OrderHistoryContainer = () => {
   const router = useRouter();
-  const currentUser = useAuth();
+  const currentUser: any = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [reviewContents, setReviewContents] = useState("");
   const [rating, setRating] = useState(3);
-  const [myUser, setMyUser] = useState({
+  const [myUser, setMyUser] = useState<SetStateAction<any>>({
     name: "로딩중입니다",
+    boughtItem: [],
   });
 
-  useEffect(async () => {
+  const orderHistoryContents = async () => {
     if (myUser?.name === "로딩중입니다") {
       if (!currentUser) return;
       const userQuery = doc(
@@ -23,17 +24,21 @@ const OrderHistoryContainer = () => {
         "users",
         currentUser?.email
       );
-      const userResult = await getDoc(userQuery);
+      const userResult: any = await getDoc(userQuery);
       setMyUser(userResult.data());
       console.log("aaa", userResult.data());
     }
+  };
+
+  useEffect(() => {
+    orderHistoryContents();
   });
 
   const onToggleModal = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const onClickReview = (index) => async () => {
+  const onClickReview = (index: number) => async () => {
     setIsOpen((prev) => !prev);
     if (!currentUser) {
       return;
@@ -44,7 +49,7 @@ const OrderHistoryContainer = () => {
       "item",
       myUser?.boughtItem?.[index].itemRouter
     );
-    const itemResult = await getDoc(bakeryItem);
+    const itemResult: any = await getDoc(bakeryItem);
 
     // 내 정보 불러오기
     const userQuery = doc(
@@ -79,7 +84,7 @@ const OrderHistoryContainer = () => {
 
     // 내 리뷰에 리뷰정보 넣기
     const reviewInfo = {
-      itemRouter: myUser?.boughtItem?.[index]?.itemRouter,
+      // itemRouter: myUser?.boughtItem?.[index]?.itemRouter,
       ...myReview,
     };
     userReview?.push(reviewInfo);
@@ -88,7 +93,7 @@ const OrderHistoryContainer = () => {
     });
   };
 
-  const onClickItemDetail = (el) => () => {
+  const onClickItemDetail = (el: any) => () => {
     router.push(`/store/detail/${el.itemRouter}`);
   };
 
