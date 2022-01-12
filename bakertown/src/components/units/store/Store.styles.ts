@@ -59,6 +59,7 @@ export const StoresWrapper = styled.div`
 `;
 
 export const SmallLine = styled.div`
+  width: 290px;
   border-bottom: 1px solid #b9b9b9;
   margin-bottom: 9.5px;
 `;

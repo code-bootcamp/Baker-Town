@@ -3,8 +3,6 @@ import { IDashBoardClassWriteProps } from "./DashBoardClassWrite.types";
 import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
 import ClassScheduleContainer from "../../../../commons/classSchedule/ClassSchedule.container";
-import { Upload, Button, Space } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
 
 const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
   return (
@@ -54,7 +52,6 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
       <S.ClassContentsWrapper>
         <S.ClassContentsTitle>클래스 소개 입력</S.ClassContentsTitle>
         <S.ClassContents
-          type="text"
           onChange={props.onChangeInputs}
           placeholder="클래스 소개를 자세히 입력해 주세요."
           name="contents"

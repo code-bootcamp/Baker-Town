@@ -1,6 +1,5 @@
-import { MouseEventHandler } from "react";
-
 export interface IDashBoardClassReadProps {
-  update(el: any): MouseEventHandler<HTMLButtonElement> | undefined;
-  onClickDelete: () => void;
+  onClickDelete: (el: any) => () => void;
+  class: never[];
+  classDetail: (el: any) => () => void;
 }

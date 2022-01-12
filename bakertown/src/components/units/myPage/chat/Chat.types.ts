@@ -1,5 +1,7 @@
+import { LegacyRef, MouseEventHandler } from "react";
+
 export interface IChatProps {
-  msgRef: LegacyRef<HTMLDivElement> | undefined;
-  onClickToChatRoom: MouseEventHandler<HTMLDivElement> | undefined;
+  msgRef: any;
+  onClickToChatRoom: any;
   messages: any;
 }

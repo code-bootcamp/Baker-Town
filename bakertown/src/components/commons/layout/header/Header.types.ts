@@ -1,10 +1,12 @@
-// import { ReactChild } from "react";
+import { ChangeEvent } from "react";
 
 export interface IHeaderProps {
-  //   children: ReactChild;
   logo: () => void;
   class: () => void;
   search: () => void;
-  keyWord: (event) => void;
+  keyWord: (event: ChangeEvent<HTMLInputElement>) => void;
   signIn: () => void;
+  heartClass: () => void;
+  store: () => void;
+  enterKey: () => void;
 }

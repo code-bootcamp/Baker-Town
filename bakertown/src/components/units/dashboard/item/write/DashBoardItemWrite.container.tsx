@@ -11,8 +11,6 @@ import { ChangeEvent, useState, useEffect } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 import { useRouter } from "next/router";
-import { AnyARecord } from "dns";
-import { PropertySafetyFilled } from "@ant-design/icons";
 import { IDashBoardMainItemWriteContainerProps } from "./DashBoardItemWrite.types";
 
 export const DashBoardItemContainer = (
@@ -24,7 +22,7 @@ export const DashBoardItemContainer = (
   const [myInputs, setMyInputs] = useState({
     itemName: "",
     contents: "",
-    price: "",
+    price: 0,
     createdAt: "",
     category: "",
     shippingTime: "",
@@ -35,7 +33,12 @@ export const DashBoardItemContainer = (
     images: [],
   });
 
-  const [myItem, setMyItem] = useState();
+  const [myItem, setMyItem] = useState({
+    itemName: "",
+    contents: "",
+    price: 0,
+    shippingTime: "",
+  });
 
   // 아이템 등록
   const onClickSubmit = async () => {

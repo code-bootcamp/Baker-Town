@@ -1,10 +1,4 @@
-import {
-  ChangeEvent,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEvent, SetStateAction, useEffect, useState } from "react";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 import { plusMyung } from "../../../../../commons/libraries/stringConcatenate";
 import {
@@ -14,7 +8,6 @@ import {
   doc,
   getDoc,
   setDoc,
-  DocumentSnapshot,
 } from "firebase/firestore";
 import DashBoardMainClassWritePresenter from "./DashBoardClassWrite.presenter";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
@@ -30,7 +23,7 @@ const DashBoardMainClassWriteContainer = (
   const [isOpen, setIsOpen] = useState(false);
   const [date, setDate] = useState("");
   const [members, setMembers] = useState("");
-  const [myInputs, setMyInputs] = useState({
+  const [myInputs, setMyInputs] = useState<SetStateAction<any>>({
     className: "",
     category: "",
     remarks: "",
@@ -55,6 +48,7 @@ const DashBoardMainClassWriteContainer = (
   const [address, setAddress] = useState("");
   const [myClass, setMyClass] = useState({
     address: "내 주소!",
+    className: "",
   });
 
   const currentUser: any = useAuth();

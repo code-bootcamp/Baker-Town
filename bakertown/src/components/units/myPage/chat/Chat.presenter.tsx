@@ -1,7 +1,6 @@
 import { IChatProps } from "./Chat.types";
 import {
   MessageWrapper,
-  ProfileImg,
   Contents,
   LastTime,
   Name,

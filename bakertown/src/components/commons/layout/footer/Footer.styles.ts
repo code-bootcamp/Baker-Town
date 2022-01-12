@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -6,13 +7,27 @@ export const Wrapper = styled.div`
   background-color: #f5f3f0;
   display: flex;
   justify-content: center;
+  @media ${breakPoints.tablet} {
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    /* border: 10px dotted green; */
+    /* display: none; */
+  }
 `;
 
 export const InnerWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 1274px;
+  width: 100%;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 100%;
+  }
 `;
 
 export const InnerLogo = styled.div`
@@ -24,6 +39,13 @@ export const FirstColumn = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 162px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    padding-left: 30px;
+  }
 `;
 
 export const ClassTitle = styled.div`

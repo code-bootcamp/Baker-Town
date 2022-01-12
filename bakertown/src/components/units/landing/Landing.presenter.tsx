@@ -99,12 +99,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               </S.SubjectView>
             </S.SubjectWrapper>
             <S.ClassesWrapper>
-              <S.SliderWrapper
-                style={{
-                  width: "102.8%",
-                  height: "100%",
-                }}
-              >
+              <S.SliderWrapper>
                 <Slider {...props.settings}>
                   {props.popular.map((el: any) => (
                     <ClassSubject
@@ -128,10 +123,10 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               </S.SubjectWrapper>
               <S.ClassesWrapper>
                 <S.SliderWrapper
-                  style={{
-                    width: "102.8%",
-                    height: "100%",
-                  }}
+                // style={{
+                //   width: "102.8%",
+                //   height: "100%",
+                // }}
                 >
                   <Slider {...props.settings}>
                     {props.recent.map((el: any) => (
@@ -153,11 +148,11 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                 스토어 전체 보기
               </S.SubjectView>
             </S.SubjectWrapper>
-            <S.ClassesWrapper>
+            <S.EventItemWrapper>
               {new Array(3).fill(1).map((el) => (
                 <S.EventImage key={uuidv4()} />
               ))}
-            </S.ClassesWrapper>
+            </S.EventItemWrapper>
           </S.EventWrapper>
           <S.MiddleBanner>
             <S.MiddleBannerWrapper>
@@ -176,10 +171,10 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               </S.SubjectWrapper>
               <S.ClassesWrapper>
                 <S.SliderWrapper
-                  style={{
-                    width: "102.8%",
-                    height: "100%",
-                  }}
+                // style={{
+                //   width: "102.8%",
+                //   height: "100%",
+                // }}
                 >
                   <Slider {...props.settings}>
                     {new Array(7).fill(1).map((el) => (
@@ -226,7 +221,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               </S.CategoryFirstWrapper>
               <S.CategorySecondWrapper>
                 <S.CategoryDiv>
-                  <S.CategoryButtonTitle style={{ left: "151px" }}>
+                  <S.CategoryButtonTitle>
                     &nbsp;쿠&nbsp;&nbsp;&nbsp;키
                   </S.CategoryButtonTitle>
                   <S.CategoryButton
@@ -235,7 +230,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                   ></S.CategoryButton>
                 </S.CategoryDiv>
                 <S.CategoryDiv>
-                  <S.CategoryButtonTitle style={{ left: "151px" }}>
+                  <S.CategoryButtonTitle>
                     &nbsp;커&nbsp;&nbsp;&nbsp;피
                   </S.CategoryButtonTitle>
                   <S.CategoryButton

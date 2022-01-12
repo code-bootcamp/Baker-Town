@@ -1,7 +1,8 @@
-import WishListContainer from "../../../../src/components/units/myPage/class/wishList/WishList.container"
+import { withAuth } from "../../../../src/components/commons/hocs/withAuth";
+import WishListContainer from "../../../../src/components/units/myPage/class/wishList/WishList.container";
 
 const wishListPage = () => {
-    return <WishListContainer />
-}
+  return <WishListContainer />;
+};
 
-export default wishListPage
+export default withAuth(wishListPage);

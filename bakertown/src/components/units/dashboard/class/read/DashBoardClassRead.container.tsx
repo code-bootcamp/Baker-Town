@@ -21,7 +21,7 @@ const DashBoardClassReadContainer = () => {
   const currentUser: any = useAuth();
   const router = useRouter();
 
-  useEffect(async () => {
+  const dashBoardClassReadContents = async () => {
     const product = query(
       collection(getFirestore(firebaseApp), "class"),
       where("patissierId", "!=", "")
@@ -40,6 +40,10 @@ const DashBoardClassReadContainer = () => {
     console.log(docs);
     setDocs(docs);
     // console.log("날짜나 불러볼라고", docs?.[0].createdAt);
+  };
+
+  useEffect(() => {
+    dashBoardClassReadContents();
   }, []);
 
   const update = (el: any) => () => {

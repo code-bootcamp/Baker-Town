@@ -1,10 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import {
-  firebaseApp,
-  getFirebaseConfig,
-  useAuth,
-} from "../../../../../pages/_app";
-import { initializeApp } from "firebase/app";
+import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import {
   getFirestore,
   collection,
@@ -23,9 +18,6 @@ import { useRouter } from "next/router";
 import { v4 as uuidv4 } from "uuid";
 import ChatRoomPresenter from "./chatRoom.presenter";
 
-// const firebaseAppConfig = getFirebaseConfig();
-// initializeApp(firebaseAppConfig);
-
 export default function ChatRoomContainer() {
   const router = useRouter();
   const currentUser = useAuth();
@@ -35,7 +27,7 @@ export default function ChatRoomContainer() {
     name: "내 이름",
   });
 
-  useEffect(async () => {
+  const chatRoomContents = async () => {
     if (myUser.name === "내 이름") {
       if (!currentUser) return;
       const userQuery = doc(
@@ -43,10 +35,14 @@ export default function ChatRoomContainer() {
         "users",
         currentUser?.email
       );
-      const userResult = await getDoc(userQuery);
+      const userResult: any = await getDoc(userQuery);
       setMyUser(userResult.data());
       console.log(userResult.data());
     }
+  };
+
+  useEffect(() => {
+    chatRoomContents();
   });
 
   const name = myUser.name;

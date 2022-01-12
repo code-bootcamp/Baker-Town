@@ -8,6 +8,4 @@ export interface IDashBoardSidebarProps {
   onClickDashBoardClassReadPage: () => void;
   onClickDashBoardMyPagePage: () => void;
   onClickLandingPage: () => void;
-
-  //   children: ReactChild;
 }
