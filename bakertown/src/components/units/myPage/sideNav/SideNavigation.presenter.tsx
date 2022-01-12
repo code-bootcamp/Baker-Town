@@ -16,6 +16,7 @@ const SideNavigationPresenter = (props: ISideNavigationPresenterProps) => {
               className="Image"
               alt="mypage"
               src="/imgs/mypage.png"
+              onClick={props.goMyPage}
             />
           </S.Title>
           <S.SmallLine></S.SmallLine>
