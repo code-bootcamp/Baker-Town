@@ -61,7 +61,6 @@ const DashBoardClassReadContainer = () => {
         onClickDelete={onClickDelete}
         classDetail={onClickClassDetail}
       />
-      ;
     </>
   );
 };

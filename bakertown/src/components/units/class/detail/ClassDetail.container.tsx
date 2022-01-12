@@ -318,7 +318,7 @@ const ClassDetailContainer = () => {
     return {
       root: null,
       threshold: 0,
-      rootMargin: "1000px 0px 0px 0px",
+      rootMargin: "80%",
     };
   }, []);
 
@@ -344,8 +344,8 @@ const ClassDetailContainer = () => {
   const mapoptions = useMemo(() => {
     return {
       root: null,
-      threshold: 0,
-      rootMargin: "0px 0px -1000px 0px",
+      threshold: 0.7,
+      rootMargin: "0% 0% 0% 0%",
     };
   }, []);
 
@@ -374,8 +374,8 @@ const ClassDetailContainer = () => {
   const reviewoptions = useMemo(() => {
     return {
       root: null,
-      threshold: 0,
-      rootMargin: "0px 0px -1000px 0px",
+      threshold: 0.9,
+      rootMargin: "-13%",
     };
   }, []);
 

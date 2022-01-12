@@ -10,6 +10,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  overflow: auto;
+
   /* background-color: salmon; */
 `;
 
