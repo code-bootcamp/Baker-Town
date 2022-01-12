@@ -6,6 +6,18 @@ export const MyPoint = styled.div`
 `;
 
 export const ChargeButton = styled.button`
-  font-size: 20px;
-  background: #fbf5ef;
+  width: 100%;
+  height: 60px;
+  border-radius: 0.5px;
+  background-color: #4f3325;
+  color: #f3f3f3;
+  border: 0px solid gray;
+  font-size: 23px;
+  cursor: pointer;
+  transition: 100ms;
+
+  :hover {
+    color: white;
+    opacity: 0.95;
+  }
 `;
