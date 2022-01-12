@@ -15,7 +15,7 @@ export interface IDashBoardClassWriteProps {
   onChangeDate: (dateString: string) => void;
   onChangeMembers: (event: ChangeEvent<HTMLInputElement>) => void;
   onClickSubmit: () => void;
-  onChangeInputs: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChangeInputs: any;
   onChangeImage2: (event: ChangeEvent<HTMLInputElement>) => void;
   onClickUpdate: () => void;
 }

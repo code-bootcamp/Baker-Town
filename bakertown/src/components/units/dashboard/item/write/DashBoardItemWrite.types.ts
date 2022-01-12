@@ -11,5 +11,4 @@ export interface IDashBoardItemProps {
 
 export interface IDashBoardMainItemWriteContainerProps {
   isEdit: boolean;
-  onChangeCategory: any;
 }

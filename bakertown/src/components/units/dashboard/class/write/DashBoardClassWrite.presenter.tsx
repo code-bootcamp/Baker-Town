@@ -52,7 +52,6 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
       <S.ClassContentsWrapper>
         <S.ClassContentsTitle>클래스 소개 입력</S.ClassContentsTitle>
         <S.ClassContents
-          type="text"
           onChange={props.onChangeInputs}
           placeholder="클래스 소개를 자세히 입력해 주세요."
           name="contents"

@@ -61,7 +61,6 @@ const DashBoardItemReadContainer = () => {
         recent={recent}
         update={update}
         onClickDelete={onClickDelete}
-        delete={undefined}
       />
     </>
   );

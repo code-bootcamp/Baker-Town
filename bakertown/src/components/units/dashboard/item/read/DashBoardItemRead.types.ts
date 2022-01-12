@@ -1,6 +1,5 @@
 export interface IDashBoardItemReadPresenterProps {
-  update: MouseEventHandler<HTMLButtonElement> | undefined;
-  delete: MouseEventHandler<HTMLButtonElement> | undefined;
+  update: (el: any) => () => void;
   onClickDelete: (el: any) => () => void;
   recent: never[];
 }
