@@ -1,4 +1,10 @@
-import { ChangeEvent, useContext, useEffect, useState } from "react";
+import {
+  ChangeEvent,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 import { plusMyung } from "../../../../../commons/libraries/stringConcatenate";
 import {
@@ -43,7 +49,7 @@ const DashBoardMainClassWriteContainer = (
       classArray: [],
     },
   });
-  const [classSchedule, setClassSchedule] = useState([]);
+  const [classSchedule, setClassSchedule] = useState<SetStateAction<any>>([]);
   const [isVisible, setIsVisible] = useState(false);
   const [address, setAddress] = useState("");
   const [myClass, setMyClass] = useState({

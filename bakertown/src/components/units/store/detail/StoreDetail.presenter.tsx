@@ -16,7 +16,7 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
           <S.ProductDate>{props.myStore?.shippingTime}</S.ProductDate>
           <S.Label>리뷰</S.Label>
           <S.Review>
-            {props.myStore?.review?.map((el) => (
+            {props.myStore?.review?.map((el: any) => (
               <div key={uuidv4()}>
                 <div>{el.user}</div>
                 <div>{el.rating}</div>

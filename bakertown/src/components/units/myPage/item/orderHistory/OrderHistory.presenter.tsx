@@ -3,8 +3,9 @@ import { v4 as uuidv4 } from "uuid";
 import SideNavigationContainer from "../../sideNav/SideNavigation.container";
 import { Modal } from "antd";
 import WriteReviewContainer from "../../../../commons/writeReview/WriteReview.container";
+import { IOrderHistoryPresenter } from "./OrderHistory.types";
 
-const OrderHistoryPresenter = (props) => {
+const OrderHistoryPresenter = (props: IOrderHistoryPresenter) => {
   return (
     <>
       <S.Wrapper>
@@ -14,7 +15,7 @@ const OrderHistoryPresenter = (props) => {
             <S.ListTitleText>ITEM | 주문 내역</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
-            {props.userResult?.boughtItem?.map((el, index) => (
+            {props.userResult?.boughtItem?.map((el: any, index) => (
               <S.Order key={uuidv4()}>
                 <S.OrderDate>{el.createdAt} 주문</S.OrderDate>
                 <S.OrderWrapper>

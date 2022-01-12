@@ -6,11 +6,13 @@ import MyReviewPresenter from "./MyReview.presenter";
 
 const MyReviewContainer = () => {
   const router = useRouter();
-  const currentUser = useAuth();
+  const currentUser: any = useAuth();
   const [myUser, setMyUser] = useState({
     name: "로딩중입니다",
+    review: [],
   });
-  useEffect(async () => {
+
+  const myReviewContens = async () => {
     if (myUser?.name === "로딩중입니다") {
       if (!currentUser) return;
       const userQuery = doc(
@@ -18,12 +20,16 @@ const MyReviewContainer = () => {
         "users",
         currentUser?.email
       );
-      const userResult = await getDoc(userQuery);
+      const userResult: any = await getDoc(userQuery);
       setMyUser(userResult.data());
     }
+  };
+
+  useEffect(() => {
+    myReviewContens();
   });
 
-  const onClickClassDetail = (el) => () => {
+  const onClickClassDetail = (el: any) => () => {
     router.push(`/class/detail/${el.classRouter}`);
   };
 

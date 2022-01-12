@@ -1,5 +1,5 @@
 import StoreDetailPresenter from "../detail/StoreDetail.presenter";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { getFirestore, getDoc, doc, updateDoc } from "firebase/firestore";
 import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
@@ -9,12 +9,18 @@ import { getAuth } from "firebase/auth";
 const StoreDetailContainer = () => {
   const router = useRouter();
 
-  const currentUser = useAuth();
-  const [myStore, setMyStore] = useState({
+  const currentUser: any = useAuth();
+  const [myStore, setMyStore] = useState<SetStateAction<any>>({
     itemName: "로딩중입니다",
+    address: "",
+    category: "",
+    contents: "",
+    patissier: "",
+    shippingTime: "",
+    price: 0,
   });
 
-  useEffect(async () => {
+  const storeDetail = async () => {
     if (myStore?.itemName === "로딩중입니다") {
       const product = doc(
         getFirestore(firebaseApp),
@@ -27,7 +33,12 @@ const StoreDetailContainer = () => {
       console.log("아이템 정보", itemData);
       setMyStore(itemData);
     }
+  };
+
+  useEffect(() => {
+    storeDetail();
   });
+
   const currentID = getAuth().currentUser?.uid;
   const onClickPurchase = async () => {
     // 내 정보 불러오기
@@ -37,7 +48,7 @@ const StoreDetailContainer = () => {
         "users",
         currentUser?.email
       );
-      const userResult = await getDoc(userQuery);
+      const userResult: any = await getDoc(userQuery);
 
       // 내가 구매한 아이템
       const myBoughtItem = userResult.data().boughtItem;
@@ -75,7 +86,7 @@ const StoreDetailContainer = () => {
       "item",
       String(router.query.storeId)
     );
-    const itemResult = await getDoc(bakeryItem);
+    const itemResult: any = await getDoc(bakeryItem);
 
     // 내 정보 불러오기
     const userQuery = doc(
@@ -83,7 +94,7 @@ const StoreDetailContainer = () => {
       "users",
       currentUser?.email
     );
-    const userResult = await getDoc(userQuery);
+    const userResult: any = await getDoc(userQuery);
 
     console.log(userResult.data());
 

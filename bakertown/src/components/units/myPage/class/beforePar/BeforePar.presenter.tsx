@@ -1,10 +1,9 @@
 import * as S from "./BeforePar.styles";
 import { v4 as uuidv4 } from "uuid";
 import SideNavigationContainer from "../../sideNav/SideNavigation.container";
+import { IBeforeParPresenter } from "./BeforePar.types";
 
-const BeforeParPresenter = (props) => {
-  const myClass = ["참여 예정", "참여 완료", "나의 후기", "찜 목록"];
-  const myItem = ["주문 내역", "장바구니", "리뷰"];
+const BeforeParPresenter = (props: IBeforeParPresenter) => {
   return (
     <>
       <S.Wrapper>
@@ -14,7 +13,7 @@ const BeforeParPresenter = (props) => {
             <S.ListTitleText>CLASS | 참여예정</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
-            {props.userResult.beforePar?.map((el, index: number) => (
+            {props.userResult.beforePar?.map((el: any, index: number) => (
               <S.ClassWrapper key={uuidv4()}>
                 <S.ClassImage onClick={props.classDetail(el)} />
                 <S.ClassContentsWrapper>

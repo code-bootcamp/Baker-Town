@@ -1,30 +1,31 @@
-import { useState } from "react";
+import { ChangeEvent, ChangeEventHandler, useState } from "react";
 import { getOnlyDate } from "../../../../commons/libraries/getDate";
 import ScheduleSettingPresenter from "./ScheduleSetting.presenter";
+import { IScheduleSettingContainer } from "./ScheduleSetting.types";
 
-const ScheduleSettingContainer = (props) => {
+const ScheduleSettingContainer = (props: IScheduleSettingContainer) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [runningTime, setRunningTime] = useState("");
   const [memberCount, setMemberCount] = useState(0);
 
-  const onChangeDatePick = (date, dateString) => {
+  const onChangeDatePick = (date: any, dateString: string) => {
     setDate(getOnlyDate(dateString));
   };
 
-  const onChangeTimePick = (time, timeString) => {
+  const onChangeTimePick = (time: any, timeString: string) => {
     setTime(timeString);
   };
 
-  const onChangeMemberInput = (event) => {
-    if (event.target.value < 1) {
+  const onChangeMemberInput = (event: ChangeEvent<HTMLInputElement>) => {
+    if (Number(event.target.value) < 1) {
       alert("수강 인원을 1명 이상 선택해 주세요.");
-      event.target.value = 1;
+      event.target.value = "1";
     }
-    setMemberCount(event.target.value);
+    setMemberCount(Number(event.target.value));
   };
 
-  const onChangeTime = (event) => {
+  const onChangeTime = (event: any) => {
     setRunningTime(event.target.value);
   };
 
@@ -50,11 +51,11 @@ const ScheduleSettingContainer = (props) => {
       timePick={onChangeTimePick}
       memberChange={onChangeMemberInput}
       scheduleSetting={onClickScheduleSetting}
+      onChangeTime={onChangeTime}
       date={date}
       time={time}
-      memberCount={memberCount}
       runningTime={runningTime}
-      onChangeTime={onChangeTime}
+      memberCount={memberCount}
     />
   );
 };

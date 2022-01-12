@@ -2,8 +2,9 @@ import * as S from "./ClassSchedule.styles";
 import ScheduleSettingContainer from "./scheduleSetting/ScheduleSetting.container";
 import { Modal } from "antd";
 import { v4 as uuidv4 } from "uuid";
+import { IClassSchedulePresenter } from "./ClassSchedule.types";
 
-const ClassSchedulePresenter = (props) => {
+const ClassSchedulePresenter = (props: IClassSchedulePresenter) => {
   return (
     <>
       <S.Wrapper>
@@ -21,7 +22,7 @@ const ClassSchedulePresenter = (props) => {
             </S.SettingRight>
           </S.SchduleSettingWrapper>
           <S.ScheduleWrppaer>
-            {props.classSchedule?.map((el) => (
+            {props.classSchedule?.map((el: any) => (
               <S.ClasScheduleWrapper key={uuidv4()}>
                 <div>날짜: {el.class?.date}&nbsp;&nbsp;</div>
                 <div>시작시간: {el.class?.start}&nbsp;&nbsp;</div>

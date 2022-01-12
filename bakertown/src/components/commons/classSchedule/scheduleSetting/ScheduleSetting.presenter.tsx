@@ -1,7 +1,8 @@
 import * as S from "./ScheduleSetting.styles";
 import { DatePicker, TimePicker } from "antd";
+import { IScheduleSettingPresenterProps } from "./ScheduleSetting.types";
 
-const ScheduleSettingPresenter = (props) => {
+const ScheduleSettingPresenter = (props: IScheduleSettingPresenterProps) => {
   return (
     <>
       <S.Wrapper>

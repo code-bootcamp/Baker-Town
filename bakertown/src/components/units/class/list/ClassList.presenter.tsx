@@ -22,14 +22,14 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
             <S.ListTitle>
               <S.ListTitleText>{props.categoryName} 클래스</S.ListTitleText>
             </S.ListTitle>
-            <S.ListSelect onChange={props.changeSelect}>
+            {/* <S.ListSelect onChange={props.changeSelect}>
               <S.ListOption value="1">추천순</S.ListOption>
               <S.ListOption value="2">인기순</S.ListOption>
               <S.ListOption value="3">최신순</S.ListOption>
-            </S.ListSelect>
+            </S.ListSelect> */}
           </S.ListToSelect>
           <S.ListContents>
-            {props.recent.map((el) => (
+            {props.recent.map((el: any) => (
               <S.ClassWrapper key={uuidv4()}>
                 {el.images?.[0] ? (
                   <S.ClassImage

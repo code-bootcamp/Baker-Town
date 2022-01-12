@@ -1,8 +1,9 @@
 import * as S from "./Basket.styles";
 import { v4 as uuidv4 } from "uuid";
 import SideNavigationContainer from "../../sideNav/SideNavigation.container";
+import { IBasketPresenterProps } from "./Basket.types";
 
-const BasketPresenter = (props) => {
+const BasketPresenter = (props: IBasketPresenterProps) => {
   return (
     <>
       <S.Wrapper>
@@ -12,7 +13,7 @@ const BasketPresenter = (props) => {
             <S.BasketTitleText>ITEM | 장바구니</S.BasketTitleText>
           </S.BasketTitle>
           <S.BasketContents>
-            {props.userResult?.itemHeart?.map((el) => (
+            {props.userResult?.itemHeart?.map((el: any) => (
               <S.ItemWrapper key={uuidv4()}>
                 <S.ItemImage onClick={props.itemDetail(el)} />
                 <S.ItemInfo>

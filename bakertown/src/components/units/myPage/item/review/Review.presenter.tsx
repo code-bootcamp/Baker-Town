@@ -2,8 +2,9 @@ import * as S from "./Review.styles";
 import { v4 as uuidv4 } from "uuid";
 import SideNavigationContainer from "../../sideNav/SideNavigation.container";
 import { Rate } from "antd";
+import { IReviewPresenter } from "./Review.types";
 
-const ReviewPresenter = (props) => {
+const ReviewPresenter = (props: IReviewPresenter) => {
   return (
     <>
       <S.Wrapper>
@@ -13,7 +14,7 @@ const ReviewPresenter = (props) => {
             <S.ListTitleText>ITEM | 나의 후기</S.ListTitleText>
           </S.ListTitle>
           <S.ListContents>
-            {props.userResult?.itemReview?.map((el) => (
+            {props.userResult?.itemReview?.map((el: any) => (
               <S.OrderWrapper key={uuidv4()}>
                 <S.TopWrapper>
                   <S.ItemImage onClick={props.itemDetail(el)} />
