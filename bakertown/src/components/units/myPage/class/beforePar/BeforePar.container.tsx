@@ -43,7 +43,7 @@ const BeforeParContainer = () => {
     );
     const userResult: any = await getDoc(userQuery);
     // // 나의 포인트 + class가격
-    const charge = userResult.data().mypoint + el.classPrice;
+    const charge = Number(userResult.data().mypoint) + Number(el.classPrice);
     await updateDoc(userQuery, { mypoint: charge });
 
     // 클래스 불러오기
@@ -81,6 +81,7 @@ const BeforeParContainer = () => {
     await updateDoc(userQuery, {
       beforePar: myBeforeParClass,
     });
+    location.reload();
   };
 
   return (

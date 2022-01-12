@@ -3,4 +3,5 @@ export interface ISideNavigationPresenterProps {
   userResult: {
     name: string;
   };
+  goMyPage: () => void;
 }

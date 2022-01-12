@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const HeaderWrapper = styled.header`
   display: flex;
@@ -16,6 +17,18 @@ export const HeaderWrapper = styled.header`
   background-size: cover;
   scroll-behavior: smooth;
 
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    /* width: 100%; */
+    /* border: 10px dotted green; */
+    /* display: none; */
+    /* justify-content: flex-start; */
+    /* width: 100%; */
+    /* right: 0; */
+    width: 100%;
+  }
 
   &.change_header {
     position: fixed;
@@ -26,6 +39,9 @@ export const HeaderWrapper = styled.header`
     box-shadow: -1px 5px 19px -3px rgba(0,0,0,0.21);
      }
   }
+
+ 
+
 `;
 
 export const LogoWrapper = styled.div``;
@@ -36,6 +52,16 @@ export const Img = styled.img`
   transition: 300ms;
   :hover {
     cursor: pointer;
+  }
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    /* width: 100%; */
+    /* padding-left: 5%; */
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    /* width: 1; */
+    /* padding-left: 5%; */
   }
 `;
 
@@ -48,6 +74,19 @@ export const CategoryClass = styled.div`
   color: #fff;
   margin-left: 172px;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    /* padding-left: 5%; */
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    /* width: 100%; */
+    /* padding-left: 5%; */
+    margin-left: 60px;
+  }
+
   :hover {
     color: #fafafa;
     opacity: 0.7;
@@ -75,6 +114,18 @@ export const CategoryStore = styled.div`
   color: #fff;
   margin-left: 50px;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    /* padding-left: 5%; */
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    /* width: 100%; */
+    /* padding-left: 5%; */
+  }
+
   :hover {
     color: #fafafa;
     opacity: 0.5;
@@ -108,6 +159,14 @@ export const RoundDiv = styled.div`
   align-items: center;
   justify-content: space-between;
   transition: 500ms;
+
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const RoundDivInnerText = styled.input`
@@ -199,6 +258,17 @@ export const HeartToLogin = styled.div`
   display: flex;
   align-items: center;
   transition: 300ms;
+
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    /* padding-left: 5%; */
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    display: none;
+    /* padding-left: 5%; */
+  }
 `;
 
 export const TopBanner = styled.div`
@@ -213,6 +283,14 @@ export const TopBanner = styled.div`
   overflow: hidden;
   box-shadow: inset 9px -300px 67px -3px rgba(0, 0, 0, 0.1);
   background-size: cover;
+
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    width: 100%;
+  }
 `;
 
 export const TextWrapper = styled.div`
@@ -224,6 +302,16 @@ export const TextWrapper = styled.div`
   justify-content: center;
   position: absolute;
   z-index: 1;
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    padding-left: 5%;
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    width: 100%;
+    padding-left: 5%;
+  }
 `;
 
 export const TextTop = styled.div`
@@ -239,6 +327,16 @@ export const TextTop = styled.div`
   text-align: left;
   color: #fff;
   transition: 800ms;
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    padding-left: 5%;
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    width: 100%;
+    padding-left: 5%;
+  }
 `;
 
 export const TextMiddle = styled.div`
@@ -253,6 +351,16 @@ export const TextMiddle = styled.div`
   text-align: left;
   color: #fff;
   transition: 800ms;
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    padding-left: 5%;
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    width: 100%;
+    padding-left: 5%;
+  }
 `;
 
 export const TextLow = styled.div`
@@ -267,6 +375,16 @@ export const TextLow = styled.div`
   text-align: left;
   color: #fff;
   transition: 800ms;
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    padding-left: 5%;
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    width: 100%;
+    padding-left: 5%;
+  }
 `;
 
 export const WholeWrapper = styled.div`
@@ -275,6 +393,13 @@ export const WholeWrapper = styled.div`
   margin-top: 0px;
   display: flex;
   justify-content: center;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 414px;
+  }
 `;
 
 export const InnerWrapper = styled.div`
@@ -285,26 +410,62 @@ export const InnerWrapper = styled.div`
   scroll-behavior: smooth;
   margin-top: 0px;
   padding-bottom: 150px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 414px;
+    padding-bottom: 30px;
+  }
 `;
 
 export const PopularClassWrapper = styled.div`
   width: 100%;
   padding-top: 140px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 414px;
+    padding-top: 50px;
+  }
 `;
 
 export const NewClassWrapper = styled.div`
   width: 100%;
   padding-top: 120px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 414px;
+    padding-top: 0px;
+  }
 `;
 
 export const EventWrapper = styled.div`
   width: 100%;
   padding-top: 120px;
+  @media ${breakPoints.tablet} {
+    /* display: none; */
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    padding-top: 0px;
+  }
 `;
 
 export const SubjectWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media ${breakPoints.tablet} {
+  }
+  @media ${breakPoints.mobile} {
+    justify-content: flex-start;
+  }
 `;
 
 export const SubjectName = styled.div``;
@@ -333,6 +494,31 @@ export const ClassesWrapper = styled.div`
   height: 300px;
   justify-content: space-between;
   margin-top: 30px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    /* height: 400px; */
+    /* justify-content: spa/; */
+    flex-direction: column;
+  }
+`;
+
+export const EventItemWrapper = styled.div`
+  display: flex;
+  height: 300px;
+  justify-content: space-between;
+  margin-top: 30px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    height: 370px;
+    /* justify-content: spa/; */
+    flex-direction: column;
+  }
 `;
 
 export const SliderWrapper = styled.div`
@@ -350,6 +536,16 @@ export const SliderWrapper = styled.div`
     background-size: 100%;
     background-repeat: no-repeat;
     overflow: hidden;
+
+    @media ${breakPoints.tablet} {
+      display: none;
+    }
+    @media ${breakPoints.mobile} {
+      display: none;
+      visibility: hidden;
+      right: 0;
+      width: 0;
+    }
   }
 
   .slick-before-arrow {
@@ -363,6 +559,24 @@ export const SliderWrapper = styled.div`
     background-size: 100%;
     background-repeat: no-repeat;
     overflow: hidden;
+
+    @media ${breakPoints.tablet} {
+      display: none;
+    }
+    @media ${breakPoints.mobile} {
+      display: none;
+      visibility: hidden;
+      right: 0;
+      width: 0;
+    }
+  }
+
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 100%;
   }
 `;
 
@@ -384,6 +598,13 @@ export const MiddleBanner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    display: none;
+    width: 414px;
+  }
 `;
 
 export const MiddleBannerWrapper = styled.div`
@@ -393,6 +614,13 @@ export const MiddleBannerWrapper = styled.div`
   align-items: center;
   position: relative;
   cursor: pointer;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 100%;
+  }
 `;
 
 export const MiddleBannerText = styled.div`
@@ -417,11 +645,26 @@ export const MiddleBannerImage = styled.img`
   position: absolute;
   top: -210px;
   left: 700px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    left: 0;
+    width: 100px;
+  }
 `;
 
 export const PromotionClass = styled.div`
   width: 100%;
   padding-top: 490px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* width:  */
+    padding-top: 50px;
+  }
 `;
 
 export const SlickWrapper = styled.div`
@@ -431,6 +674,13 @@ export const SlickWrapper = styled.div`
 
 export const ClassWrapper = styled.div`
   height: 400px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 414px;
+  }
 `;
 
 export const ClassImage = styled.img`
@@ -440,24 +690,53 @@ export const ClassImage = styled.img`
   background-color: #c4c4c4;
   margin-bottom: 20px;
   opacity: 0.5;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 180px;
+    height: 140px;
+  }
 `;
 
 export const ClassPatissier = styled.div`
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 10px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 180px;
+  }
 `;
 
 export const ClassName = styled.div`
   width: 268px;
   font-size: 18px;
   margin-bottom: 9.5px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 180px;
+  }
 `;
 
 export const SmallLine = styled.div`
   border-bottom: 1px solid #b9b9b9;
   margin-bottom: 9.5px;
   width: 290px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 180px;
+  }
 `;
 
 export const ClassPrice = styled.div`
@@ -471,11 +750,26 @@ export const EventImage = styled.img`
   background-color: #c4c4c4;
   border-radius: 10px;
   opacity: 0.5;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 400px;
+    height: 100px;
+  }
 `;
 
 export const CategoryWrapper = styled.div`
   width: 100%;
   padding-top: 120px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    padding-top: 50px;
+  }
 `;
 
 export const CategoryButtonWrapper = styled.div`
@@ -485,17 +779,40 @@ export const CategoryButtonWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding-top: 30px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 414px;
+  }
 `;
 
 export const CategoryFirstWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    /* justify-content: flex-start; */
+    width: 414px;
+  }
 `;
 
 export const CategorySecondWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    /* justify-content: flex-start; */
+    width: 414px;
+  }
 `;
 
 export const CategoryDiv = styled.div`
@@ -538,6 +855,14 @@ export const CategoryButton = styled.button`
     /* color: #ff4d12; */
     opacity: 0.8;
   }
+
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 120px;
+  }
 `;
 
 // export const CategoryButtonTitle = styled.div`
@@ -572,4 +897,12 @@ export const CategoryButtonTitle = styled.div`
   left: 154px;
   z-index: 2;
   cursor: pointer;
+  @media ${breakPoints.tablet} {
+    /* display: none; */
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    left: 16px;
+    top: 36px;
+  }
 `;

@@ -97,12 +97,12 @@ export function logout() {
 }
 
 const HIDDEN_LAYOUT = [
-  `/dashboard/main`,
-  `/dashboard/class/write`,
-  `/dashboard/class/read`,
-  `/dashboard/item/write`,
-  `/dashboard/item/read`,
-  `/dashboard/myPage`,
+  `/dashboard/main/`,
+  `/dashboard/class/write/`,
+  `/dashboard/class/read/`,
+  `/dashboard/item/write/`,
+  `/dashboard/item/read/`,
+  `/dashboard/myPage/`,
 ];
 
 interface IGlobalContext {

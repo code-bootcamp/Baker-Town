@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import Footer from "./footer/Footer.container";
 import Header from "./header/Header.container";
 import Navigation from "./navigation/Navigation.container";
+import { breakPoints } from "../../../commons/styles/media";
 
 interface ILayoutProps {
   children: ReactChild;
@@ -11,10 +12,19 @@ interface ILayoutProps {
 
 const Wrapper = styled.div`
   height: 100%;
+  @media ${breakPoints.tablet} {
+  }
+  @media ${breakPoints.mobile} {
+    /* width: 100%; */
+    height: 100%;
+    /* border: 10px dotted green; */
+    /* background-color: green; */
+    /* display: none; */
+  }
 `;
 const Body = styled.div`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,8 +44,8 @@ export default function Layout(props: ILayoutProps) {
       <Wrapper>
         {!isHiddenHeader && <Header />}
         <Body>{props.children}</Body>
-        {/* {!isHiddenNavigation && <Navigation />} */}
         {!isHiddenFooter && <Footer />}
+        <Navigation />
       </Wrapper>
     </>
   );
