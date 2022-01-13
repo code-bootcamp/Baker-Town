@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.header`
   display: flex;
@@ -15,6 +16,12 @@ export const Wrapper = styled.header`
   /* background-color: blue; */
   background-size: cover;
   border-bottom: 1px solid rgba(157, 157, 157, 0.2);
+  @media ${breakPoints.tablet} {
+  }
+
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+  }
 `;
 
 export const InnerLogo = styled.div`
@@ -25,6 +32,12 @@ export const InnerLogo = styled.div`
     cursor: pointer;
   }
   margin-top: 2px;
+  @media ${breakPoints.tablet} {
+  }
+
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+  }
 `;
 
 export const ClassTitle = styled.div`
@@ -41,6 +54,13 @@ export const ClassTitle = styled.div`
     color: #4f3325;
     opacity: 0.5;
     transition: 300ms;
+  }
+  @media ${breakPoints.tablet} {
+  }
+
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    margin-left: 30px;
   }
 `;
 
@@ -59,6 +79,13 @@ export const StoreTitle = styled.div`
     opacity: 0.5;
     transition: 300ms;
   }
+  @media ${breakPoints.tablet} {
+  }
+
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    margin-left: 10px;
+  }
 `;
 
 export const RoundDiv = styled.div`
@@ -76,6 +103,12 @@ export const RoundDiv = styled.div`
   align-items: center;
   justify-content: space-between;
   transition: 500ms;
+  @media ${breakPoints.tablet} {
+  }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const RoundDivInnerText = styled.input`
@@ -132,6 +165,12 @@ export const HeartToLogin = styled.div`
   align-items: center;
 
   transition: 300ms;
+  @media ${breakPoints.tablet} {
+  }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const LoginText = styled.div`

@@ -283,9 +283,11 @@ export const TopBanner = styled.div`
 
   @media ${breakPoints.tablet} {
     /* visibility: hidden; */
+    display: none;
   }
   @media ${breakPoints.mobile} {
     /* visibility: hidden; */
+    display: inline;
     width: 100%;
   }
 `;
@@ -578,7 +580,6 @@ export const SliderWrapper = styled.div`
 `;
 export const SliderWrapper2 = styled.div`
   width: 102.8%;
-  height: 1200px;
   display: none;
 
   .slick-next-arrow {
