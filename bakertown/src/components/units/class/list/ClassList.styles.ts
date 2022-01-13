@@ -1,15 +1,25 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   display: flex;
   height: 100%;
   min-height: 700px;
   scroll-behavior: smooth;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 export const Sidebar = styled.div`
   margin-top: 79px;
   margin-right: 27px;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const SideTitle = styled.div`
@@ -100,6 +110,10 @@ export const ListContents = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const ClassWrapper = styled.div`
@@ -107,6 +121,11 @@ export const ClassWrapper = styled.div`
   cursor: pointer;
   :hover {
     color: rgba(0, 0, 0, 0.5);
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 45%;
+    margin-bottom: 40%;
   }
 `;
 
@@ -116,6 +135,12 @@ export const ClassImage = styled.img`
   border-radius: 10px;
   background-color: #c4c4c4;
   margin-bottom: 20px;
+  object-fit: cover;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const ClassPatissierToPrice = styled.div`
@@ -126,6 +151,12 @@ export const ClassPatissier = styled.div`
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 13px;
+
+  @media ${breakPoints.mobile} {
+    font-size: 0.8em;
+    /* margin-bottom: 20px;
+  } */
+  }
 `;
 
 export const ClassName = styled.div`
@@ -138,11 +169,24 @@ export const ClassName = styled.div`
   flex-direction: row;
   align-items: center;
   /* background: yellow; */
+
+  @media ${breakPoints.mobile} {
+    height: 10px;
+    font-size: 0.7em;
+    width: 80%;
+    margin-top: 5%;
+    line-height: 120%;
+    /* background-color: pink; */
+  }
 `;
 
 export const ClassLine = styled.div`
   width: 220px;
   border-bottom: 1px solid rgba(220, 220, 220, 0.8);
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const ClassPrice = styled.div`
@@ -150,4 +194,10 @@ export const ClassPrice = styled.div`
   font-size: 18px;
   font-weight: bold;
   display: flex;
+
+  @media ${breakPoints.mobile} {
+    width: 80%;
+    font-size: 0.8em;
+    /* background: yellow; */
+  }
 `;
