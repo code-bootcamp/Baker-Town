@@ -3,5 +3,6 @@ export interface IStorePresenterProps {
   popular: [];
   recentList: () => void;
   settings: {};
+  settings2: {};
   storeDetail: (el: any) => () => void;
 }
