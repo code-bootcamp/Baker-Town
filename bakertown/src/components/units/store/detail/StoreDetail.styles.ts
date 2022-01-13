@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 1272px;
@@ -10,6 +11,12 @@ export const Wrapper = styled.div`
   padding-top: 70px;
   padding-bottom: 150px;
   display: flex;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 `;
 
 export const LeftWrapper = styled.div``;
@@ -30,6 +37,11 @@ export const TitleImage = styled.div`
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.7) 100%
   );
+
+  @media ${breakPoints.mobile} {
+    width: 315px;
+    height: 200px;
+  }
 `;
 
 export const SidebarWrapper = styled.div`
@@ -41,6 +53,10 @@ export const SidebarWrapper = styled.div`
   box-shadow: 8px 8px 40px 0 rgba(0, 0, 0, 0.25);
   background-color: #fff;
   margin-left: 38px;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Label = styled.div`
@@ -63,6 +79,11 @@ export const ProductDetail = styled.div`
   border-radius: 10px;
   background-color: #f7f7f7;
   margin-top: 30px;
+
+  @media ${breakPoints.mobile} {
+    width: 315px;
+    height: 200px;
+  }
 `;
 
 export const ProductDate = styled.div`
@@ -71,6 +92,11 @@ export const ProductDate = styled.div`
   border-radius: 10px;
   background-color: #f7f7f7;
   margin-top: 30px;
+
+  @media ${breakPoints.mobile} {
+    width: 315px;
+    height: 200px;
+  }
 `;
 
 export const Review = styled.div`
@@ -79,4 +105,9 @@ export const Review = styled.div`
   border-radius: 10px;
   background-color: #f7f7f7;
   margin-top: 30px;
+
+  @media ${breakPoints.mobile} {
+    width: 315px;
+    height: 200px;
+  }
 `;
