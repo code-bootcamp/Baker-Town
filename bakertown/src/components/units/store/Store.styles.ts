@@ -9,21 +9,27 @@ export const Wrapper = styled.div`
   width: 1400px;
   padding-left: 63px;
   padding-right: 63px;
-
+  
   @media ${breakPoints.mobile} {
     width: 100%;
   }
-`;
+  `;
 
 export const CreatorSubject = styled.div`
   margin-top: 72px;
-
+  
   @media ${breakPoints.mobile} {
-   width: 100%;
+    width: 100%;
+    
+    background : yellow;
+  }
+  `;
+
+export const PopularSubject = styled.div`
+
+@media ${breakPoints.mobile} {
   }
 `;
-
-export const PopularSubject = styled.div``;
 
 export const CreatorImage = styled.img`
   width: 400px;
