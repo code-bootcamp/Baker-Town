@@ -17,8 +17,8 @@ export const Wrapper = styled.div`
     /* width: 100%; */
     /* padding-left: 5%; */
     width: 100%;
-
-    margin-right: 3%;
+    margin-top: 0%;
+    margin-right: 7%;
   }
 `;
 
@@ -61,8 +61,8 @@ export const ListContents = styled.div`
     width: 100%;
   }
   @media ${breakPoints.mobile} {
-    width: 100%;
-    margin-top: 0px;
+    width: 97%;
+    margin-top: 0%;
   }
 `;
 
@@ -99,9 +99,11 @@ export const OrderWrapper = styled.div`
     width: 100%;
   }
   @media ${breakPoints.mobile} {
-    width: 90%;
-    height: 100%;
-    padding-top: 10px;
+    width: 100%;
+    height: 130px;
+    padding-top: 2%;
+    padding-left: 2%;
+    /* padding-top: 10px; */
   }
 `;
 
@@ -117,8 +119,8 @@ export const ItemImage = styled.div`
     height: 120px;
   }
   @media ${breakPoints.mobile} {
-    width: 250px;
-    height: 70px;
+    width: 500px;
+    height: 110px;
   }
 `;
 
@@ -157,7 +159,7 @@ export const ItemPrice = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 100%;
-    font-size: 16px;
+    font-size: 0.6em;
     /* padding-top: -40px; */
   }
 `;
@@ -180,8 +182,8 @@ export const AfterOrder = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 100%;
-    margin-top: 0px;
-    margin-left: 0px;
+    margin-top: 0%;
+    margin-left: 0%;
   }
 `;
 
@@ -206,25 +208,11 @@ export const TrackingShipment = styled.button`
   @media ${breakPoints.mobile} {
     width: 76px;
     height: 25px;
-    font-size: 6px;
+    font-size: 0.5em;
   }
 `;
 
 export const WriteReview = styled.button`
-  /* width: 100%;
-  height: 60px;
-  border-radius: 0.5px;
-  background-color: #4f3325;
-  color: #f3f3f3;
-  border: 0px solid gray;
-  font-size: 25px;
-  cursor: pointer;
-  transition: 100ms;
-
-  :hover {
-    color: white;
-    opacity: 0.95;
-  } */
   width: 100%;
   height: 40px;
   margin-top: 10px;
@@ -233,9 +221,9 @@ export const WriteReview = styled.button`
   @media ${breakPoints.tablet} {
   }
   @media ${breakPoints.mobile} {
-    width: 76px;
-    height: 25px;
-    font-size: 6px;
+    width: 100%;
+    height: 25%;
+    font-size: 0.05em;
   }
 `;
 
@@ -246,7 +234,7 @@ export const ItemName = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 100%;
-    font-size: 14px;
+    font-size: 0.8em;
     /* margin-top: 10px; */
   }
 `;

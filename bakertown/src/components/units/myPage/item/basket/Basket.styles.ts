@@ -8,19 +8,10 @@ export const Wrapper = styled.div`
   margin-top: 77px;
 
   @media ${breakPoints.tablet} {
-    /* visibility: hidden; */
     width: 100%;
-    /* padding-left: 5%; */
   }
   @media ${breakPoints.mobile} {
-    /* visibility: hidden; */
-    /* width: 100%; */
-    /* padding-left: 5%; */
-    /* width: 100%; */
-    /* margin-top: 20px; */
     margin-top: 0px;
-    /* margin-right: 0%;
-    margin-left: 0%; */
   }
 `;
 
@@ -33,7 +24,7 @@ export const BasketList = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 100%;
-    margin-left: 5%;
+    margin-left: 2%;
   }
 `;
 
@@ -104,9 +95,10 @@ export const ItemWrapper = styled.div`
     width: 100%;
   }
   @media ${breakPoints.mobile} {
-    /* width: 100%; */
-    width: 90%;
-    height: 120px;
+    width: 97%;
+    height: 150px;
+    padding-left: 3%;
+    padding-top: 4%;
   }
 `;
 
@@ -116,8 +108,8 @@ export const ItemImage = styled.img`
   border-radius: 10px;
   background-color: yellow;
   @media ${breakPoints.mobile} {
-    width: 150px;
-    height: 80px;
+    width: 300px;
+    height: 120px;
     margin-right: 3%;
   }
 `;
@@ -131,16 +123,6 @@ export const ClassPatissier = styled.div`
   color: rgba(79, 51, 37, 0.9);
 `;
 
-// export const ClassDate = styled.div`
-//   width: 150px;
-//   height: 55px;
-//   margin: -120px 1px 9px 760px;
-//   font-family: NotoSans;
-//   font-size: 18px;
-//   text-align: center;
-//   color: #000;
-// `;
-
 export const ItemInfo = styled.div`
   padding-left: 29.5px;
 
@@ -149,8 +131,7 @@ export const ItemInfo = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 100%;
-    /* padding-left: 0px; */
-    padding-left: 0%;
+    padding-left: 3%;
   }
 `;
 
@@ -165,7 +146,7 @@ export const ItemName = styled.div`
     width: 80%;
     /* font-size: 14px; */
     /* margin-top: 10px; */
-    font-size: 16px;
+    font-size: 0.8em;
   }
 `;
 
@@ -179,8 +160,7 @@ export const ItemPrice = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 100%;
-    font-size: 16px;
-    /* padding-top: -40px; */
+    font-size: 0.6em;
   }
 `;
 
