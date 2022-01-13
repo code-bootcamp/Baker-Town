@@ -23,7 +23,7 @@ const WishListPresenter = (props: IWishListPresenter) => {
                       {el.className}
                     </S.ClassName>
                   </S.ClassInfoWrapper>
-                  <S.ClassLine></S.ClassLine>
+                  {/* <S.ClassLine></S.ClassLine> */}
                 </S.Class>
               </S.ClassWrapper>
             ))}

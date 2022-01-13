@@ -111,6 +111,18 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                   ))}
                 </Slider>
               </S.SliderWrapper>
+              <S.SliderWrapper2>
+                <Slider {...props.settings2}>
+                  {props.popular.map((el: any) => (
+                    <ClassSubject
+                      el={el}
+                      key={uuidv4()}
+                      classDetail={props.classDetail(el)}
+                      // onClick={props.classDetail(el)}
+                    />
+                  ))}
+                </Slider>
+              </S.SliderWrapper2>
             </S.ClassesWrapper>
           </S.PopularClassWrapper>
           <S.NewClassWrapper>
@@ -122,12 +134,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                 </S.SubjectView>
               </S.SubjectWrapper>
               <S.ClassesWrapper>
-                <S.SliderWrapper
-                // style={{
-                //   width: "102.8%",
-                //   height: "100%",
-                // }}
-                >
+                <S.SliderWrapper>
                   <Slider {...props.settings}>
                     {props.recent.map((el: any) => (
                       <ClassSubject
@@ -138,6 +145,17 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                     ))}
                   </Slider>
                 </S.SliderWrapper>
+                <S.SliderWrapper2>
+                  <Slider {...props.settings2}>
+                    {props.recent.map((el: any) => (
+                      <ClassSubject
+                        el={el}
+                        key={uuidv4()}
+                        classDetail={props.classDetail(el)}
+                      />
+                    ))}
+                  </Slider>
+                </S.SliderWrapper2>
               </S.ClassesWrapper>
             </S.SubjectName>
           </S.NewClassWrapper>
@@ -170,12 +188,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                 <S.SubjectView>전체 기획 클래스 보기</S.SubjectView>
               </S.SubjectWrapper>
               <S.ClassesWrapper>
-                <S.SliderWrapper
-                // style={{
-                //   width: "102.8%",
-                //   height: "100%",
-                // }}
-                >
+                <S.SliderWrapper>
                   <Slider {...props.settings}>
                     {new Array(7).fill(1).map((el) => (
                       <S.ClassWrapper key={uuidv4()}>
@@ -190,6 +203,21 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                     ))}{" "}
                   </Slider>
                 </S.SliderWrapper>
+                <S.SliderWrapper2>
+                  <Slider {...props.settings2}>
+                    {new Array(7).fill(1).map((el) => (
+                      <S.ClassWrapper key={uuidv4()}>
+                        <S.ClassImage />
+                        <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
+                        <S.ClassName>
+                          알록달록 바삭한 마카롱 함께 만들어 보아요
+                        </S.ClassName>
+                        <S.SmallLine></S.SmallLine>
+                        <S.ClassPrice>30,000 원</S.ClassPrice>
+                      </S.ClassWrapper>
+                    ))}{" "}
+                  </Slider>
+                </S.SliderWrapper2>
               </S.ClassesWrapper>
             </S.SubjectName>
           </S.PromotionClass>
