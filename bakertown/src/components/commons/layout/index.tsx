@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   @media ${breakPoints.mobile} {
     /* width: 100%; */
     height: 100%;
-    /* border: 10px dotted green; */
+    border: 10px dotted green;
     /* background-color: green; */
     /* display: none; */
   }
@@ -42,7 +42,7 @@ export default function Layout(props: ILayoutProps) {
   return (
     <>
       <Wrapper>
-        {!isHiddenHeader && <Header />}
+        {/* {!isHiddenHeader && <Header />} */}
         <Body>{props.children}</Body>
         {!isHiddenFooter && <Footer />}
         <Navigation />

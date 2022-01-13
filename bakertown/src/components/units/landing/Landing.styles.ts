@@ -17,18 +17,18 @@ export const HeaderWrapper = styled.header`
   background-size: cover;
   scroll-behavior: smooth;
 
-  @media ${breakPoints.tablet} {
-    width: 100%;
-  }
-  @media ${breakPoints.mobile} {
-    /* width: 100%; */
-    /* border: 10px dotted green; */
-    /* display: none; */
-    /* justify-content: flex-start; */
-    /* width: 100%; */
-    /* right: 0; */
-    width: 100%;
-  }
+    @media ${breakPoints.tablet} {
+      width: 100%;
+    }
+    @media ${breakPoints.mobile} {
+      /* width: 100%; */
+      /* border: 10px dotted green; */
+      /* display: none; */
+      /* justify-content: flex-start; */
+      /* width: 100%; */
+      /* right: 0; */
+      width: 100%;
+    }
 
   &.change_header {
     position: fixed;
