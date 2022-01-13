@@ -22,7 +22,7 @@ const BasketPresenter = (props: IBasketPresenterProps) => {
                   </S.ItemName>
                   <S.ItemPrice>{el.price}원</S.ItemPrice>
                 </S.ItemInfo>
-                <S.BasketCheckBox type="checkbox" />
+                {/* <S.BasketCheckBox type="checkbox" /> */}
               </S.ItemWrapper>
             ))}
           </S.BasketContents>

@@ -16,7 +16,6 @@ export const HeaderWrapper = styled.header`
   background-color: transparent;
   background-size: cover;
   scroll-behavior: smooth;
-
     @media ${breakPoints.tablet} {
       width: 100%;
     }

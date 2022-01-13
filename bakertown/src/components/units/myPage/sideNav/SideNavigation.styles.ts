@@ -33,8 +33,7 @@ export const SettingImage = styled.img`
 
 export const Sidebar = styled.div`
   @media ${breakPoints.tablet} {
-  }
-
+    display: none;
   @media ${breakPoints.mobile} {
     display: none;
   }
