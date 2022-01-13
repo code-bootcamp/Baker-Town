@@ -189,6 +189,7 @@ const ClassListContainer = () => {
   };
 
   useEffect(() => {
+    console.log(router.query.cateogryName);
     if (!categoryName) {
       getNextClass();
     } else {
