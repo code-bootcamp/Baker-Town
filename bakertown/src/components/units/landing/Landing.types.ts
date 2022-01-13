@@ -5,6 +5,7 @@ export interface ILandingPresenterProps {
   recent: any;
   currentUser: any;
   settings: {};
+  settings2: {};
   clickLeft: () => void;
   clickRight: () => void;
   landing: () => void;

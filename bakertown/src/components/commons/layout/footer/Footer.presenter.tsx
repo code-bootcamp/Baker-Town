@@ -1,7 +1,6 @@
 import * as S from "./Footer.styles";
-import { IFooterProps } from "./Footer.types";
 
-const FooterPresenter = (props: IFooterProps) => {
+const FooterPresenter = () => {
   return (
     <>
       <S.Wrapper>

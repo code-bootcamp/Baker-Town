@@ -121,12 +121,11 @@ const StoreListContainer = () => {
       setRecent((itemList) => {
         const arr: any = [...itemList];
         snapshot.forEach((doc) => {
-          // arr.push(doc.data())
-          // arr.push(doc.id);
           const data = doc.data();
           data.id = doc.id;
           arr.push(data);
         });
+        console.log(recent);
         if (snapshot.docs.length === 0) {
           setLastVisible(-1);
         } else {
@@ -137,8 +136,6 @@ const StoreListContainer = () => {
     });
   };
 
-  if (categoryName) useBottomScrollListener(getNextItemCategory);
-
   useEffect(() => {
     if (!categoryName) {
       getNextItem();
@@ -146,6 +143,8 @@ const StoreListContainer = () => {
       getNextItemCategory();
     }
   }, [categoryName]);
+
+  if (categoryName) useBottomScrollListener(getNextItemCategory);
 
   const onClickSideButton = (el: string) => () => {
     setLastVisible(undefined);

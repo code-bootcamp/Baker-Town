@@ -137,7 +137,7 @@ const ClassListContainer = () => {
   const getNextClassCategory = () => {
     console.log("시작");
 
-    if (!categoryName) return;
+    if (!router.query.categoryName) return;
 
     // 아이템 카테고리 변경 시 lastVisible값을 변경해줘야함
 
@@ -151,7 +151,6 @@ const ClassListContainer = () => {
         limit(4),
         startAfter(lastVisible)
       );
-      console.log("else if야!!!!!!!");
     } else {
       myQuery = query(
         collection(getFirestore(firebaseApp), "class"),
@@ -159,15 +158,12 @@ const ClassListContainer = () => {
         orderBy("createdAt", "desc"),
         limit(12)
       );
-      console.log("else야!!!!!!!");
     }
 
     getDocs(myQuery).then((snapshot) => {
       setRecent((itemList: any) => {
         const arr: any = [...itemList];
         snapshot.forEach((doc) => {
-          // arr.push(doc.data())
-          // arr.push(doc.id);
           const data = doc.data();
           data.id = doc.id;
           arr.push(data);
@@ -175,24 +171,21 @@ const ClassListContainer = () => {
         console.log(recent);
         if (snapshot.docs.length === 0) {
           setLastVisible(-1);
-          console.log("lastVisible -1!!!!", lastVisible);
         } else {
           setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
-          console.log("lastVisible에 뭔ㄱ ㅏ들어갔다", lastVisible);
-          console.log("히히", lastVisible);
         }
-
-        console.log("snapshot.docs!!!!", snapshot.docs.length);
         return arr;
       });
     });
   };
 
   useEffect(() => {
-    console.log(router.query.cateogryName);
-    if (!categoryName) {
+    console.log("시작!");
+    if (!router.query.categoryName) {
+      console.log("시작!!!!");
       getNextClass();
     } else {
+      console.log("시작");
       getNextClassCategory();
     }
   }, [categoryName]);
