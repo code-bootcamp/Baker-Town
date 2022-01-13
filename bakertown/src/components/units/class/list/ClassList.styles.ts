@@ -125,7 +125,7 @@ export const ClassWrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 45%;
-    margin-bottom: 40%;
+    margin-bottom: 0;
   }
 `;
 
@@ -139,7 +139,7 @@ export const ClassImage = styled.img`
 
   @media ${breakPoints.mobile} {
     width: 100%;
-    height: 100%;
+    max-height: 50%;
   }
 `;
 
