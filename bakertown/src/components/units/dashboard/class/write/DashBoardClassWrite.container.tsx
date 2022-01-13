@@ -49,6 +49,15 @@ const DashBoardMainClassWriteContainer = (
   const [myClass, setMyClass] = useState({
     address: "내 주소!",
     className: "",
+    contents: "",
+    category: "",
+    remarks: "",
+    price: 0,
+    detailAddress: "",
+    images: [],
+    applyClass: {
+      classArray: [],
+    },
   });
 
   const currentUser: any = useAuth();
