@@ -33,11 +33,7 @@ export const SettingImage = styled.img`
 
 export const Sidebar = styled.div`
   @media ${breakPoints.tablet} {
-    /* visibility: hidden; */
-    /* width: 100%; */
-    /* padding-left: 5%; */
     display: none;
-  }
   @media ${breakPoints.mobile} {
     display: none;
   }
