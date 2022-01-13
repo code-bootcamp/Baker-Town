@@ -19,7 +19,11 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const LeftWrapper = styled.div``;
+export const LeftWrapper = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
 
 export const RightWrapper = styled.div``;
 
@@ -39,8 +43,7 @@ export const TitleImage = styled.div`
   );
 
   @media ${breakPoints.mobile} {
-    width: 315px;
-    height: 200px;
+    width: 100%;
   }
 `;
 
@@ -81,8 +84,7 @@ export const ProductDetail = styled.div`
   margin-top: 30px;
 
   @media ${breakPoints.mobile} {
-    width: 315px;
-    height: 200px;
+    width: 100%;
   }
 `;
 
@@ -94,8 +96,7 @@ export const ProductDate = styled.div`
   margin-top: 30px;
 
   @media ${breakPoints.mobile} {
-    width: 315px;
-    height: 200px;
+    width: 100%;
   }
 `;
 
@@ -107,7 +108,6 @@ export const Review = styled.div`
   margin-top: 30px;
 
   @media ${breakPoints.mobile} {
-    width: 315px;
-    height: 200px;
+    width: 100%;
   }
 `;

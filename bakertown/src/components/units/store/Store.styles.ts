@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,11 +9,18 @@ export const Wrapper = styled.div`
   width: 1400px;
   padding-left: 63px;
   padding-right: 63px;
-  /* background-color: yellow; */
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const CreatorSubject = styled.div`
   margin-top: 72px;
+
+  @media ${breakPoints.mobile} {
+   width: 100%;
+  }
 `;
 
 export const PopularSubject = styled.div``;
