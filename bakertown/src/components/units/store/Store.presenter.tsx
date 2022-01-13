@@ -14,12 +14,13 @@ const StorePresenter = (props: IStorePresenterProps) => {
             <S.SubjectTitle>크리에이터 이야기</S.SubjectTitle>
             <S.SubjectView>크리에이터 이야기 전체 보기</S.SubjectView>
           </S.SubjectWrapper>
-          <S.StoresWrapper>
+          <S.StoresWrapper2>
             {new Array(3).fill(1).map((el) => (
               <S.CreatorImage />
             ))}
-          </S.StoresWrapper>
+          </S.StoresWrapper2>
         </S.CreatorSubject>
+
         <S.SubjectName>
           <S.SubjectWrapper>
             <S.SubjectTitle>이번주 인기 상품</S.SubjectTitle>
@@ -41,8 +42,24 @@ const StorePresenter = (props: IStorePresenterProps) => {
                 ))}
               </Slider>
             </S.SliderWrapper>
+            <S.SliderWrapper2>
+              <Slider {...props.settings2}>
+                {props.popular.map((el: any) => (
+                  <S.StoreWrapper key={uuidv4()}>
+                    <S.StoreImage onClick={props.storeDetail(el)} />
+                    <S.Store>{el.patissier}</S.Store>
+                    <S.StoreName onClick={props.storeDetail(el)}>
+                      {el.itemName}
+                    </S.StoreName>
+                    <S.SmallLine></S.SmallLine>
+                    <S.StorePrice>{el.price} 원</S.StorePrice>
+                  </S.StoreWrapper>
+                ))}
+              </Slider>
+            </S.SliderWrapper2>
           </S.StoresWrapper>
         </S.SubjectName>
+
         <S.SubjectName>
           <S.SubjectWrapper>
             <S.SubjectTitle>이번 주 새로운 상품</S.SubjectTitle>
@@ -66,8 +83,24 @@ const StorePresenter = (props: IStorePresenterProps) => {
                 ))}
               </Slider>
             </S.SliderWrapper>
+            <S.SliderWrapper2>
+              <Slider {...props.settings2}>
+                {props.popular.map((el: any) => (
+                  <S.StoreWrapper key={uuidv4()}>
+                    <S.StoreImage onClick={props.storeDetail(el)} />
+                    <S.Store>{el.patissier}</S.Store>
+                    <S.StoreName onClick={props.storeDetail(el)}>
+                      {el.itemName}
+                    </S.StoreName>
+                    <S.SmallLine></S.SmallLine>
+                    <S.StorePrice>{el.price} 원</S.StorePrice>
+                  </S.StoreWrapper>
+                ))}
+              </Slider>
+            </S.SliderWrapper2>
           </S.StoresWrapper>
         </S.SubjectName>
+        
         <S.SubjectName>
           <S.SubjectWrapper>
             <S.SubjectTitle>
@@ -75,19 +108,19 @@ const StorePresenter = (props: IStorePresenterProps) => {
             </S.SubjectTitle>
             <S.SubjectView>홈파티 요리 전체보기</S.SubjectView>
           </S.SubjectWrapper>
-          <S.StoresWrapper>
+          <S.StoresWrapper4>
             {new Array(4).fill(1).map((el) => (
-              <S.StoreWrapper>
-                <S.StoreImage />
+              <S.StoreWrapper2>
+                <S.StoreImage2 />
                 <S.Store>잔슨빌</S.Store>
-                <S.StoreName>
+                <S.StoreName2>
                   [연말 초특가] 육즉 가득 담은 독일 소세지 세트
-                </S.StoreName>
-                <S.SmallLine></S.SmallLine>
+                </S.StoreName2>
+                <S.SmallLine2></S.SmallLine2>
                 <S.StorePrice>50,000 원</S.StorePrice>
-              </S.StoreWrapper>
+              </S.StoreWrapper2>
             ))}
-          </S.StoresWrapper>
+          </S.StoresWrapper4>
         </S.SubjectName>
       </S.Wrapper>
     </>

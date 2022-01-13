@@ -86,6 +86,16 @@ const StoreContainer = () => {
     slidesToScroll: 1,
   };
 
+  const settings2 = {
+    dots: false,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    autoplay: false,
+    infinite: false,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+  };
+
   const onClickStoreDetail = (el: any) => () => {
     router.push(`/store/detail/${el.id}`);
   };
@@ -93,6 +103,7 @@ const StoreContainer = () => {
   return (
     <StorePresenter
       settings={settings}
+      settings2={settings2}
       recent={recent}
       popular={popular}
       recentList={recentList}
