@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 `;
 
@@ -104,10 +104,10 @@ export const ListContents = styled.div`
   justify-content: space-between;
 
   @media ${breakPoints.mobile} {
-    background: green;
+    /* background: green; */
     width: 100%;
   }
-`;
+  `;
 
 export const ItemWrapper = styled.div`
   margin-bottom: 80px;
@@ -116,9 +116,11 @@ export const ItemWrapper = styled.div`
     color: rgba(0, 0, 0, 0.5);
   }
   @media ${breakPoints.mobile} {
-    width: 40%;
+    width: 45%;
+    /* background: pink; */
+    margin-top: 20%
   }
-`;
+  `;
 
 export const ItemImage = styled.img`
   width: 220px;
@@ -128,22 +130,25 @@ export const ItemImage = styled.img`
   margin-bottom: 20px;
   opacity: 0.5;
   @media ${breakPoints.mobile} {
-    width: 90%;
+    width: 100%;
+    height: 100%;
+    
   }
-`;
+  `;
 
 export const ItemPatissierToPrice = styled.div`
   padding-left: 10px;
-`;
+  `;
 
 export const Patissier = styled.div`
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 10px;
   @media ${breakPoints.mobile} {
-    font-size: 0.5em;
-  }
-`;
+    font-size: 0.8em;
+    /* margin-bottom: 20px;
+  } */}
+  `;
 
 export const ItemName = styled.div`
   width: 218px;
@@ -155,19 +160,22 @@ export const ItemName = styled.div`
   flex-direction: row;
   align-items: center;
   @media ${breakPoints.mobile} {
-    height: 0;
-    font-size: 0.5em;
-    width: 40%;
+    height: 10px;
+    font-size: 0.7em;
+    width: 80%;
+    margin-top: 5%;
+    line-height: 120%;
+    /* background-color: pink; */
   }
-`;
+  `;
 
 export const Line = styled.div`
   width: 220px;
   border-bottom: 1px solid rgba(220, 220, 220, 0.8);
   @media ${breakPoints.mobile} {
-    width: 40%;
+    width: 100%;
   }
-`;
+  `;
 
 export const ItemPrice = styled.div`
   margin-top: 10px;
@@ -175,7 +183,9 @@ export const ItemPrice = styled.div`
   font-weight: bold;
   display: flex;
   @media ${breakPoints.mobile} {
-    width: 40%;
-    font-size: 0.7em;
+    width: 80%;
+    font-size: 0.8em;
+    /* background: yellow; */
+  
   }
-`;
+  `;
