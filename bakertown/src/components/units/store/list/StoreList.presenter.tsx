@@ -46,7 +46,7 @@ const StoreListPresenter = (props: IStoreListPresenter) => {
                   <S.ItemName onClick={props.onClickDetail(el)}>
                     {el.itemName}
                   </S.ItemName>
-                  <S.Line></S.Line>
+                  <S.Line />
                   <S.ItemPrice>{el.price}원</S.ItemPrice>
                 </S.ItemPatissierToPrice>
               </S.ItemWrapper>

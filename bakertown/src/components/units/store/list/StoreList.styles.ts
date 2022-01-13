@@ -1,12 +1,23 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   display: flex;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
 
 export const SideBar = styled.div`
   margin-top: 79px;
   margin-right: 27px;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const SideTitle = styled.div`
@@ -91,6 +102,11 @@ export const ListContents = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media ${breakPoints.mobile} {
+    background: green;
+    width: 100%;
+  }
 `;
 
 export const ItemWrapper = styled.div`
@@ -98,6 +114,9 @@ export const ItemWrapper = styled.div`
   cursor: pointer;
   :hover {
     color: rgba(0, 0, 0, 0.5);
+  }
+  @media ${breakPoints.mobile} {
+    width: 40%;
   }
 `;
 
@@ -108,6 +127,9 @@ export const ItemImage = styled.img`
   background-color: #c4c4c4;
   margin-bottom: 20px;
   opacity: 0.5;
+  @media ${breakPoints.mobile} {
+    width: 90%;
+  }
 `;
 
 export const ItemPatissierToPrice = styled.div`
@@ -118,6 +140,9 @@ export const Patissier = styled.div`
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 10px;
+  @media ${breakPoints.mobile} {
+    font-size: 0.5em;
+  }
 `;
 
 export const ItemName = styled.div`
@@ -129,11 +154,19 @@ export const ItemName = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    height: 0;
+    font-size: 0.5em;
+    width: 40%;
+  }
 `;
 
 export const Line = styled.div`
   width: 220px;
   border-bottom: 1px solid rgba(220, 220, 220, 0.8);
+  @media ${breakPoints.mobile} {
+    width: 40%;
+  }
 `;
 
 export const ItemPrice = styled.div`
@@ -141,4 +174,8 @@ export const ItemPrice = styled.div`
   font-size: 18px;
   font-weight: bold;
   display: flex;
+  @media ${breakPoints.mobile} {
+    width: 40%;
+    font-size: 0.7em;
+  }
 `;
