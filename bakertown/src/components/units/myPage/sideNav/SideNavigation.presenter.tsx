@@ -1,7 +1,8 @@
 import * as S from "./SideNavigation.styles";
 import { v4 as uuidv4 } from "uuid";
-import UserPoint from "../../../commons/payment/MyPoint";
+
 import { ISideNavigationPresenterProps } from "./SideNavigation.types";
+import UserPoint from "../../../commons/payment/Mypoint";
 
 const SideNavigationPresenter = (props: ISideNavigationPresenterProps) => {
   const myClass = ["참여 예정", "참여 완료", "나의 후기", "찜 목록"];

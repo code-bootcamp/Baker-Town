@@ -33,7 +33,7 @@ const OrderHistoryPresenter = (props: IOrderHistoryPresenter) => {
                   <S.AfterOrder>
                     {/* <S.TrackingShipment>배송조회</S.TrackingShipment> */}
                     <S.WriteReview onClick={props.onToggleModal}>
-                      리뷰 작성하기
+                      리뷰 쓰기
                     </S.WriteReview>
                     {props.isOpen && (
                       <Modal
