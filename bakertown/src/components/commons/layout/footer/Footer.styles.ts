@@ -11,6 +11,9 @@ export const Wrapper = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 100%;
+    padding-bottom: 15%;
+    padding-left: 3%;
+    padding-right: 3%;
     /* border: 10px dotted green; */
     /* display: none; */
   }
@@ -67,6 +70,13 @@ export const ClassTitle2 = styled.div`
   text-align: left;
   color: #706b68;
   padding-top: 4px;
+  @media ${breakPoints.tablet} {
+    /* display: none; */
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 100%;
+  }
 `;
 export const StoreTitle = styled.div`
   width: 75px;

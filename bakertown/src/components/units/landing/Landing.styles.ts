@@ -16,18 +16,18 @@ export const HeaderWrapper = styled.header`
   background-color: transparent;
   background-size: cover;
   scroll-behavior: smooth;
-    @media ${breakPoints.tablet} {
-      width: 100%;
-    }
-    @media ${breakPoints.mobile} {
-      /* width: 100%; */
-      /* border: 10px dotted green; */
-      /* display: none; */
-      /* justify-content: flex-start; */
-      /* width: 100%; */
-      /* right: 0; */
-      width: 100%;
-    }
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    /* width: 100%; */
+    /* border: 10px dotted green; */
+    /* display: none; */
+    /* justify-content: flex-start; */
+    /* width: 100%; */
+    /* right: 0; */
+    width: 100%;
+  }
 
   &.change_header {
     position: fixed;
@@ -57,6 +57,7 @@ export const Img = styled.img`
     /* visibility: hidden; */
     /* width: 1; */
     /* padding-left: 5%; */
+    width: 100px;
   }
 `;
 
@@ -79,7 +80,9 @@ export const CategoryClass = styled.div`
     /* visibility: hidden; */
     /* width: 100%; */
     /* padding-left: 5%; */
-    margin-left: 40px;
+    margin-left: 20%;
+    width: 20%;
+    font-size: 120%;
   }
 
   :hover {
@@ -119,7 +122,9 @@ export const CategoryStore = styled.div`
     /* visibility: hidden; */
     /* width: 100%; */
     /* padding-left: 5%; */
-    margin-left: 30px;
+    margin-left: 0;
+    width: 20%;
+    font-size: 120%;
   }
 
   :hover {

@@ -1,5 +1,4 @@
-// import { ReactChild } from "react";
-
 export interface INavigationProps {
-  //   children: ReactChild;
+  navArray: { text: string; src: string; link: string }[];
+  onClickNav: (el: { link: string }) => () => void;
 }

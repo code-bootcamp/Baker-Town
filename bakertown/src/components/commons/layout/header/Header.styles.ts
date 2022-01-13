@@ -37,6 +37,7 @@ export const InnerLogo = styled.div`
 
   @media ${breakPoints.mobile} {
     /* display: none; */
+    width: 50%;
   }
 `;
 
@@ -60,7 +61,9 @@ export const ClassTitle = styled.div`
 
   @media ${breakPoints.mobile} {
     /* display: none; */
-    margin-left: 30px;
+    margin-left: 0px;
+    width: 20%;
+    font-size: 140%;
   }
 `;
 
@@ -84,7 +87,10 @@ export const StoreTitle = styled.div`
 
   @media ${breakPoints.mobile} {
     /* display: none; */
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    width: 20%;
+    font-size: 140%;
+    margin-left: 5%;
   }
 `;
 
@@ -145,6 +151,13 @@ export const RoundDivInnerIcon = styled.img`
   height: 12.4px;
   overflow: hidden;
   transition: 300ms;
+  @media ${breakPoints.tablet} {
+    /* display: none; */
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    width: 100%;
+  }
 `;
 
 export const HeartRoundDivCircle = styled.div`
@@ -235,5 +248,13 @@ export const Img = styled.img`
    width: 115px;
   height: 42px;
   /* margin: 2px 172px 0px 61px; */
+  @media ${breakPoints.tablet} {
+    /* display: none; */
+  }
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    /* width: 80%; */
+    width: 100px;
+  }
 }
 `;
