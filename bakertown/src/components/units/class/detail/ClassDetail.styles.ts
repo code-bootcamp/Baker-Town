@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 import {
   IClassDetailStylesMapProps,
   IClassDetailStylesProgramProps,
@@ -21,6 +22,10 @@ export const NavBarWrapper = styled.div`
   &.change_header {
     position: fixed;
     top: 0;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: none;
   }
 `;
 
@@ -126,6 +131,11 @@ export const WholeWrapper = styled.div`
   /* position: relative; */
   /* background: lightblue; */
   justify-content: center;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    padding-top: 0px;
+  }
 `;
 
 export const UnderWrapper = styled.div`
@@ -134,6 +144,10 @@ export const UnderWrapper = styled.div`
   /* background: yellow; */
   display: flex;
   /* justify-content: center; */
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const IntroWrapper = styled.div`
@@ -141,6 +155,11 @@ export const IntroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   /* background: green; */
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    /* background: blue; */
+  }
 `;
 
 export const ClassIntro = styled.div`
@@ -160,6 +179,14 @@ export const ClassTitle = styled.div`
   font-size: 32px;
   font-weight: bold;
   margin-top: 70px;
+
+  @media ${breakPoints.mobile} {
+    width: 93%;
+    font-size: 1.75em;
+    margin-left: 19px;
+    line-height: 41px;
+    margin-top: 45px;
+  }
 `;
 
 export const SubComponentWrapper = styled.div`
@@ -167,6 +194,14 @@ export const SubComponentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 28px;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 63px;
+  }
 `;
 
 export const SubTheme1 = styled.div`
@@ -174,22 +209,43 @@ export const SubTheme1 = styled.div`
 
   flex-direction: row;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const ClassStarRate = styled.div`
   display: flex;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    width: 30%;
+  }
 `;
 
 export const Star = styled.img`
   width: 29px;
   height: 29px;
+
+  @media ${breakPoints.mobile} {
+    width: 25px;
+    height: 25px;
+    margin-left: 26px;
+  }
 `;
 
 export const Rate = styled.div`
   font-size: 26px;
   font-weight: bold;
   margin-left: 20px;
+
+  @media ${breakPoints.mobile} {
+    width: 30%;
+    margin-left: 5px;
+  }
 `;
 
 export const Rater = styled.div`
@@ -199,6 +255,9 @@ export const Rater = styled.div`
   margin-bottom: 5px;
   font-size: 20px;
   color: rgba(95, 95, 95, 0.5);
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const CategoryTag = styled.div`
@@ -211,6 +270,12 @@ export const Category = styled.div`
   font-size: 21px;
   margin-left: 15px;
   margin-top: 2px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 0.9em;
+    margin-right: 23px;
+  }
 `;
 
 // export const ContentsCategory = styled.div`
@@ -222,12 +287,18 @@ export const SubTheme2 = styled.div`
   flex-direction: row;
   align-items: center;
   /* background: red; */
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const SubTheme2Heart = styled.img`
   width: 21px;
   height: 21px;
   margin-right: 9px;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const DibsOnClass = styled.div`
@@ -242,6 +313,10 @@ export const DibsOnClass = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: bold;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 // export const Heart = styled.div`
@@ -261,12 +336,19 @@ export const ClassShare = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: bold;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Share = styled.img`
   width: 25px;
   height: 28px;
   margin-right: 8px;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const CarouselWrapper = styled.div`
@@ -283,9 +365,17 @@ export const ClassImage = styled.img`
   object-fit: cover;
 `;
 
-export const ProgramWrapper = styled.div``;
+export const ProgramWrapper = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
 
-export const PatissierIntro = styled.div``;
+export const PatissierIntro = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
 
 export const ClassRemarksTitle = styled.div`
   width: 100%;
@@ -295,6 +385,14 @@ export const ClassRemarksTitle = styled.div`
   font-weight: bold;
   text-align: left;
   color: #1e1e1e;
+
+  @media ${breakPoints.mobile} {
+    width: 93%;
+    font-size: 1.6em;
+    margin-left: 17px;
+    line-height: 41px;
+    margin-top: 60px;
+  }
 `;
 
 export const ClassRemarksDetail = styled.div`
@@ -303,12 +401,24 @@ export const ClassRemarksDetail = styled.div`
   font-size: 24px;
   text-align: left;
   color: #1e1e1e;
+
+  @media ${breakPoints.mobile} {
+    margin-top: 30px;
+    width: 91%;
+    margin-left: 21px;
+    font-size: 1.1em;
+  }
 `;
 
 export const ProgramIntro = styled.div`
   margin-top: 80px;
   font-size: 32px;
   font-weight: bold;
+  @media ${breakPoints.mobile} {
+    width: 94%;
+    margin-left: 17px;
+    margin-right: 17px;
+  }
 `;
 
 export const SubjectTitle = styled.div`
@@ -317,6 +427,31 @@ export const SubjectTitle = styled.div`
   font-size: 32px;
   font-weight: bold;
   /* background: yellow; */
+
+  @media ${breakPoints.mobile} {
+    width: 93%;
+    font-size: 1em;
+
+    line-height: 41px;
+    margin-top: 50px;
+  }
+`;
+
+export const SubjectTitleMobile = styled.div`
+  margin-top: 150px;
+  height: 44px;
+  font-size: 32px;
+  font-weight: bold;
+  /* background: yellow; */
+
+  @media ${breakPoints.mobile} {
+    width: 93%;
+    font-size: 1.6em;
+    line-height: 41px;
+    margin-top: 80px;
+    margin-left: 17px;
+    margin-right: 17px;
+  }
 `;
 
 export const ProgramGuideBox = styled.div`
@@ -327,26 +462,53 @@ export const ProgramGuideBox = styled.div`
   padding: 35px 30px 35px 30px;
   border-radius: 10px;
   background-color: #f7f7f7;
+
+  @media ${breakPoints.mobile} {
+    width: 96%;
+    margin-top: 20px;
+  }
 `;
 
 export const ProgramContents = styled.div`
   font-size: 20px;
   font-weight: normal;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 0.7em;
+  }
 `;
 
-export const ProgramImage = styled.div``;
+export const ProgramImage = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
 
-export const PatissierInfo = styled.div``;
+export const PatissierInfo = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 94%;
+    margin-left: 17px;
+    margin-right: 17px;
+    font-size: 1.6em;
+    line-height: 24px;
+    margin-top: 50px;
+  }
+`;
 
 export const PatissierWrapper = styled.div`
   margin-top: 40px;
   display: flex;
   justify-content: flex-start;
+
+  @media ${breakPoints.mobile} {
+    margin-top: 20px;
+  }
 `;
 
 export const PatissierPhoto = styled.img`
-  width: 58px;
-  height: 58px;
+  width: 45px;
+  height: 45px;
   margin-right: 9px;
 `;
 
@@ -356,6 +518,12 @@ export const PatissierName = styled.div`
   padding-right: 20px;
   padding-top: 12.5px;
   margin-left: 9px;
+
+  @media ${breakPoints.mobile} {
+    width: 94%;
+    margin-left: 3px;
+    font-size: 0.9em;
+  }
 `;
 
 export const ContactPatissier = styled.button`
@@ -371,6 +539,14 @@ font-size: 16px
 font-weight: bold; 
 color: white;
 cursor: pointer;
+
+
+@media ${breakPoints.mobile} {
+    width: 94%;
+    font-size: 0.7em;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
 `;
 
 export const PatissierContentsBox = styled.div`
@@ -380,14 +556,33 @@ export const PatissierContentsBox = styled.div`
   border-radius: 10px;
   background-color: #f7f7f7;
   margin-top: 10px;
+
+  @media ${breakPoints.mobile} {
+    width: 96%;
+    margin-top: 20px;
+  }
 `;
 
-export const ClassLocationInfo = styled.div``;
+export const ClassLocationInfo = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 94%;
+    display: flex
+    flex-direction: center;
+  }
+`;
 
 export const LocationInfo = styled.div`
   margin-top: 70px;
   font-size: 32px;
   font-weight: bold;
+  @media ${breakPoints.mobile} {
+    width: 94%;
+    margin-left: 17px;
+    margin-right: 17px;
+    font-size: 1.6em;
+    line-height: 24px;
+    margin-top: 50px;
+  }
 `;
 
 export const LocationMap = styled.div`
@@ -396,14 +591,32 @@ export const LocationMap = styled.div`
   margin-top: 50px;
   border-radius: 10px;
   background-color: #f7f7f7;
+
+  @media ${breakPoints.mobile} {
+    width: 94%;
+    margin-left: 20px;
+    margin-right: 0px;
+  }
 `;
 
-export const ClassReviewInfo = styled.div``;
+export const ClassReviewInfo = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 94%;
+  }
+`;
 
 export const ClassReviewTitle = styled.div`
   margin-top: 70px;
   font-size: 32px;
   font-weight: bold;
+
+  @media ${breakPoints.mobile} {
+    width: 93%;
+    font-size: 1.6em;
+    margin-left: 17px;
+    line-height: 41px;
+    margin-top: 60px;
+  }
 `;
 
 export const ClassStarRate2 = styled.div`
@@ -411,6 +624,11 @@ export const ClassStarRate2 = styled.div`
   display: flex;
 
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    width: 94%;
+    margin-left: 17px;
+  }
 `;
 
 export const Rate2 = styled.div`
@@ -420,33 +638,63 @@ export const Rate2 = styled.div`
   height: 33px;
   font-size: 24px;
   font-weight: bold;
+
+  @media ${breakPoints.mobile} {
+    width: 94%;
+    margin-left: 17px;
+    font-size: 0.8em;
+  }
 `;
 
 export const ClassReview = styled.div`
   margin-top: 40px;
   display: flex;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const ClassReviewerPhoto = styled.img`
   width: 58px;
   height: 58px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const Label3 = styled.div`
   margin-left: 9px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const ClassReviewerId = styled.div`
   font-size: 18px;
   font-weight: bold;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const Label = styled.div`
   display: flex;
   align-items: center;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
-export const PersonalRate = styled.div``;
+export const PersonalRate = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
 
 export const CreatedDate = styled.div`
   margin-left: 6px;
@@ -472,6 +720,10 @@ export const ReviewBox = styled.div`
   padding-left: 20px;
   padding-top: 20px;
   padding-right: 20px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const CommentResponse = styled.div`
@@ -528,10 +780,21 @@ export const ViewMore = styled.div`
   font-size: 14px;
   font-weight: bold;
   color: #9d9d9d;
+
+  @media ${breakPoints.mobile} {
+    width: 93%;
+
+    margin-left: 17px;
+
+    margin-top: 10px;
+  }
 `;
 
 export const ScheduleWrapper = styled.div`
   width: 400px;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const ClassSchedule = styled.div`
@@ -550,6 +813,9 @@ export const ClassSchedule = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 26px;
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const ClassScheduleWrapper = styled.div`
