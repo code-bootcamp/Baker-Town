@@ -21,12 +21,7 @@ export const HeaderWrapper = styled.header`
     width: 100%;
   }
   @media ${breakPoints.mobile} {
-    /* width: 100%; */
-    /* border: 10px dotted green; */
-    /* display: none; */
-    /* justify-content: flex-start; */
-    /* width: 100%; */
-    /* right: 0; */
+   
     width: 100%;
   }
 

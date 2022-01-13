@@ -26,12 +26,12 @@ const OrderHistoryPresenter = (props: IOrderHistoryPresenter) => {
                     </S.ItemName>
                     <S.ItemInfo>
                       <S.ItemPrice>{el.price}원</S.ItemPrice>
-                      <S.ItemAmount>1개</S.ItemAmount>
+                      {/* <S.ItemAmount>1개</S.ItemAmount> */}
                     </S.ItemInfo>
                   </S.ItemInfoWrapper>
                   <S.OrderLine></S.OrderLine>
                   <S.AfterOrder>
-                    <S.TrackingShipment>배송조회</S.TrackingShipment>
+                    {/* <S.TrackingShipment>배송조회</S.TrackingShipment> */}
                     <S.WriteReview onClick={props.onToggleModal}>
                       리뷰 작성하기
                     </S.WriteReview>

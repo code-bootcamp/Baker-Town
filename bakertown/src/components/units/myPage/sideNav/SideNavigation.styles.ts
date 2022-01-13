@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const TitleWrapper = styled.div`
   background-color: #f7f7f7;
@@ -30,7 +31,17 @@ export const SettingImage = styled.img`
   padding-bottom: 4px;
 `;
 
-export const Sidebar = styled.div``;
+export const Sidebar = styled.div`
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    /* width: 100%; */
+    /* padding-left: 5%; */
+    display: none;
+  }
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
+`;
 
 export const SidebarMyClass = styled.div``;
 

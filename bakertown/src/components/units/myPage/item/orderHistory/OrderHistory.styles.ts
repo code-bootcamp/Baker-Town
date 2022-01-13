@@ -1,14 +1,32 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 77px;
+
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    /* padding-left: 5%; */
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    /* width: 100%; */
+    /* padding-left: 5%; */
+    width: 100%;
+
+    margin-right: 3%;
+  }
 `;
 
 export const OrderList = styled.div`
   margin-left: 40px;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const ListTitle = styled.div`
@@ -21,6 +39,14 @@ export const ListTitle = styled.div`
 export const ListTitleText = styled.div`
   font-size: 32px;
   font-weight: bold;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 0.9em;
+  }
 `;
 
 export const ListContents = styled.div`
@@ -31,14 +57,32 @@ export const ListContents = styled.div`
   margin-top: 51px;
   /* justify-content: space-between; */
   /* background-color: red; */
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    margin-top: 0px;
+  }
 `;
 
 export const Order = styled.div`
   margin-bottom: 40px;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const OrderDate = styled.div`
   font-size: 20px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const OrderWrapper = styled.div`
@@ -50,6 +94,15 @@ export const OrderWrapper = styled.div`
   display: flex;
   padding-left: 30px;
   padding-top: 20px;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 90%;
+    height: 100%;
+    padding-top: 10px;
+  }
 `;
 
 export const ItemImage = styled.div`
@@ -57,6 +110,16 @@ export const ItemImage = styled.div`
   height: 140px;
   border-radius: 10px;
   background-color: yellow;
+
+  @media ${breakPoints.tablet} {
+    margin-top:0px
+    width: 300px;
+    height: 120px;
+  }
+  @media ${breakPoints.mobile} {
+    width: 250px;
+    height: 70px;
+  }
 `;
 
 export const ItemInfoWrapper = styled.div`
@@ -64,47 +127,138 @@ export const ItemInfoWrapper = styled.div`
   margin-left: 20px;
   margin-right: 33px;
   padding-top: 20px;
+
+  @media ${breakPoints.tablet} {
+  }
+  @media ${breakPoints.mobile} {
+    padding-top: 0px;
+  }
 `;
 
 export const ItemInfo = styled.div`
   display: flex;
   margin-top: 48px;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    /* width: 100%; */
+    padding-top: 20px;
+    margin-top: 0;
+  }
 `;
 
 export const ItemPrice = styled.div`
   margin-right: 20px;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 16px;
+    /* padding-top: -40px; */
+  }
 `;
 
-export const ItemAmount = styled.div``;
+export const ItemAmount = styled.div`
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+`;
 
 export const AfterOrder = styled.div`
   margin-top: 24px;
   margin-left: 80px;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
 `;
 
 export const TrackingShipment = styled.button`
-  width: 110px;
-  height: 40px;
-  font-size: 16px;
+  width: 100%;
+  height: 60px;
+  border-radius: 0.5px;
+  background-color: #4f3325;
+  color: #f3f3f3;
+  border: 0px solid gray;
+  font-size: 23px;
   cursor: pointer;
+  transition: 100ms;
+
+  :hover {
+    color: white;
+    opacity: 0.95;
+  }
+
+  @media ${breakPoints.tablet} {
+  }
+  @media ${breakPoints.mobile} {
+    width: 76px;
+    height: 25px;
+    font-size: 6px;
+  }
 `;
 
 export const WriteReview = styled.button`
-  width: 110px;
+  /* width: 100%;
+  height: 60px;
+  border-radius: 0.5px;
+  background-color: #4f3325;
+  color: #f3f3f3;
+  border: 0px solid gray;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 100ms;
+
+  :hover {
+    color: white;
+    opacity: 0.95;
+  } */
+  width: 100%;
   height: 40px;
   margin-top: 10px;
   font-size: 16px;
-  cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+  }
+  @media ${breakPoints.mobile} {
+    width: 76px;
+    height: 25px;
+    font-size: 6px;
+  }
 `;
 
 export const ItemName = styled.div`
   width: 419px;
   height: 33px;
   font-size: 24px;
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 14px;
+    /* margin-top: 10px; */
+  }
 `;
 
 export const OrderLine = styled.div`
   width: 1px;
   height: 140px;
   background-color: #bdb7b3;
+  @media ${breakPoints.tablet} {
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    display: none;
+  }
 `;

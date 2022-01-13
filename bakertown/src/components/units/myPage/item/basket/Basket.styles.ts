@@ -1,25 +1,67 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 77px;
+
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    /* padding-left: 5%; */
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    /* width: 100%; */
+    /* padding-left: 5%; */
+    /* width: 100%; */
+    /* margin-top: 20px; */
+    margin-top: 0px;
+    /* margin-right: 0%;
+    margin-left: 0%; */
+  }
 `;
 
 export const BasketList = styled.div`
   margin-left: 40px;
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    /* padding-left: 5%; */
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    margin-left: 5%;
+  }
 `;
 
 export const BasketTitle = styled.div`
   font-family: Roboto;
   font-size: 32px;
   font-weight: bold;
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    /* padding-left: 5%; */
+  }
+  @media ${breakPoints.mobile} {
+    /* margin-left: 0px; */
+  }
 `;
 
 export const BasketTitleText = styled.div`
   font-size: 32px;
   font-weight: bold;
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
+    width: 100%;
+    /* padding-left: 5%; */
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const BasketCheckBoxContainer = styled.div`
@@ -36,6 +78,15 @@ export const BasketContents = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+
+    /* margin-top: 0px; */
+  }
 `;
 
 export const ItemWrapper = styled.div`
@@ -48,6 +99,15 @@ export const ItemWrapper = styled.div`
   border-radius: 10px;
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
   border: solid 0.5px #e2e2e2;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    /* width: 100%; */
+    width: 90%;
+    height: 120px;
+  }
 `;
 
 export const ItemImage = styled.img`
@@ -55,6 +115,11 @@ export const ItemImage = styled.img`
   height: 140px;
   border-radius: 10px;
   background-color: yellow;
+  @media ${breakPoints.mobile} {
+    width: 150px;
+    height: 80px;
+    margin-right: 3%;
+  }
 `;
 
 export const ClassPatissier = styled.div`
@@ -78,6 +143,15 @@ export const ClassPatissier = styled.div`
 
 export const ItemInfo = styled.div`
   padding-left: 29.5px;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    /* padding-left: 0px; */
+    padding-left: 0%;
+  }
 `;
 
 export const ItemName = styled.div`
@@ -86,12 +160,28 @@ export const ItemName = styled.div`
   margin-bottom: 30px;
   font-family: NotoSans;
   font-size: 24px;
+
+  @media ${breakPoints.mobile} {
+    width: 80%;
+    /* font-size: 14px; */
+    /* margin-top: 10px; */
+    font-size: 16px;
+  }
 `;
 
 export const ItemPrice = styled.div`
   width: 536px;
   font-family: NotoSans;
   font-size: 18px;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 16px;
+    /* padding-top: -40px; */
+  }
 `;
 
 export const NumberSelect = styled.div``;

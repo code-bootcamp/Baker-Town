@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -7,7 +8,12 @@ export const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* background: #fbf5ef; */
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const SignUpWrapper = styled.div`
@@ -17,6 +23,13 @@ export const SignUpWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const SignInWrapper = styled.div`
@@ -33,16 +46,15 @@ export const SignInWrapper = styled.div`
 
 export const SignUpInnerWrapper = styled.div`
   width: 50%;
-  /* height: 100%; */
-  /* background: gray; */
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 export const Label = styled.div`
-  /* position: absolute;
-  padding: 60px 24px 0px;
-  left: 950px;
-  right: 0px;
-  font-size: 50px;
-  font-weight: bold; */
   font-size: 39px;
 `;
 
@@ -53,7 +65,6 @@ export const NameLabel = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   padding-top: 50px;
-  /* color: #4f3325; */
   color: rgba(0, 0, 0, 0.7.5);
 `;
 
@@ -64,7 +75,6 @@ export const PhoneLabel = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   padding-top: 50px;
-  /* color: #4f3325; */
   color: rgba(0, 0, 0, 0.7.5);
 `;
 
@@ -75,7 +85,6 @@ export const EmailLabel = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   padding-top: 50px;
-  /* color: #4f3325; */
   color: rgba(0, 0, 0, 0.7.5);
 `;
 
@@ -102,7 +111,6 @@ export const Name = styled.input`
   color: black;
   margin-top: 10px;
   :focus {
-    /* outline: 1px solid rgba(0, 0, 0, 0.3); */
     outline: none;
   }
 `;
@@ -120,24 +128,11 @@ export const Email = styled.input`
   color: black;
   margin-top: 10px;
   :focus {
-    /* outline: 1px solid rgba(0, 0, 0, 0.3); */
     outline: none;
   }
 `;
 
 export const Check = styled.input`
-  /* border-radius: 5px;
-  border: 0px solid gray;
-  box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  width: 100%;
-  height: 8%;
-  font-size: 15px;
-  padding-left: 10px;
-  color: black;
-  margin-top: 10px;
-  :focus {
-    /* outline: 1px solid rgba(0, 0, 0, 0.3); */
   margin-top: 40px;
 `;
 
@@ -154,7 +149,6 @@ export const Password = styled.input`
   color: black;
   margin-top: 10px;
   :focus {
-    /* outline: 1px solid rgba(0, 0, 0, 0.3); */
     outline: none;
   }
 }
@@ -173,7 +167,6 @@ export const Phone = styled.input`
   color: black;
   margin-top: 10px;
   :focus {
-    /* outline: 1px solid rgba(0, 0, 0, 0.3); */
     outline: none;
   }
 }
@@ -195,6 +188,12 @@ export const SignUpButton = styled.button`
     color: white;
     opacity: 0.95;
   }
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 export const Error = styled.div`
   color: red;
@@ -206,12 +205,17 @@ export const PhotoWrapper = styled.div`
   height: 100vh;
   border: 0px solid gray;
   background-position: bottom -100px center;
-  /* opacity: 0.9; */
   background-repeat: no-repeat;
   box-sizing: border-box;
   overflow: hidden;
-  /* box-shadow: inset 9px -300px 67px -3px rgba(0, 0, 0, 0.1); */
   background-size: cover;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const BrandWrapper = styled.div`
@@ -222,7 +226,6 @@ export const BrandWrapper = styled.div`
 export const LogoLabel = styled.img`
   width: 20%;
   height: 100%;
-  /* height: 100%; */
 `;
 
 export const SignInLabel = styled.div`

@@ -42,7 +42,7 @@ export default function Layout(props: ILayoutProps) {
   return (
     <>
       <Wrapper>
-        {!isHiddenHeader && <Header />}
+        {/* {!isHiddenHeader && <Header />} */}
         <Body>{props.children}</Body>
         {!isHiddenFooter && <Footer />}
         <Navigation />
