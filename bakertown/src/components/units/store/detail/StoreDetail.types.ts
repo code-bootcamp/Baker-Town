@@ -9,6 +9,7 @@ export interface IStoreDetailPresenterProps {
     shippingTime: string;
     review: [];
     heart: number;
+    images: never[];
   };
   purchase: () => void;
   heart: () => void;

@@ -7,6 +7,11 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
     <S.Wrapper>
       <S.LeftWrapper>
         {/* <S.UpperWrapper> */}
+        {props.myStore?.images?.map((el: any) => (
+          <div key={uuidv4()}>
+            <S.TitleImage src={`https://storage.googleapis.com/${el}`} />
+          </div>
+        ))}
 
         <S.TitleImage></S.TitleImage>
         {/* </S.UpperWrapper> */}

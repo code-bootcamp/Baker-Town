@@ -18,6 +18,7 @@ const StoreDetailContainer = () => {
     patissier: "",
     shippingTime: "",
     price: 0,
+    images: [],
   });
 
   const storeDetail = async () => {

@@ -8,18 +8,17 @@ export const Wrapper = styled.div`
   margin-top: 77px;
 
   @media ${breakPoints.tablet} {
-    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
   }
   @media ${breakPoints.mobile} {
-    margin-top: 0%;
-    margin-right: 13%;
+    height: 100%;
   }
 `;
 
 export const TopWrapper = styled.div`
   display: flex;
   @media ${breakPoints.tablet} {
-    /* width: 100%; */
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -33,7 +32,8 @@ export const BottomWrapper = styled.div`
   padding-top: 20px;
 
   @media ${breakPoints.tablet} {
-    width: 100%;
+    margin-bottom: 0%;
+    padding-top: 0%;
   }
   @media ${breakPoints.mobile} {
     padding-top: 0%;
@@ -45,7 +45,7 @@ export const OrderList = styled.div`
   margin-left: 40px;
 
   @media ${breakPoints.tablet} {
-    width: 100%;
+    margin-left: 2%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -86,7 +86,7 @@ export const ListContents = styled.div`
     width: 100%;
   }
   @media ${breakPoints.mobile} {
-    width: 88%;
+    width: 95%;
   }
 `;
 
@@ -104,7 +104,7 @@ export const OrderWrapper = styled.div`
     width: 100%;
   }
   @media ${breakPoints.mobile} {
-    width: 120%;
+    width: 100%;
     padding-left: 4%;
     padding-top: 4%;
   }
@@ -194,7 +194,6 @@ export const OrderDate = styled.div`
   font-size: 18px;
 
   @media ${breakPoints.tablet} {
-    width: 100%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -207,7 +206,9 @@ export const Line = styled.div`
   background-color: #bdb7b3;
   margin-top: 35px;
   @media ${breakPoints.tablet} {
-    width: 100%;
+    width: 95%;
+    margin-top: 0;
+    margin-bottom: 2%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -218,6 +219,8 @@ export const Line = styled.div`
 export const ItemReview = styled.div`
   @media ${breakPoints.tablet} {
     width: 100%;
+    margin-top: 0%;
+    /* margin-left: 2%; */
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -228,7 +231,6 @@ export const SubTheme = styled.div`
   display: flex;
   align-items: center;
   @media ${breakPoints.tablet} {
-    width: 100%;
   }
   @media ${breakPoints.mobile} {
   }
@@ -262,12 +264,14 @@ export const CreatedDate = styled.div`
 
   color: #bdb7b3;
   @media ${breakPoints.tablet} {
-
-    width: 100%;*/
+    width: 100%;
+    margin-right: 30%;
+    margin-top: 0%;
+    /* margin-top: 5%; */
   }
   @media ${breakPoints.mobile} {
-    margin-left: 0%;
-    margin-top: 5%;
+    margin-right: 25%;
+    margin-top: 0%;
   }
 `;
 
@@ -312,6 +316,13 @@ export const Label = styled.div`
   padding-top: 10px;
   font-family: NotoSans;
   font-size: 18px;
+  @media ${breakPoints.tablet} {
+    padding-top: 0.5%;
+  }
+  @media ${breakPoints.mobile} {
+    padding-top: 0.5%;
+    /* padding-left: 8%; */
+  }
 `;
 
 export const ReviewEdit = styled.button`
@@ -322,11 +333,9 @@ export const ReviewEdit = styled.button`
     cursor: pointer;
     text-decoration: underline;
   }
-  @media ${breakPoints.tablet} {
-    width: 100%;
-  }
+
   @media ${breakPoints.mobile} {
-    width: 100%;
+    /* width: 100%; */
   }
 `;
 
@@ -337,10 +346,8 @@ export const ReviewDelete = styled.button`
     cursor: pointer;
     text-decoration: underline;
   }
-  @media ${breakPoints.tablet} {
-    width: 100%;
-  }
+
   @media ${breakPoints.mobile} {
-    width: 100%;
+    /* width: 100%; */
   }
 `;

@@ -8,22 +8,27 @@ export const Wrapper = styled.div`
   margin-top: 77px;
 
   @media ${breakPoints.tablet} {
-    /* visibility: hidden; */
+    /* padding-left: 2%;
+    padding-right: 4%; */
+    padding-right: 2%;
     width: 100%;
-    /* padding-left: 5%; */
   }
   @media ${breakPoints.mobile} {
     /* visibility: hidden; */
     /* width: 100%; */
-    /* padding-left: 5%; */
+    padding-right: 5%;
     width: 100%;
-    margin-top: 0%;
-    margin-right: 7%;
+    height: 100%;
   }
 `;
 
 export const OrderList = styled.div`
   margin-left: 40px;
+
+  @media ${breakPoints.tablet} {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
   @media ${breakPoints.mobile} {
     width: 100%;
   }
@@ -59,10 +64,14 @@ export const ListContents = styled.div`
   /* background-color: red; */
   @media ${breakPoints.tablet} {
     width: 100%;
+    margin-top: 0%;
+    margin-left: 2%;
   }
   @media ${breakPoints.mobile} {
-    width: 97%;
+    width: 95%;
     margin-top: 0%;
+    /* padding-left: 0%; */
+    padding-right: 2%;
   }
 `;
 
@@ -83,6 +92,9 @@ export const OrderDate = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
   }
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const OrderWrapper = styled.div`
@@ -92,19 +104,19 @@ export const OrderWrapper = styled.div`
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
   border: solid 0.5px #e2e2e2;
   display: flex;
-  padding-left: 30px;
-  padding-top: 20px;
+  padding-left: 2%;
+  padding-top: 2%;
 
   @media ${breakPoints.tablet} {
-    width: 100%;
+    width: 580px;
     padding-left: 3.5%;
     padding-top: 3.5%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 130px;
-    padding-top: 2%;
-    padding-left: 2%;
+    padding-top: 4%;
+    padding-left: 4%;
     /* padding-top: 10px; */
   }
 `;
@@ -120,8 +132,8 @@ export const ItemImage = styled.div`
     height: 120px;
   }
   @media ${breakPoints.mobile} {
-    width: 500px;
-    height: 110px;
+    width: 320px;
+    height: 90px;
   }
 `;
 
@@ -182,6 +194,8 @@ export const AfterOrder = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 100%;
+    margin-top: 6%;
+    margin-left: 9%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -225,7 +239,8 @@ export const WriteReview = styled.button`
     width: 60%;
   }
   @media ${breakPoints.mobile} {
-    width: 100%;
+    margin-top: 1%;
+    width: 80%;
     height: 25%;
     font-size: 0.05em;
   }
