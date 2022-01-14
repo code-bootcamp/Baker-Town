@@ -27,6 +27,12 @@ export const NavBarWrapper = styled.div`
   @media ${breakPoints.mobile} {
     display: none;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    margin-left: 0px;
+    padding-left: 6%;
+  }
 `;
 
 export const NavBarCategory = styled.div`
@@ -34,6 +40,10 @@ export const NavBarCategory = styled.div`
   height: 93px;
   display: flex;
   align-items: center;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
 
 export const NavProgram = styled.div`
@@ -136,6 +146,13 @@ export const WholeWrapper = styled.div`
     width: 100%;
     padding-top: 0px;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    padding-top: 0px;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 `;
 
 export const UnderWrapper = styled.div`
@@ -148,6 +165,11 @@ export const UnderWrapper = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
   }
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    margin-top: 5%;
+    padding-left: 3%;
+  }
 `;
 
 export const IntroWrapper = styled.div`
@@ -159,6 +181,10 @@ export const IntroWrapper = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
     /* background: blue; */
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 70%;
   }
 `;
 
@@ -187,6 +213,11 @@ export const ClassTitle = styled.div`
     line-height: 41px;
     margin-top: 45px;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 80%;
+    font-size: 1.6em;
+  }
 `;
 
 export const SubComponentWrapper = styled.div`
@@ -202,6 +233,10 @@ export const SubComponentWrapper = styled.div`
 
     margin-top: 63px;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
 `;
 
 export const SubTheme1 = styled.div`
@@ -214,6 +249,10 @@ export const SubTheme1 = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 80%;
   }
 `;
 
@@ -231,8 +270,8 @@ export const Star = styled.img`
   height: 29px;
 
   @media ${breakPoints.mobile} {
-    width: 25px;
-    height: 25px;
+    width: 16px;
+    height: 16px;
     margin-left: 26px;
   }
 `;
@@ -243,8 +282,8 @@ export const Rate = styled.div`
   margin-left: 20px;
 
   @media ${breakPoints.mobile} {
-    width: 30%;
-    margin-left: 5px;
+    margin-left: 12px;
+    font-size: 1em;
   }
 `;
 
@@ -289,6 +328,10 @@ export const SubTheme2 = styled.div`
   /* background: red; */
   @media ${breakPoints.mobile} {
     display: none;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 40%;
   }
 `;
 
@@ -651,7 +694,8 @@ export const ClassReview = styled.div`
   display: flex;
 
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 94%;
+    margin-left: 17px;
   }
 `;
 
@@ -660,7 +704,10 @@ export const ClassReviewerPhoto = styled.img`
   height: 58px;
 
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 94%;
+    margin-left: 17px;
+    width: 45px;
+    height: 45px;
   }
 `;
 
@@ -668,7 +715,7 @@ export const Label3 = styled.div`
   margin-left: 9px;
 
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 94%;
   }
 `;
 
@@ -722,7 +769,13 @@ export const ReviewBox = styled.div`
   padding-right: 20px;
 
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 94%;
+    margin-left: 17px;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 98%;
+    margin-left: 17px;
   }
 `;
 
@@ -782,11 +835,14 @@ export const ViewMore = styled.div`
   color: #9d9d9d;
 
   @media ${breakPoints.mobile} {
-    width: 93%;
-
+    width: 98%;
     margin-left: 17px;
-
     margin-top: 10px;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 98%;
+    margin-left: 17px;
   }
 `;
 
@@ -794,6 +850,11 @@ export const ScheduleWrapper = styled.div`
   width: 400px;
   @media ${breakPoints.mobile} {
     display: none;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 25%;
+    padding-top: 0px;
   }
 `;
 
@@ -816,6 +877,11 @@ export const ClassSchedule = styled.div`
   @media ${breakPoints.mobile} {
     display: none;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 25%;
+    padding-top: 0px;
+  }
 `;
 
 export const ClassScheduleWrapper = styled.div`
@@ -828,6 +894,11 @@ export const ClassScheduleWrapper = styled.div`
   align-items: center;
   overflow: auto;
   padding-top: 20px;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    padding-top: 0px;
+  }
 `;
 
 export const SmallTitle = styled.div`
@@ -857,10 +928,14 @@ export const ClassArrayWrapper = styled.div`
   /* border: 1px solid rgba(0, 0, 0, 0.1); */
   cursor: pointer;
   /* background: #f4f4f4; */
+
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
 `;
 
 export const ClassButton = styled.div`
-  width: 330px;
+  width: 303px;
   /* height: 100px; */
   padding-top: 15px;
   /* padding-left: 14.5px; */
@@ -877,6 +952,9 @@ export const ClassDateToClassLine = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
 
 export const ClassDateToClassTime = styled.div`
@@ -885,6 +963,9 @@ export const ClassDateToClassTime = styled.div`
   align-items: flex-start;
   width: 100%;
   padding-left: 28px;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
 
 export const ClassDate = styled.div`
@@ -897,6 +978,10 @@ export const SmallLine = styled.div`
   margin-bottom: 15px;
   border-bottom: 1px solid rgba(79, 51, 37, 0.4);
   width: 267px;
+  @media ${breakPoints.tablet} {
+    width: 57%;
+    margin-right: 30%;
+  }
 `;
 export const ClassStartTime = styled.div`
   /* font-weight: bold; */
@@ -905,6 +990,12 @@ export const ClassStartTime = styled.div`
 export const ClassStartTimeTwo = styled.div`
   display: flex;
   justify-content: space-around;
+
+  @media ${breakPoints.tablet} {
+    /* background-color: pink; */
+    width: 49%;
+    /* font-size: 0.1em; */
+  }
 `;
 
 export const ClassRunningTime = styled.div``;
@@ -918,6 +1009,9 @@ export const ClassScheduleUnderWrapper = styled.div`
   padding-right: 35px;
   padding-bottom: 25px;
   padding-top: 20px;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
 
 export const ClassPrice = styled.div`

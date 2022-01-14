@@ -11,7 +11,7 @@ const NavigationContainer = () => {
     {
       text: "마이페이지",
       src: "/imgs/star.png",
-      link: `/myPage/class/beforePar`,
+      link: `/myPage/nav`,
     },
   ];
   const onClickNav = (el: { link: string }) => () => {

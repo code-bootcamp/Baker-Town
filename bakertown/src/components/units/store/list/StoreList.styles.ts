@@ -153,7 +153,6 @@ export const ItemWrapper = styled.div`
     width: 45%;
     margin-bottom: 40%;
   }
-
   @media ${breakPoints.tablet} {
     width: 30%;
     margin-bottom: 25%
@@ -167,8 +166,6 @@ export const ItemImage = styled.img`
   border-radius: 10px;
   background-color: #c4c4c4;
   margin-bottom: 20px;
-  opacity: 0.5;
-
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
