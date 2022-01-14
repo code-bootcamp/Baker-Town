@@ -18,7 +18,7 @@ export const HeaderWrapper = styled.header`
   scroll-behavior: smooth;
   @media ${breakPoints.tablet} {
     width: 100%;
-    padding-left: 10%;
+    padding-left: 5%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -44,8 +44,8 @@ export const Img = styled.img`
   @media ${breakPoints.tablet} {
     width: 100px;
     height: 35px;
-    margin-top: 7px;
-    margin-left: 20px;
+    margin-top: 4px;
+    /* margin-left: 5px; */
   }
   @media ${breakPoints.mobile} {
     width: 100px;
@@ -156,11 +156,11 @@ export const RoundDiv = styled.div`
 
   @media ${breakPoints.tablet} {
     /* display: none; */
-    width: 60%;
-    height: 40%;
+    width: 58%;
+    height: 54%;
     margin-top: 5px;
-    margin-left: 10%;
-    padding-left: 10px;
+    margin-left: 5%;
+    padding-left: 1px;
   }
 
   @media ${breakPoints.mobile} {
@@ -185,8 +185,8 @@ export const RoundDivInnerText = styled.input`
   }
 
   @media ${breakPoints.tablet} {
-    font-size: 0.9em;
-    width: 95%;
+    font-size: 1em;
+    margin-left: 5%;
   }
 `;
 
@@ -204,7 +204,7 @@ export const RoundDivCircle = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 30px;
-    height: 26px;
+    height: 27px;
   }
 `;
 
@@ -215,7 +215,10 @@ export const RoundDivInnerIcon = styled.img`
   transition: 300ms;
 
   @media ${breakPoints.tablet} {
-    width: 80%;
+    width: 70%;
+    height: 65%;
+    padding-left: 1px;
+    padding-right: 1px;
   }
 `;
 
@@ -857,7 +860,7 @@ export const ClassImage = styled.img`
   margin-bottom: 20px;
   opacity: 0.5;
   @media ${breakPoints.tablet} {
-    width: 65%;
+    width: 80%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -885,6 +888,7 @@ export const ClassName = styled.div`
   margin-bottom: 9.5px;
   @media ${breakPoints.tablet} {
     /* display: none; */
+    width: 80%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -897,7 +901,7 @@ export const SmallLine = styled.div`
   margin-bottom: 9.5px;
   width: 290px;
   @media ${breakPoints.tablet} {
-    width: 65%;
+    width: 80%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
