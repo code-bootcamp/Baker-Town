@@ -8,10 +8,11 @@ export const Wrapper = styled.div`
   margin-top: 77px;
 
   @media ${breakPoints.tablet} {
-    width: 100%;
+    padding-left: 2%;
+    padding-right: 4%;
   }
   @media ${breakPoints.mobile} {
-    margin-top: 0px;
+    height: 100%;
   }
 `;
 
@@ -19,10 +20,12 @@ export const BasketList = styled.div`
   margin-left: 40px;
   @media ${breakPoints.tablet} {
     width: 100%;
+    margin-left: 1%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
-    margin-left: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
   }
 `;
 
@@ -30,26 +33,15 @@ export const BasketTitle = styled.div`
   font-family: Roboto;
   font-size: 32px;
   font-weight: bold;
-  @media ${breakPoints.tablet} {
-    /* visibility: hidden; */
-    width: 100%;
-    /* padding-left: 5%; */
-  }
-  @media ${breakPoints.mobile} {
-    /* margin-left: 0px; */
-  }
 `;
 
 export const BasketTitleText = styled.div`
   font-size: 32px;
   font-weight: bold;
   @media ${breakPoints.tablet} {
-    /* visibility: hidden; */
-    width: 100%;
-    /* padding-left: 5%; */
   }
   @media ${breakPoints.mobile} {
-    width: 100%;
+    font-size: 1.5em;
   }
 `;
 
@@ -91,12 +83,19 @@ export const ItemWrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 100%;
+    height: 100%;
+    padding-top: 2%;
+    padding-left: 3%;
+    padding-bottom: 2%;
+    margin-bottom: 5%;
   }
   @media ${breakPoints.mobile} {
-    width: 97%;
-    height: 150px;
+    width: 100%;
+    height: 100%;
+    padding-top: 2%;
     padding-left: 3%;
-    padding-top: 4%;
+    padding-bottom: 2%;
+    margin-bottom: 5%;
   }
 `;
 
@@ -105,10 +104,14 @@ export const ItemImage = styled.img`
   height: 140px;
   border-radius: 10px;
   background-color: yellow;
+
+  @media ${breakPoints.tablet} {
+    width: 130px;
+    height: 110px;
+  }
   @media ${breakPoints.mobile} {
-    width: 300px;
-    height: 120px;
-    margin-right: 3%;
+    width: 100px;
+    height: 80px;
   }
 `;
 
@@ -119,6 +122,18 @@ export const ClassPatissier = styled.div`
   font-size: 18px;
   font-weight: bold;
   color: rgba(79, 51, 37, 0.9);
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    margin-bottom: 1%;
+  }
+
+  @media ${breakPoints.mobile} {
+    /* display: none; */
+    font-size: 0.7em;
+    width: 100%;
+    margin-bottom: 0;
+  }
 `;
 
 export const ItemInfo = styled.div`
@@ -129,7 +144,6 @@ export const ItemInfo = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 100%;
-    padding-left: 3%;
   }
 `;
 
@@ -139,12 +153,15 @@ export const ItemName = styled.div`
   margin-bottom: 30px;
   font-family: NotoSans;
   font-size: 24px;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    margin-bottom: 7%;
+  }
 
   @media ${breakPoints.mobile} {
-    width: 80%;
-    /* font-size: 14px; */
-    /* margin-top: 10px; */
-    font-size: 0.8em;
+    width: 100%;
+    font-size: 0.7em;
+    margin-bottom: 0px;
   }
 `;
 
@@ -155,6 +172,7 @@ export const ItemPrice = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 100%;
+    font-size: 0.8em;
   }
   @media ${breakPoints.mobile} {
     width: 100%;

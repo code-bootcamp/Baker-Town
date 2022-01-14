@@ -45,7 +45,7 @@ export const BodyWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const TitleImage = styled.div`
+export const TitleImage = styled.img`
   width: 864px;
   height: 640px;
   border-radius: 10px;
