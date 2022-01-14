@@ -191,7 +191,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               </S.PatissierContentsBox>
             </S.PatissierInfo>
             <S.ClassLocationInfo ref={props.MapRef}>
-              <S.SubjectTitle>위치정보</S.SubjectTitle>
+              <S.SubjectTitleMobile>위치정보</S.SubjectTitleMobile>
               <S.LocationMap>
                 <div id="map" style={{ width: "100%", height: "400px" }}></div>
               </S.LocationMap>
@@ -210,9 +210,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             </S.PatissierContentsBox>
           </S.PatissierInfo> */}
             <S.ClassReviewInfo ref={props.ReviewRef}>
-              <S.SubjectTitle onClick={props.review}>
+              <S.SubjectTitleMobile onClick={props.review}>
                 실제 수강생 후기
-              </S.SubjectTitle>
+              </S.SubjectTitleMobile>
               <S.ClassStarRate2>
                 <Rate value={props.ratingAverage} />
                 <S.Rate>{props.ratingAverage}</S.Rate>
