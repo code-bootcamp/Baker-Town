@@ -260,7 +260,9 @@ export const ClassDate = styled.div`
 export const WriteReview = styled.button`
   /* width: 50px; */
   /* height: 50px; */
-  background-color: transparent;
+  background-color: #4f3325;
+  color: white;
+  border-radius: 5px;
   border: none;
   cursor: pointer;
   :hover {
@@ -271,6 +273,7 @@ export const WriteReview = styled.button`
   @media ${breakPoints.tablet} {
     width: 80%;
     margin-bottom: 10%;
+    font-size: 0.8em;
   }
   @media ${breakPoints.mobile} {
     font-size: 0.5em;

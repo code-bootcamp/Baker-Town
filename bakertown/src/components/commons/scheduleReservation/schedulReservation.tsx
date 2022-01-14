@@ -1,7 +1,8 @@
 import * as S from "../../units/class/detail/ClassDetail.styles";
 import { v4 as uuidv4 } from "uuid";
+import { IScheduleReservationProps } from "../layout/detailNavigation/DetailNavigation.types";
 
-const SchedulReservation = (props) => {
+const SchedulReservation = (props: IScheduleReservationProps) => {
   return (
     <>
       <S.ScheduleWrapper isVisible={props.isVisible}>

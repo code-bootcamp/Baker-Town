@@ -10,7 +10,7 @@ const AfterParContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [reviewContents, setReviewContents] = useState("");
   const [rating, setRating] = useState(3);
-  const [myUser, setMyUser] = useState({
+  const [myUser, setMyUser] = useState<{ afterPar: any[] }>({
     afterPar: [],
   });
   const [count, setCount] = useState(0);
@@ -50,7 +50,7 @@ const AfterParContainer = () => {
     const bakeryClass = doc(
       getFirestore(firebaseApp),
       "class",
-      myUser?.afterPar?.[index].classRouter
+      myUser?.afterPar?.[index]?.classRouter
       // String(router.query.classId) 클래스 아이디 값
     );
     const classResult: any = await getDoc(bakeryClass);

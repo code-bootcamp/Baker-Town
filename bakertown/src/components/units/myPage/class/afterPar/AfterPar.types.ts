@@ -8,7 +8,7 @@ export interface IAfterParPresenter {
   rating: number;
   setRating: Dispatch<SetStateAction<number>>;
   userResult: {
-    afterPar: [];
+    afterPar: any[];
   };
   classDetail: (el: any) => () => void;
 }

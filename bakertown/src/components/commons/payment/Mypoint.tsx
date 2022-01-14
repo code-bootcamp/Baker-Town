@@ -4,7 +4,12 @@ import Head from "next/head";
 import { firebaseApp, useAuth } from "../../../../pages/_app";
 import { MouseEvent, useEffect, useState } from "react";
 import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
-import { MyPoint, ChargeButton } from "./MyPoint.styles";
+import {
+  MyPoint,
+  ChargeButton,
+  PointOption,
+  PointSelect,
+} from "./MyPoint.styles";
 
 declare const window: Window &
   typeof globalThis & {
@@ -95,15 +100,16 @@ export default function UserPoint() {
         ></script>
       </Head>
       <MyPoint>{ppoint}P</MyPoint>
-      <select onChange={onClickSelectPoint} value={selectedPoint}>
-        <option>--충전 포인트--</option>
-
+      <PointSelect onChange={onClickSelectPoint} value={selectedPoint}>
+        <PointOption selected={true} disabled>
+          --충전 포인트--
+        </PointOption>
         {selectList.map((el) => (
-          <option key={el} value={el}>
+          <PointOption key={el} value={el}>
             {el}포인트
-          </option>
+          </PointOption>
         ))}
-      </select>
+      </PointSelect>
       <ChargeButton onClick={onClickPayment}>포인트충전</ChargeButton>
     </>
   );
