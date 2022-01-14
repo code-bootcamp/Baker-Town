@@ -167,6 +167,15 @@ const LandingContainer = () => {
     slidesToShow: 2,
     slidesToScroll: 1,
   };
+  const settings3 = {
+    dots: false,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    autoplay: false,
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
 
   return (
     <>
@@ -176,6 +185,7 @@ const LandingContainer = () => {
         currentUser={currentUser}
         settings={settings}
         settings2={settings2}
+        settings3={settings3}
         clickLeft={clickLeft}
         clickRight={clickRight}
         landing={onClickLanding}
