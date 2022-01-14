@@ -147,14 +147,14 @@ export const ClassPatissier = styled.div`
 `;
 
 export const ClassInfoWrapper = styled.div`
-  padding-left: 28px;
+  padding-left: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   @media ${breakPoints.tablet} {
     width: 25%;
-    padding-left: 0;
+    padding-left: 3%;
   }
 
   @media ${breakPoints.mobile} {
@@ -162,7 +162,7 @@ export const ClassInfoWrapper = styled.div`
     width: 25%;
     /* height: 30%; */
     /* padding-left: 3%; */
-    padding-left: 0;
+    padding-left: 4%;
   }
 `;
 
@@ -179,8 +179,8 @@ export const ClassDate = styled.div`
 
   @media ${breakPoints.mobile} {
     /* display: none; */
-    font-size: 0.5em;
-    margin-bottom: 0;
+    font-size: 0.7em;
+    margin-bottom: 10%;
   }
 `;
 
@@ -237,11 +237,17 @@ export const ClassCancelButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
+  :hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   @media ${breakPoints.tablet} {
+    font-size: 0.9em;
   }
 
   @media ${breakPoints.mobile} {
     /* display: none; */
-    font-size: 0.5em;
+    font-size: 0.7em;
   }
 `;

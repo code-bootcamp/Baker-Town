@@ -37,7 +37,6 @@ const AfterParPresenter = (props: IAfterParPresenter) => {
                   <S.WriteReview onClick={props.onToggleModal}>
                     리뷰 작성하기
                   </S.WriteReview>
-                  <button onClick={props.onToggleModal}>히히</button>
                   {props.isOpen && (
                     <Modal
                       title="리뷰 등록"
