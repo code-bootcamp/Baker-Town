@@ -11,6 +11,10 @@ export const Wrapper = styled.div`
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
 
 export const Sidebar = styled.div`
@@ -19,6 +23,12 @@ export const Sidebar = styled.div`
 
   @media ${breakPoints.mobile} {
     display: none;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 25%;
+    margin-left: 1%;
+    margin-right: 7%;
   }
 `;
 
@@ -40,6 +50,12 @@ export const SideTitle = styled.div`
   :hover {
     color: rgba(0, 0, 0, 0.7);
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    font-size: 1.4em;
+    margin-left: 10%;
+  }
 `;
 
 export const SideButton = styled.div`
@@ -53,15 +69,30 @@ export const SideButton = styled.div`
     background: rgba(220, 220, 220, 0.1);
     font-weight: bold;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    margin-left: 11%;
+    font-size: 1.2em;
+    padding-left: 9%;
+  }
 `;
 
 export const SmallLine = styled.div`
   width: 187px;
   margin-left: 29px;
   border-bottom: 1px solid #e2e2e2;
+
+  @media ${breakPoints.tablet} {
+    width: 95%;
+  }
 `;
 
-export const ClassList = styled.div``;
+export const ClassList = styled.div`
+  @media ${breakPoints.tablet} {
+    width: 85%;
+  }
+`;
 
 export const ListToSelect = styled.div`
   display: flex;
@@ -71,6 +102,9 @@ export const ListToSelect = styled.div`
   /* background: yellow; */
   margin-top: 72px;
   margin-bottom: 51px;
+  @media ${breakPoints.tablet} {
+    width: 85%;
+  }
 `;
 
 export const ListTitle = styled.div`
@@ -113,6 +147,10 @@ export const ListContents = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 100%;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 92%;
   }
 `;
 
