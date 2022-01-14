@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   @media ${breakPoints.mobile} {
     /* visibility: hidden; */
     /* width: 100%; */
-    padding-right: 5%;
+    /* padding-right: 0%; */
     width: 100%;
     height: 100%;
   }
@@ -31,6 +31,7 @@ export const OrderList = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 100%;
+    margin-left: 4%;
   }
 `;
 
@@ -71,7 +72,7 @@ export const ListContents = styled.div`
     width: 95%;
     margin-top: 0%;
     /* padding-left: 0%; */
-    padding-right: 2%;
+    /* padding-right: 2%; */
   }
 `;
 
@@ -132,7 +133,7 @@ export const ItemImage = styled.div`
     height: 120px;
   }
   @media ${breakPoints.mobile} {
-    width: 320px;
+    width: 180px;
     height: 90px;
   }
 `;
@@ -148,6 +149,7 @@ export const ItemInfoWrapper = styled.div`
   }
   @media ${breakPoints.mobile} {
     padding-top: 0px;
+    width: 50%;
   }
 `;
 
@@ -190,7 +192,9 @@ export const ItemAmount = styled.div`
 
 export const AfterOrder = styled.div`
   margin-top: 24px;
-  margin-left: 80px;
+  margin-left: 68px;
+  display: flex;
+  align-items: center;
 
   @media ${breakPoints.tablet} {
     width: 100%;
@@ -198,9 +202,12 @@ export const AfterOrder = styled.div`
     margin-left: 9%;
   }
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 50%;
     margin-top: 0%;
-    margin-left: 0%;
+    margin-bottom: 3%;
+    margin-right: 3%;
+    padding-left: 10%;
+    margin-left: 0;
   }
 `;
 
@@ -233,16 +240,27 @@ export const WriteReview = styled.button`
   width: 100%;
   height: 40px;
   margin-top: 10px;
+  margin-bottom: 70%;
   font-size: 16px;
+  background-color: #4f3325;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  :hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
 
   @media ${breakPoints.tablet} {
     width: 60%;
+    margin-top: 0%;
+    margin-bottom: 40%;
   }
   @media ${breakPoints.mobile} {
-    margin-top: 1%;
+    margin-top: 0%;
     width: 80%;
-    height: 25%;
-    font-size: 0.05em;
+    height: 35%;
+    font-size: 0.5em;
   }
 `;
 

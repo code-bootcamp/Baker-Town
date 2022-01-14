@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+import { IScheduleWrapperStylesProps } from "../../../commons/layout/detailNavigation/DetailNavigation.types";
 import {
   IClassDetailStylesMapProps,
   IClassDetailStylesProgramProps,
@@ -851,7 +852,8 @@ export const ScheduleWrapper = styled.div`
   @media ${breakPoints.mobile} {
     /* display: none; */
     /* background: grey; */
-    display: ${(props) => (props.isVisible ? "inline" : "none")};
+    display: ${(props: IScheduleWrapperStylesProps) =>
+      props.isVisible ? "inline" : "none"};
   }
 
   @media ${breakPoints.tablet} {

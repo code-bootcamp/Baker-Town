@@ -158,7 +158,8 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             </S.ProgramWrapper>
             <S.PatissierIntro>
               <S.ClassRemarksTitle>
-                {props.myClass?.patissier}님과 함께하는 마카롱 클래스
+                {props.myClass?.patissier}님과 함께하는{" "}
+                {props.myClass?.category} 클래스
               </S.ClassRemarksTitle>
               <S.ClassRemarksDetail>
                 {props.myClass?.remarks}
@@ -239,7 +240,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             </S.ClassReviewInfo>
             <S.ViewMore>177개의 후기 더보기</S.ViewMore>
           </S.IntroWrapper>
-          <S.ScheduleWrapper>
+          <S.ScheduleWrapper isVisible={false}>
             <S.ClassSchedule>
               <S.SmallTitle>예약 정보</S.SmallTitle>
               <S.SmallSmallTitle>

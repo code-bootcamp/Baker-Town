@@ -22,7 +22,19 @@ export const DashBoardItemContainer = (
   const currentUser: any = useAuth();
   const [uploadFile] = useMutation(UPLOAD_FILE);
 
-  const [myInputs, setMyInputs] = useState({
+  const [myInputs, setMyInputs] = useState<{
+    itemName: string;
+    contents: string;
+    price: number;
+    createdAt: string;
+    category: string;
+    shippingTime: string;
+    patissier: string;
+    patissierId: string;
+    heart: number;
+    review: never[];
+    images: any[];
+  }>({
     itemName: "",
     contents: "",
     price: 0,

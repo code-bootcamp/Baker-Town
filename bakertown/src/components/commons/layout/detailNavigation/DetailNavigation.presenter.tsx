@@ -1,8 +1,9 @@
 import { Modal } from "antd";
 import SchedulReservation from "../../scheduleReservation/schedulReservation";
 import * as S from "./DetailNavigation.styles";
+import { IDetailNavigationPresenterProps } from "./DetailNavigation.types";
 
-const DetailNavigationPresenter = (props) => {
+const DetailNavigationPresenter = (props: IDetailNavigationPresenterProps) => {
   return (
     <>
       <S.Wrapper>

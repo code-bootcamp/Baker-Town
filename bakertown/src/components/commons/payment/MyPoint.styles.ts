@@ -10,12 +10,12 @@ export const MyPoint = styled.div`
 `;
 
 export const ChargeButton = styled.button`
-  width: 100%;
-  height: 60px;
-  border-radius: 0.5px;
+  width: 80%;
+  height: 40px;
+  border-radius: 5px;
   background-color: #4f3325;
   color: #f3f3f3;
-  border: 0px solid gray;
+  border: 1px solid;
   font-size: 23px;
   cursor: pointer;
   transition: 100ms;
@@ -36,3 +36,9 @@ export const ChargeButton = styled.button`
     font-size: 1.4em;
   }
 `;
+
+export const PointSelect = styled.select`
+  width: 70%;
+`;
+
+export const PointOption = styled.option``;

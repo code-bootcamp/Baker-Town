@@ -9,6 +9,7 @@ export const TitleWrapper = styled.div`
   padding-left: 31px;
   padding-top: 20px;
   border-radius: 10px;
+  padding-bottom: 20px;
   @media ${breakPoints.tablet} {
     width: 90%;
   }
@@ -29,7 +30,7 @@ export const MyPointTitle = styled.div`
 export const Title = styled.div`
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 15.5px;
+  margin-bottom: 10px;
 `;
 
 export const SettingImage = styled.img`
@@ -94,7 +95,8 @@ export const SmallLine = styled.div`
 export const SmallLine2 = styled.div`
   width: 187px;
   border-bottom: 1px solid #e2e2e2;
-  margin-left: 30px;
+  /* margin-left: 30px; */
+  margin-bottom: 10px;
   @media ${breakPoints.tablet} {
     width: 80%;
     margin-left: 0;

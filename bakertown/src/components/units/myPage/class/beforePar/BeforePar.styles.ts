@@ -234,7 +234,11 @@ export const ClassPeople = styled.div`
 `;
 
 export const ClassCancelButton = styled.button`
-  background-color: transparent;
+  background-color: #4f3325;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  width: 80px;
   border: none;
   cursor: pointer;
   :hover {
@@ -244,10 +248,14 @@ export const ClassCancelButton = styled.button`
 
   @media ${breakPoints.tablet} {
     font-size: 0.9em;
+    width: 75%;
+    height: 25%;
   }
 
   @media ${breakPoints.mobile} {
     /* display: none; */
-    font-size: 0.7em;
+    font-size: 0.3em;
+    width: 80%;
+    height: 20%;
   }
 `;
