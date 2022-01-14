@@ -12,12 +12,15 @@ import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 import { useRouter } from "next/router";
 import { IDashBoardMainItemWriteContainerProps } from "./DashBoardItemWrite.types";
+import { UPLOAD_FILE } from "./DashBoardItemWrite.queries";
+import { useMutation } from "@apollo/client";
 
 export const DashBoardItemContainer = (
   props: IDashBoardMainItemWriteContainerProps
 ) => {
   const router = useRouter();
   const currentUser: any = useAuth();
+  const [uploadFile] = useMutation(UPLOAD_FILE);
 
   const [myInputs, setMyInputs] = useState({
     itemName: "",
@@ -66,6 +69,7 @@ export const DashBoardItemContainer = (
     await addDoc(applyitems, {
       ...myInputs,
     });
+    alert("상품이 등록되었습니다.");
   };
 
   // 아이템 수정
@@ -97,7 +101,6 @@ export const DashBoardItemContainer = (
     await setDoc(item, {
       ...myInputs,
     });
-
     router.push(`/dashboard/item/read`);
   };
 
@@ -137,6 +140,18 @@ export const DashBoardItemContainer = (
     }
   };
 
+  const onChangeImage2 = async (event: any) => {
+    const file = event.target.files?.[0];
+    // console.log(event.target.value);
+    try {
+      const result = await uploadFile({ variables: { file } });
+      // console.log("이미지", result);
+      myInputs.images.push(result.data.uploadFile.url);
+    } catch (error) {
+      if (error instanceof Error) alert(error.message);
+    }
+  };
+
   // 수정하기 불러오기
   useEffect(() => {
     updateItem();
@@ -150,6 +165,7 @@ export const DashBoardItemContainer = (
       myItem={myItem}
       isEdit={props.isEdit}
       onClickUpdate={onClickUpdate}
+      onChangeImage2={onChangeImage2}
     />
   );
 };

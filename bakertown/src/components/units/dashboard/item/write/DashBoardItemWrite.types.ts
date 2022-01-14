@@ -7,6 +7,7 @@ export interface IDashBoardItemProps {
   isEdit: boolean;
   onChangeCategory: ChangeEventHandler<HTMLSelectElement> | undefined;
   onClickUpdate: () => void;
+  onChangeImage2: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface IDashBoardMainItemWriteContainerProps {

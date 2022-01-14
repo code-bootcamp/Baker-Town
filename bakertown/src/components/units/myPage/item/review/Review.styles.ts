@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 export const TopWrapper = styled.div`
   display: flex;
   @media ${breakPoints.tablet} {
-    width: 100%;
+    /* width: 100%; */
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -116,10 +116,15 @@ export const ItemImage = styled.img`
   border-radius: 10px;
   background-color: yellow;
   @media ${breakPoints.tablet} {
-    width: 100%;
+    /* width: 80px;
+    height: 80px; */
+    width: 300px;
+    height: 150px;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
+    width: 200px;
+    height: 120px;
   }
 `;
 
@@ -133,6 +138,7 @@ export const ItemCategory = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 100%;
+    font-size: 1.2em;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -157,10 +163,11 @@ export const ItemInfo = styled.div`
 export const ItemName = styled.div`
   margin-bottom: 60px;
   font-family: NotoSans;
-  font-size: 0.8em;
+  font-size: 1.5em;
 
   @media ${breakPoints.tablet} {
     width: 100%;
+    font-size: 1em;
   }
   @media ${breakPoints.mobile} {
     width: 100%;

@@ -31,7 +31,15 @@ const StorePresenter = (props: IStorePresenterProps) => {
               <Slider {...props.settings}>
                 {props.popular.map((el: any) => (
                   <S.StoreWrapper key={uuidv4()}>
-                    <S.StoreImage onClick={props.storeDetail(el)} />
+                    {el.images?.[0] ? (
+                      <S.StoreImage
+                        src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                        onClick={props.storeDetail(el)}
+                      />
+                    ) : (
+                      <S.StoreImage onClick={props.storeDetail(el)} />
+                    )}
+
                     <S.Store>{el.patissier}</S.Store>
                     <S.StoreName onClick={props.storeDetail(el)}>
                       {el.itemName}
@@ -46,7 +54,14 @@ const StorePresenter = (props: IStorePresenterProps) => {
               <Slider {...props.settings2}>
                 {props.popular.map((el: any) => (
                   <S.StoreWrapper key={uuidv4()}>
-                    <S.StoreImage onClick={props.storeDetail(el)} />
+                    {el.images?.[0] ? (
+                      <S.StoreImage
+                        src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                        onClick={props.storeDetail(el)}
+                      />
+                    ) : (
+                      <S.StoreImage onClick={props.storeDetail(el)} />
+                    )}
                     <S.Store>{el.patissier}</S.Store>
                     <S.StoreName onClick={props.storeDetail(el)}>
                       {el.itemName}
@@ -72,7 +87,14 @@ const StorePresenter = (props: IStorePresenterProps) => {
               <Slider {...props.settings}>
                 {props.recent.map((el: any) => (
                   <S.StoreWrapper>
-                    <S.StoreImage onClick={props.storeDetail(el)} />
+                    {el.images?.[0] ? (
+                      <S.StoreImage
+                        src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                        onClick={props.storeDetail(el)}
+                      />
+                    ) : (
+                      <S.StoreImage onClick={props.storeDetail(el)} />
+                    )}
                     <S.Store>{el.patissier}</S.Store>
                     <S.StoreName onClick={props.storeDetail(el)}>
                       {el.itemName}
@@ -87,7 +109,14 @@ const StorePresenter = (props: IStorePresenterProps) => {
               <Slider {...props.settings2}>
                 {props.popular.map((el: any) => (
                   <S.StoreWrapper key={uuidv4()}>
-                    <S.StoreImage onClick={props.storeDetail(el)} />
+                    {el.images?.[0] ? (
+                      <S.StoreImage
+                        src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                        onClick={props.storeDetail(el)}
+                      />
+                    ) : (
+                      <S.StoreImage onClick={props.storeDetail(el)} />
+                    )}
                     <S.Store>{el.patissier}</S.Store>
                     <S.StoreName onClick={props.storeDetail(el)}>
                       {el.itemName}
@@ -100,7 +129,7 @@ const StorePresenter = (props: IStorePresenterProps) => {
             </S.SliderWrapper2>
           </S.StoresWrapper>
         </S.SubjectName>
-        
+
         <S.SubjectName>
           <S.SubjectWrapper>
             <S.SubjectTitle>
