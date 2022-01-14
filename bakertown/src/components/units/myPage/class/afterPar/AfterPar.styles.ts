@@ -32,7 +32,9 @@ export const ClassList = styled.div`
   }
 `;
 
-export const ListTitle = styled.div``;
+export const ListTitle = styled.div`
+  margin-bottom: 10px;
+`;
 
 export const ListTitleText = styled.div`
   font-size: 32px;
@@ -215,22 +217,29 @@ export const ClassPeople = styled.div`
 
 export const ClassSubWrapper = styled.div`
   width: 400px;
-  margin-left: 50px;
+  /* margin-left: 50px; */
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 13px;
   @media ${breakPoints.tablet} {
     width: 25%;
     /* padding-left: 0; */
     margin-left: 0;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0;
   }
 
   @media ${breakPoints.mobile} {
     /* display: none; */
+    align-items: flex-start;
+    justify-content: flex-start;
     width: 20%;
     margin-left: 5%;
     margin-top: 3%;
+    margin-bottom: 0;
   }
 `;
 export const ClassDate = styled.div`
@@ -244,13 +253,21 @@ export const ClassDate = styled.div`
   }
   @media ${breakPoints.mobile} {
     font-size: 0.5em;
-    margin-bottom: 20%;
+    margin-bottom: 15%;
   }
 `;
 
 export const WriteReview = styled.button`
   /* width: 50px; */
   /* height: 50px; */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  :hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   @media ${breakPoints.tablet} {
     width: 80%;
     margin-bottom: 10%;

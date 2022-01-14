@@ -258,7 +258,7 @@ export const PersonalRate = styled.img`
 
 export const CreatedDate = styled.div`
   margin-left: 16px;
-  margin-top: 18px;
+  margin-top: 5px;
   color: #bdb7b3;
   @media ${breakPoints.tablet} {
     margin-top: 3%;

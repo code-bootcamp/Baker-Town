@@ -10,7 +10,7 @@ const WriteReviewContainer = (props: IWriteReviewContainerProps) => {
   const onChangeReviewContents = (event: ChangeEvent<HTMLInputElement>) => {
     props.setReviewContents(event.target.value);
     // getDebounce(event.target.value);
-    // setTimeout(() => props.setReviewContents(event.target.value), 500);
+    // setTimeout(() => props.setReviewContents(event.target.value), 1000);
   };
 
   const onChangeRating = (value: number) => {

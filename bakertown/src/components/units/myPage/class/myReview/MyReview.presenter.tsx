@@ -38,10 +38,10 @@ const MyReviewPresenter = (props: IMyReviewPresenterProps) => {
                     {/* <S.ReviewRemarks>재밌어요</S.ReviewRemarks> */}
                     <S.Review>{el.contents}</S.Review>
                   </S.ClassReview>
-                  <S.Label>
+                  {/* <S.Label>
                     <S.ReviewEdit>수정</S.ReviewEdit>
                     <S.ReviewDelete>삭제</S.ReviewDelete>
-                  </S.Label>
+                  </S.Label> */}
                 </S.ReviewWrapper>
               </S.ClassWrapper>
             ))}
