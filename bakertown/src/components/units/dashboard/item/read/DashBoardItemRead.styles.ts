@@ -41,7 +41,7 @@ export const ItemImage = styled.img`
   width: 220px;
   height: 200px;
   border-radius: 10px;
-  background-color: #c4c4c4;
+  /* background-color: #c4c4c4; */
   margin-bottom: 20px;
   opacity: 0.5;
 `;

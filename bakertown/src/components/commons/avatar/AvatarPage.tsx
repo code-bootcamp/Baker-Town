@@ -76,96 +76,92 @@ const AvatarPage = () => {
   });
 
   return (
-    <>
-      <React.Fragment>
-        <Box
-          sx={{ display: "flex", alignItems: "center", textAlign: "center" }}
+    <React.Fragment>
+      <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+        {/* <Tooltip title="Account settings"> */}
+        <IconButton
+          onClick={handleClick}
+          size="small"
+          sx={{ ml: 2 }}
+          aria-controls={open ? "account-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
         >
-          {/* <Tooltip title="Account settings"> */}
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? "account-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-          >
-            <AccountCircle sx={{ width: 37, height: 37 }}></AccountCircle>
-          </IconButton>
-          {/* </Tooltip> */}
-        </Box>
-        <Menu
-          anchorEl={anchorEl}
-          id="account-menu"
-          open={open}
-          onClose={handleClose}
-          onClick={handleClose}
-          PaperProps={{
-            elevation: 0,
-            sx: {
-              overflow: "visible",
-              filter: "drop-shadow(0px 2px 8px rgba(255,255,255,0.9))",
-              mt: 1.5,
-              "& .MuiAvatar-root": {
-                width: 32,
-                height: 32,
-                ml: -0.5,
-                mr: 1,
-              },
-              "&:before": {
-                content: '""',
-                display: "block",
-                position: "absolute",
-                top: 0,
-                right: 14,
-                width: 10,
-                height: 10,
-                bgcolor: "background.paper",
-                transform: "translateY(-50%) rotate(45deg)",
-                zIndex: 0,
-              },
+          <AccountCircle sx={{ width: 37, height: 37 }}></AccountCircle>
+        </IconButton>
+        {/* </Tooltip> */}
+      </Box>
+      <Menu
+        anchorEl={anchorEl}
+        id="account-menu"
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
+        PaperProps={{
+          elevation: 0,
+          sx: {
+            overflow: "visible",
+            filter: "drop-shadow(0px 2px 8px rgba(255,255,255,0.9))",
+            mt: 1.5,
+            "& .MuiAvatar-root": {
+              width: 32,
+              height: 32,
+              ml: -0.5,
+              mr: 1,
             },
-          }}
-          transformOrigin={{ horizontal: "right", vertical: "top" }}
-          anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
-        >
-          {myUser?.check ? (
-            <>
-              <MenuItem onClick={onClickdashboard}>
-                <Avatar /> dashboard
-              </MenuItem>
-              <Divider />
-            </>
-          ) : (
-            <>
-              <MenuItem onClick={onClickMyPage}>
-                <Avatar />
-                MyPage
-              </MenuItem>
-              <Divider />
-            </>
-          )}
-          <MenuItem onClick={onClickMyClass}>
-            <ListItemIcon>
-              <PersonAdd fontSize="small" />
-            </ListItemIcon>
-            내 클래스
-          </MenuItem>
-          <MenuItem onClick={onClickMyItem}>
-            <ListItemIcon>
-              <PersonAdd fontSize="small" />
-            </ListItemIcon>
-            내 아이템
-          </MenuItem>
-          <MenuItem onClick={handlesSignOut}>
-            <ListItemIcon>
-              <Logout fontSize="small" />
-            </ListItemIcon>
-            Signout
-          </MenuItem>
-        </Menu>
-      </React.Fragment>
-    </>
+            "&:before": {
+              content: '""',
+              display: "block",
+              position: "absolute",
+              top: 0,
+              right: 14,
+              width: 10,
+              height: 10,
+              bgcolor: "background.paper",
+              transform: "translateY(-50%) rotate(45deg)",
+              zIndex: 0,
+            },
+          },
+        }}
+        transformOrigin={{ horizontal: "right", vertical: "top" }}
+        anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+      >
+        {myUser?.check ? (
+          <div>
+            <MenuItem onClick={onClickdashboard}>
+              <Avatar /> dashboard
+            </MenuItem>
+            <Divider />
+          </div>
+        ) : (
+          <div>
+            <MenuItem onClick={onClickMyPage}>
+              <Avatar />
+              MyPage
+            </MenuItem>
+            <Divider />
+          </div>
+        )}
+        <MenuItem onClick={onClickMyClass}>
+          <ListItemIcon>
+            <PersonAdd fontSize="small" />
+          </ListItemIcon>
+          내 클래스
+        </MenuItem>
+        <MenuItem onClick={onClickMyItem}>
+          <ListItemIcon>
+            <PersonAdd fontSize="small" />
+          </ListItemIcon>
+          내 아이템
+        </MenuItem>
+        <MenuItem onClick={handlesSignOut}>
+          <ListItemIcon>
+            <Logout fontSize="small" />
+          </ListItemIcon>
+          Signout
+        </MenuItem>
+      </Menu>
+    </React.Fragment>
   );
 };
 export default AvatarPage;

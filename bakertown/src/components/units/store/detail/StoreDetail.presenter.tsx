@@ -7,6 +7,7 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
     <S.Wrapper>
       <S.LeftWrapper>
         {/* <S.UpperWrapper> */}
+
         <S.TitleImage></S.TitleImage>
         {/* </S.UpperWrapper> */}
         <S.BodyWrapper>

@@ -32,18 +32,6 @@ const DashBoardMyPagePresenter = (props: IDashBoardMyPageProps) => {
     dashBoardMyPageContents();
   });
 
-  const onClickIntroduce = async () => {
-    // 내 정보 불러오기
-    const userQuery = doc(
-      getFirestore(firebaseApp),
-      "users",
-      currentUser?.email
-    );
-    await updateDoc(userQuery, {
-      introduce: myIntroduce,
-    });
-  };
-
   // 패스워드 변경
   const passwordChange = async () => {
     function getASecureRandomPassword() {
@@ -83,7 +71,7 @@ const DashBoardMyPagePresenter = (props: IDashBoardMyPageProps) => {
                 />
               </S.InputWrapper>
               <S.ButtonWrapper>
-                <S.ModifyNameButton onClick={onClickIntroduce}>
+                <S.ModifyNameButton onClick={props.onClickIntroduce}>
                   한 줄 소개 등록하기
                 </S.ModifyNameButton>
               </S.ButtonWrapper>

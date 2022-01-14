@@ -39,7 +39,14 @@ const StoreListPresenter = (props: IStoreListPresenter) => {
           <S.ListContents>
             {props.recent.map((el: any) => (
               <S.ItemWrapper key={uuidv4()}>
-                <S.ItemImage onClick={props.onClickDetail(el)} />
+                {el.images?.[0] ? (
+                  <S.ItemImage
+                    src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                    onClick={props.onClickDetail(el)}
+                  />
+                ) : (
+                  <S.ItemImage onClick={props.onClickDetail(el)} />
+                )}
 
                 <S.ItemPatissierToPrice>
                   <S.Patissier>{el.patissier}</S.Patissier>
