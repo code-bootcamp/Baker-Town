@@ -13,6 +13,8 @@ const AfterParContainer = () => {
   const [myUser, setMyUser] = useState({
     afterPar: [],
   });
+  const [count, setCount] = useState(0);
+
   const currentUser: any = useAuth();
   const onToggleModal = () => {
     console.log("히히");
@@ -20,7 +22,10 @@ const AfterParContainer = () => {
   };
 
   const afterParContents = async () => {
-    if (!currentUser) return;
+    if (!currentUser) {
+      setCount((prev) => prev + 1);
+      return;
+    }
     const userQuery = doc(
       getFirestore(firebaseApp),
       "users",
@@ -30,13 +35,14 @@ const AfterParContainer = () => {
     setMyUser(userResult.data());
   };
 
-  // useEffect(() => {
-  //   afterParContents();
-  // }, []);
-
-  if (process.browser) {
+  useEffect(() => {
     afterParContents();
-  }
+    console.log("aaaa");
+  }, [count]);
+
+  // if (process.browser) {
+  //   afterParContents();
+  // }
 
   const onClickReview = (index: number) => async () => {
     setIsOpen((prev) => !prev);

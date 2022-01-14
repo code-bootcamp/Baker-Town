@@ -8,13 +8,17 @@ const SideNavigationContainer = () => {
   const router = useRouter();
 
   const currentUser: any = useAuth();
+  const [count, setCount] = useState(0);
   const [myUser, setMyUser] = useState({
     name: "로딩중입니다",
   });
 
   const sideNavigationContents = async () => {
     if (myUser?.name === "로딩중입니다") {
-      if (!currentUser) return;
+      if (!currentUser) {
+        setCount((prev) => prev + 1);
+        return;
+      }
       const userQuery = doc(
         getFirestore(firebaseApp),
         "users",
@@ -26,13 +30,9 @@ const SideNavigationContainer = () => {
     }
   };
 
-  // useEffect(() => {
-  //   sideNavigationContents();
-  // });
-
-  if (process.browser) {
+  useEffect(() => {
     sideNavigationContents();
-  }
+  }, [count]);
 
   const onClickSideButton = (el: string) => () => {
     if (el === "참여 완료") router.push(`/myPage/class/afterPar`);
