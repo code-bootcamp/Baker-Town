@@ -18,14 +18,9 @@ export const HeaderWrapper = styled.header`
   scroll-behavior: smooth;
   @media ${breakPoints.tablet} {
     width: 100%;
+    padding-left: 10%;
   }
   @media ${breakPoints.mobile} {
-    /* width: 100%; */
-    /* border: 10px dotted green; */
-    /* display: none; */
-    /* justify-content: flex-start; */
-    /* width: 100%; */
-    /* right: 0; */
     width: 100%;
   }
 
@@ -39,8 +34,6 @@ export const HeaderWrapper = styled.header`
   }
 `;
 
-export const LogoWrapper = styled.div``;
-
 export const Img = styled.img`
   width: 115px;
   height: 42px;
@@ -49,14 +42,12 @@ export const Img = styled.img`
     cursor: pointer;
   }
   @media ${breakPoints.tablet} {
-    /* visibility: hidden; */
-    /* width: 100%; */
-    /* padding-left: 5%; */
+    width: 100px;
+    height: 35px;
+    margin-top: 7px;
+    margin-left: 20px;
   }
   @media ${breakPoints.mobile} {
-    /* visibility: hidden; */
-    /* width: 1; */
-    /* padding-left: 5%; */
     width: 100px;
   }
 `;
@@ -72,14 +63,14 @@ export const CategoryClass = styled.div`
   cursor: pointer;
 
   @media ${breakPoints.tablet} {
-    /* visibility: hidden; */
-    width: 100%;
-    /* padding-left: 5%; */
+    width: 5%;
+    /* margin-top: 5% */
+    margin-left: 2%;
+    font-size: 130%;
   }
   @media ${breakPoints.mobile} {
     /* visibility: hidden; */
-    /* width: 100%; */
-    /* padding-left: 5%; */
+    margin-top: 2%;
     margin-left: 20%;
     width: 20%;
     font-size: 120%;
@@ -114,8 +105,10 @@ export const CategoryStore = styled.div`
   cursor: pointer;
 
   @media ${breakPoints.tablet} {
-    /* visibility: hidden; */
-    width: 100%;
+    margin-top: 2%
+    /* padding-left: 10%; */
+    width: 20%;
+    font-size: 130%;
     /* padding-left: 5%; */
   }
   @media ${breakPoints.mobile} {
@@ -162,7 +155,12 @@ export const RoundDiv = styled.div`
   transition: 500ms;
 
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    width: 60%;
+    height: 40%;
+    margin-top: 5px;
+    margin-left: 10%;
+    padding-left: 10px;
   }
 
   @media ${breakPoints.mobile} {
@@ -185,6 +183,11 @@ export const RoundDivInnerText = styled.input`
     outline: none;
     background-color: #fafafa;
   }
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.9em;
+    width: 95%;
+  }
 `;
 
 export const RoundDivCircle = styled.div`
@@ -198,6 +201,11 @@ export const RoundDivCircle = styled.div`
   border-radius: 50%;
   transition: 300ms;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    width: 30px;
+    height: 26px;
+  }
 `;
 
 export const RoundDivInnerIcon = styled.img`
@@ -205,6 +213,10 @@ export const RoundDivInnerIcon = styled.img`
   height: 12.4px;
   overflow: hidden;
   transition: 300ms;
+
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
 `;
 
 export const HeartRoundDivCircle = styled.div`
@@ -218,6 +230,10 @@ export const HeartRoundDivCircle = styled.div`
   margin-left: 20px;
   transition: 300ms;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    margin-top: 1px;
+  }
 `;
 
 export const HeartFilled = styled.img`
@@ -261,8 +277,8 @@ export const HeartToLogin = styled.div`
   transition: 300ms;
 
   @media ${breakPoints.tablet} {
-    /* visibility: hidden; */
-    width: 100%;
+    margin-top: 5px;
+    width: 30%;
     /* padding-left: 5%; */
   }
   @media ${breakPoints.mobile} {
@@ -287,7 +303,7 @@ export const TopBanner = styled.div`
 
   @media ${breakPoints.tablet} {
     /* visibility: hidden; */
-    display: none;
+    /* display: none; */
   }
   @media ${breakPoints.mobile} {
     /* visibility: hidden; */
@@ -397,7 +413,9 @@ export const WholeWrapper = styled.div`
   display: flex;
   justify-content: center;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    padding-left: 2%;
+    padding-right: 2%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -414,7 +432,8 @@ export const InnerWrapper = styled.div`
   margin-top: 0px;
   padding-bottom: 150px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    width: 100%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -427,7 +446,9 @@ export const PopularClassWrapper = styled.div`
   width: 100%;
   padding-top: 140px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    margin-left: 5%
+    margin-right: 5%
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -440,7 +461,7 @@ export const NewClassWrapper = styled.div`
   width: 100%;
   padding-top: 120px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -476,6 +497,10 @@ export const SubjectName = styled.div``;
 export const SubjectTitle = styled.div`
   font-size: 32px;
   font-weight: bold;
+
+  @media ${breakPoints.tablet} {
+    width: 70%;
+  }
 `;
 
 export const NewYearSubjectWrapper = styled.div`
@@ -490,6 +515,10 @@ export const SubjectView = styled.div`
   :hover {
     cursor: pointer;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 30%;
+  }
 `;
 
 export const ClassesWrapper = styled.div`
@@ -498,7 +527,7 @@ export const ClassesWrapper = styled.div`
   justify-content: space-between;
   margin-top: 30px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -514,7 +543,7 @@ export const EventItemWrapper = styled.div`
   justify-content: space-between;
   margin-top: 30px;
   @media ${breakPoints.tablet} {
-    display: none;
+    width: 100%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -582,6 +611,7 @@ export const SliderWrapper = styled.div`
     width: 100%;
   }
 `;
+
 export const SliderWrapper2 = styled.div`
   width: 102.8%;
   display: none;
@@ -641,6 +671,71 @@ export const SliderWrapper2 = styled.div`
   }
 `;
 
+export const SliderWrapper3 = styled.div`
+  width: 102.8%;
+  display: none;
+  /* height: 1200px; */
+
+  .slick-next-arrow {
+    font-size: 20px;
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 71px;
+    right: -18px;
+    background-image: url("/imgs/rightarrow.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    @media ${breakPoints.tablet} {
+      display: none;
+      right: 0;
+      width: 0;
+    }
+    @media ${breakPoints.mobile} {
+      display: none;
+      visibility: hidden;
+      right: 0;
+      width: 0;
+    }
+  }
+
+  .slick-before-arrow {
+    font-size: 20px;
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 71px;
+    left: -53px;
+    background-image: url("/imgs/leftarrow.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    @media ${breakPoints.tablet} {
+      display: none;
+      right: 0;
+      width: 0;
+    }
+    @media ${breakPoints.mobile} {
+      display: none;
+      visibility: hidden;
+      right: 0;
+      width: 0;
+    }
+  }
+
+  @media ${breakPoints.tablet} {
+    display: inline;
+    width: 100%;
+  }
+  @media ${breakPoints.mobile} {
+    display: none;
+    width: 100%;
+  }
+`;
+
 export const SpecialClassesWrapper = styled.div`
   display: flex;
 
@@ -660,7 +755,8 @@ export const MiddleBanner = styled.div`
   align-items: center;
   justify-content: center;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    top: 2140px;
   }
   @media ${breakPoints.mobile} {
     display: none;
@@ -676,7 +772,8 @@ export const MiddleBannerWrapper = styled.div`
   position: relative;
   cursor: pointer;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    width: 100%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -685,14 +782,13 @@ export const MiddleBannerWrapper = styled.div`
 `;
 
 export const MiddleBannerText = styled.div`
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
   color: #4f3325;
   font-size: 32px;
+
+  @media ${breakPoints.tablet} {
+    margin-left: 5%;
+    /* width: 100px; */
+  }
 `;
 
 export const MiddleBannerArrow = styled.img`
@@ -707,7 +803,13 @@ export const MiddleBannerImage = styled.img`
   top: -210px;
   left: 700px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    width: 300px;
+    position: relative;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    left: 0;
+    top: 0;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -720,7 +822,8 @@ export const PromotionClass = styled.div`
   width: 100%;
   padding-top: 490px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    padding-top: 20%;
   }
   @media ${breakPoints.mobile} {
     /* width:  */
@@ -737,7 +840,8 @@ export const ClassWrapper = styled.div`
   height: 400px;
 
   @media ${breakPoints.tablet} {
-    display: none;
+    width: 100%;
+    margin-left: 4%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -753,7 +857,7 @@ export const ClassImage = styled.img`
   margin-bottom: 20px;
   opacity: 0.5;
   @media ${breakPoints.tablet} {
-    display: none;
+    width: 65%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -767,7 +871,7 @@ export const ClassPatissier = styled.div`
   font-weight: bold;
   margin-bottom: 10px;
   @media ${breakPoints.tablet} {
-    display: none;
+    width: 50%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -780,7 +884,7 @@ export const ClassName = styled.div`
   font-size: 18px;
   margin-bottom: 9.5px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -793,7 +897,7 @@ export const SmallLine = styled.div`
   margin-bottom: 9.5px;
   width: 290px;
   @media ${breakPoints.tablet} {
-    display: none;
+    width: 65%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -804,6 +908,10 @@ export const SmallLine = styled.div`
 export const ClassPrice = styled.div`
   font-size: 20px;
   font-weight: bold;
+
+  @media ${breakPoints.tablet} {
+    width: 70%;
+  }
 `;
 
 export const EventImage = styled.img`
@@ -813,12 +921,15 @@ export const EventImage = styled.img`
   border-radius: 10px;
   opacity: 0.5;
   @media ${breakPoints.tablet} {
-    display: none;
+    width: 100%;
+    height: 180px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
     width: 100%;
-    height: 100px;
+    /* height: 200px; */
   }
 `;
 
@@ -826,7 +937,7 @@ export const CategoryWrapper = styled.div`
   width: 100%;
   padding-top: 120px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -842,7 +953,8 @@ export const CategoryButtonWrapper = styled.div`
   justify-content: space-between;
   padding-top: 30px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    width: 100%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -855,7 +967,7 @@ export const CategoryFirstWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 10px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -868,7 +980,7 @@ export const CategorySecondWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -919,7 +1031,8 @@ export const CategoryButton = styled.button`
   }
 
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    width: 300px;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -961,6 +1074,10 @@ export const CategoryButtonTitle = styled.div`
   cursor: pointer;
   @media ${breakPoints.tablet} {
     /* display: none; */
+    top: 0;
+    left: 0;
+    padding-left: 35%;
+    padding-top: 12%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */

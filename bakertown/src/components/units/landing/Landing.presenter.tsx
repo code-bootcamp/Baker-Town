@@ -123,6 +123,18 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                   ))}
                 </Slider>
               </S.SliderWrapper2>
+              <S.SliderWrapper3>
+                <Slider {...props.settings3}>
+                  {props.popular.map((el: any) => (
+                    <ClassSubject
+                      el={el}
+                      key={uuidv4()}
+                      classDetail={props.classDetail(el)}
+                      // onClick={props.classDetail(el)}
+                    />
+                  ))}
+                </Slider>
+              </S.SliderWrapper3>
             </S.ClassesWrapper>
           </S.PopularClassWrapper>
           <S.NewClassWrapper>
@@ -156,6 +168,17 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                     ))}
                   </Slider>
                 </S.SliderWrapper2>
+                <S.SliderWrapper3>
+                  <Slider {...props.settings3}>
+                    {props.recent.map((el: any) => (
+                      <ClassSubject
+                        el={el}
+                        key={uuidv4()}
+                        classDetail={props.classDetail(el)}
+                      />
+                    ))}
+                  </Slider>
+                </S.SliderWrapper3>
               </S.ClassesWrapper>
             </S.SubjectName>
           </S.NewClassWrapper>
@@ -218,6 +241,21 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
                     ))}{" "}
                   </Slider>
                 </S.SliderWrapper2>
+                <S.SliderWrapper3>
+                  <Slider {...props.settings3}>
+                    {new Array(7).fill(1).map((el) => (
+                      <S.ClassWrapper key={uuidv4()}>
+                        <S.ClassImage />
+                        <S.ClassPatissier>베이킹 월드</S.ClassPatissier>
+                        <S.ClassName>
+                          알록달록 바삭한 마카롱 함께 만들어 보아요
+                        </S.ClassName>
+                        <S.SmallLine></S.SmallLine>
+                        <S.ClassPrice>30,000 원</S.ClassPrice>
+                      </S.ClassWrapper>
+                    ))}{" "}
+                  </Slider>
+                </S.SliderWrapper3>
               </S.ClassesWrapper>
             </S.SubjectName>
           </S.PromotionClass>
