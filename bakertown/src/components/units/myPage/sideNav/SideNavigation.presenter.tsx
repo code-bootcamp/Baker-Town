@@ -2,7 +2,7 @@ import * as S from "./SideNavigation.styles";
 import { v4 as uuidv4 } from "uuid";
 
 import { ISideNavigationPresenterProps } from "./SideNavigation.types";
-import UserPoint from "../../../commons/payment/Mypoint";
+import UserPoint from "../../../commons/payment/MyPoint";
 
 const SideNavigationPresenter = (props: ISideNavigationPresenterProps) => {
   const myClass = ["참여 예정", "참여 완료", "나의 후기", "찜 목록"];
@@ -20,7 +20,7 @@ const SideNavigationPresenter = (props: ISideNavigationPresenterProps) => {
               onClick={props.goMyPage}
             />
           </S.Title>
-          <S.SmallLine></S.SmallLine>
+          <S.SmallLine2></S.SmallLine2>
           <S.MyPointTitle>MY POINT</S.MyPointTitle>
           {/* <S.MyPoint>2018P</S.MyPoint> */}
           <UserPoint />

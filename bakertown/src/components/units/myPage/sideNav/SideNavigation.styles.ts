@@ -9,6 +9,9 @@ export const TitleWrapper = styled.div`
   padding-left: 31px;
   padding-top: 20px;
   border-radius: 10px;
+  @media ${breakPoints.tablet} {
+    width: 90%;
+  }
 `;
 
 export const MyPoint = styled.div`
@@ -33,14 +36,19 @@ export const SettingImage = styled.img`
 
 export const Sidebar = styled.div`
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
+    width: 35%;
   }
   @media ${breakPoints.mobile} {
     display: none;
   }
 `;
 
-export const SidebarMyClass = styled.div``;
+export const SidebarMyClass = styled.div`
+  @media ${breakPoints.tablet} {
+    width: 90%;
+  }
+`;
 
 export const SidebarMyItem = styled.div``;
 
@@ -53,6 +61,9 @@ export const SideTitle = styled.div`
   font-weight: bold;
   padding-top: 15px;
   padding-left: 30px;
+  @media ${breakPoints.tablet} {
+    width: 90%;
+  }
 `;
 
 export const SideButton = styled.div`
@@ -73,4 +84,16 @@ export const SmallLine = styled.div`
   width: 187px;
   border-bottom: 1px solid #e2e2e2;
   margin-left: 30px;
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
+`;
+export const SmallLine2 = styled.div`
+  width: 187px;
+  border-bottom: 1px solid #e2e2e2;
+  margin-left: 30px;
+  @media ${breakPoints.tablet} {
+    width: 80%;
+    margin-left: 0;
+  }
 `;
