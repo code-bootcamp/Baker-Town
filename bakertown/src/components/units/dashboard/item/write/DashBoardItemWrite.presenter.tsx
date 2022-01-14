@@ -47,11 +47,17 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
               베이킹용품
             </S.ItemCategoryOption>
             <S.ItemCategoryOption value="이벤트">이벤트</S.ItemCategoryOption>
+            <input
+              multiple={true}
+              type="file"
+              onChange={props.onChangeImage2}
+            />
           </S.ItemCategorySelect>
         </S.ItemCategoryWrapper>
         <S.ItemImageWrapper>
           <S.ItemImageTitle>아이템 이미지 등록</S.ItemImageTitle>
-          <S.ItemImage />
+          <input multiple={true} type="file" onChange={props.onChangeImage2} />
+          {/* <S.ItemImage /> */}
         </S.ItemImageWrapper>
         <S.ItemPriceWrapper>
           <S.ItemPriceTitle>아이템 가격</S.ItemPriceTitle>

@@ -29,4 +29,10 @@ export const ChargeButton = styled.button`
     height: 10%;
     font-size: 1em;
   }
+
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    height: 4%;
+    font-size: 1.4em;
+  }
 `;

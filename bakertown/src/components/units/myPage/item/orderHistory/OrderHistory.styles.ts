@@ -97,6 +97,8 @@ export const OrderWrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 100%;
+    padding-left: 3.5%;
+    padding-top: 3.5%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -114,8 +116,7 @@ export const ItemImage = styled.div`
   background-color: yellow;
 
   @media ${breakPoints.tablet} {
-    margin-top:0px
-    width: 300px;
+    width: 500px;
     height: 120px;
   }
   @media ${breakPoints.mobile} {
@@ -131,6 +132,7 @@ export const ItemInfoWrapper = styled.div`
   padding-top: 20px;
 
   @media ${breakPoints.tablet} {
+    width: 100%;
   }
   @media ${breakPoints.mobile} {
     padding-top: 0px;
@@ -156,6 +158,7 @@ export const ItemPrice = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 100%;
+    font-size: 0.9em;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -219,6 +222,7 @@ export const WriteReview = styled.button`
   font-size: 16px;
 
   @media ${breakPoints.tablet} {
+    width: 60%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -231,6 +235,10 @@ export const ItemName = styled.div`
   width: 419px;
   height: 33px;
   font-size: 24px;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    font-size: 1.2em;
+  }
 
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -244,6 +252,7 @@ export const OrderLine = styled.div`
   height: 140px;
   background-color: #bdb7b3;
   @media ${breakPoints.tablet} {
+    /* display: none; */
   }
   @media ${breakPoints.mobile} {
     width: 100%;

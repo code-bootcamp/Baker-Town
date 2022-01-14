@@ -17,15 +17,28 @@ export const Wrapper = styled.div`
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 `;
 
 export const LeftWrapper = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
   }
+  @media ${breakPoints.tablet} {
+    width: 60%;
+  }
 `;
 
-export const RightWrapper = styled.div``;
+export const RightWrapper = styled.div`
+  @media ${breakPoints.tablet} {
+    width: 40%;
+  }
+`;
 
 export const BodyWrapper = styled.div`
   display: flex;
@@ -45,6 +58,11 @@ export const TitleImage = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    height: 500px;
+  }
 `;
 
 export const SidebarWrapper = styled.div`
@@ -59,6 +77,11 @@ export const SidebarWrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     display: none;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 85%;
+    /* margin-right: 120px */
   }
 `;
 
@@ -86,6 +109,11 @@ export const ProductDetail = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    height: 600px;
+  }
 `;
 
 export const ProductDate = styled.div`
@@ -98,6 +126,10 @@ export const ProductDate = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
 
 export const Review = styled.div`
@@ -108,6 +140,10 @@ export const Review = styled.div`
   margin-top: 30px;
 
   @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+
+  @media ${breakPoints.tablet} {
     width: 100%;
   }
 `;

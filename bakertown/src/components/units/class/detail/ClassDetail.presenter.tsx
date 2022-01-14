@@ -239,11 +239,56 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
             </S.ClassReviewInfo>
             <S.ViewMore>177개의 후기 더보기</S.ViewMore>
           </S.IntroWrapper>
-          <SchedulReservation
-            myClass={props.myClass}
-            selectDate={props.selectDate}
-            reservation={props.reservation}
-          />
+          <S.ScheduleWrapper>
+            <S.ClassSchedule>
+              <S.SmallTitle>예약 정보</S.SmallTitle>
+              <S.SmallSmallTitle>
+                예약 가능한 일정을 선택해주세요
+              </S.SmallSmallTitle>
+              {/* <div>{Object.keys(props.myClass?.applyClass[0])[1]}</div>
+                <div>{Object.keys(props.myClass?.applyClass[0])[0]}</div> */}
+              <S.ClassScheduleWrapper>
+                {props.myClass?.applyClass?.classArray?.map(
+                  (el: any, index: number) => (
+                    <S.ClassArrayWrapper
+                      key={uuidv4()}
+                      onClick={props.selectDate(el, index)}
+                    >
+                      {/* <div>날짜: {el.class.date}</div>
+                    <div>시작시간: {el.class.start}</div>
+                    <div>최대인원: {el.class.member}</div> */}
+                      <S.ClassButton>
+                        {/* <S.SmallText>모집 타임</S.SmallText> */}
+                        <S.ClassDateToClassLine>
+                          <S.ClassDateToClassTime>
+                            <S.ClassDate>{el.class.date}</S.ClassDate>
+                            <S.ClassStartTime>
+                              시작시간 |&nbsp;&nbsp; {el.class.start}
+                            </S.ClassStartTime>
+                            <S.ClassRunningTime>
+                              수업시간 |&nbsp;&nbsp; {el.class.runningTime}
+                            </S.ClassRunningTime>
+                          </S.ClassDateToClassTime>
+                          <S.SmallLine></S.SmallLine>
+                        </S.ClassDateToClassLine>
+                        <S.ClassStartTimeTwo>
+                          신청완료 &nbsp;&nbsp;{el.class.membersName.length}명
+                          &nbsp;&nbsp;&nbsp;&nbsp; 수강인원 &nbsp;&nbsp;
+                          {el.class.member}명
+                        </S.ClassStartTimeTwo>
+                      </S.ClassButton>
+                    </S.ClassArrayWrapper>
+                  )
+                )}
+              </S.ClassScheduleWrapper>
+              <S.ClassScheduleUnderWrapper>
+                <S.ClassPrice>{props.myClass?.price}원</S.ClassPrice>
+                <S.ReservationButton onClick={props.reservation}>
+                  예약하기
+                </S.ReservationButton>
+              </S.ClassScheduleUnderWrapper>
+            </S.ClassSchedule>
+          </S.ScheduleWrapper>
         </S.UnderWrapper>
       </S.WholeWrapper>
     </>

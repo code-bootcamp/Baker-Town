@@ -32,12 +32,12 @@ const Body = styled.div`
   align-items: center;
 `;
 
-const HIDDEN_HEADER = [`/signIn`, `/dashboard/main`, `/`, `/signUp`];
+const HIDDEN_HEADER = [`/signIn/`, `/dashboard/main`, `/`, `/signUp/`];
 
 const HIDDEN_FOOTER = [
-  `/signIn`,
-  `/dashboard/main`,
-  `/signUp`,
+  `/signIn/`,
+  `/dashboard/main/`,
+  `/signUp/`,
   `/class/detail/`,
 ];
 

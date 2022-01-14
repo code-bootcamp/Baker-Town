@@ -18,9 +18,7 @@ export const Wrapper = styled.div`
 export const BasketList = styled.div`
   margin-left: 40px;
   @media ${breakPoints.tablet} {
-    /* visibility: hidden; */
     width: 100%;
-    /* padding-left: 5%; */
   }
   @media ${breakPoints.mobile} {
     width: 100%;

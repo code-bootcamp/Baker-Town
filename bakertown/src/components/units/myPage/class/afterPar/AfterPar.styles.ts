@@ -1,3 +1,4 @@
+import { Contents } from "./../../chat/Chat.styled";
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../../commons/styles/media";
 
