@@ -793,7 +793,9 @@ export const ViewMore = styled.div`
 export const ScheduleWrapper = styled.div`
   width: 400px;
   @media ${breakPoints.mobile} {
-    display: none;
+    /* display: none; */
+    /* background: grey; */
+    display: ${(props) => (props.isVisible ? "inline" : "none")};
   }
 `;
 
@@ -814,7 +816,7 @@ export const ClassSchedule = styled.div`
   align-items: center;
   margin-left: 26px;
   @media ${breakPoints.mobile} {
-    display: none;
+    /* display: none; */
   }
 `;
 

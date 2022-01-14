@@ -5,6 +5,7 @@ import Footer from "./footer/Footer.container";
 import Header from "./header/Header.container";
 import Navigation from "./navigation/Navigation.container";
 import { breakPoints } from "../../../commons/styles/media";
+import DetailNavigationContainer from "./detailNavigation/DetailNavigation.container";
 
 interface ILayoutProps {
   children: ReactChild;
@@ -33,12 +34,26 @@ const Body = styled.div`
 
 const HIDDEN_HEADER = [`/signIn`, `/dashboard/main`, `/`, `/signUp`];
 
-const HIDDEN_FOOTER = [`/signIn`, `/dashboard/main`, `/signUp`];
+const HIDDEN_FOOTER = [
+  `/signIn`,
+  `/dashboard/main`,
+  `/signUp`,
+  `/class/detail/`,
+];
+
+const SHOWN_DETAIL_NAVIGATION = [
+  `/class/detail/`,
+  `/store/detail`,
+  `/class/detail/XEmzQvwW4XZdwNfoVi9c/`,
+];
 
 export default function Layout(props: ILayoutProps) {
   const router = useRouter();
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
+  const isShownDetailNavigation = SHOWN_DETAIL_NAVIGATION.includes(
+    router.asPath
+  );
 
   return (
     <>
@@ -46,7 +61,8 @@ export default function Layout(props: ILayoutProps) {
         {!isHiddenHeader && <Header />}
         <Body>{props.children}</Body>
         {!isHiddenFooter && <Footer />}
-        <Navigation />
+        {!isShownDetailNavigation && <Navigation />}
+        {isShownDetailNavigation && <DetailNavigationContainer />}
       </Wrapper>
     </>
   );

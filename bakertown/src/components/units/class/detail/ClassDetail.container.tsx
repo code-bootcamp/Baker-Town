@@ -135,7 +135,7 @@ const ClassDetailContainer = () => {
       });
 
       // 내 참여예정 클래스
-      const myBeforeParClass = userResult.data().beforePar;
+      const myBeforeParClass = userResult.data().afterPar;
       // currentReservInfo.classArray?.[0];
 
       // 내 참여예정 클래스에 현재 클래스 아이디 및 예약정보 넣기
@@ -149,7 +149,7 @@ const ClassDetailContainer = () => {
       };
       myBeforeParClass.push(dddd);
       await updateDoc(userQuery, {
-        beforePar: myBeforeParClass,
+        afterPar: myBeforeParClass,
       });
       alert("예약이 완료되었습니다.");
       location.reload();

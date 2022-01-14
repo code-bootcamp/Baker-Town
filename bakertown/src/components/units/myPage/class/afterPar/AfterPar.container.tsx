@@ -10,11 +10,12 @@ const AfterParContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [reviewContents, setReviewContents] = useState("");
   const [rating, setRating] = useState(3);
-  const [myUser, setMyUser] = useState<SetStateAction<any>>({
+  const [myUser, setMyUser] = useState({
     afterPar: [],
   });
   const currentUser: any = useAuth();
   const onToggleModal = () => {
+    console.log("히히");
     setIsOpen((prev) => !prev);
   };
 
@@ -29,9 +30,13 @@ const AfterParContainer = () => {
     setMyUser(userResult.data());
   };
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   afterParContents();
+  // }, []);
+
+  if (process.browser) {
     afterParContents();
-  });
+  }
 
   const onClickReview = (index: number) => async () => {
     setIsOpen((prev) => !prev);

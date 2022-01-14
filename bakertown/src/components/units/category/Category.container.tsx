@@ -14,11 +14,11 @@ const CategoryContainer = () => {
   ];
 
   const storeArray = [
-    { text: "냄비•프라이팬•솥", link: "/class/category/냄비•프라이팬•솥" },
-    { text: "주방잡화", link: "/class/category/주방잡화" },
-    { text: "커피•티용품", link: "/class/category/커피•티용품" },
-    { text: "베이킹용품", link: "/class/category/베이킹용품" },
-    { text: "이벤트", link: "/class/category/이벤트" },
+    { text: "냄비•프라이팬•솥", link: "/store/category/냄비•프라이팬•솥" },
+    { text: "주방잡화", link: "/store/category/주방잡화" },
+    { text: "커피•티용품", link: "/store/category/커피•티용품" },
+    { text: "베이킹용품", link: "/store/category/베이킹용품" },
+    { text: "이벤트", link: "/store/category/이벤트" },
   ];
 
   const classButton = (el: { link: string }) => () => {
