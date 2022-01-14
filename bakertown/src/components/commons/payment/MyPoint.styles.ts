@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 
 export const MyPoint = styled.div`
   font-size: 27px;
@@ -19,5 +20,8 @@ export const ChargeButton = styled.button`
   :hover {
     color: white;
     opacity: 0.95;
+  }
+  @media ${breakPoints.tablet} {
+    width: 80%;
   }
 `;

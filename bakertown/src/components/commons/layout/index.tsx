@@ -13,11 +13,12 @@ interface ILayoutProps {
 const Wrapper = styled.div`
   height: 100%;
   @media ${breakPoints.tablet} {
+    border: 10px dotted green;
   }
   @media ${breakPoints.mobile} {
     /* width: 100%; */
     height: 100%;
-    border: 10px dotted green;
+    /* border: 10px dotted green; */
     /* background-color: green; */
     /* display: none; */
   }

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.nav`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -13,7 +13,9 @@ export const Wrapper = styled.div`
   display: none;
 
   @media ${breakPoints.tablet} {
-    display: flex;
+    display: none;
+    justify-content: space-evenly;
+    width: 100%;
   }
   @media ${breakPoints.mobile} {
     display: flex;
@@ -27,11 +29,18 @@ export const NavButton = styled.div`
   align-items: center;
   width: 20%;
   height: 100%;
+  @media ${breakPoints.tablet} {
+    width: 25%;
+  }
 `;
 
 export const NavImage = styled.img`
   width: 50%;
   height: 50%;
+  @media ${breakPoints.tablet} {
+    /* width: 100%; */
+    /* display: none; */
+  }
 `;
 
 export const NavText = styled.div`

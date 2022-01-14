@@ -11,7 +11,7 @@ const HeaderPresenter = (props: IHeaderProps) => {
       <S.Wrapper>
         {/* <S.InnerWrapper> */}
         <S.InnerLogo onClick={props.logo}>
-          <S.Img className="Image" alt="logo" src="/imgs/logo.png" />
+          <S.LogoImg className="Image" alt="logo" src="/imgs/logo.png" />
         </S.InnerLogo>
         <S.ClassTitle onClick={props.class}>CLASS</S.ClassTitle>
         <S.StoreTitle onClick={props.store}>STORE</S.StoreTitle>

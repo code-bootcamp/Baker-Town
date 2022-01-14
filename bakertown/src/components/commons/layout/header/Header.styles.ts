@@ -17,6 +17,7 @@ export const Wrapper = styled.header`
   background-size: cover;
   border-bottom: 1px solid rgba(157, 157, 157, 0.2);
   @media ${breakPoints.tablet} {
+    padding-left: 5%;
   }
 
   @media ${breakPoints.mobile} {
@@ -33,6 +34,7 @@ export const InnerLogo = styled.div`
   }
   margin-top: 2px;
   @media ${breakPoints.tablet} {
+    width: 20%;
   }
 
   @media ${breakPoints.mobile} {
@@ -57,6 +59,7 @@ export const ClassTitle = styled.div`
     transition: 300ms;
   }
   @media ${breakPoints.tablet} {
+    width: 5%;
   }
 
   @media ${breakPoints.mobile} {
@@ -83,6 +86,7 @@ export const StoreTitle = styled.div`
     transition: 300ms;
   }
   @media ${breakPoints.tablet} {
+    width: 5%;
   }
 
   @media ${breakPoints.mobile} {
@@ -110,6 +114,9 @@ export const RoundDiv = styled.div`
   justify-content: space-between;
   transition: 500ms;
   @media ${breakPoints.tablet} {
+    width: 70%;
+    margin-left: 17%;
+    margin-right: 5%;
   }
 
   @media ${breakPoints.mobile} {
@@ -131,6 +138,9 @@ export const RoundDivInnerText = styled.input`
     /* outline: 1px solid rgba(0, 0, 0, 0.3); */
     outline: none;
   }
+  @media ${breakPoints.tablet} {
+    width: 90%;
+  }
 `;
 
 export const RoundDivCircle = styled.div`
@@ -144,6 +154,10 @@ export const RoundDivCircle = styled.div`
   border-radius: 50%;
   transition: 300ms;
   cursor: pointer;
+  @media ${breakPoints.tablet} {
+    width: 13%;
+    height: 60%;
+  }
 `;
 
 export const RoundDivInnerIcon = styled.img`
@@ -153,6 +167,7 @@ export const RoundDivInnerIcon = styled.img`
   transition: 300ms;
   @media ${breakPoints.tablet} {
     /* display: none; */
+    width: 50%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -171,6 +186,11 @@ export const HeartRoundDivCircle = styled.div`
   margin-left: 20px;
   transition: 300ms;
   cursor: pointer;
+  @media ${breakPoints.tablet} {
+    /* width: 50%; */
+    /* width: 40%; */
+    /* height: 120%; */
+  }
 `;
 
 export const HeartToLogin = styled.div`
@@ -179,6 +199,7 @@ export const HeartToLogin = styled.div`
 
   transition: 300ms;
   @media ${breakPoints.tablet} {
+    width: 30%;
   }
 
   @media ${breakPoints.mobile} {
@@ -203,6 +224,10 @@ export const LoginText = styled.div`
   :hover {
     color: #4f3325;
     opacity: 0.5;
+  }
+  @media ${breakPoints.tablet} {
+    width: 80%;
+    font-size: 1em;
   }
 `;
 
@@ -244,7 +269,7 @@ export const SinInButton = styled.div`
   }
 `;
 
-export const Img = styled.img`
+export const LogoImg = styled.img`
    width: 115px;
   height: 42px;
   /* margin: 2px 172px 0px 61px; */

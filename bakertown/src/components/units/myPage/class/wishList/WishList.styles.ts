@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   margin-top: 77px;
   @media ${breakPoints.tablet} {
+    padding-left: 2%;
+    padding-right: 2%;
   }
 
   @media ${breakPoints.mobile} {
@@ -17,6 +19,7 @@ export const Wrapper = styled.div`
 export const ClassList = styled.div`
   margin-left: 40px;
   @media ${breakPoints.tablet} {
+    width: 65%;
   }
 
   @media ${breakPoints.mobile} {
@@ -42,10 +45,6 @@ export const ListTitleText = styled.div`
   }
 `;
 
-export const ListSelect = styled.select``;
-
-export const ListOption = styled.option``;
-
 export const ListContents = styled.div`
   width: 1000px;
   display: flex;
@@ -54,6 +53,7 @@ export const ListContents = styled.div`
   /* justify-content: space-between; */
   /* background-color: red; */
   @media ${breakPoints.tablet} {
+    width: 100%;
   }
 
   @media ${breakPoints.mobile} {
@@ -65,6 +65,8 @@ export const Class = styled.div`
   /* background-color: pink; */
   display: flex;
   @media ${breakPoints.tablet} {
+    width: 75%;
+    height: 1000%;
   }
 
   @media ${breakPoints.mobile} {
@@ -83,6 +85,8 @@ export const ClassWrapper = styled.div`
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
   border: solid 0.5px #e2e2e2;
   @media ${breakPoints.tablet} {
+    width: 100%;
+    height: 100%;
   }
 
   @media ${breakPoints.mobile} {
@@ -100,6 +104,7 @@ export const ClassInfoWrapper = styled.div`
   padding-left: 29.5px;
   margin-right: 29.5px;
   @media ${breakPoints.tablet} {
+    height: 85%;
   }
 
   @media ${breakPoints.mobile} {
@@ -117,6 +122,8 @@ export const ClassImage = styled.img`
   border-radius: 10px;
   background-color: yellow;
   @media ${breakPoints.tablet} {
+    width: 130px;
+    height: 100px;
   }
 
   @media ${breakPoints.mobile} {
@@ -135,6 +142,7 @@ export const ClassPatissier = styled.div`
   font-weight: bold;
   color: rgba(79, 51, 37, 0.9);
   @media ${breakPoints.tablet} {
+    width: 100%;
   }
 
   @media ${breakPoints.mobile} {
@@ -153,6 +161,7 @@ export const ClassName = styled.div`
   font-family: NotoSans;
   font-size: 24px;
   @media ${breakPoints.tablet} {
+    width: 100%;
   }
 
   @media ${breakPoints.mobile} {
@@ -167,4 +176,7 @@ export const ClassLine = styled.div`
   width: 1px;
   height: 140px;
   background-color: #bdb7b3;
+  @media ${breakPoints.tablet} {
+    height: 120px;
+  }
 `;

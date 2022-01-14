@@ -7,6 +7,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   margin-top: 77px;
   @media ${breakPoints.tablet} {
+    padding-left: 2%;
+    padding-right: 2%;
   }
 
   @media ${breakPoints.mobile} {
@@ -18,6 +20,7 @@ export const Wrapper = styled.div`
 export const ClassList = styled.div`
   margin-left: 40px;
   @media ${breakPoints.tablet} {
+    width: 65%;
   }
 
   @media ${breakPoints.mobile} {
@@ -48,6 +51,7 @@ export const ListContents = styled.div`
   flex-direction: column;
   /* flex-wrap: wrap; */
   @media ${breakPoints.tablet} {
+    width: 100%;
   }
 
   @media ${breakPoints.mobile} {
@@ -67,6 +71,8 @@ export const ClassWrapper = styled.div`
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
   border: solid 0.5px #e2e2e2;
   @media ${breakPoints.tablet} {
+    width: 100%;
+    height: 100%;
   }
 
   @media ${breakPoints.mobile} {
@@ -88,6 +94,8 @@ export const ClassImage = styled.img`
   border-radius: 10px;
   background-color: yellow;
   @media ${breakPoints.tablet} {
+    width: 130px;
+    height: 110px;
   }
 
   @media ${breakPoints.mobile} {
@@ -105,6 +113,8 @@ export const ClassContentsWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   @media ${breakPoints.tablet} {
+    width: 50%;
+    height: 85%;
   }
 
   @media ${breakPoints.mobile} {
@@ -124,6 +134,7 @@ export const ClassPatissier = styled.div`
   font-weight: bold;
   color: rgba(79, 51, 37, 0.9);
   @media ${breakPoints.tablet} {
+    width: 100%;
   }
 
   @media ${breakPoints.mobile} {
@@ -142,6 +153,8 @@ export const ClassInfoWrapper = styled.div`
   justify-content: center;
   align-items: center;
   @media ${breakPoints.tablet} {
+    width: 25%;
+    padding-left: 0;
   }
 
   @media ${breakPoints.mobile} {
@@ -160,6 +173,8 @@ export const ClassDate = styled.div`
   font-size: 20px;
   margin-bottom: 20px;
   @media ${breakPoints.tablet} {
+    font-size: 0.9em;
+    margin-bottom: 0;
   }
 
   @media ${breakPoints.mobile} {
@@ -176,6 +191,7 @@ export const ClassName = styled.div`
   font-family: NotoSans;
   font-size: 24px;
   @media ${breakPoints.tablet} {
+    width: 100%;
   }
 
   @media ${breakPoints.mobile} {
@@ -191,6 +207,7 @@ export const ClassLine = styled.div`
   height: 140px;
   background-color: #bdb7b3;
   @media ${breakPoints.tablet} {
+    height: 120px;
   }
 
   @media ${breakPoints.mobile} {
@@ -205,6 +222,7 @@ export const ClassPeople = styled.div`
   font-size: 18px;
   margin-bottom: 20px;
   @media ${breakPoints.tablet} {
+    width: 100%;
   }
 
   @media ${breakPoints.mobile} {

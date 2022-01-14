@@ -5,4 +5,5 @@ const wishListPage = () => {
   return <WishListContainer />;
 };
 
-export default withAuth(wishListPage);
+// export default withAuth(wishListPage);
+export default wishListPage;

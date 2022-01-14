@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   @media ${breakPoints.tablet} {
+    padding-left: 5%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -25,7 +26,7 @@ export const InnerWrapper = styled.div`
   align-items: center;
   width: 100%;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -43,7 +44,7 @@ export const FirstColumn = styled.div`
   flex-direction: column;
   padding-left: 162px;
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -72,6 +73,7 @@ export const ClassTitle2 = styled.div`
   padding-top: 4px;
   @media ${breakPoints.tablet} {
     /* display: none; */
+    width: 100%;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
