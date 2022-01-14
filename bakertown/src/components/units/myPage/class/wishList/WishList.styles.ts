@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 export const ClassList = styled.div`
   margin-left: 40px;
   @media ${breakPoints.tablet} {
-    width: 65%;
+    width: 100%;
   }
 
   @media ${breakPoints.mobile} {

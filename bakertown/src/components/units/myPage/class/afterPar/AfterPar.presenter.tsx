@@ -1,8 +1,8 @@
 import * as S from "./AfterPar.styles";
 import { v4 as uuidv4 } from "uuid";
 import SideNavigationContainer from "../../sideNav/SideNavigation.container";
-import { Modal } from "antd";
 import WriteReviewContainer from "../../../../commons/writeReview/WriteReview.container";
+import { Modal } from "antd";
 import { IAfterParPresenter } from "./AfterPar.types";
 
 const AfterParPresenter = (props: IAfterParPresenter) => {
@@ -37,6 +37,7 @@ const AfterParPresenter = (props: IAfterParPresenter) => {
                   <S.WriteReview onClick={props.onToggleModal}>
                     리뷰 작성하기
                   </S.WriteReview>
+                  <button onClick={props.onToggleModal}>히히</button>
                   {props.isOpen && (
                     <Modal
                       title="리뷰 등록"
@@ -51,6 +52,11 @@ const AfterParPresenter = (props: IAfterParPresenter) => {
                       />
                     </Modal>
                   )}
+                  {/* {props.isOpen && (
+                    <Modal title="후후" visible={props.isOpen}>
+                      <div>하하</div>
+                    </Modal>
+                  )} */}
                 </S.ClassSubWrapper>
               </S.ClassWrapper>
             ))}

@@ -26,9 +26,13 @@ const SideNavigationContainer = () => {
     }
   };
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   sideNavigationContents();
+  // });
+
+  if (process.browser) {
     sideNavigationContents();
-  });
+  }
 
   const onClickSideButton = (el: string) => () => {
     if (el === "참여 완료") router.push(`/myPage/class/afterPar`);

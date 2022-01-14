@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 export const ClassList = styled.div`
   margin-left: 40px;
   @media ${breakPoints.tablet} {
-    width: 65%;
+    width: 100%;
   }
 
   @media ${breakPoints.mobile} {
@@ -248,7 +248,7 @@ export const ClassDate = styled.div`
   }
 `;
 
-export const WriteReview = styled.div`
+export const WriteReview = styled.button`
   /* width: 50px; */
   /* height: 50px; */
   @media ${breakPoints.tablet} {

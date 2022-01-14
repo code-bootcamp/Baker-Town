@@ -22,6 +22,9 @@ export const MyPointTitle = styled.div`
   font-size: 24px;
   font-weight: bold;
   /* margin-bottom: 9px; */
+  @media ${breakPoints.tablet} {
+    font-size: 1.2em;
+  }
 `;
 export const Title = styled.div`
   font-size: 32px;

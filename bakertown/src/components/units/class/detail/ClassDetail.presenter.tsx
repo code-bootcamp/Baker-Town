@@ -6,6 +6,7 @@ import { IClassDetailPresenterProps } from "./ClassDetail.types";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
 import { Rate } from "antd";
+import SchedulReservation from "../../../commons/scheduleReservation/schedulReservation";
 
 declare const window: typeof globalThis & {
   kakao: any;

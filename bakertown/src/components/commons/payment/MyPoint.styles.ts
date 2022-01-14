@@ -4,13 +4,8 @@ import { breakPoints } from "../../../commons/styles/media";
 export const MyPoint = styled.div`
   font-size: 27px;
   color: #ff4d12;
-
   @media ${breakPoints.tablet} {
-    width: 80%;
-  }
-
-  @media ${breakPoints.mobile} {
-    /* margin-left: 3%; */
+    font-size: 1.2em;
   }
 `;
 
@@ -31,6 +26,8 @@ export const ChargeButton = styled.button`
   }
   @media ${breakPoints.tablet} {
     width: 80%;
+    height: 10%;
+    font-size: 1em;
   }
 
   @media ${breakPoints.mobile} {
