@@ -14,6 +14,12 @@ export const Wrapper = styled.div`
     width: 100%;
     margin-left: 5px;
   }
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 20%;
+  }
 `;
 
 export const CreatorSubject = styled.div`
@@ -22,6 +28,9 @@ export const CreatorSubject = styled.div`
   @media ${breakPoints.mobile} {
     width: 120%;
   }
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
 
 export const SubjectWrapper = styled.div`
@@ -29,6 +38,9 @@ export const SubjectWrapper = styled.div`
   justify-content: space-between;
 
   @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+  @media ${breakPoints.tablet} {
     width: 100%;
   }
 `;
@@ -42,6 +54,11 @@ export const SubjectTitle = styled.div`
     font-size: 1.3em;
     width: 70%;
   }
+
+  @media ${breakPoints.tablet} {
+    font-size: 1.5em;
+    width: 76%;
+  }
 `;
 
 export const SubjectView = styled.div`
@@ -51,6 +68,11 @@ export const SubjectView = styled.div`
   @media ${breakPoints.mobile} {
     padding-top: 0;
     width: 30%;
+    font-size: 1em;
+  }
+  @media ${breakPoints.tablet} {
+    padding-top: 0;
+    width: 24%;
     font-size: 1em;
   }
 `;
@@ -64,6 +86,11 @@ export const StoresWrapper2 = styled.div`
     width: 100%;
     height: 50%;
     flex-direction: column;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    height: 90%;
   }
 `;
 
@@ -80,13 +107,22 @@ export const CreatorImage = styled.img`
     height: 200px;
     margin-bottom: 20px;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    height: 280px;
+    margin-right: 20px;
+  }
 `;
 
 export const SubjectName = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 120%;
+  }
 
-@media ${breakPoints.mobile} {
-  width: 120%;
-}
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
 
 export const StoresWrapper = styled.div`
@@ -95,6 +131,10 @@ export const StoresWrapper = styled.div`
   justify-content: space-between;
   margin-bottom: 120px;
   @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+
+  @media ${breakPoints.tablet} {
     width: 100%;
   }
 `;
@@ -108,14 +148,20 @@ export const StoresWrapper4 = styled.div`
     width: 100%;
     flex-wrap: wrap;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
-
-
 
 export const SmallLine = styled.div`
   width: 290px;
   border-bottom: 1px solid #b9b9b9;
   margin-bottom: 9.5px;
+
+  @media ${breakPoints.tablet} {
+    width: 90%;
+  }
 `;
 
 export const SmallLine2 = styled.div`
@@ -125,6 +171,10 @@ export const SmallLine2 = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 100%;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 90%;
   }
 `;
 
@@ -137,12 +187,20 @@ export const Store = styled.div`
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 10px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.9em
+  }
 `;
 
 export const StoreName = styled.div`
   width: 268px;
   font-size: 18px;
   margin-bottom: 9.5px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.9em;
+  }
 `;
 
 export const StoreName2 = styled.div`
@@ -154,14 +212,21 @@ export const StoreName2 = styled.div`
     font-size: 0.7em;
     width: 100%;
   }
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.8em;
+    width: 90%;
+  }
 `;
 
-
 export const StoreWrapper = styled.div`
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 
-@media ${breakPoints.mobile} {
-  width: 100%;
-}
+  @media ${breakPoints.tablet} {
+    /* width: 100% */
+  }
 `;
 
 export const StoreWrapper2 = styled.div`
@@ -189,6 +254,11 @@ export const StoreImage = styled.img`
     height: 200px;
     margin-right: 30%;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 90%;
+    height: 200px;
+  }
 `;
 
 export const StoreImage2 = styled.img`
@@ -203,11 +273,15 @@ export const StoreImage2 = styled.img`
     width: 100%;
     height: 200px;
   }
+
+  @media ${breakPoints.tablet} {
+    /* margin-right: 20px; */
+    width: 90%;
+    height: 130%;
+  }
 `;
 
-
 export const SliderWrapper = styled.div`
-  background: green;
   width: 102.8%;
   height: 400px;
 
@@ -229,6 +303,11 @@ export const SliderWrapper = styled.div`
       right: 0;
       width: 0;
     }
+
+    @media ${breakPoints.tablet} {
+      position: absolute;
+      top: 90px
+    }
   }
 
   .slick-before-arrow {
@@ -248,6 +327,12 @@ export const SliderWrapper = styled.div`
       visibility: hidden;
       right: 0;
       width: 0;
+    }
+
+    @media ${breakPoints.tablet} {
+      position: absolute;
+      top: 90px
+    }
     }
   }
 

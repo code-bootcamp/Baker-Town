@@ -9,6 +9,12 @@ export const Wrapper = styled.div`
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 30px;
+  }
 `;
 
 export const SideBar = styled.div`
@@ -17,6 +23,10 @@ export const SideBar = styled.div`
 
   @media ${breakPoints.mobile} {
     display: none;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 20%;
   }
 `;
 
@@ -35,6 +45,11 @@ export const SideTitle = styled.div`
   :hover {
     background: rgba(220, 220, 220, 0.1);
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    font-size: 1em
+  }
 `;
 
 export const SideButton = styled.div`
@@ -48,22 +63,33 @@ export const SideButton = styled.div`
     background: rgba(220, 220, 220, 0.1);
     font-weight: bold;
   }
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.8em
+  }
 `;
 
 export const SmallLine = styled.div`
   width: 187px;
   margin-left: 29px;
   border-bottom: 1px solid #e2e2e2;
+
+  @media ${breakPoints.tablet} {
+    width: 90%;
+  }
 `;
 
-export const ItemList = styled.div``;
+export const ItemList = styled.div`
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
+`;
 
 export const ListToSelect = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* background: yellow; */
   margin-top: 72px;
   margin-bottom: 51px;
 `;
@@ -77,6 +103,11 @@ export const ListTitleText = styled.div`
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 30px;
+
+  @media ${breakPoints.tablet} {
+    font-size: 1.5em;
+    margin-left: 12px;
+  }
 `;
 
 export const ListSelect = styled.select`
@@ -106,6 +137,10 @@ export const ListContents = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 `;
 
 export const ItemWrapper = styled.div`
@@ -116,7 +151,13 @@ export const ItemWrapper = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 45%;
-    margin-bottom: 40%
+    margin-bottom: 40%;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 30%;
+    margin-bottom: 25%
+    /* margin-top: 10% */
   }
 `;
 
@@ -127,14 +168,25 @@ export const ItemImage = styled.img`
   background-color: #c4c4c4;
   margin-bottom: 20px;
   opacity: 0.5;
+
   @media ${breakPoints.mobile} {
     width: 100%;
     height: 100%;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 95%;
+    height: 130%;
+    /* margin-top: 2                                                        0px; */
   }
 `;
 
 export const ItemPatissierToPrice = styled.div`
   padding-left: 10px;
+
+  @media ${breakPoints.tablet} {
+    line-height: 5px
+  }
 `;
 
 export const Patissier = styled.div`
@@ -164,12 +216,21 @@ export const ItemName = styled.div`
     /* line-height: 50%; */
     /* background-color: pink; */
   }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    font-size: 0.8em;
+  }
 `;
 
 export const Line = styled.div`
   width: 220px;
   border-bottom: 1px solid rgba(220, 220, 220, 0.8);
   @media ${breakPoints.mobile} {
+    width: 100%;
+  }
+
+  @media ${breakPoints.tablet} {
     width: 100%;
   }
 `;
@@ -181,5 +242,9 @@ export const ItemPrice = styled.div`
   display: flex;
   @media ${breakPoints.mobile} {
     font-size: 0.8em;
+  }
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.9em;
   }
 `;
