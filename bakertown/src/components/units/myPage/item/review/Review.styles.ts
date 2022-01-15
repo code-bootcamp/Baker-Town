@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   }
   @media ${breakPoints.mobile} {
     height: 100%;
+    margin-top: 3%;
   }
 `;
 
@@ -118,8 +119,8 @@ export const ItemImage = styled.img`
   @media ${breakPoints.tablet} {
     /* width: 80px;
     height: 80px; */
-    width: 300px;
-    height: 150px;
+    width: 220px;
+    height: 120px;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -154,6 +155,7 @@ export const ItemInfo = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 100%;
+    margin-top: 0%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -208,7 +210,7 @@ export const Line = styled.div`
   @media ${breakPoints.tablet} {
     width: 95%;
     margin-top: 0;
-    margin-bottom: 2%;
+    margin-bottom: 0%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -231,6 +233,8 @@ export const SubTheme = styled.div`
   display: flex;
   align-items: center;
   @media ${breakPoints.tablet} {
+    width: 90%;
+    margin-left: 0%;
   }
   @media ${breakPoints.mobile} {
   }
@@ -240,7 +244,7 @@ export const ItemStarRate = styled.div`
   display: flex;
 
   @media ${breakPoints.tablet} {
-    width: 100%;
+    width: 120%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -251,7 +255,6 @@ export const PersonalRate = styled.img`
   width: 27px;
   margin-top: 12px;
   @media ${breakPoints.tablet} {
-    width: 100%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -279,7 +282,7 @@ export const ReviewRemarks = styled.div`
   margin-top: 20px;
   font-weight: bold;
   @media ${breakPoints.tablet} {
-    width: 100%;
+    margin-top: 0%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -317,10 +320,10 @@ export const Label = styled.div`
   font-family: NotoSans;
   font-size: 18px;
   @media ${breakPoints.tablet} {
-    padding-top: 0.5%;
+    padding-top: 0%;
   }
   @media ${breakPoints.mobile} {
-    padding-top: 0.5%;
+    padding-top: 0%;
     /* padding-left: 8%; */
   }
 `;
