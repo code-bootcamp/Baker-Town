@@ -247,15 +247,10 @@ export const HeartFilled = styled.img`
 
 export const LoginText = styled.div`
   padding-left: 15px;
-  /* width: 55px;
-  height: 25px; */
   font-size: 18px;
   font-weight: bold;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: left;
-  color: #4f3325;
+  color: white;
   text-shadow: #fff 0px 0 30px;
   transition: 300ms;
   cursor: pointer;
