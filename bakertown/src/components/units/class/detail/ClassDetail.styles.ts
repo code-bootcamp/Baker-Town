@@ -178,6 +178,7 @@ export const IntroWrapper = styled.div`
   display: flex;
   flex-direction: column;
   /* background: green; */
+  margin-bottom: 200px;
 
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -357,6 +358,7 @@ export const DibsOnClass = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -380,6 +382,7 @@ export const ClassShare = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -407,6 +410,13 @@ export const ClassImage = styled.img`
   background-color: #c4c4c4;
   margin-top: 20px;
   object-fit: cover;
+  @media ${breakPoints.mobile} {
+    border: 1px solid black;
+    width: 96%;
+    height: 290px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
 `;
 
 export const ProgramWrapper = styled.div`

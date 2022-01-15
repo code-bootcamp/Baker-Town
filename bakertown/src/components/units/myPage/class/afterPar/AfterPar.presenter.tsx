@@ -38,18 +38,20 @@ const AfterParPresenter = (props: IAfterParPresenter) => {
                     리뷰 작성하기
                   </S.WriteReview>
                   {props.isOpen && (
-                    <Modal
-                      title="리뷰 등록"
-                      visible={props.isOpen}
-                      onOk={props.onClickReview(index)}
-                      onCancel={props.onToggleModal}
-                    >
-                      <WriteReviewContainer
-                        setReviewContents={props.setReviewContents}
-                        rating={props.rating}
-                        setRating={props.setRating}
-                      />
-                    </Modal>
+                    // <Modal
+                    //   title="리뷰 등록"
+                    //   visible={props.isOpen}
+                    //   onOk={props.onClickReview(index)}
+                    //   onCancel={props.onToggleModal}
+                    // >
+                    <WriteReviewContainer
+                      rating={props.rating}
+                      setRating={props.setRating}
+                      onToggleModal={props.onToggleModal}
+                      onClickReview={props.onClickReview}
+                      reviewRef={props.reviewRef}
+                    />
+                    // </Modal>
                   )}
                   {/* {props.isOpen && (
                     <Modal title="후후" visible={props.isOpen}>

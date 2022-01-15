@@ -1,6 +1,6 @@
 import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
-import { SetStateAction, useEffect, useState } from "react";
+import { SetStateAction, useEffect, useRef, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { getOnlyDate } from "../../../../../commons/libraries/getDate";
 import AfterParPresenter from "./AfterPar.presenter";
@@ -8,12 +8,12 @@ import AfterParPresenter from "./AfterPar.presenter";
 const AfterParContainer = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [reviewContents, setReviewContents] = useState("");
   const [rating, setRating] = useState(3);
   const [myUser, setMyUser] = useState<{ afterPar: any[] }>({
     afterPar: [],
   });
   const [count, setCount] = useState(0);
+  const reviewRef = useRef(null);
 
   const currentUser: any = useAuth();
   const onToggleModal = () => {
@@ -37,7 +37,6 @@ const AfterParContainer = () => {
 
   useEffect(() => {
     afterParContents();
-    console.log("aaaa");
   }, [count]);
 
   // if (process.browser) {
@@ -45,6 +44,10 @@ const AfterParContainer = () => {
   // }
 
   const onClickReview = (index: number) => async () => {
+    // setReviewContents();
+    // console.log("히히힣");
+    const reviewContents = reviewRef.current.value;
+    // return;
     setIsOpen((prev) => !prev);
     // 현재 페이지 정보 불러오기
     const bakeryClass = doc(
@@ -62,7 +65,6 @@ const AfterParContainer = () => {
       currentUser?.email
     );
     const userResult: any = await getDoc(userQuery);
-    console.log("내정보", userResult);
     // 현재 페이지의 리뷰정보
     const currentReview = classResult?.data().review;
 
@@ -82,7 +84,6 @@ const AfterParContainer = () => {
 
     // 현재 페이지의 리뷰정보에 내 리뷰 넣기
     currentReview?.push(myReview);
-    console.log("aaaaaaaa", currentReview);
     await updateDoc(bakeryClass, {
       review: currentReview,
     });
@@ -92,7 +93,6 @@ const AfterParContainer = () => {
       classRouter: myUser?.afterPar?.[index].classRouter,
       ...myReview,
     };
-    console.log(userReview);
     userReview?.push(reviewInfo);
     await updateDoc(userQuery, {
       review: userReview,
@@ -108,11 +108,11 @@ const AfterParContainer = () => {
       isOpen={isOpen}
       onToggleModal={onToggleModal}
       onClickReview={onClickReview}
-      setReviewContents={setReviewContents}
       rating={rating}
       setRating={setRating}
       userResult={myUser}
       classDetail={onClickClassDetail}
+      reviewRef={reviewRef}
     />
   );
 };

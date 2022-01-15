@@ -47,6 +47,7 @@ export const ChatOutsideWrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 100%;
+    height: 100%;
     margin-bottom: 0px;
   }
 `;

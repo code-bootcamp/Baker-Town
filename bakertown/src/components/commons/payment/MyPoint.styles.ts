@@ -31,7 +31,7 @@ export const ChargeButton = styled.button`
   }
 
   @media ${breakPoints.mobile} {
-    width: 100%;
+    width: 90%;
     height: 4%;
     font-size: 1.4em;
   }

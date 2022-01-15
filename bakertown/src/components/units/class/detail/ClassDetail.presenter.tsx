@@ -126,7 +126,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                     <S.ClassStarRate>
                       <S.Star src="/imgs/class/star.png" />
                       <S.Rate>{props.ratingAverage}</S.Rate>
-                      <S.Rater>(1,700)</S.Rater>
+                      <S.Rater>
+                        &#40;{props.myClass?.review.length}&#41;
+                      </S.Rater>
                     </S.ClassStarRate>
                     <S.CategoryTag>
                       <S.Category>
@@ -139,7 +141,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                       <S.SubTheme2Heart src="/imgs/class/heart.png" />
                       {props.myClass?.heart}
                     </S.DibsOnClass>
-                    <S.ClassShare>
+                    <S.ClassShare onClick={props.share}>
                       <S.Share src="/imgs/share.png" />
                       공유
                     </S.ClassShare>
@@ -218,7 +220,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <S.ClassStarRate2>
                 <Rate value={props.ratingAverage} />
                 <S.Rate>{props.ratingAverage}</S.Rate>
-                <S.Rater>(1,700)</S.Rater>
+                <S.Rater>&#40;{props.myClass?.review.length}&#41;</S.Rater>
               </S.ClassStarRate2>
               {props.myClass?.review?.map((el: any) => (
                 <div key={uuidv4()}>
@@ -238,7 +240,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </div>
               ))}
             </S.ClassReviewInfo>
-            <S.ViewMore>177개의 후기 더보기</S.ViewMore>
+            {/* <S.ViewMore>177개의 후기 더보기</S.ViewMore> */}
           </S.IntroWrapper>
           <S.ScheduleWrapper isVisible={false}>
             <S.ClassSchedule>

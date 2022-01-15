@@ -34,7 +34,8 @@ export const InnerLogo = styled.div`
   }
   margin-top: 2px;
   @media ${breakPoints.tablet} {
-    width: 20%;
+    width: 100px;
+    height: 35px;
   }
 
   @media ${breakPoints.mobile} {
@@ -60,6 +61,8 @@ export const ClassTitle = styled.div`
   }
   @media ${breakPoints.tablet} {
     width: 5%;
+    margin-left: 2%;
+    font-size: 130%;
   }
 
   @media ${breakPoints.mobile} {
@@ -86,7 +89,8 @@ export const StoreTitle = styled.div`
     transition: 300ms;
   }
   @media ${breakPoints.tablet} {
-    width: 5%;
+    width: 20%;
+    font-size: 130%;
   }
 
   @media ${breakPoints.mobile} {
@@ -114,9 +118,12 @@ export const RoundDiv = styled.div`
   justify-content: space-between;
   transition: 500ms;
   @media ${breakPoints.tablet} {
-    width: 70%;
-    margin-left: 17%;
-    margin-right: 5%;
+    width: 58%;
+    height: 54%;
+    margin-top: 5px;
+    margin-left: 5%;
+    /* margin-right: 5%; */
+    padding-left: 1px;
   }
 
   @media ${breakPoints.mobile} {
@@ -139,7 +146,9 @@ export const RoundDivInnerText = styled.input`
     outline: none;
   }
   @media ${breakPoints.tablet} {
-    width: 90%;
+    /* width: 90%; */
+    font-size: 1em;
+    margin-left: 5%;
   }
 `;
 
@@ -155,8 +164,8 @@ export const RoundDivCircle = styled.div`
   transition: 300ms;
   cursor: pointer;
   @media ${breakPoints.tablet} {
-    width: 13%;
-    height: 60%;
+    width: 30px;
+    height: 27px;
   }
 `;
 
@@ -167,7 +176,10 @@ export const RoundDivInnerIcon = styled.img`
   transition: 300ms;
   @media ${breakPoints.tablet} {
     /* display: none; */
-    width: 50%;
+    width: 70%;
+    height: 65%;
+    padding-left: 1px;
+    padding-right: 1px;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -190,6 +202,7 @@ export const HeartRoundDivCircle = styled.div`
     /* width: 50%; */
     /* width: 40%; */
     /* height: 120%; */
+    margin-top: 1px;
   }
 `;
 
@@ -200,6 +213,7 @@ export const HeartToLogin = styled.div`
   transition: 300ms;
   @media ${breakPoints.tablet} {
     width: 30%;
+    margin-top: 5px;
   }
 
   @media ${breakPoints.mobile} {
@@ -237,44 +251,13 @@ export const HeartFilled = styled.img`
   transition: 300ms;
 `;
 
-export const SeacrchBar = styled.input`
-  width: 380px;
-  height: 48px;
-  /* margin: 10px 20px 0px 0px; */
-  margin-top: 5px;
-  padding: 8px 28px 8px 40px;
-  border-radius: 80px;
-  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
-  background-color: #fafafa;
-`;
-
-export const HeartButton = styled.div`
-  width: 32px;
-  height: 32px;
-  flex-grow: 0;
-  margin: 8px 15px 8px 20px;
-  padding: 10px 8.9px 10px 8.9px;
-`;
-
-export const SinInButton = styled.div`
-  width: 60px;
-  height: 25px;
-  margin: 18px 0px 10.2px 20px;
-  font-family: NotoSans;
-  font-size: 18px;
-  font-weight: bold;
-  color: #4f3325;
-  :hover {
-    cursor: pointer;
-  }
-`;
-
 export const LogoImg = styled.img`
    width: 115px;
   height: 42px;
   /* margin: 2px 172px 0px 61px; */
   @media ${breakPoints.tablet} {
     /* display: none; */
+    /* width: 100px; */
   }
   @media ${breakPoints.mobile} {
     /* display: none; */

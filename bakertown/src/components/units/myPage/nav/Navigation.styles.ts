@@ -16,7 +16,7 @@ export const TitleWrapper = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
     padding-left: 5%;
-    margin-bottom: 0%;
+    margin-bottom: 10%;
     /* padding-top: 2%; */
   }
 `;
@@ -64,6 +64,7 @@ export const Sidebar = styled.div`
   @media ${breakPoints.mobile} {
     display: inline;
     width: 100%;
+    margin-bottom: 200px;
   }
 `;
 

@@ -34,6 +34,7 @@ export interface IClassDetailPresenterProps {
   selectDate: (el: any, index: number) => () => void;
   nameInput: (event: ChangeEvent<HTMLInputElement>) => void;
   heart: () => void;
+  share: () => void;
   scrollPosition: number;
   goChat: () => void;
 }
