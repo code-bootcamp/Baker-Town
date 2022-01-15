@@ -12,7 +12,7 @@ const StorePresenter = (props: IStorePresenterProps) => {
         <S.CreatorSubject>
           <S.SubjectWrapper>
             <S.SubjectTitle>크리에이터 이야기</S.SubjectTitle>
-            <S.SubjectView>크리에이터 이야기 전체 보기</S.SubjectView>
+            {/* <S.SubjectView>크리에이터 이야기 전체 보기</S.SubjectView> */}
           </S.SubjectWrapper>
           <S.StoresWrapper2>
             {new Array(3).fill(1).map((el) => (
@@ -135,7 +135,7 @@ const StorePresenter = (props: IStorePresenterProps) => {
             <S.SubjectTitle>
               손 쉽게 만드는 육즙 가득한 홈파티 요리
             </S.SubjectTitle>
-            <S.SubjectView>홈파티 요리 전체보기</S.SubjectView>
+            {/* <S.SubjectView>홈파티 요리 전체보기</S.SubjectView> */}
           </S.SubjectWrapper>
           <S.StoresWrapper4>
             {new Array(4).fill(1).map((el) => (
