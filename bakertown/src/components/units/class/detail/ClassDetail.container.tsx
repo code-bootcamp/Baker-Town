@@ -242,6 +242,15 @@ const ClassDetailContainer = () => {
     // 내 찜 목록
     const userHeart = userResult.data().heart;
 
+    if (
+      userHeart
+        .map((el: { classRouter: string }) => el.classRouter)
+        .includes(router.query.classId)
+    ) {
+      message.error("이미 찜목록에 담겨있습니다.", 1.5);
+      return;
+    }
+
     // 내 찜 목록에 현재 클래스 아이디 넣기
     const heartInfo = {
       classRouter: router.query.classId,
@@ -259,8 +268,8 @@ const ClassDetailContainer = () => {
     await updateDoc(bakeryClass, {
       heart: classHeart,
     });
-    alert("클래스를 찜 목록에 담았습니다!");
-    location.reload();
+    message.success("찜목록에 담았습니다.", 1.5);
+    // location.reload();
   };
 
   // 반응형 헤더
@@ -398,6 +407,11 @@ const ClassDetailContainer = () => {
     router.push(`/myPage/chatRoom/${myClass?.patissierId}/${currentUser?.uid}`);
   };
 
+  const onClickShare = () => {
+    navigator.clipboard.writeText(location.href);
+    message.success("주소가 복사되었습니다.", 1.5);
+  };
+
   return (
     <ClassDetailPresenter
       reservation={onClickReservation}
@@ -405,6 +419,7 @@ const ClassDetailContainer = () => {
       nameInput={onChangeName}
       review={onClickReview}
       heart={onClickHeart}
+      share={onClickShare}
       GoProgram={GoProgram}
       GoMap={GoMap}
       GoReview={GoReview}
