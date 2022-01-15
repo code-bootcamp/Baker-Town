@@ -52,8 +52,9 @@ export const ChatOutsideWrapper = styled.div`
 `;
 
 export const Box = styled.div`
-  background: white;
-  width: 90%;
+  /* background: white; */
+  /* background: pink; */
+  width: 100%;
   /* border: 2px solid gray; */
   margin-left: 60px;
   border-radius: 10px;
@@ -81,9 +82,10 @@ export const ChatWrapper = styled.div`
   margin-bottom: 0px;
   overflow: auto;
   height: 550px;
+  width: 100%;
   padding-left: 1.5%;
   padding-right: 1.5%;
-  /* background: pink; */
+  /* background: brown; */
   @media ${breakPoints.tablet} {
     width: 100%;
   }
@@ -115,10 +117,12 @@ export const CommentsInputWrite = styled.input`
   width: 100%;
   height: 60px;
   background-color: #f2f2f2;
-
   border: none;
   padding-left: 12px;
   outline: none;
+  /* background: pink; */
+  /* position: relative; */
+
   @media ${breakPoints.tablet} {
     width: 100%;
   }
@@ -129,7 +133,7 @@ export const CommentsInputWrite = styled.input`
 `;
 
 export const CommentsBnt = styled.div`
-  width: 120px;
+    width: 100%;
   height: 60px;
   /* background-color: #8915a6; */
   background-color: #4f3325;
@@ -140,9 +144,12 @@ export const CommentsBnt = styled.div`
   line-height: 42px;
   cursor: pointer;
   display: flex;
-  flex-direction: center;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  /* position: absolute;
+  bottom: 60; */
+
   @media ${breakPoints.tablet} {
     width: 100%;
   }
