@@ -4,14 +4,14 @@ import { breakPoints } from "../../../../commons/styles/media";
 export const ChatWrapper = styled.div`
   margin-bottom: 50px;
   /* overflow: auto; */
-  height: 100%;
-  width: 40%;
+  width: 100%;
+  max-width: 330px;
 
   @media ${breakPoints.mobile} {
     display: none;
   }
   @media ${breakPoints.tablet} {
-    width: 80%;
+    width: 40%;
   }
 `;
 
@@ -20,10 +20,12 @@ export const MessageWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  max-width: 407px;
   padding: 30px;
   border-bottom: 1px solid #959595;
 
   @media ${breakPoints.tablet} {
+    width: 330px;
   }
 `;
 export const ProfileImg = styled.img`
@@ -34,7 +36,8 @@ export const ProfileImg = styled.img`
   object-fit: cover;
 `;
 export const Contents = styled.div`
-  width: 450px;
+  width: 100%;
+  max-width: 407px;
   padding-top: 5px;
 
   @media ${breakPoints.tablet} {
@@ -55,6 +58,10 @@ export const NameAndTime = styled.div`
   justify-content: space-between;
   align-items: center;
   /* background: yellow; */
-  width: 83%;
+  /* width: 780px; */
   /* width: 100%; */
+  width: 300px;
+
+  @media ${breakPoints.tablet} {
+  }
 `;
