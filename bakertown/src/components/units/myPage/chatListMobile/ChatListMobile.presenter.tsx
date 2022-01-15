@@ -1,4 +1,4 @@
-import { IChatProps } from "./Chat.types";
+import { IChatListProps } from "./ChatListMobile.types";
 import {
   MessageWrapper,
   Contents,
@@ -6,9 +6,9 @@ import {
   Name,
   ChatWrapper,
   NameAndTime,
-} from "./Chat.styled";
+} from "./ChatListMobile.styled";
 
-const ChatPresenter = (props: IChatProps) => {
+const ChatListMobilePresenter = (props: IChatListProps) => {
   return (
     <>
       <ChatWrapper ref={props.msgRef}>
@@ -22,6 +22,7 @@ const ChatPresenter = (props: IChatProps) => {
             <div>
               <NameAndTime>
                 <Name>{el.writer}</Name>
+
                 <LastTime>{el.id?.slice(4, 15)}</LastTime>
               </NameAndTime>
               <Contents>{el.text.slice(0, 42)}</Contents>
@@ -33,4 +34,4 @@ const ChatPresenter = (props: IChatProps) => {
   );
 };
 
-export default ChatPresenter;
+export default ChatListMobilePresenter;

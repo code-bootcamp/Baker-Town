@@ -16,7 +16,7 @@ import {
 import { useRouter } from "next/router";
 
 import { v4 as uuidv4 } from "uuid";
-import ChatRoomPresenter from "./chatRoom.presenter";
+import ChatRoomPresenter from "./chatRoomOnly.presenter";
 
 export default function ChatRoomContainer() {
   const router = useRouter();

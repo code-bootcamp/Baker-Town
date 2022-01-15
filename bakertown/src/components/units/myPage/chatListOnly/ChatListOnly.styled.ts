@@ -10,6 +10,9 @@ export const ChatWrapper = styled.div`
   @media ${breakPoints.mobile} {
     display: none;
   }
+  @media ${breakPoints.tablet} {
+    width: 80%;
+  }
 `;
 
 export const MessageWrapper = styled.div`
@@ -19,6 +22,9 @@ export const MessageWrapper = styled.div`
   width: 100%;
   padding: 30px;
   border-bottom: 1px solid #959595;
+
+  @media ${breakPoints.tablet} {
+  }
 `;
 export const ProfileImg = styled.img`
   width: 50px;
@@ -30,7 +36,10 @@ export const ProfileImg = styled.img`
 export const Contents = styled.div`
   width: 450px;
   padding-top: 5px;
-  /* background: yellow; */
+
+  @media ${breakPoints.tablet} {
+    /* background: purple; */
+  }
 `;
 export const LastTime = styled.span`
   font-size: 12px;

@@ -1,4 +1,4 @@
-import ChatPresenter from "./Chat.presenter";
+import ChatListPresenter from "./ChatListOnly.presenter";
 import { useState, useEffect, useRef } from "react";
 import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import { initializeApp, getApps, getApp } from "firebase/app";
@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore";
 import { useRouter } from "next/router";
 
-const ChatContainer = () => {
+const ChatListContainer = () => {
   const router = useRouter();
   const [messages, setMessages] = useState([]);
 
@@ -59,7 +59,7 @@ const ChatContainer = () => {
   }, [messages]);
 
   return (
-    <ChatPresenter
+    <ChatListPresenter
       onClickToChatRoom={onClickToChatRoom}
       messages={messages}
       msgRef={msgRef}
@@ -67,4 +67,4 @@ const ChatContainer = () => {
   );
 };
 
-export default ChatContainer;
+export default ChatListContainer;
