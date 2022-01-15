@@ -9,6 +9,7 @@ import { useRef, useState } from "react";
 import { ButtonBase, Paper } from "@material-ui/core";
 import { Button } from "@mui/material";
 import { ISignInPresenterProps } from "./SingIn.types";
+import { message } from "antd";
 
 const SignInPresenter = (props: ISignInPresenterProps) => {
   const router = useRouter();
@@ -20,10 +21,10 @@ const SignInPresenter = (props: ISignInPresenterProps) => {
     setLoading(true);
     try {
       await signin(emailRef.current.value, passwordRef.current.value);
-      alert("로그인 되셨습니다.");
+      message.success("로그인 완료", 1.5);
       router.push("/");
     } catch {
-      alert("로그인 실패");
+      message.error("로그인 실패", 2);
     }
     setLoading(false);
   };

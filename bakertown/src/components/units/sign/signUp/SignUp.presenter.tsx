@@ -8,6 +8,8 @@ import { useRef } from "react";
 import { firebaseApp, signup } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
 import { Modal } from "antd";
+import { message } from "antd";
+
 import {
   addDoc,
   collection,
@@ -66,10 +68,10 @@ const SignUpPresenter = (props: ISignUpPresenterProps) => {
         itemReview: [],
       });
       await signup(emailRef.current.value, passwordRef.current.value);
-      alert("회원가입되셨습니다.");
+      message.success("회원가입 완료", 2.5);
       router.push("/signIn");
     } catch {
-      alert("회원가입을 완료해주세요");
+      message.error("회원가입 실패", 2);
     }
     setLoading(false);
   };

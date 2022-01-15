@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { SetStateAction, useEffect, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../pages/_app";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { message } from "antd";
 
 const MyPageContainer = () => {
   const router = useRouter();
@@ -17,10 +18,10 @@ const MyPageContainer = () => {
   async function deleteAccount() {
     try {
       await deleteUser(currentUser);
-      confirm("회원탈퇴가 완료되었습니다.");
+      message.success("회원탈퇴가 완료되었습니다.", 2);
       router.push("/");
     } catch {
-      alert("회원탈퇴 실패");
+      message.error("회원탈퇴 실패", 1.5);
     }
   }
 
@@ -49,9 +50,9 @@ const MyPageContainer = () => {
     const newPassword = getASecureRandomPassword();
     try {
       await updatePassword(currentUser, newPassword);
-      confirm("비밀번호변경이 완료되었습니다.");
+      message.success("비밀번호 변경 완료", 1.5);
     } catch {
-      alert("비밀번호 변경 실패");
+      message.error("비밀번호 변경 실패", 1.5);
     }
   };
 
