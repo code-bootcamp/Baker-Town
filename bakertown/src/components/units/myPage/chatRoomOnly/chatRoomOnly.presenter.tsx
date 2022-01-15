@@ -1,4 +1,3 @@
-import ChatListPage from "../../../../../pages/myPage/chatList";
 import {
   Box,
   ChatInputWrapper,
@@ -14,19 +13,16 @@ import {
   MyMessageWrapper,
   NewDate,
   WholeWrapper,
-  TitleLabel,
   ChatOutsideWrapper,
-  ChatListPageForChatRoom,
-} from "./chatRoom.styles";
-
+  TitleLabel,
+} from "./chatRoomOnly.styles";
+import ChatListPage from "../../../../../pages/myPage/chatList";
 export default function ChatRoomPresenter(props: any) {
   return (
     <WholeWrapper>
       <TitleLabel>채팅페이지</TitleLabel>
       <ChatOutsideWrapper>
-        <ChatListPageForChatRoom />
-
-        {/* <ChatListPage/> */}
+        <ChatListPage />
         <Box>
           {/* 
         <ProductWrapper onClick={props.onClickToProduct}>
@@ -64,13 +60,13 @@ export default function ChatRoomPresenter(props: any) {
               </div>
             ))}
           </ChatWrapper>
-          <ChatInputWrapper>
-            <CommentsInputWrite
-              placeholder="메세지를 입력하세요"
-              ref={props.inputRef}
-            />
-            <CommentsBnt onClick={props.saveMessage}>보내기</CommentsBnt>
-          </ChatInputWrapper>
+          {/* <> */}
+          <CommentsInputWrite
+            placeholder="메세지를 입력하세요"
+            ref={props.inputRef}
+          />
+          <CommentsBnt onClick={props.saveMessage}>보내기</CommentsBnt>
+          {/* </> */}
         </Box>
       </ChatOutsideWrapper>
     </WholeWrapper>

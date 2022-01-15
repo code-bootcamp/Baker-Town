@@ -1,6 +1,6 @@
 import { LegacyRef, MouseEventHandler } from "react";
 
-export interface IChatProps {
+export interface IChatListProps {
   msgRef: any;
   onClickToChatRoom: any;
   messages: any;

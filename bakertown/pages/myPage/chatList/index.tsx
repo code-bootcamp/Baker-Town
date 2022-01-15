@@ -1,7 +1,7 @@
-import ChatContainer from "../../../src/components/units/myPage/chat/Chat.container";
+import ChatListContainer from "../../../src/components/units/myPage/chatListOnly/ChatListOnly.container";
 
 const ChatListPage = () => {
-  return <ChatContainer />;
+  return <ChatListContainer />;
 };
 
 export default ChatListPage;

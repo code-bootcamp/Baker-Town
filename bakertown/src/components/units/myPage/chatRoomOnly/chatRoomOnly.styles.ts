@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
-import ChatListPage from "../../../../../pages/myPage/chatList";
 
 export const WholeWrapper = styled.div`
   width: 80%;
@@ -11,20 +10,14 @@ export const WholeWrapper = styled.div`
   /* background: yellow; */
 
   @media ${breakPoints.tablet} {
-    width: 100%;
+    width: 90%;
   }
 
   @media ${breakPoints.mobile} {
     width: 100%;
-    background: skyblue;
-  }
-`;
-
-export const ChatListPageForChatRoom = styled(ChatListPage)`
-  background: blue;
-  @media ${breakPoints.mobile} {
-    display: none;
-    background: blue;
+    /* height: 100%; */
+    padding: 0%;
+    margin: 0px;
   }
 `;
 
@@ -34,18 +27,9 @@ export const TitleLabel = styled.div`
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 25px;
-  @media ${breakPoints.tablet} {
-    width: 100%;
-  }
 
   @media ${breakPoints.mobile} {
-    /* width: 100%; */
-    /* border: 10px dotted green; */
-    /* display: none; */
-    /* justify-content: flex-start; */
-    /* width: 100%; */
-    /* right: 0; */
-    width: 100%;
+    display: none;
   }
 `;
 
@@ -63,6 +47,7 @@ export const ChatOutsideWrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 100%;
+    margin-bottom: 0px;
   }
 `;
 
@@ -74,13 +59,17 @@ export const Box = styled.div`
   border-radius: 10px;
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
   border: solid 0.5px #e2e2e2;
+
   @media ${breakPoints.tablet} {
     width: 100%;
   }
 
   @media ${breakPoints.mobile} {
-    width: 70%;
-    background: blue;
+    /* background: purple; */
+    margin-left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
   }
 `;
 
@@ -102,7 +91,8 @@ export const ChatWrapper = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
     padding: 5%;
-    background: pink;
+    /* margin-top: 11%; */
+    min-height: 593px;
   }
 `;
 
@@ -158,7 +148,11 @@ export const CommentsBnt = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    width: 20%;
+    width: 100%;
+    /* position: fixed;
+    bottom: 0; */
+   
+  }
   }
 `;
 
@@ -182,12 +176,11 @@ export const ProfileImg = styled.img`
   background-color: gray;
   object-fit: cover;
   @media ${breakPoints.tablet} {
-    width: 100%;
   }
 
   @media ${breakPoints.mobile} {
-    width: 15px;
-    height: 15px;
+    width: 35px;
+    height: 35px;
   }
 `;
 export const GetMessageBox = styled.div`
@@ -197,13 +190,14 @@ export const GetMessageBox = styled.div`
   padding: 10px 10px;
 
   @media ${breakPoints.tablet} {
-    width: 100%;
+    max-width: 58%;
   }
 
   @media ${breakPoints.mobile} {
-    width: 100%;
+    max-width: 58%;
   }
 `;
+
 export const MessageDate = styled.div`
   font-size: 12px;
   padding-left: 3px;
