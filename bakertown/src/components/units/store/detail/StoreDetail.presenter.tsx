@@ -33,7 +33,7 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
             </S.SubTheme1>
             <S.SubTheme2>
               <S.DibsOnItem>
-                <S.Heart src="/imgs/class/heart.png"/>
+                <S.Heart src="/imgs/class/heart.png" />
                 찜하기
               </S.DibsOnItem>
               <S.DoShare>

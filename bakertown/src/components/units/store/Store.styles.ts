@@ -162,6 +162,9 @@ export const SmallLine = styled.div`
   @media ${breakPoints.tablet} {
     width: 90%;
   }
+  @media ${breakPoints.mobile} {
+    width: 90%;
+  }
 `;
 
 export const SmallLine2 = styled.div`
@@ -189,7 +192,7 @@ export const Store = styled.div`
   margin-bottom: 10px;
 
   @media ${breakPoints.tablet} {
-    font-size: 0.9em
+    font-size: 0.9em;
   }
 `;
 
@@ -200,6 +203,9 @@ export const StoreName = styled.div`
 
   @media ${breakPoints.tablet} {
     font-size: 0.9em;
+  }
+  @media ${breakPoints.mobile} {
+    width: 90%;
   }
 `;
 
@@ -306,7 +312,7 @@ export const SliderWrapper = styled.div`
 
     @media ${breakPoints.tablet} {
       position: absolute;
-      top: 90px
+      top: 90px;
     }
   }
 
@@ -331,14 +337,12 @@ export const SliderWrapper = styled.div`
 
     @media ${breakPoints.tablet} {
       position: absolute;
-      top: 90px
-    }
+      top: 90px;
     }
   }
 
   @media ${breakPoints.mobile} {
     display: none;
-    width: 100%;
   }
 `;
 

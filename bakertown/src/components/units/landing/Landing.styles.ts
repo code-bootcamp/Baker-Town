@@ -70,7 +70,7 @@ export const CategoryClass = styled.div`
   }
   @media ${breakPoints.mobile} {
     /* visibility: hidden; */
-    margin-top: 2%;
+    /* margin-top: 2%; */
     margin-left: 20%;
     width: 20%;
     font-size: 120%;
@@ -423,6 +423,9 @@ export const WholeWrapper = styled.div`
   @media ${breakPoints.mobile} {
     /* display: none; */
     /* width: 414px; */
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-bottom: 19%;
   }
 `;
 
@@ -491,7 +494,7 @@ export const SubjectWrapper = styled.div`
   @media ${breakPoints.tablet} {
   }
   @media ${breakPoints.mobile} {
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
   }
 `;
 
@@ -864,7 +867,7 @@ export const ClassImage = styled.img`
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
-    width: 70%;
+    width: 90%;
     height: 140px;
   }
 `;
@@ -878,7 +881,7 @@ export const ClassPatissier = styled.div`
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
-    width: 70%;
+    width: 90%;
   }
 `;
 
@@ -892,7 +895,7 @@ export const ClassName = styled.div`
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
-    width: 70%;
+    width: 90%;
   }
 `;
 
@@ -905,7 +908,7 @@ export const SmallLine = styled.div`
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
-    width: 70%;
+    width: 90%;
   }
 `;
 
@@ -933,6 +936,7 @@ export const EventImage = styled.img`
   @media ${breakPoints.mobile} {
     /* display: none; */
     width: 100%;
+    height: 30%;
     /* height: 200px; */
   }
 `;
