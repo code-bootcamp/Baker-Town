@@ -68,7 +68,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             />
           </S.HeartRoundDivCircle>
           {props.currentUser?.uid ? (
-            <AvatarPage />
+            <AvatarPage scrollPosition={scrollPosition} />
           ) : (
             <S.LoginText
               className={

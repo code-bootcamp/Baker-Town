@@ -13,8 +13,13 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { firebaseApp, logout, useAuth } from "../../../../pages/_app";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { message } from "antd";
 
-const AvatarPage = () => {
+interface IAvatarPageProps {
+  scrollPosition: number;
+}
+
+const AvatarPage = (props: IAvatarPageProps) => {
   const router = useRouter();
   const [loading, setLoading] = React.useState(false);
 
@@ -31,9 +36,10 @@ const AvatarPage = () => {
     setLoading(true);
     try {
       await logout();
-      alert("로그아웃 되셨습니다.");
+      message.success("로그아웃 완료", 1.5);
+      router.push("/");
     } catch {
-      alert("error!!");
+      message.error("로그아웃 실패", 2);
     }
     setLoading(false);
   }
@@ -79,10 +85,12 @@ const AvatarPage = () => {
     <React.Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         {/* <Tooltip title="Account settings"> */}
+        {}
         <IconButton
           onClick={handleClick}
           size="small"
-          sx={{ ml: 2 }}
+          // sx={{ ml: 2, color: "white" }}
+          sx={props.scrollPosition < 50 ? { ml: 2, color: "white" } : { ml: 2 }}
           aria-controls={open ? "account-menu" : undefined}
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}

@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { getDate, getOnlyDate } from "../../../../commons/libraries/getDate";
 import { IClassDetailPresenterProps } from "./ClassDetail.types";
 import { getAuth } from "firebase/auth";
+import { message } from "antd";
 
 const ClassDetailContainer = () => {
   const router = useRouter();
@@ -75,7 +76,7 @@ const ClassDetailContainer = () => {
   const onClickReservation = async () => {
     if (currentID) {
       if (myIndex === -1) {
-        alert("예약하실 날짜를 선택해주세요!!");
+        message.error("예약하실 날짜를 선택해주세요!!", 2);
         return;
       }
       // 현재 페이지 정보 불러오기
@@ -95,7 +96,7 @@ const ClassDetailContainer = () => {
 
       // 돈 없으면 내보내기
       if (userResult.data().mypoint < myClass?.price) {
-        alert("포인트가 부족합니다.");
+        message.error("포인트가 부족합니다.", 2);
         return;
       }
 
@@ -154,15 +155,16 @@ const ClassDetailContainer = () => {
       alert("예약이 완료되었습니다.");
       location.reload();
     } else {
-      alert("회원만 가능합니다.");
+      message.error("회원만 가능합니다.", 2);
     }
   };
 
   const onClickSelectDate = (el: any, index: number) => () => {
     // setMyDate(myClass?.applyClass?.classArray?.[index].class.date);
     console.log(el);
-    alert(
-      `${el?.class?.date} 날짜의 ${el?.class?.start} 시간을 선택하셨습니다!`
+    message.success(
+      `${el?.class?.date} 날짜의 ${el?.class?.start} 시간을 선택하셨습니다.`,
+      2
     );
     setMyIndex(index);
   };

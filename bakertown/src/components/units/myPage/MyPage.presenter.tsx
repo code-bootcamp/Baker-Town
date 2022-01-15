@@ -40,7 +40,7 @@ const MyPagePresenter = (props: IMyPageProps) => {
               <S.Input type="password" />
             </S.InputWrapper> */}
             <S.InputWrapper>
-              {/* <S.Label>새 비밀번호 입력</S.Label> */}
+              <S.Label>새 비밀번호 입력</S.Label>
               <S.Input
                 type="password"
                 onChange={(e) => props.setPassword(e.target.value)}
