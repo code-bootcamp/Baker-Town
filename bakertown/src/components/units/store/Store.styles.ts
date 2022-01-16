@@ -253,7 +253,7 @@ export const StoreImage = styled.img`
   border-radius: 10px;
   background-color: #c4c4c4;
   margin-bottom: 20px;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 
   @media ${breakPoints.mobile} {
     width: 88%;

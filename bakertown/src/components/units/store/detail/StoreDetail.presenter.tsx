@@ -43,7 +43,7 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
             </S.SubTheme2>
           </S.SubComponentWrapper>
           <Slider {...settings}>
-             {props.myStore?.images?.map((el: any) => (
+            {props.myStore?.images?.map((el: any) => (
               <div key={uuidv4()}>
                 <S.ItemImage src={`https://storage.googleapis.com/${el}`} />
               </div>
@@ -89,7 +89,9 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
         <S.SidebarWrapper>
           <div>{props.myStore?.category}</div>
           <div>{props.myStore?.itemName}</div>
-          <div>판매 가격: {props.myStore?.price}</div>
+          <div>
+            판매 가격: {Number(props.myStore?.price).toLocaleString("ko-KR")}
+          </div>
           <button onClick={props.purchase}>구매하기</button>
           <button onClick={props.heart}>찜하기 {props.myStore?.heart}</button>
         </S.SidebarWrapper>

@@ -1,5 +1,6 @@
 import {
   collection,
+  getDoc,
   getDocs,
   getFirestore,
   orderBy,
@@ -25,6 +26,7 @@ const LandingContainer = () => {
   const router = useRouter();
   const [popular, setPoplular] = useState<SetStateAction<any>>([]);
   const [recent, setRecent] = useState<SetStateAction<any>>([]);
+  const [promotion, setPromotion] = useState([]);
   const [keyWord, setKeyWord] = useState("");
   const currentUser: any = useAuth();
 
@@ -56,9 +58,24 @@ const LandingContainer = () => {
     setRecent(docs);
   };
 
+  const promotionClass = async () => {
+    const promotion = query(
+      collection(getFirestore(firebaseApp), "class"),
+      where("promotion", "!=", "")
+    );
+    const result = await getDocs(promotion);
+    const docs = result.docs.map((el) => {
+      const data = el.data();
+      data.id = el.id;
+      return data;
+    });
+    setPromotion(docs);
+  };
+
   useEffect(() => {
     popularClass();
     recentClass();
+    promotionClass();
   }, []);
 
   const clickLeft = () => {
@@ -182,6 +199,7 @@ const LandingContainer = () => {
       <LandingPresenter
         popular={popular}
         recent={recent}
+        promotion={promotion}
         currentUser={currentUser}
         settings={settings}
         settings2={settings2}

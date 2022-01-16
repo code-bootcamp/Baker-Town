@@ -46,7 +46,6 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
             <S.ItemCategoryOption value="베이킹용품">
               베이킹용품
             </S.ItemCategoryOption>
-            <S.ItemCategoryOption value="이벤트">이벤트</S.ItemCategoryOption>
             <input
               multiple={true}
               type="file"
@@ -62,7 +61,7 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
         <S.ItemPriceWrapper>
           <S.ItemPriceTitle>아이템 가격</S.ItemPriceTitle>
           <S.ItemPrice
-            type="text"
+            type="number"
             onChange={props.onChangeInputs}
             placeholder="판매가를 입력해 주세요."
             name="price"
