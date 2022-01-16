@@ -45,7 +45,9 @@ const StorePresenter = (props: IStorePresenterProps) => {
                       {el.itemName}
                     </S.StoreName>
                     <S.SmallLine></S.SmallLine>
-                    <S.StorePrice>{el.price} 원</S.StorePrice>
+                    <S.StorePrice>
+                      {Number(el.price).toLocaleString("ko-KR")} 원
+                    </S.StorePrice>
                   </S.StoreWrapper>
                 ))}
               </Slider>
@@ -67,7 +69,9 @@ const StorePresenter = (props: IStorePresenterProps) => {
                       {el.itemName}
                     </S.StoreName>
                     <S.SmallLine></S.SmallLine>
-                    <S.StorePrice>{el.price} 원</S.StorePrice>
+                    <S.StorePrice>
+                      {Number(el.price).toLocaleString("ko-KR")} 원
+                    </S.StorePrice>
                   </S.StoreWrapper>
                 ))}
               </Slider>
@@ -100,7 +104,9 @@ const StorePresenter = (props: IStorePresenterProps) => {
                       {el.itemName}
                     </S.StoreName>
                     <S.SmallLine></S.SmallLine>
-                    <S.StorePrice>{el.price} 원</S.StorePrice>
+                    <S.StorePrice>
+                      {Number(el.price).toLocaleString("ko-KR")} 원
+                    </S.StorePrice>
                   </S.StoreWrapper>
                 ))}
               </Slider>
@@ -122,7 +128,9 @@ const StorePresenter = (props: IStorePresenterProps) => {
                       {el.itemName}
                     </S.StoreName>
                     <S.SmallLine></S.SmallLine>
-                    <S.StorePrice>{el.price} 원</S.StorePrice>
+                    <S.StorePrice>
+                      {Number(el.price).toLocaleString("ko-KR")} 원
+                    </S.StorePrice>
                   </S.StoreWrapper>
                 ))}
               </Slider>

@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import { IDashBoardMainItemWriteContainerProps } from "./DashBoardItemWrite.types";
 import { UPLOAD_FILE } from "./DashBoardItemWrite.queries";
 import { useMutation } from "@apollo/client";
+import { message } from "antd";
 
 export const DashBoardItemContainer = (
   props: IDashBoardMainItemWriteContainerProps
@@ -81,7 +82,8 @@ export const DashBoardItemContainer = (
     await addDoc(applyitems, {
       ...myInputs,
     });
-    alert("상품이 등록되었습니다.");
+    message.success("상품이 등록되었습니다.");
+    router.push(`/dashboard/item/read`);
   };
 
   // 아이템 수정
@@ -113,6 +115,7 @@ export const DashBoardItemContainer = (
     await setDoc(item, {
       ...myInputs,
     });
+    message.success("상품이 수정되었습니다.");
     router.push(`/dashboard/item/read`);
   };
 

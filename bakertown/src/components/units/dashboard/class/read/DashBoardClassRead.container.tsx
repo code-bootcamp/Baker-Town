@@ -22,6 +22,7 @@ const DashBoardClassReadContainer = () => {
   const router = useRouter();
 
   const dashBoardClassReadContents = async () => {
+    if (!currentUser) return;
     const product = query(
       collection(getFirestore(firebaseApp), "class"),
       // where("patissierId", "!=", "")
@@ -44,7 +45,7 @@ const DashBoardClassReadContainer = () => {
 
   useEffect(() => {
     dashBoardClassReadContents();
-  }, []);
+  });
 
   const update = (el: any) => () => {
     router.push(`/dashboard/class/edit/${el.id}`);

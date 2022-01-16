@@ -8,7 +8,6 @@ const StoreListPresenter = (props: IStoreListPresenter) => {
     "주방잡화",
     "커피•티용품",
     "베이킹용품",
-    "이벤트",
   ];
 
   return (
@@ -54,7 +53,9 @@ const StoreListPresenter = (props: IStoreListPresenter) => {
                     {el.itemName}
                   </S.ItemName>
                   <S.Line />
-                  <S.ItemPrice>{el.price}원</S.ItemPrice>
+                  <S.ItemPrice>
+                    {Number(el.price).toLocaleString("ko-KR")}원
+                  </S.ItemPrice>
                 </S.ItemPatissierToPrice>
               </S.ItemWrapper>
             ))}

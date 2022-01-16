@@ -109,7 +109,7 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
           <S.SideCategory>{props.myStore?.category}</S.SideCategory>
           <S.SideItemName>{props.myStore?.itemName}</S.SideItemName>
           <S.PriceToBuy>
-            <S.SideItemPrice>{props.myStore?.price}원</S.SideItemPrice>
+            <S.SideItemPrice>{Number(props.myStore?.price).toLocaleString("ko-KR")}원</S.SideItemPrice>
             <S.ToBuyButton onClick={props.purchase}>구매하기</S.ToBuyButton>
           </S.PriceToBuy>
         </S.SidebarWrapper>

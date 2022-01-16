@@ -39,7 +39,9 @@ const ClassListPresenter = (props: IClassListPresenterProps) => {
                   <S.ClassPatissier>{el.patissier}</S.ClassPatissier>
                   <S.ClassName>{el.className}</S.ClassName>
                   <S.ClassLine></S.ClassLine>
-                  <S.ClassPrice>{el.price} 원</S.ClassPrice>
+                  <S.ClassPrice>
+                    {Number(el.price).toLocaleString("ko-KR")} 원
+                  </S.ClassPrice>
                 </S.ClassPatissierToPrice>
               </S.ClassWrapper>
             ))}

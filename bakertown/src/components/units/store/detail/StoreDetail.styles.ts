@@ -283,7 +283,7 @@ export const Label = styled.div`
 
 export const ProductDetail = styled.div`
   /* width: 864px;
-  height: 1271px;
+  height: 200px;
   border-radius: 10px;
   background-color: #f7f7f7;
   margin-top: 30px; */
@@ -373,7 +373,7 @@ export const PatissierContentsBox = styled.div`
 
 export const ProductDate = styled.div`
   width: 864px;
-  height: 300px;
+  height: 100px;
   border-radius: 10px;
   background-color: #f7f7f7;
   margin-top: 30px;

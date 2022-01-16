@@ -16,7 +16,9 @@ export const ClassSubject = (props: IClassSubject) => {
         <S.ClassPatissier>{props.el.patissier}</S.ClassPatissier>
         <S.ClassName>{props.el.className}</S.ClassName>
         <S.SmallLine></S.SmallLine>
-        <S.ClassPrice>{props.el.price} 원</S.ClassPrice>
+        <S.ClassPrice>
+          {Number(props.el.price).toLocaleString("ko-KR")} 원
+        </S.ClassPrice>
       </S.ClassWrapper>
     </>
   );

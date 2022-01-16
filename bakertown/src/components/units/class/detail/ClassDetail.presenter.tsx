@@ -127,7 +127,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                     <S.ClassStarRate>
                       <S.Star src="/imgs/class/star.png" />
                       <S.Rate>{props.ratingAverage}</S.Rate>
-                      <S.Rater>(1,700)</S.Rater>
+                      <S.Rater>{props.myClass?.review.length}</S.Rater>
                     </S.ClassStarRate>
                     <S.CategoryTag>
                       <S.Category>
@@ -226,7 +226,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <S.ClassStarRate2>
                 <Rate value={props.ratingAverage} />
                 <S.Rate>{props.ratingAverage}</S.Rate>
-                <S.Rater>(1,700)</S.Rater>
+                <S.Rater>{props.myClass?.review.length}</S.Rater>
               </S.ClassStarRate2>
 
               {props.myClass?.review?.map((el: any) => (
@@ -295,7 +295,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 )}
               </S.ClassScheduleWrapper>
               <S.ClassScheduleUnderWrapper>
-                <S.ClassPrice>{props.myClass?.price}원</S.ClassPrice>
+                <S.ClassPrice>
+                  {Number(props.myClass?.price).toLocaleString("ko-KR")}원
+                </S.ClassPrice>
                 <S.ReservationButton onClick={props.reservation}>
                   예약하기
                 </S.ReservationButton>
