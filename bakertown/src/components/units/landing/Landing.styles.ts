@@ -288,9 +288,9 @@ export const HeartToLogin = styled.div`
 export const TopBanner = styled.div`
   width: 100%;
   height: 680px;
-  background-image: url("/imgs/landing/banner03.jpg");
+  background-image: url("/imgs/landing/banner09.jpg");
   position: relative;
-  background-position: bottom 0px center;
+  background-position: bottom -30px center;
   background-size: 110%;
   background-repeat: no-repeat;
   box-sizing: border-box;
@@ -306,6 +306,8 @@ export const TopBanner = styled.div`
     /* visibility: hidden; */
     display: inline;
     width: 100%;
+    background-position: right -49px center;
+    height: 503px;
   }
 `;
 
@@ -351,11 +353,11 @@ export const TextTop = styled.div`
   @media ${breakPoints.mobile} {
     /* visibility: hidden; */
     width: 100%;
-    padding-left: 5%;
+    padding-left: 1%;
   }
 `;
 
-export const TextMiddle = styled.div`
+export const TextMiddleOne = styled.div`
   width: 453px;
   padding-top: 20px;
   font-size: 50px;
@@ -374,15 +376,43 @@ export const TextMiddle = styled.div`
   }
   @media ${breakPoints.mobile} {
     /* visibility: hidden; */
+    width: 75%;
+    padding-left: 1%;
+    font-size: 1.4em;
+  }
+`;
+
+export const TextMiddleTwo = styled.div`
+  width: 453px;
+
+  padding-top: 0px;
+  font-size: 64px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  transition: 800ms;
+  @media ${breakPoints.tablet} {
+    /* visibility: hidden; */
     width: 100%;
     padding-left: 5%;
+  }
+  @media ${breakPoints.mobile} {
+    /* visibility: hidden; */
+    width: 75%;
+    padding-left: 1%;
+    font-size: 1.9em;
+    padding-top: 0.5%;
   }
 `;
 
 export const TextLow = styled.div`
   width: 639px;
   padding-top: 60px;
-  font-size: 32px;
+  font-size: 27px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -398,8 +428,11 @@ export const TextLow = styled.div`
   }
   @media ${breakPoints.mobile} {
     /* visibility: hidden; */
-    width: 100%;
-    padding-left: 5%;
+    width: 51%;
+    padding-left: 1%;
+    font-size: 0.8em;
+    padding-top: 4%;
+}
   }
 `;
 
