@@ -7,7 +7,6 @@ import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
 import { Rate } from "antd";
 import SchedulReservation from "../../../commons/scheduleReservation/schedulReservation";
-import Dompurify from "dompurify";
 
 declare const window: typeof globalThis & {
   kakao: any;
@@ -127,9 +126,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                     <S.ClassStarRate>
                       <S.Star src="/imgs/class/star.png" />
                       <S.Rate>{props.ratingAverage}</S.Rate>
-                      <S.Rater>
-                        &#40;{props.myClass?.review.length}&#41;
-                      </S.Rater>
+                      <S.Rater>(1,700)</S.Rater>
                     </S.ClassStarRate>
                     <S.CategoryTag>
                       <S.Category>
@@ -142,7 +139,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                       <S.SubTheme2Heart src="/imgs/class/heart.png" />
                       {props.myClass?.heart}
                     </S.DibsOnClass>
-                    <S.ClassShare onClick={props.share}>
+                    <S.ClassShare>
                       <S.Share src="/imgs/share.png" />
                       공유
                     </S.ClassShare>
@@ -172,19 +169,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 <S.SubjectTitle>프로그램</S.SubjectTitle>
 
                 <S.ProgramGuideBox>
-                  {process.browser ? (
-                    <S.ProgramContents
-                      dangerouslySetInnerHTML={{
-                        __html: Dompurify.sanitize(
-                          String(props.myClass?.contents)
-                        ),
-                      }}
-                    />
-                  ) : (
-                    <div />
-                  )}
-                  {/* {props.myClass?.contents} */}
-                  {/* </S.ProgramContents> */}
+                  <S.ProgramContents>
+                    {props.myClass?.contents}
+                  </S.ProgramContents>
 
                   <S.ProgramImage></S.ProgramImage>
                 </S.ProgramGuideBox>
@@ -231,7 +218,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               <S.ClassStarRate2>
                 <Rate value={props.ratingAverage} />
                 <S.Rate>{props.ratingAverage}</S.Rate>
-                <S.Rater>&#40;{props.myClass?.review.length}&#41;</S.Rater>
+                <S.Rater>(1,700)</S.Rater>
               </S.ClassStarRate2>
               {props.myClass?.review?.map((el: any) => (
                 <div key={uuidv4()}>
@@ -251,7 +238,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </div>
               ))}
             </S.ClassReviewInfo>
-            {/* <S.ViewMore>177개의 후기 더보기</S.ViewMore> */}
+            <S.ViewMore>177개의 후기 더보기</S.ViewMore>
           </S.IntroWrapper>
           <S.ScheduleWrapper isVisible={false}>
             <S.ClassSchedule>
@@ -286,13 +273,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                           <S.SmallLine></S.SmallLine>
                         </S.ClassDateToClassLine>
                         <S.ClassStartTimeTwo>
-                          <S.DivOne>
-                            신청완료 &nbsp;&nbsp;{el.class.membersName.length}명
-                          </S.DivOne>
-                          <S.DivTwo>
-                            수강인원 &nbsp;&nbsp;
-                            {el.class.member}명
-                          </S.DivTwo>
+                          신청완료 &nbsp;&nbsp;{el.class.membersName.length}명
+                          &nbsp;&nbsp;&nbsp;&nbsp; 수강인원 &nbsp;&nbsp;
+                          {el.class.member}명
                         </S.ClassStartTimeTwo>
                       </S.ClassButton>
                     </S.ClassArrayWrapper>

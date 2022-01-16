@@ -43,17 +43,18 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
             </S.SubTheme2>
           </S.SubComponentWrapper>
           <Slider {...settings}>
-            {/* {props.myStore?.images?.map((el: any) => (
+             {props.myStore?.images?.map((el: any) => (
               <div key={uuidv4()}>
                 <S.ItemImage src={`https://storage.googleapis.com/${el}`} />
               </div>
-            ))} */}
-            <div>
+            ))}
+            {/* <div>
               <S.ImageWrapper>
                 <S.Image src="/imgs/baking.jpg" />
               </S.ImageWrapper>
             </div>
             <div>
+            
               <S.ImageWrapper>
                 <S.Image src="/imgs/chocolat.jpg" />
               </S.ImageWrapper>
@@ -62,7 +63,7 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
               <S.ImageWrapper>
                 <S.Image src="/imgs/cookie.jpg" />
               </S.ImageWrapper>
-            </div>
+            </div> */}
           </Slider>
         </S.ItemIntro>
 
