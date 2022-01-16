@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import { useEffect, useState } from "react";
 import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
+import { message } from "antd";
 
 const DashBoardMyPageContainer = () => {
   const [myIntroduce, setIntroduce] = useState("");
@@ -21,6 +22,7 @@ const DashBoardMyPageContainer = () => {
     await updateDoc(userQuery, {
       introduce: myIntroduce,
     });
+    message.success("등록완료", 1.5);
   };
 
   //회원 탈퇴기능
@@ -38,6 +40,7 @@ const DashBoardMyPageContainer = () => {
     <DashBoardMyPagePresenter
       deleteAccount={deleteAccount}
       onClickIntroduce={onClickIntroduce}
+      setIntroduce={setIntroduce}
     />
   );
 };

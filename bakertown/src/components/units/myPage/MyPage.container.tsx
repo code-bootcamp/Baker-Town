@@ -31,9 +31,10 @@ const MyPageContainer = () => {
       const userQuery = doc(
         getFirestore(firebaseApp),
         "users",
-        currentUser?.email
+        String(currentUser?.email)
       );
       const userResult = await getDoc(userQuery);
+      console.log(userResult.data());
       setMyUser(userResult.data());
     }
   };

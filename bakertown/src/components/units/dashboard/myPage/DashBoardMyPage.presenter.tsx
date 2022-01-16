@@ -67,7 +67,7 @@ const DashBoardMyPagePresenter = (props: IDashBoardMyPageProps) => {
                 <S.Label>파티시에 한 줄 소개</S.Label>
                 <S.Input
                   type="text"
-                  onChange={(e) => setIntroduce(e.target.value)}
+                  onChange={(e) => props.setIntroduce(e.target.value)}
                 />
               </S.InputWrapper>
               <S.ButtonWrapper>
