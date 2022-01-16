@@ -1,3 +1,4 @@
+import { style } from "@mui/system";
 import * as S from "./DashBoardItemWrite.styles";
 import { IDashBoardItemProps } from "./DashBoardItemWrite.types";
 
@@ -11,10 +12,10 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
           <S.ItemName
             type="text"
             onChange={props.onChangeInputs}
-            placeholder="상품명을 입력해 주세요.(20자 제한)"
+            placeholder="상품명을 입력해 주세요.(24자 제한)"
             name="itemName"
             defaultValue={props.myItem?.itemName}
-            maxLength={20}
+            maxLength={24}
           />
         </S.ItemNameWrapper>
         <S.ItemContentsWrapper>

@@ -221,19 +221,21 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
           </S.PatissierInfo> */}
             <S.ClassReviewInfo ref={props.ReviewRef}>
               <S.SubjectTitleMobile onClick={props.review}>
-                실제 수강생 후기
+                수강생 후기
               </S.SubjectTitleMobile>
               <S.ClassStarRate2>
                 <Rate value={props.ratingAverage} />
                 <S.Rate>{props.ratingAverage}</S.Rate>
                 <S.Rater>{props.myClass?.review.length}</S.Rater>
               </S.ClassStarRate2>
+
               {props.myClass?.review?.map((el: any) => (
                 <div key={uuidv4()}>
                   <S.ClassReview>
                     <S.ClassReviewerPhoto src="/imgs/user.png" />
                     <S.Label3>
                       <S.ClassReviewerId>{el.user}</S.ClassReviewerId>
+
                       <S.Label>
                         <S.PersonalRate>
                           <Rate value={el.rating} />
@@ -242,10 +244,12 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                       </S.Label>
                     </S.Label3>
                   </S.ClassReview>
+
                   <S.ReviewBox>{el.contents}</S.ReviewBox>
                 </div>
               ))}
             </S.ClassReviewInfo>
+
             <S.ViewMore>177개의 후기 더보기</S.ViewMore>
           </S.IntroWrapper>
           <S.ScheduleWrapper isVisible={false}>
