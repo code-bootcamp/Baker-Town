@@ -35,7 +35,7 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
             <S.SubTheme2>
               <S.DibsOnItem onClick={props.heart}>
                 <S.Heart src="/imgs/class/heart.png" />
-                찜하기 {props.myStore?.heart}
+                {props.myStore?.heart}
               </S.DibsOnItem>
               <S.DoShare>
                 <S.Share src="/imgs/share.png" />
@@ -76,7 +76,8 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
             <S.Rate>4.7</S.Rate>
             <S.Rater>(1,700)</S.Rater>
           </S.ItemStarRate>
-          {/* <S.Review>
+
+          {/* 이게 1번째 코드 <S.Review>
             {props.myStore?.review?.map((el: any) => (
               <div key={uuidv4()}>
                 <div>{el.user}</div>
@@ -86,6 +87,28 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
               </div>
             ))}
           </S.Review> */}
+
+          {/* 2번쩨 코드, 리뷰 데이터 생기면 참고해서 정리 
+          {props.myStore?.review?.map((el: any) => (
+            <div key={uuidv4()}>
+          <S.ReviewerInfo>
+            <S.ReviewerPhoto src="/imgs/user.png" />
+            <S.ReviewerSubInfo>
+              <S.ReviewerId>클레어</S.ReviewerId>
+              <S.ReviewerSubInfo2>
+                <S.PersonalRate src="/imgs/class/star.png" />
+                <S.PersonalRate src="/imgs/class/star.png" />
+                <S.PersonalRate src="/imgs/class/star.png" />
+                <S.PersonalRate src="/imgs/class/star.png" />
+                <S.PersonalRate src="/imgs/class/star.png" />
+                <S.CreatedDate>6월 28일</S.CreatedDate>
+              </S.ReviewerSubInfo2>
+            </S.ReviewerSubInfo>
+          </S.ReviewerInfo>
+          <S.Review></S.Review>
+          </div>
+            ))} */}
+
           <S.ReviewerInfo>
             <S.ReviewerPhoto src="/imgs/user.png" />
             <S.ReviewerSubInfo>
@@ -109,7 +132,9 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
           <S.SideCategory>{props.myStore?.category}</S.SideCategory>
           <S.SideItemName>{props.myStore?.itemName}</S.SideItemName>
           <S.PriceToBuy>
-            <S.SideItemPrice>{Number(props.myStore?.price).toLocaleString("ko-KR")}원</S.SideItemPrice>
+            <S.SideItemPrice>
+              {Number(props.myStore?.price).toLocaleString("ko-KR")}원
+            </S.SideItemPrice>
             <S.ToBuyButton onClick={props.purchase}>구매하기</S.ToBuyButton>
           </S.PriceToBuy>
         </S.SidebarWrapper>

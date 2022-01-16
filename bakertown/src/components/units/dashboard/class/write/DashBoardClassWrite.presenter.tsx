@@ -13,10 +13,10 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
         <S.ClassName
           type="text"
           onChange={props.onChangeInputs}
-          placeholder="클래스 제목을 입력해 주세요.(20자 제한)"
+          placeholder="클래스 제목을 입력해 주세요.(24자 제한)"
           name="className"
           defaultValue={props.myClass?.className}
-          maxLength={20}
+          maxLength={24}
         />
       </S.ClassNameWrapper>
       {/* <S.ClassPatissierWrapper>

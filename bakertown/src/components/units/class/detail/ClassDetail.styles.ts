@@ -230,9 +230,7 @@ export const SubComponentWrapper = styled.div`
   @media ${breakPoints.mobile} {
     width: 100%;
     display: flex;
-
     justify-content: space-between;
-
     margin-top: 63px;
   }
 

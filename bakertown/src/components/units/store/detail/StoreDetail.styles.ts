@@ -79,6 +79,7 @@ export const SubComponentWrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 80%;
+
   }
 `;
 
@@ -177,6 +178,7 @@ export const SubTheme2 = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 40%;
+    margin-left: 120px;
   }
 `;
 
@@ -440,7 +442,7 @@ export const PersonalRate = styled.img`
   width: 15px;
   height: 15px;
   margin-left: 3px;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -456,7 +458,7 @@ export const CreatedDate = styled.div`
 
 export const Review = styled.div`
   margin-top: 10px;
-  width: 863px;
+  width: 100%;
   height: 200px;
   border-radius: 10px;
   background-color: #f7f7f7;
@@ -488,7 +490,7 @@ export const SidebarWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   background-color: #fff;
-  margin-top: 70px;
+  margin-top: 90px;
   margin-left: 60px;
   padding-top: 15px;
   padding-left: 20px;
@@ -509,13 +511,13 @@ export const SideCategory = styled.div`
 `;
 
 export const SideItemName = styled.div`
-  font-size: 27px;
+  font-size: 30px;
 `;
 
 export const PriceToBuy = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: 50px;
+  margin-top: 40px;
 `
 
 export const SideItemPrice = styled.div`
@@ -525,6 +527,7 @@ export const SideItemPrice = styled.div`
   font-size: 19px;
   font-weight: 600;
   margin-right: 10px;
+  padding-top: 5px;
 `;
 
 export const ToBuyButton = styled.button`
@@ -538,4 +541,8 @@ export const ToBuyButton = styled.button`
   align-items: center;
   color: white;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    cursor: pointer;
+  }
 `;
