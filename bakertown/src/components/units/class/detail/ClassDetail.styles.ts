@@ -284,6 +284,10 @@ export const Rate = styled.div`
   font-weight: bold;
   margin-left: 20px;
 
+  @media ${breakPoints.tablet} {
+    padding-left: 3%;
+  }
+
   @media ${breakPoints.mobile} {
     margin-left: 12px;
     font-size: 1em;
@@ -291,7 +295,7 @@ export const Rate = styled.div`
 `;
 
 export const Rater = styled.div`
-  width: 57px;
+  /* width: 57px; */
   height: 25px;
   margin-left: 20px;
   margin-bottom: 5px;
@@ -302,7 +306,7 @@ export const Rater = styled.div`
     /* width: 30px; */
     margin-right: 0px;
     padding-right: 0px;
-    width: 100%;
+    /* width: 100%; */
     /* background: brown; */
   }
 
@@ -432,6 +436,8 @@ export const ClassImage = styled.img`
   background-color: #c4c4c4;
   margin-top: 20px;
   object-fit: cover;
+  background-position: center center;
+
   @media ${breakPoints.mobile} {
     border: 1px solid black;
     width: 96%;
@@ -462,6 +468,10 @@ export const ClassRemarksTitle = styled.div`
   text-align: left;
   color: #1e1e1e;
 
+  @media ${breakPoints.tablet} {
+    font-size: 1.3em;
+  }
+
   @media ${breakPoints.mobile} {
     width: 93%;
     font-size: 1.6em;
@@ -482,6 +492,10 @@ export const ClassRemarksDetail = styled.div`
     margin-top: 30px;
     width: 91%;
     margin-left: 21px;
+    font-size: 1.1em;
+  }
+
+  @media ${breakPoints.tablet} {
     font-size: 1.1em;
   }
 `;
@@ -911,6 +925,8 @@ export const ClassSchedule = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 26px;
+  :white ;
+
   @media ${breakPoints.mobile} {
     /* display: none; */
   }
@@ -947,7 +963,7 @@ export const SmallTitle = styled.div`
 `;
 
 export const SmallSmallTitle = styled.div`
-  font-size: 15px;
+  font-size: 17px;
   font-weight: normal;
   padding-top: 3px;
   margin-bottom: 4px;
@@ -958,6 +974,7 @@ export const ClassArrayWrapper = styled.div`
     background-color: rgba(0, 0, 0, 0.06);
     cursor: pointer;
   }
+  width: 80%;
   background: rgba(247, 240, 232, 0.5);
   padding-bottom: 10px;
   margin-bottom: 3px;
@@ -973,7 +990,6 @@ export const ClassArrayWrapper = styled.div`
 `;
 
 export const ClassButton = styled.div`
-  width: 303px;
   /* height: 100px; */
   padding-top: 15px;
   /* padding-left: 14.5px; */
@@ -992,6 +1008,7 @@ export const ClassDateToClassLine = styled.div`
   align-items: center;
   @media ${breakPoints.tablet} {
     width: 100%;
+    padding-left: 10px;
   }
 `;
 
@@ -1016,10 +1033,10 @@ export const SmallLine = styled.div`
   margin-top: 13px;
   margin-bottom: 15px;
   border-bottom: 1px solid rgba(79, 51, 37, 0.4);
-  width: 267px;
+  width: 80%;
   @media ${breakPoints.tablet} {
-    width: 65%;
-    margin-right: 30%;
+    width: 90%;
+    margin-right: 2%;
   }
 `;
 export const ClassStartTime = styled.div`
@@ -1032,14 +1049,16 @@ export const DivTwo = styled.div``;
 export const ClassStartTimeTwo = styled.div`
   display: flex;
   justify-content: space-around;
+  font-size: 17px;
 
   @media ${breakPoints.tablet} {
     /* background-color: lightblue; */
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    font-size: 15px;
-    margin-left: 8px;
+    /* justify-content: space-around;; */
+    font-size: 13px;
+    padding: 0px 4px 0px 4px;
+    /* margin-left: 8px; */
   }
 `;
 

@@ -282,6 +282,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                               수업시간 |&nbsp;&nbsp; {el.class.runningTime}
                             </S.ClassRunningTime>
                           </S.ClassDateToClassTime>
+                          {/* <S.LineToTimeTwo> */}
                           <S.SmallLine></S.SmallLine>
                         </S.ClassDateToClassLine>
                         <S.ClassStartTimeTwo>
@@ -289,6 +290,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                           &nbsp;&nbsp;&nbsp;&nbsp; 수강인원 &nbsp;&nbsp;
                           {el.class.member}명
                         </S.ClassStartTimeTwo>
+                        {/* </S.LineToTimeTwo> */}
                       </S.ClassButton>
                     </S.ClassArrayWrapper>
                   )
