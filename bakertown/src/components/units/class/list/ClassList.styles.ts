@@ -4,7 +4,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 export const Wrapper = styled.div`
   display: flex;
   height: 100%;
-  min-height: 700px;
+  min-height: 810px;
   scroll-behavior: smooth;
   @media ${breakPoints.mobile} {
     width: 100%;

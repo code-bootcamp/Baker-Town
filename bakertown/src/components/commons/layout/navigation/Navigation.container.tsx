@@ -5,15 +5,20 @@ const NavigationContainer = () => {
   const router = useRouter();
 
   const navArray = [
-    { text: "클래스", src: "/imgs/star.png", link: `/class` },
-    { text: "스토어", src: "/imgs/star.png", link: `/store` },
-    { text: "카테고리", src: "/imgs/star.png", link: `/category` },
+    { text: "홈", src: "/imgs/mobile/house.png", link: `/` },
+    { text: "카테고리", src: "/imgs/mobile/square.png", link: `/category` },
     {
-      text: "마이페이지",
-      src: "/imgs/star.png",
+      text: "채팅",
+      src: "/imgs/mobile/messages.png",
+      link: `/myPage/chatListMobile`,
+    },
+    {
+      text: "내정보",
+      src: "/imgs/mobile/info.png",
       link: `/myPage/nav`,
     },
   ];
+
   const onClickNav = (el: { link: string }) => () => {
     router.push(`${el.link}`);
   };
