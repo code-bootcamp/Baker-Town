@@ -13,6 +13,7 @@ import {
 } from "firebase/firestore";
 import { useRouter } from "next/router";
 
+// 해당 리스트 페이지는 chatRoomOnly 페이지에 종속되는 페이지이며, 모바일 전용은 chatListMobile 페이지입니다.
 const ChatListContainer = () => {
   const router = useRouter();
   const [messages, setMessages] = useState([]);
