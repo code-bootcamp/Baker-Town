@@ -74,7 +74,7 @@ const DashBoardItemPresenter = (props: IDashBoardItemProps) => {
           <S.DeliverySchedule
             type="text"
             onChange={props.onChangeInputs}
-            placeholder="배송일정"
+            placeholder="배송과정에 대한 설명을 입력해 주세요."
             name="shippingTime"
             defaultValue={props.myItem?.shippingTime}
           />

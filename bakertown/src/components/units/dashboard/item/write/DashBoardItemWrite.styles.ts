@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
+  /* height: 1200px; */
   margin-top: 30px;
   margin-left: 90px;
   display: flex;
@@ -79,6 +79,7 @@ export const ItemPriceTitle = styled.div``;
 
 export const ItemPrice = styled.input`
   width: 300px;
+  padding-left: 10px;
 `;
 
 export const DeliveryScheduleWrapper = styled.div`
@@ -90,15 +91,20 @@ export const DeliveryScheduleWrapper = styled.div`
 export const DeliveryTitle = styled.div``;
 
 export const DeliverySchedule = styled.input`
-  width: 100%;
+  width: 900px;
+  height: 150px;
+  padding-left: 10px;
+  padding-bottom: 108px;
+  color: #EAEAEA
   overflow: auto;
 `;
 
 export const SubmitButton = styled.button`
   width: 110px;
   height: 40px;
-  margin-top: 30px;
-  margin-left: 400px;
+  margin-top: 60px;
+  margin-left: 380px;
+  margin-bottom: 100px;
   border: none;
   border-radius: 19px;
   background-color: #662500;
