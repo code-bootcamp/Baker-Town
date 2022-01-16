@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 import * as S from "../detail/StoreDetail.styles";
 import { IStoreDetailPresenterProps } from "./StoreDetail.types";
 import { v4 as uuidv4 } from "uuid";
-import { Rate } from "antd";
 
 const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
   const settings = {
@@ -109,7 +108,9 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
           <S.SideCategory>{props.myStore?.category}</S.SideCategory>
           <S.SideItemName>{props.myStore?.itemName}</S.SideItemName>
           <S.PriceToBuy>
-            <S.SideItemPrice>{Number(props.myStore?.price).toLocaleString("ko-KR")}원</S.SideItemPrice>
+            <S.SideItemPrice>
+              {Number(props.myStore?.price).toLocaleString("ko-KR")}원
+            </S.SideItemPrice>
             <S.ToBuyButton onClick={props.purchase}>구매하기</S.ToBuyButton>
           </S.PriceToBuy>
         </S.SidebarWrapper>

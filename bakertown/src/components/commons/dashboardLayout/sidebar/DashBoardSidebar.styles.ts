@@ -46,6 +46,11 @@ export const ListWrapper = styled.div`
 export const ListItems = styled(ListItem)`
   width: 100%;
   padding-left: 30px;
+  cursor: default;
+  :hover {
+    background-color: lightgrey;
+    font-weight: bold;
+  }
   /* background-color: gray; */
 `;
 // 추후 사이드바 높이 반응형으로 조절하기.

@@ -21,7 +21,9 @@ const DashBoardItemReadPresenter = (
           <S.ItemListContents>
             {props.recent.map((el: any) => (
               <S.ItemWrapper key={uuidv4()}>
-                <S.ItemImage />
+                <S.ItemImage
+                  src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                />
                 <S.Seller></S.Seller>
                 <S.ItemName>{el.itemName}</S.ItemName>
                 <S.Line></S.Line>
