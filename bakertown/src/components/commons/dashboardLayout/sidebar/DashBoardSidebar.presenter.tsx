@@ -19,59 +19,41 @@ const DashBoardSidebarPresenter = (props: IDashBoardSidebarProps) => {
           ></S.LogoImage>
         </S.LogoWrapper>
         <S.ListWrapper>
-          <S.ListItems>
+          <S.ListItems onClick={props.onClickDashBoardMainPage}>
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
-            <ListItemText
-              primary="메인 보드"
-              onClick={props.onClickDashBoardMainPage}
-            />
+            <ListItemText primary="메인 보드" />
           </S.ListItems>
-          <S.ListItems>
+          <S.ListItems onClick={props.onClickDashBoardClassWritePage}>
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
-            <ListItemText
-              primary="클래스 등록"
-              onClick={props.onClickDashBoardClassWritePage}
-            />
+            <ListItemText primary="클래스 등록" />
           </S.ListItems>
-          <S.ListItems>
+          <S.ListItems onClick={props.onClickDashBoardClassReadPage}>
             <ListItemIcon>
               <ShoppingCartIcon />
             </ListItemIcon>
-            <ListItemText
-              primary="클래스 관리"
-              onClick={props.onClickDashBoardClassReadPage}
-            />
+            <ListItemText primary="클래스 관리" />
           </S.ListItems>
-          <S.ListItems>
+          <S.ListItems onClick={props.onClickDashBoardProductsWritePage}>
             <ListItemIcon>
               <BarChartIcon />
             </ListItemIcon>
-            <ListItemText
-              primary="상품 등록"
-              onClick={props.onClickDashBoardProductsWritePage}
-            />
+            <ListItemText primary="상품 등록" />
           </S.ListItems>
-          <S.ListItems>
+          <S.ListItems onClick={props.onClickDashBoardProductReadPage}>
             <ListItemIcon>
               <PeopleIcon />
             </ListItemIcon>
-            <ListItemText
-              primary="상품 관리"
-              onClick={props.onClickDashBoardProductReadPage}
-            />
+            <ListItemText primary="상품 관리" />
           </S.ListItems>
-          <S.ListItems>
+          <S.ListItems onClick={props.onClickDashBoardMyPagePage}>
             <ListItemIcon>
               <LayersIcon />
             </ListItemIcon>
-            <ListItemText
-              primary="마이페이지"
-              onClick={props.onClickDashBoardMyPagePage}
-            />
+            <ListItemText primary="마이페이지" />
           </S.ListItems>
         </S.ListWrapper>
       </S.Wrapper>

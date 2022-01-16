@@ -7,7 +7,10 @@ const DashBoardClassReadPresenter = (props: IDashBoardClassReadProps) => {
     <S.Wrapper>
       {props.class.map((el: any) => (
         <S.ComponentWrapper key={uuidv4()}>
-          <S.ImageWrapper onClick={props.classDetail(el)} />
+          <S.ImageWrapper
+            onClick={props.classDetail(el)}
+            src={`https://storage.googleapis.com/${el.images?.[0]}`}
+          />
           <S.DetailWrapper>
             <S.CategoryWrapper>{el.category}</S.CategoryWrapper>
             <S.TitleWrapper onClick={props.classDetail(el)}>

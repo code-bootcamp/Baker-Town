@@ -27,7 +27,7 @@ export const ComponentWrapper = styled.div`
 
 export const DetailWrapper = styled.div``;
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled.img`
   width: 162px;
   height: 140px;
   border-radius: 10px;

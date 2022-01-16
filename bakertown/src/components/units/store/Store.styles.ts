@@ -64,6 +64,7 @@ export const SubjectTitle = styled.div`
 export const SubjectView = styled.div`
   font-size: 16px;
   padding-top: 20px;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     padding-top: 0;

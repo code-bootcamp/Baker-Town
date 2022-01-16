@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 import * as S from "../detail/StoreDetail.styles";
 import { IStoreDetailPresenterProps } from "./StoreDetail.types";
 import { v4 as uuidv4 } from "uuid";
-import { Rate } from "antd";
 
 const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
   const settings = {
