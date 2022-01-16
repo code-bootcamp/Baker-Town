@@ -152,7 +152,7 @@ const ClassDetailContainer = () => {
       await updateDoc(userQuery, {
         afterPar: myBeforeParClass,
       });
-      alert("예약이 완료되었습니다.");
+      message.success("예약이 완료되었습니다.", 1.5);
       location.reload();
     } else {
       message.error("회원만 가능합니다.", 2);

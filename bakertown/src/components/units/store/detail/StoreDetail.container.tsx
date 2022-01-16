@@ -5,6 +5,7 @@ import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
 import { getOnlyDate } from "../../../../commons/libraries/getDate";
 import { getAuth } from "firebase/auth";
+import { message } from "antd";
 
 const StoreDetailContainer = () => {
   const router = useRouter();
@@ -74,9 +75,9 @@ const StoreDetailContainer = () => {
       await updateDoc(userQuery, {
         boughtItem: myBoughtItem,
       });
-      alert("구매가 완료되었습니다.");
+      message.success("구매가 완료되었습니다.", 1.5);
     } else {
-      alert("회원만 가능합니다.");
+      message.error("회원만 가능합니다.", 2);
     }
   };
 

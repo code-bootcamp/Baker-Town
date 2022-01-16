@@ -55,6 +55,10 @@ const AvatarPage = (props: IAvatarPageProps) => {
   const onClickMyItem = () => {
     router.push(`/myPage/item/orderHistory`);
   };
+  const onClickMessage = () => {
+    router.push(`/myPage/chatRoom/1/1/`);
+  };
+
   const onClickMyPage = () => {
     router.push(`/myPage`);
   };
@@ -161,6 +165,12 @@ const AvatarPage = (props: IAvatarPageProps) => {
             <PersonAdd fontSize="small" />
           </ListItemIcon>
           내 아이템
+        </MenuItem>
+        <MenuItem onClick={onClickMessage}>
+          <ListItemIcon>
+            <PersonAdd fontSize="small" />
+          </ListItemIcon>
+          메세지
         </MenuItem>
         <MenuItem onClick={handlesSignOut}>
           <ListItemIcon>

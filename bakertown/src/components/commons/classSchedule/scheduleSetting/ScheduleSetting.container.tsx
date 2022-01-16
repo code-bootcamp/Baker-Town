@@ -2,6 +2,7 @@ import { ChangeEvent, ChangeEventHandler, useState } from "react";
 import { getOnlyDate } from "../../../../commons/libraries/getDate";
 import ScheduleSettingPresenter from "./ScheduleSetting.presenter";
 import { IScheduleSettingContainer } from "./ScheduleSetting.types";
+import { message } from "antd";
 
 const ScheduleSettingContainer = (props: IScheduleSettingContainer) => {
   const [date, setDate] = useState("");
@@ -19,7 +20,7 @@ const ScheduleSettingContainer = (props: IScheduleSettingContainer) => {
 
   const onChangeMemberInput = (event: ChangeEvent<HTMLInputElement>) => {
     if (Number(event.target.value) < 1) {
-      alert("수강 인원을 1명 이상 선택해 주세요.");
+      message.error("수강 인원을 1명 이상 선택해 주세요.", 1.5);
       event.target.value = "1";
     }
     setMemberCount(Number(event.target.value));
@@ -40,7 +41,7 @@ const ScheduleSettingContainer = (props: IScheduleSettingContainer) => {
       },
     };
     props.classSchedule?.push(classObject);
-    alert("스케쥴이 추가되었습니다.");
+    message.success("스케쥴이 추가되었습니다.");
     props.toggleModal();
     setDate(""), setTime(""), setRunningTime(""), setMemberCount(0);
   };
