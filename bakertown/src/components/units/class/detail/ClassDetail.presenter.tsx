@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useEffect } from "react";
 import { Rate } from "antd";
 import SchedulReservation from "../../../commons/scheduleReservation/schedulReservation";
+import Dompurify from "dompurify";
 
 declare const window: typeof globalThis & {
   kakao: any;
@@ -171,9 +172,19 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 <S.SubjectTitle>프로그램</S.SubjectTitle>
 
                 <S.ProgramGuideBox>
-                  <S.ProgramContents>
-                    {props.myClass?.contents}
-                  </S.ProgramContents>
+                  {process.browser ? (
+                    <S.ProgramContents
+                      dangerouslySetInnerHTML={{
+                        __html: Dompurify.sanitize(
+                          String(props.myClass?.contents)
+                        ),
+                      }}
+                    />
+                  ) : (
+                    <div />
+                  )}
+                  {/* {props.myClass?.contents} */}
+                  {/* </S.ProgramContents> */}
 
                   <S.ProgramImage></S.ProgramImage>
                 </S.ProgramGuideBox>

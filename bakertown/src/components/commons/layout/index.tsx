@@ -51,10 +51,11 @@ export default function Layout(props: ILayoutProps) {
   const router = useRouter();
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
-  const isShownDetailNavigation = SHOWN_DETAIL_NAVIGATION.includes(
-    router.asPath
+  const isShownDetailNavigation = router.asPath.startsWith(
+    "/class/detail" || "/store/detail"
   );
 
+  console.log(isShownDetailNavigation);
   return (
     <>
       <Wrapper>
