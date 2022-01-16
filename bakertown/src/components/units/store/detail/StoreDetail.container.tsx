@@ -126,6 +126,8 @@ const StoreDetailContainer = () => {
     alert("아이템을 찜 목록에 담았습니다!");
   };
 
+  
+
   return (
     <StoreDetailPresenter
       myStore={myStore}
