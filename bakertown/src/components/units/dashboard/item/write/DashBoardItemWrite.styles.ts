@@ -95,7 +95,6 @@ export const DeliverySchedule = styled.input`
   height: 150px;
   padding-left: 10px;
   padding-bottom: 108px;
-  color: #EAEAEA
   overflow: auto;
 `;
 
