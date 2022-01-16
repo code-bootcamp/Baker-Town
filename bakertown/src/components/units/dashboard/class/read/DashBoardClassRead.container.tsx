@@ -24,10 +24,10 @@ const DashBoardClassReadContainer = () => {
   const dashBoardClassReadContents = async () => {
     const product = query(
       collection(getFirestore(firebaseApp), "class"),
-      where("patissierId", "!=", "")
+      // where("patissierId", "!=", "")
       // where("createdAt", "!=", "")
-      // orderBy("createdAt", "desc")
-      // where("patissierId", "==", currentUser?.uid)
+      orderBy("createdAt", "desc"),
+      where("patissierId", "==", currentUser?.uid)
     );
 
     const data = await getDocs(product);
