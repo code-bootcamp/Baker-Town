@@ -3,7 +3,7 @@ import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -94,7 +94,7 @@ export const PasswordLabel = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-top: 16px;
+  padding-top: 50px;
   color: rgba(0, 0, 0, 0.7.5);
 `;
 

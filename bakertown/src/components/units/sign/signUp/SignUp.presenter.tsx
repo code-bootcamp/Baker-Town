@@ -104,7 +104,7 @@ const SignUpPresenter = (props: ISignUpPresenterProps) => {
             placeholder="6자리이상 입력해주세요"
           />
           <S.PhoneLabel>phone</S.PhoneLabel>
-          <S.Phone ref={phoneRef} placeholder="번호를 입력해주세요" />
+          <S.Phone ref={phoneRef} placeholder="010-0000-0000" />
           <S.Check type="checkbox" value="테스트" onChange={checkPatissier} />
           파티셰로 가입하기
           <S.SignUpButton
