@@ -526,6 +526,7 @@ export const ProgramGuideBox = styled.div`
 export const ProgramContents = styled.div`
   font-size: 20px;
   font-weight: normal;
+  line-height: 10px;
 
   @media ${breakPoints.mobile} {
     width: 100%;

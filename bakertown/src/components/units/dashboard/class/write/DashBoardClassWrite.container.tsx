@@ -1,4 +1,10 @@
-import { ChangeEvent, SetStateAction, useEffect, useState } from "react";
+import {
+  ChangeEvent,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { getDate, getOnlyDate } from "../../../../../commons/libraries/getDate";
 import { plusMyung } from "../../../../../commons/libraries/stringConcatenate";
 import {
@@ -15,6 +21,7 @@ import { useMutation } from "@apollo/client";
 import { UPLOAD_FILE } from "./DashBoardClassWrite.queries";
 import { useRouter } from "next/router";
 import { IDashBoardMainClassWriteContainerProps } from "./DashBoardClassWrite.types";
+import { useForm } from "react-hook-form";
 
 const DashBoardMainClassWriteContainer = (
   props: IDashBoardMainClassWriteContainerProps
@@ -62,7 +69,13 @@ const DashBoardMainClassWriteContainer = (
 
   const currentUser: any = useAuth();
 
+  const contentsRef = useRef("");
+
   const [uploadFile] = useMutation(UPLOAD_FILE);
+
+  const { handleSubmit, register, setValue, trigger } = useForm({
+    mode: "onChange",
+  });
 
   const onToggleModal = () => {
     setIsOpen((prev) => !prev);
@@ -97,6 +110,7 @@ const DashBoardMainClassWriteContainer = (
     );
     const userResult: any = await getDoc(userQuery);
     // 등록 날짜 및 시간 설정
+    console.log(classSchedule);
     myInputs.applyClass.classArray = classSchedule;
 
     // myInputs.applyClass.push("aaa");
@@ -131,7 +145,7 @@ const DashBoardMainClassWriteContainer = (
     await addDoc(dashboardclasswrite, {
       ...myInputs,
     });
-
+    console.log(myInputs);
     alert("클래스가 등록되었습니다.");
     router.push(`/dashboard/class/read`);
   };
@@ -252,6 +266,27 @@ const DashBoardMainClassWriteContainer = (
     updateClass();
   }, []);
 
+  const onChangeContents = (value) => {
+    setMyInputs({
+      className: myInputs.className,
+      contents: value,
+      remarks: myInputs.remarks,
+      address: myInputs.address,
+      district: myInputs.district,
+      category: myInputs.category,
+      price: myInputs.price,
+      applyClass: myInputs.applyClass,
+      images: myInputs.images,
+      patissier: myInputs.patissier,
+      patissierId: myInputs.patissierId,
+      heart: myInputs.heart,
+      review: myInputs.review,
+      detailAddress: myInputs.detailAddress,
+      introduce: myInputs.introduce,
+      createdAt: "",
+    });
+  };
+
   return (
     <DashBoardMainClassWritePresenter
       isOpen={isOpen}
@@ -271,6 +306,8 @@ const DashBoardMainClassWriteContainer = (
       isEdit={props.isEdit}
       myClass={myClass}
       onClickUpdate={onClickUpdate}
+      onChangeContents={onChangeContents}
+      contentsRef={contentsRef}
     />
   );
 };

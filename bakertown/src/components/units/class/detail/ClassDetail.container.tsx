@@ -52,18 +52,16 @@ const ClassDetailContainer = () => {
       );
       const result = await getDoc(product);
       const classData: any = result.data();
-      // console.log("클래스 정보", classData);
+      console.log("클래스 정보", classData);
       setMyClass(classData);
 
       if (classData?.review?.length === 0) return;
 
       const arry = classData?.review?.map((el: any) => el.rating);
       // classData?.review?.[0]?.rating
-      console.log("arry", arry);
 
       const reviewFunction =
         arry?.reduce((acc: any, cur: any) => acc + cur) / arry?.length;
-      console.log(reviewFunction);
       setRatingAverage(reviewFunction ? Number(reviewFunction) : Number("0"));
     }
   };
@@ -106,7 +104,6 @@ const ClassDetailContainer = () => {
         className: myClass?.className,
         price: myClass?.price,
       };
-      console.log(buyInfo);
 
       // 현재 페이지의 예약정보
       const currentReservInfo: any = myClass?.applyClass;
@@ -128,7 +125,6 @@ const ClassDetailContainer = () => {
       );
       //나의 포인트 잔액
       await updateDoc(userQuery, { mypoint: charge });
-      console.log(charge);
       await updateDoc(bakeryClass, {
         applyClass: {
           ...currentReservInfo,
@@ -161,7 +157,6 @@ const ClassDetailContainer = () => {
 
   const onClickSelectDate = (el: any, index: number) => () => {
     // setMyDate(myClass?.applyClass?.classArray?.[index].class.date);
-    console.log(el);
     message.success(
       `${el?.class?.date} 날짜의 ${el?.class?.start} 시간을 선택하셨습니다.`,
       2
@@ -188,7 +183,6 @@ const ClassDetailContainer = () => {
       currentUser?.email
     );
     const userResult: any = await getDoc(userQuery);
-    console.log("내정보", userResult);
     // 현재 페이지의 리뷰정보
     const currentReview: any = myClass?.review;
 
@@ -216,7 +210,6 @@ const ClassDetailContainer = () => {
       classRouter: router.query.classId,
       ...myReview,
     };
-    console.log(userReview);
     userReview?.push(reviewInfo);
     await updateDoc(userQuery, {
       review: userReview,

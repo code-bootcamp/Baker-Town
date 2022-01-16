@@ -51,12 +51,16 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
       </S.ClassRemarksWrapper>
       <S.ClassContentsWrapper>
         <S.ClassContentsTitle>클래스 소개 입력</S.ClassContentsTitle>
-        <S.ClassContents
-          onChange={props.onChangeInputs}
-          placeholder="클래스 소개를 자세히 입력해 주세요."
-          name="contents"
-          defaultValue={props.myClass?.contents}
-        />
+        {process.browser && (
+          <S.ClassContents
+            // name="contents"
+            // onChange={props.onChangeInputs}
+            onChange={props.onChangeContents}
+            // placeholder="클래스 소개를 자세히 입력해 주세요."
+            // value={props.myClass?.contents}
+          />
+        )}
+        {/* <ReactQuill /> */}
       </S.ClassContentsWrapper>
       <S.ClassPriceWrapper>
         <S.ClassPriceTitle>클래스 가격</S.ClassPriceTitle>
