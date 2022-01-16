@@ -281,8 +281,7 @@ export const HeartToLogin = styled.div`
   }
   @media ${breakPoints.mobile} {
     /* visibility: hidden; */
-    display: none;
-    /* padding-left: 5%; */
+    display: none
   }
 `;
 

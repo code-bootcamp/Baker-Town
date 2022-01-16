@@ -22,6 +22,7 @@ export interface ILandingPresenterProps {
   enterKey: () => void;
   classDetail: (el: any) => () => void;
   bakingList: () => void;
+  scrollPosition: number;
 }
 export interface IClassSubject {
   el: any;
