@@ -275,9 +275,13 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                           <S.SmallLine></S.SmallLine>
                         </S.ClassDateToClassLine>
                         <S.ClassStartTimeTwo>
-                          신청완료 &nbsp;&nbsp;{el.class.membersName.length}명
-                          &nbsp;&nbsp;&nbsp;&nbsp; 수강인원 &nbsp;&nbsp;
-                          {el.class.member}명
+                          <S.DivOne>
+                            신청완료 &nbsp;&nbsp;{el.class.membersName.length}명
+                          </S.DivOne>
+                          <S.DivTwo>
+                            수강인원 &nbsp;&nbsp;
+                            {el.class.member}명
+                          </S.DivTwo>
                         </S.ClassStartTimeTwo>
                       </S.ClassButton>
                     </S.ClassArrayWrapper>

@@ -186,7 +186,7 @@ export const IntroWrapper = styled.div`
   }
 
   @media ${breakPoints.tablet} {
-    width: 70%;
+    width: 60%;
   }
 `;
 
@@ -237,7 +237,10 @@ export const SubComponentWrapper = styled.div`
   }
 
   @media ${breakPoints.tablet} {
-    width: 80%;
+    width: 100%;
+    display: flex;
+
+    justify-content: space-between;
   }
 `;
 
@@ -296,6 +299,15 @@ export const Rater = styled.div`
   margin-bottom: 5px;
   font-size: 20px;
   color: rgba(95, 95, 95, 0.5);
+
+  @media ${breakPoints.tablet} {
+    /* width: 30px; */
+    margin-right: 0px;
+    padding-right: 0px;
+    width: 100%;
+    /* background: brown; */
+  }
+
   @media ${breakPoints.mobile} {
     display: none;
   }
@@ -312,9 +324,17 @@ export const Category = styled.div`
   margin-left: 15px;
   margin-top: 2px;
 
+  @media ${breakPoints.tablet} {
+    width: 153px;
+    font-size: 1.2em;
+
+    /* background: pink; */
+  }
+
   @media ${breakPoints.mobile} {
     width: 100%;
     font-size: 0.9em;
+
     margin-right: 23px;
   }
 `;
@@ -334,6 +354,7 @@ export const SubTheme2 = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 40%;
+    /* background: yellow; */
   }
 `;
 
@@ -360,6 +381,9 @@ export const DibsOnClass = styled.div`
   font-weight: bold;
   cursor: pointer;
 
+  @media ${breakPoints.tablet} {
+    width: 140px;
+  }
   @media ${breakPoints.mobile} {
     display: none;
   }
@@ -893,8 +917,9 @@ export const ClassSchedule = styled.div`
   }
 
   @media ${breakPoints.tablet} {
-    width: 25%;
-    padding-top: 0px;
+    width: 33%;
+    padding-top: 8px;
+    /* background: darkgray; */
   }
 `;
 
@@ -978,7 +1003,8 @@ export const ClassDateToClassTime = styled.div`
   width: 100%;
   padding-left: 28px;
   @media ${breakPoints.tablet} {
-    width: 100%;
+    padding-left: 10px;
+    /* background: purple; */
   }
 `;
 
@@ -993,7 +1019,7 @@ export const SmallLine = styled.div`
   border-bottom: 1px solid rgba(79, 51, 37, 0.4);
   width: 267px;
   @media ${breakPoints.tablet} {
-    width: 57%;
+    width: 65%;
     margin-right: 30%;
   }
 `;
@@ -1001,14 +1027,20 @@ export const ClassStartTime = styled.div`
   /* font-weight: bold; */
 `;
 
+export const DivOne = styled.div``;
+export const DivTwo = styled.div``;
+
 export const ClassStartTimeTwo = styled.div`
   display: flex;
   justify-content: space-around;
 
   @media ${breakPoints.tablet} {
-    /* background-color: pink; */
-    width: 49%;
-    /* font-size: 0.1em; */
+    /* background-color: lightblue; */
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 15px;
+    margin-left: 8px;
   }
 `;
 

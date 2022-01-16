@@ -21,6 +21,7 @@ export const InnerWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+
   @media ${breakPoints.tablet} {
     width: 100%;
   }
@@ -33,7 +34,6 @@ export const InnerLogo = styled.div`
   width: 115px;
   height: 42px;
   @media ${breakPoints.tablet} {
-    width: 100%;
   }
   @media ${breakPoints.mobile} {
     display: none;
@@ -44,8 +44,9 @@ export const FirstColumn = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 162px;
+
   @media ${breakPoints.tablet} {
-    width: 100%;
+    padding-left: 60px;
   }
   @media ${breakPoints.mobile} {
     display: none;
@@ -61,7 +62,7 @@ export const ClassTitle = styled.div`
   text-align: left;
   color: #706b68;
   @media ${breakPoints.tablet} {
-    width: 100%;
+    display: none;
   }
   @media ${breakPoints.mobile} {
     display: none;
@@ -78,8 +79,8 @@ export const ClassTitle2 = styled.div`
   color: #706b68;
   padding-top: 4px;
   @media ${breakPoints.tablet} {
-    /* display: none; */
-    width: 100%;
+    display: none;
+    /* width: 100%; */
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
@@ -153,7 +154,7 @@ export const Img = styled.img`
   height: 42px;
 
   @media ${breakPoints.tablet} {
-    width: 100%;
+margin-left: 32px;
   }
   @media ${breakPoints.mobile} {
     display: none;
@@ -209,8 +210,12 @@ export const LastColumn = styled.div`
   color: #706b68;
   padding-left: 195px;
   padding-top: 35px;
+
   @media ${breakPoints.tablet} {
     width: 100%;
+    padding-left: 30px;
+    padding-top: 0px;
+    padding-bottom: 10px;
   }
   @media ${breakPoints.mobile} {
     display: none;
