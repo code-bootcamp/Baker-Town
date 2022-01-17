@@ -21,8 +21,13 @@ const StoreDetailContainer = () => {
     price: 0,
     images: [],
   });
+  const [count, setCount] = useState(0);
 
   const storeDetail = async () => {
+    if (!currentUser) {
+      setCount((prev) => prev + 1);
+      return;
+    }
     if (myStore?.itemName === "로딩중입니다") {
       const product = doc(
         getFirestore(firebaseApp),
@@ -39,7 +44,7 @@ const StoreDetailContainer = () => {
 
   useEffect(() => {
     storeDetail();
-  });
+  }, [count]);
 
   const currentID = getAuth().currentUser?.uid;
   const onClickPurchase = async () => {
@@ -125,8 +130,6 @@ const StoreDetailContainer = () => {
     });
     alert("아이템을 찜 목록에 담았습니다!");
   };
-
-  
 
   return (
     <StoreDetailPresenter

@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 77px;
+  padding-bottom: 100px;
 
   @media ${breakPoints.tablet} {
     padding-left: 2%;
@@ -97,6 +98,7 @@ export const OrderWrapper = styled.div`
   box-shadow: 3px 5px 20px 0 rgba(0, 0, 0, 0.1);
   border: solid 0.5px #e2e2e2;
   display: flex;
+  margin-bottom: 50px;
   padding-left: 30px;
   padding-top: 20px;
   display: flex;

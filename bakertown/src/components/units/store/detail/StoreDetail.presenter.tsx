@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import * as S from "../detail/StoreDetail.styles";
 import { IStoreDetailPresenterProps } from "./StoreDetail.types";
 import { v4 as uuidv4 } from "uuid";
+import { Rate } from "antd";
 
 const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
   const settings = {
@@ -87,28 +88,29 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
             ))}
           </S.Review> */}
 
-          {/* 2번쩨 코드, 리뷰 데이터 생기면 참고해서 정리 
-          {props.myStore?.review?.map((el: any) => (
+          {props.myStore?.itemReview?.map((el: any) => (
             <div key={uuidv4()}>
-          <S.ReviewerInfo>
-            <S.ReviewerPhoto src="/imgs/user.png" />
-            <S.ReviewerSubInfo>
-              <S.ReviewerId>클레어</S.ReviewerId>
-              <S.ReviewerSubInfo2>
+              <S.ReviewerInfo>
+                <S.ReviewerPhoto src={"/imgs/user.png"} />
+                <S.ReviewerSubInfo>
+                  <S.ReviewerId>{el.user}</S.ReviewerId>
+                  <S.ReviewerSubInfo2>
+                    <S.PersonalRate>
+                      {/* <Rate value={el.rating} /> */}
+                    </S.PersonalRate>
+                    {/* <S.PersonalRate src="/imgs/class/star.png" />
                 <S.PersonalRate src="/imgs/class/star.png" />
                 <S.PersonalRate src="/imgs/class/star.png" />
-                <S.PersonalRate src="/imgs/class/star.png" />
-                <S.PersonalRate src="/imgs/class/star.png" />
-                <S.PersonalRate src="/imgs/class/star.png" />
-                <S.CreatedDate>6월 28일</S.CreatedDate>
-              </S.ReviewerSubInfo2>
-            </S.ReviewerSubInfo>
-          </S.ReviewerInfo>
-          <S.Review></S.Review>
-          </div>
-            ))} */}
+                <S.PersonalRate src="/imgs/class/star.png" /> */}
+                    <S.CreatedDate>{el.createdAt}</S.CreatedDate>
+                  </S.ReviewerSubInfo2>
+                </S.ReviewerSubInfo>
+              </S.ReviewerInfo>
+              <S.Review>{el.contents}</S.Review>
+            </div>
+          ))}
 
-          <S.ReviewerInfo>
+          {/* <S.ReviewerInfo>
             <S.ReviewerPhoto src="/imgs/user.png" />
             <S.ReviewerSubInfo>
               <S.ReviewerId>클레어</S.ReviewerId>
@@ -122,7 +124,7 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
               </S.ReviewerSubInfo2>
             </S.ReviewerSubInfo>
           </S.ReviewerInfo>
-          <S.Review></S.Review>
+          <S.Review></S.Review> */}
         </S.BodyWrapper>
       </S.LeftWrapper>
 

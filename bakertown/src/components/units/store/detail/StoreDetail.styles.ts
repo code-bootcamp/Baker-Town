@@ -79,7 +79,6 @@ export const SubComponentWrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 80%;
-
   }
 `;
 
@@ -518,7 +517,7 @@ export const PriceToBuy = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 40px;
-`
+`;
 
 export const SideItemPrice = styled.div`
   display: flex;
