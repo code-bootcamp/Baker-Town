@@ -22,6 +22,7 @@ const StoreDetailContainer = () => {
     images: [],
   });
   const [count, setCount] = useState(0);
+  const [ratingAverage, setRatingAverage] = useState(0);
 
   const storeDetail = async () => {
     if (!currentUser) {
@@ -39,6 +40,14 @@ const StoreDetailContainer = () => {
       console.log(router.query.storeId);
       console.log("아이템 정보", itemData);
       setMyStore(itemData);
+
+      if (itemData?.review?.length === 0) return;
+
+      const arry = itemData?.review?.map((el: any) => el.rating)
+
+      const reviewFunction =
+        arry?.reduce((acc: any, cur: any) => acc + cur) / arry?.length;
+      setRatingAverage(reviewFunction ? Number(reviewFunction) : Number("0"))
     }
   };
 
@@ -136,6 +145,7 @@ const StoreDetailContainer = () => {
       myStore={myStore}
       purchase={onClickPurchase}
       heart={onClickHeart}
+      ratingAverage={ratingAverage}
     />
   );
 };

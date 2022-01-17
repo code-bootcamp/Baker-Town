@@ -13,4 +13,5 @@ export interface IStoreDetailPresenterProps {
   };
   purchase: () => void;
   heart: () => void;
+  ratingAverage: number | undefined;
 }

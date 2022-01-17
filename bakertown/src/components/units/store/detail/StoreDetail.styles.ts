@@ -437,11 +437,11 @@ export const ReviewerSubInfo2 = styled.div`
   }
 `;
 
-export const PersonalRate = styled.img`
-  width: 15px;
+export const PersonalRate = styled.div`
+  /* width: 15px;
   height: 15px;
   margin-left: 3px;
-  margin-bottom: 5px;
+  margin-bottom: 5px; */
 
   @media ${breakPoints.mobile} {
     width: 100%;
