@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   padding-bottom: 7%;
   display: none;
   box-shadow: 5px -2px 26px -3px rgba(0, 0, 0, 0.5);
+  z-index: 3;
 
   @media ${breakPoints.tablet} {
     display: none;

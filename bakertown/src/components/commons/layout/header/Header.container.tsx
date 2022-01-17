@@ -21,7 +21,7 @@ const HeaderContainer = () => {
     router.push(`/store`);
   };
   const onClickSearch = () => {
-    location.reload();
+    // location.reload();
     router.push(`/class/search/${keyWord}`);
   };
   const onChangeKeyWord = (event: ChangeEvent<HTMLInputElement>) => {

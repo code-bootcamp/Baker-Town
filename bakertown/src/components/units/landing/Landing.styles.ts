@@ -954,7 +954,6 @@ export const EventImage = styled.img`
   height: 400px;
   background-color: #c4c4c4;
   border-radius: 10px;
-  opacity: 0.5;
   @media ${breakPoints.tablet} {
     width: 100%;
     height: 180px;

@@ -113,6 +113,8 @@ const DashBoardMainClassWriteContainer = (
     myInputs.patissier = userResult?.data().name;
     myInputs.createdAt = getDate(new Date());
     myInputs.introduce = userResult?.data().introduce;
+    myInputs.classNameArray = myInputs.className.split(" ");
+
     if (!myInputs.category) myInputs.category = "베이킹";
 
     if (
