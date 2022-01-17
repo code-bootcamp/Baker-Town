@@ -179,18 +179,61 @@ const ClassListContainer = () => {
     });
   };
 
-  useEffect(() => {
-    console.log("시작!");
-    if (!router.query.categoryName) {
-      console.log("시작!!!!");
-      getNextClass();
+  const getNextClassSearch = async () => {
+    console.log("서치 시작!");
+
+    if (!router.query.classSearch) return;
+
+    if (lastVisible === -1) {
+      return;
+    } else if (lastVisible) {
+      myQuery = query(
+        collection(getFirestore(firebaseApp), "class"),
+        where("classNameArray", "array-contains", keyWord),
+        orderBy("createdAt", "desc"),
+        limit(4),
+        startAfter(lastVisible)
+      );
     } else {
-      console.log("시작");
-      getNextClassCategory();
+      myQuery = query(
+        collection(getFirestore(firebaseApp), "class"),
+        where("classNameArray", "array-contains", keyWord),
+        orderBy("createdAt", "desc"),
+        limit(12)
+      );
     }
-  }, [categoryName]);
+
+    getDocs(myQuery).then((snapshot) => {
+      setRecent((itemList: any) => {
+        const arr: any = [...itemList];
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          data.id = doc.id;
+          arr.push(data);
+        });
+        console.log(recent);
+        if (snapshot.docs.length === 0) {
+          setLastVisible(-1);
+        } else {
+          setLastVisible(snapshot.docs[snapshot.docs.length - 1]);
+        }
+        return arr;
+      });
+    });
+  };
+
+  useEffect(() => {
+    if (keyWord) {
+      getNextClassSearch();
+    } else if (router.query.categoryName) {
+      getNextClassCategory();
+    } else {
+      getNextClass();
+    }
+  }, [categoryName, keyWord]);
 
   if (categoryName) useBottomScrollListener(getNextClassCategory);
+  if (keyWord) useBottomScrollListener(getNextClassSearch);
 
   const onClickSideButton = (el: string) => () => {
     setLastVisible(undefined);

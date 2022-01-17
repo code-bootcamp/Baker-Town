@@ -186,14 +186,17 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
           </S.NewClassWrapper>
           <S.EventWrapper>
             <S.SubjectWrapper>
-              <S.SubjectTitle>새해 핫 아이템</S.SubjectTitle>
+              <S.SubjectTitle>홈카페 아이템 기획전</S.SubjectTitle>
               <S.SubjectView onClick={props.storeList}>
                 스토어 전체 보기
               </S.SubjectView>
             </S.SubjectWrapper>
             <S.EventItemWrapper>
-              {new Array(3).fill(1).map((el) => (
-                <S.EventImage key={uuidv4()} />
+              {props.promotion2.map((el) => (
+                <S.EventImage
+                  key={uuidv4()}
+                  src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                />
               ))}
             </S.EventItemWrapper>
           </S.EventWrapper>
