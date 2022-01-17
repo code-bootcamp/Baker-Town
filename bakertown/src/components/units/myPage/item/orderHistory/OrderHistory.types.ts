@@ -10,6 +10,7 @@ export interface IOrderHistoryPresenter {
   rating: number;
   setRating: Dispatch<SetStateAction<number>>;
   onClickReview: (index: number) => () => void;
-  setReviewContents: Dispatch<SetStateAction<string>>;
+  // setReviewContents: Dispatch<SetStateAction<string>>;
   itemDetail: (el: any) => () => void;
+  reviewRef: any;
 }
