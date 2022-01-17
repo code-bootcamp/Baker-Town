@@ -4,7 +4,7 @@ import NavigationPresenter from "./Navigation.presenter";
 
 const NavigationContainer = () => {
   const router = useRouter();
-  const currentUser = useAuth();
+  const currentUser: any = useAuth();
   const navArray = [
     { text: "홈", src: "/imgs/mobile/house.png", link: `/` },
     { text: "카테고리", src: "/imgs/mobile/square.png", link: `/category` },
@@ -20,7 +20,7 @@ const NavigationContainer = () => {
     },
   ];
 
-  const onClickNav = (el: { link: string }) => () => {
+  const onClickNav = (el: { link: string; text: string }) => () => {
     if (el.text === "내정보") {
       if (!currentUser) router.push(`/signIn`);
       return;

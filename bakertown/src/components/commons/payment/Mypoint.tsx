@@ -81,7 +81,6 @@ export default function UserPoint() {
             if (error instanceof Error) alert(error.message);
           }
         } else {
-          // fail
         }
       }
     );
