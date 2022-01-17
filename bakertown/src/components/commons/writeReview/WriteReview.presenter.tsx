@@ -16,7 +16,9 @@ const WriteReviewPresenter = (props: IWriteReviewPresetnerProps) => {
           ref={props.reviewRef}
         />
         <S.ButtonWrapper>
-          <S.ModalButton onClick={props.onClickReview(0)}>확인</S.ModalButton>
+          <S.ModalButton onClick={props.onClickReview(props.index)}>
+            확인
+          </S.ModalButton>
           <S.ModalButton onClick={props.onToggleModal}>취소</S.ModalButton>
         </S.ButtonWrapper>
       </S.Wrapper>

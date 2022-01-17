@@ -36,18 +36,15 @@ const OrderHistoryPresenter = (props: IOrderHistoryPresenter) => {
                       리뷰 쓰기
                     </S.WriteReview>
                     {props.isOpen && (
-                      <Modal
-                        title="리뷰 등록"
-                        visible={props.isOpen}
-                        onOk={props.onClickReview(index)}
-                        onCancel={props.onToggleModal}
-                      >
-                        <WriteReviewContainer
-                          setReviewContents={props.setReviewContents}
-                          rating={props.rating}
-                          setRating={props.setRating}
-                        />
-                      </Modal>
+                      <WriteReviewContainer
+                        // setReviewContents={props.setReviewContents}
+                        rating={props.rating}
+                        setRating={props.setRating}
+                        reviewRef={props.reviewRef}
+                        onToggleModal={props.onToggleModal}
+                        onClickReview={props.onClickReview}
+                        index={index}
+                      />
                     )}
                   </S.AfterOrder>
                 </S.OrderWrapper>

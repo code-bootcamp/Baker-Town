@@ -2,8 +2,8 @@ import DashBoardMyPagePresenter from "./DashBoardMyPage.presenter";
 import { deleteUser, updatePassword } from "firebase/auth";
 import { useRouter } from "next/router";
 import { firebaseApp, useAuth } from "../../../../../pages/_app";
-import { useEffect, useState } from "react";
-import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
+import { useState } from "react";
+import { doc, getFirestore, updateDoc } from "firebase/firestore";
 import { message } from "antd";
 
 const DashBoardMyPageContainer = () => {

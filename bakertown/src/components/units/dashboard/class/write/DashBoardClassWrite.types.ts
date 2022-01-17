@@ -1,4 +1,4 @@
-import { ChangeEvent, ChangeEventHandler } from "react";
+import { ChangeEvent, ChangeEventHandler, MutableRefObject } from "react";
 
 export interface IDashBoardClassWriteProps {
   setClassSchedule: any;
@@ -18,6 +18,8 @@ export interface IDashBoardClassWriteProps {
   onChangeInputs: any;
   onChangeImage2: (event: ChangeEvent<HTMLInputElement>) => void;
   onClickUpdate: () => void;
+  onChangeContents: (value: string) => void;
+  contentsRef: MutableRefObject<string>;
 }
 
 export interface IDashBoardMainClassWriteContainerProps {

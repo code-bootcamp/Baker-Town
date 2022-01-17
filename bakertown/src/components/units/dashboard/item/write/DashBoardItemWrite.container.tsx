@@ -69,6 +69,7 @@ export const DashBoardItemContainer = (
     console.log(currentUser);
     myInputs.patissierId = currentUser?.uid;
     myInputs.patissier = userResult?.data().name;
+    if (!myInputs.category) myInputs.category = "냄비•프라이팬•솥";
 
     console.log("myInputs", myInputs);
 

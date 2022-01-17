@@ -4,6 +4,7 @@ export interface ILandingPresenterProps {
   popular: any;
   recent: any;
   currentUser: any;
+  promotion: [];
   settings: {};
   settings2: {};
   settings3: {};
@@ -22,7 +23,7 @@ export interface ILandingPresenterProps {
   enterKey: () => void;
   classDetail: (el: any) => () => void;
   bakingList: () => void;
-  scrollPosition: number;
+  // scrollPosition: number;
 }
 export interface IClassSubject {
   el: any;

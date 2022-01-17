@@ -2,7 +2,6 @@ import * as S from "./AfterPar.styles";
 import { v4 as uuidv4 } from "uuid";
 import SideNavigationContainer from "../../sideNav/SideNavigation.container";
 import WriteReviewContainer from "../../../../commons/writeReview/WriteReview.container";
-import { Modal } from "antd";
 import { IAfterParPresenter } from "./AfterPar.types";
 
 const AfterParPresenter = (props: IAfterParPresenter) => {
@@ -50,6 +49,7 @@ const AfterParPresenter = (props: IAfterParPresenter) => {
                       onToggleModal={props.onToggleModal}
                       onClickReview={props.onClickReview}
                       reviewRef={props.reviewRef}
+                      index={index}
                     />
                     // </Modal>
                   )}

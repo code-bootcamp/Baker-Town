@@ -1,6 +1,6 @@
 import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
 import { useRouter } from "next/router";
-import { SetStateAction, useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { getOnlyDate } from "../../../../../commons/libraries/getDate";
 import AfterParPresenter from "./AfterPar.presenter";
@@ -13,7 +13,7 @@ const AfterParContainer = () => {
     afterPar: [],
   });
   const [count, setCount] = useState(0);
-  const reviewRef = useRef(null);
+  const reviewRef: MutableRefObject<null> | any = useRef(null);
 
   const currentUser: any = useAuth();
   const onToggleModal = () => {
