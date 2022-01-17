@@ -358,7 +358,7 @@ export const TextTop = styled.div`
 `;
 
 export const TextMiddleOne = styled.div`
-  width: 453px;
+  width: 100%
   padding-top: 20px;
   font-size: 50px;
   font-weight: bold;
