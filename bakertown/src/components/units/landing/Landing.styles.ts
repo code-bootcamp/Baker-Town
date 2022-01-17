@@ -290,7 +290,7 @@ export const TopBanner = styled.div`
   height: 680px;
   background-image: url("/imgs/landing/banner09.jpg");
   position: relative;
-  background-position: bottom -30px center;
+  background-position: bottom 0px center;
   background-size: 110%;
   background-repeat: no-repeat;
   box-sizing: border-box;
@@ -575,6 +575,8 @@ export const EventItemWrapper = styled.div`
   height: 300px;
   justify-content: space-between;
   margin-top: 30px;
+  object-fit: cover;
+
   @media ${breakPoints.tablet} {
     width: 100%;
   }
@@ -954,6 +956,8 @@ export const EventImage = styled.img`
   height: 400px;
   background-color: #c4c4c4;
   border-radius: 10px;
+  object-fit: cover;
+
   @media ${breakPoints.tablet} {
     width: 100%;
     height: 180px;
