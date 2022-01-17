@@ -36,6 +36,9 @@ const ChatListContainer = () => {
       // @ts-ignore
       setMessages(snapshot.docs.map((el) => el.data()));
     });
+    console.log("setMessages", setMessages);
+
+    // console.log(participants)
   }
 
   const msgRef = useRef<HTMLDivElement>();

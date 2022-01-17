@@ -439,7 +439,7 @@ export const ClassImage = styled.img`
   background-position: center center;
 
   @media ${breakPoints.mobile} {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 96%;
     height: 290px;
     margin-left: 3%;
@@ -536,7 +536,7 @@ export const SubjectTitleMobile = styled.div`
 
   @media ${breakPoints.mobile} {
     width: 93%;
-    font-size: 1.6em;
+    font-size: 1.5em;
     line-height: 41px;
     margin-top: 80px;
     margin-left: 17px;
