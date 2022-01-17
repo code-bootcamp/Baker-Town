@@ -1,6 +1,12 @@
 import { doc, getDoc, getFirestore, updateDoc } from "@firebase/firestore";
 import { useRouter } from "next/router";
-import { SetStateAction, useEffect, useState } from "react";
+import {
+  MutableRefObject,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
 import { getOnlyDate } from "../../../../../commons/libraries/getDate";
 import OrderHistoryPresenter from "./OrderHistory.presenter";
@@ -9,12 +15,14 @@ const OrderHistoryContainer = () => {
   const router = useRouter();
   const currentUser: any = useAuth();
   const [isOpen, setIsOpen] = useState(false);
-  const [reviewContents, setReviewContents] = useState("");
+  // const [reviewContents, setReviewContents] = useState("");
   const [rating, setRating] = useState(3);
   const [myUser, setMyUser] = useState<SetStateAction<any>>({
     name: "로딩중입니다",
     boughtItem: [],
   });
+
+  const reviewRef: MutableRefObject<null> | any = useRef(null);
 
   const orderHistoryContents = async () => {
     if (myUser?.name === "로딩중입니다") {
@@ -43,6 +51,9 @@ const OrderHistoryContainer = () => {
     if (!currentUser) {
       return;
     }
+
+    const reviewContents = reviewRef.current.value;
+
     // 해당하는 아이템 정보 불러오기
     const bakeryItem = doc(
       getFirestore(firebaseApp),
@@ -105,8 +116,9 @@ const OrderHistoryContainer = () => {
       rating={rating}
       setRating={setRating}
       onClickReview={onClickReview}
-      setReviewContents={setReviewContents}
+      // setReviewContents={setReviewContents}
       itemDetail={onClickItemDetail}
+      reviewRef={reviewRef}
     />
   );
 };

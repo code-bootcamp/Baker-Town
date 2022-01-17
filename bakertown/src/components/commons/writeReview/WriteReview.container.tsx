@@ -13,6 +13,7 @@ const WriteReviewContainer = (props: IWriteReviewContainerProps) => {
       onToggleModal={props.onToggleModal}
       onClickReview={props.onClickReview}
       reviewRef={props.reviewRef}
+      index={props.index}
     />
   );
 };

@@ -1,6 +1,5 @@
 import {
   collection,
-  getDoc,
   getDocs,
   getFirestore,
   orderBy,
@@ -8,13 +7,7 @@ import {
   where,
 } from "@firebase/firestore";
 import { useRouter } from "next/router";
-import {
-  useEffect,
-  useState,
-  ChangeEvent,
-  SetStateAction,
-  MouseEvent,
-} from "react";
+import { useEffect, useState, ChangeEvent, SetStateAction } from "react";
 import { firebaseApp, useAuth } from "../../../../pages/_app";
 import LandingPresenter from "./Landing.presenter";
 
@@ -26,7 +19,7 @@ const LandingContainer = () => {
   const router = useRouter();
   const [popular, setPoplular] = useState<SetStateAction<any>>([]);
   const [recent, setRecent] = useState<SetStateAction<any>>([]);
-  const [promotion, setPromotion] = useState([]);
+  const [promotion, setPromotion] = useState<any>([]);
   const [keyWord, setKeyWord] = useState("");
   const currentUser: any = useAuth();
 

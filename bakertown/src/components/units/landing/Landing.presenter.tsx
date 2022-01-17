@@ -71,7 +71,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
             <AvatarPage scrollPosition={scrollPosition} />
           ) : (
             <S.LoginText
-              scrollPosition={scrollPosition}
+              // scrollPosition={scrollPosition}
               className={
                 scrollPosition < 90 ? "original_header" : "change_header"
               }

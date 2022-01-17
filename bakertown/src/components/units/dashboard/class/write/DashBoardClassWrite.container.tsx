@@ -73,10 +73,6 @@ const DashBoardMainClassWriteContainer = (
 
   const [uploadFile] = useMutation(UPLOAD_FILE);
 
-  const { handleSubmit, register, setValue, trigger } = useForm({
-    mode: "onChange",
-  });
-
   const onToggleModal = () => {
     setIsOpen((prev) => !prev);
   };
@@ -110,7 +106,6 @@ const DashBoardMainClassWriteContainer = (
     );
     const userResult: any = await getDoc(userQuery);
     // 등록 날짜 및 시간 설정
-    console.log(classSchedule);
     myInputs.applyClass.classArray = classSchedule;
 
     // myInputs.applyClass.push("aaa");
@@ -118,7 +113,7 @@ const DashBoardMainClassWriteContainer = (
     myInputs.patissier = userResult?.data().name;
     myInputs.createdAt = getDate(new Date());
     myInputs.introduce = userResult?.data().introduce;
-    console.log(myInputs);
+    if (!myInputs.category) myInputs.category = "베이킹";
 
     if (
       !myInputs.className ||
@@ -266,7 +261,7 @@ const DashBoardMainClassWriteContainer = (
     updateClass();
   }, []);
 
-  const onChangeContents = (value) => {
+  const onChangeContents = (value: string) => {
     setMyInputs({
       className: myInputs.className,
       contents: value,
