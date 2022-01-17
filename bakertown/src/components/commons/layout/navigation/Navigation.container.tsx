@@ -23,7 +23,6 @@ const NavigationContainer = () => {
   const onClickNav = (el: { link: string; text: string }) => () => {
     if (el.text === "내정보") {
       if (!currentUser) router.push(`/signIn`);
-      // return;
     }
     router.push(`${el.link}`);
   };

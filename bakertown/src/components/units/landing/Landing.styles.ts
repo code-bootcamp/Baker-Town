@@ -959,7 +959,7 @@ export const EventImage = styled.img`
   object-fit: cover;
 
   @media ${breakPoints.tablet} {
-    width: 100%;
+    width: 28%;
     height: 180px;
     margin-left: 20px;
     margin-right: 20px;
@@ -1071,7 +1071,7 @@ export const CategoryButton = styled.button`
 
   @media ${breakPoints.tablet} {
     /* display: none; */
-    width: 300px;
+    width: 250px;
   }
   @media ${breakPoints.mobile} {
     /* display: none; */
