@@ -27,8 +27,8 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
             <S.SubTheme1>
               <S.ItemStarRate>
                 <S.Star src="/imgs/class/star.png" />
-                <S.Rate>4.7</S.Rate>
-                <S.Rater>(1,700)</S.Rater>
+                <S.Rate>{props.ratingAverage}</S.Rate>
+                <S.Rater>{props.myStore?.itemReview?.length}</S.Rater>
               </S.ItemStarRate>
               <S.CategoryTag>{props.myStore?.category}</S.CategoryTag>
             </S.SubTheme1>
@@ -68,13 +68,14 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
           <S.ProductDate>{props.myStore?.shippingTime}</S.ProductDate>
           <S.Label>구매자 후기</S.Label>
           <S.ItemStarRate>
+            {/* <S.Star src="/imgs/class/star.png" />
             <S.Star src="/imgs/class/star.png" />
             <S.Star src="/imgs/class/star.png" />
             <S.Star src="/imgs/class/star.png" />
-            <S.Star src="/imgs/class/star.png" />
-            <S.Star src="/imgs/class/star.png" />
-            <S.Rate>4.7</S.Rate>
-            <S.Rater>(1,700)</S.Rater>
+            <S.Star src="/imgs/class/star.png" /> */}
+            <Rate value={props.ratingAverage} />
+            <S.Rate>{props.ratingAverage}</S.Rate>
+            <S.Rater>{props.myStore?.itemReview?.length}</S.Rater>
           </S.ItemStarRate>
 
           {/* 이게 1번째 코드 <S.Review>
@@ -91,17 +92,13 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
           {props.myStore?.itemReview?.map((el: any) => (
             <div key={uuidv4()}>
               <S.ReviewerInfo>
-                <S.ReviewerPhoto src={"/imgs/user.png"} />
+                <S.ReviewerPhoto src="/imgs/user.png" />
                 <S.ReviewerSubInfo>
                   <S.ReviewerId>{el.user}</S.ReviewerId>
                   <S.ReviewerSubInfo2>
                     <S.PersonalRate>
-                      {/* <Rate value={el.rating} /> */}
+                      <Rate value={el.rating} />
                     </S.PersonalRate>
-                    {/* <S.PersonalRate src="/imgs/class/star.png" />
-                <S.PersonalRate src="/imgs/class/star.png" />
-                <S.PersonalRate src="/imgs/class/star.png" />
-                <S.PersonalRate src="/imgs/class/star.png" /> */}
                     <S.CreatedDate>{el.createdAt}</S.CreatedDate>
                   </S.ReviewerSubInfo2>
                 </S.ReviewerSubInfo>
