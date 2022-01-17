@@ -21,7 +21,7 @@ const ReviewPresenter = (props: IReviewPresenter) => {
                   <S.ItemInfo>
                     <S.ItemCategory>{el.category}</S.ItemCategory>
                     <S.ItemName onClick={props.itemDetail(el)}>
-                      {el.itemName},
+                      {el.itemName}
                     </S.ItemName>
                     {/* <S.ItemAmount>1개</S.ItemAmount> */}
                   </S.ItemInfo>
