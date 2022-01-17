@@ -896,6 +896,7 @@ export const ViewMore = styled.div`
 
 export const ScheduleWrapper = styled.div`
   width: 400px;
+
   @media ${breakPoints.mobile} {
     /* display: none; */
     /* background: grey; */
@@ -925,7 +926,7 @@ export const ClassSchedule = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-left: 26px;
-  :white ;
+  background-color: white;
 
   @media ${breakPoints.mobile} {
     /* display: none; */

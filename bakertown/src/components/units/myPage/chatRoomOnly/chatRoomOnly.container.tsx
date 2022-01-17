@@ -26,6 +26,9 @@ export default function ChatRoomContainer() {
   const [myUser, setMyUser] = useState({
     name: "내 이름",
   });
+  const [patissierName, setPatissierName] = useState("");
+  const [count, setCount] = useState(0);
+  // const classId = router.query.classId;
 
   const chatRoomContents = async () => {
     if (myUser.name === "내 이름") {
@@ -37,11 +40,40 @@ export default function ChatRoomContainer() {
       );
       const userResult: any = await getDoc(userQuery);
       setMyUser(userResult.data());
-      console.log(userResult.data());
+      console.log("ㅎㅎㅎㅎㅎ", userResult.data());
     }
   };
 
+  const chatRoomContents2 = async () => {
+    // if (classId === undefined) {
+    //   setCount((prev) => prev + 1);
+    //   return;
+    // }
+    // const patissierQuery = doc(
+    //   getFirestore(firebaseApp),
+    //   "class",
+    //   "iTY8MJnCucODvo6VpFzeKmumOuI2"
+    // );
+
+    // const classResult = await getDoc(patissierQuery);
+
+    // const resultData = classResult.data();
+    // console.log("하잏아ㅣ,", resultData);
+
+    // setPatissierName(resultData?.patissier);
+
+    const patissierQuery = doc(
+      getFirestore(firebaseApp),
+      "class",
+      String(router.query.cId)
+    );
+    const classResult = await getDoc(patissierQuery);
+    const classData = classResult.data();
+    setPatissierName(classData?.patissier);
+  };
+
   useEffect(() => {
+    chatRoomContents2();
     chatRoomContents();
   });
 
@@ -56,14 +88,17 @@ export default function ChatRoomContainer() {
   const inputRef = useRef<HTMLInputElement | any>(null);
 
   async function saveMessage() {
+    console.log("파티셰", patissierName);
     try {
       await addDoc(collection(getFirestore(), `chatDB`), {
         roomId: roomId,
         // productId: router.query.poshId,
         writer: name,
         writerId: currentUser?.uid,
+        patissier: patissierName,
         // seller: seller,
         text: inputRef.current.value,
+        classId: router.query.cId,
         // profilePicUrl: picture,
         timestamp: serverTimestamp(),
         id: new Date().toString().slice(0, 25),
@@ -73,8 +108,10 @@ export default function ChatRoomContainer() {
         roomId: roomId,
         // productId: router.query.poshId,
         writer: name,
+        patissier: patissierName,
         // seller: seller,
         text: inputRef.current.value,
+        classId: router.query.cId,
         // profilePicUrl: picture,
         timestamp: serverTimestamp(),
         id: new Date().toString().slice(0, 25),

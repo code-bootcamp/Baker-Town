@@ -21,7 +21,6 @@ import { useMutation } from "@apollo/client";
 import { UPLOAD_FILE } from "./DashBoardClassWrite.queries";
 import { useRouter } from "next/router";
 import { IDashBoardMainClassWriteContainerProps } from "./DashBoardClassWrite.types";
-import { useForm } from "react-hook-form";
 
 const DashBoardMainClassWriteContainer = (
   props: IDashBoardMainClassWriteContainerProps

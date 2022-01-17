@@ -21,7 +21,7 @@ const ChatListPresenter = (props: IChatListProps) => {
             {/* <ProfileImg src={el.profilePicUrl} /> */}
             <div>
               <NameAndTime>
-                <Name>{el.writer}</Name>
+                <Name>{el.patissier}</Name>
                 <LastTime>{el.id?.slice(4, 15)}</LastTime>
               </NameAndTime>
               <Contents>{el.text.slice(0, 42)}</Contents>

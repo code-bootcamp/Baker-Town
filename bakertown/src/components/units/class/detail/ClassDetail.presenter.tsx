@@ -127,7 +127,9 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                     <S.ClassStarRate>
                       <S.Star src="/imgs/class/star.png" />
                       <S.Rate>{props.ratingAverage}</S.Rate>
-                      <S.Rater>{props.myClass?.review.length}</S.Rater>
+                      <S.Rater>
+                        &#40;{props.myClass?.review.length}&#41;
+                      </S.Rater>
                     </S.ClassStarRate>
                     <S.CategoryTag>
                       <S.Category>

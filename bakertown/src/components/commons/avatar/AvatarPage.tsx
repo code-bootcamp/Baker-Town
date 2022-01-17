@@ -56,7 +56,7 @@ const AvatarPage = (props: IAvatarPageProps) => {
     router.push(`/myPage/item/orderHistory`);
   };
   const onClickMessage = () => {
-    router.push(`/myPage/chatRoom/1/1/`);
+    router.push(`/myPage/chatRoom/1/1/1`);
   };
 
   const onClickMyPage = () => {

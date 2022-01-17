@@ -66,6 +66,7 @@ const SignUpPresenter = (props: ISignUpPresenterProps) => {
         boughtItem: [],
         itemHeart: [],
         itemReview: [],
+        afterPar: [],
       });
       await signup(emailRef.current.value, passwordRef.current.value);
       message.success("회원가입 완료", 2.5);
