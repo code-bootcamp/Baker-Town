@@ -1,16 +1,9 @@
 import { useEffect, useState, useRef, useMemo, ChangeEvent } from "react";
 import ClassDetailPresenter from "./ClassDetail.presenter";
-import {
-  getFirestore,
-  getDoc,
-  doc,
-  updateDoc,
-  collection,
-} from "firebase/firestore";
+import { getFirestore, getDoc, doc, updateDoc } from "firebase/firestore";
 import { firebaseApp, useAuth } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
-import { getDate, getOnlyDate } from "../../../../commons/libraries/getDate";
-import { IClassDetailPresenterProps } from "./ClassDetail.types";
+import { getOnlyDate } from "../../../../commons/libraries/getDate";
 import { getAuth } from "firebase/auth";
 import { message } from "antd";
 
@@ -123,6 +116,7 @@ const ClassDetailContainer = () => {
       currentReservInfo?.classArray?.[myIndex].class.membersName.push(
         userResult.data().name
       );
+
       //나의 포인트 잔액
       await updateDoc(userQuery, { mypoint: charge });
       await updateDoc(bakeryClass, {
@@ -135,6 +129,8 @@ const ClassDetailContainer = () => {
       const myBeforeParClass = userResult.data().afterPar;
       // currentReservInfo.classArray?.[0];
 
+      console.log("히히,,,", myBeforeParClass);
+
       // 내 참여예정 클래스에 현재 클래스 아이디 및 예약정보 넣기
       const dddd = {
         classRouter: router.query.classId,
@@ -144,6 +140,7 @@ const ClassDetailContainer = () => {
         reservationIndex: myIndex,
         ...currentReservInfo.classArray?.[0],
       };
+      console.log(dddd);
       myBeforeParClass.push(dddd);
       await updateDoc(userQuery, {
         afterPar: myBeforeParClass,
@@ -378,8 +375,8 @@ const ClassDetailContainer = () => {
   const reviewoptions = useMemo(() => {
     return {
       root: null,
-      threshold: 0.9,
-      rootMargin: "-13%",
+      threshold: 0.3,
+      // rootMargin: "-13%",
     };
   }, []);
 
@@ -397,7 +394,9 @@ const ClassDetailContainer = () => {
   }, [ReviewRef, reviewoptions]);
 
   const goChat = () => {
-    router.push(`/myPage/chatRoom/${myClass?.patissierId}/${currentUser?.uid}`);
+    router.push(
+      `/myPage/chatRoom/${myClass?.patissierId}/${currentUser?.uid}/${router.query.classId}`
+    );
   };
 
   const onClickShare = () => {
