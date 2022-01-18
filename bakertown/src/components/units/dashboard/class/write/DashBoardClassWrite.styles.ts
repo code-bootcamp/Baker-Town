@@ -9,13 +9,13 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  margin-top: 30px;
+  padding-top: 30px;
   margin-left: 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  overflow: auto;
+  /* overflow: auto; */
 
   /* background-color: salmon; */
 `;
@@ -89,7 +89,6 @@ export const ClassContents = styled(ReactQuill)`
   height: 500px;
   /* padding-left: 10px; */
   padding-bottom: 44px;
-  /* padding-top: 10px; */
   border: 1px solid black;
   background-color: white;
 `;
@@ -103,7 +102,7 @@ export const ClassPriceWrapper = styled.div`
 export const ClassPriceTitle = styled.div``;
 
 export const ClassPrice = styled.input`
-  width: 900px;
+  width: 250px;
 `;
 
 export const AddressWrapper = styled.div`
@@ -158,6 +157,7 @@ export const SubmitButton = styled.button`
   height: 40px;
   margin-top: 30px;
   margin-left: 400px;
+  margin-bottom: 100px;
   border: none;
   border-radius: 19px;
   background-color: #662500;

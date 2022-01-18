@@ -10,7 +10,9 @@ interface ILayoutProps {
 
 const Wrapper = styled.div`
   /* height: 100vh; */
-  max-height: 100vh;
+  /* max-height: 100vh; */
+  /* height: 100%; */
+
 `;
 
 const UpBodyWrapper = styled.div`

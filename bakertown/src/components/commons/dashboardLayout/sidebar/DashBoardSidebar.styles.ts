@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   margin: 0px;
   padding-right: 0px;
   /* background-color: #f7f0e8; */
-  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2); */
   /* overscroll-behavior-y: none;
   position: fixed; */
 `;
