@@ -17,7 +17,10 @@ const MyReviewPresenter = (props: IMyReviewPresenterProps) => {
             {props.userResult?.review?.map((el: any) => (
               <S.ClassWrapper key={uuidv4()}>
                 <S.Class>
-                  <S.ClassImage onClick={props.classDetail(el)} />
+                  <S.ClassImage
+                    onClick={props.classDetail(el)}
+                    src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                  />
                   <S.ClassInfoWrapper>
                     <S.ClassPatissier>{el.category}</S.ClassPatissier>
                     <S.ClassName onClick={props.classDetail(el)}>

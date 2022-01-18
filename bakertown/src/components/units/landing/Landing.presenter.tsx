@@ -18,7 +18,6 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
 
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
-    console.log(scrollPosition);
   });
 
   return (
@@ -192,10 +191,11 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
               </S.SubjectView>
             </S.SubjectWrapper>
             <S.EventItemWrapper>
-              {props.promotion2.map((el) => (
+              {props.promotion2.map((el: any) => (
                 <S.EventImage
                   key={uuidv4()}
                   src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                  onClick={props.itemDetail(el)}
                 />
               ))}
             </S.EventItemWrapper>
@@ -203,7 +203,7 @@ const LandingPresenter = (props: ILandingPresenterProps) => {
           <S.MiddleBanner>
             <S.MiddleBannerWrapper>
               <S.MiddleBannerText onClick={props.bakingList}>
-                베이킹 전혀 어렵지 않아요 ! 지금 배우러 가기{" "}
+                베이킹 전혀 어렵지 않아요 ! 지금 배우러 가기
               </S.MiddleBannerText>
               <S.MiddleBannerArrow src="imgs/rightarrow.png" />
               <S.MiddleBannerImage src="imgs/landing/middlebannerimage.png" />

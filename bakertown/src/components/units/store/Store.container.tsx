@@ -7,6 +7,7 @@ import {
   getFirestore,
   orderBy,
   query,
+  where,
 } from "@firebase/firestore";
 import { firebaseApp, useAuth } from "../../../../pages/_app";
 
@@ -14,6 +15,7 @@ const StoreContainer = () => {
   const router = useRouter();
   const [popular, setPoplular] = useState<SetStateAction<any>>([]);
   const [recent, setRecent] = useState<SetStateAction<any>>([]);
+  const [promotion, setPromotion] = useState<any>([]);
   const currentUser = useAuth();
 
   const storeLanding = async () => {
@@ -41,9 +43,23 @@ const StoreContainer = () => {
     });
     setRecent(docs);
   };
+  const promotionItem = async () => {
+    const promotion = query(
+      collection(getFirestore(firebaseApp), "item"),
+      where("promotion", "!=", "")
+    );
+    const result = await getDocs(promotion);
+    const docs = result.docs.map((el) => {
+      const data = el.data();
+      data.id = el.id;
+      return data;
+    });
+    setPromotion(docs);
+  };
 
   useEffect(() => {
     storeLanding();
+    promotionItem();
   }, []);
 
   const recentList = () => {
@@ -106,6 +122,7 @@ const StoreContainer = () => {
       settings2={settings2}
       recent={recent}
       popular={popular}
+      promotion={promotion}
       recentList={recentList}
       storeDetail={onClickStoreDetail}
     />

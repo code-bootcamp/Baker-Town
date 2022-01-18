@@ -14,19 +14,12 @@ interface ILayoutProps {
 const Wrapper = styled.div`
   height: 100%;
   @media ${breakPoints.tablet} {
-    /* border: 10px dotted green; */
   }
   @media ${breakPoints.mobile} {
-    /* width: 100%; */
-    height: 100%;
-    /* border: 10px dotted green; */
-    /* background-color: green; */
-    /* display: none; */
   }
 `;
 const Body = styled.div`
   width: 100%;
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,19 +44,21 @@ export default function Layout(props: ILayoutProps) {
   const router = useRouter();
   const isHiddenHeader = HIDDEN_HEADER.includes(router.asPath);
   const isHiddenFooter = HIDDEN_FOOTER.includes(router.asPath);
-  const isShownDetailNavigation = router.asPath.startsWith(
-    "/class/detail" || "/store/detail"
-  );
+  const isShownDetailClassNavigation =
+    router.asPath.startsWith("/class/detail");
+  const isShownDetailItemNavigation = router.asPath.startsWith("/store/detail");
 
-  console.log(isShownDetailNavigation);
   return (
     <>
       <Wrapper>
         {!isHiddenHeader && <Header />}
         <Body>{props.children}</Body>
         {!isHiddenFooter && <Footer />}
-        {!isShownDetailNavigation && <Navigation />}
-        {isShownDetailNavigation && <DetailNavigationContainer />}
+        {!isShownDetailClassNavigation && !isShownDetailItemNavigation && (
+          <Navigation />
+        )}
+        {isShownDetailClassNavigation && <DetailNavigationContainer />}
+        {isShownDetailItemNavigation && <DetailNavigationContainer />}
       </Wrapper>
     </>
   );

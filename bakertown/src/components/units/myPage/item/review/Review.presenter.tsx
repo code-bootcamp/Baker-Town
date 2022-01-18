@@ -17,7 +17,10 @@ const ReviewPresenter = (props: IReviewPresenter) => {
             {props.userResult?.itemReview?.map((el: any) => (
               <S.OrderWrapper key={uuidv4()}>
                 <S.TopWrapper>
-                  <S.ItemImage onClick={props.itemDetail(el)} />
+                  <S.ItemImage
+                    onClick={props.itemDetail(el)}
+                    src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                  />
                   <S.ItemInfo>
                     <S.ItemCategory>{el.category}</S.ItemCategory>
                     <S.ItemName onClick={props.itemDetail(el)}>

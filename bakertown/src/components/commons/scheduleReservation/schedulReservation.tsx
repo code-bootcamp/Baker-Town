@@ -4,7 +4,7 @@ import { IScheduleReservationProps } from "../layout/detailNavigation/DetailNavi
 
 const SchedulReservation = (props: IScheduleReservationProps) => {
   return (
-    <>
+    <S.ScheduleModal>
       <S.ScheduleWrapper isVisible={props.isVisible}>
         <S.ClassSchedule>
           <S.SmallTitle>예약 정보</S.SmallTitle>
@@ -48,13 +48,16 @@ const SchedulReservation = (props: IScheduleReservationProps) => {
           </S.ClassScheduleWrapper>
           <S.ClassScheduleUnderWrapper>
             <S.ClassPrice>{props.myClass?.price}원</S.ClassPrice>
+            <S.ReservationButton onClick={props.onToggleModal}>
+              취소하기
+            </S.ReservationButton>
             <S.ReservationButton onClick={props.reservation}>
               예약하기
             </S.ReservationButton>
           </S.ClassScheduleUnderWrapper>
         </S.ClassSchedule>
       </S.ScheduleWrapper>
-    </>
+    </S.ScheduleModal>
   );
 };
 

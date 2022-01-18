@@ -115,6 +115,7 @@ export const ListTitle = styled.div`
 export const ListTitleText = styled.div`
   font-size: 32px;
   font-weight: bold;
+  cursor: default;
 `;
 
 export const ListSelect = styled.select`

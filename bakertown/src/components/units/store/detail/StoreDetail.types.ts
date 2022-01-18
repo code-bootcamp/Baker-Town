@@ -10,8 +10,10 @@ export interface IStoreDetailPresenterProps {
     review: [];
     heart: number;
     images: never[];
+    itemReview: [];
   };
   purchase: () => void;
   heart: () => void;
   ratingAverage: number | undefined;
+  share: () => void;
 }

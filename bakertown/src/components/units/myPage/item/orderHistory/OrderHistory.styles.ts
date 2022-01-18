@@ -122,7 +122,7 @@ export const OrderWrapper = styled.div`
   }
 `;
 
-export const ItemImage = styled.div`
+export const ItemImage = styled.img`
   width: 162px;
   height: 140px;
   border-radius: 10px;

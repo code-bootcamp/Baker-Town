@@ -530,6 +530,7 @@ export const SubjectName = styled.div``;
 export const SubjectTitle = styled.div`
   font-size: 32px;
   font-weight: bold;
+  cursor: default;
 
   @media ${breakPoints.tablet} {
     width: 70%;
@@ -806,6 +807,9 @@ export const MiddleBannerWrapper = styled.div`
   align-items: center;
   position: relative;
   cursor: pointer;
+  :hover {
+    text-decoration: underline;
+  }
   @media ${breakPoints.tablet} {
     /* display: none; */
     width: 100%;
@@ -884,6 +888,14 @@ export const ClassWrapper = styled.div`
   }
 `;
 
+export const ImageWrapper = styled.div`
+  width: 290px;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+`;
+
 export const ClassImage = styled.img`
   width: 290px;
   height: 180px;
@@ -892,6 +904,11 @@ export const ClassImage = styled.img`
   margin-bottom: 20px;
   /* opacity: 0.5; */
   object-fit: cover;
+  cursor: pointer;
+  :hover {
+    transform: scale(1.1);
+    transition: ease 0.4s;
+  }
   @media ${breakPoints.tablet} {
     width: 80%;
   }
@@ -919,6 +936,10 @@ export const ClassName = styled.div`
   width: 268px;
   font-size: 18px;
   margin-bottom: 9.5px;
+  cursor: pointer;
+  :hover {
+    text-decoration: underline;
+  }
   @media ${breakPoints.tablet} {
     /* display: none; */
     width: 80%;
@@ -945,6 +966,9 @@ export const SmallLine = styled.div`
 export const ClassPrice = styled.div`
   font-size: 20px;
   font-weight: bold;
+  :hover {
+    text-decoration: underline;
+  }
 
   @media ${breakPoints.tablet} {
     width: 70%;
@@ -957,6 +981,8 @@ export const EventImage = styled.img`
   background-color: #c4c4c4;
   border-radius: 10px;
   object-fit: cover;
+  cursor: pointer;
+  /* :hover */
 
   @media ${breakPoints.tablet} {
     width: 28%;

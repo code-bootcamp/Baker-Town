@@ -16,7 +16,7 @@ const DashBoardClassReadPresenter = (props: IDashBoardClassReadProps) => {
             <S.TitleWrapper onClick={props.classDetail(el)}>
               {el.className}
             </S.TitleWrapper>
-            <S.ClassMember>수강신청 인원 2명</S.ClassMember>
+            <S.ClassMember>수강신청 인원 1명</S.ClassMember>
           </S.DetailWrapper>
           <S.Line></S.Line>
           <S.CRUD>

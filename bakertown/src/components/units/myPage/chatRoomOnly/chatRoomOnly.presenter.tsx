@@ -64,6 +64,7 @@ export default function ChatRoomPresenter(props: any) {
           <CommentsInputWrite
             placeholder="메세지를 입력하세요"
             ref={props.inputRef}
+            onKeyUp={props.enterKey}
           ></CommentsInputWrite>
           <CommentsBnt onClick={props.saveMessage}>보내기</CommentsBnt>
           {/* </> */}

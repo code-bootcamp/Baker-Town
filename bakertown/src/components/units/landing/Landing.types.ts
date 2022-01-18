@@ -5,11 +5,10 @@ export interface ILandingPresenterProps {
   recent: any;
   currentUser: any;
   promotion: [];
+  promotion2: [];
   settings: {};
   settings2: {};
   settings3: {};
-  clickLeft: () => void;
-  clickRight: () => void;
   landing: () => void;
   classList: () => void;
   storeList: () => void;
@@ -22,6 +21,7 @@ export interface ILandingPresenterProps {
   category: (event: MouseEvent<HTMLSpanElement>) => void;
   enterKey: () => void;
   classDetail: (el: any) => () => void;
+  itemDetail: (el: any) => () => void;
   bakingList: () => void;
   // scrollPosition: number;
 }

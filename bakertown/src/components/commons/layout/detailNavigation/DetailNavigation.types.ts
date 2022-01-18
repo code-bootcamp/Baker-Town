@@ -22,6 +22,7 @@ export interface IDetailNavigationPresenterProps {
   };
   selectDate: (el: any, index: number) => () => void;
   reservation: () => void;
+  share: () => void;
 }
 
 export interface IScheduleReservationProps {
@@ -46,6 +47,7 @@ export interface IScheduleReservationProps {
   selectDate: (el: any, index: number) => () => void;
   reservation: () => void;
   isVisible: boolean;
+  onToggleModal: () => void;
 }
 
 export interface IScheduleWrapperStylesProps {

@@ -11,11 +11,6 @@ const DashBoardItemReadPresenter = (
         <S.ItemList>
           <S.ItemListTitle>
             <S.ItemListTitleText>등록한 상품</S.ItemListTitleText>
-            <S.ItemListSelect>
-              <S.ItemListOption>추천순</S.ItemListOption>
-              <S.ItemListOption>인기순</S.ItemListOption>
-              <S.ItemListOption>최신순</S.ItemListOption>
-            </S.ItemListSelect>
           </S.ItemListTitle>
 
           <S.ItemListContents>

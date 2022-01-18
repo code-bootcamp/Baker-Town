@@ -37,6 +37,7 @@ export interface IClassDetailPresenterProps {
   share: () => void;
   scrollPosition: number;
   goChat: () => void;
+  patissierIntroduce: string;
 }
 
 export interface IClassDetailStylesProgramProps {
