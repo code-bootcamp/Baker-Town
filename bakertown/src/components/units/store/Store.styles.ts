@@ -65,6 +65,9 @@ export const SubjectView = styled.div`
   font-size: 16px;
   padding-top: 20px;
   cursor: pointer;
+  :hover {
+    text-decoration: underline;
+  }
 
   @media ${breakPoints.mobile} {
     padding-top: 0;
@@ -185,6 +188,9 @@ export const SmallLine2 = styled.div`
 export const StorePrice = styled.div`
   font-size: 20px;
   font-weight: bold;
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 export const Store = styled.div`
@@ -201,6 +207,7 @@ export const StoreName = styled.div`
   width: 268px;
   font-size: 18px;
   margin-bottom: 9.5px;
+  cursor: pointer;
 
   @media ${breakPoints.tablet} {
     font-size: 0.9em;
@@ -214,6 +221,7 @@ export const StoreName2 = styled.div`
   width: 268px;
   font-size: 18px;
   margin-bottom: 9.5px;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     font-size: 0.7em;
@@ -255,7 +263,11 @@ export const StoreImage = styled.img`
   background-color: #c4c4c4;
   margin-bottom: 20px;
   /* opacity: 0.5; */
-
+  cursor: pointer;
+  :hover {
+    transform: scale(1.1);
+    transition: ease 0.2s;
+  }
   @media ${breakPoints.mobile} {
     width: 88%;
     height: 200px;
@@ -274,7 +286,8 @@ export const StoreImage2 = styled.img`
   border-radius: 10px;
   background-color: #c4c4c4;
   margin-bottom: 20px;
-  opacity: 0.5;
+  /* opacity: 0.5; */
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     width: 100%;

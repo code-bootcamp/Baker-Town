@@ -87,14 +87,6 @@ const LandingContainer = () => {
     promotionItem();
   }, []);
 
-  const clickLeft = () => {
-    console.log("clickLeft");
-  };
-
-  const clickRight = () => {
-    console.log("clickRight");
-  };
-
   const onClickLanding = () => {
     router.push(`/`);
   };
@@ -145,12 +137,16 @@ const LandingContainer = () => {
     router.push(`/class/detail/${el.id}`);
   };
 
+  const onClickItemDetail = (el: any) => () => {
+    router.push(`/store/detail/${el.id}`);
+  };
+
   const onClickBakingList = () => {
     router.push(`/class/category/베이킹`);
   };
 
   const SampleNextArrow = (props: any) => {
-    const { className, style, onClick } = props;
+    const { style, onClick } = props;
     return (
       <div
         className="slick-next-arrow"
@@ -214,8 +210,6 @@ const LandingContainer = () => {
         settings={settings}
         settings2={settings2}
         settings3={settings3}
-        clickLeft={clickLeft}
-        clickRight={clickRight}
         landing={onClickLanding}
         classList={onClickList}
         storeList={onClickStore}
@@ -228,6 +222,7 @@ const LandingContainer = () => {
         category={onClickCategory}
         enterKey={onKeyUpEnterKey}
         classDetail={onClickClassDetail}
+        itemDetail={onClickItemDetail}
         bakingList={onClickBakingList}
       />
     </>

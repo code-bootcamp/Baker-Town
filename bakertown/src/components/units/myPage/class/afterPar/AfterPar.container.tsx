@@ -91,6 +91,7 @@ const AfterParContainer = () => {
     // 내 리뷰에 현재 클래스 아이디 및 리뷰정보 넣기
     const reviewInfo = {
       classRouter: myUser?.afterPar?.[index].classRouter,
+      images: userResult.data().images,
       ...myReview,
     };
     userReview?.push(reviewInfo);

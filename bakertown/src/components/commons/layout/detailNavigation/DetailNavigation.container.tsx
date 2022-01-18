@@ -1,4 +1,5 @@
 import { doc, getDoc, getFirestore, updateDoc } from "@firebase/firestore";
+import { message } from "antd";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../pages/_app";
@@ -9,6 +10,7 @@ const DetailNavigationContainer = () => {
   const currentUser: any = useAuth();
 
   const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [myIndex, setMyIndex] = useState(-1);
   const [myClass, setMyClass] = useState({
     address: "내 주소!",
@@ -29,6 +31,7 @@ const DetailNavigationContainer = () => {
     },
     patissierId: "",
   });
+  const [myStore, setMyStore] = useState({});
 
   const classDetail = async () => {
     if (myClass?.address === "내 주소!") {
@@ -45,9 +48,26 @@ const DetailNavigationContainer = () => {
     }
   };
 
+  const storeDetail = async () => {
+    const product = doc(
+      getFirestore(firebaseApp),
+      "item",
+      String(router.query.storeId)
+    );
+    const result = await getDoc(product);
+    const storeData: any = result.data();
+    setMyStore(storeData);
+  };
+
   useEffect(() => {
     classDetail();
+    storeDetail();
   });
+
+  const onClickShare = () => {
+    navigator.clipboard.writeText(location.href);
+    message.success("주소가 복사되었습니다.", 1.5);
+  };
 
   const onClickHeart = async () => {
     // 현재 페이지 정보 불러오기
@@ -85,17 +105,21 @@ const DetailNavigationContainer = () => {
     await updateDoc(bakeryClass, {
       heart: classHeart,
     });
-    alert("클래스를 찜 목록에 담았습니다!");
+    message.success("클래스를 찜 목록에 담았습니다!");
     // location.reload();
   };
 
   const onToggleModal = () => {
-    setIsVisible((prev) => !prev);
+    if (router.asPath.startsWith("/class/detail")) {
+      setIsVisible((prev) => !prev);
+    } else if (router.asPath.startsWith("/store/detail"))
+      setIsOpen((prev) => !prev);
   };
+
   const onClickReservation = async () => {
     if (currentUser) {
       if (myIndex === -1) {
-        alert("예약하실 날짜를 선택해주세요!!");
+        message.error("예약하실 날짜를 선택해주세요!!");
         return;
       }
       // 현재 페이지 정보 불러오기
@@ -125,7 +149,6 @@ const DetailNavigationContainer = () => {
         className: myClass?.className,
         price: myClass?.price,
       };
-      console.log(buyInfo);
 
       // 현재 페이지의 예약정보
       const currentReservInfo: any = myClass?.applyClass;
@@ -147,7 +170,6 @@ const DetailNavigationContainer = () => {
       );
       //나의 포인트 잔액
       await updateDoc(userQuery, { mypoint: charge });
-      console.log(charge);
       await updateDoc(bakeryClass, {
         applyClass: {
           ...currentReservInfo,
@@ -171,17 +193,17 @@ const DetailNavigationContainer = () => {
       await updateDoc(userQuery, {
         beforePar: myBeforeParClass,
       });
-      alert("예약이 완료되었습니다.");
+      message.error("예약이 완료되었습니다.");
       location.reload();
     } else {
-      alert("회원만 가능합니다.");
+      message.error("회원만 가능합니다.");
+      router.push(`/signIn`);
     }
     setIsVisible((prev) => !prev);
   };
   const onClickSelectDate = (el: any, index: number) => () => {
     // setMyDate(myClass?.applyClass?.classArray?.[index].class.date);
-    console.log(el);
-    alert(
+    message.success(
       `${el?.class?.date} 날짜의 ${el?.class?.start} 시간을 선택하셨습니다!`
     );
     setMyIndex(index);
@@ -190,11 +212,14 @@ const DetailNavigationContainer = () => {
   return (
     <DetailNavigationPresenter
       heart={onClickHeart}
+      share={onClickShare}
       onToggleModal={onToggleModal}
       isVisible={isVisible}
+      isOpen={isOpen}
       myClass={myClass}
       selectDate={onClickSelectDate}
       reservation={onClickReservation}
+      myStore={myStore}
     />
   );
 };

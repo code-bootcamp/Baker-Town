@@ -5,14 +5,16 @@ export const ClassSubject = (props: IClassSubject) => {
   return (
     <>
       <S.ClassWrapper>
-        {props.el.images?.[0] ? (
-          <S.ClassImage
-            src={`https://storage.googleapis.com/${props.el.images?.[0]}`}
-            onClick={props.classDetail}
-          />
-        ) : (
-          <S.ClassImage onClick={props.classDetail} />
-        )}
+        <S.ImageWrapper>
+          {props.el.images?.[0] ? (
+            <S.ClassImage
+              src={`https://storage.googleapis.com/${props.el.images?.[0]}`}
+              onClick={props.classDetail}
+            />
+          ) : (
+            <S.ClassImage onClick={props.classDetail} />
+          )}
+        </S.ImageWrapper>
         <S.ClassPatissier>{props.el.patissier}</S.ClassPatissier>
         <S.ClassName>{props.el.className}</S.ClassName>
         <S.SmallLine></S.SmallLine>

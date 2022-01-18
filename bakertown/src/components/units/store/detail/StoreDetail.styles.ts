@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
+    margin-bottom: 100%;
   }
 
   @media ${breakPoints.tablet} {
@@ -49,6 +50,7 @@ export const ItemName = styled.div`
   font-size: 32px;
   font-weight: bold;
   margin-top: 70px;
+  cursor: default;
 
   @media ${breakPoints.mobile} {
     width: 93%;
@@ -194,6 +196,7 @@ export const DibsOnItem = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -221,6 +224,7 @@ export const DoShare = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 
   @media ${breakPoints.mobile} {
     display: none;
@@ -232,6 +236,7 @@ export const Share = styled.img`
   height: 28px;
   padding-bottom: 2.5px;
   margin-right: 8px;
+  cursor: pointer;
   @media ${breakPoints.mobile} {
     display: none;
   }

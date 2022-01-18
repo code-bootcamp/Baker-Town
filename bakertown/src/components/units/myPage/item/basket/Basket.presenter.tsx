@@ -15,7 +15,10 @@ const BasketPresenter = (props: IBasketPresenterProps) => {
           <S.BasketContents>
             {props.userResult?.itemHeart?.map((el: any) => (
               <S.ItemWrapper key={uuidv4()}>
-                <S.ItemImage onClick={props.itemDetail(el)} />
+                <S.ItemImage
+                  onClick={props.itemDetail(el)}
+                  src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                />
                 <S.ItemInfo>
                   <S.ItemName onClick={props.itemDetail(el)}>
                     {el.itemName}

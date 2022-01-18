@@ -143,7 +143,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                       {props.myClass?.heart}
                     </S.DibsOnClass>
                     <S.ClassShare>
-                      <S.Share src="/imgs/share.png" />
+                      <S.Share src="/imgs/share.png" onClick={props.share} />
                       공유
                     </S.ClassShare>
                   </S.SubTheme2>
@@ -199,7 +199,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.ContactPatissier>
               </S.PatissierWrapper>
               <S.PatissierContentsBox>
-                <div>{props?.myClass?.introduce}</div>
+                <div>{props.patissierIntroduce}</div>
               </S.PatissierContentsBox>
             </S.PatissierInfo>
             <S.ClassLocationInfo ref={props.MapRef}>

@@ -894,6 +894,19 @@ export const ViewMore = styled.div`
   }
 `;
 
+export const ScheduleModal = styled.div`
+  width: 100%;
+  height: 1800px;
+  position: absolute;
+  left: 0;
+  top: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(1.5px);
+`;
+
 export const ScheduleWrapper = styled.div`
   width: 400px;
 
@@ -902,6 +915,18 @@ export const ScheduleWrapper = styled.div`
     /* background: grey; */
     display: ${(props: IScheduleWrapperStylesProps) =>
       props.isVisible ? "inline" : "none"};
+    backdrop-filter: blur(13.5px);
+    width: 500px;
+    height: 100%;
+    /* background-color: white; */
+    border: 1px solid black;
+    position: relative;
+    z-index: 1;
+    top: 500;
+    padding-left: 8%;
+    /* padding-top: 10px; */
+    padding-right: 20px;
+    border-radius: 10px;
   }
 
   @media ${breakPoints.tablet} {

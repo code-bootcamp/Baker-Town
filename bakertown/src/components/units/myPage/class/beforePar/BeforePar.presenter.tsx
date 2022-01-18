@@ -15,7 +15,10 @@ const BeforeParPresenter = (props: IBeforeParPresenter) => {
           <S.ListContents>
             {props.userResult.beforePar?.map((el: any, index: number) => (
               <S.ClassWrapper key={uuidv4()}>
-                <S.ClassImage onClick={props.classDetail(el)} />
+                <S.ClassImage
+                  onClick={props.classDetail(el)}
+                  src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                />
                 <S.ClassContentsWrapper>
                   <S.ClassPatissier>{el.category}</S.ClassPatissier>
                   <S.ClassName onClick={props.classDetail(el)}>

@@ -29,10 +29,10 @@ const ClassDetailContainer = () => {
     },
     patissierId: "",
   });
-  const [myDate, setMyDate] = useState("");
   const [myIndex, setMyIndex] = useState(-1);
   const [myName, setMyName] = useState("");
   const [ratingAverage, setRatingAverage] = useState(0);
+  const [patissierIntroduce, setPatissierIntroduce] = useState("");
   const currentUser: any = useAuth();
 
   const classDetail = async () => {
@@ -47,6 +47,16 @@ const ClassDetailContainer = () => {
       const classData: any = result.data();
       console.log("클래스 정보", classData);
       setMyClass(classData);
+
+      const classUserQuery = doc(
+        getFirestore(firebaseApp),
+        "users",
+        String(classData?.patissierId) // 아맞다 이렇게 하는거 아냐..
+      );
+      const userResult = await getDoc(classUserQuery);
+      const userData: any = userResult.data();
+      console.log(userData);
+      setPatissierIntroduce(userData?.name);
 
       if (classData?.review?.length === 0) return;
 
@@ -64,6 +74,8 @@ const ClassDetailContainer = () => {
   });
 
   const currentID = getAuth().currentUser?.uid;
+
+  // 예약하기
   const onClickReservation = async () => {
     if (currentID) {
       if (myIndex === -1) {
@@ -106,7 +118,7 @@ const ClassDetailContainer = () => {
         currentReservInfo?.classArray?.[myIndex].class.membersName.length ===
         Number(currentReservInfo?.classArray?.[myIndex].class.member)
       ) {
-        alert("에약이 마감되었습니다.");
+        message.info("에약이 마감되었습니다.");
         return;
       }
       //현재 나의 포인트 - class가격
@@ -126,7 +138,7 @@ const ClassDetailContainer = () => {
       });
 
       // 내 참여예정 클래스
-      const myBeforeParClass = userResult.data().afterPar;
+      const myBeforeParClass = userResult.data().beforePar;
       // currentReservInfo.classArray?.[0];
 
       console.log("히히,,,", myBeforeParClass);
@@ -138,12 +150,13 @@ const ClassDetailContainer = () => {
         category: myClass?.category,
         classPrice: Number(myClass?.price),
         reservationIndex: myIndex,
+        images: myClass?.images,
         ...currentReservInfo.classArray?.[0],
       };
       console.log(dddd);
       myBeforeParClass.push(dddd);
       await updateDoc(userQuery, {
-        afterPar: myBeforeParClass,
+        beforePar: myBeforeParClass,
       });
       message.success("예약이 완료되었습니다.", 1.5);
       location.reload();
@@ -246,6 +259,7 @@ const ClassDetailContainer = () => {
       classRouter: router.query.classId,
       className: myClass?.className,
       category: myClass?.category,
+      images: myClass?.images,
     };
     userHeart?.push(heartInfo);
     await updateDoc(userQuery, {
@@ -425,6 +439,7 @@ const ClassDetailContainer = () => {
       isSelectedReview={isSelectedReview}
       ratingAverage={ratingAverage}
       goChat={goChat}
+      patissierIntroduce={patissierIntroduce}
     />
   );
 };

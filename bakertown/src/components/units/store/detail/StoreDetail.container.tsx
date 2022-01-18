@@ -43,11 +43,11 @@ const StoreDetailContainer = () => {
 
       if (itemData?.review?.length === 0) return;
 
-      const arry = itemData?.review?.map((el: any) => el.rating)
+      const arry = itemData?.review?.map((el: any) => el.rating);
 
       const reviewFunction =
         arry?.reduce((acc: any, cur: any) => acc + cur) / arry?.length;
-      setRatingAverage(reviewFunction ? Number(reviewFunction) : Number("0"))
+      setRatingAverage(reviewFunction ? Number(reviewFunction) : Number("0"));
     }
   };
 
@@ -76,6 +76,7 @@ const StoreDetailContainer = () => {
         price: Number(myStore?.price),
         category: myStore?.category,
         createdAt: getOnlyDate(new Date()),
+        images: myStore?.images,
       };
       //현재 나의 포인트 - 상품가격
       const charge = userResult.data().mypoint - buyInfo.price;
@@ -85,7 +86,6 @@ const StoreDetailContainer = () => {
       console.log(charge);
       // 구매한 정보 내 정보에 넣기
       myBoughtItem.push(buyInfo);
-      console.log("aa", myBoughtItem);
       await updateDoc(userQuery, {
         boughtItem: myBoughtItem,
       });
@@ -123,6 +123,7 @@ const StoreDetailContainer = () => {
       itemName: myStore?.itemName,
       price: Number(myStore?.price),
       cateogry: myStore?.category,
+      images: myStore?.images,
     };
     console.log(heartInfo);
 
@@ -137,7 +138,12 @@ const StoreDetailContainer = () => {
     await updateDoc(bakeryItem, {
       heart: itemHeart,
     });
-    alert("아이템을 찜 목록에 담았습니다!");
+    message.success("아이템을 찜 목록에 담았습니다!");
+  };
+
+  const onClickShare = () => {
+    navigator.clipboard.writeText(location.href);
+    message.success("주소가 복사되었습니다.", 1.5);
   };
 
   return (
@@ -146,6 +152,7 @@ const StoreDetailContainer = () => {
       purchase={onClickPurchase}
       heart={onClickHeart}
       ratingAverage={ratingAverage}
+      share={onClickShare}
     />
   );
 };

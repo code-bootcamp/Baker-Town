@@ -1,13 +1,7 @@
 import * as S from "./SignIn.styles";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { logout, signInWithGoogle } from "../../../../../pages/_app";
 import { signin } from "../../../../../pages/_app";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
-import { ButtonBase, Paper } from "@material-ui/core";
-import { Button } from "@mui/material";
 import { ISignInPresenterProps } from "./SingIn.types";
 import { message } from "antd";
 

@@ -38,7 +38,7 @@ const StoreDetailPresenter = (props: IStoreDetailPresenterProps) => {
                 {props.myStore?.heart}
               </S.DibsOnItem>
               <S.DoShare>
-                <S.Share src="/imgs/share.png" />
+                <S.Share src="/imgs/share.png" onClick={props.share} />
                 공유
               </S.DoShare>
             </S.SubTheme2>

@@ -19,7 +19,10 @@ const OrderHistoryPresenter = (props: IOrderHistoryPresenter) => {
               <S.Order key={uuidv4()}>
                 <S.OrderDate>{el.createdAt} 주문</S.OrderDate>
                 <S.OrderWrapper>
-                  <S.ItemImage onClick={props.itemDetail(el)} />
+                  <S.ItemImage
+                    onClick={props.itemDetail(el)}
+                    src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                  />
                   <S.ItemInfoWrapper>
                     <S.ItemName onClick={props.itemDetail(el)}>
                       {el.itemName}

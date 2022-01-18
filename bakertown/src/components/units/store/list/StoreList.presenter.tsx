@@ -29,11 +29,6 @@ const StoreListPresenter = (props: IStoreListPresenter) => {
             <S.ListTitle>
               <S.ListTitleText>{props.categoryName} 아이템</S.ListTitleText>
             </S.ListTitle>
-            <S.ListSelect>
-              <S.ListOption value="1">추천순</S.ListOption>
-              <S.ListOption value="2">인기순</S.ListOption>
-              <S.ListOption value="3">최신순</S.ListOption>
-            </S.ListSelect>
           </S.ListToSelect>
           <S.ListContents>
             {props.recent.map((el: any) => (

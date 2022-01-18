@@ -46,7 +46,9 @@ const ChatListMobileContainer = () => {
   }
 
   const onClickToChatRoom = (el: any) => () => {
-    router.push(`/myPage/chatRoom/${el.participants[0]}/${el.participants[1]}`);
+    router.push(
+      `/myPage/chatRoom/${el.participants[0]}/${el.participants[1]}/${el.classId}`
+    );
   };
 
   useEffect(() => {

@@ -82,6 +82,7 @@ const OrderHistoryContainer = () => {
       itemRouter: myUser?.boughtItem?.[index].itemRouter,
       itemName: myUser?.boughtItem?.[index].itemName,
       category: myUser?.boughtItem?.[index].category,
+      images: itemResult?.data().images,
     };
 
     // 내 리뷰

@@ -140,21 +140,21 @@ const StorePresenter = (props: IStorePresenterProps) => {
 
         <S.SubjectName>
           <S.SubjectWrapper>
-            <S.SubjectTitle>
-              손 쉽게 만드는 육즙 가득한 홈파티 요리
-            </S.SubjectTitle>
+            <S.SubjectTitle>홈카페 아이템 기획전</S.SubjectTitle>
             {/* <S.SubjectView>홈파티 요리 전체보기</S.SubjectView> */}
           </S.SubjectWrapper>
           <S.StoresWrapper4>
-            {new Array(4).fill(1).map((el) => (
+            {props.promotion?.map((el) => (
               <S.StoreWrapper2>
-                <S.StoreImage2 />
-                <S.Store>잔슨빌</S.Store>
-                <S.StoreName2>
-                  [연말 초특가] 육즉 가득 담은 독일 소세지 세트
-                </S.StoreName2>
+                <S.StoreImage2
+                  src={`https://storage.googleapis.com/${el.images?.[0]}`}
+                />
+                <S.Store>{el.patissier}</S.Store>
+                <S.StoreName2>{el.itemName}</S.StoreName2>
                 <S.SmallLine2></S.SmallLine2>
-                <S.StorePrice>50,000 원</S.StorePrice>
+                <S.StorePrice>
+                  {Number(el.price).toLocaleString("ko-KR")}원
+                </S.StorePrice>
               </S.StoreWrapper2>
             ))}
           </S.StoresWrapper4>

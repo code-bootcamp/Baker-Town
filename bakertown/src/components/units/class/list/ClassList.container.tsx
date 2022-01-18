@@ -24,9 +24,6 @@ import ClassListPresenter from "./ClassList.presenter";
 const ClassListContainer = () => {
   const router = useRouter();
   const [recent, setRecent] = useState<SetStateAction<any>>([]);
-  const [first, setFirst] = useState([]);
-  const [second, setSecond] = useState([]);
-  const [option, setOption] = useState(0);
   const categoryName = router.query.categoryName;
   const keyWord = router.query.classSearch;
 

@@ -18,6 +18,10 @@ import { useRouter } from "next/router";
 import { v4 as uuidv4 } from "uuid";
 import ChatRoomPresenter from "./chatRoomOnly.presenter";
 
+declare const window: typeof globalThis & {
+  event: any;
+};
+
 export default function ChatRoomContainer() {
   const router = useRouter();
   const currentUser = useAuth();
@@ -160,6 +164,12 @@ export default function ChatRoomContainer() {
     scrollToBottom();
   }, [messages]);
 
+  const onKeyUpEnterKey = () => {
+    if (window.event.keyCode === 13) {
+      saveMessage();
+    }
+  };
+
   return (
     <ChatRoomPresenter
       // productImg={productImg}
@@ -172,6 +182,7 @@ export default function ChatRoomContainer() {
       inputRef={inputRef}
       name={name}
       myId={myId}
+      enterKey={onKeyUpEnterKey}
       // myId={myId}
       //   onClickToProfile={onClickToProfile}
     />
