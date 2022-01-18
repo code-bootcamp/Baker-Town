@@ -22,9 +22,12 @@ const NavigationContainer = () => {
 
   const onClickNav = (el: { link: string; text: string }) => () => {
     if (el.text === "내정보") {
+      console.log("내정보!!!");
       if (!currentUser) router.push(`/signIn`);
+      else router.push(`${el.link}`);
+    } else {
+      router.push(`${el.link}`);
     }
-    router.push(`${el.link}`);
   };
 
   return <NavigationPresenter navArray={navArray} onClickNav={onClickNav} />;

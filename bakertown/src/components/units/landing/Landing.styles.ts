@@ -894,6 +894,7 @@ export const ImageWrapper = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  margin-bottom: 20px;
 `;
 
 export const ClassImage = styled.img`

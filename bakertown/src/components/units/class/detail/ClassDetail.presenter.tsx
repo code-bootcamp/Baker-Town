@@ -252,7 +252,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               ))}
             </S.ClassReviewInfo>
 
-            <S.ViewMore>177개의 후기 더보기</S.ViewMore>
+            {/* <S.ViewMore>177개의 후기 더보기</S.ViewMore> */}
           </S.IntroWrapper>
           <S.ScheduleWrapper isVisible={false}>
             <S.ClassSchedule>
