@@ -1,12 +1,14 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { useAuth, firebaseApp } from "../../../../../pages/_app";
+import { useAuth, firebaseApp, logout } from "../../../../../pages/_app";
 import { doc, getDoc, getFirestore } from "@firebase/firestore";
 import NavigationPresenter from "./Navigation.presenter";
+import React from "react";
+import { message } from "antd";
 
 const NavigationContainer = () => {
   const router = useRouter();
-
+  const [loading, setLoading] = React.useState(false);
   const currentUser: any = useAuth();
   const [myUser, setMyUser] = useState({
     name: "로딩중입니다",
@@ -44,11 +46,23 @@ const NavigationContainer = () => {
     router.push(`/myPage`);
   };
 
+  async function handlesSignOut() {
+    setLoading(true);
+    try {
+      await logout();
+      message.success("로그아웃 완료", 1.5);
+      router.push("/");
+    } catch {
+      message.error("로그아웃 실패", 2);
+    }
+    setLoading(false);
+  }
   return (
     <NavigationPresenter
       onClickSideButton={onClickSideButton}
       userResult={myUser}
       goMyPage={onClickMyPage}
+      handlesSignOut={handlesSignOut}
     />
   );
 };

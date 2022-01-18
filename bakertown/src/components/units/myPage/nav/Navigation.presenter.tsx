@@ -19,6 +19,7 @@ const NavigationPresenter = (props: INavigationPresenterProps) => {
               src="/imgs/mypage.png"
               onClick={props.goMyPage}
             />
+            <S.Logout onClick={props.handlesSignOut}>로그아웃</S.Logout>
           </S.Title>
           <S.SmallLine2></S.SmallLine2>
           <S.MyPointTitle>MY POINT</S.MyPointTitle>
