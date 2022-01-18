@@ -30,6 +30,8 @@ export const LoginWrapper = styled.div`
   justify-content: center;
   @media ${breakPoints.tablet} {
     width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -91,6 +93,7 @@ export const LoginLabel = styled.div`
   justify-content: flex-start;
   padding-top: 90px;
   color: color: rgba(0, 0, 0, 0.7.5);
+
 `;
 
 export const EmailLabel = styled.div`
@@ -101,6 +104,7 @@ export const EmailLabel = styled.div`
   justify-content: flex-start;
   padding-top: 50px;
   color: rgba(0, 0, 0, 0.7.5);
+  font-weight: bold;
 `;
 
 export const Email = styled.input`
@@ -110,8 +114,8 @@ export const Email = styled.input`
   box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
   width: 100%;
-  height: 8%;
-  font-size: 15px;
+  height: 40px;
+  font-size: 18px;
   padding-left: 10px;
   color: black;
   margin-top: 10px;
@@ -127,6 +131,7 @@ export const PasswordLabel = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   padding-top: 16px;
+  font-weight: bold;
   color: rgba(0, 0, 0, 0.7.5);
 `;
 
@@ -137,8 +142,8 @@ export const Password = styled.input`
   box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
   width: 100%;
-  height: 8%;
-  font-size: 20px;
+  height: 40px;
+  font-size: 18px;
   padding-left: 10px;
   color: black;
   margin-top: 10px;
@@ -169,6 +174,9 @@ export const SignInButton = styled.button`
   :hover {
     color: white;
     opacity: 0.95;
+  }
+  @media ${breakPoints.mobile} {
+    margin-top: 5px;
   }
 `;
 

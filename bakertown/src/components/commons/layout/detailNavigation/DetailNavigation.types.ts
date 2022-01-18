@@ -1,7 +1,9 @@
 export interface IDetailNavigationPresenterProps {
+  purchase: () => void;
   heart: () => void;
   onToggleModal: () => void;
   isVisible: boolean;
+  isOpen: boolean;
   myClass: {
     address: string;
     category: string;
@@ -19,6 +21,13 @@ export interface IDetailNavigationPresenterProps {
       classArray: never[];
     };
     patissierId: string;
+  };
+
+  myStore: {
+    category: string;
+    itemName: string;
+    price: number;
+    images: never[];
   };
   selectDate: (el: any, index: number) => () => void;
   reservation: () => void;

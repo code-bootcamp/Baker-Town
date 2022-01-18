@@ -13,6 +13,9 @@ export const Wrapper = styled.div`
   }
   @media ${breakPoints.mobile} {
     width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 120px;
   }
 `;
 
@@ -26,6 +29,8 @@ export const SignUpWrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
   }
   @media ${breakPoints.mobile} {
     width: 100%;
@@ -62,20 +67,28 @@ export const NameLabel = styled.div`
   font-size: 20px;
   font-weight: normal;
   display: flex;
+  font-weight: bold;
   flex-direction: row;
   justify-content: flex-start;
-  padding-top: 50px;
+  padding-top: 40px;
   color: rgba(0, 0, 0, 0.7.5);
+  @media ${breakPoints.mobile} {
+    padding-top: 20px;
+  }
 `;
 
 export const PhoneLabel = styled.div`
   font-size: 20px;
   font-weight: normal;
   display: flex;
+  font-weight: bold;
   flex-direction: row;
   justify-content: flex-start;
-  padding-top: 50px;
+  padding-top: 40px;
   color: rgba(0, 0, 0, 0.7.5);
+  @media ${breakPoints.mobile} {
+    padding-top: 20px;
+  }
 `;
 
 export const EmailLabel = styled.div`
@@ -84,18 +97,27 @@ export const EmailLabel = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-top: 50px;
+  padding-top: 40px;
+  font-weight: bold;
   color: rgba(0, 0, 0, 0.7.5);
+  @media ${breakPoints.mobile} {
+    padding-top: 20px;
+  }
 `;
 
 export const PasswordLabel = styled.div`
   font-size: 20px;
+  font-weight: bold;
   font-weight: normal;
   display: flex;
+  font-weight: bold;
   flex-direction: row;
   justify-content: flex-start;
-  padding-top: 50px;
+  padding-top: 40px;
   color: rgba(0, 0, 0, 0.7.5);
+  @media ${breakPoints.mobile} {
+    padding-top: 20px;
+  }
 `;
 
 export const Name = styled.input`
@@ -105,11 +127,11 @@ export const Name = styled.input`
   box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
   width: 100%;
-  height: 8%;
-  font-size: 20px;
+  height: 40px;
+  font-size: 18px;
   padding-left: 10px;
   color: black;
-  margin-top: 10px;
+  margin-top: 5px;
   :focus {
     outline: none;
   }
@@ -122,18 +144,18 @@ export const Email = styled.input`
   box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
   width: 100%;
-  height: 8%;
-  font-size: 20px;
+  height: 40px;
+  font-size: 18px;
   padding-left: 10px;
   color: black;
-  margin-top: 10px;
+  margin-top: 5px;
   :focus {
     outline: none;
   }
 `;
 
 export const Check = styled.input`
-  margin-top: 40px;
+  margin-top: 20px;
 `;
 
 export const Password = styled.input`
@@ -143,11 +165,11 @@ export const Password = styled.input`
   box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
   width: 100%;
-  height: 8%;
-  font-size: 20px;
+  height: 40px;
+  font-size: 18px;
   padding-left: 10px;
   color: black;
-  margin-top: 10px;
+  margin-top: 5px;
   :focus {
     outline: none;
   }
@@ -161,11 +183,11 @@ export const Phone = styled.input`
   box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
   width: 100%;
-  height: 8%;
-  font-size: 20px;
+  height: 40px;
+  font-size: 18px;
   padding-left: 10px;
   color: black;
-  margin-top: 10px;
+  margin-top: 5px;
   :focus {
     outline: none;
   }
@@ -179,7 +201,7 @@ export const SignUpButton = styled.button`
   background-color: #4f3325;
   color: #f3f3f3;
   border: 0px solid gray;
-  margin-top: 70px;
+  margin-top: 40px;
   font-size: 24px;
   cursor: pointer;
   transition: 100ms;
@@ -248,6 +270,11 @@ export const SignUpLabel = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-top: 90px;
+  padding-top: 60px;
   color: color: rgba(0, 0, 0, 0.7.5);
+
+  @media ${breakPoints.mobile} {
+    padding-top:30px;
+  }
+
 `;

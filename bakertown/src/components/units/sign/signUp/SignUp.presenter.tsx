@@ -18,24 +18,6 @@ import {
   doc,
 } from "@firebase/firestore";
 
-// const schema = yup.object().shape({
-//   myName: yup.string().required("반드시 입력해야하는 필수 사항입니다."),
-
-//   myEmail: yup
-//     .string()
-//     .email("이메일 형식이 적합하지 않습니다.")
-//     .required("반드시 입력해야하는 필수 사항입니다."),
-
-//   myPassword: yup
-//     .string()
-//     .min(4, "비밀번호는 최소4자리 이상입니다.")
-//     .max(15, "비밀번호는 최대 15자리까지입니다.")
-//     .required("비밀번호는 반드시 입력해주세요."),
-
-//   myPassword2: yup
-//     .string()
-//     .oneOf([yup.ref("myPassword"), null], "비밀번호가 일치하지 않습니다."),
-// });
 const SignUpPresenter = (props: ISignUpPresenterProps) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -45,7 +27,24 @@ const SignUpPresenter = (props: ISignUpPresenterProps) => {
   const emailRef: any = useRef();
   const passwordRef: any = useRef();
 
+  //비밀번호 검사
+  const [password, setPassword] = useState("");
+  const [passwordCheck, setPasswordCheck] = useState("");
+  const [passwordError, setPasswordError] = useState(false);
+
+  const onChangePassword = (event: any) => {
+    setPassword(event.target.value);
+  };
+  const onChangePasswordChk = (event: any) => {
+    //비밀번호를 입력할때마다 password 를 검증하는 함수
+    setPasswordError(event.target.value !== password);
+    setPasswordCheck(event.target.value);
+  };
   const handlesSignUp = async () => {
+    if (password !== passwordCheck) {
+      return setPasswordError(true);
+    }
+
     setLoading(true);
     try {
       const userQuery = doc(
@@ -103,7 +102,20 @@ const SignUpPresenter = (props: ISignUpPresenterProps) => {
             ref={passwordRef}
             type="Password"
             placeholder="6자리이상 입력해주세요"
+            required
+            onChange={onChangePassword}
           />
+          <S.PasswordLabel>password check</S.PasswordLabel>
+          <S.Password
+            ref={passwordRef}
+            type="Password"
+            placeholder="비밀번호를 다시 입력해주세요"
+            required
+            onChange={onChangePasswordChk}
+          />
+          {passwordError && (
+            <div style={{ color: "red" }}>비밀번호가 일치하지 않습니다.</div>
+          )}
           <S.PhoneLabel>phone</S.PhoneLabel>
           <S.Phone ref={phoneRef} placeholder="010-0000-0000" />
           <S.Check type="checkbox" value="테스트" onChange={checkPatissier} />

@@ -3,6 +3,7 @@ import { message } from "antd";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../pages/_app";
+import { getOnlyDate } from "../../../../commons/libraries/getDate";
 import DetailNavigationPresenter from "./DetailNavigation.presenter";
 
 const DetailNavigationContainer = () => {
@@ -209,6 +210,44 @@ const DetailNavigationContainer = () => {
     setMyIndex(index);
   };
 
+  const onClickPurchase = async () => {
+    // 내 정보 불러오기
+    if (currentUser) {
+      const userQuery = doc(
+        getFirestore(firebaseApp),
+        "users",
+        currentUser?.email
+      );
+      const userResult: any = await getDoc(userQuery);
+
+      // 내가 구매한 아이템
+      const myBoughtItem = userResult.data().boughtItem;
+
+      // 구매하기 정보
+      const buyInfo = {
+        itemRouter: router.query.storeId,
+        itemName: myStore?.itemName,
+        price: Number(myStore?.price),
+        category: myStore?.category,
+        createdAt: getOnlyDate(new Date()),
+        images: myStore?.images,
+      };
+      //현재 나의 포인트 - 상품가격
+      const charge = userResult.data().mypoint - buyInfo.price;
+
+      //나의포인트 잔액
+      await updateDoc(userQuery, { mypoint: charge });
+      console.log(charge);
+      // 구매한 정보 내 정보에 넣기
+      myBoughtItem.push(buyInfo);
+      await updateDoc(userQuery, {
+        boughtItem: myBoughtItem,
+      });
+      message.success("구매가 완료되었습니다.", 1.5);
+    } else {
+      message.error("회원만 가능합니다.", 2);
+    }
+  };
   return (
     <DetailNavigationPresenter
       heart={onClickHeart}
@@ -220,6 +259,7 @@ const DetailNavigationContainer = () => {
       selectDate={onClickSelectDate}
       reservation={onClickReservation}
       myStore={myStore}
+      purchase={onClickPurchase}
     />
   );
 };
