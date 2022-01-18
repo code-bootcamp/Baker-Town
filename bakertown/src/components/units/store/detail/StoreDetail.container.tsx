@@ -25,10 +25,10 @@ const StoreDetailContainer = () => {
   const [ratingAverage, setRatingAverage] = useState(0);
 
   const storeDetail = async () => {
-    if (!currentUser) {
-      setCount((prev) => prev + 1);
-      return;
-    }
+    // if (!currentUser) {
+    //   setCount((prev) => prev + 1);
+    //   return;
+    // }
     if (myStore?.itemName === "로딩중입니다") {
       const product = doc(
         getFirestore(firebaseApp),
@@ -53,7 +53,7 @@ const StoreDetailContainer = () => {
 
   useEffect(() => {
     storeDetail();
-  }, [count]);
+  });
 
   const currentID = getAuth().currentUser?.uid;
   const onClickPurchase = async () => {

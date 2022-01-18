@@ -142,8 +142,8 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                       <S.SubTheme2Heart src="/imgs/class/heart.png" />
                       {props.myClass?.heart}
                     </S.DibsOnClass>
-                    <S.ClassShare>
-                      <S.Share src="/imgs/share.png" onClick={props.share} />
+                    <S.ClassShare onClick={props.share}>
+                      <S.Share src="/imgs/share.png" />
                       공유
                     </S.ClassShare>
                   </S.SubTheme2>
@@ -199,7 +199,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
                 </S.ContactPatissier>
               </S.PatissierWrapper>
               <S.PatissierContentsBox>
-                <div>{props.patissierIntroduce}</div>
+                <div>{props?.myClass?.introduce}</div>
               </S.PatissierContentsBox>
             </S.PatissierInfo>
             <S.ClassLocationInfo ref={props.MapRef}>
@@ -252,7 +252,7 @@ const ClassDetailPresenter = (props: IClassDetailPresenterProps) => {
               ))}
             </S.ClassReviewInfo>
 
-            {/* <S.ViewMore>177개의 후기 더보기</S.ViewMore> */}
+            <S.ViewMore>177개의 후기 더보기</S.ViewMore>
           </S.IntroWrapper>
           <S.ScheduleWrapper isVisible={false}>
             <S.ClassSchedule>

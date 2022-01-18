@@ -1,4 +1,5 @@
 import { doc, getDoc, getFirestore, updateDoc } from "@firebase/firestore";
+import { message } from "antd";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { firebaseApp, useAuth } from "../../../../../../pages/_app";
@@ -51,27 +52,19 @@ const BeforeParContainer = () => {
     const classResult: any = await getDoc(bakeryClass);
 
     // 예약 정보에서 내 이름 찾기
-    const bbb = classResult.data().applyClass?.classArray;
+    const bbb = classResult.data().applyClass;
     // ?.[el.reservationInde]?.class?.membersName;
-
-    console.log(
-      bbb?.[el.reservationInde]?.class?.membersName.splice(
-        classResult
-          .data()
-          .applyClass?.classArray?.[
-            el.reservationInde
-          ]?.class?.membersName.indexOf(userResult.data().name),
-        1
-      )
+    bbb.classArray?.[el.reservationIndex]?.class.membersName?.splice(
+      bbb.classArray?.[el.reservationIndex]?.class.membersName.indexOf(
+        userResult.data().name
+      ),
+      1
     );
-    console.log(bbb);
-
     await updateDoc(bakeryClass, {
       // applyClass?.classArray?.[el.reservationInde].class?.membersName = bbb
-      applyClass: {
-        ...bbb,
-      },
+      applyClass: bbb,
     });
+
     // // 내 참여예정 클래스
     const myBeforeParClass = userResult.data().beforePar;
     // // 선택한 클래스 없애기
@@ -81,6 +74,7 @@ const BeforeParContainer = () => {
     await updateDoc(userQuery, {
       beforePar: myBeforeParClass,
     });
+    message.success("예약이 취소되었습니다.");
     location.reload();
   };
 

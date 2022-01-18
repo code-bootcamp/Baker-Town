@@ -41,7 +41,7 @@ const LandingContainer = () => {
   const recentClass = async () => {
     const recent = query(
       collection(getFirestore(firebaseApp), "class"),
-      where("createdAt", "!=", "")
+      orderBy("createdAt", "desc")
     );
     const result = await getDocs(recent);
     const docs = result.docs.map((el) => {
