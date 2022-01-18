@@ -17,7 +17,6 @@ export const ModifyWrapper = styled.div`
 `;
 
 export const LeftWrapper = styled.div`
-  width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -29,7 +28,7 @@ export const Header = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 900px;
+  /* width: 900px; */
   height: 250px;
   padding-left: 138px;
   padding-right: 28px;

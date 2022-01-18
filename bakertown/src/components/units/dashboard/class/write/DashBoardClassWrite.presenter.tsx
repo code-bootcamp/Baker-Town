@@ -69,7 +69,9 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
           onChange={props.onChangeInputs}
           placeholder="수업료를 입력해 주세요."
           name="price"
-          defaultValue={props.myClass?.price}
+          defaultValue={
+            props.myClass?.price !== 0 ? props.myClass?.price : undefined
+          }
         />
       </S.ClassPriceWrapper>
       <S.AddressWrapper>
