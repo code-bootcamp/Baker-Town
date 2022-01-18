@@ -11,7 +11,7 @@ const ScheduleSettingContainer = (props: IScheduleSettingContainer) => {
   const [memberCount, setMemberCount] = useState(0);
 
   const onChangeDatePick = (date: any, dateString: string) => {
-    setDate(getOnlyDate(dateString));
+    setDate(dateString);
   };
 
   const onChangeTimePick = (time: any, timeString: string) => {
@@ -41,7 +41,7 @@ const ScheduleSettingContainer = (props: IScheduleSettingContainer) => {
       },
     };
     props.classSchedule?.push(classObject);
-    message.success("스케쥴이 추가되었습니다.");
+    message.success("클래스가 추가되었습니다.");
     props.toggleModal();
     setDate(""), setTime(""), setRunningTime(""), setMemberCount(0);
   };

@@ -9,30 +9,30 @@ const ClassSchedulePresenter = (props: IClassSchedulePresenter) => {
     <>
       <S.Wrapper>
         <S.TitleWrppaer>
-          <S.Title>스케쥴 등록</S.Title>
-          <S.ResetButton onClick={props.reset}>☠︎ 초기화</S.ResetButton>
+          <S.Title>클래스 등록</S.Title>
+          <S.ResetButton onClick={props.reset}>
+            <S.ResetIcon src="/imgs/reset.png"/>
+            초기화</S.ResetButton>
         </S.TitleWrppaer>
         <S.ContentWrapper>
           <S.SchduleSettingWrapper>
             <S.SettingLeft>
-              <S.SmallTitle>스케쥴 선택</S.SmallTitle>
+              <S.SmallTitle>클래스 일정을 선택해 주세요.</S.SmallTitle>
             </S.SettingLeft>
-            <S.SettingRight>
-              <S.SmallTitle>수업 소요시간</S.SmallTitle>
-            </S.SettingRight>
+            <S.SettingRight></S.SettingRight>
           </S.SchduleSettingWrapper>
           <S.ScheduleWrppaer>
             {props.classSchedule?.map((el: any) => (
-              <S.ClasScheduleWrapper key={uuidv4()}>
-                <div>날짜: {el.class?.date}&nbsp;&nbsp;</div>
-                <div>시작시간: {el.class?.start}&nbsp;&nbsp;</div>
-                <div>수업시간: {el.class?.runningTime}&nbsp;&nbsp;</div>
-                <div>최대인원: {el.class?.member}&nbsp;&nbsp;</div>
-              </S.ClasScheduleWrapper>
+              <S.ClassScheduleWrapper key={uuidv4()}>
+                <S.ClassDate>날짜: {el.class?.date}&nbsp;&nbsp;</S.ClassDate>
+                <S.StartTime>시작시간: {el.class?.start}&nbsp;&nbsp;</S.StartTime>
+                <S.RunningTime>수업시간: {el.class?.runningTime}&nbsp;&nbsp;</S.RunningTime>
+                <S.MaximumPeople>최대인원: {el.class?.member}명</S.MaximumPeople>
+              </S.ClassScheduleWrapper>
             ))}
           </S.ScheduleWrppaer>
           <S.ScheduleSettingButton onClick={props.toggleModal}>
-            스케쥴 추가하기
+            클래스 추가하기
           </S.ScheduleSettingButton>
           <Modal
             width={680}

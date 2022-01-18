@@ -126,11 +126,8 @@ const DashBoardMainClassWritePresenter = (props: IDashBoardClassWriteProps) => {
         {/* <Upload onChange={props.onChangeImage2}>d</Upload> */}
       </S.RelatedFileWrapper>
       <S.ChooseScheduleWrapper>
-        <S.ChooseScheduleTitle>
-          클래스 수업일을 선택해 주세요
-        </S.ChooseScheduleTitle>
         <S.SearchScheduleButton onClick={props.toggleScheduleModal}>
-          날짜 시간 설정하기 모달!!!
+          클래스 수업일을 선택해 주세요.
         </S.SearchScheduleButton>
         <S.ScheduleModal
           width={680}

@@ -1,20 +1,26 @@
 import * as S from "./ScheduleSetting.styles";
 import { DatePicker, TimePicker } from "antd";
 import { IScheduleSettingPresenterProps } from "./ScheduleSetting.types";
+import moment from "moment";
 
 const ScheduleSettingPresenter = (props: IScheduleSettingPresenterProps) => {
+  const format = "h:mm a";
   return (
     <>
       <S.Wrapper>
         <S.TitleWrppaer>
-          <S.Title>스케쥴 추가</S.Title>
-          <S.SmallTitle>모두 선택해 주세요.</S.SmallTitle>
+          <S.Title>클래스 추가</S.Title>
+          <S.SmallTitle>선택사항을 모두 지정해 주세요.</S.SmallTitle>
         </S.TitleWrppaer>
         <S.ContentWrapper>
           <S.SchduleSettingWrapper>
             <S.SettingOne>
               <S.SmallTitle>클래스 날짜를 선택해 주세요.</S.SmallTitle>
-              <DatePicker onChange={props.datePick} />
+              <DatePicker
+                onChange={props.datePick}
+                style={{ width: "115px" }}
+                value={props.date !== "" ? moment(props.date) : null}
+              />
             </S.SettingOne>
             <S.SettingTwoThreeWrapper>
               <S.SettingTwo>
@@ -23,10 +29,12 @@ const ScheduleSettingPresenter = (props: IScheduleSettingPresenterProps) => {
                   use12Hours
                   format="h:mm a"
                   onChange={props.timePick}
+                  style={{ width: "115px" }}
+                  // value={props.time !== "" ? moment(props.time) : null}
                 />
-                <S.TimeSelect onChange={props.onChangeTime}>
-                  <S.TimeOption disabled selected>
-                    클래스 수업시간
+                <S.TimeSelect onChange={props.onChangeTime} >
+                  <S.TimeOption disabled selected >
+                    수업시간
                   </S.TimeOption>
                   <S.TimeOption value="30분">30분</S.TimeOption>
                   <S.TimeOption value="1시간">1시간</S.TimeOption>
@@ -38,21 +46,22 @@ const ScheduleSettingPresenter = (props: IScheduleSettingPresenterProps) => {
               </S.SettingTwo>
               <S.SettingThree>
                 <S.ClassMemberCount>
-                  <S.SmallTitle>최대 수강 인원</S.SmallTitle>
-                  <S.CountInput type="number" onChange={props.memberChange} />
+                  <S.SmallTitle>최대 수강 인원을 지정해 주세요.</S.SmallTitle>
+                  <S.CountInput type="number" onChange={props.memberChange} />명
                 </S.ClassMemberCount>
               </S.SettingThree>
             </S.SettingTwoThreeWrapper>
           </S.SchduleSettingWrapper>
+
           <S.ScheduleWrppaer>
-            <div>날짜: {props.date}</div>
-            <div>시간: {props.time}</div>
-            <div>수업시간: {props.runningTime}</div>
-            <div>최대 수강 인원: {props.memberCount}</div>
+            <div>날짜 : {props.date}</div>
+            <div>시간 : {props.time}</div>
+            <div>수업시간 : {props.runningTime}</div>
+            <div>최대 수강 인원 : {props.memberCount}명</div>
+            <S.ScheduleSettingButton onClick={props.scheduleSetting}>
+              등록하기
+            </S.ScheduleSettingButton>
           </S.ScheduleWrppaer>
-          <S.ScheduleSettingButton onClick={props.scheduleSetting}>
-            등록하기
-          </S.ScheduleSettingButton>
         </S.ContentWrapper>
       </S.Wrapper>
     </>
