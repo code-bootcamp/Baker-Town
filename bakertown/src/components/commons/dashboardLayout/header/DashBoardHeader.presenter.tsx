@@ -1,6 +1,7 @@
 import * as S from "./DashBoardHeader.styles";
+import { IDashBoardHeaderPresenterProps } from "./DashBoardHeader.types";
 
-const DashBoardHeaderPresenter = (props) => {
+const DashBoardHeaderPresenter = (props: IDashBoardHeaderPresenterProps) => {
   return (
     <>
       <S.Wrapper>
