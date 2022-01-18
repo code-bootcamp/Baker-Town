@@ -145,8 +145,6 @@ export const ChooseScheduleWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const ChooseScheduleTitle = styled.div``;
-
 export const SearchScheduleButton = styled.button`
   width: 250px;
 `;

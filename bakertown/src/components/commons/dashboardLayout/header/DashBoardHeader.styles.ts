@@ -23,7 +23,15 @@ export const Title = styled.div`
   font-size: 40px;
   font-weight: 300;
   padding-right: 30px;
+  display: flex;
 `;
+
+export const Name = styled.div`
+  padding-left: 15px;
+  margin-right: 10px;
+  font-size: 40px;
+  font-weight: 450;
+`
 
 export const SubTitle = styled.div`
   font-size: 40px;
