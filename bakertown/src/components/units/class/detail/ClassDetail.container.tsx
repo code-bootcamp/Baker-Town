@@ -227,6 +227,11 @@ const ClassDetailContainer = () => {
   };
 
   const onClickHeart = async () => {
+    if (!currentUser) {
+      message.error("로그인 해주세요");
+      router.push(`/signIn`);
+      return;
+    }
     // 현재 페이지 정보 불러오기
     const bakeryClass = doc(
       getFirestore(firebaseApp),
