@@ -54,6 +54,26 @@ export const SettingImage = styled.img`
   padding-bottom: 4px;
 `;
 
+export const Logout = styled.button`
+  width: 22%;
+  height: 40px;
+  border-radius: 12px;
+  margin-left: 27%;
+  font-weight: bold;
+  /* padding-bottom: 2px; */
+  background-color: #4f3325;
+  color: #f3f3f3;
+  border: 1.2px solid;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 100ms;
+
+  :hover {
+    color: white;
+    opacity: 0.95;
+  }
+`;
+
 export const Sidebar = styled.div`
   display: none;
 
