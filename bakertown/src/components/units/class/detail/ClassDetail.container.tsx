@@ -65,7 +65,9 @@ const ClassDetailContainer = () => {
 
       const reviewFunction =
         arry?.reduce((acc: any, cur: any) => acc + cur) / arry?.length;
-      setRatingAverage(reviewFunction ? Number(reviewFunction) : Number("0"));
+      setRatingAverage(
+        reviewFunction ? Number(reviewFunction.toFixed(2)) : Number("0")
+      );
     }
   };
 
