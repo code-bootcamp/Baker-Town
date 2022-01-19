@@ -72,6 +72,7 @@ export const Label = styled.div`
   font-weight: 300;
   font-size: 18px;
   line-height: 22px;
+  margin-right: 10px;
 `;
 
 export const ImageTitle = styled.div`
