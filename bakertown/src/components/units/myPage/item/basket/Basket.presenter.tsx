@@ -10,7 +10,7 @@ const BasketPresenter = (props: IBasketPresenterProps) => {
         <SideNavigationContainer />
         <S.BasketList>
           <S.BasketTitle>
-            <S.BasketTitleText>ITEM | 장바구니</S.BasketTitleText>
+            <S.BasketTitleText>ITEM | 찜 목록</S.BasketTitleText>
           </S.BasketTitle>
           <S.BasketContents>
             {props.userResult?.itemHeart?.map((el: any) => (
