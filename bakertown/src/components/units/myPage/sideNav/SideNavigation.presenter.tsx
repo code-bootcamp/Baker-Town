@@ -6,7 +6,7 @@ import UserPoint from "../../../commons/payment/MyPoint";
 
 const SideNavigationPresenter = (props: ISideNavigationPresenterProps) => {
   const myClass = ["참여 예정", "참여 완료", "나의 후기", "찜 목록"];
-  const myItem = ["주문 내역", "장바구니", "아이템 후기"];
+  const myItem = ["주문 내역", "찜 목록", "아이템 후기"];
   return (
     <>
       <S.Sidebar>
