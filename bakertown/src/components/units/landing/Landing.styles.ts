@@ -487,6 +487,7 @@ export const PopularClassWrapper = styled.div`
     /* display: none; */
     /* width: 414px; */
     padding-top: 50px;
+    margin-bottom: 70px;
   }
 `;
 
@@ -500,6 +501,7 @@ export const NewClassWrapper = styled.div`
     /* display: none; */
     /* width: 414px; */
     padding-top: 0px;
+    margin-bottom: 70px;
   }
 `;
 
