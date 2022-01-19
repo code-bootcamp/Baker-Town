@@ -40,7 +40,7 @@ const SideNavigationContainer = () => {
     if (el === "나의 후기") router.push(`/myPage/class/myReview`);
     if (el === "찜 목록") router.push(`/myPage/class/wishList`);
     if (el === "주문 내역") router.push(`/myPage/item/orderHistory`);
-    if (el === "장바구니") router.push(`/myPage/item/basket`);
+    if (el === "찜 목록") router.push(`/myPage/item/basket`);
     if (el === "아이템 후기") router.push(`/myPage/item/review`);
   };
 
