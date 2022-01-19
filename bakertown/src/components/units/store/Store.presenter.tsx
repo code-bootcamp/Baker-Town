@@ -144,7 +144,7 @@ const StorePresenter = (props: IStorePresenterProps) => {
             {/* <S.SubjectView>홈파티 요리 전체보기</S.SubjectView> */}
           </S.SubjectWrapper>
           <S.StoresWrapper4>
-            {props.promotion?.map((el) => (
+            {props.promotion?.map((el: any) => (
               <S.StoreWrapper2>
                 <S.StoreImage2
                   src={`https://storage.googleapis.com/${el.images?.[0]}`}

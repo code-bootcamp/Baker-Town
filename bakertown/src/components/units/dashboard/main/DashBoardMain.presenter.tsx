@@ -54,38 +54,38 @@ const DashBoardMainPresenter = (props: IDashBoardProductsProps) => {
   const data = [
     {
       name: "마카롱",
-      uv: props.categoryArray?.[0]?.length, // 각 카테고리 별 개수
+      // uv: props.categoryArray?.[0]?.length, // 각 카테고리 별 개수
 
       // pv: 3000,
       // amt: 2400,
     },
     {
       name: "베이킹",
-      uv: props.categoryArray?.[1]?.length,
+      // uv: props.categoryArray?.[1]?.length,
       // pv: 1398,
       // amt: 2210,
     },
     {
       name: "케이크",
-      uv: props.categoryArray?.[2]?.length,
+      // uv: props.categoryArray?.[2]?.length,
       // pv: 9800,
       // amt: 2290,
     },
     {
       name: "쿠키",
-      uv: props.categoryArray?.[3]?.length,
+      // uv: props.categoryArray?.[3]?.length,
       // pv: 3908,
       // amt: 2000,
     },
     {
       name: "커피",
-      uv: props.categoryArray?.[4]?.length,
+      // uv: props.categoryArray?.[4]?.length,
       // pv: 4800,
       // amt: 2181,
     },
     {
       name: "쇼콜라",
-      uv: props.categoryArray?.[5]?.length,
+      // uv: props.categoryArray?.[5]?.length,
       // pv: 3800,
       // amt: 2500,
     },

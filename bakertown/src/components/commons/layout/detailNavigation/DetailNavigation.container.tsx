@@ -32,7 +32,12 @@ const DetailNavigationContainer = () => {
     },
     patissierId: "",
   });
-  const [myStore, setMyStore] = useState({});
+  const [myStore, setMyStore] = useState({
+    itemName: "",
+    price: 0,
+    category: "",
+    images: [],
+  });
 
   const classDetail = async () => {
     if (myClass?.address === "내 주소!") {

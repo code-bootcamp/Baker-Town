@@ -54,7 +54,7 @@ const AfterParContainer = () => {
     const bakeryClass = doc(
       getFirestore(firebaseApp),
       "class",
-      myUser?.afterPar?.[index]?.classRouter
+      myUser?.afterPar?.[1]?.classRouter
       // String(router.query.classId) 클래스 아이디 값
     );
     const classResult: any = await getDoc(bakeryClass);
@@ -75,9 +75,9 @@ const AfterParContainer = () => {
       user: userResult.data().name,
       rating: rating,
       contents: reviewContents,
-      class: myUser?.afterPar?.[index].class,
-      className: myUser?.afterPar?.[index].className,
-      category: myUser?.afterPar?.[index].category,
+      class: myUser?.afterPar?.[1].class,
+      className: myUser?.afterPar?.[1].className,
+      category: myUser?.afterPar?.[1].category,
     };
 
     // 내 리뷰
@@ -91,7 +91,7 @@ const AfterParContainer = () => {
 
     // 내 리뷰에 현재 클래스 아이디 및 리뷰정보 넣기
     const reviewInfo = {
-      classRouter: myUser?.afterPar?.[index].classRouter,
+      classRouter: myUser?.afterPar?.[1].classRouter,
       images: classResult.data().images,
       ...myReview,
     };
