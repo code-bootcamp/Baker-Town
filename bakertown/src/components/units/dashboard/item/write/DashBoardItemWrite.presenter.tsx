@@ -1,4 +1,3 @@
-import { style } from "@mui/system";
 import * as S from "./DashBoardItemWrite.styles";
 import { IDashBoardItemProps } from "./DashBoardItemWrite.types";
 
