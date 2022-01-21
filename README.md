@@ -23,9 +23,9 @@
 <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 <img src="https://img.shields.io/badge/apollo graphql-311C87?style=for-the-badge&logo=apollo graphql&logoColor=white">
-<img src="https://img.shields.io/badge/emotion-181717?style=for-the-badge&logo=emotion&logoColor=white">
-<img src="https://img.shields.io/badge/antdesign-181717?style=for-the-badge&logo=antdesign&logoColor=white">
-<img src="https://img.shields.io/badge/materialui-181717?style=for-the-badge&logo=materialui&logoColor=white">
+<img src="https://img.shields.io/badge/emotion-C43BAD?style=for-the-badge&logo=emotion&logoColor=white">
+<img src="https://img.shields.io/badge/antdesign-0170FE?style=for-the-badge&logo=antdesign&logoColor=white">
+<img src="https://img.shields.io/badge/materialui-007FFF?style=for-the-badge&logo=materialui&logoColor=white">
 
 ## 플로우차트
 ![플로우차트_베이커타운](https://user-images.githubusercontent.com/74632731/150452747-c22a85aa-ddb6-4e2a-b072-401b1eace30e.png)
