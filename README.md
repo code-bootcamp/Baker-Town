@@ -41,3 +41,8 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+##  사진
+![스크린샷 2022-01-21 오전 11 36 32](https://user-images.githubusercontent.com/74632731/150455737-57a2630a-22ed-426a-b19d-8369a125cc4a.png)
+![스크린샷 2022-01-21 오전 11 36 48](https://user-images.githubusercontent.com/74632731/150455764-4144449a-55f7-4972-8c6f-20215a907f3c.png)
+
