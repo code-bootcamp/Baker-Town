@@ -18,11 +18,11 @@
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 <img src="https://img.shields.io/badge/typescript-1572B6?style=for-the-badge&logo=typescript&logoColor=white">
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
-
+<img src="https://img.shields.io/badge/next.js-181717?style=for-the-badge&logo=next.js&logoColor=white">
 <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white">
 <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/next.js-181717?style=for-the-badge&logo=next.js&logoColor=white">
+<img src="https://img.shields.io/badge/apollo graphql-311C87?style=for-the-badge&logo=apollo graphql&logoColor=white">
 
 ## 플로우차트
 ![플로우차트_베이커타운](https://user-images.githubusercontent.com/74632731/150452747-c22a85aa-ddb6-4e2a-b072-401b1eace30e.png)
