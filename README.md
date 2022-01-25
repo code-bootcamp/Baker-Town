@@ -4,10 +4,10 @@
 ## BAKER TOWN 소개
 배포 주소: <a href="https://bakertown.site">베이커 타운</a>
 노션 주소: <a href="https://opalescent-safflower-0c6.notion.site/baikiki-bf47af83bba2436d999d2e65e2484bb6">베이키키</a>
+프로젝트 기간: 2021.12.27~2022.1.19
 
-2021.12.27~2022.1.19
 
-![전체스크린샷](https://user-images.githubusercontent.com/93374962/151002919-58620a3b-a79a-4e1f-b42e-babe07bdd9f1.jpg)
+![전체스크린샷](https://user-images.githubusercontent.com/93374962/151003368-d97beccd-c51a-4bbb-8eca-5746657c6b59.jpg)
 
 
 BakerTown은 '베이커리'라는 주제로 수업을 가르치는 '파티셰'와 수업을 받고자 하는 '유저'를 연결하는 플랫폼입니다.
