@@ -37,9 +37,10 @@ BakerTown은 '베이커리'라는 주제로 수업을 가르치는 '파티셰'�
 강재연[팀원, 프론트엔드]
 신나리[팀원, 프론트엔드]
 박찬미[팀원, 프론트엔드]
-![baker town 발표 최종본 004](https://user-images.githubusercontent.com/93374962/151004586-05b623a6-20d0-42c5-8196-4e0a6a4327e8.png)
 
-![baker town 발표 최종본 005](https://user-images.githubusercontent.com/93374962/151004605-33e9e0ac-15fc-43bd-9a39-04a613a01fec.png)
+<img width="1014" alt="스크린샷 2022-01-26 00 19 08" src="https://user-images.githubusercontent.com/93374962/151004883-ae64fdb1-18e6-435d-96c7-eaeb8aab8b01.png">
+
+<img width="959" alt="스크린샷 2022-01-26 00 19 28" src="https://user-images.githubusercontent.com/93374962/151004892-7b009e56-058a-43c5-b4f6-8ab03774222d.png">
 
 
 
