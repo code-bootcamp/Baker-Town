@@ -3,7 +3,9 @@
 
 ## BAKER TOWN 소개
 배포 주소: <a href="https://bakertown.site">베이커 타운</a>
+
 노션 주소: <a href="https://opalescent-safflower-0c6.notion.site/baikiki-bf47af83bba2436d999d2e65e2484bb6">베이키키</a>
+
 프로젝트 기간: 2021.12.27~2022.1.19
 
 
