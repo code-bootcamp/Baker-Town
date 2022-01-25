@@ -1,5 +1,6 @@
 # BAKER TOWN
-![로고1 누끼](https://user-images.githubusercontent.com/74632731/150452173-3239f42a-8b39-491c-ab59-b6aeb50ffaef.png)
+
+![레이어 2@3x](https://user-images.githubusercontent.com/93374962/151006554-56dade90-f218-4636-8c79-53941b847c8e.png)
 
 ## BAKER TOWN 소개
 배포 주소: <a href="https://bakertown.site">베이커 타운</a>
