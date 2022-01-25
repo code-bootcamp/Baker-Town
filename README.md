@@ -1,5 +1,6 @@
 # BAKER TOWN
-![레이어 2](https://user-images.githubusercontent.com/93374962/151007033-628f25f8-cd19-4d36-9acb-a66699a07c77.png)
+
+![레이어 2@2x](https://user-images.githubusercontent.com/93374962/151007125-912bbe58-bdc6-4746-a37c-390734b99e34.png)
 
 
 
