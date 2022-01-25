@@ -22,9 +22,7 @@ BakerTown은 '베이커리'라는 주제로 수업을 가르치는 '파티셰'�
 
 본 사이트는 예약, 결제, 지도, 채팅, 로그인, 검색, 대시보드, 반응형UI 등의 기능이 구현되어 있습니다.
 
-<br/>
-<br/>
-<br/>
+
 ## 기술 스택
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/typescript-1572B6?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/next.js-181717?style=for-the-badge&logo=next.js&logoColor=white">
 
